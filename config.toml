@@ -1,0 +1,90 @@
+baseurl = "https://xingmxteam.github.io"
+title = "xingmxteam.io"
+theme = "hugo-coder-xingmxteam"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 10
+canonifyurls = true
+timeout = 120000
+
+pygmentsstyle = "colorful"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+#googleAnalytics = "UA-78473158-1"
+
+buildFuture = true
+
+[markup]
+  [markup.highlight]
+    style = "native"
+  [markup.goldmark.renderer]
+    # Allow Markdown to include embedded HTML.
+    unsafe= true
+
+[permalinks]
+    posts = "/:filename/"
+
+[social]
+twitter = "codediggerfelix"
+
+[params]
+    author = "Felix Mao"
+    info = "By day, a simple software engineer. By night, also a software engineer."
+    description = "Updates about my life and what I learn about creating software"
+    keywords = "blog,developer,personal"
+    avatarurl = "images/avatar.jpg"
+
+    favicon_32 = "/images/favicon/favicon-32x32.png"
+    favicon_16 = "/images/favicon/favicon-16x16.png"
+
+    hidecredits = false
+    hidecopyright = false
+
+    rtl = false
+
+    custom_css = ["css/main.css"]
+
+    photoWidths = [300, 600, 800, 1200]
+
+    #talkyardServerUrl = "https://comments-for-mtlynch-io.talkyard.net"
+    #talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
+
+[imaging]
+quality = 90
+resampleFilter = "Lanczos"
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/XingMXTeam/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 3
+    url = "https://twitter.com/codediggerfelix/"
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "Retrospectives"
+    weight = 2
+    url = "/retrospectives/"
+[[menu.main]]
+    name = "Projects"
+    weight = 3
+    url = "/projects/"
+[[menu.main]]
+    name = "Book Reports"
+    weight = 4
+    url = "/book-reports/"
+[[menu.main]]
+    name = "About"
+    weight = 5
+    url = "/about/"

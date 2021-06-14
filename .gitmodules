@@ -1,0 +1,9 @@
+[submodule "themes/hugo-coder"]
+	path = themes/hugo-coder
+	url = https://github.com/luizdepra/hugo-coder.git
+[submodule "themes/hugo-coder-felixmao"]
+	path = themes/hugo-coder-felixmao
+	url = https://github.com/xingmxteam/hugo-coder.git
+[submodule "themes/hugo-coder-xingmxteam"]
+	path = themes/hugo-coder-xingmxteam
+	url = https://github.com/xingmxteam/hugo-coder.git
