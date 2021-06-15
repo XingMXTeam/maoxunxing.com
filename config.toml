@@ -12,7 +12,7 @@ pygmentsstyle = "colorful"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-#googleAnalytics = "UA-78473158-1"
+googleAnalytics = "UA-199510588-1"
 
 buildFuture = true
 

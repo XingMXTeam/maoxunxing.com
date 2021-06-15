@@ -1,0 +1,67 @@
+{{ $srcRaw := .Get "src" }}
+{{ $altText := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $maxWidth := .Get "maxWidth" }}
+{{ $hasBorder := .Get "hasBorder" }}
+{{ $align := .Get "align" }}
+{{ $linkUrl := .Get "linkUrl" }}
+
+
+{{ $image := .Page.Resources.GetMatch $srcRaw }}
+{{ with $image }}
+  {{ $src := $image.RelPermalink }}
+
+
+  {{ $maxWidthPixels := $image.Width }}
+  {{ if strings.HasSuffix $maxWidth "px" }}
+    {{ $maxWidthPixels = int (replace $maxWidth "px" "") }}
+  {{ end }}
+
+  {{- /* If maxWidth is set to match the image size, but it also has a border, add
+    2px to the maxWidth to account for the 1px border on either side. */ -}}
+  {{ if (and $hasBorder (eq $maxWidthPixels $image.Width)) }}
+    {{ $maxWidthPixels = add $maxWidthPixels 2 }}
+  {{ end }}
+
+  {{ $maxWidth = printf "%dpx" $maxWidthPixels }}
+
+  {{ if $caption }}
+  <figure
+    class="img{{ if $align }} align-{{ $align }}{{ end }}"
+    {{- if $maxWidth }} style="max-width: {{ $maxWidth }}"{{ end -}}
+    >
+  {{ else }}
+  <div
+    class="img{{ if $align }} align-{{ $align }}{{ end }}"
+    {{- if $maxWidth }} style="max-width: {{ $maxWidth }}"{{ end -}}
+    >
+  {{ end }}
+
+
+  {{ if .Get $src }}
+    <a href="{{ if $linkUrl }}{{ $linkUrl }}{{ else }}{{ $src }}{{ end }}">
+      <img
+        {{ if $hasBorder }}class="img-border"{{ end }}
+        sizes="(min-width: 768px) {{ if $maxWidth }}{{ $maxWidth }}{{ else }}{{ index (last 1 $.Site.Params.photoWidths) 0 }}px{{ end }}, 98vw"
+        srcset='{{ range $.Site.Params.photoWidths }}
+                  {{- if ge $image.Width . }}
+                    {{ $resized := $image.Resize (printf "%dx" .) }}
+                    {{ $resized.RelPermalink }} {{ . }}w,
+                  {{ end }}
+                {{ end }}
+                {{ $image.RelPermalink }} {{ $image.Width }}w'
+        src="{{ $src }}" alt="{{$altText}}" loading="lazy"/>
+    </a>
+  {{ else }}
+    {{ errorf "failed to find image %s: %s" $srcRaw .Position }}
+    could not find image
+  {{ end }}
+
+  {{ if $caption }}
+  <figcaption><p>{{ $caption | markdownify }}</p></figcaption>
+  </figure>
+  {{ else }}
+  </div>
+  {{ end }}
+
+{{ end }}

@@ -1,0 +1,118 @@
+<section class="container page retrospective">
+  <article>
+    <header>
+      <h1>{{ .Title }}</h1>
+      <div class="post-meta">
+        <div class="date">
+          <span class="posted-on">
+            <i class="fas fa-calendar"></i>
+            <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+              {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+            </time>
+          </span>
+          <span class="reading-time">
+            <i class="fas fa-clock"></i>
+            {{ i18n "reading_time" .ReadingTime }}
+          </span>
+        </div>
+      </div>
+    </header>
+
+    {{ if not (hasPrefix .Title "Notes from") }}
+    <h2>One-Line Summary</h2>
+
+    {{ .Params.description }}
+    {{ end }}
+
+    {{- with .Content -}}
+    <div>
+      {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> ${3}` | safeHTML }}
+    </div>
+    {{- end -}}
+
+    {{ partial "mailing-list-signup.html" . }}
+
+    {{ if not .Site.IsServer }}
+      {{ partial "talkyard.html" . }}
+    {{ end }}
+  </article>
+</section>
+
+<script src="/js/chart.js/2.9.4/Chart.min.js"></script>
+<script>
+const dollarFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+function drawChart(chartId, labels, data) {
+  const ctx = document.getElementById(chartId);
+  if (!ctx) {
+    return;
+  }
+  ctx.height = 300;
+  const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Total Revenue',
+          data: data,
+          backgroundColor: '#047a15',
+          borderColor: '#4ba658',
+          fill: false,
+          lineTension: 0.0,
+          }]
+        },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItems) {
+              return dollarFormatter.format(parseFloat(tooltipItems.yLabel));
+            },
+          },
+        },
+        scales: {
+              yAxes: [{
+                  ticks: {
+                    suggestedMin: 0,
+                      callback: function(value) {
+                          return dollarFormatter.format(value);
+                      }
+                  }
+              }]
+          }
+      },
+  });
+}
+// Parse a date string like "2020-05" into a JavaScript Date object.
+function parseDate(d) {
+  const dateParts = d.split('-');
+  const year = parseInt(dateParts[0]);
+  const month = parseInt(dateParts[1]) - 1;
+  return new Date(year, month);
+}
+function drawCharts(limit) {
+  fetch('/data/project-revenue.json')
+    .then(res => res.json())
+    .then(revenueByProject => {
+      const limitDate = parseDate(limit);
+      for ([project, data] of Object.entries(revenueByProject)) {
+        let dates = [];
+        for (d of Object.keys(data)) {
+          const date = parseDate(d);
+          if (date >= limitDate) {
+            continue;
+          }
+          dates.push(date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear());
+        }
+        let values = Object.values(data).slice(0, dates.length);
+        drawChart(project + '-revenue', dates, values);
+      }
+    });
+}
+drawCharts({{ .Date.Format "2006-01" }});
+</script>
