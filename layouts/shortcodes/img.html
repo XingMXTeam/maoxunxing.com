@@ -6,11 +6,9 @@
 {{ $align := .Get "align" }}
 {{ $linkUrl := .Get "linkUrl" }}
 
-
 {{ $image := .Page.Resources.GetMatch $srcRaw }}
 {{ with $image }}
   {{ $src := $image.RelPermalink }}
-
 
   {{ $maxWidthPixels := $image.Width }}
   {{ if strings.HasSuffix $maxWidth "px" }}
@@ -37,8 +35,7 @@
     >
   {{ end }}
 
-
-  {{ if .Get $src }}
+  {{ if $src }}
     <a href="{{ if $linkUrl }}{{ $linkUrl }}{{ else }}{{ $src }}{{ end }}">
       <img
         {{ if $hasBorder }}class="img-border"{{ end }}
