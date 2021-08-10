@@ -149,3 +149,15 @@ Protocol Difference
 
 SOLID
 
+## Top k
+
+* how to solve
+  * 1 sort
+  * 2 partial elimination
+    * save k in container, and other numbers compare with them
+  * 3 divide and conque
+    * split to n group, find top k in the group
+  * 4 hash remove repeat number , then divide and conque
+  * 5 minimum heap
+  
+  
