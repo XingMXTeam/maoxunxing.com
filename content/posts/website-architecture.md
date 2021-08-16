@@ -80,7 +80,7 @@ Protocol Difference
   * high capability and persistence : Active MQ、Rabbit MQ、Rocket MQ
     * question is consistency questions?
       * use db and message queue to ensure final consistency
-  * client/zookeeper/kafka/storm cluster
+  * client/zookeeper/kafka/storm clusterf
 * JMS
   * EJB J2EE
   * Message mode(p2p/pub sub), Message Consume(async sync )
@@ -159,5 +159,5 @@ SOLID
     * split to n group, find top k in the group
   * 4 hash remove repeat number , then divide and conque
   * 5 minimum heap
-  
-  
+  code
+
