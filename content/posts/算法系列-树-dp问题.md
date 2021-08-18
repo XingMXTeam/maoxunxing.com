@@ -54,19 +54,78 @@ G(i, n) = f(i-1)*f(n-i)
 从递归树可以看出来，f(1) f(2) f(0)都存在重复计算。 我们缓存这些数据，避免重复计算。
 ## 代码实现(S)
 
-暴力解法
+暴力解法: 完全按照以上分析思路，递归求解
+
 ``` javascript
+  // 获取i作为根节点的总BST树个数
   const G = (i,n)=>{
       return fn(i - 1) * fn(n - i)
   }
   
+  // 获取n个节点的总BST树个数
   const fn = n=>{
       let _ = 0
       if(n===0||n===1) return 1
+      // 遍历所有节点
       for (let i = 1; i <= n; i++) {
+         // 将BST树相加
           _ += G(i, n)
       }
       return _
   }
   console.log(fn(3))
 ```
+
+dp解法（缓存递归树中重复计算的值）
+
+``` js
+  // 获取i作为根节点的总BST树个数
+  const G = (i,n)=>{
+      return fn(i - 1) * fn(n - i)
+  }
+  // 用来缓存数据
+    const dp = []; 
+  // 获取n个节点的总BST树个数
+  const fn = n=>{
+      let _ = 0
+      if(n===0||n===1) return 1;
+      // 如果有值，则直接返回
+      if(dp[n]) {
+        console.log('命中缓存')
+        return dp[n]
+      }
+      // 遍历所有节点
+      for (let i = 1; i <= n; i++) {
+         // 将BST树相加
+          _ += G(i, n)
+      }
+      // 缓存结果
+      dp[n] = _
+      return _
+  }
+  console.log(fn(3))
+```
+通过以上方式，可以看到缓存命中率，当n=3时只有一次。
+![https://img.alicdn.com/imgextra/i4/O1CN01pKHWio1pUlCHLnccm_!!6000000005364-2-tps-810-166.png](https://img.alicdn.com/imgextra/i4/O1CN01pKHWio1pUlCHLnccm_!!6000000005364-2-tps-810-166.png)
+正常理解应该命中三次才对。所以这种写法不能完全利用了重复计算。 我们可以从上到下的规则，比如以i为根的情况，我们先计算以i-1...1为i根的值。
+
+```js
+
+const getNumberOfBSTs = n => {
+  const T = []
+  // 已知结果
+  T[0] = 1
+  T[1] = 1
+  // T[n]是表示最终的结果
+  for(let i = 2; i <= n; i++) {
+    // j从1到i 表示已计算的节点
+    for(let j = 1; j <=i; j++) {
+        // 这个是根据上面递归树，推导出的结论
+        T[i] += T[j-1]*T[i-j]
+    }
+  }
+}
+```
+
+## 时间复杂度分析
+从上面代码可以看出， 双层循环时间复杂度为O(n^2)
