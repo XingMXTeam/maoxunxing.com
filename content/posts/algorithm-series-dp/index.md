@@ -1,7 +1,14 @@
 ---
-title: "算法解析 - dp问题"
-date: 2021-08-16T19:46:23+08:00
-draft: true
+title: "Algorithm Series - DP"
+date: 2021-08-16
+tags:
+- algorithm
+- dp
+- tree
+- programming
+description: "我正在学习算法，这是我的算法系列第一篇."
+images:
+- algorithm-series-dp/tree.jpg
 ---
 ## 问题定义(T & S)
 
@@ -47,7 +54,7 @@ OK，理解清楚了题意。 那么，怎么分析这出n个节点的BST树的�
 我们根据以上的遍历，大概能知道规律了：假定i是根节点，T[i-1]*T[n-i+1]就是当前情况的BST树个数，最终的BST树的个数，是遍历所有的节点作为根节点，然后把他们的个数相加。
 
 我们把递归树画出来： f(3)表示3个节点的最终BST树个数，G(1,3)表示1作为根节点，3是总共的节点个数
-![https://img.alicdn.com/imgextra/i3/O1CN01aR3Zud1rZSURIgQ0y_!!6000000005645-2-tps-1358-682.png](https://img.alicdn.com/imgextra/i3/O1CN01aR3Zud1rZSURIgQ0y_!!6000000005645-2-tps-1358-682.png)
+![https://img.alicdn.com/imgextra/i2/O1CN01TOo2Es1zDUQANviIO_!!6000000006680-0-tps-654-433.jpg](https://img.alicdn.com/imgextra/i2/O1CN01TOo2Es1zDUQANviIO_!!6000000006680-0-tps-654-433.jpg)
 得出结论： i是当前节点 n是总节点
 G(i, n) = f(i-1)*f(n-i)
 
@@ -107,6 +114,7 @@ dp解法（缓存递归树中重复计算的值）
 ```
 通过以上方式，可以看到缓存命中率，当n=3时只有一次。
 ![https://img.alicdn.com/imgextra/i4/O1CN01pKHWio1pUlCHLnccm_!!6000000005364-2-tps-810-166.png](https://img.alicdn.com/imgextra/i4/O1CN01pKHWio1pUlCHLnccm_!!6000000005364-2-tps-810-166.png)
+
 正常理解应该命中三次才对。所以这种写法不能完全利用了重复计算。 我们可以从上到下的规则，比如以i为根的情况，我们先计算以i-1...1为i根的值。
 
 ```js
