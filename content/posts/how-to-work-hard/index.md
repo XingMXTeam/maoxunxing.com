@@ -1,6 +1,7 @@
 ---
 title: "How To Work Hard"
 date: 2021-08-20
+draft: true
 tags:
 - work
 - mind
