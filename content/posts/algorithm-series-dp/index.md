@@ -111,9 +111,8 @@ From the recursive tree, we can also see that f(1) f(2) f(0) are double computed
   }
   console.log(fn(3))
 ```
-![https://img.alicdn.com/imgextra/i4/O1CN01pKHWio1pUlCHLnccm_!!6000000005364-2-tps-810-166.png](https://img.alicdn.com/imgextra/i4/O1CN01pKHWio1pUlCHLnccm_!!6000000005364-2-tps-810-166.png)
 
-There shoule be three hits. But we only have one. So this way, we cannot fully utilize the repeated calculations. We can rule from to bottom. For example, in the case of i as the root, we first calculate the value with i-1...1 as the value of the root of i.
+There should be three hits. But we only have one. So this way, we cannot fully utilize the repeated calculations. We can rule from to bottom. For example, in the case of i as the root, we first calculate the value with i-1...1 as the value of the root of i.
 
 so, we can optimze as follows: 
 
