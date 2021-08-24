@@ -30,7 +30,7 @@ buildFuture = true
 twitter = "codediggerfelix"
 
 [params]
-    author = "Felix Mao"
+    author = "Mao Xunxing"
     info = "By day, a simple software engineer. By night, also a software engineer."
     description = "Updates about my life and what I learn about creating software"
     keywords = "blog,developer,personal"

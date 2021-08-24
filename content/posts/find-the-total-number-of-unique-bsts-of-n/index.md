@@ -1,5 +1,5 @@
 ---
-title: "Algorithm Series - DP"
+title: "Given N, Find the total number of unique BSTs"
 date: 2021-08-16
 tags:
 - algorithm
@@ -8,7 +8,7 @@ tags:
 - programming
 description: "I am learning algorithm. This is my first post about tree and dp problem."
 images:
-- algorithm-series-dp/tree.jpg
+- find-the-total-number-of-unique-bsts-of-n/tree.jpg
 ---
 ## Question Definition(T & S)
 
@@ -132,5 +132,5 @@ const getNumberOfBSTs = n => {
 }
 ```
 
-## Time Complex
+## Time Complex(R)
 Double loop, so the time complex is O(n^2)
