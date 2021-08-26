@@ -23,7 +23,6 @@ description: "This topic is about how to use edge cache to promote the app or we
     + csr/cdn is serial handle way: request html, then download js and css...response first cached bytes, meanwhile cdn to load dynamic content， it is parallel and we can reuse connection between cdn and server side
     + edge server handle request like service worker
     + faster 200ms than no esr
-  + 
 
 
 

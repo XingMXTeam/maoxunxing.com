@@ -6,7 +6,7 @@ tags:
 - programming
 description: "I am learning algorithm."
 ---
-## Question Definition(T & S)
+## Question Definition(S & T)
 
 
 ## Problem Analysis(A)
