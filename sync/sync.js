@@ -3,5 +3,5 @@ const B = '/Users/maomao/XingMXTeam.github.io/'
 
 const watcher = require('sync-directory')(A, B, {
     watch: true,
-    exclude: ['node_modules', '.git']
+    exclude: ['node_modules', '\.git']
 });

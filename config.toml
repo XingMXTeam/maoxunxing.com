@@ -33,7 +33,7 @@ twitter = "codediggerfelix"
     author = "Mao Xunxing"
     info = "By day, a simple software engineer. By night, also a software engineer."
     description = "Updates about my life and what I learn about creating software"
-    keywords = "blog,developer,personal"
+    keywords = "blog,developer,personal,毛训星,maoxunxing"
     avatarurl = "images/avatar.jpg"
 
     favicon_32 = "/images/favicon/favicon-32x32.png"

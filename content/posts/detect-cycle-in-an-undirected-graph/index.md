@@ -6,41 +6,45 @@ tags:
 - graphs
 - programming
 - union-find
+- interview
 description: "I am learning algorithm. This is my first post about tree and dp problem."
 ---
 
 
-## Question Definition(T & S)
+## Question Definition(S & T)
 
 Given an undirected graph, how to check if there is a cycle in the graph ?
 
-Example, Input 
-n  = 4 , e = 4,
-ediges = { 0 1, 1 2, 2 3, 0 2 }
+Example 1: 
+
+Input：n  = 4 , e = 4, edges = { 0 1, 1 2, 2 3, 0 2 }
+
 Output: yes
 
 Diagram:
 
 The diagram clearly shows a cycle 0 to 2 to 1 to 0
 
-Input:n = 4, e = 3 
-0 1, 1 2, 2 3 
-Output:No 
-Explanation: 
+Example 2:
+
+Input: n = 4, e = 3 the edges: {0 1, 1 2, 2 3}
+
+Output:No
+
+Explanation:
+
 ## Problem Analysis(A)
-1 First, we need to create a data structures to save the undirected graph. 
-    + we can use **adjacency list**, If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }. We can use **map** data structures by javascript. 
-    + we can also use **adjacency matrix**
-    + or we don't need above, we just need an array.
++ First, we need to create a data structures to save the undirected graph. we can use **adjacency list**, If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }. We can use **map** data structures by javascript. we can also use **adjacency matrix** 
+
 + Second, we need to check if there is a cycle 
-  + disjoint set: make set; union; find set
-    + all vertexes are different sets
-    + then we loop all edges's nodes, if the nodes are in different set, we union them. How we check they are in the same set, every node's parent is the present node, we think 
-  they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
-    + if the nodes are in the same set, then we know they have other way to reach each other, that means the cycle exists
-  + bfs
-  + dfs
-    + we need a visited queue, if we visited a node, we make it visited. If we can a node is current node's adjacency node and meanwhile it is visited, then we find a cycle
+  + **Method1**: disjoint set, make set、union、find set
+      + initially, all vertexes are different sets
+      + then we loop all edges's nodes, if the nodes are in different set, we union them. How we check they are in the same set, every node's parent is the present node, we think 
+    they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
+      + if the nodes are in the same set, then we know they have other way to reach each other, that means the cycle exists
+  + **Method2**: bfs
+  + **Method3**: dfs
+      + we need a visited queue, if we visited a node, we make it visited. If we can a node is current node's adjacency node and meanwhile it is visited, then we find a cycle
 
 ### Code
 ``` js
@@ -304,6 +308,6 @@ var vertices = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 
 
-## Time Complex(R)
+## Time Complex
 
 

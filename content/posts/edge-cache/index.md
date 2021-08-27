@@ -1,6 +1,7 @@
 ---
 title: "Edge Cache"
 date: 2021-08-24
+draft: true
 tags:
 - front-end
 - programming

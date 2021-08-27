@@ -10,7 +10,7 @@ description: "I am learning algorithm. This is my first post about tree and dp p
 images:
 - find-the-total-number-of-unique-bsts-of-n/tree.jpg
 ---
-## Question Definition(T & S)
+## Question Definition(S & T)
 
 Given N, Find the total number of unique BSTs that can be made using values from 1 to N
 
