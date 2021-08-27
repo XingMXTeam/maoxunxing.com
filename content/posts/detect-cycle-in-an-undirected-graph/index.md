@@ -7,7 +7,9 @@ tags:
 - programming
 - union-find
 - interview
-description: "I am learning algorithm. This is my first post about tree and dp problem."
+description: "I am learning algorithm. This article talk about undirected graph."
+images:
+- detect-cycle-in-an-undirected-graph/graph.png
 ---
 
 
