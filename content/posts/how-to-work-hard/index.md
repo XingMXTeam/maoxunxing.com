@@ -1,7 +1,6 @@
 ---
 title: "How To Work Hard"
 date: 2021-08-20
-draft: true
 tags:
 - work
 - mind
@@ -9,6 +8,7 @@ description: "关于如何努力工作的理解"
 images:
 - how-to-work-hard/work.jpeg
 ---
+
 > Paul Graham
 > 原文：http://paulgraham.com/hwh.html
 
