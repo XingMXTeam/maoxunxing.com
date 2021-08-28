@@ -7,52 +7,53 @@ tags:
 - programming
 - union-find
 - interview
-description: "I am learning algorithm. This article talk about undirected graph."
+description: "I am learning algorithm. This article talks about undirected graph."
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---
 
 
-## Question Definition(S & T)
+## Question Definition (S & T)
 
 Given an undirected graph, how to check if there is a cycle in the graph ?
 
-Example 1: 
+**Example 1:**  
+Input：n  = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }  
+Output: yes  
+Diagram:  
 
-Input：n  = 4 , e = 4, edges = { 0 1, 1 2, 2 3, 0 2 }
+{{< img src="ex1.png" alt="ex1" maxWidth="900px" caption="has circle" >}}
 
-Output: yes
+**Example 2:**  
+Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }  
+Output: No  
+Diagram:  
 
-Diagram:
+{{< img src="ex2.png" alt="ex2" maxWidth="900px" caption="no circle" >}}
 
-The diagram clearly shows a cycle 0 to 2 to 1 to 0
+## Problem Analysis (A)
 
-Example 2:
+As we all know:  
 
-Input: n = 4, e = 3 the edges: {0 1, 1 2, 2 3}
+> Algorithms + Data Structure = Programs
 
-Output:No
+so, we need to create a data structure representing the undirected graph. There are two data structures can make this:
 
-Explanation:
+* **adjacency list** - If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }.
+* **adjacency matrix** - We can use **map** data structures by javascript.  
 
-## Problem Analysis(A)
-+ First, we need to create a data structures to save the undirected graph. we can use **adjacency list**, If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }. We can use **map** data structures by javascript. we can also use **adjacency matrix** 
+then, we should know how to check cycle:  
 
-+ Second, we need to check if there is a cycle 
-  + **Method1**: disjoint set, make set、union、find set
-      + initially, all vertexes are different sets
-      + then we loop all edges's nodes, if the nodes are in different set, we union them. How we check they are in the same set, every node's parent is the present node, we think 
-    they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
-      + if the nodes are in the same set, then we know they have other way to reach each other, that means the cycle exists
-  + **Method2**: bfs
-  + **Method3**: dfs
-      + we need a visited queue, if we visited a node, we make it visited. If we can a node is current node's adjacency node and meanwhile it is visited, then we find a cycle
+* **Method1**: disjoint set, make set、union、find set
+  * initially, all vertexes are different sets
+  * then we loop all edges' nodes, if the nodes are in the different set, we union them. How we check they are in the same set, every node's parent is the present node, then they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
+  * if the nodes are in the same set, then we know they have another way to reach each other, that means the cycle exists
+* **Method2**: bfs or dfs
+  * we need a visited queue, if we visited a node, we make it visited. If we find a node is current node's adjacency node and meanwhile,  it is visited, then we find a cycle
 
-### Code
+## Code
 
-We create a graph : 
-
-![detect-cycle-in-an-undirected-graph/graph_demo.png](/detect-cycle-in-an-undirected-graph/graph_demo.png)
+{{< img src="graph_demo.png" alt="ex1" maxWidth="900px" caption="a graph" >}}
 
 ``` js
   /*
@@ -66,7 +67,6 @@ We create a graph :
       constructor() {
           this.allVertexes = []
           this.allEdges = []
-          // map item link to []
           this.adList = new Map()
       }
 
@@ -263,39 +263,39 @@ We create a graph :
   2 find
   3 union
   */
-    class DisjointSet {
-      constructor() {
-          this.map = new Map()
-      }
-      makeSet(data) {
-          this.map.set(data, -1)
-      }
-      find(x) {
-          const parent = this.map.get(x)
-          if (parent < 0) {
-              return x
-          } else {
-              // recurse until you find x's parent
-              return this.find(this.map.get(x))
-          }
-      }
-      union(x, y) {
-          const xparent = this.find(x)
-          const yparent = this.find(y)
-          if (xparent !== yparent) {
-              // make the represent node's negative plus 1
-              this.map.set(xparent, this.map.get(xparent) + this.map.get(yparent))
-              // make y point to represents node x
-              this.map.set(yparent, xparent)
-          } else {
-              // same set
-              return true
-          }
-      }
+  class DisjointSet {
+    constructor() {
+        this.map = new Map()
+    }
+    makeSet(data) {
+        this.map.set(data, -1)
+    }
+    find(x) {
+        const parent = this.map.get(x)
+        if (parent < 0) {
+            return x
+        } else {
+            // recurse until you find x's parent
+            return this.find(this.map.get(x))
+        }
+    }
+    union(x, y) {
+        const xparent = this.find(x)
+        const yparent = this.find(y)
+        if (xparent !== yparent) {
+            // make the represent node's negative plus 1
+            this.map.set(xparent, this.map.get(xparent) + this.map.get(yparent))
+            // make y point to represents node x
+            this.map.set(yparent, xparent)
+        } else {
+            // same set
+            return true
+        }
+    }
 
-      console_print() {
-          console.log(JSON.stringify(this.map.values()))
-      }
+    console_print() {
+        console.log(JSON.stringify(this.map.values()))
+    }
   }
 
   // test code
@@ -323,5 +323,5 @@ We create a graph :
 
 ## Time Complex
 
-BFS/DFS: O(V+E)
-DisjointSet: O(n) -> O(logn) using Rank 
+BFS/DFS: O(V+E)  
+DisjointSet: O(n) -> O(logn) using Rank

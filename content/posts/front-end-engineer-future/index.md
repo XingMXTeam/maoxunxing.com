@@ -1,6 +1,7 @@
 ---
 title: "前端工程师未来趋势、职业路径和方向思考"
 date: 2021-08-24
+draft: true
 tags:
 - career
 - front-end
