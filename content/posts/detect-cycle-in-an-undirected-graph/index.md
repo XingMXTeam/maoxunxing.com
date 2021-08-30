@@ -7,61 +7,66 @@ tags:
 - programming
 - union-find
 - interview
-description: "I am learning algorithm. This article talk about undirected graph."
+description: "I am learning algorithm. This article talks about undirected graph."
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---
 
 
-## Question Definition(S & T)
+## Question Definition (S & T)
 
 Given an undirected graph, how to check if there is a cycle in the graph ?
 
-Example 1: 
+**Example 1:**  
+Input：n  = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }  
+Output: yes  
+Diagram:  
 
-Input：n  = 4 , e = 4, edges = { 0 1, 1 2, 2 3, 0 2 }
+{{< img src="ex1.png" alt="ex1" maxWidth="900px" caption="has circle" >}}
 
-Output: yes
+**Example 2:**  
+Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }  
+Output: No  
+Diagram:  
 
-Diagram:
+{{< img src="ex2.png" alt="ex2" maxWidth="900px" caption="no circle" >}}
 
-The diagram clearly shows a cycle 0 to 2 to 1 to 0
+## Problem Analysis (A)
 
-Example 2:
+As we all know:  
 
-Input: n = 4, e = 3 the edges: {0 1, 1 2, 2 3}
+> Algorithms + Data Structure = Programs
 
-Output:No
+so, we need to create a data structure representing the undirected graph. There are two data structures can make this:
 
-Explanation:
+* **adjacency list** - If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }.
+* **adjacency matrix** - We can use **map** data structures by javascript.  
 
-## Problem Analysis(A)
-+ First, we need to create a data structures to save the undirected graph. we can use **adjacency list**, If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }. We can use **map** data structures by javascript. we can also use **adjacency matrix** 
+then, we should know how to check cycle:  
 
-+ Second, we need to check if there is a cycle 
-  + **Method1**: disjoint set, make set、union、find set
-      + initially, all vertexes are different sets
-      + then we loop all edges's nodes, if the nodes are in different set, we union them. How we check they are in the same set, every node's parent is the present node, we think 
-    they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
-      + if the nodes are in the same set, then we know they have other way to reach each other, that means the cycle exists
-  + **Method2**: bfs
-  + **Method3**: dfs
-      + we need a visited queue, if we visited a node, we make it visited. If we can a node is current node's adjacency node and meanwhile it is visited, then we find a cycle
+* **Method1**: disjoint set, make set、union、find set
+  * initially, all vertexes are different sets
+  * then we loop all edges' nodes, if the nodes are in the different set, we union them. How we check they are in the same set, every node's parent is the present node, then they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
+  * if the nodes are in the same set, then we know they have another way to reach each other, that means the cycle exists
+* **Method2**: bfs or dfs
+  * we need a visited queue, if we visited a node, we make it visited. If we find a node is current node's adjacency node and meanwhile,  it is visited, then we find a cycle
 
-### Code
+## Code
+
+{{< img src="graph_demo.png" alt="ex1" maxWidth="900px" caption="a graph" >}}
+
 ``` js
-/*
-Graph using adjacency list. Support opertaions:
-1 traverse by dfs\bfs
-2 hasCircleByDfs
-3 hasCircleByBfs
-4 hasCircleByDss
-*/
-    class Graph {
+  /*
+  Graph using adjacency list. Support opertaions:
+  1 traverse by dfs\bfs
+  2 hasCircleByDfs
+  3 hasCircleByBfs
+  4 hasCircleByDss(Disjoint Set)
+  */
+  class Graph {
       constructor() {
           this.allVertexes = []
           this.allEdges = []
-          // map item link to []
           this.adList = new Map()
       }
 
@@ -82,8 +87,8 @@ Graph using adjacency list. Support opertaions:
           this.adList.get(source).push(dest)
           this.adList.get(dest).push(source)
           this.allEdges.push({
-            dest,
-            source
+              dest,
+              source
           })
       }
 
@@ -110,12 +115,13 @@ Graph using adjacency list. Support opertaions:
       }
 
       hasCircleByDss() {
-        const dss = new DisjointSet()
-        this.allVertexes.forEach(v => {
-          dss.makeSet(v)
-        })
-        // if  union return true, we find a cycle
-        return this.allEdges.some(e => this.union(e.source, e.dest))
+          const dss = new DisjointSet()
+          this.allVertexes.forEach(v=>{
+              dss.makeSet(v)
+          }
+          )
+          // if  union return true, we find a cycle
+          return this.allEdges.some(e=>dss.union(e.source, e.dest))
       }
 
       bfs(start) {
@@ -137,33 +143,42 @@ Graph using adjacency list. Support opertaions:
           }
           return result
       }
-
+      
       /*
-        1 initial, all nodes are white. 
-        2 the node is visited is gray
-        3 the node's adejancey all visited, then this node is black
-        if we find a node is gray(visited), but this node is not the current node's parent
+          Key Point: if we find a node is visited, but the node is not the current node's parent
       */
-      hasCircleByBfs(start) {
-        const result = false
-        const queue = [{ v: start, parent: -1 }]
-        const visited = {}
-        visited[start] = false
-        while(queue.length) {
-          const curV = queue.shift()
-          visited[curV] = true
-          this.adList.get(curV).forEach(dest => {
-            if(!visited[dest]) {
-              visited[dest] = true
-              queue.push({ v: dest, parent: curV })
-            }
-            else if(dest !== curV.parent) {
-              return true
-            }
-          })
-        }
-        return false
+      hasCircleByBfs() {
+          const parent = {}
+          const result = false;
+          const visited = {}
+          const queue = []
+
+          for (let i = 0; i < this.allVertexes.length; i++) {
+              const node = this.allVertexes[i]
+              if (!visited[node]) {
+                  visited[node] = true;
+                  queue.push(node);
+                  let curV;
+                  while (queue.length) {
+                      curV = queue.shift();
+                      visited[curV] = true;
+                      const allAdNodes = this.adList.get(curV);
+                      for (let j = 0; j < allAdNodes.length; j++) {
+                          const dest = allAdNodes[j];
+                          if (!visited[dest]) {
+                              visited[dest] = true;
+                              parent[dest] = curV;
+                              queue.push(dest)
+                          } else if (dest !== parent[curV]) {
+                              return true
+                          }
+                      }
+                  }
+              }
+          }
+          return false
       }
+
       dfsRecursive(start) {
           const result = []
           const visited = {};
@@ -179,7 +194,8 @@ Graph using adjacency list. Support opertaions:
                   }
               }
               )
-          })(start);
+          }
+          )(start);
           return result
       }
 
@@ -203,11 +219,83 @@ Graph using adjacency list. Support opertaions:
           return result
       }
 
-
-      dfsHasCircle() {
-        
+      /*
+          the key point is: all visited nodes are keep in array, if we repeated push a exsited node, there are more than one path to it(circle exists).
+          @params {string} current node
+          @params {array} boolean - all visited nodes
+          @params {string} parent - current node's parent
+      */
+      hasCircleUtil(node, visited, parent) {
+          // push all nodes to visited
+          visited[node] = true;
+          const adList = this.adList.get(node) || [];
+          for (let i = 0; i < adList.length; i++) {
+              // the repeated path, ignore it
+              if (adList[i] === parent)
+                  continue;
+              // we find it is already in the visited queue, we know that. we can reach adList[i] by another path(which means there is a circle)
+              if (visited[adList[i]])
+                  return true;
+              const hasCycle = this.hasCircleUtil(adList[i], visited, node)
+              if (hasCycle)
+                  return true
+          }
+          return false
       }
-      
+      hasCircleByDfs() {
+          const visited = {}
+            , allV = this.allVertexes
+          // because it is undirected graph, we need to reverse all nodes. 
+          for (let i = 0; i < allV.length; i++) {
+              if (visited[allV[i]])
+                  continue
+              const flag = this.hasCircleUtil(allV[i], visited, null)
+              if (flag)
+                  return true
+          }
+          return false
+      }
+  }
+
+  /*
+  three operation: 
+  1 makeset
+  2 find
+  3 union
+  */
+  class DisjointSet {
+    constructor() {
+        this.map = new Map()
+    }
+    makeSet(data) {
+        this.map.set(data, -1)
+    }
+    find(x) {
+        const parent = this.map.get(x)
+        if (parent < 0) {
+            return x
+        } else {
+            // recurse until you find x's parent
+            return this.find(this.map.get(x))
+        }
+    }
+    union(x, y) {
+        const xparent = this.find(x)
+        const yparent = this.find(y)
+        if (xparent !== yparent) {
+            // make the represent node's negative plus 1
+            this.map.set(xparent, this.map.get(xparent) + this.map.get(yparent))
+            // make y point to represents node x
+            this.map.set(yparent, xparent)
+        } else {
+            // same set
+            return true
+        }
+    }
+
+    console_print() {
+        console.log(JSON.stringify(this.map.values()))
+    }
   }
 
   // test code
@@ -221,95 +309,19 @@ Graph using adjacency list. Support opertaions:
 
   g.addE('A', 'B');
   g.addE('A', 'D');
-  g.addE('A', 'E');
   g.addE('B', 'C');
   g.addE('D', 'E');
   g.addE('E', 'F');
-  g.addE('E', 'C');
-  g.addE('C', 'F');
+  g.addE('A', 'E');//circle path
 
   g.print()
 
-  
+  g.hasCircleByDss('A');//true
+  g.hasCircleByDfs();
+  g.hasCircleByBfs()
 ```
-
-### Code
-```js
-/*
-three operation: 
-1 makeset
-2 find
-3 union
-*/
-class DisjointSet {
-  constructor() {
-    this.map = new Map()
-  }
-  makeSet(data) {
-    this.map.set(data, -1)
-  }
-  find(x) {
-    const parent = this.map.get(x)
-    if(parent < 0) {
-      return x
-    }
-    else {
-      // recurse until you find x's parent
-      return this.find(this.map.get(x))
-    }
-  }
-  union(x, y) {
-    const xparent = this.find(x)
-    const yparent = this.find(y)
-    if(xparent !== yparent) {
-      // make the represent node's negative plus 1
-      this.map.set(xparent, this.map.get(xparent) + this.map.get(yparent))
-      // make y point to represents node x
-      this.map.set(yparent, xparent)
-    }
-    else {
-      // same set
-      return true
-    }
-  }
-
-  console_print() {
-		console.log(JSON.stringify(this.map.values()))
-	}
-}
-
-const dss = new DisjointSet()
-const data = [1, 2, 3, 4, 5, 6, 7, 8]
-data.forEach(item => {
-  dss.makeSet(item)
-})
-
-dss.union(1,2)
-dss.console_print();
-dss.union(3,4)
-dss.console_print();
-dss.union(5,6)
-dss.console_print();
-dss.union(7,8)
-dss.console_print();
-dss.union(2,4);
-dss.console_print();
-dss.union(2,5);
-dss.console_print();
-dss.union(1,3);
-dss.console_print();
-dss.union(6,8);
-dss.console_print();
-dss.union(5,7);
-dss.console_print();
-
-var vertices = ['A', 'B', 'C', 'D', 'E', 'F'];
-
-
-```
-
-
 
 ## Time Complex
 
-
+BFS/DFS: O(V+E)  
+DisjointSet: O(n) -> O(logn) using Rank
