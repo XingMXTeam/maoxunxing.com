@@ -65,7 +65,7 @@ resampleFilter = "Lanczos"
     name = "Twitter"
     icon = "fab fa-twitter fa-2x"
     weight = 3
-    url = "https://twitter.com/codediggerfelix/"
+    url = "https://twitter.com/maoxunxing/"
 
 # Menu links
 [[menu.main]]

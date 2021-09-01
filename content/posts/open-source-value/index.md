@@ -16,25 +16,25 @@ description: "I am learning algorithm.This article talks about Diff DOM algorith
 
 + 学术型协议： 修改需要注明原著和免责声明
   + BSD Apache MIT PHP
-+ CopyLeft/病毒型协议： 学术型要求+衍生作品必须也开源
-  + GPL LGPL AGPL
++ CopyLeft/病毒型协议： 学术型要求+衍生作品发行了必须也开源
+  + GPL LGPL AGPL CDDL CPL EPL MPL LGPL
   
-衍生作品：修改过代码或者一起编译或者GPL静态链接
-非衍生作品： 不同层面运行；开源和我的程序独立运行没有交互；远程调用
+何为衍生作品？
 
-+ 发行：修改了源代码但是没有发行就不必公开修改过的源码
-  + 下载到用户端；
-  + 
+衍生作品：修改过代码(BlackDuck识别为使用了部分代码)；编译；GPL，AGPL静态链接
+非衍生作品： 不同层面运行；开源和我的程序独立运行没有交互；是远程调用
+
+何为发行？
+
++ 下载到用户端
++ 通过网络和用户交互，都不算发行（AGPL CPAL OSL除外）
++ AGPL在服务端使用
+
 ## 为什么开源
 
 通过社区运营，促进技术发展
-
 
 ## 收费
 
 + 技术支持收费
 + 提供商业版本收费
-
-
-
-
