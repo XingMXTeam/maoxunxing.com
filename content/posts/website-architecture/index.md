@@ -161,3 +161,6 @@ SOLID
   * 5 minimum heap
   code
 
+## 统一接入
+
+应用接入全站https、私钥落地
