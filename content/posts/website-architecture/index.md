@@ -1,13 +1,73 @@
 ---
-title: "Website Architecture"
+title: "架构师应该知道的一切"
 date: 2021-08-06T15:25:06+08:00
 draft: true
 ---
+## 基础技术
+
+### 概念
+
+VPC： Virtual Private Cloud 构建在物理之上的虚拟化网络，采用隧道技术，
+隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。
+由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。
+
+{{< img src="network.jpg" alt="network" maxWidth="900px" >}}
+
+售卖区： ecs rds(vpc隔离成多个子网)
+OXS: ots oss odps ons ocs
+
+DNS:  应用层协议和https一样。 端口是53。提供根据域名查IP的服务
+记录（Record）： 记录和IP的对应关系
+A记录： 支持将域名映射到IPV4地址
+AAAA记录：支持将域名映射到IPV6地址
+CNAME： 别名 Canonical Name 支持指向另一个域名
+MX: Mail Exchanger 支持将域名指向邮件服务器地址
+NS: name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析
+DNS服务器： 安装了DNS服务（比如安装BIND）的计算机。 谷歌公共的服务器地址8.8.8.8
+
+CDN: Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题
+
+### 统一接入
+
+解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）
+
+统一接入层(AServer)： tengine运行的web server代理。 将请求转发给（proxy_pass）应用服务器
+
+* 解决https证书申请和更换
+* 证书泄漏： 部署在服务器有泄漏风险
+* 应用安全
+* 安全管控：收敛安全入口
+
+接入层通过VIP Server发现后端可用机器；
+业务层通过VIP Server做服务发现和调用；
+中间件通过VIP Server做环境路由；
+数据库通过VIP Server解决DNS 解析和上下线问题
+
+1 VIP Server需要添加vip server key（和域名是一对多） + 应用分组
+2 Aserver填写vip server key和域名
+
+AServer从请求头获取域名； 根据域名找到vip server key； 根据key找到集群
+
+### 开发环境
+
+自动化安装脚本
+
+aone回滚时，用基线版本直接覆盖master当前分支版本（不是操作的git回滚)，也就是说会新生成新的提交。
+本地开发 需要重新执行git revert当前回滚版本
+
+Pouch/Docker: 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)
+
+K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构。
+
+
+---
 
 ## 分布式服务 Distributed Micro Service  
+
 what is distributed micro service?
 
 ### 发展轨迹
+
 1 RPC (Remote Process Call)
 {{< img src="rpc.png" alt="rpc" maxWidth="900px" >}}
 
@@ -209,10 +269,39 @@ TDDL(Taobao Distributed Data Layer)
 服务端架构
 {{< img src="db-server-arch.png" alt="db-server-arch" maxWidth="900px" >}}
 
-Matrix层：SQL的解析、优化，执行
-Group层： 读写分离和主备切换（镜像备份，通过日志变化，在从库中执行相同动作；或者需要先路由到从库，再执行动作
-Atom层：物理db组成
+数据源架构：  
+{{< img src="db-matrix.jpg" alt="db-matrix" maxWidth="900px" >}}
+Matrix层：SQL的解析、优化，执行; 规则匹配；表名替换；sql转发; 合并atom返回的结果集，返回给client  
+Group层： 读写分离和主备切换（镜像备份，通过日志变化，在从库中执行相同动作；或者需要先路由到从库，再执行动作 - 根据权重选择atom; 具有重试策略的调用atom执行sql  
+Atom层：物理db组成 - 执行sql; 返回结果到matrix  
 
+### 分布式调度
+
+schedulerX
+
+### 分布式搜索
+
+Open Search
+
+### 分布式事务
+
+TXC(Taobao Transaction Constructor)
+### 分布式计算
+
+**blink**: 分布式实时计算
+**odps**（Open Data Processing Service）: 分布式离线计算 结构化数据的存储和计算, 海量数据仓库的解决方案和大数据的分析和建模
+
+{{< img src="odps-arch.jpg" alt="odps-arch" maxWidth="900px" >}}
+
+odps客户端 
+
+* web: 提供服务
+* sdk: 封装 api
+* clt: 客户端工具，提交命令 
+* ide: 可视化操作
+
+接入层：
+http服务，用户认证，cache, load balance
 
 ## big data and high concurrent
 ### bitmap
@@ -257,6 +346,31 @@ SOLID
   * 5 minimum heap
   code
 
-## 统一接入
+-----
 
-应用接入全站https、私钥落地
+## 运维和监控
+
+### 概念
+
+DevOps: 持续开发，持续测试，持续集成，持续部署，持续监控
+
+{{< img src="devops.jpg" alt="devops" maxWidth="900px" >}}
+
+租户：将资源隔离
+
+### 系统
+
+监控体系：  
+EagleEye/Dapper(google) 分布式调用跟踪系统
+Sunfire（Xflush） 应用可用性监控系统
+Alimonitor 应用监控系统
+
+工具体系：  
+Arthas java诊断工具
+zprofile jvm性能分析工具
+switch 开发和动态配置项管理框架
+sentinel 资源调度控制（限流 降级 授权 调用统计）
+onelog 日志管控系统
+log service(sls) 日志服务实时数据一站式服务
+
+
