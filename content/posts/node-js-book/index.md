@@ -20,5 +20,21 @@ cd /home/admin/{appname}/bin/
 ./nodejsctl pubstart  
 ```
 
+## 多租户hsf服务调用
+
+采用中间件透传租户标的方式
+
+## 多租户环境部署
+
+1 多租户环境部署
+2 通过URL做配置化（生成租户标）
+
+## 日志
+
+错误日志 admin/logs/{app}/common-error.log
+常规记录日志  admin/logs/{app}/{app}-web.log
+应用access日志 admin/{app}/logs/access-123.log
+Nginx Access log admin/cai/logs/cronolog/2021/.log
+
 
 
