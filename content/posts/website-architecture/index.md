@@ -62,6 +62,10 @@ K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容
 
 ---
 
+## 请求链路
+
+{{< img src="request-chain.jpg" alt="request-chain" maxWidth="900px" >}}
+
 ## 分布式服务 Distributed Micro Service  
 
 what is distributed micro service?

@@ -37,4 +37,10 @@ cd /home/admin/{appname}/bin/
 Nginx Access log admin/cai/logs/cronolog/2021/.log
 
 
+## docker
+
+
+把不常变化的内容(如基础RPM、启动脚本等)做成基础镜像，在应用发布的指定Dockerfile中FROM基础镜像，重复的内容不再执行，应用基础镜像被
+推送到全部的构建机器，提高镜像构建速度，再也不用坐在那里干等构建了
+
 
