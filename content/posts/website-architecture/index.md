@@ -27,6 +27,15 @@ DNS服务器： 安装了DNS服务（比如安装BIND）的计算机。 谷歌�
 
 CDN: Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题
 
+节点： 传统的节点是单体的物理机器->单台虚拟机上的服务->轻量级的容器服务 能提供单位服务的逻辑计算资源的集合
+
+网络： 网络工作模式（同步网络、半同步网络、异步网络）
+同步网络： 节点同步执行、消息延迟有限、高效全局锁
+半同步网络： 锁范围放宽
+异步网络： 节点独立执行、消息延迟无上限、无全局锁、部分算法不可行
+
+NTP（网络时间协议）； 逻辑时钟；向量时钟
+
 ### 统一接入
 
 解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）
@@ -75,14 +84,44 @@ what is distributed micro service?
 1 RPC (Remote Process Call)
 {{< img src="rpc.png" alt="rpc" maxWidth="900px" >}}
 
-2 SOA（Service-Oriented Architecture, 像hsf, dubbo)
+2 SOA（Service-Oriented Architecture, 像hsf, dubbo) 面向服务架构
 {{< img src="soa.png" alt="soa" maxWidth="900px" >}}
+{{< img src="soa.jpg" alt="soa" maxWidth="900px" >}}
 
 * 分布式部署
 * 请求分流
 * 数据读写分离
 
+3 MSA 微服务架构
+{{< img src="msa.jpg" alt="msa" maxWidth="900px" >}}
+
+
+
 ### 分布式架构
+
+一致性理论
+
+* CAP（强一致性）
+  * what is CAP
+* ACID（分布式一致性）
+  * what is ACID
+* Base（弱一致性）
+  * [Distributed consensus theory](http://thesecretlivesofdata.com/raft/)
+* 一致性算法： CALM->CRDT->高可用事务+ZAB协议分析->Paxos Raft Gossip
+
+### 分布式应用
+
+文件系统： HDFS FastDFS Ceph mooseFS 
+[对比](https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems?spm=ata.21736010.0.0.30f21d02woZ6di)
+数据库： Hbase(列式存储)、Elasticsearch/mongodb(文档存储)、redis(kv类型)、spanner(关系型)
+计算： 离线hadoop 实时spark 流式storm/flink/blink
+缓存：持久化redis 非持久化memcache
+消息：kafka rabbitmq rocketmq activemq
+监控： zookeeper
+应用：hsf dubbo
+日志：采集flum、存储elasticsearch/solr sls、定位zipkin
+账本：比特币 以太坊
+
 
 **hsf**:  
 {{< img src="hsf-module.png" alt="hsf-module" maxWidth="900px" >}}
@@ -103,14 +142,6 @@ what is distributed micro service?
   * why
 * reverse proxy
   * why
-
-* CAP
-  * what is CAP
-* ACID
-  * what is ACID
-* Base
-* [Distributed consensus theory](http://thesecretlivesofdata.com/raft/)
-
 ### Communication
 
 * RPC Message
