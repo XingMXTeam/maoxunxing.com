@@ -12,7 +12,7 @@ description: "关于数据的思考"
 ---------|----------|---------
  性质 | 这件事是否合规合法 | 保证数据隐私、安全、正确
  受众 | 这件事最终谁是受益方 | 运营、数据分析人员、管理人员
- 利益 | 这件事做完能带来什么收益 |  帮助运营、管理人员等更好地洞见和决策
+ 利益 | 这件事做完能带来什么收益 |  帮助运营、管理人员等更好地洞见和决策， 提升运营效率
  目标 | 要做成一件什么样的事情  |  最好的AE的数据运营平台
  需求 | 怎样把这件事合理的列举出来 | 圈人、选品、AB test实验、数据整合分析、数据可视化、报表制作
  抽象 | 怎么把这件事的主线说明清楚|  输出业务建模/概念建模/系统架构
@@ -30,17 +30,27 @@ description: "关于数据的思考"
  客户等待需求的时间 | B3 | C3 |
  单需求成本 | B3 | C3 |
 
+目标： uv流量占比20%，效率10%
+
 ## 系统对比
 
 系统名 | 地址 | 定位 | 功能特性 | 文档
 ---------|----------|---------|---------|---------
  支付宝数据运营和分析平台 | [deepinsight](https://deepinsight.alipay.com/index.htm#/welcome/home/roleBusiness) | 数据分析解决方案 | 自助分析;报表;快速部署三方系统；接入各类数据源;自定义可视化图表;数据权限和企业打通；数字化系统；多终端 | 
- fbi | B2 | C2  | 
- 指标中心 | [URL](https://idt2.alibaba-inc.com/?spm=ata.21736010.0.0.7fa11813diNtWm) | 提供一个统一接入、统一管理、统一输出的指标平台 | [URL](https://yuque.antfin-inc.com/xiaoxi.bxx/idt)
-
+ fbi | [fbi](https://fbi.alibaba-inc.com/fbi/home.htm) |  对内的数据加工、自助数据分析和数据可视化的一站式解决方案 | 报表搭建;业务门户;自助分析；数据大屏
+ 指标中心 | [idt2](https://idt2.alibaba-inc.com/?spm=ata.21736010.0.0.7fa11813diNtWm) | 提供一个统一接入、统一管理、统一输出的指标平台 | [URL](https://yuque.antfin-inc.com/xiaoxi.bxx/idt)
+ 淘宝运营工作台| [xiaoer](https://xiaoer.alibaba-inc.com/home_v2.htm?spm=a1z2e.8101737.0.0.7c2b4f9bhRnlNz) | 打造数据驱动的智能电商运营  | 圈品等等
 
 ## 方案分析
 
 ## 核心规划
 
-{{< img src="growth.jpg" alt="growth" maxWidth="900px" align="right" >}}
+{{< img src="growth.jpg" alt="growth" maxWidth="900px" align="center" >}}
+
+## 参与者  
+
+PD: 深入业务场景+BD -> 提供解决方案  
+BI: 分析报表效果（ab test前期验证可行性）  
+数仓： 数据建模  
+算法： 图片水印合规等算法支持    
+后端+前端+设计： 产品开发    
