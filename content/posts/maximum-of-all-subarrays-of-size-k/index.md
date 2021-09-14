@@ -63,8 +63,7 @@ class Node {
   }
 }
 class AVLTree {
-  constructor()
-  {
+  constructor() {
     this.root = null
   }
   height(node) {
@@ -134,14 +133,54 @@ class AVLTree {
     node.left = y // change node.left keep node.right
 
     // update nodes
+    node.height = max(this.height(node.left), this.height(node.right)) + 1;
+    x.height = max(this.height(x.left), this.height(x.right)) + 1;
 
     return x
   }
-  leftRotate(node) {
+  leftRotate(x) {
+    const y = x.right;
+    // cache y.left
+    const T2 = y.left;
 
+    y.left = x;
+    x.right = T2;
+
+    x.height = max(this.height(x.left), this.height(x.right)) + 1;
+    y.height = max(this.height(y.left), this.height(y.height)) + 1;
   }
-  
 }
+
+const findMax = (root) => {
+  if(root===null) return null;
+  const data = root.data;
+  const ldata = findMax(root.left);
+  const rdata = findMax(root.right);
+  if(ldata > data) {
+    data = ldata
+  }
+  if(rdata > data) {
+    data = rdata
+  }
+  return data;
+}
+
+const printKMax(arr, k) {
+  const avl = new AVLTree();
+  arr.forEach(i=>{
+    avl.insert(null, i)
+  });
+  // for(let i =0; i<arr.length;i++) {
+    console.log(findMax(avl.root))
+  // }
+}
+
+const testCases() {
+  const arr = [8, 5, 10, 7,9,4,15,12,90,13];
+  printKMax(arr, 3);
+}
+
+testCases()
 
 ```
 
