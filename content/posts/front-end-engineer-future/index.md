@@ -16,8 +16,6 @@ description: "本篇谈谈我的对前端工程师未来的思考"
 * ide
 * 搭建
 * 智能化
-* 微前端
-* PWA
 
 ---
 
@@ -63,3 +61,10 @@ Tensorflow Lite
 怎么考虑ROI？
 
 ## 盘点你的技能树
+
+- [x] SPA
+- [x] MVVM/工程化
+- [x] 微前端
+- [ ] 跨端
+- [x] nodejs
+- [ ] 容器
