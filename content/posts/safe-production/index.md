@@ -1,13 +1,5 @@
 --- 
-draft = true
-date = 2021-09-16T13:18:31+08:00
-title = ""
-description = ""
-slug = "" 
-tags = []
-categories = []
-externalLink = ""
-series = []
+
 ---
 
 ## 编码 
@@ -19,9 +11,11 @@ series = []
 2 静态代码检查
 
 eslint
+eslint-watch
 
 ## 测试
 
+自测
 测试用例
 自动化测试
 异常兜底
@@ -32,4 +26,4 @@ eslint
 
 1 diff + code review
 2 灰度+回滚
-3 线上真实环境验证
+3 线上真实环境验证（公网访问）

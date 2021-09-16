@@ -1,5 +1,5 @@
 ---
-title: "nodejs手册"
+title: "nodejs你需要知道的"
 date: 2021-08-27T10:20:36+08:00
 draft: true
 tags:
@@ -36,11 +36,11 @@ cd /home/admin/{appname}/bin/
 应用access日志 admin/{app}/logs/access-123.log
 Nginx Access log admin/cai/logs/cronolog/2021/.log
 
-
 ## docker
-
 
 把不常变化的内容(如基础RPM、启动脚本等)做成基础镜像，在应用发布的指定Dockerfile中FROM基础镜像，重复的内容不再执行，应用基础镜像被
 推送到全部的构建机器，提高镜像构建速度，再也不用坐在那里干等构建了
 
+## 工具
 
+nodemon : watch file change
