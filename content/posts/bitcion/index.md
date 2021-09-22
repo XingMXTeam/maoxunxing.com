@@ -1,27 +1,18 @@
 ---
-title: "比特币的未来"
+title: "我对数字货币的理解"
 date: 2021-09-09
 tags:
-- cloud
-description: "云原生"
+- bitcion
+description: "比特币、原生币、代币、NFT到底都是个啥，从中能看到什么机遇"
 ---
 
 ## 概念
 
-原生币 代币 同质化代币 非同质化代币（NFT) 
+概念 | 典型作品 | 平台/市场
+---------|----------|---------
+ 非同质化代币（NFT)  | cryptopunks/cryptokitties.co/nbatopshot.com/cryptoslam.io | opensea.io/sandbox.game/淘宝店发行/Rarible/幻核
+ 同质化代币 | B2 | C2
+ 原生币 | B3 | C3
+ 代币 | B3 | C3
 
-cryptopunks
-cryptokitties.co
-nba top shot/nbatopshot.com
-
-cryptoslam.io
-opensea.io(NFT市场)
-
-sandbox.game/cn/map
-
-淘宝店发行/Rarible/幻核
-
-
-
-
-
+未完待续...

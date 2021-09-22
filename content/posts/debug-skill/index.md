@@ -1,5 +1,10 @@
 --- 
-
+title: "前端调试技巧"
+date: 2021-09-22
+draft: true
+tags:
+- debug
+description: "debug"
 ---
 
 ## chrome 保存日志

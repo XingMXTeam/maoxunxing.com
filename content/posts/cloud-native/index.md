@@ -1,20 +1,22 @@
 ---
-title: "云原生"
+title: "我对云原生的理解"
 date: 2021-09-04
+draft: true
 tags:
-- cloud
-description: "云原生"
+- cloud native
+description: "云原生, cloud-native"
 ---
 
 ## 概念
 
-云原生： 适用于云计算的架构理念，实践云原生技术理念的应用或者业务可以最大化享受云计算的技术红利，包括弹性计算、按量计费、无厂商绑定、高SLA
-云计算时代： 以计算为中心，存储、网络、计算三大件
+概念 | 解释 | 其他
+---------|----------|---------
+ 云原生 <img width=260/> | 适用于云计算的架构理念，实践云原生技术理念的应用或者业务可以最大化享受云计算的技术红利，包括弹性计算、按量计费、无厂商绑定、高SLA | <img width=200/>
+ 云计算时代 | 以计算为中心，存储、网络、计算三大件 | 
+ 云原生技术 | 容器、声明式API、不可变基础设施、服务网络、Serverless | 
 
-云原生技术： 容器、声明式API、不可变基础设施、服务网络、Serverless
-
-{{< img src="cloud-arch.png" alt="cloud-arch" maxWidth="900px" caption="has circle" >}}
-
+<!-- {{< img src="cloud-arch.png" alt="cloud-arch" maxWidth="900px" caption="has circle" >}} -->
+<!-- 
 统一调度，统一资源池，统一Mesh/统一应用开发/统一云原生开源
 三个领先： 容器、中间件、Serverless
 三个制高点：OAM、安全容器、中间件
@@ -40,4 +42,6 @@ description: "云原生"
 
 可信原生
 
+ -->
 
+未完待续..

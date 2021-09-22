@@ -1,11 +1,10 @@
-+++ 
-draft = true
-date = 2021-08-25T20:04:40+08:00
-title = ""
-description = ""
-slug = "" 
-tags = []
-categories = []
-externalLink = ""
-series = []
-+++
+--- 
+title: "我对Fass的理解"
+date: 2021-09-22
+draft: true
+tags:
+- front-end
+- programming
+- fass
+description: ""
+---

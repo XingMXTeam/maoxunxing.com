@@ -1,11 +1,8 @@
-+++ 
-draft = true
-date = 2021-08-25T20:05:52+08:00
-title = ""
-description = ""
-slug = "" 
-tags = []
-categories = []
-externalLink = ""
-series = []
-+++
+---
+title: "如何实现插件能力"
+date: 2021-09-22
+draft: true
+tags:
+- plugin
+description: "plugin"
+---
