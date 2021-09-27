@@ -110,4 +110,4 @@ Column A | data类需求 | information类需求 | Insight类需求
 ## OKR
 
 O是目标
-KR是 关键能力有哪些，结果是什么 
+KR是 关键能力有哪些，结果是什么
