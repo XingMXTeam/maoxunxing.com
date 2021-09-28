@@ -27,7 +27,7 @@ buildFuture = true
     posts = "/:filename/"
 
 [social]
-twitter = "codediggerfelix"
+twitter = "maoxunxing"
 
 [params]
     author = "Mao Xunxing"
@@ -72,14 +72,14 @@ resampleFilter = "Lanczos"
     name = "Blog"
     weight = 1
     url  = "/posts/"
-[[menu.main]]
-    name = "Retrospectives"
-    weight = 2
-    url = "/retrospectives/"
-[[menu.main]]
-    name = "Projects"
-    weight = 3
-    url = "/projects/"
+#[[menu.main]]
+#    name = "Retrospectives"
+#    weight = 2
+#    url = "/retrospectives/"
+#[[menu.main]]
+#    name = "Projects"
+#    weight = 3
+#    url = "/projects/"
 [[menu.main]]
     name = "Book Reports"
     weight = 4

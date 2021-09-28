@@ -1,6 +1,7 @@
 ---
 title: "计算机底层"
 date: 2021-08-24
+draft: true
 tags:
 - computer
 description: "关于计算机底层的理解"

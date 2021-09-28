@@ -1,6 +1,7 @@
 ---
 title: "我对A/B实验的理解"
 date: 2021-09-09
+draft: true
 tags:
 - A/B Test
 - User Growth
