@@ -5,6 +5,8 @@ tags:
 - A/B Test
 - User Growth
 description: "我对A/B实验的理解"
+images:
+- ab-test/ab.png
 ---
 
 ## 关键概念

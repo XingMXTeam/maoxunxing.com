@@ -2,6 +2,8 @@
 title: "我的人生规划"
 date: 2021-09-17T13:12:13+08:00
 draft: true
+images:
+- target-life/life-target.jpeg
 ---
 
 ## 整体思路

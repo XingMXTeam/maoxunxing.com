@@ -4,6 +4,8 @@ date: 2021-08-24
 tags:
 - computer
 description: "关于计算机底层的理解"
+images:
+- code-computer/code-computer.jpeg
 ---
 
 ## 编码原理

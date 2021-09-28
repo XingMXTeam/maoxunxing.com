@@ -6,6 +6,8 @@ tags:
 - component
 - front-end
 description: "前端组件、效率工程"
+images:
+- component-thought/web-components.png
 ---
 ## 关键概念
 

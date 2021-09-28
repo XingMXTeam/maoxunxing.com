@@ -7,4 +7,6 @@ tags:
 - programming
 - fass
 description: ""
+images:
+- fass/fass.jpeg
 ---

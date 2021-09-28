@@ -3,6 +3,8 @@ title: "论如何成长"
 date: 2021-08-27T10:20:36+08:00
 draft: true
 description: ""
+images:
+- how-to-improve/improve.jpeg
 ---
 
 ## 能力要求

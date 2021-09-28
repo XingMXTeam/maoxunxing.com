@@ -9,6 +9,8 @@ tags:
 - AVL
 - max-top-heap
 description: "I am learning algorithm."
+images:
+- maximum-of-all-subarrays-of-size-k/maxresdefault.jpeg
 ---
 ## Question Definition(S & T)
 

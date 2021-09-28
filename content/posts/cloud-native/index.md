@@ -5,6 +5,8 @@ draft: true
 tags:
 - cloud native
 description: "云原生, cloud-native"
+images:
+- cloud-native/cloud-native.jpeg
 ---
 
 ## 概念

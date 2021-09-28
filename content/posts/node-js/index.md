@@ -6,6 +6,8 @@ tags:
 - nodejs
 - programming
 description: ""
+images:
+- node-js/node-js.jpeg
 ---
 
 ## 运维

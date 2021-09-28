@@ -6,6 +6,9 @@ tags:
 - career
 - front-end
 description: "本篇谈谈我的对前端工程师未来的思考"
+images:
+- images:
+- exception-handle/eception-handle.png/front-end-future.png
 ---
 
 ## 未来趋势
@@ -122,8 +125,46 @@ Tensorflow Lite
 
 怎么高效地管理组件
 
+### spa
+
+pv缺失
+
 ### 团队建设
 
 * 分享机制
   * 做成品牌
   * 轻松 启发式，避免述职 高大空的分享
+
+### 安全生产
+
+
+### 编码 
+
+1 代码规范
+
+命名；编码格式统一；tab缩进；分号
+
+2 静态代码检查
+
+eslint
+eslint-watch
+
+### 测试
+
+自测
+测试用例
+自动化测试
+异常兜底
+线上监控报警： 接口 jserror pv环比下降 白屏监控
+物理影响面+通知业务方
+
+### 发布
+
+1 diff + code review
+2 灰度+回滚
+3 线上真实环境验证（公网访问）
+
+### 前端监控
+
+采集方案： 基于Element timing+Performance Observer, 自定义属性上报
+实时计算海量数据的思路： 空间换时间->提前计算好 数据立方 需要的时候取出来就行

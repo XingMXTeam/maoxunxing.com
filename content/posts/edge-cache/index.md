@@ -7,6 +7,8 @@ tags:
 - programming
 - edge-cache
 description: "This topic is about how to use edge cache to promote the app or website's performance."
+images:
+- edge-cache/edge-cache.png
 ---
 
 ## Situation

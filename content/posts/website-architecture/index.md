@@ -2,6 +2,8 @@
 title: "架构师应该知道的一切"
 date: 2021-08-06T15:25:06+08:00
 draft: true
+images:
+- website-architecture/backend-arch.png
 ---
 ## 基础技术
 

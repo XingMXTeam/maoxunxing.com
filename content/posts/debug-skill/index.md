@@ -5,6 +5,8 @@ draft: true
 tags:
 - debug
 description: "debug"
+images:
+- debug-skill/debug-skill.jpeg
 ---
 
 ## chrome 保存日志

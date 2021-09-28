@@ -5,4 +5,6 @@ draft: true
 tags:
 - plugin
 description: "plugin"
+images:
+- how-to-implement-a-plugin-system/front-end-plugin.png
 ---

@@ -7,6 +7,8 @@ tags:
 - programming
 - interview
 description: "I am learning algorithm.This article talks about Diff DOM algorithm."
+images:
+- diff-dom/diffDOM.png
 ---
 ## Question Definition
 

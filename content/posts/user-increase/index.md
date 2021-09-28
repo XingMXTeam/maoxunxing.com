@@ -3,6 +3,8 @@ title: "运营知识"
 date: 2021-09-24
 draft: true
 description: "本篇谈谈我对运营相关的总结"
+images:
+- user-increase/op.png
 ---
 
 ## 用增策略

@@ -3,10 +3,10 @@ title: "开源的价值"
 date: 2021-08-27T10:20:36+08:00
 draft: true
 tags:
-- algorithm
-- programming
-- interview
-description: "I am learning algorithm.This article talks about Diff DOM algorithm."
+- open-source
+description: "开源的重要意义"
+images:
+- open-source-value/open-source-value.webp
 ---
 
 ## 概念

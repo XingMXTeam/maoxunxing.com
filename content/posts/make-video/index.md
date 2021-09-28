@@ -2,6 +2,8 @@
 title: "视频制作"
 date: 2021-09-27T18:58:45+08:00
 draft: true
+images:
+- make-video/video.jpeg
 ---
 
 ## 流程
