@@ -76,10 +76,10 @@ resampleFilter = "Lanczos"
 #    name = "Retrospectives"
 #    weight = 2
 #    url = "/retrospectives/"
-#[[menu.main]]
-#    name = "Projects"
-#    weight = 3
-#    url = "/projects/"
+[[menu.main]]
+   name = "Projects"
+   weight = 3
+   url = "/projects/"
 [[menu.main]]
     name = "Book Reports"
     weight = 4
