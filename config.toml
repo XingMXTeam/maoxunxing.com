@@ -66,6 +66,18 @@ resampleFilter = "Lanczos"
     icon = "fab fa-twitter fa-2x"
     weight = 3
     url = "https://twitter.com/maoxunxing/"
+[[params.social]]
+    name = "Zhihu"
+    icon = "fab fa-zhihu fa-2x"
+    weight = 3
+    url = "https://www.zhihu.com/people/feng-zi-63-44"
+[[params.social]]
+    name = "Douban"
+    link = "https://img.icons8.com/material/48/000000/douban.png"
+    weight = 3
+    clazz = "douban"
+    url = "https://www.douban.com/people/maoxingxing/"
+
 
 # Menu links
 [[menu.main]]
