@@ -1,0 +1,53 @@
+[blogTitle]
+other = "Mao Xunxing"
+
+[homeTitle]
+other = "Hi, my name is Mao Xunxing."
+
+[homeSubTitle1]
+other = "I love to"
+
+[homeSubTitle2]
+other = "write"
+
+[homeSubTitle3]
+other = "code"
+
+[homeSubTitle4]
+other = "and"
+
+[homeSubTitle5]
+other = "build something cool"
+
+[homeSubTitle6]
+other = "Now I'm a front-end engineer working in Hangzhou. This site is mainly a record of my personal life."
+
+[homeCat1]
+other = "Articles about Algorithm"
+
+[homeCat1Article1]
+other = "Detect Cycle in an Undirected Graph"
+
+[homeCat1Article2]
+other = "Given N, Find the total number of unique BSTs"
+
+[homeCat2]
+other = "Articles about Growth"
+
+[homeCat2Article1]
+other = "How to Growth"
+
+[homeCat2Article2]
+other = "How to Stand Out"
+
+[homeCat2Article3]
+other = "How To Work Hard"
+
+[homeCat3]
+other = "Articles about Software Development"
+
+[homeCat3Article1]
+other = "Web Architecture concept understanding"
+
+[homeCat3Article2]
+other = "Underlying computer principles"

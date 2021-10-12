@@ -1,0 +1,53 @@
+[blogTitle]
+other = "毛训星"
+
+[homeTitle]
+other = "你好，我是毛训星"
+
+[homeSubTitle1]
+other = "我热爱"
+
+[homeSubTitle2]
+other = "写作"
+
+[homeSubTitle3]
+other = "编程"
+
+[homeSubTitle4]
+other = "和"
+
+[homeSubTitle5]
+other = "创建有趣的工具"
+
+[homeSubTitle6]
+other = "现在我是一名前端工程师，在杭州工作。这个网站主要是记录我的个人生活。"
+
+[homeCat1]
+other = "关于算法的文章"
+
+[homeCat1Article1]
+other = "检测无定向图中的循环"
+
+[homeCat1Article2]
+other = "给出N，求唯一BST的总数"
+
+[homeCat2]
+other = "关于成长的文章"
+
+[homeCat2Article1]
+other = "论如何成长"
+
+[homeCat2Article2]
+other = "论如何脱颖而出"
+
+[homeCat2Article3]
+other = "论如何努力工作"
+
+[homeCat3]
+other = "关于软件开发的文章"
+
+[homeCat3Article1]
+other = "Web架构概念理解"
+
+[homeCat3Article2]
+other = "计算机底层原理"

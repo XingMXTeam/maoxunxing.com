@@ -3,6 +3,7 @@ title = "maoxunxing"
 theme = "hugo-coder-xingmxteam"
 languagecode = "en"
 defaultcontentlanguage = "en"
+#defaultContentLanguageInSubdir = "true"
 
 paginate = 10
 canonifyurls = true
@@ -15,6 +16,19 @@ pygmentscodefencesguesssyntax = true
 googleAnalytics = "UA-199510588-1"
 
 buildFuture = true
+
+[languages]
+  [languages.zh-CN]
+    #contentDir = "content/zh-CN" #Simplified Chinese
+    weight = 2
+    languageName = "简体中文" # Name shown in the main menu
+    title = "毛训星"
+
+  [languages.en]
+    #contentDir = "content/en" #English
+    languageName = "English" # Name shown in the main menu
+    weight = 1
+    title = 'maoxunxing'
 
 [markup]
   [markup.highlight]
@@ -78,25 +92,36 @@ resampleFilter = "Lanczos"
     clazz = "douban"
     url = "https://www.douban.com/people/maoxingxing/"
 
-
-# Menu links
-[[menu.main]]
+[[languages.en.menu.main]]
     name = "Blog"
+    url = "/posts/"
     weight = 1
-    url  = "/posts/"
-#[[menu.main]]
-#    name = "Retrospectives"
-#    weight = 2
-#    url = "/retrospectives/"
-[[menu.main]]
-   name = "Projects"
-   weight = 3
-   url = "/projects/"
-[[menu.main]]
+[[languages.en.menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+[[languages.en.menu.main]]
     name = "Book Reports"
-    weight = 4
     url = "/book-reports/"
-[[menu.main]]
+    weight = 3
+[[languages.en.menu.main]]
     name = "About"
-    weight = 5
     url = "/about/"
+    weight = 4
+
+[[languages.zh-CN.menu.main]]
+  name = "博客"
+  url = "/posts/"
+  weight = 1
+[[languages.zh-CN.menu.main]]
+  name = "项目"
+  url = "/projects/"
+  weight = 2
+[[languages.zh-CN.menu.main]]
+  name = "读书报告"
+  url = "/book-reports/"
+  weight = 3
+[[languages.zh-CN.menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 4

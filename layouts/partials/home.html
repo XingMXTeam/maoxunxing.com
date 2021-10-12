@@ -2,11 +2,10 @@
 <section class="container centered">
   <div>
     <p>
-      Hi, my name is Mao Xunxing.
+      {{ i18n "homeTitle" }}
     </p>
     <p>
-      I love to <a href='/posts/'>write</a>, <a href='https://github.com/XingMXTeam' target='_blank'>code</a> and <a href='/projects/'>build something cool</a>. Now I'm a front-end engineer working in Hangzhou.
-      This site is mainly a record of my personal life.
+      {{ i18n "homeSubTitle1" }} <a href='/posts/'>{{ i18n "homeSubTitle2" }}</a>, <a href='https://github.com/XingMXTeam' target='_blank'>{{ i18n "homeSubTitle3" }}</a> {{ i18n "homeSubTitle4" }} <a href='/projects/'>{{ i18n "homeSubTitle5" }}</a>. {{ i18n "homeSubTitle6" }}
     </p>
 
     <div class="lists">
@@ -19,11 +18,11 @@
       </div>
 
       <div>
-        <h2>Articles about Algorithm</h2>
+        <h2>{{ i18n "homeCat1" }}</h2>
 
         <ul>
-          <li><a href="/detect-cycle-in-an-undirected-graph/">Detect Cycle in an Undirected Graph</a></li>
-          <li><a href="/find-the-total-number-of-unique-bsts-of-n/">Given N, Find the total number of unique BSTs</a></li>
+          <li><a href="/detect-cycle-in-an-undirected-graph/">{{ T "homeCat1Article1" }}</a></li>
+          <li><a href="/find-the-total-number-of-unique-bsts-of-n/">{{ T "homeCat1Article2" }}</a></li>
          <!--  <li><a href="/human-code-reviews-1/">How to Do Code Reviews Like a Human</a></li>
           <li><a href="/good-developers-bad-tests/">Why Good Developers Write Bad Unit Tests</a></li>
           <li><a href="/painless-web-app-testing/">End-to-End Testing Web Apps: The Painless Way</a></li> -->
@@ -31,21 +30,21 @@
       </div>
 
       <div>
-        <h2>Articles about Growth</h2>
+        <h2>{{ i18n "homeCat2" }}</h2>
 
         <ul>
-          <li><a href="/how-to-improve/">论如何成长</a></li>
-          <li><a href="/how-to-be-different/">如何脱颖而出</a></li>
-          <li><a href="/how-to-work-hard/">How To Work Hard</a></li>
+          <li><a href="/how-to-improve/">{{ T "homeCat2Article1" }}</a></li>
+          <li><a href="/how-to-be-different/">{{ T "homeCat2Article2" }}</a></li>
+          <li><a href="/how-to-work-hard/">{{ T "homeCat2Article3" }}</a></li>
         </ul>
       </div>
 
       <div>
-        <h2>Articles about Software Development</h2>
+        <h2>{{ i18n "homeCat3" }}</h2>
 
         <ul>
-          <li><a href="/website-architecture/">Web架构概念理解</a></li>
-          <li><a href="/code-computer/">计算机底层原理</a></li>
+          <li><a href="/website-architecture/">{{ i18n "homeCat3Article1" }}</a></li>
+          <li><a href="/code-computer/">{{ i18n "homeCat3Article2" }}</a></li>
           <!-- <li><a href="/hiring-content-writers/">Hiring Content Writers: A Guide for Small Businesses</a></li> -->
         </ul>
       </div>

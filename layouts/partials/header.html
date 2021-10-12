@@ -7,7 +7,7 @@
           <img src="{{ . | relURL }}" alt="Author photo">
         {{ end }}
       </a>
-      <a class="name" href="{{ .Site.BaseURL | relLangURL }}">Mao Xunxing</a>
+      <a class="name" href="{{ .Site.BaseURL | relLangURL }}">{{ i18n "blogTitle" }}</a>
     </div>
 
     <input type="checkbox" id="menu-toggle" />
@@ -20,6 +20,25 @@
           </li>
         {{ end }}
       {{ end }}
+
+      {{ if .Site.IsMultiLingual }}
+        {{ $node := . }}
+        {{ .Scratch.Set "separator" true }}
+        {{ range .Site.Home.AllTranslations }}
+          {{ if ne $.Site.Language .Language }}
+            {{ if $node.Scratch.Get "separator" }}
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              {{ $node.Scratch.Set "separator" false }}
+            {{ end }}
+            <li class="navigation-item">
+              <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
     </ul>
   </section>
 </nav>
