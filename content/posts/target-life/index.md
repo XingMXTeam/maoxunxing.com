@@ -2,7 +2,7 @@
 title: "Talk about my recent life planning"
 date: 2021-09-17T13:12:13+08:00
 tags:
-- career
+- Growth
 description: "On how to define yourself and plan your life, here are some of my thoughts"
 images:
 - target-life/life-target.jpeg

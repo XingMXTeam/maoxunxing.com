@@ -1,6 +1,8 @@
 ---
 title: "Web Architecture concept understanding"
 date: 2021-08-06T15:25:06+08:00
+tags:
+- Architecture
 images:
 - website-architecture/backend-arch.png
 description: "Web Architecture concept understanding"

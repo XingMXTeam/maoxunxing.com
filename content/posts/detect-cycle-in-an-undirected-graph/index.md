@@ -2,11 +2,9 @@
 title: "Detect Cycle in an Undirected Graph"
 date: 2021-08-24
 tags:
-- algorithm
-- graphs
-- programming
-- union-find
-- interview
+- Algorithm
+- Tree
+- Interview
 description: "I am learning algorithm. This article talks about undirected graph."
 images:
 - detect-cycle-in-an-undirected-graph/graph.png

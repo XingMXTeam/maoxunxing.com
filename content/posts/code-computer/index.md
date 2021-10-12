@@ -1,86 +1,86 @@
 ---
-title: "计算机底层"
+title: "Computer Basement"
 date: 2021-08-24
 tags:
-- computer
-description: "关于计算机底层的理解"
+- Operation System
+description: "An understanding of the underlying layers of computers"
 images:
 - code-computer/code-computer.jpeg
 ---
 
-## 编码原理
+## Coding principles
 
-### 数字编码
+### Numeric encoding
 
-**为什么会有补码？**
-补码是为了方便计算机的运算, 计算计比较容易做加法。 比如5+（-3）通过补码计算
-0101（5）
-0011（3） -> 取反 1100 ->加一 1101 
-0101+1101=100010 截断后 0010（-2） 符合预期结果（原码： 首位为符号位 反码： 除了符号位，所有位取反 都不满足预期）
+**Why is there a complement code?**
+Complement codes are used to facilitate computer operations, so that calculations can be added more easily. For example, 5+(-3) is calculated by using the complement
+0101 (5)
+0011 (3) -> Inverse 1100 -> Add one 1101 
+0101 + 1101 = 100010 truncated 0010 (-2) meets the expected result (original code: first bit is the sign bit inverse code: all bits are inverted except the sign bit, which does not meet the expectation)
 
-补码定义： 正数不变，负数取反并且+1 
+Definition of complement: positive number remains the same, negative number is inverted and +1 
 
-**为什么表示范围是[-128,127] ?**
-4位二进制补码表示： 
-0000（-0） 0000（0） 
-1111（-1)  0001（1） 
-1110 (-2)  0010（2） 
+**Why is the range [-128,127] represented?**
+The 4-bit binary complement code represents. 
+0000 (-0) 0000 (0) 
+1111 (-1) 0001 (1) 
+1110 (-2) 0010 (2) 
 ...       ...
-1011(-5)   0101（5） 
-1010(-6)   0110（6） 
-1001(-7)   0111（7）
+1011 (-5) 0101 (5) 
+1010 (-6) 0110 (6) 
+1001 (-7) 0111 (7)
 
-范围是 [-7, 7] 1000没有被表示 刚好就会-8  所以最终是[-8, 7] 符号位参与运算，但是结果符合预期
--8的补码表示： 1000（原） -> 取反 0111 -> 加一 1000
+The range is [-7, 7] 1000 is not represented and would just be -8 so it ends up being [-8, 7] The sign bit is involved, but the result is as expected
+Complement representation of -8: 1000 (original) -> inverted 0111 -> add one 1000
 
-**为什么补码要反码+1？**
-4位二进制补码表示： 
-0000（-0） 0000（0） 
-1111（-1)  0001（1） 
-1110 (-2)  0010（2） 
+**Why does the complement code need to be inverted + 1?**
+The 4-bit binary complement code represents. 
+0000 (-0) 0000 (0) 
+1111 (-1) 0001 (1) 
+1110 (-2) 0010 (2) 
 ...       ...
-1011(-5)   0101（5） 
-1010(-6)   0110（6） 
-1001(-7)   0111（7）
+1011 (-5) 0101 (5) 
+1010 (-6) 0110 (6) 
+1001 (-7) 0111 (7)
 
-+1后，0位表示一致，并且符号位参与运算刚好符合预期
+After +1, the 0-bit representation is consistent and the sign bit is involved in the operation just as expected
 
-**为什么小数会有精度问题？**
-因为二进制的小数只能用固定的数字组合，比如0.2 无法用二进制组合精确表示
+**Why do decimals have precision problems?**
+Because binary decimals can only be represented by a fixed combination of digits, e.g. 0.2 cannot be represented precisely in binary combinations
 
-### 文本编码
+### Text encoding
 
-**概念**：  
+**Concept**.  
 
-码表（字符集）： 字符和数字的对应关系 （接口）
-字符编码： 具体实现
-码点： 表中的每个数字（可能由一个或者多个码元组成）
+Code list (character set): correspondence between characters and numbers (interface)
+Character encoding: concrete implementation
+Code points: each number in the table (may consist of one or more code elements)
 
-**发展轨迹**：  
-ASCII(英文和特殊字符) : 一个字节中的7位 -> EASCII字符集： ISO 8859-1  -> GB2312 -> GBK： GBK编码（汉字） -> GB18030 -> Unicode字符集 ：一般unicode编码指UTF-16编码 变长编码、2字节码元、有字节序问题， UTF-8是变长编码 单字节码元 无字节序问题
+**track of development**.  
+ASCII (English and special characters) : 7 bits in a byte -> EASCII character set : ISO 8859-1 -> GB2312 -> GBK : GBK encoding (Chinese characters) -> GB18030 -> Unicode character set : general unicode encoding means UTF-16 encoding Variable-length encoding, 2-byte code element, byte order problem, UTF-8 is variable-length encoding -8 is variable length encoding single byte code element no byte order problem
 
-初始化->本地化（GB表示国标）->国际化->效率化
+Initialisation -> localisation (GB for GB) -> internationalisation -> efficiency
 
-### 多媒体编码
+### Multimedia encoding
 
-音频： 一定时间内采集有限的样本表示。 采样率和模拟信号频率有关，每秒40000个样本 编码方式AAC
-图像： 光栅图（解析度： 单位面积像素数，色彩深度： 像素位数量）/矢量图（数学公式计算像素分布）
-视频： 帧 由图片构成，多帧构成视频流。 编码方式MPEG-1, MPEG-2, MPEG-4, H.264, H.265
+Audio: representation of a limited number of samples collected in a given time. Sampling rate is related to the frequency of the analogue signal, 40,000 samples per second Encoding method AAC
+Image: raster map (resolution: number of pixels per unit area, colour depth: number of pixel bits) / vector map (mathematical formula to calculate pixel distribution)
+Video: Frames Composed of pictures, multiple frames form a video stream. Encoding methods MPEG-1, MPEG-2, MPEG-4, H.264, H.265
 
-## 运算的本质
+## Nature of the operation
 
-### 概念
+### Concepts
 
-逻辑运算中的与、或、非、异或
+The logical operations of with, or, non, and iso-or
 
-通过逻辑模拟可以实现以上的逻辑运算。输入是开关，输出一般是LED灯(有颜色的灯)。芯片一般是实现逻辑运算，比如7486（异或门）芯片，会暴露一些引脚出来，比如一个接电源，一个接地，其他接输入，表示输出等
+The above logical operations can be realised by means of logic simulation. The input is a switch and the output is usually an LED (coloured light). The chip generally implements logic operations, such as the 7486 (iso-or gate) chip, which will expose some pins out, such as one to power, one to ground, others to input, indicating output, etc
 
-### 半加器：不考虑进位， 单位
+### Half adder: disregarding the feed, unit
 
 Cout = X * Y
 S = X ⊕ Y
 
-### 全加器: 考虑进位， 单位
+### Full adder: taking into account rounding, units
 
 ``` 
 S = X ⊕ Y ⊕ Cin
@@ -88,60 +88,53 @@ S = X ⊕ Y ⊕ Cin
 Cout = (X*Y) + ((X⊕Y)*Cin)
 ```
 
-### 两位加法机
+### Two-bit adding machine
 
-### 多位加法机
-### 记忆加法机
+### Multi-bit adding machine
+### Memory adding machine
 
-保存上次计算的结果
+Save the result of the last calculation
 
-### 选择加法机
+### Selecting an adding machine
 
-多弄几个记忆加法器，避免输错时重新来过。
+Get a few more memory adders to avoid having to start again if you make a mistake.
 
-### 自动加法机
+### Automatic adding machine
 
-按一下开关，自动自动输入并且把所有数字加起来。 
+Automatically enters and adds up all the numbers with the press of a switch. 
 
-### 自由加法机
+### Free adding machine
 
-可控制只计算部分的数字
+Control to calculate only some of the numbers
 
-### 对比现代计算机
+### Comparison with modern computers
 
-目前的计算机能进行10亿次的加法运算。计算机包含
-1 存储器（存储箱：用于存储输入的数字，要执行的代码，计算的结果）
-2 运算器（累加器：计算两个数字相加）
-3 控制器（控制板：切换开关）
-4 输入设备（输入面板：输入开关）
-5 输出设备（输出灯泡：灯泡现实输出数据）
+Current computers are capable of performing a billion addition operations. Computers contain
+1 memory (memory box: for storing the numbers entered, the code to be executed, the result of the calculation)
+2 an operator (accumulator: to calculate the sum of two numbers)
+3 Controller (control panel: switches)
+4 Input device (input panel: input switch)
+5 Output device (output bulb: bulb reality output data)
 
-以上包含了：输入、输出、内存、寻址、译码、指令、算术逻辑单元等概念
+The above contains concepts such as: input, output, memory, addressing, decoding, instructions, arithmetic logic units, etc.
 
-<!-- 
-键盘输入数字->产生电压（高低电平 信号？） 触发输入总线中断程序->数字输入到内存区域，同时分配内存地址。 而加法机在操作输入面板每输入一个数字，需要通过选择器制定记忆盒子来存储数组，记忆盒子的编号对应了选择器的序号，也就是内存地址
+Programming is the process of storing a series of instructions into memory and allowing the computer to execute these instructions step by step. Encapsulating some common instructions creates the operating system.
 
-计算机加法按键，计算机会将数字所在内存地址加载到CPU进行加法运算。加法机需要写代码到记忆盒子，第一行是加法操作代码，第二三行是地址编码。编码完成后，启动异步计数器（周期性扫描记忆盒子的代码），逐行执行，异步计数器执行完后，记忆盒子的数据就被加载到累加器。数据通过寻址（通过译码器寻址数据记忆盒子的过程称为寻址过程）传输到累加器运算后存储到锁存器盒子，然后通过灯泡显示出来。
-
- -->
-
-编程就是把一系列指令存到内存，让计算机逐步执行这些指令。把一些常用指令封装起来就形成了操作系统。
-
-### 虚拟电路模拟
+### Virtual Circuit Simulation
 
 https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html
 
-### 解释器和编译器的区别
+### The difference between an interpreter and a compiler
 
-代码在执行前都需要通过语法解析器，将输入的代码字符串转换为AST(抽象语法树)
+Before code can be executed it needs to pass through a syntax parser, which converts the input string of code into an AST (abstract syntax tree)
 
-一般解释器解释执行程序时会经过如下步骤：  
-1 Lexer（词法分析器）读取代码，将代码转换为token序列  
-2 Parser(语法分析器) 把读到的Token序列转换为AST（大部分情况Lexer是Parser的一部分）  
-3 对AST进行Lowering(化简AST)或者Desugar(把语法糖的AST节点转换为标准等价AST节点)  
-4 Interpreter递归执行AST  
+Generally an interpreter will go through the following steps when interpreting a program for execution.  
+1 Lexer (lexical parser) reads the code and converts it into a sequence of tokens  
+2 Parser converts the read sequence of tokens into an AST (in most cases Lexer is part of Parser)  
+3 Lowering (simplifying the AST) or Desugar (converting the AST node from syntactic sugar to the standard equivalent AST node) of the AST  
+4 Interpreter recursively executes the AST  
 
-解释器直接解释执行AST，并返回最终结果：
+The interpreter interprets the execution of the AST directly and returns the final result as follows.
 
 ``` js
 function interpret(ast) {
@@ -156,23 +149,23 @@ function interpret(ast) {
 }
 ```
 
-编译器: 把AST翻译成目标语言，比如汇编
+Compiler: translates the AST into the target language, e.g. assembly
 
 ``` js
-// 假定为目标机器为栈式虚拟机，然后通过exec函数执行
+// Assume that the target machine is a stack VM, then execute it via the exec function
 function compile(ast) {
   switch(ast.type) {
     case 'number': return "ds.push("+ast.value+")\n";
     case 'negative':
       return "ds.push(-ds.pop())\n";
     case 'op':
-      return compile(ast.v1) + compile(ast.v2) + "ds.push(ds.pop() " + ast.value + "  ds.pop())\n";
+      return compile(ast.v1) + compile(ast.v2) + "ds.push(ds.pop() " + ast.value + " ds.pop())\n";
   }
 }
 
 ```
 
-将ast的遍历和实现分离，每一步操作封装为单独的函数
+Separate the traversal and implementation of ast, and encapsulate each step of the operation into a separate function
 
 ``` js
 function interpret(ast) {
@@ -187,18 +180,17 @@ function interpret(ast) {
 }
 ```
 
-## 代码的本质
+## The nature of code
 
-通过代码控制机器，代码是人阅读的指令。 主要有两大要素数据和操作（判断、选择、循环、分支等）。
+The machine is controlled through code, which is the instruction that a human reads. There are two main elements data and operations (judgments, selections, loops, branches, etc.).
 
+### Memory model
 
-### 内存模型
+The latch (a huge array composed of 64 bits) of [the nature of operations](## the nature of operations) is, in essence, memory.
 
-[运算的本质](#运算的本质)的锁存器（64位构成的庞大数组），本质就是内存。
+Sequential execution: the code is compiled into a single instruction still in memory (the execution area allocated by the operating system), the counter progressively executes the memory execution and returns the result
 
-顺序执行： 代码编译成一条条指令还在到内存（操作系统分配的执行区域），计数器逐步执行内存的执行，返回结果
+Branch selection: jumping to the corresponding address to execute the instruction
 
-分支选择： 跳到对应地址执行指令
-
-嵌套执行： 函数执行会在内存开辟一组连续的内存空间。 函数代码执行前根据参数数量、参数大小，计算分配栈空间，栈底为内存高地址方向
-执行过程的活动记录，由标记顶部位置的帧指针和标记底部位置的栈指针定义。当执行完毕，帧指针指向下一条指令地址
+Nested execution: the execution of a function opens up a contiguous set of memory spaces in memory. Before the execution of the function code, the stack space is allocated according to the number of arguments and their size, and the bottom of the stack is in the direction of the high address of the memory
+The active record of the execution process is defined by a frame pointer marking the top position and a stack pointer marking the bottom position. When execution is complete, the frame pointer points to the address of the next instruction

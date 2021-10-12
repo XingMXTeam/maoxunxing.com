@@ -1,6 +1,8 @@
 ---
 title: "Web架构概念理解"
 date: 2021-08-06T15:25:06+08:00
+tags:
+- 架构
 images:
 - website-architecture/backend-arch.png
 description: "web架构相关概念整理"

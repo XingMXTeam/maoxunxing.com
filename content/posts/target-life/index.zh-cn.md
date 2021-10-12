@@ -2,7 +2,7 @@
 title: "谈谈我近期的生活规划"
 date: 2021-09-17T13:12:13+08:00
 tags:
-- career
+- 成长
 description: "关于如何去定义自己，规划自己的人生，这里是我的一些想法"
 images:
 - target-life/life-target.jpeg

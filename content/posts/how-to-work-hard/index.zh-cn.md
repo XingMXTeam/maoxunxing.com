@@ -2,8 +2,8 @@
 title: "论如何努力工作"
 date: 2021-08-20
 tags:
-- work
-- mind
+- 成长
+- 翻译
 description: "关于如何努力工作的理解"
 images:
 - how-to-work-hard/work.jpeg

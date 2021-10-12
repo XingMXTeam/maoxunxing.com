@@ -2,11 +2,9 @@
 title: "检测无定向图中的环"
 date: 2021-08-24
 tags:
-- algorithm
-- graphs
-- programming
-- union-find
-- interview
+- 算法
+- 树
+- 面试
 description: "我正在学习算法。这篇文章讲述了无向图中检测环的问题."
 images:
 - detect-cycle-in-an-undirected-graph/graph.png

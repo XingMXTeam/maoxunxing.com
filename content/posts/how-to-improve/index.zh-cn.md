@@ -2,6 +2,8 @@
 title: "论如何成长"
 date: 2021-08-27T10:20:36+08:00
 description: "从技术人角度看，怎么快速成长，怎么构建自己的成长模型"
+tags:
+- 成长
 images:
 - how-to-improve/improve.jpeg
 ---

@@ -3,7 +3,7 @@ title = "maoxunxing"
 theme = "hugo-coder-xingmxteam"
 languagecode = "en"
 defaultcontentlanguage = "en"
-#defaultContentLanguageInSubdir = "true"
+defaultContentLanguageInSubdir = "true"
 
 paginate = 10
 canonifyurls = true
@@ -19,13 +19,11 @@ buildFuture = true
 
 [languages]
   [languages.zh-CN]
-    #contentDir = "content/zh-CN" #Simplified Chinese
     weight = 2
     languageName = "简体中文" # Name shown in the main menu
     title = "毛训星"
 
   [languages.en]
-    #contentDir = "content/en" #English
     languageName = "English" # Name shown in the main menu
     weight = 1
     title = 'maoxunxing'

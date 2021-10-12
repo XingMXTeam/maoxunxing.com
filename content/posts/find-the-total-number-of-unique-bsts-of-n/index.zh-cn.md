@@ -2,10 +2,9 @@
 title: "给出N，求唯一BST的总数"
 date: 2021-08-16
 tags:
-- algorithm
-- dp
-- tree
-- programming
+- 算法
+- 树
+- 面试
 description: "我正在学习算法。本篇讨论的算法关于BST"
 images:
 - find-the-total-number-of-unique-bsts-of-n/tree.jpg

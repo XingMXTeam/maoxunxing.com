@@ -2,10 +2,9 @@
 title: "Given N, Find the total number of unique BSTs"
 date: 2021-08-16
 tags:
-- algorithm
-- dp
-- tree
-- programming
+- Algorithm
+- Tree
+- Interview
 description: "I am learning algorithm. This blog talks about BST."
 images:
 - find-the-total-number-of-unique-bsts-of-n/tree.jpg
