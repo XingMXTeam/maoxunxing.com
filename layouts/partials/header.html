@@ -46,8 +46,7 @@
 <script>
   window.addEventListener('load', () => {
     const menu = document.getElementById('languageMenu')
-    const arr = location.pathname.split("/")
-    console.log(menu.getAttribute('href') + arr[arr.length-2])
-    menu.setAttribute('href', menu.getAttribute('href') + arr[arr.length-2])
+    const arr = location.pathname.split("/");
+    menu.setAttribute('href', menu.getAttribute('href') + (arr.length>=4 ? arr[arr.length-2]: ''))
   })
 </script>
