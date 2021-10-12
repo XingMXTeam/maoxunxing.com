@@ -32,8 +32,8 @@
               </li>
               {{ $node.Scratch.Set "separator" false }}
             {{ end }}
-            <li class="navigation-item">
-              <a href="{{ .Permalink }}{{ $.Params.url }}">{{ .Language.LanguageName }}</a>
+            <li class="navigation-item" >
+              <a href="{{ .Permalink }}" id='languageMenu'>{{ .Language.LanguageName }}</a>
             </li>
           {{ end }}
         {{ end }}
@@ -42,3 +42,12 @@
     </ul>
   </section>
 </nav>
+
+<script>
+  window.addEventListener('load', () => {
+    const menu = document.getElementById('languageMenu')
+    const arr = location.pathname.split("/")
+    console.log(menu.getAttribute('href') + arr[arr.length-2])
+    menu.setAttribute('href', menu.getAttribute('href') + arr[arr.length-2])
+  })
+</script>

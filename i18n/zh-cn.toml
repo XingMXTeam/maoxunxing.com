@@ -51,3 +51,12 @@ other = "Web架构概念理解"
 
 [homeCat3Article2]
 other = "计算机底层原理"
+
+[shareOn]
+other = "分享到"
+
+[subscribe]
+other = "订阅"
+
+[emailAddress]
+other = "邮箱地址"
