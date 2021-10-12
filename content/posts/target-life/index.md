@@ -1,45 +1,45 @@
 ---
-title: "谈谈我近期的生活规划"
+title: "Talk about my recent life planning"
 date: 2021-09-17T13:12:13+08:00
 tags:
 - career
-description: "关于如何去定义自己，规划自己的人生，这里是我的一些想法"
+description: "On how to define yourself and plan your life, here are some of my thoughts"
 images:
 - target-life/life-target.jpeg
 ---
+## A little emotion
 
-## 一点感慨
+ 21 years I bought a house in Hangzhou to put down roots, in a trance, has been 32, work in general, life in general, not so exciting, most of the time as the walking dead. When I was young, I did my best to feel the splendor of life, and when I was old, my children and grandchildren were full of children and grandchildren, and I did not suffer from physical illnesses, so I did not have any regrets.
 
- 21年我在杭州买房扎根，恍惚间，已然32，工作一般，生活一般，不那么精彩，大多时间如行尸走肉。年轻时，尽最大可能感受人生的绚烂多彩，当年老时，子孙满堂，不受身体病痛折磨，不留遗憾。
+## Cut to the chase
 
-## 切入正题
 
-有句话说的好，没有梦想和咸鱼有啥区别。所有的梦想，都需要扎根于现实，不然就是空中楼阁，痴人说梦。在现实中，去汲取人生的快乐。而工作是人生的一大部分，职场上的快乐程度决定了你的人生的快乐程度。 把自己的职业当作一场旅行，深度体验它，而不是觉得工作就是浪费时间和生命。以下是我的职场轨迹：
+There is a saying that there is no dream and what is the difference between a salted fish. All dreams need to be rooted in reality, otherwise it is a pavilion in the sky, a fool's dream. In reality, to draw the joy of life. And work is a large part of life, the degree of happiness in the workplace determines the degree of happiness in your life. Think of your career as a journey and experience it deeply instead of feeling that work is a waste of time and life. The following is my workplace trajectory.
 
-{{< img src="target.jpg" alt="target" maxWidth="900px" align="center" >}} 
+{{< img src="target.jpg" alt="target" maxWidth="600px" align="center" >}} 
 
-按部就班的工作，没有突破性的职场晋升。 但是也慢慢地到一个大平台，是有机会向上突破或者做出一番成绩的。没有章法，需要更关注兴趣和爱好，去激发自己的工作热情。需要培养良好的习惯，通过科学的方法，管理自我。
+Work in a routine, no breakthrough in the workplace promotion. But also slowly to a large platform, is the opportunity to break through upwards or make some achievements. There is no chapter, need to pay more attention to interests and hobbies, to inspire their own work passion. Need to develop good habits, through the scientific method, management of self.
 
-[工作] 核心提升编码能力和解决问题的能力，以及工作中落地能力，需要有强势的态度和向上的魄力。
+[Work] Core to improve coding and problem-solving skills, as well as the ability to land on the job, need to have a strong attitude and upward drive.
 
-[家庭] 尽快成家。过去的人和事，只能缅怀，无法改变。奔向未来是唯一出路，稳定的家庭是成就事业的基础。
+[Family] Start a family as soon as possible. The people and things in the past can only be remembered, not changed. Running into the future is the only way out, and a stable family is the foundation for a successful career.
 
-[个人] 正能量，不断学习，输入，输出。增强自我认知，结交朋友，要更有趣，更兼容他人。
+[Personal] Positive energy, continuous learning, input, output. Enhance self-awareness, make friends, be more interesting and more compatible with others.
 
-为什么要有增长飞轮，因为没有理论指引，很难形成战斗力。通过增长闭环驱动自我：核心是每年要有一个北极星目标，然后制定策略实施，通过习惯驱动。
+Why have a growth flywheel, because without theoretical guidance, it is difficult to form a fighting force. Drive self through growth closed loop: the core is to have a Polaris goal every year, then develop a strategy to implement it and drive it through habit.
 
 {{< img src="grow.jpg" alt="grow" maxWidth="600px" align="center" >}}
 
-## 2021计划
+## 2021 Plan
 
-目标：成为技术专家
+Goal: Become a technical expert
 
 <!-- {{< img src="2021.jpg" alt="2021" maxWidth="600px" align="center" >}} -->
 
-策略：  
-大方向有两个  
-1 向内：职场发力，对焦OKR + 可能性  
-2 向外： 夯实基础 + 产品力和影响力建设  
+Strategy.  
+There are two general directions  
+1 Inward: Workplace power, focus on OKR + Possibilities  
+2 outward: strengthen the foundation + product power and influence building   
 
 <!-- * 形成全方位的能力图谱
 
@@ -50,13 +50,13 @@ images:
  领导才能 | 书籍：金字塔原理 | 
  智慧 | 历史/经典/毛泽东、马克思 |  -->
 
-具体规划：
-
- <div style='width: 120px;'>分类</div> | 子目标 | 完成时间
----------|----------|----------
- 个人博客 | 至少完成10篇，pv到200 | 2021.12.01
- 掘金小册子 | 算法一本 | 2022.12.30
- 公众号 | 粉丝1万 | 2022.01.10
- 团队 | 4次分享/10篇文章 | 2022.2.1
+ Specific planning:  
 
  <!-- 成长的底层逻辑、方法文章/全栈思维文章/教练文章 -->
+
+Categories | Subgoals | Completion Time
+---------|----------|---------
+ Personal Blog | Complete at least 10 articles, pv to 200 | 2021.12.01
+ juejin booklet | Algorithm a book | 2021.12.30
+ Wechat Public Account | 10,000 followers | 2022.01.10
+ Team | 4 shares / 10 articles | 2022.02.01

@@ -1,5 +1,5 @@
 ---
-title: "Detect Cycle in an Undirected Graph"
+title: "检测无定向图中的环"
 date: 2021-08-24
 tags:
 - algorithm
@@ -7,51 +7,51 @@ tags:
 - programming
 - union-find
 - interview
-description: "I am learning algorithm. This article talks about undirected graph."
+description: "我正在学习算法。这篇文章讲述了无向图中检测环的问题."
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---
 
 
-## Question Definition (S & T)
+## 问题定义
 
-Given an undirected graph, how to check if there is a cycle in the graph ?
+给定一个无向图，如何检查图中是否有一个环 ?
 
-**Example 1:**  
-Input：n  = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }  
-Output: yes  
-Diagram:  
+**用例1:**  
+输入：n  = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }  
+输出: yes  
+示例:  
 
 {{< img src="ex1.png" alt="ex1" maxWidth="600px" caption="has circle" >}}
 
-**Example 2:**  
-Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }  
-Output: No  
-Diagram:  
+**用例2:**  
+输入: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }  
+输出: No  
+示例:  
 
 {{< img src="ex2.png" alt="ex2" maxWidth="600px" caption="no circle" >}}
 
-## Problem Analysis (A)
+## 问题分析
 
-As we all know:  
+我们都知道:  
 
-> Algorithms + Data Structure = Programs
+> 算法 + 数据结构 = 程序
 
-so, we need to create a data structure representing the undirected graph. There are two data structures can make this:
+因此，我们需要创建一个数据结构来代表无向图。有两种数据结构可以做到这一点:
 
-* **adjacency list** - If vertex 1 is connected to vertices 2,3, hence adjacency list : { 1 : [2, 4] }.
-* **adjacency matrix** - We can use **map** data structures by javascript.  
+* **邻接表** - 如果顶点1与顶点2,3相连，因此邻接表 : { 1 : [2, 4] }.
+* **邻接矩阵** - JS中我们可以用 **map** .  
 
-then, we should know how to check cycle:  
+算法：如何检测环:  
 
-* **Method1**: disjoint set, make set、union、find set
-  * initially, all vertexes are different sets
-  * then we loop all edges' nodes, if the nodes are in the different set, we union them. How we check they are in the same set, every node's parent is the present node, then they are in the same set. And the represent node's parent is negative n, n represent it has n child in its set
-  * if the nodes are in the same set, then we know they have another way to reach each other, that means the cycle exists
-* **Method2**: bfs or dfs
-  * we need a visited queue, if we visited a node, we make it visited. If we find a node is current node's adjacency node and meanwhile,  it is visited, then we find a cycle
+* **方案1**: 并查集 创建集合、合并、找到集合
+  * 最初，所有顶点都是不同的集合
+  * 然后我们循环所有边的节点，如果这些节点在不同的集合中，我们就联合它们。我们如何检查它们是否在同一个集合中，每个节点的父节点是现在的节点，那么它们就在同一个集合中。而代表节点的父节点是负数n，n代表它在其集合中有n个孩子。
+  * 如果这些节点都在同一个集合中，那么我们就知道它们有另一种方式可以到达对方，这意味着循环存在。
+* **方案2**: 深度和广度遍历
+  * 我们需要一个被访问的队列，如果我们访问了一个节点，则设置为visited。如果我们发现一个节点是当前节点的邻接节点，同时，它被访问过，那么我们发现了一个环
 
-## Code
+## 编码
 
 {{< img src="graph_demo.png" alt="ex1" maxWidth="600px" caption="a graph" >}}
 
@@ -321,7 +321,7 @@ then, we should know how to check cycle:
   g.hasCircleByBfs()
 ```
 
-## Time Complex
+## 时间复杂度
 
 BFS/DFS: O(V+E)  
 DisjointSet: O(n) -> O(logn) using Rank

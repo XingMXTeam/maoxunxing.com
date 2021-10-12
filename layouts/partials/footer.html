@@ -6,7 +6,7 @@
       {{ if .Site.Params.Author }} {{ .Site.Params.Author }} {{ end }}
     {{ end }}
     {{ with .Site.Params.social }}
-      <ul>
+      <ul style='margin: 1.5rem 0 1rem'>
         {{ range sort .}}
           {{ if .icon }}
             <li>

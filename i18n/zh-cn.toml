@@ -26,7 +26,7 @@ other = "现在我是一名前端工程师，在杭州工作。这个网站主�
 other = "关于算法的文章"
 
 [homeCat1Article1]
-other = "检测无定向图中的循环"
+other = "检测无定向图中的环"
 
 [homeCat1Article2]
 other = "给出N，求唯一BST的总数"
