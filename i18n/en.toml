@@ -58,5 +58,11 @@ other = "Share on"
 [subscribe]
 other = "Subscribe"
 
+[subscribe1]
+other = "Be the first to know when I post cool stuff"
+
+[subscribe2]
+other = "Subscribe to get my latest posts by email."
+
 [emailAddress]
 other = "Email Address"
