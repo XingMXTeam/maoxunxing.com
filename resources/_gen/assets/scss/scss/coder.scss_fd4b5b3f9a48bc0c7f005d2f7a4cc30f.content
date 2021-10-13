@@ -398,4 +398,34 @@ img {
   .footer a {
     color: #1565c0; }
 
+.float-container {
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  position: fixed;
+  font-size: 1.6em; }
+  .float-container a {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    color: #000;
+    background-color: #E0E0E0;
+    border-radius: 0.2rem;
+    opacity: 50%;
+    transition: all 0.25s ease-in; }
+    .float-container a:hover, .float-container a:focus {
+      color: #1565c0;
+      opacity: 100%; }
+      @media only screen and (max-width: 768px) {
+        .float-container a:hover, .float-container a:focus {
+          color: #000;
+          opacity: 50%; } }
+    .float-container a i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+
 /*# sourceMappingURL=coder.css.map */

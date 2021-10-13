@@ -60,6 +60,9 @@ twitter = "maoxunxing"
 
     photoWidths = [300, 600, 800, 1200]
 
+    colorscheme = "auto"
+    hideColorSchemeToggle = false
+
     #talkyardServerUrl = "https://comments-for-mtlynch-io.talkyard.net"
     #talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
 

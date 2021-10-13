@@ -104,6 +104,7 @@
     {{ $csClass = "colorscheme-auto" }}
   {{ end }}
   <body class="{{ $csClass }}{{ if .Site.Params.rtl }} rtl{{ end }}">
+    {{ partial "float" . }}
     <main class="wrapper">
       {{ partial "header.html" . }}
 
@@ -113,6 +114,15 @@
 
       {{ partial "footer.html" . }}
     </main>
+
+
+    {{ if .Site.IsServer }}
+      {{ $script := resources.Get "js/coder.js" }}
+      <script src="{{ $script.RelPermalink }}"></script>
+    {{ else }}
+      {{ $script := resources.Get "js/coder.js" | minify | fingerprint }}
+      <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+    {{ end }}
 
     {{ partial "google-analytics.html" . }}
 
