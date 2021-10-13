@@ -79,7 +79,7 @@ resampleFilter = "Lanczos"
 [[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter fa-2x"
-    weight = 3
+    weight = 2
     url = "https://twitter.com/maoxunxing/"
 [[params.social]]
     name = "Zhihu"
@@ -89,9 +89,14 @@ resampleFilter = "Lanczos"
 [[params.social]]
     name = "Douban"
     link = "https://img.icons8.com/material/48/000000/douban.png"
-    weight = 3
+    weight = 4
     clazz = "douban"
     url = "https://www.douban.com/people/maoxingxing/"
+[[params.social]]
+    name = "Rss"
+    icon = "fa fa-rss fa-2x"
+    weight = 5
+    url = "https://maoxunxing.com/index.xml"
 
 [[languages.en.menu.main]]
     name = "Blog"
