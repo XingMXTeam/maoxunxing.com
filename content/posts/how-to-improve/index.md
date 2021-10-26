@@ -1,5 +1,5 @@
 ---
-title: "How to Growth"
+title: "Talking about my way of learning and growing"
 date: 2021-08-27T10:20:36+08:00
 description: "From a technical person's perspective, how to grow fast and how to build your own growth model"
 tags:

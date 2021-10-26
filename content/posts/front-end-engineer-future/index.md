@@ -1,7 +1,6 @@
 ---
 title: "前端工程师未来趋势、职业路径和方向思考"
 date: 2021-08-24
-draft: true
 tags:
 - career
 - front-end
@@ -74,10 +73,6 @@ Tensorflow Lite
 
 ---
 
-搭建：
-1 升级搭建能力
-2 模块免开发能力
-
 ## 职业路径
 
 前端知识点有个特点杂而多，如果每一个知识都学习肯定是不成系统，有很多无效做功。需要对知识分类，尽量学通用知识，在某个领域深耕，并且要从经济视角考虑ROI，也就是投入产出比。
@@ -91,14 +86,44 @@ Tensorflow Lite
 
 怎么考虑ROI？
 
+搭建：
+1 升级搭建能力
+2 模块免开发能力
+
 ## 技能树
 
-- [x] SPA
-- [x] MVVM/工程化： 网关接口聚合 SOP 
-- [x] 微前端
-- [ ] 跨端
+高阶：
+
+- [] 搭建
 - [x] nodejs
-- [ ] 容器
+  + Next.js Midway.js Fastify Sails.js Meteor.js Koa.js Express.js
+  + mqtt Kafka RabbitMq Dnode Socket.io Dubbo gRPC
+  + GraphQL REST
+  + LiteDB Redis MongoDB PostgreSQL MySQL
+  + Docker PM2 
+- [] 国际化
+- [] 体验管理
+- [] IDE
+- [] 数据可视化
+- [] 工程体系： 微前端、容器
+- [] 跨端技术
+- [] 互动技术
+- [] 智能化
+- [] 多媒体
+
+中级：
+- [] 研发链路
+- [] 库
+- [] 框架
+- [] 性能优化
+- [] 工作原理
+- [] 综合能力
+
+初级：
+- [] html
+- [] css
+- [] JS
+- [] 浏览器
 
 ## 技术建设方向
 

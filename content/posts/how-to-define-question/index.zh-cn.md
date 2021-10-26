@@ -1,6 +1,7 @@
 ---
 title: "如何定义问题"
 date: 2021-09-08
+draft: true
 tags:
 - 需求分析
 description: "能定义多大的问题，就能做出多大的事业。"

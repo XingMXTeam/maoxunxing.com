@@ -1,44 +1,38 @@
 ---
-title: "Web架构概念理解"
+title: "现代化Web架构的理解"
 date: 2021-08-06T15:25:06+08:00
 tags:
 - 架构
 images:
 - website-architecture/backend-arch.png
-description: "web架构相关概念整理"
+description: "有哪些概念？请求链路是怎么样的？分布式系统是什么，有哪些问题要解决？大数据和高并发的问题解法？"
 ---
 ## 基础概念
 
-VPC： Virtual Private Cloud 虚拟私有云。为什么是虚拟私有？它是一种运行在公有云上，将一部分公有云资源为某个用户隔离出来，给这个用户私有使用的资源的集合，感觉像是在使用自己的私有云一样。什么是云？构建在物理之上的虚拟化网络。VPC采用隧道技术，隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。
+分类<div style='width:100px'></div> | 名称<div style='width:200px'></div> | 解释
+---------|----------|---------
+ 网络 | VPC |  Virtual Private Cloud 虚拟私有云。为什么是虚拟私有？它是一种运行在公有云上，将一部分公有云资源为某个用户隔离出来，给这个用户私有使用的资源的集合，感觉像是在使用自己的私有云一样。什么是云？构建在物理之上的虚拟化网络。VPC采用隧道技术，隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。
+ 网络 | DNS | 应用层协议和https一样，端口是53，提供根据域名查IP的服务  
+ 网络 | Record | 记录和IP的对应关系
+ 网络 | A记录 | 支持将域名映射到IPV4地址  
+ 网络 | CNAME | 别名 Canonical Name 支持指向另一个域名   
+ 网络 | MX | Mail Exchanger 支持将域名指向邮件服务器地址    
+ 网络 | NS | name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析  
+ 网络 | CDN | Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题
+ 网络 | 节点 | 传统的节点是单体的物理机器 -> 单台虚拟机上的服务 -> 轻量级的容器服务，能提供单位服务的逻辑计算资源的集合
+ 网络 | 统一接入层 | web server代理，它将请求转发给（proxy_pass）应用服务器。能解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）
+ 分布式 | NTP（网络时间协议） | 在数据网络潜伏时间可变的计算机系统之间通过分组交换进行时钟同步的一个网络协议，位于OSI模型的应用层
+ 分布式 | Lamport逻辑时钟/向量时钟 | 一种在分布式环境中为各种操作或事件产生偏序值的技术，它可以检测操作或事件的并行冲突，用来保持系统的一致性
+ 云原生 | K8s | Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构
+ 云原生 | Docker | 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)
+
 
 <!-- {{< img src="network.jpg" alt="network" maxWidth="600px" >}} -->
 <!-- 
 售卖区： ecs rds(vpc隔离成多个子网)
 OXS: ots oss odps ons ocs -->
-
-DNS: 应用层协议和https一样，端口是53，提供根据域名查IP的服务  
-记录（Record）： 记录和IP的对应关系  
-A记录： 支持将域名映射到IPV4地址  
-AAAA记录：支持将域名映射到IPV6地址  
-CNAME： 别名 Canonical Name 支持指向另一个域名  
-MX: Mail Exchanger 支持将域名指向邮件服务器地址  
-NS: name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析  
-DNS服务器： 安装了DNS服务（比如安装BIND）的计算机，比如谷歌公共的服务器地址8.8.8.8  
-
-CDN: Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题
-
-节点： 传统的节点是单体的物理机器 -> 单台虚拟机上的服务 -> 轻量级的容器服务，能提供单位服务的逻辑计算资源的集合
-
-网络： 网络工作模式：同步网络（节点同步执行、消息延迟有限、高效全局锁）、半同步网络（锁范围放宽）、异步网络（节点独立执行、消息延迟无上限、无全局锁、部分算法不可行）  
-
-NTP（网络时间协议）：在数据网络潜伏时间可变的计算机系统之间通过分组交换进行时钟同步的一个网络协议，位于OSI模型的应用层
-Lamport逻辑时钟/向量时钟：一种在分布式环境中为各种操作或事件产生偏序值的技术，它可以检测操作或事件的并行冲突，用来保持系统的一致性
-
-统一接入层：web server代理，它将请求转发给（proxy_pass）应用服务器。能解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）
-
-K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构
-
-Docker: 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)
+<!-- 
+网络： 网络工作模式：同步网络（节点同步执行、消息延迟有限、高效全局锁）、半同步网络（锁范围放宽）、异步网络（节点独立执行、消息延迟无上限、无全局锁、部分算法不可行）   -->
 
 
 <!-- 统一接入层(AServer)： tengine运行的web server代理。 将请求转发给（proxy_pass）应用服务器 -->
@@ -70,34 +64,44 @@ aone回滚时，用基线版本直接覆盖master当前分支版本（不是操�
 
 <!-- K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构。 -->
 
-## 请求链路
+## 请求链路  
 
-域名解析 -> ip -> 负载均衡集群 -> 统一接入集群(web server) -> 去中心化集群 -> 网关层 ->应用服务器
+> 一个http请求现代化架构下一般会有哪些链路
+
+1 域名解析IP  
+2 统一接入层  
+3 负载均衡Key--hash->集群  
+4 网关层  
+5 应用服务器  
 
 <!-- {{< img src="request-chain.jpg" alt="request-chain" maxWidth="600px" >}} -->
 
-## 分布式服务 Distributed Micro Service  
-
-<!-- what is distributed micro service? -->
+## 分布式服务/架构  
 
 ### 发展轨迹
+
+> 现代化的服务器架构是怎么演进的
 
 1 RPC (Remote Process Call)
 {{< img src="rpc.png" alt="rpc" maxWidth="600px" >}}
 
 2 SOA（Service-Oriented Architecture, 像hsf, dubbo) 面向服务架构
-{{< img src="soa.png" alt="soa" maxWidth="600px" >}}
-{{< img src="soa.jpg" alt="soa" maxWidth="600px" >}}
+
+特点：  
 
 * 分布式部署
 * 请求分流
 * 数据读写分离
 
+<!-- {{< img src="soa.png" alt="soa" maxWidth="600px" >}} -->
+{{< img src="soa.jpg" alt="soa" maxWidth="600px" >}}
+
 3 MSA 微服务架构
 {{< img src="msa.jpg" alt="msa" maxWidth="600px" >}}
 
+### 分布式架构理论
 
-### 分布式架构
+> 分布式架构需要了解哪些东西理论
 
 一致性理论
 
@@ -111,6 +115,8 @@ aone回滚时，用基线版本直接覆盖master当前分支版本（不是操�
 CALM->CRDT->高可用事务+ZAB协议分析->Paxos Raft Gossip
 
 ### 分布式应用
+
+> 分布式应用有哪些
 
 文件系统： HDFS FastDFS Ceph mooseFS 
 [对比](https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems?spm=ata.21736010.0.0.30f21d02woZ6di)  
@@ -151,10 +157,12 @@ CALM->CRDT->高可用事务+ZAB协议分析->Paxos Raft Gossip
 Protocol Difference -->
 
 <!-- * BSD -->
-### 分布式消息 distributed message
+### 分布式消息
 
+> 什么是分布式消息，和分布式应用的区别是？
+<!-- 
 * RPC Message
-* Restful
+* Restful -->
   
 **应用场景**：  
 
@@ -233,6 +241,8 @@ producer: 消息发送方。 和一个name server建立连接，获得路由信�
 consumer: 消息接收方，需要和其中一个name sever建立连接，获得路由信息，再向提供服务的master、slaver建立长连接，具体接收消息时刻选择broker   -->
 
 ### 分布式缓存
+
+> 如何解决分布式缓存问题
 
 数据流
 {{< img src="data-flow.png" alt="data-flow" maxWidth="600px" >}}
@@ -345,6 +355,8 @@ TXC(Taobao Transaction Constructor)
 http服务，用户认证，cache, load balance -->
 
 ## 大数据和高并发
+
+> 大数据和高并发场景的解决方案有哪些？
 
 ### bitmap
 

@@ -35,7 +35,7 @@ other = "给出N，求唯一BST的总数"
 other = "关于成长的文章"
 
 [homeCat2Article1]
-other = "论如何成长"
+other = "谈谈我的学习和成长之道"
 
 [homeCat2Article2]
 other = "论如何脱颖而出"
@@ -47,7 +47,7 @@ other = "论如何努力工作"
 other = "关于软件开发的文章"
 
 [homeCat3Article1]
-other = "Web架构概念理解"
+other = "现代化Web架构的理解"
 
 [homeCat3Article2]
 other = "计算机底层原理"

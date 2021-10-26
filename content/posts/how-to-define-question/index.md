@@ -1,6 +1,7 @@
 ---
 title: "How to define the problem"
 date: 2021-09-08
+draft: true
 tags:
 - Demand Analysis
 description: "You can do great things by defining great problems."

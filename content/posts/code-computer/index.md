@@ -1,5 +1,5 @@
 ---
-title: "Computer Basement"
+title: "Talk about my understanding of the nature of computers"
 date: 2021-08-24
 tags:
 - Operation System
