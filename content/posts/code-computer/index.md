@@ -1,9 +1,9 @@
 ---
-title: "Talk about my understanding of the nature of computers"
+title: "Talk about the nature of computers"
 date: 2021-08-24
 tags:
 - Operation System
-description: "An understanding of the underlying layers of computers"
+description: "What is the nature of computers?"
 images:
 - code-computer/code-computer.jpeg
 ---

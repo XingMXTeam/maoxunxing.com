@@ -35,7 +35,7 @@ other = "Given N, Find the total number of unique BSTs"
 other = "Articles about Growth"
 
 [homeCat2Article1]
-other = "Talking about my way of learning and growing"
+other = "Talking about learning and growing"
 
 [homeCat2Article2]
 other = "How to Stand Out"
@@ -50,7 +50,7 @@ other = "Articles about Software Development"
 other = "Understanding of Modern Web Architecture"
 
 [homeCat3Article2]
-other = "Talk about my understanding of the nature of computers"
+other = "Talk about the nature of computers"
 
 [shareOn]
 other = "Share on"
