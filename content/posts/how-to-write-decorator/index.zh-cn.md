@@ -1,6 +1,7 @@
 ---
 title: "如何写一个装饰器"
 date: 2021-10-21T19:17:54+08:00
+draft: true
 tags:
 - ES6
 description: "装饰器看着高大上，其实是一个很简单的东西"
