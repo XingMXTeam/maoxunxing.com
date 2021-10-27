@@ -7,22 +7,44 @@ description: "What is the nature of computers?"
 images:
 - code-computer/code-computer.jpeg
 ---
-
 ## Coding principles
 
-### Numeric encoding
+> Computers are by nature a world of 0/1, and if expressing this world in 0/1. The conclusion is: it needs to be encoded by.
 
-**Why is there a complement code?**
-Complement codes are used to facilitate computer operations, so that calculations can be added more easily. For example, 5+(-3) is calculated by using the complement
-0101 (5)
-0011 (3) -> Inverse 1100 -> Add one 1101 
-0101 + 1101 = 100010 truncated 0010 (-2) meets the expected result (original code: first bit is the sign bit inverse code: all bits are inverted except the sign bit, which does not meet the expectation)
+### Number encoding
 
-Definition of complement: positive number remains the same, negative number is inverted and +1 
+> First how to express numbers
 
-**Why is the range [-128,127] represented?**
+** Why is there a complement code? **
+
+> Complement is to facilitate computer operations, it is easier for computers to do addition  
+
+**For example**: 5+(-3) is calculated by complement (definition: positive number remains the same, negative number is inverted and +1)  
+Step 1: 0101 (5)  
+Step 2: 0011 (3) -> inverse 1100 -> add one 1101  
+Step 3: 0101+1101=100010 after truncation 0010 (-2)  
+The result of the operation meets human expectation, while the result of the original code (the first bit is the sign bit) and the inverse code (all bits are inverted except the sign bit) do not meet human expectation.
+
+Why does ** indicate the range [-128, 127]? **
+
+> This question has bothered me before
+
+As an example to illustrate.
+The 4-bit binary complement representation is.  
+0000 (-0) 0000 (0)  
+1111 (-1) 0001 (1)  
+1110 (-2) 0010 (2)  
+...       ...  
+1011 (-5) 0101 (5)  
+1010 (-6) 0110 (6)  
+1001(-7) 0111(7)  
+
+The range is [-7, 7] 1000 is not represented, it is just used to represent -8 (the complement of -8 is represented as: 1000 (original) -> inverted 0111 -> plus one 1000)   
+So the final result is [-8, 7].  Similarly [-128,127] makes sense. 
+
+<! -- **Why does the complement code need to be inverted + 1?**
 The 4-bit binary complement code represents. 
-0000 (-0) 0000 (0) 
+0000(-0) 0000(0) 
 1111 (-1) 0001 (1) 
 1110 (-2) 0010 (2) 
 ...       ...
@@ -30,57 +52,52 @@ The 4-bit binary complement code represents.
 1010 (-6) 0110 (6) 
 1001 (-7) 0111 (7)
 
-The range is [-7, 7] 1000 is not represented and would just be -8 so it ends up being [-8, 7] The sign bit is involved, but the result is as expected
-Complement representation of -8: 1000 (original) -> inverted 0111 -> add one 1000
+After +1, the 0-bit representation is consistent and the sign bit is involved in the operation just as expected -->
 
-**Why does the complement code need to be inverted + 1?**
-The 4-bit binary complement code represents. 
-0000 (-0) 0000 (0) 
-1111 (-1) 0001 (1) 
-1110 (-2) 0010 (2) 
-...       ...
-1011 (-5) 0101 (5) 
-1010 (-6) 0110 (6) 
-1001 (-7) 0111 (7)
+**Why do decimals have precision problems? **
 
-After +1, the 0-bit representation is consistent and the sign bit is involved in the operation just as expected
+> In some languages, 0.1 + 0.2 will never equal 0.3 Why?
 
-**Why do decimals have precision problems?**
-Because binary decimals can only be represented by a fixed combination of digits, e.g. 0.2 cannot be represented precisely in binary combinations
+As a simple example.  
+Because binary decimals can only be represented precisely with fixed combinations of numbers, such as 0.2, and cannot be represented precisely with binary combinations
 
 ### Text encoding
 
-**Concept**.  
+> After encoding numbers, does the text have to be encoded as well?
 
-Code list (character set): correspondence between characters and numbers (interface)
-Character encoding: concrete implementation
-Code points: each number in the table (may consist of one or more code elements)
+Encoding is mainly achieved through, for example, code tables, that is, the correspondence between characters and numbers.
 
-**track of development**.  
-ASCII (English and special characters) : 7 bits in a byte -> EASCII character set : ISO 8859-1 -> GB2312 -> GBK : GBK encoding (Chinese characters) -> GB18030 -> Unicode character set : general unicode encoding means UTF-16 encoding Variable-length encoding, 2-byte code element, byte order problem, UTF-8 is variable-length encoding -8 is variable length encoding single byte code element no byte order problem
+Code table (character set): Correspondence between characters and numbers (interface)
+Character encoding: specific implementation
+Code point: each number in the table (may consist of one or more code elements)
 
-Initialisation -> localisation (GB for GB) -> internationalisation -> efficiency
+**Development track**.  
+ASCII (English and special characters) : 7 bits in a byte -> EASCII character set : ISO 8859-1 -> GB2312 -> GBK : GBK code (Chinese characters) -> GB18030 -> Unicode character set : general unicode encoding refers to UTF-16 encoding Variable-length encoding, 2-byte code element, with byte order problems, UTF -8 is variable length encoding single byte code element no byte order problem
+
+Initialization -> localization (GB means national standard) -> internationalization -> efficiency
 
 ### Multimedia encoding
 
-Audio: representation of a limited number of samples collected in a given time. Sampling rate is related to the frequency of the analogue signal, 40,000 samples per second Encoding method AAC
-Image: raster map (resolution: number of pixels per unit area, colour depth: number of pixel bits) / vector map (mathematical formula to calculate pixel distribution)
-Video: Frames Composed of pictures, multiple frames form a video stream. Encoding methods MPEG-1, MPEG-2, MPEG-4, H.264, H.265
+Audio: A limited number of samples are collected in a given time. Sampling rate is related to the analog signal frequency, 40,000 samples per second Encoding method AAC
+Image: raster map (resolution: number of pixels per unit area, color depth: number of pixel bits) / vector map (mathematical formula for pixel distribution)
+Video: frames Composed of pictures, multiple frames constitute the video stream. Encoding methods MPEG-1, MPEG-2, MPEG-4, H.264, H.265
 
-## Nature of the operation
+## The nature of operations
+
+> With encoding, how does a computer implement computation? Why are memory sticks and chips expensive?
 
 ### Concepts
 
-The logical operations of with, or, non, and iso-or
+With, or, non, and iso-or in logical operations
 
-The above logical operations can be realised by means of logic simulation. The input is a switch and the output is usually an LED (coloured light). The chip generally implements logic operations, such as the 7486 (iso-or gate) chip, which will expose some pins out, such as one to power, one to ground, others to input, indicating output, etc
+The above logical operations can be realized by logic simulation. The input is a switch, and the output is usually an LED (a light with color). The chip is generally to achieve the logic operation, such as 7486 (heterogeneous or gate) chip, will expose some pins out, such as a connection to power, a ground, other connection to the input, said the output, etc
 
-### Half adder: disregarding the feed, unit
+### half adder: do not consider the input, the unit
 
 Cout = X * Y
 S = X ⊕ Y
 
-### Full adder: taking into account rounding, units
+### Full adder: takes into account rounding, units
 
 ``` 
 S = X ⊕ Y ⊕ Cin
@@ -88,37 +105,44 @@ S = X ⊕ Y ⊕ Cin
 Cout = (X*Y) + ((X⊕Y)*Cin)
 ```
 
-### Two-bit adding machine
+### Two-bit adder
 
-### Multi-bit adding machine
-### Memory adding machine
+### Multi-bit adder
+### Memory adder
 
 Save the result of the last calculation
 
-### Selecting an adding machine
+### Select adder
 
-Get a few more memory adders to avoid having to start again if you make a mistake.
+Get a few more memory adders to avoid starting over when you make a mistake.
 
 ### Automatic adding machine
 
-Automatically enters and adds up all the numbers with the press of a switch. 
+Automatically enter and add up all numbers with the press of a switch. 
 
 ### Free adding machine
 
 Control to calculate only some of the numbers
 
-### Comparison with modern computers
+### Compare to modern computers
 
-Current computers are capable of performing a billion addition operations. Computers contain
+Current computers are capable of performing a billion additions. Computers contain
 1 memory (memory box: for storing the numbers entered, the code to be executed, the result of the calculation)
-2 an operator (accumulator: to calculate the sum of two numbers)
-3 Controller (control panel: switches)
-4 Input device (input panel: input switch)
-5 Output device (output bulb: bulb reality output data)
+2 operator (accumulator: calculates the sum of two numbers)
+3 controller (control panel: toggle switch)
+4 input device (input panel: input switch)
+5 output device (output bulb: bulb reality output data)
 
-The above contains concepts such as: input, output, memory, addressing, decoding, instructions, arithmetic logic units, etc.
+The above contains: input, output, memory, addressing, decoding, instructions, arithmetic logic unit and other concepts
 
-Programming is the process of storing a series of instructions into memory and allowing the computer to execute these instructions step by step. Encapsulating some common instructions creates the operating system.
+<! -- 
+Keyboard input numbers -> generate voltage (high and low level signals?) Triggers input bus interrupt routine -> digits are input to memory area and memory address is allocated at the same time. While the addition machine operates the input panel for each number entered, it needs to develop a memory box to store the array through the selector, and the memory box number corresponds to the serial number of the selector, which is the memory address
+
+Computer addition button, the computer will load the memory address where the number is located to the CPU for the addition operation. The adder needs to write a code to the memory box. The first line is the code for the addition operation, and the second three lines are the address code. After the encoding is completed, an asynchronous counter (which periodically scans the memory box for the code) is started and executed line by line. After the asynchronous counter is executed, the data from the memory box is loaded into the accumulator. The data is transferred to the accumulator by addressing (the process of addressing the data memory box by the decoder is called the addressing process) and then stored in the latch box after the accumulator operation, and then displayed by the light bulb.
+
+ -->
+
+Programming is the process of storing a series of instructions into memory and letting the computer execute them step by step. Wrapping some common instructions together forms the operating system.
 
 ### Virtual Circuit Simulation
 
@@ -126,12 +150,14 @@ https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html
 
 ### The difference between an interpreter and a compiler
 
-Before code can be executed it needs to pass through a syntax parser, which converts the input string of code into an AST (abstract syntax tree)
+> How does our program run?
 
-Generally an interpreter will go through the following steps when interpreting a program for execution.  
+The code needs to be converted into an AST (abstract syntax tree) by a syntax parser before it can be executed.
+
+A general interpreter will go through the following steps when interpreting and executing a program.  
 1 Lexer (lexical parser) reads the code and converts it into a sequence of tokens  
-2 Parser converts the read sequence of tokens into an AST (in most cases Lexer is part of Parser)  
-3 Lowering (simplifying the AST) or Desugar (converting the AST node from syntactic sugar to the standard equivalent AST node) of the AST  
+2 Parser (syntax parser) to read the sequence of tokens into AST (in most cases Lexer is part of Parser)  
+3 Lowering (simplifying AST) or Desugar (converting AST nodes from syntactic sugar to standard equivalent AST nodes) of the AST  
 4 Interpreter recursively executes the AST  
 
 The interpreter interprets the execution of the AST directly and returns the final result as follows.
@@ -149,10 +175,10 @@ function interpret(ast) {
 }
 ```
 
-Compiler: translates the AST into the target language, e.g. assembly
+Compiler: translate AST to target language, e.g. assembly
 
 ``` js
-// Assume that the target machine is a stack VM, then execute it via the exec function
+// Assume that the target machine is a stack VM, and then execute it via the exec function
 function compile(ast) {
   switch(ast.type) {
     case 'number': return "ds.push("+ast.value+")\n";
@@ -165,7 +191,7 @@ function compile(ast) {
 
 ```
 
-Separate the traversal and implementation of ast, and encapsulate each step of the operation into a separate function
+Separate the traversal and implementation of ast, and encapsulate each step of the operation as a separate function
 
 ``` js
 function interpret(ast) {
@@ -182,15 +208,17 @@ function interpret(ast) {
 
 ## The nature of code
 
-The machine is controlled through code, which is the instruction that a human reads. There are two main elements data and operations (judgments, selections, loops, branches, etc.).
+The machine is controlled by code, which is the instruction read by a human. There are two main elements data and operations (judgments, selections, loops, branches, etc.).
 
 ### Memory model
 
-The latch (a huge array composed of 64 bits) of [the nature of operations](## the nature of operations) is, in essence, memory.
+> How does a computer store?
 
-Sequential execution: the code is compiled into a single instruction still in memory (the execution area allocated by the operating system), the counter progressively executes the memory execution and returns the result
+The latch (a huge array composed of 64 bits) of [the nature of operations](# the nature of operations) is, in essence, memory.
 
-Branch selection: jumping to the corresponding address to execute the instruction
+Sequential execution: The code is compiled into a single instruction still in to memory (the execution area allocated by the operating system), the counter progressively executes the memory execution and returns the result
 
-Nested execution: the execution of a function opens up a contiguous set of memory spaces in memory. Before the execution of the function code, the stack space is allocated according to the number of arguments and their size, and the bottom of the stack is in the direction of the high address of the memory
-The active record of the execution process is defined by a frame pointer marking the top position and a stack pointer marking the bottom position. When execution is complete, the frame pointer points to the address of the next instruction
+Branch selection: jump to the corresponding address to execute the instruction
+
+Nested execution: The function execution opens a set of consecutive memory spaces in memory. Before the execution of the function code according to the number of parameters, the size of the parameters, the calculation of the allocation of stack space, the bottom of the stack is the direction of the high address of memory
+The activity record of the execution process is defined by a frame pointer marking the top position and a stack pointer marking the bottom position. When the execution is finished, the frame pointer points to the address of the next instruction
