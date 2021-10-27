@@ -42,18 +42,6 @@ The 4-bit binary complement representation is.
 The range is [-7, 7] 1000 is not represented, it is just used to represent -8 (the complement of -8 is represented as: 1000 (original) -> inverted 0111 -> plus one 1000)   
 So the final result is [-8, 7].  Similarly [-128,127] makes sense. 
 
-<! -- **Why does the complement code need to be inverted + 1?**
-The 4-bit binary complement code represents. 
-0000(-0) 0000(0) 
-1111 (-1) 0001 (1) 
-1110 (-2) 0010 (2) 
-...       ...
-1011 (-5) 0101 (5) 
-1010 (-6) 0110 (6) 
-1001 (-7) 0111 (7)
-
-After +1, the 0-bit representation is consistent and the sign bit is involved in the operation just as expected -->
-
 **Why do decimals have precision problems? **
 
 > In some languages, 0.1 + 0.2 will never equal 0.3 Why?
@@ -134,13 +122,6 @@ Current computers are capable of performing a billion additions. Computers conta
 5 output device (output bulb: bulb reality output data)
 
 The above contains: input, output, memory, addressing, decoding, instructions, arithmetic logic unit and other concepts
-
-<! -- 
-Keyboard input numbers -> generate voltage (high and low level signals?) Triggers input bus interrupt routine -> digits are input to memory area and memory address is allocated at the same time. While the addition machine operates the input panel for each number entered, it needs to develop a memory box to store the array through the selector, and the memory box number corresponds to the serial number of the selector, which is the memory address
-
-Computer addition button, the computer will load the memory address where the number is located to the CPU for the addition operation. The adder needs to write a code to the memory box. The first line is the code for the addition operation, and the second three lines are the address code. After the encoding is completed, an asynchronous counter (which periodically scans the memory box for the code) is started and executed line by line. After the asynchronous counter is executed, the data from the memory box is loaded into the accumulator. The data is transferred to the accumulator by addressing (the process of addressing the data memory box by the decoder is called the addressing process) and then stored in the latch box after the accumulator operation, and then displayed by the light bulb.
-
- -->
 
 Programming is the process of storing a series of instructions into memory and letting the computer execute them step by step. Wrapping some common instructions together forms the operating system.
 
