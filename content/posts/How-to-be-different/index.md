@@ -1,6 +1,7 @@
 ---
 title: "How to stand out"
 date: 2021-10-06T11:20:33+08:00
+draft: true
 description: "How to become better from a technical person's point of view"
 tags:
 - Growth
