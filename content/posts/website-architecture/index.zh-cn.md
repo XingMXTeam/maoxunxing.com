@@ -26,44 +26,6 @@ description: "有哪些概念？请求链路是怎么样的？分布式系统是
  云原生 | K8s | Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构
  云原生 | Docker | 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)
 
-
-<!-- {{< img src="network.jpg" alt="network" maxWidth="600px" >}} -->
-<!-- 
-售卖区： ecs rds(vpc隔离成多个子网)
-OXS: ots oss odps ons ocs -->
-<!-- 
-网络： 网络工作模式：同步网络（节点同步执行、消息延迟有限、高效全局锁）、半同步网络（锁范围放宽）、异步网络（节点独立执行、消息延迟无上限、无全局锁、部分算法不可行）   -->
-
-
-<!-- 统一接入层(AServer)： tengine运行的web server代理。 将请求转发给（proxy_pass）应用服务器 -->
-
-<!-- * 解决https证书申请和更换
-* 证书泄漏：部署在服务器有泄漏风险
-* 应用安全：应用接入全站https、管理私钥
-* 安全管控：收敛安全入口
-   -->
-<!-- 
-接入层通过VIP Server发现后端可用机器；
-业务层通过VIP Server做服务发现和调用；
-中间件通过VIP Server做环境路由；
-数据库通过VIP Server解决DNS 解析和上下线问题
-
-1 VIP Server需要添加vip server key（和域名是一对多） + 应用分组
-2 Aserver填写vip server key和域名
-
-AServer从请求头获取域名； 根据域名找到vip server key； 根据key找到集群 -->
-
-<!-- ### 开发环境
-
-自动化安装脚本
-
-aone回滚时，用基线版本直接覆盖master当前分支版本（不是操作的git回滚)，也就是说会新生成新的提交。
-本地开发 需要重新执行git revert当前回滚版本 -->
-
-<!-- Pouch/Docker: 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps) -->
-
-<!-- K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构。 -->
-
 ## 请求链路  
 
 > 一个http请求现代化架构下一般会有哪些链路
@@ -73,8 +35,6 @@ aone回滚时，用基线版本直接覆盖master当前分支版本（不是操�
 3 负载均衡Key--hash->集群  
 4 网关层  
 5 应用服务器  
-
-<!-- {{< img src="request-chain.jpg" alt="request-chain" maxWidth="600px" >}} -->
 
 ## 分布式服务/架构  
 
@@ -93,7 +53,6 @@ aone回滚时，用基线版本直接覆盖master当前分支版本（不是操�
 * 请求分流
 * 数据读写分离
 
-<!-- {{< img src="soa.png" alt="soa" maxWidth="600px" >}} -->
 {{< img src="soa.jpg" alt="soa" maxWidth="600px" >}}
 
 3 MSA 微服务架构
@@ -128,41 +87,6 @@ CALM->CRDT->高可用事务+ZAB协议分析->Paxos Raft Gossip
 应用：hsf dubbo  
 日志：采集flum、存储elasticsearch/solr sls、定位zipkin  
 账本：比特币 以太坊  
-
-<!-- 
-**hsf**:  
-{{< img src="hsf-module.png" alt="hsf-module" maxWidth="600px" >}}
-
-调用方式：
-
-* 同步实时调用
-* Future异步调用
-* Callback异步调用
-* Generic调用
-* 服务端Sycn调用
-* Http调用
-
-**dubbo**:
-{{< img src="dubbo.png" alt="dubbo" maxWidth="600px" >}} -->
-
-<!-- * cdn
-  * why
-* reverse proxy
-  * why -->
-  
-<!-- ### 分流和容灾 -->
-
-<!-- how to do it ? 
-
-Protocol Difference -->
-
-<!-- * BSD -->
-### 分布式消息
-
-> 什么是分布式消息，和分布式应用的区别是？
-<!-- 
-* RPC Message
-* Restful -->
   
 **应用场景**：  
 
@@ -227,19 +151,6 @@ Protocol Difference -->
 * receiver
   * sync consume
 
-<!-- **MetaQ**:  
-
-消息模型
-{{< img src="message-model.png" alt="message-model" maxWidth="600px" >}}
-
-物理模型
-{{< img src="physical.png" alt="physical" maxWidth="600px" >}}
-
-name server: 注册服务器，将topic注册到上面  
-broker: 存储转发服务器。 和name server建立长连接，从而获得topic信息  
-producer: 消息发送方。 和一个name server建立连接，获得路由信息，再和broker建立长连接且定时向master发送心跳，再由master同步到所有brokder  
-consumer: 消息接收方，需要和其中一个name sever建立连接，获得路由信息，再向提供服务的master、slaver建立长连接，具体接收消息时刻选择broker   -->
-
 ### 分布式缓存
 
 > 如何解决分布式缓存问题
@@ -276,28 +187,7 @@ consumer: 消息接收方，需要和其中一个name sever建立连接，获得
   * limit flow
   * distributed lock
 
-
-<!-- 
-**Tair**:  
-
-物理架构  
-{{< img src="tair-physic.png" alt="tair-physic" maxWidth="600px" >}}
-
-config server 管理data server结点，维护data server的状态信息（单点 主备方式保证可靠性）
-data server负责数据存储 按照config server的指示完成数据复制和迁移，并给config server发送心跳信息
-
-逻辑架构
-{{< img src="tair-logic.png" alt="tair-logic" maxWidth="600px" >}}
-
-数据一致性： 通过version保证
-负载均衡：一致性哈希算法
-
-数据访问方式1： Hash(key) % Bucketcount，得到具体的数据存储Bucket， 再检索数据路由表到该Bucket所在的DataServer
-数据访问方式2（多级缓存）: DataServer上划分Hotzone存储热点数据的访问，由客户端配置的缓存访问逻辑来处理缓存访问 -->
-
 ### 分布式数据库
-
-<!-- TDDL(Taobao Distributed Data Layer) -->
 
 读写分离：数据写到主库，读取从备库（数据复制于主库）  
 垂直分库：不同业务单元划分到不同的数据库。 ACID被打破；Join操作困难；外键约束受影响
@@ -308,22 +198,6 @@ data server负责数据存储 按照config server的指示完成数据复制和�
 2 分库分表  
 3 动态数据源  
 4 主备切换  
-
-<!-- 
-整体架构  
-{{< img src="db-arch.png" alt="db-arch" maxWidth="600px" >}}
-
-客户端架构
-{{< img src="client-arch.png" alt="client-arch" maxWidth="600px" >}}
-
-服务端架构
-{{< img src="db-server-arch.png" alt="db-server-arch" maxWidth="600px" >}}
-
-数据源架构：  
-{{< img src="db-matrix.jpg" alt="db-matrix" maxWidth="600px" >}}
-Matrix层：SQL的解析、优化，执行; 规则匹配；表名替换；sql转发; 合并atom返回的结果集，返回给client  
-Group层： 读写分离和主备切换（镜像备份，通过日志变化，在从库中执行相同动作；或者需要先路由到从库，再执行动作 - 根据权重选择atom; 具有重试策略的调用atom执行sql  
-Atom层：物理db组成 - 执行sql; 返回结果到matrix   -->
 
 ### 分布式调度
 
@@ -342,17 +216,10 @@ TXC(Taobao Transaction Constructor)
 **blink**: 分布式实时计算  
 **odps**（Open Data Processing Service）: 分布式离线计算 结构化数据的存储和计算, 海量数据仓库的解决方案和大数据的分析和建模
 
-<!-- {{< img src="odps-arch.jpg" alt="odps-arch" maxWidth="600px" >}} -->
-
-<!-- odps客户端 
-
-* web: 提供服务
-* sdk: 封装 api
-* clt: 客户端工具，提交命令 
-* ide: 可视化操作 -->
-<!-- 
-接入层：
-http服务，用户认证，cache, load balance -->
+* web: 提供服务  
+* sdk: 封装 api  
+* clt: 客户端工具，提交命令  
+* ide: 可视化操作  
 
 ## 大数据和高并发
 
@@ -383,24 +250,7 @@ http服务，用户认证，cache, load balance -->
 * reverse proxy
 * http redirect
 * Stratification
-  
-<!--   
-## design mode
-
-SOLID -->
-
-<!-- ## Top k
-
-* how to solve
-  * 1 sort
-  * 2 partial elimination
-    * save k in container, and other numbers compare with them
-  * 3 divide and conque
-    * split to n group, find top k in the group
-  * 4 hash remove repeat number , then divide and conque
-  * 5 minimum heap
-  code -->
-
+ 
 ## 运维和监控
 
 ### 概念
@@ -425,3 +275,152 @@ switch 开发和动态配置项管理框架
 sentinel 资源调度控制（限流 降级 授权 调用统计）
 onelog 日志管控系统
 log service(sls) 日志服务实时数据一站式服务 -->
+
+
+<!-- {{< img src="network.jpg" alt="network" maxWidth="600px" >}} -->
+<!-- 
+售卖区： ecs rds(vpc隔离成多个子网)
+OXS: ots oss odps ons ocs -->
+<!-- 
+网络： 网络工作模式：同步网络（节点同步执行、消息延迟有限、高效全局锁）、半同步网络（锁范围放宽）、异步网络（节点独立执行、消息延迟无上限、无全局锁、部分算法不可行）   -->
+
+
+<!-- 统一接入层(AServer)： tengine运行的web server代理。 将请求转发给（proxy_pass）应用服务器 -->
+
+<!-- * 解决https证书申请和更换
+* 证书泄漏：部署在服务器有泄漏风险
+* 应用安全：应用接入全站https、管理私钥
+* 安全管控：收敛安全入口
+   -->
+<!-- 
+接入层通过VIP Server发现后端可用机器；
+业务层通过VIP Server做服务发现和调用；
+中间件通过VIP Server做环境路由；
+数据库通过VIP Server解决DNS 解析和上下线问题
+
+1 VIP Server需要添加vip server key（和域名是一对多） + 应用分组
+2 Aserver填写vip server key和域名
+
+AServer从请求头获取域名； 根据域名找到vip server key； 根据key找到集群 -->
+
+<!-- ### 开发环境
+
+自动化安装脚本
+
+aone回滚时，用基线版本直接覆盖master当前分支版本（不是操作的git回滚)，也就是说会新生成新的提交。
+本地开发 需要重新执行git revert当前回滚版本 -->
+
+<!-- Pouch/Docker: 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps) -->
+
+<!-- K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构。 -->
+
+<!-- **MetaQ**:  
+
+消息模型
+{{< img src="message-model.png" alt="message-model" maxWidth="600px" >}}
+
+物理模型
+{{< img src="physical.png" alt="physical" maxWidth="600px" >}}
+
+name server: 注册服务器，将topic注册到上面  
+broker: 存储转发服务器。 和name server建立长连接，从而获得topic信息  
+producer: 消息发送方。 和一个name server建立连接，获得路由信息，再和broker建立长连接且定时向master发送心跳，再由master同步到所有brokder  
+consumer: 消息接收方，需要和其中一个name sever建立连接，获得路由信息，再向提供服务的master、slaver建立长连接，具体接收消息时刻选择broker   -->
+
+
+<!-- 
+**Tair**:  
+
+物理架构  
+{{< img src="tair-physic.png" alt="tair-physic" maxWidth="600px" >}}
+
+config server 管理data server结点，维护data server的状态信息（单点 主备方式保证可靠性）
+data server负责数据存储 按照config server的指示完成数据复制和迁移，并给config server发送心跳信息
+
+逻辑架构
+{{< img src="tair-logic.png" alt="tair-logic" maxWidth="600px" >}}
+
+数据一致性： 通过version保证
+负载均衡：一致性哈希算法
+
+数据访问方式1： Hash(key) % Bucketcount，得到具体的数据存储Bucket， 再检索数据路由表到该Bucket所在的DataServer
+数据访问方式2（多级缓存）: DataServer上划分Hotzone存储热点数据的访问，由客户端配置的缓存访问逻辑来处理缓存访问 -->
+
+<!-- TDDL(Taobao Distributed Data Layer) -->
+
+<!-- 
+整体架构  
+{{< img src="db-arch.png" alt="db-arch" maxWidth="600px" >}}
+
+客户端架构
+{{< img src="client-arch.png" alt="client-arch" maxWidth="600px" >}}
+
+服务端架构
+{{< img src="db-server-arch.png" alt="db-server-arch" maxWidth="600px" >}}
+
+数据源架构：  
+{{< img src="db-matrix.jpg" alt="db-matrix" maxWidth="600px" >}}
+Matrix层：SQL的解析、优化，执行; 规则匹配；表名替换；sql转发; 合并atom返回的结果集，返回给client  
+Group层： 读写分离和主备切换（镜像备份，通过日志变化，在从库中执行相同动作；或者需要先路由到从库，再执行动作 - 根据权重选择atom; 具有重试策略的调用atom执行sql  
+Atom层：物理db组成 - 执行sql; 返回结果到matrix   -->
+
+<!-- {{< img src="odps-arch.jpg" alt="odps-arch" maxWidth="600px" >}} -->
+
+<!-- odps客户端 
+<!-- 
+接入层：
+http服务，用户认证，cache, load balance -->
+<!-- {{< img src="request-chain.jpg" alt="request-chain" maxWidth="600px" >}} -->
+<!-- {{< img src="soa.png" alt="soa" maxWidth="600px" >}} -->
+<!-- 
+**dubbo**:
+{{< img src="dubbo.png" alt="dubbo" maxWidth="600px" >}} 
+
+* cdn
+  * why
+* reverse proxy
+  * why 
+  
+### 分流和容灾 
+
+how to do it ? 
+
+Protocol Difference 
+* BSD  -->
+
+<!-- 
+**hsf**:  
+{{< img src="hsf-module.png" alt="hsf-module" maxWidth="600px" >}}
+
+调用方式：
+
+* 同步实时调用
+* Future异步调用
+* Callback异步调用
+* Generic调用
+* 服务端Sycn调用
+* Http调用
+
+### 分布式消息
+
+> 什么是分布式消息，和分布式应用的区别是？
+<!-- 
+* RPC Message
+* Restful -->
+ 
+<!--   
+## design mode
+
+SOLID -->
+
+<!-- ## Top k
+
+* how to solve
+  * 1 sort
+  * 2 partial elimination
+    * save k in container, and other numbers compare with them
+  * 3 divide and conque
+    * split to n group, find top k in the group
+  * 4 hash remove repeat number , then divide and conque
+  * 5 minimum heap
+  code -->
