@@ -20,13 +20,14 @@ buildFuture = true
 [languages]
   [languages.zh-CN]
     weight = 2
+    icon="1"
     languageName = "简体中文" # Name shown in the main menu
-    title = "毛训星"
+    title = "毛训星的网络日志"
 
   [languages.en]
     languageName = "English" # Name shown in the main menu
     weight = 1
-    title = 'maoxunxing'
+    title = "maoxunxing's life"
 
 [markup]
   [markup.highlight]

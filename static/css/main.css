@@ -8,12 +8,19 @@ blockquote {
   line-height: 2.8rem;
 }
 
+.navigation {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+  position: sticky;
+  background: #fafafa;
+  top: 0;
+}
+
 .navigation-author {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 1.5rem;
 }
 .navigation-author img {
   max-width: 50px;
