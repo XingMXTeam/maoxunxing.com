@@ -8,12 +8,31 @@ blockquote {
   line-height: 2.8rem;
 }
 
+.colorscheme-dark .navigation {
+  background: #212121;
+  border-bottom: 1px solid rgb(52, 58, 70);
+}
+.colorscheme-dark .dark-mode-icon {
+  display: inline;
+}
+.colorscheme-dark .light-mode-icon {
+  display: none;
+}
+.dark-mode-icon {
+  display: none;
+}
+.light-mode-icon {
+  display: inline;
+}
+
 .navigation {
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
   position: sticky;
   background: #fafafa;
   top: 0;
+  height: 7rem;
+  z-index: 999;
 }
 
 .navigation-author {
@@ -31,6 +50,10 @@ blockquote {
   display: inline-block !important;
   max-width: 50px;
   max-height: 50px;
+}
+
+.container {
+  padding: 0.5rem 1rem;
 }
 
 .navigation-avatar img {
@@ -555,5 +578,18 @@ h4:hover .hanchor {
 
 .douban {
   position: relative;
-  top: 6px;
+  top: 4px;
+}
+
+.zhihu {
+  font-size: 2rem;
+}
+
+.rss {
+  position: relative;
+  top: 0.2rem;
+}
+
+.footer {
+  padding-bottom: 4rem;
 }

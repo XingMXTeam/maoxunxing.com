@@ -33,6 +33,8 @@ function setTheme(theme) {
     let inverse = theme === 'dark' ? 'light' : 'dark';
     body.classList.remove('colorscheme-' + inverse);
     body.classList.add('colorscheme-' + theme);
+
+
 }
 
 function rememberTheme(theme) {

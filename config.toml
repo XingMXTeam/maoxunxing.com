@@ -21,11 +21,11 @@ buildFuture = true
   [languages.zh-CN]
     weight = 2
     icon="1"
-    languageName = "简体中文" # Name shown in the main menu
+    languageName = "CN" # Name shown in the main menu
     title = "毛训星的网络日志"
 
   [languages.en]
-    languageName = "English" # Name shown in the main menu
+    languageName = "EN" # Name shown in the main menu
     weight = 1
     title = "maoxunxing's life"
 
@@ -43,7 +43,7 @@ buildFuture = true
 twitter = "maoxunxing"
 
 [params]
-    author = "Mao Xunxing"
+    author = "Xunxing Mao"
     info = "By day, a simple software engineer. By night, also a software engineer."
     description = "Updates about my life and what I learn about creating software"
     keywords = "blog,developer,personal,毛训星,maoxunxing"
@@ -72,32 +72,32 @@ quality = 90
 resampleFilter = "Lanczos"
 
 # Social links
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github fa-2x"
-    weight = 1
-    url = "https://github.com/XingMXTeam/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter fa-2x"
-    weight = 2
-    url = "https://twitter.com/maoxunxing/"
-[[params.social]]
-    name = "Zhihu"
-    icon = "fab fa-zhihu fa-2x"
-    weight = 3
-    url = "https://www.zhihu.com/people/feng-zi-63-44"
-[[params.social]]
-    name = "Douban"
-    link = "https://img.icons8.com/material/48/000000/douban.png"
-    weight = 4
-    clazz = "douban"
-    url = "https://www.douban.com/people/maoxingxing/"
-[[params.social]]
-    name = "Rss"
-    icon = "fa fa-rss fa-2x"
-    weight = 5
-    url = "https://maoxunxing.com/index.xml"
+# [[params.social]]
+    # name = "Github"
+    # icon = "fab fa-github fa-2x"
+    # weight = 1
+    # url = "https://github.com/XingMXTeam/"
+# [[params.social]]
+  #   name = "Twitter"
+    # icon = "fab fa-twitter fa-2x"
+    # weight = 2
+    # url = "https://twitter.com/maoxunxing/"
+# [[params.social]]
+  #   name = "Zhihu"
+#     icon = "fab fa-zhihu fa-2x"
+  #   weight = 3
+    # url = "https://www.zhihu.com/people/feng-zi-63-44"
+# [[params.social]]
+  #   name = "Douban"
+    # link = "https://i.ibb.co/PxptbT0/image.png"
+    # weight = 4
+    # clazz = "douban"
+    # url = "https://www.douban.com/people/maoxingxing/"
+# [[params.social]]
+  #   name = "Rss"
+    # icon = "fa fa-rss fa-2x"
+    # weight = 5
+    # url = "https://maoxunxing.com/index.xml"
 
 [[languages.en.menu.main]]
     name = "Blog"
@@ -108,7 +108,7 @@ resampleFilter = "Lanczos"
     url = "/projects/"
     weight = 2
 [[languages.en.menu.main]]
-    name = "Book Reports"
+    name = "Book"
     url = "/book-reports/"
     weight = 3
 [[languages.en.menu.main]]
