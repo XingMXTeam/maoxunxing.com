@@ -3,8 +3,8 @@
 {{ end }}
 {{ define "content" }}
   <section class="container list">
-    <h1 class="title">{{ .Title }}</h1>
-
+    <h1 class="title" style='margin-bottom: 0;'>{{ .Title }}</h1>
+    <div class='gray-card'><em>Quick notes / tips</em></div>
     <ul class="book-reports-list">
       {{- range .Paginator.Pages -}}
         {{- .Render "li" -}}

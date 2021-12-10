@@ -3,8 +3,6 @@ title: "Export Get Undefined"
 date: 2021-11-25T15:05:52+08:00
 ---
 
-## Export Get Undefined
-
 情况说明：
 
 a.ts:
@@ -20,5 +18,4 @@ import { xx } from 'a'
 console.log(xx) // got undefined
 ```
 
-问题解决：
 这个一般是循环引用导致的

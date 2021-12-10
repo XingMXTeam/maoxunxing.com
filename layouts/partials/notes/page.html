@@ -1,20 +1,16 @@
-<section class="container page book-report">
+<section class=" page book-report">
   <article>
-    <header>
+    <!-- <header>
       <h1>{{ .Title }}</h1>
-    </header>
+    </header> -->
 
-    <a href="{{ .Params.purchase_url }}">
-      <img src="cover.jpg" class="align-left book-cover" />
-    </a>
-
-    <ul class="book-summary">
+    <!-- <ul class="book-summary">
       <li>My rating: <strong>{{ .Params.rating }}</strong> / 10</li>
       <li>
         <a href="{{ .Params.purchase_url }}">
           Purchase Link
         </a></li>
-    </ul>
+    </ul> -->
 
     {{- with .Content -}}
     <div>
@@ -22,10 +18,10 @@
     </div>
     {{- end -}}
 
-    {{ partial "mailing-list-signup.html" . }}
+    <!-- {{ partial "mailing-list-signup.html" . }}
 
     {{ if not .Site.IsServer }}
       {{ partial "talkyard.html" . }}
-    {{ end }}
+    {{ end }} -->
   </article>
 </section>

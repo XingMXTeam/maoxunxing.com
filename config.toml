@@ -31,7 +31,7 @@ buildFuture = true
 
 [markup]
   [markup.highlight]
-    style = "native"
+    style = "github"
   [markup.goldmark.renderer]
     # Allow Markdown to include embedded HTML.
     unsafe= true

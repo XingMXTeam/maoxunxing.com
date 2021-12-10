@@ -593,3 +593,13 @@ h4:hover .hanchor {
 .footer {
   padding-bottom: 4rem;
 }
+
+.notes-li .date {
+  margin-top: -40px !important;
+}
+
+.gray-card {
+  color: #555;
+  opacity: .5;
+  font-size: .8em;
+}

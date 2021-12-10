@@ -1,0 +1,13 @@
+{
+  "name": "blog_source",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "newblog": "hugo new --kind blog",
+    "newnotes": "hugo new --kind notes",
+    "newbook": "hugo new --kind book-reports",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
