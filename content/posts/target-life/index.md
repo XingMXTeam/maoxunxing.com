@@ -1,5 +1,5 @@
 ---
-title: "Talk About My Recent Life Planning"
+title: "My Life Experience And Plan"
 date: 2021-09-17T13:12:13+08:00
 tags:
 - Growth

@@ -5,7 +5,7 @@ description: "每个人都需要学习，你是怎么学习的？这篇文章谈
 tags:
 - 成长
 images:
-- how-to-improve/improve.jpeg
+- how-to-improve/test.jpg
 ---  
 ### 学习方法
 

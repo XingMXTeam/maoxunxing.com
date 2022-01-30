@@ -1,10 +1,10 @@
 ---
-title: "Understanding of Modern Web Architecture"
+title: "How Web Works"
 date: 2021-08-06T15:25:06+08:00
 tags:
 - Architecture
 images:
-- website-architecture/backend-arch.png
+- website-architecture/test.png
 description: "What are the concepts? What does the request link look like? What are distributed systems and what are the problems to be solved? Problem solving for big data and high concurrency?"
 ---
 ## Basic Concepts

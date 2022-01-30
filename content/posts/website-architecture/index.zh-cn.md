@@ -4,7 +4,7 @@ date: 2021-08-06T15:25:06+08:00
 tags:
 - 架构
 images:
-- website-architecture/backend-arch.png
+- website-architecture/test.png
 description: "有哪些概念？请求链路是怎么样的？分布式系统是什么，有哪些问题要解决？大数据和高并发的问题解法？"
 ---
 ## 基础概念

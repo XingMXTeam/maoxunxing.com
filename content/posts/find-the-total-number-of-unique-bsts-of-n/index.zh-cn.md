@@ -7,7 +7,7 @@ tags:
 - 面试
 description: "我正在学习算法。本篇讨论的算法关于BST"
 images:
-- find-the-total-number-of-unique-bsts-of-n/tree.jpg
+- find-the-total-number-of-unique-bsts-of-n/test.png
 ---
 ## 问题定义
 

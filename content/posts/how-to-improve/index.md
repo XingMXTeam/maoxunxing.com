@@ -1,11 +1,11 @@
 ---
-title: "Talking About Learning And Growing"
+title: "Learning and Growing"
 date: 2021-08-27T10:20:36+08:00
 description: "From a technical person's perspective, how to grow fast and how to build your own growth model"
 tags:
 - Growth
 images:
-- how-to-improve/improve.jpeg
+- how-to-improve/test.jpg
 ---
 ### Learning Methods
 

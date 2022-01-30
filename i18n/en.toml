@@ -29,13 +29,13 @@ other = "Articles about Algorithm"
 other = "Detect Cycle in an Undirected Graph"
 
 [homeCat1Article2]
-other = "Given N, Find the total number of unique BSTs"
+other = "Given N, Find The Total Number of Unique BSTs"
 
 [homeCat2]
-other = "Articles about Growth"
+other = "Articles About Growth"
 
 [homeCat2Article1]
-other = "Talking about learning and growing"
+other = "Learning and Growing"
 
 [homeCat2Article2]
 other = "How to Stand Out"
@@ -47,10 +47,10 @@ other = "How To Work Hard"
 other = "Articles about Software Development"
 
 [homeCat3Article1]
-other = "Understanding of Modern Web Architecture"
+other = "How Web Works"
 
 [homeCat3Article2]
-other = "Talking about the nature of computers"
+other = "The Nature of Computers"
 
 [shareOn]
 other = "Share on"
