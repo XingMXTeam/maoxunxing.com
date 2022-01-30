@@ -1,0 +1,76 @@
+[debug] [2022-01-30T08:05:34.047Z] ----------------------------------------------------------------------
+[debug] [2022-01-30T08:05:34.048Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login
+[debug] [2022-01-30T08:05:34.049Z] CLI Version:   9.16.5
+[debug] [2022-01-30T08:05:34.049Z] Platform:      darwin
+[debug] [2022-01-30T08:05:34.049Z] Node Version:  v12.8.0
+[debug] [2022-01-30T08:05:34.050Z] Time:          Sun Jan 30 2022 16:05:34 GMT+0800 (GMT+08:00)
+[debug] [2022-01-30T08:05:34.050Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=440106963&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-01-30T08:05:53.511Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AX4XfWilg1JQKyVsWF-vnqsLBIOdRlRLfdWTZpN3G9qxm8i-xHEfPy-S_PpQ14kwy7ZIbQ","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2022-01-30T08:05:53.522Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=socket hang up
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:32:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:203:13)
+    at Request.EventEmitter.emit (domain.js:476:20)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:877:8)
+    at ClientRequest.emit (events.js:203:13)
+    at ClientRequest.EventEmitter.emit (domain.js:476:20)
+    at ClientRequest.onError (/usr/local/lib/node_modules/firebase-tools/node_modules/tunnel-agent/index.js:179:21)
+    at Object.onceWrapper (events.js:291:20)
+    at ClientRequest.emit (events.js:203:13)
+    at ClientRequest.EventEmitter.emit (domain.js:476:20)
+    at Socket.socketOnEnd (_http_client.js:433:9)
+    at Socket.emit (events.js:208:15)
+    at Socket.EventEmitter.emit (domain.js:476:20)
+    at endReadableNT (_stream_readable.js:1168:12)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=440106963&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
+[debug] [2022-01-30T08:10:26.813Z] ----------------------------------------------------------------------
+[debug] [2022-01-30T08:10:26.815Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login --debug
+[debug] [2022-01-30T08:10:26.815Z] CLI Version:   9.16.5
+[debug] [2022-01-30T08:10:26.815Z] Platform:      darwin
+[debug] [2022-01-30T08:10:26.815Z] Node Version:  v12.8.0
+[debug] [2022-01-30T08:10:26.817Z] Time:          Sun Jan 30 2022 16:10:26 GMT+0800 (GMT+08:00)
+[debug] [2022-01-30T08:10:26.817Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=349199235&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2022-01-30T08:11:14.148Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/0AX4XfWhSkCIVicBfe7M8Itq_USqkPOTEILVUOugIfvRRGKC4QLyftTC3uGgn9S3SXcNqJw","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2022-01-30T08:11:14.162Z] Token Fetch Error: FirebaseError: Server Error. tunneling socket could not be established, cause=socket hang up
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:32:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:203:13)
+    at Request.EventEmitter.emit (domain.js:476:20)
+    at Request.onRequestError (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:877:8)
+    at ClientRequest.emit (events.js:203:13)
+    at ClientRequest.EventEmitter.emit (domain.js:476:20)
+    at ClientRequest.onError (/usr/local/lib/node_modules/firebase-tools/node_modules/tunnel-agent/index.js:179:21)
+    at Object.onceWrapper (events.js:291:20)
+    at ClientRequest.emit (events.js:203:13)
+    at ClientRequest.EventEmitter.emit (domain.js:476:20)
+    at Socket.socketOnEnd (_http_client.js:433:9)
+    at Socket.emit (events.js:208:15)
+    at Socket.EventEmitter.emit (domain.js:476:20)
+    at endReadableNT (_stream_readable.js:1168:12)
+    at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=349199235&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+[info] 
