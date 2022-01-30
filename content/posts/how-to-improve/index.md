@@ -1,5 +1,5 @@
 ---
-title: "Talking about learning and growing"
+title: "Talking About Learning And Growing"
 date: 2021-08-27T10:20:36+08:00
 description: "From a technical person's perspective, how to grow fast and how to build your own growth model"
 tags:
@@ -16,7 +16,7 @@ images:
 * 10% self-learning (input: training, books)  
 
 The methodology is simple.  
-* * input **: what quality sources of information you have, this needs to be consciously collected, more books, training, join the bullying platform, contact more people, but also have an open mind  
+**input**: what quality sources of information you have, this needs to be consciously collected, more books, training, join the bullying platform, contact more people, but also have an open mind  
 **MEMORY UNDERSTANDING**: Summarize and refine through structured thinking/charts/thought maps, and strengthen your memory through card tools like Anki. Have a structure in your mind, just like a library can index at any time  
 **expression use**: learn from sharing through articles and communicating with others. Participate in work, learn from projects, learn from solving real problems, learn from teaching others knowledge. Can reinforce and complement your refinement  
 

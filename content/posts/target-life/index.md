@@ -1,5 +1,5 @@
 ---
-title: "Talk about my recent life planning"
+title: "Talk About My Recent Life Planning"
 date: 2021-09-17T13:12:13+08:00
 tags:
 - Growth
@@ -13,12 +13,15 @@ images:
 
 ## Cut to the chase
 
-
 There is a saying that there is no dream and what is the difference between a salted fish. All dreams need to be rooted in reality, otherwise it is a pavilion in the sky, a fool's dream. In reality, to draw the joy of life. And work is a large part of life, the degree of happiness in the workplace determines the degree of happiness in your life. Think of your career as a journey and experience it deeply instead of feeling that work is a waste of time and life. The following is my workplace trajectory.
 
-{{< img src="target.jpg" alt="target" maxWidth="600px" align="center" >}} 
++ 2014: I graduated from NanChang University. Started working at HitThink Corp as a front-end engineer. I did'not have a life target, just working as a tool. I am happy with my girl friend. 
++ 2016.7 ~ 2019.9:  I leave HitThink Corp because i start to hate work with my colleagues. And i started to realise that i should work with excellent colleagues and good company. I started to interview with NetEase Corp by recommendation. Luckily,  i had made it, entered the Education Business Unit. I had learned much and knew some good friends, and also I had got promotion. 
++ 2019.9 ~ now: I had thought i would work at NetEase Corp for a long time. But everything just not process as the way you want. The Business Unit's Dissolution made me to find a another job, and also i had broke up with my eight years' girl friend. Everything changed for me. And i had a big illness, slim down to 90 pounds. I had not have a high salary when i worked at NetEase Corp. I started to thought to buy my own house, and i need to promote my salary. So i interviewed with Alibaba Corp.  I had made it. When you learned a lot and tried hard, you can always made it by my heart deep thoughts. The first two years at Alibaba Group, i worked hard, but i got nothing but salary. I had not promotion. That is sad, but i finally bought my own house where i wanted. If you cannot promotion, you should learn as much as you know, write as much as you can, you should presents yourself as much as possible, that is what i think now. 
 
-Work in a routine, no breakthrough in the workplace promotion. But also slowly to a large platform, is the opportunity to break through upwards or make some achievements. There is no chapter, need to pay more attention to interests and hobbies, to inspire their own work passion. Need to develop good habits, through the scientific method, management of self.
+<!-- {{< img src="target.jpg" alt="target" maxWidth="600px" align="center" >}}  -->
+
+As a summary: Work in a routine, no breakthrough in the workplace promotion. But also slowly to a large platform, is the opportunity to break through upwards or make some achievements. There is no chapter, need to pay more attention to interests and hobbies, to inspire their own work passion. Need to develop good habits, through the scientific method, management of self.
 
 [Work] Core to improve coding and problem-solving skills, as well as the ability to land on the job, need to have a strong attitude and upward drive.
 
@@ -28,7 +31,7 @@ Work in a routine, no breakthrough in the workplace promotion. But also slowly t
 
 Why have a growth flywheel, because without theoretical guidance, it is difficult to form a fighting force. Drive self through growth closed loop: the core is to have a Polaris goal every year, then develop a strategy to implement it and drive it through habit.
 
-{{< img src="grow.jpg" alt="grow" maxWidth="600px" align="center" >}}
+<!-- {{< img src="grow.jpg" alt="grow" maxWidth="600px" align="center" >}} -->
 
 ## 2021 Plan
 
@@ -39,7 +42,7 @@ Goal: Become a technical expert
 Strategy.  
 There are two general directions  
 1 Inward: Workplace power, focus on OKR + Possibilities  
-2 outward: strengthen the foundation + product power and influence building   
+2 Outward: strengthen the foundation + product power and influence building   
 
 <!-- * 形成全方位的能力图谱
 
