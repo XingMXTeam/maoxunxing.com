@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-network-stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "close1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "through2": "^4.0.2"
+  }
+}
