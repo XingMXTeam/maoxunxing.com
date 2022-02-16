@@ -280,7 +280,7 @@ net.createServer(function(stream) {
 }).listen(8000)
 ```
 
-复杂的例子。我们可以创建一个代理的服务器，中间转发一下：duplex2.js
+复杂的例子。我们可以创建一个代理的服务器，中间转发一下(有点像vpn)：duplex2.js
 
 ``` js
 // nc localhost 8001 结果是通过8000服务器转发的
@@ -290,22 +290,22 @@ net.createServer(function(stream) {
 }).listen(8001)
 ```
 
-### 内置的流
+### 对象流 object.js
 
-1 process.stdin: 可读的流
-2 process.stdout：可写的流
-3 process.stderr：可写的流
-4 fs.createReadStream()
-5 fs.createWriteStream()
-6 net.connect()： Duplex流 建立tcp连接用的
-7 http.request()
-8 zlib.createGzip()
-9 zlib.createGunzip() : gzip解压
-10 zlib.createDeflate(): 用deflate算法压缩
-11 zlib.createInflate(): 用deflate算法解压
+正常情况下，你只能读和写buffers（比如文本文件） 和字符串。 如果要读取对象，
+需要开启对象模式
 
-
-### 好玩的用法
+``` js
+const through = require('through2')
+const tr = through.obj(function(row, enc, next) {
+  next(null, (row.n * 1000) + '\n')
+})
+tr.pipe(process.stdout)
+tr.write({ n: 5 })
+tr.write({ n: 10 })
+tr.write({ n: 3 })
+tr.end()
+```
 
 ### 如何把流缓存起来一次性读取： concat.js
 
@@ -347,15 +347,38 @@ server.listen(6000)
 
 ```
 
+### 内置的流
 
-自定义一个sock
+* process.stdin: 可读的流
+* process.stdout：可写的流
+* process.stderr：可写的流
+* fs.createReadStream()
+* fs.createWriteStream()
+* net.connect()： Duplex流 建立tcp连接用的
+* net.createServer()
+* http.request()
+* http.createServer()
+* zlib.createGzip()
+* zlib.createGunzip() : gzip解压
+* zlib.createDeflate(): 用deflate算法压缩
+* zlib.createInflate(): 用deflate算法解压
+* tls.connect()
+* tls.createServer()
+* child_process spawn
 
-在网络上怎么传输数据
-在电脑上怎么传输数据
+其他常用的流模块：
 
-
-### 一张图总结
-
+* crypto
+* zlib
+* split2
+* websocket-stream
+* collect-stream
+* from2
+* to2
+* duplexify
+* pump
+* pumpify
+* end-of-stream
 
 ### 实际应用场景
 
