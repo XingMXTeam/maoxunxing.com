@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "concat-stream": "^2.0.0",
+    "multiplex": "^6.7.0",
+    "rpc-stream": "^2.1.2",
     "through2": "^4.0.2"
   }
 }

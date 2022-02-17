@@ -20,3 +20,4 @@ readableStream.push('ho!')
 // or
 // writableStream.write('hey!\n')
 
+readableStream
