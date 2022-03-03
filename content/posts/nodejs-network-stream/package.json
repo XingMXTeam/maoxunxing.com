@@ -12,6 +12,7 @@
   "dependencies": {
     "collect-stream": "^1.2.1",
     "concat-stream": "^2.0.0",
+    "crypto": "^1.0.1",
     "duplexify": "^4.1.2",
     "ecstatic": "^4.1.4",
     "mkdirp": "^1.0.4",
