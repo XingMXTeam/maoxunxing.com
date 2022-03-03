@@ -9,9 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "collect-stream": "^1.2.1",
     "concat-stream": "^2.0.0",
+    "duplexify": "^4.1.2",
+    "mkdirp": "^1.0.4",
     "multiplex": "^6.7.0",
     "rpc-stream": "^2.1.2",
+    "split2": "^4.1.0",
     "through2": "^4.0.2"
   }
 }

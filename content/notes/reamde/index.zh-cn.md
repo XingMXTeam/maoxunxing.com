@@ -10,3 +10,4 @@ draft: true
 readme net
 ```
 
+快速安装npmi
