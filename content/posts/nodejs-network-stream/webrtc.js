@@ -24,7 +24,6 @@ update()
 
 function update() {
   function onsubmit(ev) {
-    console.log('run submit')
     ev.preventDefault();
     var msg = this.elements.msg.value;
     Object.keys(peers).forEach(function(id) {
