@@ -4,7 +4,8 @@
   "description": "",
   "main": "close1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "signalhub": "signalhub listen -p 8080"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +16,10 @@
     "mkdirp": "^1.0.4",
     "multiplex": "^6.7.0",
     "rpc-stream": "^2.1.2",
+    "signalhub": "^4.9.0",
     "split2": "^4.1.0",
-    "through2": "^4.0.2"
+    "through2": "^4.0.2",
+    "to2": "^1.0.0",
+    "yo-yo": "^1.4.1"
   }
 }
