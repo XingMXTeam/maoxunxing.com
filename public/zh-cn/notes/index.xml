@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on 毛训星的网络日志</title>
+    <link>https://maoxunxing.com/zh-cn/notes/</link>
+    <description>Recent content in Notes on 毛训星的网络日志</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Jan 2022 13:15:59 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/zh-cn/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jsx Runtime</title>
+      <link>https://maoxunxing.com/zh-cn/notes/jsx-runtime/</link>
+      <pubDate>Mon, 24 Jan 2022 13:15:59 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/jsx-runtime/</guid>
+      <description>node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &amp;#34;react/jsx-runtime&amp;#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
+&amp;#34;compilerOptions&amp;#34;: { &amp;#34;baseUrl&amp;#34;: &amp;#34;.&amp;#34;, &amp;#34;outDir&amp;#34;: &amp;#34;./lib&amp;#34;, &amp;#34;module&amp;#34;: &amp;#34;esnext&amp;#34;, &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;lib&amp;#34;: [&amp;#34;esnext&amp;#34;, &amp;#34;dom&amp;#34;], &amp;#34;sourceMap&amp;#34;: true, &amp;#34;allowJs&amp;#34;: false, &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;, // change react-jsx to react } </description>
+    </item>
+    
+    <item>
+      <title>Decode Url Safe</title>
+      <link>https://maoxunxing.com/zh-cn/notes/decode-url-safe/</link>
+      <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/decode-url-safe/</guid>
+      <description>decodeUrlComponent 可能会抛出异常
+decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) // VM158:1 Uncaught URIError: URI malformed // at decodeURIComponent (&amp;lt;anonymous&amp;gt;) // at &amp;lt;anonymous&amp;gt;:1:1 解决方法：
+try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ } </description>
+    </item>
+    
+    <item>
+      <title>pageckage.json的files是干嘛用的</title>
+      <link>https://maoxunxing.com/zh-cn/notes/packagejson/</link>
+      <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/packagejson/</guid>
+      <description>package.json的files 能保证npm打包包含的内容: https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
+    </item>
+    
+    <item>
+      <title>Hooks don&#39;t work with yarn link</title>
+      <link>https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/</link>
+      <pubDate>Mon, 29 Nov 2021 12:06:58 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/</guid>
+      <description>在本地tnpm link多个包时，报错Hooks Only Run in Function Component。这个情况一般是react有多个复制版本导致的。
+解决方案是将react react-dom都link到同一个
+cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn link cd ../../node_modules/react-dom yarn link cd YOUR_PROJECT yarn link PACKAGE_YOU_DEBUG_LOCALLY yarn link react yarn link react-dom </description>
+    </item>
+    
+    <item>
+      <title>Export Get Undefined</title>
+      <link>https://maoxunxing.com/zh-cn/notes/export-get-undefined/</link>
+      <pubDate>Thu, 25 Nov 2021 15:05:52 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/export-get-undefined/</guid>
+      <description>情况说明：
+a.ts:
+export const xx = &amp;#39;123&amp;#39; b.ts:
+import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined 这个一般是循环引用导致的</description>
+    </item>
+    
+  </channel>
+</rss>

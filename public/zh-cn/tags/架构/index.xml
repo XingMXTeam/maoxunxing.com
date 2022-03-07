@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>架构 on 毛训星的网络日志</title>
+    <link>https://maoxunxing.com/zh-cn/tags/%E6%9E%B6%E6%9E%84/</link>
+    <description>Recent content in 架构 on 毛训星的网络日志</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 06 Aug 2021 15:25:06 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/zh-cn/tags/%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web是如何工作的</title>
+      <link>https://maoxunxing.com/zh-cn/website-architecture/</link>
+      <pubDate>Fri, 06 Aug 2021 15:25:06 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/website-architecture/</guid>
+      <description>基础概念    分类 名称 解释     网络 VPC Virtual Private Cloud 虚拟私有云。为什么是虚拟私有？它是一种运行在公有云上，将一部分公有云资源为某个用户隔离出来，给这个用户私有使用的资源的集合，感觉像是在使用自己的私有云一样。什么是云？构建在物理之上的虚拟化网络。VPC采用隧道技术，隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。   网络 DNS 应用层协议和https一样，端口是53，提供根据域名查IP的服务   网络 Record 记录和IP的对应关系   网络 A记录 支持将域名映射到IPV4地址   网络 CNAME 别名 Canonical Name 支持指向另一个域名   网络 MX Mail Exchanger 支持将域名指向邮件服务器地址   网络 NS name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析   网络 CDN Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题   网络 节点 传统的节点是单体的物理机器 -&amp;gt; 单台虚拟机上的服务 -&amp;gt; 轻量级的容器服务，能提供单位服务的逻辑计算资源的集合   网络 统一接入层 web server代理，它将请求转发给（proxy_pass）应用服务器。能解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）   分布式 NTP（网络时间协议） 在数据网络潜伏时间可变的计算机系统之间通过分组交换进行时钟同步的一个网络协议，位于OSI模型的应用层   分布式 Lamport逻辑时钟/向量时钟 一种在分布式环境中为各种操作或事件产生偏序值的技术，它可以检测操作或事件的并行冲突，用来保持系统的一致性   云原生 K8s Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构   云原生 Docker 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)    请求链路  一个http请求现代化架构下一般会有哪些链路</description>
+    </item>
+    
+  </channel>
+</rss>

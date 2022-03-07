@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/</link>
+    <description>Recent content on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Dec 2021 10:12:21 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decode Url Safe</title>
+      <link>https://maoxunxing.com/en/notes/decode-url-safe/</link>
+      <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/decode-url-safe/</guid>
+      <description>decodeUrlComponent may throw error
+decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) // VM158:1 Uncaught URIError: URI malformed // at decodeURIComponent (&amp;lt;anonymous&amp;gt;) // at &amp;lt;anonymous&amp;gt;:1:1 Solution:
+try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ } </description>
+    </item>
+    
+    <item>
+      <title>Lamb in His Bosom</title>
+      <link>https://maoxunxing.com/en/book-reports/lamb-in-his-bosom/</link>
+      <pubDate>Thu, 09 Dec 2021 15:05:59 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/book-reports/lamb-in-his-bosom/</guid>
+      <description>It is mainly a depiction of farmers living in Georgia, USA, before the outbreak of the Civil War. They were not plantation owners, nor were they capitalists. Just ordinary people living on a piece of land, needing to feed themselves, fighting against the harsh living conditions, working hard for the need to feed their families, for their families and children, reflecting the different fates of each person, living a cold and warm life.</description>
+    </item>
+    
+    <item>
+      <title>Hooks don&#39;t work with yarn link</title>
+      <link>https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/</link>
+      <pubDate>Mon, 29 Nov 2021 12:06:58 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/</guid>
+      <description>When linking multiple packages in local tnpm, the error Hooks Only Run in Function Component is reported. this situation is usually caused by multiple replicated versions of react.
+The solution is to link all react react-dom to the same
+cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn link cd ../../node_modules/react-dom yarn link cd YOUR_PROJECT yarn link PACKAGE_YOU_DEBUG_LOCALLY yarn link react yarn link react-dom </description>
+    </item>
+    
+    <item>
+      <title>Export Get Undefined</title>
+      <link>https://maoxunxing.com/en/notes/export-get-undefined/</link>
+      <pubDate>Thu, 25 Nov 2021 15:05:52 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/export-get-undefined/</guid>
+      <description>a.ts:
+export const xx = &amp;#39;123&amp;#39; b.ts:
+import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined This is usually caused by circular references</description>
+    </item>
+    
+    <item>
+      <title>My Genius Girlfriend - The Naples Quartet</title>
+      <link>https://maoxunxing.com/en/book-reports/my-genius-girlfriend/</link>
+      <pubDate>Sat, 20 Nov 2021 17:30:45 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/book-reports/my-genius-girlfriend/</guid>
+      <description>Overall, around the two women as the main line, with the changing times of those who happen to love, friendship, family matters, pay attention to the psychological description, delicate and fascinating. While people are almost always wrapped up in the context of the times in their lives, Leila maintains an independent personality with different character qualities. Leila comes out of the times and influences her community with her tenacious qualities and smart, independent personality.</description>
+    </item>
+    
+    <item>
+      <title>My Life Experience And Plan</title>
+      <link>https://maoxunxing.com/en/target-life/</link>
+      <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/target-life/</guid>
+      <description>A little emotion 21 years I bought a house in Hangzhou to put down roots, in a trance, has been 32, work in general, life in general, not so exciting, most of the time as the walking dead. When I was young, I did my best to feel the splendor of life, and when I was old, my children and grandchildren were full of children and grandchildren, and I did not suffer from physical illnesses, so I did not have any regrets.</description>
+    </item>
+    
+    <item>
+      <title>Learning and Growing</title>
+      <link>https://maoxunxing.com/en/how-to-improve/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/how-to-improve/</guid>
+      <description>Learning Methods 721 Principle: The &amp;ldquo;721&amp;rdquo; learning rule was formally introduced by Morgan, Robert and Mike in their book &amp;ldquo;Building a Career Development Plan&amp;rdquo;, and is summarized as follows.
+ 70% learning by doing (practice) 20% learning from others (review, summarize, share and exchange) 10% self-learning (input: training, books)  The methodology is simple.
+input: what quality sources of information you have, this needs to be consciously collected, more books, training, join the bullying platform, contact more people, but also have an open mind</description>
+    </item>
+    
+    <item>
+      <title>Detect Cycle in an Undirected Graph</title>
+      <link>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</guid>
+      <description>Question Definition (S &amp;amp; T) Given an undirected graph, how to check if there is a cycle in the graph ?
+Example 1:
+Input：n = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }
+Output: yes
+Diagram:
+ has circle
+  Example 2:
+Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }</description>
+    </item>
+    
+    <item>
+      <title>The Nature of Computers</title>
+      <link>https://maoxunxing.com/en/code-computer/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/code-computer/</guid>
+      <description>Coding principles  Computers are by nature a world of 0/1, and if expressing this world in 0/1. The conclusion is: it needs to be encoded by.
+ Number encoding  First how to express numbers
+ ** Why is there a complement code? **
+ Complement is to facilitate computer operations, it is easier for computers to do addition
+ For example: 5+(-3) is calculated by complement (definition: positive number remains the same, negative number is inverted and +1)</description>
+    </item>
+    
+    <item>
+      <title>Given N, Find The Total Number of Unique BSTs</title>
+      <link>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</guid>
+      <description>Question Definition (S &amp;amp; T) Given N, Find the total number of unique BSTs that can be made using values from 1 to N
+Examples:
+Input: n = 3
+Output: 5
+For n = 3, preorder traversal of
+ 1 2 3 1 3 2 2 1 3 3 1 2 3 2 1  Input: 4
+Output: 14
+Problem Analysis(A) At first, I did not quite understand what the question means.</description>
+    </item>
+    
+    <item>
+      <title>How Web Works</title>
+      <link>https://maoxunxing.com/en/website-architecture/</link>
+      <pubDate>Fri, 06 Aug 2021 15:25:06 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/website-architecture/</guid>
+      <description>Basic Concepts    Category Name Explanation     Network VPC Virtual Private Cloud Virtual Private Cloud. Why Virtual Private? It is a collection of resources that run on a public cloud, isolating a portion of the public cloud resources for a particular user, and giving that user private access to resources that feel like they are using their own private cloud. What is a cloud? A virtualized network built on top of a physical one, VPCs use tunneling technology to isolate the virtual network.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://maoxunxing.com/en/about/</link>
+      <pubDate>Tue, 15 Jun 2021 22:49:06 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/about/</guid>
+      <description>-- Mao Xunxing is a front-end developer working at Alibaba Group at Hangzhou, China. He graduated from NanChang University in 2014 with a BS in Computer Science. You can follow him on Twitter @maoxunxing, and GitHub, or reach him by email at xunxing1989@gmail.com.
+If you happen to speak Chinese, his Chinese name is 毛训星(máo xùn xīng), you can follow him on 知乎 and 豆瓣.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://maoxunxing.com/en/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/projects/</guid>
+      <description>Book Translation (2020) 《Modern Javascript for the impatient》, I translated the internationalization chapter.</description>
+    </item>
+    
+    <item>
+      <title>Vortex - Representative works of Junji Ito</title>
+      <link>https://maoxunxing.com/en/book-reports/vortex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/book-reports/vortex/</guid>
+      <description>Divided into two volumes, it is a classic Japanese horror manga. To be honest, I&amp;rsquo;m a bit uncomfortable with this genre.
+This book looks all write whirlwind, actually a bit of realistic allegory. Mainly reflects the current situation of Japanese people under the economic problems of Japan at that time. When everyone is tied to capital, humanity is lost, society becomes deformed&amp;hellip;
+ What I Liked  Reacts to the problems in society through abstraction ♪ The storytelling is stronger  ♪ What I Disliked  Look a little horror movie feeling  Key Takeaways  Be wary of capital and be an independent and free soul  </description>
+    </item>
+    
+  </channel>
+</rss>
