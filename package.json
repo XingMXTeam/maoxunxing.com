@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webrtc-swarm": "^2.9.0"
+    "hugo": "^0.0.3"
   }
 }
