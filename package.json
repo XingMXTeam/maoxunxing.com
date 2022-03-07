@@ -7,11 +7,11 @@
     "newnotes": "hugo new --kind notes",
     "newbook": "hugo new --kind book-reports",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "hugo"
+    "build": "./node_modules/hugo/bin"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hugo": "^0.0.3"
+
   }
 }
