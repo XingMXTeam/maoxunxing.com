@@ -1,6 +1,6 @@
 baseurl = "https://maoxunxing.com/"
 title = "maoxunxing"
-theme = "hugo-coder-xingmxteam"
+theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 defaultContentLanguageInSubdir = "true"
