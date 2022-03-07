@@ -6,11 +6,12 @@
     "newblog": "hugo new --kind blog",
     "newnotes": "hugo new --kind notes",
     "newbook": "hugo new --kind book-reports",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/hugo/bin"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webrtc-swarm": "^2.9.0"
+
   }
 }
