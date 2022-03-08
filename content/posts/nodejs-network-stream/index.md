@@ -1,31 +1,30 @@
 ---
-title: "NodeJS Stream从入门到精通"
+title: "NodeJS Stream from Beginner to Master"
 date: 2021-10-19T14:28:57+08:00
 tags:
 - NodeJS 
-description: "流是nodejs中最难理解也是最强大的一个特性，本文对流的内容做了梳理"
+description: "Streams are one of the most difficult and powerful features of nodejs, and this article composes the content of streams"
 images:
 - nodejs-network-stream/images.jpeg
 ---
 
-## 什么是流
+## What is a stream
 
-流不是仅存在于Nodejs, 在unix操作系统中也有类似的概念。 比如管道操作符号
+Streams are not only found in Nodejs, there are similar concepts in unix operating systems. For example, the pipe operation symbol
 
 ``` shell
 cat xx.ts | grep 'console.log'
 ```
 
-能从文件中找到对应的匹配内容。实际上，node的流的概念是来源于unix系统，最早是来自Douglas McIlroy管道的概念
-[最初的来源](http://cm.bell-labs.co/who/dmr/mdmpipe.html)。
+can find the corresponding matching content from the file. In fact, the concept of streams in node comes from unix systems, first from Douglas McIlroy's concept of pipes [Initial source](http://cm.bell-labs.co/who/dmr/mdmpipe.html)。
 
-维基百科：
+Wikipedia：
 
 > Malcolm Douglas McIlroy (born 1932) is a mathematician, engineer, and programmer. As of 2019 he is an Adjunct Professor of Computer Science at Dartmouth College. **McIlroy is best known for having originally proposed Unix pipelines** and developed several Unix tools, such as spell, diff, sort, join, graph, speak, and tr.[1] He was also one of the pioneering researchers of macro processors and programming language extensibility. He participated in the design of multiple influential programming languages, particularly PL/I, SNOBOL, ALTRAN, TMG and C++. 
 
-本质上，流是一种数据交换的格式。比如我们在操作文件的读写，网络传输等。个人认为流是nodejs中最难理解也是最强大的一个特性。
+Essentially, a stream is a format for data exchange. For example, we are operating on file reading and writing, network transfers, etc. Personally, I think streams are one of the most difficult and powerful features of nodejs to understand.
 
-流是否和我们相关，nodejs中流几乎无处不在。比如请求流、响应流、文件流。搜索一下[Node运行时代码](https://github.com/nodejs/node/blob/863d13c192a8d315fa274194e64c1c9e5820e8f2/lib/internal/console/constructor.js)，随处可见：
+Whether streams are relevant to us or not, streams are almost everywhere in nodejs. For example, request streams, response streams, file streams. Do a search for[Node runtime code](https://github.com/nodejs/node/blob/863d13c192a8d315fa274194e64c1c9e5820e8f2/lib/internal/console/constructor.js). Everywhere you look you see.
 
 ``` js
 ...
@@ -53,11 +52,11 @@ cat xx.ts | grep 'console.log'
 ```
 
 
-## 怎么用流
+## How to use streams
 
-### 基本用法
+### Basic usage
 
-这段代码大家都比较熟悉：
+This code is familiar to everyone.
 
 ``` js
 const http = require('http')
@@ -70,10 +69,10 @@ const server = http.createServer(function(req, res) {
 server.listen(3000)
 ```
 
-在Nodejs里面我们读取一个文件的时候，是读取整个文件到内存中，然后处理这个文件内容。这样的问题是什么：data.txt会读取到内存中，导致用户体验变差，特别是低网络的情况。
-通过流，可以一个片段一个片段地处理，而不是一次性都都读取到内存里面。
+When we read a file inside Nodejs, we read the whole file into memory and then process the contents of this file. What is the problem with this: data.txt is read into memory, which leads to a poor user experience, especially with low networks.
+With streams, it is possible to process one fragment at a time, instead of reading it all into memory at once.
 
-通过流的方式改写：
+Rewritten by means of streams.
 
 ``` js
 const http = require('http')
@@ -85,8 +84,11 @@ const server = http.createServer(function(req, res) {
 server.listen(3000)
 ```
 
-这里pipe做了两件事：1 是监听数据 2 相当于调用res.end 它会自动管理数据片段的缓存
-甚至我们可以进行数据压缩：
+Here pipe does two things: 
+1 is listening to the data 
+2 is equivalent to calling res.end which automatically manages the caching of data fragments
+
+We can even do data compression: 
 
 ``` js
 const http = require('http')
@@ -100,74 +102,74 @@ const server = http.createServer(function(req, res) {
 server.listen(3000)
 ```
 
-### 流的类型
+### Types of streams
 
-1 readable 可读 `readable.pipe(A)`
-2 writable 可写 `A.pipe(writable)`
-3 duplex： 复式：既可读也可写  `A.pipe(duplex).pipe(A)`
-4 transform：duplex的一种类型 可读可写 输出是从输入转换过来 `A.pipe(transform).pipe(B)`
+1 readable readable `readable.pipe(A)`
+2 writable writable `A.pipe(writable)`
+3 duplex: multiplex: both readable and writable `A.pipe(duplex).pipe(A)`
+4 transform: a type of duplex readable and writable output is transformed from input `A.pipe(transform).pipe(B)`
 
-pipe方法:
-所有的readable/transform/duplex流都有这个方法, 并且返回readable/transform/duplex的流
+pipe method:
+All readable/transform/duplex streams have this method, and return readable/transform/duplex streams
 
 ``` js
 src.pipe(dst) // 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep 'console'
 ```
 
-可读流的常用方法：
+Common methods for readable streams.
 
-* `stream.pipe(...)`
-* `stream.once('end', function() {})`
+* ``stream.pipe(...) `
+* ``stream.once('end', function() {})`
   
-两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式
+Two modes: the default is pause mode, which means you need to call the next/read method manually and can turn on flow mode
 
 * `stream.resume()`
-* `stream.on('data', function(buf) {}) ` 绑定会自动触发流动模式
+* `stream.on('data', function(buf) {}) ` The binding will automatically trigger flow mode
 
-资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如
+The data stream of the resource does not flow directly to the consumer, but first pushes to the cache pool, with a water level, and if it exceeds this level, the push returns false: for example
 
-+ 消费者主动执行了 .pause()
-+ 消费速度比数据 push 到缓存池的生产速度慢
++ the consumer actively performs a .pause()
++ the consumption rate is slower than the production rate of the data pushed to the cache pool
 
-都会返回false, 这种情况也叫做「背压」Backpressure
+Both will return false, which is also called "backpressure".
 
-可写流的常用方法：
+Common methods for writable streams.
 
 * `.write(buf)`
 * `.end()`
 * `.end(buf)`
-* `.on('finish',function() {})`
-* (...).pipe(stream)
+* `.on('finish', function() {})`
+* (...) .pipe(stream)
 
-数据流先到资源池，如果写入较慢或者暂停，会被缓存；如果太快，write会返回false,触发drain事件
+The stream goes to the resource pool first, if the write is slow or paused, it will be cached; if it is too fast, write will return false, triggering the drain event
 
-transform/duplex流可以用上面的所有方法
+transform/duplex streams can use all the above methods
 
-### 创建可读的流：[readable.js](./readable.js)
+### Create a readable stream: [readable.js](. /readable.js)
 
 ``` js
 const rs = new (require('stream').Readable);
 rs.push('beep');
-rs.push(null); // null告诉消费者数据结束
+rs.push(null); // null tells the consumer that the data is finished
 rs.pipe(process.stdout);
 ```
 
-### 创建一个可写的流： [writable.js](./writable.js)
+### Create a writeable stream: [writeable.js](. /writable.js)
 
 ``` js
 const Stream = require('stream')
 const writableStream = new Stream.Writable(({
   decodeString: false,
-  write(chunk, encoding, next) { // 当写入的时候会调用
+  write(chunk, encoding, next) { // Called when writing
     console.log(chunk.toString())
-    next();// 告知读取更多数据
+    next();// tell to read more data
   }
 }))
 process.stdin.pipe(writableStream)
 ```
 
 
-### 消费一个可读的流：[consume0.js](./consume0.js)
+### Consume a readable stream: [consume0.js](. /consume0.js)
 
 ``` js
 //(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js 
@@ -202,7 +204,7 @@ process.on('exit', function () {
 
 ```
 
-从readable流读取数据：[read2.js](./read2.js)
+Reading data from readable streams：[read2.js](./read2.js)
 
 ``` js
 const Stream = require('stream')
@@ -228,7 +230,7 @@ readableStream.push('ho!')
 
 ```
 
-### 写入数据到可写的流： [write1.js](./write1.js)
+### Writing data to a writable stream： [write1.js](./write1.js)
 
 ``` js
 const Stream = require('stream')
@@ -240,7 +242,7 @@ writableStream.write('hey!\n')
 
 ```
 
-### 如何关闭流： [close1.js](./close1.js)
+### How to turn off the stream： [close1.js](./close1.js)
 
 ``` js
 const Stream = require('stream')
@@ -274,7 +276,7 @@ readableStream.destroy() // 销毁可读流。 触发close事件
 
 ```
 
-### 如何创建transform流： [transform.js](./transform.js)
+### How to create a transforms stream： [transform.js](./transform.js)
 
 ``` js
 const { Transform } = require('stream')
@@ -289,7 +291,7 @@ process.stdin.pipe(TransformStream).pipe(process.stdout)
 
 ```
 
-一般为了减少每次实例化，我们会用through2: through2.js
+Generally, to reduce each instantiation, we will use through2: through2.js
 
 ``` js
 // node through2.js hello.txt
@@ -308,7 +310,7 @@ function toUpper() {
 
 ```
 
-### 如何创建duplex流： [duplex.js](./duplex.js)
+### How to create a duplex stream： [duplex.js](./duplex.js)
 
 ``` js
 // nc localhost 8000
@@ -318,7 +320,7 @@ net.createServer(function(stream) {
 }).listen(8000)
 ```
 
-复杂的例子。我们可以创建一个代理的服务器，中间转发一下(有点像vpn)：duplex2.js
+A complex example. We can create a proxy server that forwards a bit in between (kind of like a vpn)：duplex2.js
 
 ``` js
 // nc localhost 8001 结果是通过8000服务器转发的
@@ -328,10 +330,10 @@ net.createServer(function(stream) {
 }).listen(8001)
 ```
 
-### 对象流 [object.js](./object.js)
+### Object Stream [object.js](./object.js)
 
-正常情况下，你只能读和写buffers（比如文本文件） 和字符串。 如果要读取对象，
-需要开启对象模式
+Normally, you can only read and write buffers (like text files) and strings. If you want to read objects, the
+you need to enable object mode
 
 ``` js
 const through = require('through2')
@@ -345,7 +347,7 @@ tr.write({ n: 3 })
 tr.end()
 ```
 
-### 如何把流缓存起来一次性读取： [concat.js](./concat.js)
+### How to cache streams for one-time reading： [concat.js](./concat.js)
 
 ``` js
 const concat = require('concat-stream')
@@ -354,7 +356,7 @@ process.stdin.pipe(concat(function(body) {
 }))
 ```
 
-复杂的场景。比如我们需要判断请求参数的长度: [concat2.js](./concat2.js)
+complex scenarios. For example, we need to determine the length of the request parameters: [concat2.js](./concat2.js)
 
 ``` js
 // curl -d msg=hello localhost:6000
@@ -385,44 +387,44 @@ server.listen(6000)
 
 ```
 
-### 内置的流
+### Built-in streams
 
-* process.stdin: 可读的流
-* process.stdout：可写的流
-* process.stderr：可写的流
+* process.stdin: Readable streams
+* process.stdout：Writable streams
+* process.stderr：Writable streams
 * fs.createReadStream()
 * fs.createWriteStream()
-* net.connect()： Duplex流 建立tcp连接用的
+* net.connect()： Duplex streams, for establishing tcp connections
 * net.createServer()
 * http.request()
 * http.createServer()
 * zlib.createGzip()
-* zlib.createGunzip() : gzip解压
-* zlib.createDeflate(): 用deflate算法压缩
-* zlib.createInflate(): 用deflate算法解压
+* zlib.createGunzip() : gzip decompression
+* zlib.createDeflate(): Compression with deflate algorithm
+* zlib.createInflate(): Decompress with deflate algorithm
 * tls.connect()
 * tls.createServer()
-* child_process spawn: 创建一个新进程
+* child_process spawn: Create a new process
 
-其他常用的流模块：
+Other commonly used streaming modules.
 
-* crypto:  加密
-* zlib： 压缩
-* split2： 按行返回数据，比如读取一个文件
+* crypto: encryption
+* zlib: compression
+* split2: return data by line, e.g. read a file
 * websocket-stream
 * collect-stream
-* from2: 直接转为可读流
-* to2： 直接转为可写流
-* duplexify: 支持将流转为duplex类型
+* from2: direct to readable stream
+* to2: direct to writable streams
+* duplexify: supports converting streams to duplex types
 * pump
 * pumpify
-* end-of-stream： 判断流是否结束，接收一个回调函数
+* end-of-stream: determines if the stream has ended, receives a callback function
 
 #### collect-stream
 
 [collect.js](./collect.js)
 
-和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试
+The same thing as `concat-stream` , except it has exception handling. Can be used for unit testing
 
 #### duplexify
 
@@ -446,9 +448,9 @@ concat-stream
 
 ```
 
-如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。
+How to cache the stream for a one-time read: Output the stream as a buffer; if it is an object, it is an array of objects.
 
-正常实现方式：
+Normal implementation.
 
 ``` js
 function ResponseReader(encoding) {
@@ -475,7 +477,9 @@ process.stdin.pipe(concat(function(body) {
 }))
 ```
 
-复杂的场景。比如我们响应返回完整数据(比如图片)才进行下一步操作 concat2.js
+Complex scenarios. For example, we respond by returning complete data (such as an image) before proceeding to the next operation
+[concat2.js](./concat2.js)
+
 // curl -d msg=hello localhost:6000
 
 ``` js
@@ -508,7 +512,7 @@ server.listen(6000)
 
 #### pump
 
-解决10.x版本前，当目标流被销毁的时候，源流不会自动销毁，也没有回调的问题。处理异常
+Solve the problem that before nodejs version 10.x, when the target stream is destroyed, the source stream is not automatically destroyed and there is no callback. Handle exceptions
 
 ``` js
 var pump = require('pump')
@@ -527,7 +531,7 @@ setTimeout(function() {
 }, 1000)
 ```
 
-10.x版本后可以用pipeline
+After version 10.x you can use `pipeline`:
 
 ``` js
 const { pipeline } = require('stream');
@@ -556,11 +560,14 @@ pipeline(
 
 #### pumpify
 
-pump and duplexify 的结合 会返回一个duplex流
+The combination of `pump` and `duplexify` will return a duplex stream
+
 #### rpc-stream
 
 RPC（Remote Procedure Call）中文名『远程过程调用』
-其实就是调用其他机器上的函数。一般是基于TCP。比如我们集团的HSF 其实就是一个远程调用。源码很值得读一读，关于如何设计好的接口。 
+
+It is actually a call to a function on another machine. For example, our group's HSF is actually a remote call. The source code is well worth reading about how to design a good interface. 
+
 
 [rpc-server.js](./rpc-server.js)
 
@@ -596,11 +603,11 @@ remote.hello('JIM', function (err, mess) {
 
 ```
 
-用rpc协议不需要json格式。这个是优势。
+Using rpc protocol does not require json format. This is an advantage.
 
 #### multiplex 
 
-能将多个流打包成一个流 [mul1.js](./mul1.js)
+Ability to package multiple streams into a single stream [mul1.js](./mul1.js)
 
 ``` js
 const net = require('net')
@@ -647,9 +654,9 @@ remote.read(process.argv[2], function(err) {
 
 ```
 
-### 实际应用场景
+### Practical application scenarios
 
-#### 1 文件下载/导入导出
+#### 1 File download/import/export
 
 https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html
 
@@ -675,7 +682,9 @@ while (part) {
 
 ```
 
-#### 2 网络传输：比如从远端下载文件 
+#### 2 Network transfer
+
+eg. downloading files from a remote location 
 
 ``` js
 yield new Promise((resolve, reject)=>{
@@ -694,8 +703,6 @@ yield new Promise((resolve, reject)=>{
 
 #### 3 vpn
 
-代码太多： 请打开文件查看：
-
 [vpn-client.js](./vpn-client.js)
 [vpn-server.js](./vpn-server.js)
 
@@ -705,7 +712,7 @@ node vpn-server.js
 node echo.js
 ```
 
-#### 4 实时通信 websocket
+#### 4 Real-time communication
 
 [websocket-client.js](./websocket-client.js)
 [websocket-server.js](./websocket-server.js)
@@ -715,32 +722,33 @@ browserify websocket-client.js > public/bundle.js (或者nodejs client也行）
 node websocket-server.js
 ```
 
-问题： websocket和[socket.io](https://github.com/socketio/socket.io/blob/master/lib/index.ts)的区别？
+Question： websocket和[socket.io](https://github.com/socketio/socket.io/blob/master/lib/index.ts)的区别？
 
 #### 5 p2p
 
-点对点（P2P）服务是一个去中心化的平台，两个人在此平台上直接互动，没有第三方的中介。[webrtc.js](./webrtc.js)
+Peer-to-peer (P2P) services are a decentralized platform where two people interact directly with each other without a third party intermediary。[webrtc.js](./webrtc.js)
 
 ``` shell
 tnpm run signalhub
 budo webrtc.js
 ```
 
-问题： discord是不是点对点？
+Question: Is [discord](https://discord.com/) peer-to-peer?
 
-#### 6 工程化
+#### 6 Engineering
 
-> gulp 需要频繁对文件操作
+> gulp requires frequent manipulation of files
 
 #### 7 webassembly
 
 https://developers.google.com/web/updates/2018/04/loading-wasm
 
-### 扩展
+### Read More
 
-1 自定义实现
-实现一个writable流
-可以用来自定义了 stream 写入的时机，当 chunk 大小超过某个阈值，才真的写入文件，提升写入速度
+1 Custom implementation
+
+Implement a writable stream
+This can be used to customize the timing of stream writes, so that when the chunk size exceeds a certain threshold, the file is actually written, increasing the write speed
 
 ``` js
 // strace -cfe trace=write node index.js
@@ -776,7 +784,7 @@ class MyReadable extends Readable {
 
 ```
 
-实现pipe
+Implementing `pipe`
 
 ``` js
 Readable.prototype.pipe = function(writable, options) {
@@ -797,15 +805,14 @@ Readable.prototype.pipe = function(writable, options) {
 
 ```
 
-2 关注大佬：
+2 Follow Guys：
 
-https://github.com/substack 
+[substack](https://github.com/substack)
 https://github.com/nodejs/readable-stream 
 
-3 可视化理解streams概念  
-https://blog.insiderattack.net/a-visual-guide-to-nodejs-streams-9d2d594a9bf5?gi=5c2a70f05af9
+3 Understand the concept of streams by [Visualize](https://blog.insiderattack.net/a-visual-guide-to-nodejs-streams-9d2d594a9bf5?gi=5c2a70f05af9)
 
-## 参考
+## References
 
 https://nodejs.org/api/stream.html#stream  
 https://nodejs.dev/learn/nodejs-streams  

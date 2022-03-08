@@ -133,8 +133,38 @@
   </url>
   
   <url>
+    <loc>https://maoxunxing.com/zh-cn/tags/nodejs/</loc>
+    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/tags/nodejs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/tags/nodejs/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/zh-cn/nodejs-network-stream/</loc>
+    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/nodejs-network-stream/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/nodejs-network-stream/"
+                />
+  </url>
+  
+  <url>
     <loc>https://maoxunxing.com/zh-cn/posts/</loc>
-    <lastmod>2021-09-17T13:12:13+08:00</lastmod>
+    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -149,7 +179,7 @@
   
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/</loc>
-    <lastmod>2021-09-17T13:12:13+08:00</lastmod>
+    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

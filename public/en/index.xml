@@ -59,6 +59,18 @@ import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined This is 
     </item>
     
     <item>
+      <title>NodeJS Stream from Beginner to Master</title>
+      <link>https://maoxunxing.com/en/nodejs-network-stream/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/nodejs-network-stream/</guid>
+      <description>What is a stream Streams are not only found in Nodejs, there are similar concepts in unix operating systems. For example, the pipe operation symbol
+cat xx.ts | grep &amp;#39;console.log&amp;#39; can find the corresponding matching content from the file. In fact, the concept of streams in node comes from unix systems, first from Douglas McIlroy&amp;rsquo;s concept of pipes Initial source。
+Wikipedia：
+ Malcolm Douglas McIlroy (born 1932) is a mathematician, engineer, and programmer.</description>
+    </item>
+    
+    <item>
       <title>My Life Experience And Plan</title>
       <link>https://maoxunxing.com/en/target-life/</link>
       <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>

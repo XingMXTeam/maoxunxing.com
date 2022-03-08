@@ -83,6 +83,18 @@ Key Takeaways  看透社区里面那些人的本质，即便被社会上的那�
     </item>
     
     <item>
+      <title>NodeJS Stream从入门到精通</title>
+      <link>https://maoxunxing.com/zh-cn/nodejs-network-stream/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream/</guid>
+      <description>什么是流 流不是仅存在于Nodejs, 在unix操作系统中也有类似的概念。 比如管道操作符号
+cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹配内容。实际上，node的流的概念是来源于unix系统，最早是来自Douglas McIlroy管道的概念 最初的来源。
+维基百科：
+ Malcolm Douglas McIlroy (born 1932) is a mathematician, engineer, and programmer. As of 2019 he is an Adjunct Professor of Computer Science at Dartmouth College. McIlroy is best known for having originally proposed Unix pipelines and developed several Unix tools, such as spell, diff, sort, join, graph, speak, and tr.[1] He was also one of the pioneering researchers of macro processors and programming language extensibility.</description>
+    </item>
+    
+    <item>
       <title>我的人生经历和计划</title>
       <link>https://maoxunxing.com/zh-cn/target-life/</link>
       <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
