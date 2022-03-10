@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 毛训星的网络日志</title>
+    <link>https://maoxunxing.com/zh-cn/posts/</link>
+    <description>Recent content in Posts on 毛训星的网络日志</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 19 Oct 2021 14:28:57 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NodeJS Stream系列第一篇之什么是流</title>
+      <link>https://maoxunxing.com/zh-cn/nodejs-network-stream/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream/</guid>
+      <description>什么是流 流不是仅存在于Nodejs, 在unix操作系统中也有类似的概念。 比如管道操作符号
+cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹配内容。实际上，node的流的概念是来源于unix系统，最早是来自Douglas McIlroy管道的概念 最初的来源。
+维基百科：
+ Malcolm Douglas McIlroy (born 1932) is a mathematician, engineer, and programmer. As of 2019 he is an Adjunct Professor of Computer Science at Dartmouth College. McIlroy is best known for having originally proposed Unix pipelines and developed several Unix tools, such as spell, diff, sort, join, graph, speak, and tr.[1] He was also one of the pioneering researchers of macro processors and programming language extensibility.</description>
+    </item>
+    
+    <item>
+      <title>NodeJS Stream系列第三篇之基本用法</title>
+      <link>https://maoxunxing.com/zh-cn/nodejs-network-stream-3/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-3/</guid>
+      <description>创建可读的流：readable.js const rs = new (require(&amp;#39;stream&amp;#39;).Readable); rs.push(&amp;#39;beep&amp;#39;); rs.push(null); // null告诉消费者数据结束 rs.pipe(process.stdout); 创建一个可写的流： writable.js const Stream = require(&amp;#39;stream&amp;#39;) const writableStream = new Stream.Writable(({ decodeString: false, write(chunk, encoding, next) { // 当写入的时候会调用  console.log(chunk.toString()) next();// 告知读取更多数据  } })) process.stdin.pipe(writableStream) 消费一个可读的流：consume0.js //(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js process.stdin.on(&amp;#39;readable&amp;#39;, function () { var buf = process.stdin.read();// 可以给read传参数 告知读取几个字节  console.dir(buf);// 打印对象所有属性  process.stdin.read(0); /// 0告知读取后续的所有字节 }); //output: //&amp;lt;Buffer 61 62 63 0a&amp;gt; abc\0 //&amp;lt;Buffer 64 65 66 0a&amp;gt; def\0 //&amp;lt;Buffer 67 68 69 0a&amp;gt; ghi\0 你也可以在消费者读取数据的时候，再缓存内容: read1.</description>
+    </item>
+    
+    <item>
+      <title>NodeJS Stream系列第二篇之流的类型</title>
+      <link>https://maoxunxing.com/zh-cn/nodejs-network-stream-2/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-2/</guid>
+      <description>流的类型 1 readable 可读 readable.pipe(A) 2 writable 可写 A.pipe(writable) 3 duplex： 复式：既可读也可写 A.pipe(duplex).pipe(A) 4 transform：duplex的一种类型 可读可写 输出是从输入转换过来 A.pipe(transform).pipe(B)
+pipe方法: 所有的readable/transform/duplex流都有这个方法, 并且返回readable/transform/duplex的流
+src.pipe(dst) // 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &amp;#39;console&amp;#39; 可读流的常用方法：
+ stream.pipe(...) stream.once(&#39;end&#39;, function() {})  两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式
+ stream.resume() stream.on(&#39;data&#39;, function(buf) {})  绑定会自动触发流动模式  资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如
+ 消费者主动执行了 .pause() 消费速度比数据 push 到缓存池的生产速度慢  都会返回false, 这种情况也叫做「背压」Backpressure
+可写流的常用方法：
+ .write(buf) .end() .end(buf) .on(&#39;finish&#39;,function() {}) (&amp;hellip;).</description>
+    </item>
+    
+    <item>
+      <title>NodeJS Stream系列第五篇之实际场景</title>
+      <link>https://maoxunxing.com/zh-cn/nodejs-network-stream-5/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-5/</guid>
+      <description>实际应用场景 1 文件下载/导入导出 https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html
+const { ctx, } = this; const parts = ctx.multipart(); let object; let part; part = yield parts; while (part) { if (part.length) { // arrays are busboy fields  } else { // otherwise, it&amp;#39;s a stream  // 文件处理，上传到云存储等等  object = yield ctx.oss.put(&amp;#39;egg-oss-demo-&amp;#39; + part.filename, part); } part = yield parts; } 2 网络传输：比如从远端下载文件 yield new Promise((resolve, reject)=&amp;gt;{ ctx.safeCurl(whitelistExcelLink).then(response =&amp;gt; { const data = response.</description>
+    </item>
+    
+    <item>
+      <title>NodeJS Stream系列第四篇之高级用法</title>
+      <link>https://maoxunxing.com/zh-cn/nodejs-network-stream-4/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-4/</guid>
+      <description>核心流模块：  crypto: 加密 zlib： 压缩 split2： 按行返回数据，比如读取一个文件 websocket-stream collect-stream from2: 直接转为可读流 to2： 直接转为可写流 duplexify: 支持将流转为duplex类型 pump pumpify end-of-stream： 判断流是否结束，接收一个回调函数  collect-stream collect.js
+和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试
+duplexify duplify.js
+const duplexify = require(&amp;#39;duplexify&amp;#39;) const fs = require(&amp;#39;fs&amp;#39;) function log() { const d = duplexify(); var w = fs.createWriteStream(&amp;#39;logs/test.log&amp;#39;) d.setWritable(w) return d } const stream = log(); stream.write(Date.now() + &amp;#39;\n&amp;#39;) stream.end(); concat-stream 如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。
+正常实现方式：
+function ResponseReader(encoding) { stream.Transform.call(this); this._chuncks = []; this.</description>
+    </item>
+    
+    <item>
+      <title>我的人生经历和计划</title>
+      <link>https://maoxunxing.com/zh-cn/target-life/</link>
+      <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/target-life/</guid>
+      <description>一点感慨 21年我在杭州买房扎根，恍恍惚惚，已经32岁了，工作一般，生活一般，不那么精彩，大部分时间如行尸走肉。年轻时尽心尽力感受生活的精彩，年老时儿孙满堂，身体没有病痛，没有什么遗憾。
+正文 俗话说，没有梦想和咸鱼有什么区别。所有的梦想都需要扎根于现实，否则就是空中楼阁，痴人说梦。在现实中，要汲取生活的乐趣。而工作是生活的一大部分，工作中的快乐程度决定了你生活中的快乐程度。把你的职业生涯当成一段旅程，深入体验，而不是觉得工作是在浪费时间和生命。以下是我的职场轨迹。
+ 2014: 我从南昌大学毕业。开始在HitThink公司工作，担任前端工程师。我没有生活目标，只是作为一个工具工作。我和我的女朋友很幸福。 2016.7 ~ 2019.9: 我离开了HitThink公司，因为我开始讨厌和我的同事一起工作。我开始意识到，我应该和优秀的同事和好的公司一起工作。通过推荐，我开始到网易公司面试。幸运的是，我成功了，进入了教育业务部。我学到了很多东西，认识了一些好朋友，也得到了晋升。 2019.9～现在。我曾以为自己会在网易公司工作很长时间。但是，一切都没有按照自己的意愿进行。业务部门的解散使我不得不另找工作，同时我也和我八年的女朋友分手了。我的一切都变了。我还生了一场大病，瘦到了90磅。在网易公司工作时，我的工资并不高。我开始考虑要买自己的房子，我需要提高我的工资。所以我去了阿里巴巴公司面试。 我已经成功了。当你学了很多东西，努力了很多，你总是可以通过我的内心深处的想法来实现的。在阿里巴巴集团的前两年，我努力工作，但除了工资，我什么都没有得到。我没有晋升。这是很可悲的，但我终于在我想要的地方买了自己的房子。如果你不能晋升，你应该尽可能多地学习，尽可能多地写作，尽可能多地展示自己，这就是我现在的想法。  总结：按部就班的工作，在职场上没有突破性的提升。但也要慢慢到一个大的平台，才有机会向上突破或做出一些成绩。没有章法，需要多关注兴趣和爱好，激发自己的工作激情。需要养成良好的习惯，通过科学的方法，管理好自己。
+【工作】核心是提高编码和解决问题的能力，以及落地工作的能力，需要有强烈的态度和向上的动力。
+【家庭】尽快成家。过去的人和事，只能回忆，不能改变。奔向未来是唯一的出路，一个稳定的家庭是事业成功的基础。
+【个人】正能量，不断学习，投入，产出。增强自我意识，结交朋友，更加有趣，与他人更加融洽。
+通过成长闭环驱动自我：核心是每年有一个北极星目标，然后制定战略来实施，通过习惯驱动。
+2021年计划 北极星目标：成为一名技术专家
+有两个大的方向
+1 向内。职场力量，关注OKR+可能性
+2 向外：巩固基础+产品力和影响力建设
+具体规划:
+   类别 子目标 完成时间     个人博客 至少完成10篇文章，pv到200 2021.12.01   跃进小册子 算法一本书 2021.12.30   微信公众账号 10,000个粉丝 2022.01.10   团队 4次分享 / 10篇文章 2022.02.01    </description>
+    </item>
+    
+    <item>
+      <title>学习和成长之道系列第一篇之学什么</title>
+      <link>https://maoxunxing.com/zh-cn/how-to-improve/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/how-to-improve/</guid>
+      <description>学什么？ 每个人因为岗位不同，学习的内容不一样，掌握的程度也不一样。这里包含的是成长模型（内容）
+成长模型：
+主要考虑两方面软技能（综合能力：包括沟通、说服、团队建设、影响力等）、硬技能
+硬技能，不同岗位不太一样。比如互联网领域一级领域，针对程序员，主要是二级领域：开发，涵盖内容：
+1 基础知识：底层原理、操作系统、程序语言、算法、数据结构、数据、网络、安全
+2 软件工程：设计模式、规范、日志、单测、故障恢复、方案优劣对比、技术选型、敏捷开发
+3 编程能力：性能、扩展性、维护成本、鲁棒性
+三级领域： 具体开发岗位（重点学习内容） 比如前端：交互体验和设计； 服务端： 数据处理和架构
+不同级别的重点不同， 比如低级别主要重深度(关注业务细节) 高级别重广度（关注整体业务）
+理解业务从四个方面： 我们的用户是谁；用户价值；获客方式；获利方式 1 行业总的用户规模；自己的用户规模，用户的特征分布 2 熟悉行业的竞品（行业的排名、竞品的数据和差异对比） 3 常见的获客手段和效果指标 4 获利来源
+更多： 《定位》、《疯传》、《增长黑客》白皮版、《需求：缔造伟大商业传奇的根本力量》、《创新者的窘境》
+题外话：
+关于深度和广度：在一个平台下成长，不用面面俱到，所有都知道细节。有些东西，知道它解决什么问题就行，这是广度，深度是你需要了解所有细节的，在你所在行业领域，它是你的核心竞争力，广度和深度不是割裂开的，广度有时候能加强你的深度。在竞争场，个人也是一个产品，要弱化自己的弱点，充分突出你的竞争力 关于努力工作：不要欺骗自己，要认识自己的长处，做你所热爱领域的事
+不用的用户视角，用户洞察的指标是不一样的。比如用户是程序员，关注的可能是是否好用、高效 客观：跳失漏斗； 表单分析 主观：用户反馈 2 视觉还原 有范：全局风格 有料：物料默认好用 3 稳定性 有流程规范 发布系统稳定，可灰度、可回滚； 监控，流量监控 安全性 4 性能优化 有指标：CWV(core web vital: LCP)/good urls 通用解决方案: PWA、工程化手段: 瘦包、vm直出、请求前置/串行, 单页面改造 -- 人生的成功=思维方式x能力x热情 ---稻盛和夫  取乎其上，得乎其中；取乎其中，得乎其下；取乎其下，则无所得矣 ---孔子  夏虫不可以语于冰者，笃于时也；曲土不可以语于道者，束于教也 ---庄子 领导力： 说服并引领他人达成目标 - 乔哈里视窗 影响力： 个人影响力（能说+会写） + 产品影响力 心态： 聪明 乐观 皮实 自省 道家-顺势而为 业务沉淀（规模可复制，影响力扩大）-〉业务规划（理想） 规划： 行业背景/业务梳理/战略抓手 业务深耕：产品逻辑/行业视野/业务延伸（商业价值、运营模式，包括对行业的思考） 综合能力： 沟通协同、创新思维、市场运营、业务推动 * 带着思考参会、帮助产品完善需求、帮助做会议记要，主动想产品体验问题 帮助改善；后端 测试 文档 规范 组织活动。 * 看大做小，由小及大。 不断调研-找输入-脑暴推导出来的 * PDAC闭环： Plan Do Act Check ### 技术建设的心得 * 懂得借力，共建生态（智能组件、智能搭建 如果有问题直接MR补充 * 闪蝶+Sherry Components * 尽量降低纯业务投入的占比。提升单位时间的输出，或者提炼抽象公共组件/SDK 或者培训外包独立交付 * 明确优先级： 不接零时沟通需求，拒绝倒排；与业务沟通目标：建立技术试点和落地；适当地超出业务预期 * 从业务需求里发现共性诉求（数据分析+和业务对话）- 挖掘需求 - 技术驱动 * 提前规划到KPI： 看差距，规划路径，经常性review，业务增长+技术贡献+团队贡献+技术风险只是一个好绩效， 不成体系 没看到领域深度 - 大概率不能晋升： 专注中台能力建设（Why/how/what) ；找到关键问题（业务问题/研发痛点）- 如何解决问题 用什么技术手段 协同多少资源 投入产出比。别的团队的相似问题，策略是怎么样； 要做成什么样，最终取得什么技术结果和业务结果 * 主动成立技术专项+乐于分享/写文章/CodeReview/团建/招牌新人/帮助-影响团队 ## 软技能 三件套： PPT制作、演讲技巧、思路归纳 PPT: 1种字体（对比度） 3种颜色（同一色系） 突出之重点 层次分明 色彩渐进： 图  表  字 图片大一点，对齐，图片穿插 （搞笑的图 哲理话） 演讲： 根据受众选择主题范围和深度 1 老板要高度 2 架构师要广度和深度 3 工程师要深度 4 产品要业务共识 原则： 1 不要太多用户不懂的概念, 5个概念最多, 用关键字,减少文字篇幅 2 开头内容简单易懂，根据主线循序渐进，后面开始难一点也没关系 3 30%内容PPT 70%靠自己讲 克服紧张： 前三分钟背下；有意识训练；越透彻越自信；开场活跃气氛（段子手 big bang 猜谜语） 穿着： 衬衫、牛仔、休闲鞋 手：开与合 站姿：站中间、与肩同宽的站、面向观众（不要稍息 不要抖腿 不要走动过于频繁 动作太大） 眼睛是窗口： 对着大家讲 环顾观众 适当停顿 互动： 填空题或者选择题 互动之听众提问： 对方提问走近她，回答问题时慢慢离开他，回答问题时不要只盯着提问者（避免和提问者单独对话） 提前准备可能问到的问题 遇到棘手问题： 特别细节/不属于演讲领域/无厘头 请别人记下，会后讨论/把问题抛给别人 语言表达：抑扬顿挫/语速适中/声音大小适中/吐词清晰 像聊天一样 照顾听众的心理 ## 关于能力调研 要求or问题 | 做得好的（次数） | 不好的（次数) | 备注 ---------|----------|---------|--------- 技术深度 | 1 | 7 | 提效数据如何推导；把一件事做到极致；中后台同学架构方向思考，而不是组件、模版、可视化三件套；勇于颠覆最佳实践 技术视野 | 1 | 5 | 单点；技术产品化输出少，0-1多，1-n少 数据化思维做突破；集团基建之上构建业务能力；复用跨BU的能力/方案充分的调研/避免重复建设；复用跨BU的能力保证有沉淀，不是只有成为平台是沉淀 业务价值和技术的关联 | 7 | 业务目标-问题识别-技术选型的视野，方案对比没有推导，缺乏深入挖掘；价值关联;技术助力业务用数据说话；结果和定义问题的匹配 专业度：系统学习和实践、未来发展的思考（共建） | 1 | 5 | 形成体系或者体系的互补（事小，但思考的体系化、结构化思维）；关键问题定义不清，功能大而全；多看书，多总结 技术架构/方案的精准、合理性、随着业务的演进（业务前端） | | 1 业务理解 | | 8 | 全链路;业务背后的思考和价值; 缺乏业务/技术持续规划（昨天、今天、明天）要有推导，确定性比较高的思考;业务影响力，对未来几年业务的影响不足; 业务目标，产品策略，数据关注不够；解决方案型前端 ## 产品思维 1 无形无价的而免费的产品，核心竞争力是体验； 有价和有型的产品的核心竞争力是品牌 2 团队的综合能力要求越来越高 3 每个人都可以发表意见，决策权归LD -- 本质-抽象 --   -- 脑图 文档 -- 其他文章 学习和成长之道系列第一篇之学什么</description>
+    </item>
+    
+    <item>
+      <title>学习和成长之道系列第三篇之能力模型</title>
+      <link>https://maoxunxing.com/zh-cn/how-to-improve3/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/how-to-improve3/</guid>
+      <description>衡量能力 基础意味着会做，熟练意味着做好，精通意味着优化（采取不同的方式、思维和工具来做同样的事情，并取得突破，引入新技术到工作中也算优化）
+从COMD模型说明一个人的能力模型：
+4个复杂度：
+ 规模复杂度： 比如代码量、团队人数、功能点、关联方，系统数量 时间复杂度： 3年业务规划 环境复杂度： 创新复杂度： 理论、思想、技巧的创新 从0到1 &amp;gt; 架构重构 &amp;gt; 项目方案设计 &amp;gt; 编码  3个维度：
+技术、管理、业务
+其他文章 学习和成长之道系列第一篇之学什么
+学习和成长之道系列第二篇之怎么学
+学习和成长之道系列第三篇之能力模型
+学习和成长之道系列第四篇之解决问题
+学习和成长之道系列第五篇之影响力</description>
+    </item>
+    
+    <item>
+      <title>学习和成长之道系列第二篇之怎么学</title>
+      <link>https://maoxunxing.com/zh-cn/how-to-improve2/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/how-to-improve2/</guid>
+      <description>怎么学？ 1 认知优先 确保你有优质的信息来源，这个需要有意识地收集，这样能保证掌握最新资料：
+ 优质书 优质培训 牛逼平台+牛逼的人+开放的心态  学习时间分配 海绵学习法 工作时间并不代表学习时间，需要主动学习复杂度更强的内容，尽量每天1小时
+学习方法论 掌握正确的学习方法论能事半功倍，但是基本上也脱离不了1万小时定律（连续10年平均每天三小时）
+ 分解等级-&amp;gt;分解技能-&amp;gt;分解行动 链式提升深度(why、领域分层图/细节分层图)、比较提升宽度(which、思维导图)、环式提升广度  记忆理解 如何对信息进行整理归纳，强化。脑海中有结构，就像图书馆随时能索引。
+ 理解思路： 金子塔原理和思维导图 理解发展规律： 时间线模型 理解系统： 架构图 理解业务： 流程图 理解代码： 类图 加强记忆： 卡片工具 比如Anki  效果验证 以教带学/以玩带学，根据721原则，人的大部分经验/能力来自实践，所以要加强实践的比例。
+ 文章分享 会议分享 项目实践 小组讨论  更多：《认知天性：让学习变得轻而易举的心理学规律》
+其他文章 学习和成长之道系列第一篇之学什么
+学习和成长之道系列第二篇之怎么学
+学习和成长之道系列第三篇之能力模型
+学习和成长之道系列第四篇之解决问题
+学习和成长之道系列第五篇之影响力</description>
+    </item>
+    
+    <item>
+      <title>学习和成长之道系列第五篇之影响力</title>
+      <link>https://maoxunxing.com/zh-cn/how-to-improve5/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/how-to-improve5/</guid>
+      <description>影响力 如果你的产品解决了问题。 那如何把这个产品推销给其他同学。你需要把你的故事讲好。 先抛一个理论：SCQA模型
+S（Situation）情景——由大家都熟悉的情景、事实引入。
+C（Complication）冲突——实际情况往往和我们的要求有冲突。
+Q（Question）疑问——怎么办？
+A（Answer）回答——我们的解决方案是
+通过结构化的表达，将事情讲清楚
+晋升 在职场可能通过晋升带来了影响力。但是解决了问题就能晋升么？不一定。因为首先要被认可，其次要通过答辩（面评）。
+认可要点：
+1 主动原则
+ 主动沟通：沟通工作想法和意愿，听从建议 主动接收：业务信息：上线效果，技术架构。从晋升角度考虑查漏补缺  2 成长原则
+方案设计-&amp;gt;架构设计-&amp;gt;系统优化 不断提升自己的能力点
+3 价值原则
+结合个人业务、岗位要求，学习对公司有价值的知识
+SOP：
+1 以上三点做的好，拿到结果，并且能力到精通
+2 达到下一级别的要求的能力
+3 主动找下一级别的事做
+面评要点：
+1 自我介绍（所在团队和业务、当前级别、晋升级别）
+2 当前职责：负责业务、是否带团队、团队规模、关键岗位
+3 工作经历：在职时间/公司名称/最高岗位 项目：最多三个
+4 自述： 金字塔原理（讲what，答辩讲why）
+达到了什么能力
+论据1 论据2 论据3
+STAR STAR STAR
+核心论据： 根据《学什么》那一节，对应能力模型能力强相关的复杂度高的工作。持续时间长、规模大、不确定性高、有一定挑战和创新性。
+辅助论据： 参加大会、文章分享、虚拟组长、参与开源等
+S: 必须是总结性质（讲的时候细说）
+T: 重点你负责的内容和担任的角色
+A: 最核心的部分做了什么（不用写为什么这么做），一张图（架构图、思维导图）+ 核心的几个点 其他靠讲
+R: 效率、效果、质量、成本。虚实结合（定量+定性）
+比如 提升了系统性能，xx基数从多少提升到多少
+ 先有基数再有比例 用绝对值（从多少提升到多少 不用写比例） 和钱相关（成本）  5 自我总结+发展规划</description>
+    </item>
+    
+    <item>
+      <title>学习和成长之道系列第四篇之解决问题</title>
+      <link>https://maoxunxing.com/zh-cn/how-to-improve4/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/how-to-improve4/</guid>
+      <description>解决问题 有了能力以后，需要去解决实际的问题。才能最大化你的价值。如何评价一个问题被解决的很好：
+1 具备闭环思维：从端到端的角度去思考和落地 也就是事前规划、事中执行、事后总结
+事前： 为什么，价值？ 事后： 上线后的结果？具体的业务数据？通过这个事我收获了什么？
+事前： OKR规划
+事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法
+事后： 4D总结法；四线复盘法；金子塔汇报法
+2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景） 定义问题：
+5W2H模型
+ 5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。
+  why: 为什么要做这个工作 what: 内容是什么 where： 在哪里做 when: 什么时候来做 who: 由谁来做 how: 怎么做 how much: 要花多少时间和资源  本质就是定义问题：
+定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说：
+ 提出一个问题比解决一个问题更重要。
+ 问题本质就是事物的矛盾，不匹配
+一般有几个特点：
+1 普遍性：是普通存在的
+2 运动性：不断变化中，现在是问题可能后面就变成不是问题了或者问题变成另外一个了； 不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进 3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。
+4 可度量： 问题的严重程度可以被度量出来
+5 关联性：问题之间可能存在关联或者因果，需要考虑它的基本命题
+任何名词都有结构  任何动词都有流程  任何形容词都度量 步骤： 1 现象/新概念（结构） 2 现有的方案副作用，多维度思考（洞见，历史） 3 梳理指标（度量问题的严重性，现在） 5 发现机会（本质） 6 规划（未来） -- OKR规划： 关注业务目标，KPI关注数据指标。</description>
+    </item>
+    
+    <item>
+      <title>检测无定向图中的环</title>
+      <link>https://maoxunxing.com/zh-cn/detect-cycle-in-an-undirected-graph/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/detect-cycle-in-an-undirected-graph/</guid>
+      <description>问题定义 给定一个无向图，如何检查图中是否有一个环 ?
+用例1:
+输入：n = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }
+输出: yes
+示例:
+ has circle
+  用例2:
+输入: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }
+输出: No
+示例:
+ no circle
+  问题分析 我们都知道:
+ 算法 + 数据结构 = 程序
+ 因此，我们需要创建一个数据结构来代表无向图。有两种数据结构可以做到这一点:
+ 邻接表 - 如果顶点1与顶点2,3相连，因此邻接表 : { 1 : [2, 4] }.</description>
+    </item>
+    
+    <item>
+      <title>计算机本质的理解</title>
+      <link>https://maoxunxing.com/zh-cn/code-computer/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/code-computer/</guid>
+      <description>编码原理  计算机本质是0/1的世界，如果用0/1表达这个世界。结论是：需要通过编码。
+ 数字编码  首先是怎么表达数字
+ 为什么会有补码？
+ 补码是为了方便计算机的运算, 计算机比较容易做加法
+ 举个例子： 5+（-3）通过补码（定义：正数不变，负数取反并且+1）计算
+步骤1: 0101（5）
+步骤2: 0011（3） -&amp;gt; 取反 1100 -&amp;gt;加一 1101
+步骤3: 0101+1101=100010 截断后 0010（-2）
+运算的结果符合人类的预期结果， 而原码（首位为符号位） 反码（除了符号位，所有位取反） 计算出来的结果都不满足人类预期。
+为什么表示范围是[-128, 127] ?
+ 这个问题之前一直困扰着我
+ 举个例子来说明： 4位二进制补码表示是：
+0000（-0） 0000（0）
+1111（-1) 0001（1）
+1110 (-2) 0010（2）
+&amp;hellip; &amp;hellip;
+1011(-5) 0101（5）
+1010(-6) 0110（6）
+1001(-7) 0111（7）
+范围是 [-7, 7] 1000没有被表示，刚好拿来表示-8（-8的补码表示： 1000（原） -&amp;gt; 取反 0111 -&amp;gt; 加一 1000）
+所以最终是[-8, 7]。 同理[-128,127]也解释得通。
+为什么小数会有精度问题？</description>
+    </item>
+    
+    <item>
+      <title>给出N，求唯一BST的总数</title>
+      <link>https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/</link>
+      <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/</guid>
+      <description>问题定义 给定N，找出可以用1到N的值制作的唯一BST的总数
+用例:
+输入: n = 3
+输出: 5
+For n = 3, preorder traversal of
+ 1 2 3 1 3 2 2 1 3 3 1 2 3 2 1  输入: 4
+输出: 14
+问题分析 起初，我不太明白这个问题的意思。什么是BST？它的定义是：任何节点的值都小于右子树的任何节点，大于左子树的任何节点。我想一开始觉得就一种可能。实际上也可能有多种情况。
+例如，给定节点3 1 2，至少下面的排列可以满足BST的条件。   如果你仔细思考，你可以继续想出其他的情况   ok，问题的意思已经清楚了。那么，如何分析有n个节点的BST树的数量。算法是关键，目前，我们还不知道用什么数据结构。我们用分析归纳的方法来寻找规律。
+  1 只有一个节点，显然只有一种情况。T(1) = 1
+  2 如果有两个节点，就有两种情况。T(2) = 2
+  3 如果有三个节点。
+ 假设1是根节点，2 3在根节点的右边，结果将是。 T(0) * T(2) ( 我们已经知道T(2) = 2) 假设2是根节点，1 3分别在两侧，结果将是。T(1) * T(1) 假设3是根节点，1 2在根节点的左边，结果将是。T(2) * T(0) 这样，我们遍历了所有可能的情况。 T（2）+ T（1）+ T（2）= 2 + 1 + 2 = 5 所以结果是5，这与问题定义中的案例结果一致    3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</description>
+    </item>
+    
+    <item>
+      <title>Web是如何工作的</title>
+      <link>https://maoxunxing.com/zh-cn/website-architecture/</link>
+      <pubDate>Fri, 06 Aug 2021 15:25:06 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/website-architecture/</guid>
+      <description>基础概念    分类 名称 解释     网络 VPC Virtual Private Cloud 虚拟私有云。为什么是虚拟私有？它是一种运行在公有云上，将一部分公有云资源为某个用户隔离出来，给这个用户私有使用的资源的集合，感觉像是在使用自己的私有云一样。什么是云？构建在物理之上的虚拟化网络。VPC采用隧道技术，隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。   网络 DNS 应用层协议和https一样，端口是53，提供根据域名查IP的服务   网络 Record 记录和IP的对应关系   网络 A记录 支持将域名映射到IPV4地址   网络 CNAME 别名 Canonical Name 支持指向另一个域名   网络 MX Mail Exchanger 支持将域名指向邮件服务器地址   网络 NS name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析   网络 CDN Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题   网络 节点 传统的节点是单体的物理机器 -&amp;gt; 单台虚拟机上的服务 -&amp;gt; 轻量级的容器服务，能提供单位服务的逻辑计算资源的集合   网络 统一接入层 web server代理，它将请求转发给（proxy_pass）应用服务器。能解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）   分布式 NTP（网络时间协议） 在数据网络潜伏时间可变的计算机系统之间通过分组交换进行时钟同步的一个网络协议，位于OSI模型的应用层   分布式 Lamport逻辑时钟/向量时钟 一种在分布式环境中为各种操作或事件产生偏序值的技术，它可以检测操作或事件的并行冲突，用来保持系统的一致性   云原生 K8s Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构   云原生 Docker 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)    请求链路  一个http请求现代化架构下一般会有哪些链路</description>
+    </item>
+    
+  </channel>
+</rss>
