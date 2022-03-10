@@ -35,13 +35,19 @@ other = "Given N, Find The Total Number of Unique BSTs"
 other = "Articles About Growth"
 
 [homeCat2Article1]
-other = "Learning and Growing"
+other = "The Way to Learn and Grow Series Part 1 - What to Learn"
 
 [homeCat2Article2]
-other = "How to Stand Out"
+other = "The Way to Learn and Grow Series Part 2 - How to Learn"
 
 [homeCat2Article3]
-other = "How To Work Hard"
+other = "The Way to Learn and Grow Series Part 3 - Competency Models"
+
+[homeCat2Article4]
+other = "The Way to Learn and Grow Series Part 4 - Problem Solving"
+
+[homeCat2Article5]
+other = "The Way to Learn and Grow Series Part 5 - Influence"
 
 [homeCat3]
 other = "Articles about Software Development"
