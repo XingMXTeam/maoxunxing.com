@@ -5,7 +5,7 @@ description: "From a technical person's perspective, how to grow fast and how to
 tags:
 - Growth
 images:
-- how-to-improve/test.jpg
+- how-to-improve/test.png
 ---
 ### Learning Methods
 
