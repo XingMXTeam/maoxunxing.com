@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "newblog": "hugo new --kind blog",
+    "newblog": "hugo new --kind default",
     "newnotes": "hugo new --kind notes",
     "newbook": "hugo new --kind book-reports",
     "test": "echo \"Error: no test specified\" && exit 1",

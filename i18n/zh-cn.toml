@@ -35,13 +35,15 @@ other = "给出N，求唯一BST的总数"
 other = "关于成长的文章"
 
 [homeCat2Article1]
-other = "学习和成长之道"
-
+other = "学习和成长之道系列第一篇之学什么"
 [homeCat2Article2]
-other = "论如何脱颖而出"
-
+other = "学习和成长之道系列第二篇之怎么学"
 [homeCat2Article3]
-other = "论如何努力工作"
+other = "学习和成长之道系列第三篇之能力模型"
+[homeCat2Article4]
+other = "学习和成长之道系列第四篇之解决问题"
+[homeCat2Article5]
+other = "学习和成长之道系列第五篇之影响力"
 
 [homeCat3]
 other = "关于软件开发的文章"
