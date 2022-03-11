@@ -4,7 +4,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="{{ .Site.BaseURL | relLangURL }}">
         {{ with .Site.Params.avatarurl }}
-          <img src="{{ . | relURL }}" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="{{ . | relURL }}" alt="Author photo">
         {{ end }}
       </a>
       <a class="name" href="{{ .Site.BaseURL | relLangURL }}">{{ i18n "blogTitle" }}</a>
