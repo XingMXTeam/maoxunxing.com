@@ -1,0 +1,134 @@
+{
+    "root": {
+        "data": {
+            "id": "cior5ed4qg00",
+            "created": 1647785330045,
+            "text": "研发模式"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "ciorm99ba5c0",
+                    "created": 1647786651121,
+                    "text": "物料生态"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ciormwgxcrc0",
+                            "created": 1647786701648,
+                            "text": "Situation"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorpitwcyo0",
+                                    "created": 1647786907049,
+                                    "text": "物料研发低效"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciosym0catk0",
+                                    "created": 1647790440357,
+                                    "text": "精品化"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciormzakpk00",
+                            "created": 1647786707794,
+                            "text": "Task",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cioswwd2tp40",
+                                    "created": 1647790306166,
+                                    "text": "规范中后台物料和运营机制"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciorqanr9wg0",
+                                    "created": 1647786967628,
+                                    "text": "丰富物料生态",
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn09hayo0",
+                            "created": 1647786709904,
+                            "text": "Action",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciosj5b12ps0",
+                                    "created": 1647789228535,
+                                    "text": "GMP物料平台建设物料"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciosyw14sbs0",
+                                    "created": 1647790462172,
+                                    "text": "共创规范和机制"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn41ig3c0",
+                            "created": 1647786718130,
+                            "text": "Result"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cioszg7di9c0",
+                                    "created": 1647790506086,
+                                    "text": "中后台物料库"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cioszjvsu540",
+                                    "created": 1647790514093,
+                                    "text": "中后台规范"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cioszmep5pk0",
+                                    "created": 1647790519589,
+                                    "text": "vscode插件"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

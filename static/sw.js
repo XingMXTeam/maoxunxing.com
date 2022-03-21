@@ -12,10 +12,10 @@ const BASE_CACHE_FILES = [
   '/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css',
   '/js/coder.min.5ea066be698b51678f257c0477dcc8260d8fbfc2feac58052b97fbebaae9e7b6.js',
 
-  'normalize.min.css',
-  'analytics.js',
-  'firebase-analytics.js',
-  'autotrack.js'
+  // 'normalize.min.css',
+  // 'analytics.js',
+  // 'firebase-analytics.js',
+  // 'autotrack.js'
 ];
 
 const OFFLINE_CACHE_FILES = [
@@ -30,10 +30,10 @@ const OFFLINE_CACHE_FILES = [
   '/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css',
   '/js/coder.min.5ea066be698b51678f257c0477dcc8260d8fbfc2feac58052b97fbebaae9e7b6.js',
 
-  'normalize.min.css',
-  'analytics.js',
-  'firebase-analytics.js',
-  'autotrack.js'
+  // 'normalize.min.css',
+  // 'analytics.js',
+  // 'firebase-analytics.js',
+  // 'autotrack.js'
 ];
 
 const NOT_FOUND_CACHE_FILES = [

@@ -1,0 +1,159 @@
+{
+    "root": {
+        "data": {
+            "id": "cior5ed4qg00",
+            "created": 1647785330045,
+            "text": "新技术"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cior7a1k7a80",
+                    "created": 1647785477367,
+                    "text": "脚手架",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cior6sxjo940",
+                            "created": 1647785440119,
+                            "text": "Situation"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cioragklyvc0",
+                                    "created": 1647785726672,
+                                    "text": "本地开发体验不丝滑"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ciorf5exoo00",
+                                            "created": 1647786094205,
+                                            "text": "引入依赖不断增长，构建时间非常长",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ciorjm6s2iw0",
+                                                    "created": 1647786444174,
+                                                    "text": "3千多个模块， 30s"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ciorg794wco0",
+                                    "created": 1647786176572,
+                                    "text": "es build/vite盛行"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ciorjrjnut40",
+                                            "created": 1647786455837,
+                                            "text": "esbuild高效率热更新能力"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ciork4lcum80",
+                                            "created": 1647786484237,
+                                            "text": "预览能力升级"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cior64d0ens0",
+                            "created": 1647785386634,
+                            "text": "Task"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorgoceho00",
+                                    "created": 1647786213775,
+                                    "text": "基于新一代的构建技术升级脚手架"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cior6a3chtc0",
+                            "created": 1647785399111,
+                            "text": "Action"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorr70yh1s0",
+                                    "created": 1647787038083,
+                                    "text": "DEF脚手架/应用模版飞冰"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ciorv4zbge00",
+                                            "created": 1647787347087,
+                                            "text": "组件库不需要编译全部组件，按需编译；"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ciorvacfcw80",
+                                            "created": 1647787358764,
+                                            "text": "esbuild hmr"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cior6jlbuh40",
+                            "created": 1647785419789,
+                            "text": "Result"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cioroxmgeww0",
+                                    "created": 1647786860887,
+                                    "text": " ",
+                                    "image": "https://img.alicdn.com/imgextra/i3/O1CN01SgcWiy21FRNoY4evg_!!6000000006955-0-tps-1312-743.jpg",
+                                    "imageTitle": "",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 113
+                                    }
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

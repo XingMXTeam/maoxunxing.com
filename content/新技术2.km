@@ -1,0 +1,92 @@
+{
+    "root": {
+        "data": {
+            "id": "cior5ed4qg00",
+            "created": 1647785330045,
+            "text": "新技术"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "ciorm99ba5c0",
+                    "created": 1647786651121,
+                    "text": "Style Development"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ciormwgxcrc0",
+                            "created": 1647786701648,
+                            "text": "Situation"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorn8i7yc00",
+                                    "created": 1647786727847,
+                                    "text": "Fast Styling"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciorpitwcyo0",
+                                    "created": 1647786907049,
+                                    "text": "样式规范"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciormzakpk00",
+                            "created": 1647786707794,
+                            "text": "Task"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorqanr9wg0",
+                                    "created": 1647786967628,
+                                    "text": "基于Tailwind规范开发"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn09hayo0",
+                            "created": 1647786709904,
+                            "text": "Action",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciort7dsj8g0",
+                                    "created": 1647787195588,
+                                    "text": "应用模版集成Tailwind解决方案",
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn41ig3c0",
+                            "created": 1647786718130,
+                            "text": "Result"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

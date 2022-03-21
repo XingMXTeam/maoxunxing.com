@@ -1,0 +1,126 @@
+{
+    "root": {
+        "data": {
+            "id": "cior5ed4qg00",
+            "created": 1647785330045,
+            "text": "研发模式"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "ciorm99ba5c0",
+                    "created": 1647786651121,
+                    "text": "源码链路"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ciormwgxcrc0",
+                            "created": 1647786701648,
+                            "text": "Situation"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorpitwcyo0",
+                                    "created": 1647786907049,
+                                    "text": "Quick Start"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cioshpcme2o0",
+                                            "created": 1647789115439,
+                                            "text": "关心Schema"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ciorn8i7yc00",
+                                    "created": 1647786727847,
+                                    "text": "Fast Multi-language development"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cioshzsfx880",
+                                            "created": 1647789138163,
+                                            "text": "需自主创建&同步"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciormzakpk00",
+                            "created": 1647786707794,
+                            "text": "Task"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorqanr9wg0",
+                                    "created": 1647786967628,
+                                    "text": "优化源码页面链路"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciosif0abww0",
+                                    "created": 1647789171289,
+                                    "text": "优化多语言链路"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn09hayo0",
+                            "created": 1647786709904,
+                            "text": "Action",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciort7dsj8g0",
+                                    "created": 1647787195588,
+                                    "text": "1 只需要配置源码资源",
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciosj5b12ps0",
+                                    "created": 1647789228535,
+                                    "text": "2 提供命令行工具，自动同步多语言"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn41ig3c0",
+                            "created": 1647786718130,
+                            "text": "Result"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
