@@ -1,58 +1,625 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=manifest href=https://maoxunxing.com/manifest.json><meta name=author content="Xunxing Mao"><meta name=description content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"><meta name=keywords content=blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs><meta name=twitter:card content=summary_large_image><meta name=twitter:site content=@maoxunxing><meta name=twitter:creator content=@maoxunxing><meta property=og:title content="The Nature of Computers"><meta property=og:description content="What is the nature of computers?"><meta property=og:type content=article><meta property=og:url content=https://maoxunxing.com/zh-cn/code-computer/><meta property=og:image content=https://maoxunxing.com/code-computer/code-computer.jpeg><meta property=article:published_time content=2021-08-24T00:00:00+00:00><meta property=article:modified_time content=2021-08-24T00:00:00+00:00><meta property=og:site_name content=毛训星的网络日志><base href=https://maoxunxing.com/zh-cn/code-computer/><title>The Nature of Computers · 毛训星的网络日志</title><link rel=canonical href=https://maoxunxing.com/zh-cn/code-computer/><link rel="preconnect dns-prefetch" href=//cdn.jsdelivr.net><link rel="preconnect dns-prefetch" href=//cdnjs.cloudflare.com><link rel=preload as=style rel=stylesheet onload="this.onload=null;this.rel='stylesheet'" href=../css/font.css crossorigin=anonymous><link rel=preload as=style rel=stylesheet onload="this.onload=null;this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin=anonymous><link rel=stylesheet href=https://maoxunxing.com/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css integrity="sha256-i3TyqRe2K8Ef07ts27LzafqpcRM5M4Uz488tmZfHCzg=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://maoxunxing.com/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://maoxunxing.com/css/main.css><link rel=icon type=image/png href=https://maoxunxing.com/images/favicon/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://maoxunxing.com/images/favicon/favicon-16x16.png sizes=16x16><link rel=alternate type=application/rss+xml href=https://maoxunxing.com//index.xml title=毛训星的网络日志><meta name=generator content="Hugo 0.55.4"></head><body class=colorscheme-auto><div class=float-container></div><main class=wrapper><nav class=navigation><section class=container><div class=navigation-author><a class=navigation-avatar href=https://maoxunxing.com/zh-cn><img style=width:50x;height:50px src=https://maoxunxing.com/images/avatar.jpg alt="Author photo"></a>
-<a class=name href=https://maoxunxing.com/zh-cn>训星个人站</a></div><input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fas fa-bars"></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/posts/>博客</a></li><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/projects/>项目</a></li><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/book-reports/>读书报告</a></li><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/about/>关于</a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=https://maoxunxing.com/zh-cn/notes class="router-link-active router-link-exact-active" title=Notes data-v-939756fc aria-current=page><svg class="inline" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M21 15l-6 5.996L4.002 21A.998.998.0 0 1 3 20.007V3.993C3 3.445 3.445 3 3.993 3h16.014c.548.0.993.456.993 1.002V15zM19 5H5v14h8v-5a1 1 0 0 1 .883-.993L14 13l5-.001V5zm-.829 9.999L15 15v3.169l3.171-3.17z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=https://github.com/XingMXTeam/ target=_blank title=GitHub data-v-939756fc><svg class="inline" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708.0 0 0-1.837-2.415 1.2 1.2.0 0 1-.167-.11 1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44.0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278.0 0 0-.408-3.293 1.002 1.002.0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87.0 0 0-6.354.0C6.762.75 5.455.966 5.102 1.079a.997.997.0 0 0-.631.584 6.3 6.3.0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27.0 0 0-1.256 3.83 8.422 8.422.0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591.0 0 0-.118.4 1 1 0 0 0 1.942.479 1.678 1.678.0 0 1 .468-.878 1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61.0 0 1-.033-.738 4.258 4.258.0 0 1 .92-2.713 3.022 3.022.0 0 1 .195-.231 1 1 0 0 0 .188-1.025 3.388 3.388.0 0 1-.155-.555 4.094 4.094.0 0 1 .079-1.616 7.543 7.543.0 0 1 2.415 1.18 1.009 1.009.0 0 0 .827.133 11.777 11.777.0 0 1 6.173.001 1.005 1.005.0 0 0 .83-.138 7.572 7.572.0 0 1 2.406-1.19 4.04 4.04.0 0 1 .087 1.578 3.205 3.205.0 0 1-.169.607 1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122.0 0 1 20 9.203a7.039 7.039.0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746 1.63 1.63.0 0 1 .466.908 3.06 3.06.0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217.0-.692.01-1.34v-2.35a4.881 4.881.0 0 0-.155-1.311 4.256 4.256.0 0 0-.116-.416 6.513 6.513.0 0 0 5.445-6.424A8.697 8.697.0 0 0 22 9.203a6.13 6.13.0 0 0-1.263-3.826z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=https://www.douban.com/people/maoxingxing/ target=_blank title=douban class=lt-md:hidden data-v-939756fc><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.06 117.739-228.812zM762.474 524.904V356.071h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637H338.17c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427H184.885V267.209h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023H98.25V78.386h841.946v86.637z" fill="currentcolor" p-id="4783"/></svg></a></li><li class=navigation-item><a href=https://twitter.com/maoxunxing/ target=_blank title=Twitter data-v-939756fc><svg class="inline" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><g fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 0 1-3.14 1.53 4.48 4.48.0 0 0-7.86 3v1A10.66 10.66.0 0 1 3 4s-4 9 5 13a11.64 11.64.0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5.0 0 0-.08-.83A7.72 7.72.0 0 0 23 3z"/></g></svg></a></li><li class=navigation-item><a href=https://maoxunxing.com/en/posts/index.xml target=_blank title=RSS class=lt-md:hidden data-v-939756fc><svg class="inline rss" width="1.2em" height="1.2em" viewBox="0 0 32 32" style="vertical-align:sub;font-size:2rem;margin:0 -.125rem"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684.0-1.355.055-2 .188v2.062a7.86 7.86.0 0 1 2-.25c4.41.0 8 3.59 8 8 0 .691-.086 1.36-.25 2h2.063A9.923 9.923.0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96.0 0 0-2 .344v2.219A3.968 3.968.0 0 1 12 16c2.207.0 4 1.793 4 4 0 .73-.219 1.41-.563 2h2.22A5.96 5.96.0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999.0 1 0 0 4 1.999 1.999.0 1 0 0-4z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=javascript:void id=dark-mode-toggle title="Toggle Color Scheme"><svg class="inline dark-mode-icon" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979.0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999.0 0 0 4 12z" fill="currentcolor"/></svg><svg class="inline light-mode-icon" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85 1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=https://maoxunxing.com/en/ id=languageMenu>EN</a></li></ul></section></nav><script>window.addEventListener('load',()=>{const menu=document.getElementById('languageMenu')
-const arr=location.pathname.split("/");menu.setAttribute('href',menu.getAttribute('href')+(arr.length>=4?arr[arr.length-2]:''))})</script><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title>The Nature of Computers</h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fas fa-calendar"></i><time datetime=2021-08-24T00:00:00Z>August 24, 2021</time></span>
-<span class=reading-time><i class="fas fa-clock"></i>6 分钟阅读时间</span></div><div class=tags><i class="fas fa-tag"></i><a href=https://maoxunxing.com/zh-cn/tags/operation-system/>Operation System</a></div></div></header><div><h2 id=coding-principles>Coding principles<a href=#coding-principles class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h2><blockquote><p>Computers are by nature a world of 0/1, and if expressing this world in 0/1. The conclusion is: it needs to be encoded by.</p></blockquote><h3 id=number-encoding>Number encoding<a href=#number-encoding class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><blockquote><p>First how to express numbers</p></blockquote><p>** Why is there a complement code? **</p><blockquote><p>Complement is to facilitate computer operations, it is easier for computers to do addition</p></blockquote><p><strong>For example</strong>: 5+(-3) is calculated by complement (definition: positive number remains the same, negative number is inverted and +1)<br>Step 1: 0101 (5)<br>Step 2: 0011 (3) -&gt; inverse 1100 -&gt; add one 1101<br>Step 3: 0101+1101=100010 after truncation 0010 (-2)<br>The result of the operation meets human expectation, while the result of the original code (the first bit is the sign bit) and the inverse code (all bits are inverted except the sign bit) do not meet human expectation.</p><p>Why does ** indicate the range [-128, 127]? **</p><blockquote><p>This question has bothered me before</p></blockquote><p>As an example to illustrate.
-The 4-bit binary complement representation is.<br>0000 (-0) 0000 (0)<br>1111 (-1) 0001 (1)<br>1110 (-2) 0010 (2)<br>&hellip; &hellip;<br>1011 (-5) 0101 (5)<br>1010 (-6) 0110 (6)<br>1001(-7) 0111(7)</p><p>The range is [-7, 7] 1000 is not represented, it is just used to represent -8 (the complement of -8 is represented as: 1000 (original) -&gt; inverted 0111 -&gt; plus one 1000)<br>So the final result is [-8, 7]. Similarly [-128,127] makes sense.</p><p>**Why do decimals have precision problems? **</p><blockquote><p>In some languages, 0.1 + 0.2 will never equal 0.3 Why?</p></blockquote><p>As a simple example.<br>Because binary decimals can only be represented precisely with fixed combinations of numbers, such as 0.2, and cannot be represented precisely with binary combinations</p><h3 id=text-encoding>Text encoding<a href=#text-encoding class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><blockquote><p>After encoding numbers, does the text have to be encoded as well?</p></blockquote><p>Encoding is mainly achieved through, for example, code tables, that is, the correspondence between characters and numbers.</p><p>Code table (character set): Correspondence between characters and numbers (interface)
-Character encoding: specific implementation
-Code point: each number in the table (may consist of one or more code elements)</p><p><strong>Development track</strong>.<br>ASCII (English and special characters) : 7 bits in a byte -&gt; EASCII character set : ISO 8859-1 -&gt; GB2312 -&gt; GBK : GBK code (Chinese characters) -&gt; GB18030 -&gt; Unicode character set : general unicode encoding refers to UTF-16 encoding Variable-length encoding, 2-byte code element, with byte order problems, UTF -8 is variable length encoding single byte code element no byte order problem</p><p>Initialization -&gt; localization (GB means national standard) -&gt; internationalization -&gt; efficiency</p><h3 id=multimedia-encoding>Multimedia encoding<a href=#multimedia-encoding class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Audio: A limited number of samples are collected in a given time. Sampling rate is related to the analog signal frequency, 40,000 samples per second Encoding method AAC
-Image: raster map (resolution: number of pixels per unit area, color depth: number of pixel bits) / vector map (mathematical formula for pixel distribution)
-Video: frames Composed of pictures, multiple frames constitute the video stream. Encoding methods MPEG-1, MPEG-2, MPEG-4, H.264, H.265</p><h2 id=the-nature-of-operations>The nature of operations<a href=#the-nature-of-operations class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h2><blockquote><p>With encoding, how does a computer implement computation? Why are memory sticks and chips expensive?</p></blockquote><h3 id=concepts>Concepts<a href=#concepts class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>With, or, non, and iso-or in logical operations</p><p>The above logical operations can be realized by logic simulation. The input is a switch, and the output is usually an LED (a light with color). The chip is generally to achieve the logic operation, such as 7486 (heterogeneous or gate) chip, will expose some pins out, such as a connection to power, a ground, other connection to the input, said the output, etc</p><h3 id=half-adder-do-not-consider-the-input-the-unit>half adder: do not consider the input, the unit<a href=#half-adder-do-not-consider-the-input-the-unit class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Cout = X * Y
-S = X ⊕ Y</p><h3 id=full-adder-takes-into-account-rounding-units>Full adder: takes into account rounding, units<a href=#full-adder-takes-into-account-rounding-units class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4>S = X ⊕ Y ⊕ Cin
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
+    <meta name="author" content="Xunxing Mao">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+
+
+    <meta name="twitter:site" content="@maoxunxing"/>
+    <meta name="twitter:creator" content="@maoxunxing"/>
+
+
+    <meta property="og:title" content="计算机本质的理解" />
+<meta property="og:description" content="计算机本质是什么？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://maoxunxing.com/zh-cn/code-computer/" />
+
+<meta property="og:image" content="https://maoxunxing.com/code-computer/code-computer.jpeg" />
+<meta property="article:published_time" content="2021-08-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-24T00:00:00+00:00" /><meta property="og:site_name" content="毛训星的网络日志" />
+
+
+    
+      <base href="https://maoxunxing.com/zh-cn/code-computer/">
+    
+    <title>计算机本质的理解 · 毛训星的网络日志</title>
+
+    
+      <link rel="canonical" href="https://maoxunxing.com/zh-cn/code-computer/">
+    
+    
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    
+    
+    
+
+    
+      
+      
+      <link rel="stylesheet" href="https://maoxunxing.com/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css" integrity="sha256-i3TyqRe2K8Ef07ts27LzafqpcRM5M4Uz488tmZfHCzg=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://maoxunxing.com/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://maoxunxing.com/css/main.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
+    <meta name="generator" content="Hugo 0.55.4" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    
+<div class="float-container">
+    
+</div>
+
+
+    <main class="wrapper">
+      
+<nav class="navigation">
+  <section class="container">
+    <div class="navigation-author">
+      <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
+        
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+        
+      </a>
+      <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/posts/">博客</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/projects/">项目</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/book-reports/">读书报告</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/about/">关于</a>
+          </li>
+        
+      
+
+      
+        
+        
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              
+              <a href="https://maoxunxing.com/zh-cn/notes" class="router-link-active router-link-exact-active" title="Notes" data-v-939756fc="" aria-current="page"><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M21 15l-6 5.996L4.002 21A.998.998 0 0 1 3 20.007V3.993C3 3.445 3.445 3 3.993 3h16.014c.548 0 .993.456.993 1.002V15zM19 5H5v14h8v-5a1 1 0 0 1 .883-.993L14 13l5-.001V5zm-.829 9.999L15 15v3.169l3.171-3.17z" fill="currentColor"></path></svg></a>
+              
+            </li>
+            <li class="navigation-item">
+              <a href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
+            </li>
+            
+            <li class="navigation-item">
+              <a href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href='javascript:void' id="dark-mode-toggle" title="Toggle Color Scheme">
+                <svg class="inline dark-mode-icon" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="vertical-align: sub;"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z" fill="currentColor"></path></svg>
+                <svg class="inline light-mode-icon" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="vertical-align: sub;"><path d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" fill="currentColor"></path></svg>
+              </a>
+            </li>
+            <li class="navigation-item" >
+              <a href="https://maoxunxing.com/en/" id='languageMenu'>EN</a>
+            </li>
+          
+        
+          
+        
+      
+
+    </ul>
+  </section>
+</nav>
+
+<script>
+  window.addEventListener('load', () => {
+    const menu = document.getElementById('languageMenu')
+    const arr = location.pathname.split("/");
+    menu.setAttribute('href', menu.getAttribute('href') + (arr.length>=4 ? arr[arr.length-2]: ''))
+  })
+</script>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        
+        <div class="post-title">
+          <h1 class="title">计算机本质的理解</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2021-08-24T00:00:00Z'>
+                August 24, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              2 分钟阅读时间
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://maoxunxing.com/zh-cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></div>
+
+        </div>
+      </header><div>
+        
+
+<h2 id="编码原理">编码原理<a href="#编码原理" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<blockquote>
+<p>计算机本质是0/1的世界，如果用0/1表达这个世界。结论是：需要通过编码。</p>
+</blockquote>
+
+<h3 id="数字编码">数字编码<a href="#数字编码" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>首先是怎么表达数字</p>
+</blockquote>
+
+<p><strong>为什么会有补码？</strong></p>
+
+<blockquote>
+<p>补码是为了方便计算机的运算, 计算机比较容易做加法</p>
+</blockquote>
+
+<p><strong>举个例子</strong>：  5+（-3）通过补码（定义：正数不变，负数取反并且+1）计算<br />
+步骤1: 0101（5）<br />
+步骤2: 0011（3） -&gt; 取反 1100 -&gt;加一 1101<br />
+步骤3: 0101+1101=100010 截断后 0010（-2）<br />
+运算的结果符合人类的预期结果， 而原码（首位为符号位） 反码（除了符号位，所有位取反） 计算出来的结果都不满足人类预期。</p>
+
+<p><strong>为什么表示范围是[-128, 127] ?</strong></p>
+
+<blockquote>
+<p>这个问题之前一直困扰着我</p>
+</blockquote>
+
+<p>举个例子来说明：
+4位二进制补码表示是：<br />
+0000（-0） 0000（0）<br />
+1111（-1)  0001（1）<br />
+1110 (-2)  0010（2）<br />
+&hellip;       &hellip;<br />
+1011(-5)   0101（5）<br />
+1010(-6)   0110（6）<br />
+1001(-7)   0111（7）</p>
+
+<p>范围是 [-7, 7] 1000没有被表示，刚好拿来表示-8（-8的补码表示： 1000（原） -&gt; 取反 0111 -&gt; 加一 1000）<br />
+所以最终是[-8, 7]。  同理[-128,127]也解释得通。</p>
+
+<!-- **为什么补码要反码+1？**
+4位二进制补码表示： 
+0000（-0） 0000（0） 
+1111（-1)  0001（1） 
+1110 (-2)  0010（2） 
+...       ...
+1011(-5)   0101（5） 
+1010(-6)   0110（6） 
+1001(-7)   0111（7）
+
++1后，0位表示一致，并且符号位参与运算刚好符合预期 -->
+
+<p><strong>为什么小数会有精度问题？</strong></p>
+
+<blockquote>
+<p>在一些语言中，0.1+0.2永远不会等于0.3 为什么？</p>
+</blockquote>
+
+<p>简单举个例子：<br />
+因为二进制的小数只能用固定的数字组合，比如0.2，无法用二进制组合精确表示</p>
+
+<h3 id="文本编码">文本编码<a href="#文本编码" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>数字编码后，文本是不是也要通过编码？</p>
+</blockquote>
+
+<p>编码主要是通过如码表来实现的，也就是字符和数字的对应关系。</p>
+
+<p>码表（字符集）： 字符和数字的对应关系 （接口）
+字符编码： 具体实现
+码点： 表中的每个数字（可能由一个或者多个码元组成）</p>
+
+<p><strong>发展轨迹</strong>：<br />
+ASCII(英文和特殊字符) : 一个字节中的7位 -&gt; EASCII字符集： ISO 8859-1  -&gt; GB2312 -&gt; GBK： GBK编码（汉字） -&gt; GB18030 -&gt; Unicode字符集 ：一般unicode编码指UTF-16编码 变长编码、2字节码元、有字节序问题， UTF-8是变长编码 单字节码元 无字节序问题</p>
+
+<p>初始化-&gt;本地化（GB表示国标）-&gt;国际化-&gt;效率化</p>
+
+<h3 id="多媒体编码">多媒体编码<a href="#多媒体编码" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>音频： 一定时间内采集有限的样本表示。 采样率和模拟信号频率有关，每秒40000个样本 编码方式AAC
+图像： 光栅图（解析度： 单位面积像素数，色彩深度： 像素位数量）/矢量图（数学公式计算像素分布）
+视频： 帧 由图片构成，多帧构成视频流。 编码方式MPEG-1, MPEG-2, MPEG-4, H.264, H.265</p>
+
+<h2 id="运算的本质">运算的本质<a href="#运算的本质" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<blockquote>
+<p>有了编码后，计算机如何实现计算呢？为什么内存条、芯片会很贵？</p>
+</blockquote>
+
+<h3 id="概念">概念<a href="#概念" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>逻辑运算中的与、或、非、异或</p>
+
+<p>通过逻辑模拟可以实现以上的逻辑运算。输入是开关，输出一般是LED灯(有颜色的灯)。芯片一般是实现逻辑运算，比如7486（异或门）芯片，会暴露一些引脚出来，比如一个接电源，一个接地，其他接输入，表示输出等</p>
+
+<h3 id="半加器-不考虑进位-单位">半加器：不考虑进位， 单位<a href="#半加器-不考虑进位-单位" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>Cout = X * Y
+S = X ⊕ Y</p>
+
+<h3 id="全加器-考虑进位-单位">全加器: 考虑进位， 单位<a href="#全加器-考虑进位-单位" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">S = X ⊕ Y ⊕ Cin
 // both the X and Y values are true, or if either the X or Y value is true and the Cin is true
-Cout = (X*Y) + ((X⊕Y)*Cin)</pre></div><h3 id=two-bit-adder>Two-bit adder<a href=#two-bit-adder class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><h3 id=multi-bit-adder>Multi-bit adder<a href=#multi-bit-adder class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><h3 id=memory-adder>Memory adder<a href=#memory-adder class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Save the result of the last calculation</p><h3 id=select-adder>Select adder<a href=#select-adder class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Get a few more memory adders to avoid starting over when you make a mistake.</p><h3 id=automatic-adding-machine>Automatic adding machine<a href=#automatic-adding-machine class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Automatically enter and add up all numbers with the press of a switch.</p><h3 id=free-adding-machine>Free adding machine<a href=#free-adding-machine class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Control to calculate only some of the numbers</p><h3 id=compare-to-modern-computers>Compare to modern computers<a href=#compare-to-modern-computers class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p>Current computers are capable of performing a billion additions. Computers contain
-1 memory (memory box: for storing the numbers entered, the code to be executed, the result of the calculation)
-2 operator (accumulator: calculates the sum of two numbers)
-3 controller (control panel: toggle switch)
-4 input device (input panel: input switch)
-5 output device (output bulb: bulb reality output data)</p><p>The above contains: input, output, memory, addressing, decoding, instructions, arithmetic logic unit and other concepts</p><p>Programming is the process of storing a series of instructions into memory and letting the computer execute them step by step. Wrapping some common instructions together forms the operating system.</p><h3 id=virtual-circuit-simulation>Virtual Circuit Simulation<a href=#virtual-circuit-simulation class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><p><a href=https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html>https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html</a></p><h3 id=the-difference-between-an-interpreter-and-a-compiler>The difference between an interpreter and a compiler<a href=#the-difference-between-an-interpreter-and-a-compiler class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><blockquote><p>How does our program run?</p></blockquote><p>The code needs to be converted into an AST (abstract syntax tree) by a syntax parser before it can be executed.</p><p>A general interpreter will go through the following steps when interpreting and executing a program.<br>1 Lexer (lexical parser) reads the code and converts it into a sequence of tokens<br>2 Parser (syntax parser) to read the sequence of tokens into AST (in most cases Lexer is part of Parser)<br>3 Lowering (simplifying AST) or Desugar (converting AST nodes from syntactic sugar to standard equivalent AST nodes) of the AST<br>4 Interpreter recursively executes the AST</p><p>The interpreter interprets the execution of the AST directly and returns the final result as follows.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;font-weight:700>function</span> interpret(ast) {
-  <span style=color:#080;font-weight:700>switch</span>(ast.type) {
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;number&#39;</span><span style=color:#333>:</span> <span style=color:#080;font-weight:700>return</span> ast.value;
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;negative&#39;</span><span style=color:#333>:</span> <span style=color:#080;font-weight:700>return</span> <span style=color:#333>-</span>interpret(ast.value);
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;op&#39;</span><span style=color:#333>:</span> 
-      <span style=color:#080;font-weight:700>switch</span>(ast.value) {
-        <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;+&#39;</span><span style=color:#333>:</span> interpret(ast.v1) <span style=color:#333>+</span> interpret(ast.v2);
+Cout = (X*Y) + ((X⊕Y)*Cin)</pre></div>
+<h3 id="两位加法机">两位加法机<a href="#两位加法机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<h3 id="多位加法机">多位加法机<a href="#多位加法机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<h3 id="记忆加法机">记忆加法机<a href="#记忆加法机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>保存上次计算的结果</p>
+
+<h3 id="选择加法机">选择加法机<a href="#选择加法机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>多弄几个记忆加法器，避免输错时重新来过。</p>
+
+<h3 id="自动加法机">自动加法机<a href="#自动加法机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>按一下开关，自动自动输入并且把所有数字加起来。</p>
+
+<h3 id="自由加法机">自由加法机<a href="#自由加法机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>可控制只计算部分的数字</p>
+
+<h3 id="对比现代计算机">对比现代计算机<a href="#对比现代计算机" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>目前的计算机能进行10亿次的加法运算。计算机包含
+1 存储器（存储箱：用于存储输入的数字，要执行的代码，计算的结果）
+2 运算器（累加器：计算两个数字相加）
+3 控制器（控制板：切换开关）
+4 输入设备（输入面板：输入开关）
+5 输出设备（输出灯泡：灯泡现实输出数据）</p>
+
+<p>以上包含了：输入、输出、内存、寻址、译码、指令、算术逻辑单元等概念</p>
+
+<!-- 
+键盘输入数字->产生电压（高低电平 信号？） 触发输入总线中断程序->数字输入到内存区域，同时分配内存地址。 而加法机在操作输入面板每输入一个数字，需要通过选择器制定记忆盒子来存储数组，记忆盒子的编号对应了选择器的序号，也就是内存地址
+
+计算机加法按键，计算机会将数字所在内存地址加载到CPU进行加法运算。加法机需要写代码到记忆盒子，第一行是加法操作代码，第二三行是地址编码。编码完成后，启动异步计数器（周期性扫描记忆盒子的代码），逐行执行，异步计数器执行完后，记忆盒子的数据就被加载到累加器。数据通过寻址（通过译码器寻址数据记忆盒子的过程称为寻址过程）传输到累加器运算后存储到锁存器盒子，然后通过灯泡显示出来。
+
+ -->
+
+<p>编程就是把一系列指令存到内存，让计算机逐步执行这些指令。把一些常用指令封装起来就形成了操作系统。</p>
+
+<h3 id="虚拟电路模拟">虚拟电路模拟<a href="#虚拟电路模拟" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p><a href="https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html">https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html</a></p>
+
+<h3 id="解释器和编译器的区别">解释器和编译器的区别<a href="#解释器和编译器的区别" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>我们的程序是怎么跑起来的？</p>
+</blockquote>
+
+<p>代码在执行前都需要通过语法解析器，将输入的代码字符串转换为AST(抽象语法树)</p>
+
+<p>一般解释器解释执行程序时会经过如下步骤：<br />
+1 Lexer（词法分析器）读取代码，将代码转换为token序列<br />
+2 Parser(语法分析器) 把读到的Token序列转换为AST（大部分情况Lexer是Parser的一部分）<br />
+3 对AST进行Lowering(化简AST)或者Desugar(把语法糖的AST节点转换为标准等价AST节点)<br />
+4 Interpreter递归执行AST</p>
+
+<p>解释器直接解释执行AST，并返回最终结果：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">function</span> interpret(ast) {
+  <span style="color:#080;font-weight:bold">switch</span>(ast.type) {
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;number&#39;</span><span style="color:#333">:</span> <span style="color:#080;font-weight:bold">return</span> ast.value;
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;negative&#39;</span><span style="color:#333">:</span> <span style="color:#080;font-weight:bold">return</span> <span style="color:#333">-</span>interpret(ast.value);
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;op&#39;</span><span style="color:#333">:</span> 
+      <span style="color:#080;font-weight:bold">switch</span>(ast.value) {
+        <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;+&#39;</span><span style="color:#333">:</span> interpret(ast.v1) <span style="color:#333">+</span> interpret(ast.v2);
       }
   }
 }
-</code></pre></div><p>Compiler: translate AST to target language, e.g. assembly</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#888>// Assume that the target machine is a stack VM, and then execute it via the exec function
-</span><span style=color:#888></span><span style=color:#080;font-weight:700>function</span> compile(ast) {
-  <span style=color:#080;font-weight:700>switch</span>(ast.type) {
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;number&#39;</span><span style=color:#333>:</span> <span style=color:#080;font-weight:700>return</span> <span style=background-color:#fff0f0>&#34;ds.push(&#34;</span><span style=color:#333>+</span>ast.value<span style=color:#333>+</span><span style=background-color:#fff0f0>&#34;)\n&#34;</span>;
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;negative&#39;</span><span style=color:#333>:</span>
-      <span style=color:#080;font-weight:700>return</span> <span style=background-color:#fff0f0>&#34;ds.push(-ds.pop())\n&#34;</span>;
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;op&#39;</span><span style=color:#333>:</span>
-      <span style=color:#080;font-weight:700>return</span> compile(ast.v1) <span style=color:#333>+</span> compile(ast.v2) <span style=color:#333>+</span> <span style=background-color:#fff0f0>&#34;ds.push(ds.pop() &#34;</span> <span style=color:#333>+</span> ast.value <span style=color:#333>+</span> <span style=background-color:#fff0f0>&#34; ds.pop())\n&#34;</span>;
+</code></pre></div>
+<p>编译器: 把AST翻译成目标语言，比如汇编</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#888">// 假定为目标机器为栈式虚拟机，然后通过exec函数执行
+</span><span style="color:#888"></span><span style="color:#080;font-weight:bold">function</span> compile(ast) {
+  <span style="color:#080;font-weight:bold">switch</span>(ast.type) {
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;number&#39;</span><span style="color:#333">:</span> <span style="color:#080;font-weight:bold">return</span> <span style="background-color:#fff0f0">&#34;ds.push(&#34;</span><span style="color:#333">+</span>ast.value<span style="color:#333">+</span><span style="background-color:#fff0f0">&#34;)\n&#34;</span>;
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;negative&#39;</span><span style="color:#333">:</span>
+      <span style="color:#080;font-weight:bold">return</span> <span style="background-color:#fff0f0">&#34;ds.push(-ds.pop())\n&#34;</span>;
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;op&#39;</span><span style="color:#333">:</span>
+      <span style="color:#080;font-weight:bold">return</span> compile(ast.v1) <span style="color:#333">+</span> compile(ast.v2) <span style="color:#333">+</span> <span style="background-color:#fff0f0">&#34;ds.push(ds.pop() &#34;</span> <span style="color:#333">+</span> ast.value <span style="color:#333">+</span> <span style="background-color:#fff0f0">&#34;  ds.pop())\n&#34;</span>;
   }
 }
-</code></pre></div><p>Separate the traversal and implementation of ast, and encapsulate each step of the operation as a separate function</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#080;font-weight:700>function</span> interpret(ast) {
-  <span style=color:#080;font-weight:700>switch</span>(ast.type) {
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;number&#39;</span><span style=color:#333>:</span> <span style=color:#080;font-weight:700>return</span> ast.value;
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;negative&#39;</span><span style=color:#333>:</span> <span style=color:#080;font-weight:700>return</span> <span style=color:#333>-</span>interpret(ast.value);
-    <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;op&#39;</span><span style=color:#333>:</span> 
-      <span style=color:#080;font-weight:700>switch</span>(ast.value) {
-        <span style=color:#080;font-weight:700>case</span> <span style=background-color:#fff0f0>&#39;+&#39;</span><span style=color:#333>:</span> interpret(ast.v1) <span style=color:#333>+</span> interpret(ast.v2);
+</code></pre></div>
+<p>将ast的遍历和实现分离，每一步操作封装为单独的函数</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">function</span> interpret(ast) {
+  <span style="color:#080;font-weight:bold">switch</span>(ast.type) {
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;number&#39;</span><span style="color:#333">:</span> <span style="color:#080;font-weight:bold">return</span> ast.value;
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;negative&#39;</span><span style="color:#333">:</span> <span style="color:#080;font-weight:bold">return</span> <span style="color:#333">-</span>interpret(ast.value);
+    <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;op&#39;</span><span style="color:#333">:</span> 
+      <span style="color:#080;font-weight:bold">switch</span>(ast.value) {
+        <span style="color:#080;font-weight:bold">case</span> <span style="background-color:#fff0f0">&#39;+&#39;</span><span style="color:#333">:</span> interpret(ast.v1) <span style="color:#333">+</span> interpret(ast.v2);
       }
   }
 }
-</code></pre></div><h2 id=the-nature-of-code>The nature of code<a href=#the-nature-of-code class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h2><p>The machine is controlled by code, which is the instruction read by a human. There are two main elements data and operations (judgments, selections, loops, branches, etc.).</p><h3 id=memory-model>Memory model<a href=#memory-model class=hanchor arialabel=Anchor> 🔗&#xFE0E;</a></h3><blockquote><p>How does a computer store?</p></blockquote><p>The latch (a huge array composed of 64 bits) of <a href="# the nature of operations">the nature of operations</a> is, in essence, memory.</p><p>Sequential execution: The code is compiled into a single instruction still in to memory (the execution area allocated by the operating system), the counter progressively executes the memory execution and returns the result</p><p>Branch selection: jump to the corresponding address to execute the instruction</p><p>Nested execution: The function execution opens a set of consecutive memory spaces in memory. Before the execution of the function code according to the number of parameters, the size of the parameters, the calculation of the allocation of stack space, the bottom of the stack is the direction of the high address of memory
-The activity record of the execution process is defined by a frame pointer marking the top position and a stack pointer marking the bottom position. When the execution is finished, the frame pointer points to the address of the next instruction</p></div><style type=text/css>#mc_embed_signup form{display:block;position:relative;text-align:left;padding:10px 0 10px 3%}#mc_embed_signup h2{font-weight:700;padding:0;margin:15px 0;font-size:1.4em}#mc_embed_signup input{border:1px solid #abb0b2;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox}#mc_embed_signup input[type=radio]{-webkit-appearance:radio}#mc_embed_signup input:focus{border-color:#333}#mc_embed_signup .button{clear:both;background-color:#aaa;border:0;border-radius:4px;transition:all .23s ease-in-out 0s;color:#fff;cursor:pointer;display:inline-block;font-size:15px;font-weight:400;height:32px;line-height:32px;margin:0 5px 10px 0;padding:0 22px;text-align:center;text-decoration:none;vertical-align:top;white-space:nowrap;width:auto}#mc_embed_signup .button:hover{background-color:#777}#mc_embed_signup .small-meta{font-size:11px}#mc_embed_signup .nowrap{white-space:nowrap}#mc_embed_signup .mc-field-group{clear:left;position:relative;width:96%;padding-bottom:3%;min-height:50px}#mc_embed_signup .size1of2{clear:none;float:left;display:inline-block;width:46%;margin-right:4%}* html #mc_embed_signup .size1of2{margin-right:2%}#mc_embed_signup .mc-field-group label{display:block;margin-bottom:3px}#mc_embed_signup .mc-field-group input{display:block;width:100%;padding:8px 0;text-indent:2%}#mc_embed_signup .mc-field-group select{display:inline-block;width:99%;padding:5px 0;margin-bottom:2px}#mc_embed_signup .datefield,#mc_embed_signup .phonefield-us{padding:5px 0}#mc_embed_signup .datefield input,#mc_embed_signup .phonefield-us input{display:inline;width:60px;margin:0 2px;letter-spacing:1px;text-align:center;padding:5px 0 2px}#mc_embed_signup .phonefield-us .phonearea input,#mc_embed_signup .phonefield-us .phonedetail1 input{width:40px}#mc_embed_signup .datefield .monthfield input,#mc_embed_signup .datefield .dayfield input{width:30px}#mc_embed_signup .datefield label,#mc_embed_signup .phonefield-us label{display:none}#mc_embed_signup .indicates-required{text-align:right;font-size:11px;margin-right:4%}#mc_embed_signup .asterisk{color:#e85c41;font-size:150%;font-weight:400;position:relative;top:5px}#mc_embed_signup .clear{clear:both}#mc_embed_signup .mc-field-group.input-group ul{margin:0;padding:5px 0;list-style:none}#mc_embed_signup .mc-field-group.input-group ul li{display:block;padding:3px 0;margin:0}#mc_embed_signup .mc-field-group.input-group label{display:inline}#mc_embed_signup .mc-field-group.input-group input{display:inline;width:auto;border:none}#mc_embed_signup div#mce-responses{float:left;top:-1.4em;padding:0 .5em;overflow:hidden;width:90%;margin:0 5%;clear:both}#mc_embed_signup div.response{margin:1em 0;padding:1em .5em .5em 0;font-weight:700;float:left;top:-1.5em;z-index:1;width:80%}#mc_embed_signup #mce-error-response{display:none}#mc_embed_signup #mce-success-response{color:#529214;display:none}#mc_embed_signup label.error{display:block;float:none;width:auto;margin-left:1.05em;text-align:left;padding:.5em 0}#mc-embedded-subscribe{clear:both;width:auto;display:block;margin:1em 0 1em 5%}#mc_embed_signup #num-subscribers{font-size:1.1em}#mc_embed_signup #num-subscribers span{padding:.5em;border:1px solid #ccc;margin-right:.5em;font-weight:700}#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error{display:inline-block;margin:2px 0 1em;padding:5px 10px;background-color:rgba(255,255,255,.85);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:14px;font-weight:400;z-index:1;color:#e85c41}#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error{border:2px solid #e85c41}.colorscheme-dark #mc_embed_signup{background:#212121;border:1px solid}.colorscheme-dark input[type=email]{background:#181818;color:silver}#mc_embed_signup{background:#fff;clear:left;font:14px Helvetica,Arial,sans-serif}</style><div id=mc_embed_signup><form action="https://gmail.us5.list-manage.com/subscribe/post?u=c3b0164459768548b7bef380c&amp;id=1103acd526" method=post id=mc-embedded-subscribe-form name=mc-embedded-subscribe-form class=validate target=_blank novalidate><div id=mc_embed_signup_scroll><h3 style=text-align:center>当发布很酷的东西时，请第一时间通知我</h3><p style=text-align:center>订阅电子邮件，以获得我的最新文章。</p><div class=mc-field-group><label for=mce-EMAIL>邮箱地址 <span class=asterisk>*</span></label>
-<input type=email name=EMAIL class="required email" id=mce-EMAIL></div><div id=mce-responses class=clear><div class=response id=mce-error-response style=display:none></div><div class=response id=mce-success-response style=display:none></div></div><div style=position:absolute;left:-5000px aria-hidden=true><input type=text name=b_c3b0164459768548b7bef380c_1103acd526 tabindex=-1></div><div class=clear><input type=submit value=订阅 name=subscribe id=mc-embedded-subscribe class=button></div></div></form></div><script type=text/javascript src=//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js></script><script type=text/javascript>(function($){window.fnames=new Array();window.ftypes=new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj=jQuery.noConflict(true);</script><section class=social-sharing><h4>分享到</h4><a href="https://twitter.com/intent/tweet?via=maoxunxing&text=The%20Nature%20of%20Computers%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fcode-computer%2f" class="btn btn-twitter btn-social" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden=true></i><span>Twitter</span></a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fcode-computer%2f" class="btn btn-facebook btn-social" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden=true></i><span>Facebook</span></a>
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fcode-computer%2f" class="btn btn-linkedin btn-social" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden=true></i><span>LinkedIn</span></a></section><style>.utterances{max-width:initial!important;margin-top:40px}</style><script src=https://utteranc.es/client.js repo=XingMXTeam/XingMXTeam.github.io issue-term=pathname theme=github-light crossorigin=anonymous async></script><script>talkyardServerUrl='';talkyardLogLevel='warn';</script><script async defer src></script><section><div class=talkyard-comments data-discussion-id style=margin-top:45px><noscript>Please enable JavaScript to view comments.</noscript></div></section><footer></footer></article></section></div><footer class=footer><section class=container><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/ style=color:inherit>CC BY-NC-SA 4.0</a>
-2022
-©
-Xunxing Mao</section></footer></main><script src=https://maoxunxing.com/js/coder.min.158f22d7bc754e28d7c61accc0aef7952c2b949889ec9503466e5d4db0548808.js integrity="sha256-FY8i17x1TijXxhrMwK73lSwrlJiJ7JUDRm5dTbBUiAg="></script><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-199510588-1','auto');ga('require','outboundLinkTracker');ga('send','pageview');</script><script src=https://www.google-analytics.com/analytics.js async></script><script src=https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js async></script><script type=module>
+</code></pre></div>
+<h2 id="代码的本质">代码的本质<a href="#代码的本质" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<p>通过代码控制机器，代码是人阅读的指令。 主要有两大要素数据和操作（判断、选择、循环、分支等）。</p>
+
+<h3 id="内存模型">内存模型<a href="#内存模型" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>计算机是怎么存储的？</p>
+</blockquote>
+
+<p><a href="#运算的本质">运算的本质</a>的锁存器（64位构成的庞大数组），本质就是内存。</p>
+
+<p>顺序执行： 代码编译成一条条指令还在到内存（操作系统分配的执行区域），计数器逐步执行内存的执行，返回结果</p>
+
+<p>分支选择： 跳到对应地址执行指令</p>
+
+<p>嵌套执行： 函数执行会在内存开辟一组连续的内存空间。 函数代码执行前根据参数数量、参数大小，计算分配栈空间，栈底为内存高地址方向
+执行过程的活动记录，由标记顶部位置的帧指针和标记底部位置的栈指针定义。当执行完毕，帧指针指向下一条指令地址</p>
+
+      </div>
+
+<style type="text/css">
+
+   
+  #mc_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 3%}
+  #mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+  #mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+  #mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+  #mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+  #mc_embed_signup input:focus {border-color:#333;}
+  #mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+  #mc_embed_signup .button:hover {background-color:#777;}
+  #mc_embed_signup .small-meta {font-size: 11px;}
+  #mc_embed_signup .nowrap {white-space:nowrap;}
+
+  #mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:3%; min-height:50px;}
+  #mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
+  * html #mc_embed_signup .size1of2 {margin-right:2%;  }
+  #mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
+  #mc_embed_signup .mc-field-group input {display:block; width:100%; padding:8px 0; text-indent:2%;}
+  #mc_embed_signup .mc-field-group select {display:inline-block; width:99%; padding:5px 0; margin-bottom:2px;}
+
+  #mc_embed_signup .datefield, #mc_embed_signup .phonefield-us{padding:5px 0;}
+  #mc_embed_signup .datefield input, #mc_embed_signup .phonefield-us input{display:inline; width:60px; margin:0 2px; letter-spacing:1px; text-align:center; padding:5px 0 2px 0;}
+  #mc_embed_signup .phonefield-us .phonearea input, #mc_embed_signup .phonefield-us .phonedetail1 input{width:40px;}
+  #mc_embed_signup .datefield .monthfield input, #mc_embed_signup .datefield .dayfield input{width:30px;}
+  #mc_embed_signup .datefield label, #mc_embed_signup .phonefield-us label{display:none;}
+
+  #mc_embed_signup .indicates-required {text-align:right; font-size:11px; margin-right:4%;}
+  #mc_embed_signup .asterisk {color:#e85c41; font-size:150%; font-weight:normal; position:relative; top:5px;}
+  #mc_embed_signup .clear {clear:both;}
+
+  #mc_embed_signup .mc-field-group.input-group ul {margin:0; padding:5px 0; list-style:none;}
+  #mc_embed_signup .mc-field-group.input-group ul li {display:block; padding:3px 0; margin:0;}
+  #mc_embed_signup .mc-field-group.input-group label {display:inline;}
+  #mc_embed_signup .mc-field-group.input-group input {display:inline; width:auto; border:none;}
+
+  #mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%; margin: 0 5%; clear: both;}
+  #mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+  #mc_embed_signup #mce-error-response {display:none;}
+  #mc_embed_signup #mce-success-response {color:#529214; display:none;}
+  #mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+
+  #mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+  #mc_embed_signup #num-subscribers {font-size:1.1em;}
+  #mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
+
+  #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {display:inline-block; margin:2px 0 1em 0; padding:5px 10px; background-color:rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size:14px; font-weight:normal; z-index:1; color:#e85c41;}
+  #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {border:2px solid #e85c41;}
+   
+  .colorscheme-dark #mc_embed_signup { background:#212121; border: 1px solid; }
+  .colorscheme-dark input[type=email] { background: #181818; color:silver; }
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	 
+</style>
+<div id="mc_embed_signup">
+  <form action="https://gmail.us5.list-manage.com/subscribe/post?u=c3b0164459768548b7bef380c&amp;id=1103acd526" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+  <h3 style='text-align: center;'>当发布很酷的东西时，请第一时间通知我</h3>
+  <p style='text-align: center;'>订阅电子邮件，以获得我的最新文章。</p>
+
+<div class="mc-field-group">
+	<label for="mce-EMAIL">邮箱地址  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c3b0164459768548b7bef380c_1103acd526" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="订阅" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+
+      <section class="social-sharing">
+
+  <h4>分享到</h4>
+
+  <a href="https://twitter.com/intent/tweet?via=maoxunxing&text=%e8%ae%a1%e7%ae%97%e6%9c%ba%e6%9c%ac%e8%b4%a8%e7%9a%84%e7%90%86%e8%a7%a3%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fcode-computer%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
+    <i class="fab fa-fw fa-twitter" aria-hidden="true"></i>
+    <span>Twitter</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fcode-computer%2f" class="btn btn-facebook btn-social" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i>
+    <span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fcode-computer%2f" class="btn btn-linkedin btn-social" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
+    <span> LinkedIn</span>
+  </a>
+
+</section>
+
+
+      
+
+
+      <style>
+  .utterances {
+    max-width: initial !important;
+    margin-top: 40px;
+  }
+</style>
+<script src="https://utteranc.es/client.js"
+        repo="XingMXTeam/XingMXTeam.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+      
+        <script>
+  talkyardServerUrl='';
+  talkyardLogLevel = 'warn';
+</script>
+<script async defer src=""></script>
+<section>
+  <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+    <noscript>Please enable JavaScript to view comments.</noscript>
+  </div>
+</section>
+
+      
+
+      <footer>
+        
+
+
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
+      2022
+      ©
+       Xunxing Mao 
+    
+    
+    
+  </section>
+</footer>
+
+
+
+    </main>
+
+
+    
+      
+      <script src="https://maoxunxing.com/js/coder.min.158f22d7bc754e28d7c61accc0aef7952c2b949889ec9503466e5d4db0548808.js" integrity="sha256-FY8i17x1TijXxhrMwK73lSwrlJiJ7JUDRm5dTbBUiAg="></script>
+    
+
+    
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-199510588-1', 'auto');
+
+  ga('require', 'outboundLinkTracker');
+
+  ga('send', 'pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
+
+
+
+    <script type="module">
     // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
@@ -74,4 +641,25 @@ Xunxing Mao</section></footer></main><script src=https://maoxunxing.com/js/coder
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-</script><script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'}).then(function(registration){});navigator.serviceWorker.ready.then(function(registration){});}</script></body></html>
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+
+
+  </body>
+
+</html>
