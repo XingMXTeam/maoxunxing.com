@@ -1,5 +1,5 @@
 ---
-title: "NodeJS Stream系列第二篇之流的类型"
+title: "NodeJS Stream系列 - 流的类型"
 date: 2021-10-19T14:28:57+08:00
 tags:
 - NodeJS 
@@ -54,7 +54,7 @@ transform/duplex流可以用上面的所有方法
 ### 其他文章
 
 [NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream)  
-[NodeJS Stream系列第二篇之流的类型](../nodejs-network-stream-2)  
-[NodeJS Stream系列第三篇之基本用法](../nodejs-network-stream-3)  
+[NodeJS Stream系列 - 流的类型](../nodejs-network-stream-2)  
+[NodeJS Stream系列 - 基本用法](../nodejs-network-stream-3)  
 [NodeJS Stream系列第四篇之高级用法](../nodejs-network-stream-4)  
 [NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream-5)  

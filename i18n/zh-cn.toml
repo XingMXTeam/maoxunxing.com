@@ -26,24 +26,24 @@ other = "现在我是一名开发者。这个网站主要是记录我的个人�
 other = "关于算法的文章"
 
 [homeCat1Article1]
-other = "检测无定向图中的环"
+other = "树系列 - 检测无定向图中的环"
 
 [homeCat1Article2]
-other = "给出N，求唯一BST的总数"
+other = "树系列 - 给出N，求唯一BST的总数"
 
 [homeCat2]
 other = "关于成长的文章"
 
 [homeCat2Article1]
-other = "学习和成长之道系列第一篇之学什么"
+other = "学什么系列 - 成长模型"
 [homeCat2Article2]
-other = "学习和成长之道系列第二篇之怎么学"
+other = "怎么学系列 - 方法论"
 [homeCat2Article3]
-other = "学习和成长之道系列第三篇之能力模型"
+other = "怎么学系列 - 解决问题"
 [homeCat2Article4]
-other = "学习和成长之道系列第四篇之解决问题"
+other = "评价标准系列 - 影响力"
 [homeCat2Article5]
-other = "学习和成长之道系列第五篇之影响力"
+other = "评价标准系列 - 衡量能力"
 
 [homeCat3]
 other = "关于软件开发的文章"

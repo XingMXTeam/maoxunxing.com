@@ -248,7 +248,7 @@ remote.hello('JIM', function (err, mess) {
 ### 其他文章
 
 [NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream)  
-[NodeJS Stream系列第二篇之流的类型](../nodejs-network-stream-2)  
-[NodeJS Stream系列第三篇之基本用法](../nodejs-network-stream-3)  
+[NodeJS Stream系列 - 流的类型](../nodejs-network-stream-2)  
+[NodeJS Stream系列 - 基本用法](../nodejs-network-stream-3)  
 [NodeJS Stream系列第四篇之高级用法](../nodejs-network-stream-4)  
 [NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream-5)  

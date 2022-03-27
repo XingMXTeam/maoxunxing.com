@@ -1,5 +1,5 @@
 ---
-title: "Detect Cycle in an Undirected Graph"
+title: "Tree Part 1 - Detect Cycle in an Undirected Graph"
 date: 2021-08-24
 tags:
 - Algorithm

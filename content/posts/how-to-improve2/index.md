@@ -1,5 +1,5 @@
 ---
-title: "学习和成长之道系列第二篇之怎么学"
+title: "怎么学系列 - 方法论"
 date: 2021-08-27T10:20:36+08:00
 description: "每个人都有不同的学习方法，怎么学是一门学问"
 tags:
@@ -54,8 +54,8 @@ images:
 
 ### 其他文章
 
-[学习和成长之道系列第一篇之学什么](../how-to-improve)  
-[学习和成长之道系列第二篇之怎么学](../how-to-improve2)  
-[学习和成长之道系列第三篇之能力模型](../how-to-improve3)  
-[学习和成长之道系列第四篇之解决问题](../how-to-improve4)  
-[学习和成长之道系列第五篇之影响力](../how-to-improve5)  
+[学什么系列 - 成长模型](../how-to-improve)  
+[怎么学系列 - 方法论](../how-to-improve2)  
+[评价标准系列 - 衡量能力](../how-to-improve3)  
+[怎么学系列 - 解决问题](../how-to-improve4)  
+[评价标准系列 - 影响力](../how-to-improve5)  
