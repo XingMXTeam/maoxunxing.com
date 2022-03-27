@@ -1,5 +1,5 @@
 ---
-title: "pageckage.json的files"
+title: "package.json的files"
 date: 2021-12-10T10:12:21+08:00
 ---
 
