@@ -1,48 +1,434 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=manifest href=https://maoxunxing.com/manifest.json><meta name=author content="Xunxing Mao"><meta name=description content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"><meta name=keywords content=blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs><meta name=twitter:site content=@maoxunxing><meta name=twitter:creator content=@maoxunxing><meta property=og:title content=Notes><meta property=og:description content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"><meta property=og:type content=website><meta property=og:url content=https://maoxunxing.com/zh-cn/notes/><meta property=og:updated_time content=2022-01-24T13:15:59+08:00><meta property=og:site_name content=毛训星的网络日志><base href=https://maoxunxing.com/zh-cn/notes/><title>Notes · 毛训星的网络日志</title><link rel=canonical href=https://maoxunxing.com/zh-cn/notes/><link rel="preconnect dns-prefetch" href=//cdn.jsdelivr.net><link rel="preconnect dns-prefetch" href=//cdnjs.cloudflare.com><link rel=preload as=style rel=stylesheet onload="this.onload=null;this.rel='stylesheet'" href=../css/font.css crossorigin=anonymous><link rel=preload as=style rel=stylesheet onload="this.onload=null;this.rel='stylesheet'" href=https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin=anonymous><link rel=stylesheet href=https://maoxunxing.com/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css integrity="sha256-i3TyqRe2K8Ef07ts27LzafqpcRM5M4Uz488tmZfHCzg=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://maoxunxing.com/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://maoxunxing.com/css/main.css><link rel=icon type=image/png href=https://maoxunxing.com/images/favicon/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://maoxunxing.com/images/favicon/favicon-16x16.png sizes=16x16><link rel=alternate type=application/rss+xml href=https://maoxunxing.com/zh-cn/notes/index.xml title=毛训星的网络日志><meta name=generator content="Hugo 0.55.4"></head><body class=colorscheme-auto><div class=float-container></div><main class=wrapper><nav class=navigation><section class=container><div class=navigation-author><a class=navigation-avatar href=https://maoxunxing.com/zh-cn><img style=width:50x;height:50px src=https://maoxunxing.com/images/avatar.jpg alt="Author photo"></a>
-<a class=name href=https://maoxunxing.com/zh-cn>训星个人站</a></div><input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fas fa-bars"></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/posts/>博客</a></li><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/projects/>项目</a></li><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/book-reports/>读书报告</a></li><li class=navigation-item><a class=navigation-link href=https://maoxunxing.com/zh-cn/about/>关于</a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=https://maoxunxing.com/zh-cn/notes class="router-link-active router-link-exact-active" title=Notes data-v-939756fc aria-current=page><svg class="inline" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M21 15l-6 5.996L4.002 21A.998.998.0 0 1 3 20.007V3.993C3 3.445 3.445 3 3.993 3h16.014c.548.0.993.456.993 1.002V15zM19 5H5v14h8v-5a1 1 0 0 1 .883-.993L14 13l5-.001V5zm-.829 9.999L15 15v3.169l3.171-3.17z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=https://github.com/XingMXTeam/ target=_blank title=GitHub data-v-939756fc><svg class="inline" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708.0 0 0-1.837-2.415 1.2 1.2.0 0 1-.167-.11 1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44.0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278.0 0 0-.408-3.293 1.002 1.002.0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87.0 0 0-6.354.0C6.762.75 5.455.966 5.102 1.079a.997.997.0 0 0-.631.584 6.3 6.3.0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27.0 0 0-1.256 3.83 8.422 8.422.0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591.0 0 0-.118.4 1 1 0 0 0 1.942.479 1.678 1.678.0 0 1 .468-.878 1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61.0 0 1-.033-.738 4.258 4.258.0 0 1 .92-2.713 3.022 3.022.0 0 1 .195-.231 1 1 0 0 0 .188-1.025 3.388 3.388.0 0 1-.155-.555 4.094 4.094.0 0 1 .079-1.616 7.543 7.543.0 0 1 2.415 1.18 1.009 1.009.0 0 0 .827.133 11.777 11.777.0 0 1 6.173.001 1.005 1.005.0 0 0 .83-.138 7.572 7.572.0 0 1 2.406-1.19 4.04 4.04.0 0 1 .087 1.578 3.205 3.205.0 0 1-.169.607 1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122.0 0 1 20 9.203a7.039 7.039.0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746 1.63 1.63.0 0 1 .466.908 3.06 3.06.0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217.0-.692.01-1.34v-2.35a4.881 4.881.0 0 0-.155-1.311 4.256 4.256.0 0 0-.116-.416 6.513 6.513.0 0 0 5.445-6.424A8.697 8.697.0 0 0 22 9.203a6.13 6.13.0 0 0-1.263-3.826z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=https://www.douban.com/people/maoxingxing/ target=_blank title=douban class=lt-md:hidden data-v-939756fc><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.06 117.739-228.812zM762.474 524.904V356.071h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637H338.17c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427H184.885V267.209h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023H98.25V78.386h841.946v86.637z" fill="currentcolor" p-id="4783"/></svg></a></li><li class=navigation-item><a href=https://twitter.com/maoxunxing/ target=_blank title=Twitter data-v-939756fc><svg class="inline" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><g fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 0 1-3.14 1.53 4.48 4.48.0 0 0-7.86 3v1A10.66 10.66.0 0 1 3 4s-4 9 5 13a11.64 11.64.0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5.0 0 0-.08-.83A7.72 7.72.0 0 0 23 3z"/></g></svg></a></li><li class=navigation-item><a href=https://maoxunxing.com/en/posts/index.xml target=_blank title=RSS class=lt-md:hidden data-v-939756fc><svg class="inline rss" width="1.2em" height="1.2em" viewBox="0 0 32 32" style="vertical-align:sub;font-size:2rem;margin:0 -.125rem"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684.0-1.355.055-2 .188v2.062a7.86 7.86.0 0 1 2-.25c4.41.0 8 3.59 8 8 0 .691-.086 1.36-.25 2h2.063A9.923 9.923.0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96.0 0 0-2 .344v2.219A3.968 3.968.0 0 1 12 16c2.207.0 4 1.793 4 4 0 .73-.219 1.41-.563 2h2.22A5.96 5.96.0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999.0 1 0 0 4 1.999 1.999.0 1 0 0-4z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=javascript:void id=dark-mode-toggle title="Toggle Color Scheme"><svg class="inline dark-mode-icon" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979.0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999.0 0 0 4 12z" fill="currentcolor"/></svg><svg class="inline light-mode-icon" width="1.2em" height="1.2em" viewBox="0 0 24 24" style="vertical-align:sub"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85 1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" fill="currentcolor"/></svg></a></li><li class=navigation-item><a href=https://maoxunxing.com/en/ id=languageMenu>EN</a></li></ul></section></nav><script>window.addEventListener('load',()=>{const menu=document.getElementById('languageMenu')
-const arr=location.pathname.split("/");menu.setAttribute('href',menu.getAttribute('href')+(arr.length>=4?arr[arr.length-2]:''))})</script><div class=content><section class="container list"><h1 class=title style=margin-bottom:0>Notes</h1><div class=gray-card><em>Quick notes / tips</em></div><p><a href=https://maoxunxing.com/en/notes/index.xml target=_blank rel=noopener>RSS Feed</a></p><ul class=book-reports-list><li class=notes-li><h2 style=margin-top:0><a class=title href=https://maoxunxing.com/zh-cn/notes/jsx-runtime/>Jsx Runtime</a></h2><p class="date gray-card"><em>January 24, 2022</em></p><div class=summary><div><section class="page book-report"><article><div><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style=color:#007020>read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime
-    <span style=color:#60e;font-weight:700>10</span> │ import <span style=color:#333>{</span> jsx as _jsx <span style=color:#333>}</span> from <span style=background-color:#fff0f0>&#34;react/jsx-runtime&#34;</span>;
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
+    <meta name="author" content="Xunxing Mao">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
+
+    
+
+    <meta name="twitter:site" content="@maoxunxing"/>
+    <meta name="twitter:creator" content="@maoxunxing"/>
+
+
+    <meta property="og:title" content="Notes" />
+<meta property="og:description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://maoxunxing.com/zh-cn/notes/" />
+
+<meta property="og:updated_time" content="2022-03-27T14:48:25+08:00" /><meta property="og:site_name" content="毛训星的网络日志" />
+
+
+    
+      <base href="https://maoxunxing.com/zh-cn/notes/">
+    
+    <title>
+  Notes · 毛训星的网络日志
+</title>
+
+    
+      <link rel="canonical" href="https://maoxunxing.com/zh-cn/notes/">
+    
+    
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    
+    
+    
+
+    
+      
+      
+      <link rel="stylesheet" href="https://maoxunxing.com/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css" integrity="sha256-i3TyqRe2K8Ef07ts27LzafqpcRM5M4Uz488tmZfHCzg=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://maoxunxing.com/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://maoxunxing.com/css/main.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-16x16.png" sizes="16x16">
+
+    <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com/zh-cn/notes/index.xml" title="毛训星的网络日志" />
+      <meta name="generator" content="Hugo 0.55.4" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    
+<div class="float-container">
+    
+</div>
+
+
+    <main class="wrapper">
+      
+<nav class="navigation">
+  <section class="container">
+    <div class="navigation-author">
+      <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
+        
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+        
+      </a>
+      <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/posts/">博客</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/projects/">项目</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/book-reports/">读书报告</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/about/">关于</a>
+          </li>
+        
+      
+
+      
+        
+        
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              
+              <a href="https://maoxunxing.com/zh-cn/notes" class="router-link-active router-link-exact-active" title="Notes" data-v-939756fc="" aria-current="page"><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M21 15l-6 5.996L4.002 21A.998.998 0 0 1 3 20.007V3.993C3 3.445 3.445 3 3.993 3h16.014c.548 0 .993.456.993 1.002V15zM19 5H5v14h8v-5a1 1 0 0 1 .883-.993L14 13l5-.001V5zm-.829 9.999L15 15v3.169l3.171-3.17z" fill="currentColor"></path></svg></a>
+              
+            </li>
+            <li class="navigation-item">
+              <a href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
+            </li>
+            
+            <li class="navigation-item">
+              <a href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href='javascript:void' id="dark-mode-toggle" title="Toggle Color Scheme">
+                <svg class="inline dark-mode-icon" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="vertical-align: sub;"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z" fill="currentColor"></path></svg>
+                <svg class="inline light-mode-icon" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="vertical-align: sub;"><path d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" fill="currentColor"></path></svg>
+              </a>
+            </li>
+            <li class="navigation-item" >
+              <a href="https://maoxunxing.com/en/" id='languageMenu'>EN</a>
+            </li>
+          
+        
+          
+        
+      
+
+    </ul>
+  </section>
+</nav>
+
+<script>
+  window.addEventListener('load', () => {
+    const menu = document.getElementById('languageMenu')
+    const arr = location.pathname.split("/");
+    menu.setAttribute('href', menu.getAttribute('href') + (arr.length>=4 ? arr[arr.length-2]: ''))
+  })
+</script>
+
+
+      <div class="content">
+        
+  <section class="container list">
+    <h1 class="title" style='margin-bottom: 0;'>Notes</h1>
+    <div class='gray-card'><em>Quick notes / tips</em></div>
+    <p><a href="https://maoxunxing.com/en/notes/index.xml" target="_blank" rel="noopener">RSS Feed</a></p>
+    <ul class="book-reports-list"><li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/allowiframe/">页面允许以iframe方式嵌入</a></h2>
+  <p class="date gray-card"><em>March 27, 2022</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      
+
+<h3 id="iframe-deny">iframe deny<a href="#iframe-deny" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Content-Security-Policy: frame-ancestors self https://xxxx </code></pre></div>
+<p>通过增加这个，允许iframe被嵌入</p>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">Jsx Runtime</a></h2>
+  <p class="date gray-card"><em>January 24, 2022</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style="color:#007020">read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime
+    <span style="color:#60e;font-weight:bold">10</span> │ import <span style="color:#333">{</span> jsx as _jsx <span style="color:#333">}</span> from <span style="background-color:#fff0f0">&#34;react/jsx-runtime&#34;</span>;
        ╵                             ~~~~~~~~~~~~~~~~~~~
 
 error when starting dev server:
-Error: Build failed with <span style=color:#60e;font-weight:700>1</span> error:
-node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style=color:#007020>read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime</code></pre></div><p>解决方案：
-修改tsconfig.ts</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=background-color:#fff0f0>&#34;compilerOptions&#34;</span><span style=color:red;background-color:#faa>:</span> {
-    <span style=color:#070>&#34;baseUrl&#34;</span>: <span style=background-color:#fff0f0>&#34;.&#34;</span>,
-    <span style=color:#070>&#34;outDir&#34;</span>: <span style=background-color:#fff0f0>&#34;./lib&#34;</span>,
-    <span style=color:#070>&#34;module&#34;</span>: <span style=background-color:#fff0f0>&#34;esnext&#34;</span>,
-    <span style=color:#070>&#34;target&#34;</span>: <span style=background-color:#fff0f0>&#34;es6&#34;</span>,
-    <span style=color:#070>&#34;lib&#34;</span>: [<span style=background-color:#fff0f0>&#34;esnext&#34;</span>, <span style=background-color:#fff0f0>&#34;dom&#34;</span>],
-    <span style=color:#070>&#34;sourceMap&#34;</span>: <span style=color:#080;font-weight:700>true</span>,
-    <span style=color:#070>&#34;allowJs&#34;</span>: <span style=color:#080;font-weight:700>false</span>,
-    <span style=color:#070>&#34;jsx&#34;</span>: <span style=background-color:#fff0f0>&#34;react&#34;</span>, <span style=color:red;background-color:#faa>//</span> <span style=color:red;background-color:#faa>change</span> <span style=color:red;background-color:#faa>react-jsx</span> <span style=color:red;background-color:#faa>to</span> <span style=color:red;background-color:#faa>react</span>
-}</code></pre></div></div></article></section></div></div></li><li class=notes-li><h2 style=margin-top:0><a class=title href=https://maoxunxing.com/zh-cn/notes/decode-url-safe/>Decode Url Safe</a></h2><p class="date gray-card"><em>December 10, 2021</em></p><div class=summary><div><section class="page book-report"><article><div><p>decodeUrlComponent may throw error</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#007020>decodeURIComponent</span>(<span style=background-color:#fff0f0>&#39;%C4%97%&#39;</span>)
+Error: Build failed with <span style="color:#60e;font-weight:bold">1</span> error:
+node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style="color:#007020">read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime</code></pre></div>
+<p>解决方案：
+修改tsconfig.ts</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="background-color:#fff0f0">&#34;compilerOptions&#34;</span><span style="color:#f00;background-color:#faa">:</span> {
+    <span style="color:#070">&#34;baseUrl&#34;</span>: <span style="background-color:#fff0f0">&#34;.&#34;</span>,
+    <span style="color:#070">&#34;outDir&#34;</span>: <span style="background-color:#fff0f0">&#34;./lib&#34;</span>,
+    <span style="color:#070">&#34;module&#34;</span>: <span style="background-color:#fff0f0">&#34;esnext&#34;</span>,
+    <span style="color:#070">&#34;target&#34;</span>: <span style="background-color:#fff0f0">&#34;es6&#34;</span>,
+    <span style="color:#070">&#34;lib&#34;</span>: [<span style="background-color:#fff0f0">&#34;esnext&#34;</span>, <span style="background-color:#fff0f0">&#34;dom&#34;</span>],
+    <span style="color:#070">&#34;sourceMap&#34;</span>: <span style="color:#080;font-weight:bold">true</span>,
+    <span style="color:#070">&#34;allowJs&#34;</span>: <span style="color:#080;font-weight:bold">false</span>,
+    <span style="color:#070">&#34;jsx&#34;</span>: <span style="background-color:#fff0f0">&#34;react&#34;</span>, <span style="color:#f00;background-color:#faa">//</span> <span style="color:#f00;background-color:#faa">change</span> <span style="color:#f00;background-color:#faa">react-jsx</span> <span style="color:#f00;background-color:#faa">to</span> <span style="color:#f00;background-color:#faa">react</span>
+}</code></pre></div>
+    </div>
+  </article>
+</section>
 
-<span style=color:#888>// VM158:1 Uncaught URIError: URI malformed
-</span><span style=color:#888>//     at decodeURIComponent (&lt;anonymous&gt;)
-</span><span style=color:#888>//    at &lt;anonymous&gt;:1:1
-</span></code></pre></div><p>Solution:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#080;font-weight:700>try</span> {
-  <span style=color:#007020>decodeURIComponent</span>(<span style=background-color:#fff0f0>&#39;%C4%97%&#39;</span>)
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/decode-url-safe/">Decode Url Safe</a></h2>
+  <p class="date gray-card"><em>December 10, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>decodeUrlComponent 可能会抛出异常</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#007020">decodeURIComponent</span>(<span style="background-color:#fff0f0">&#39;%C4%97%&#39;</span>)
+<span style="color:#888">// VM158:1 Uncaught URIError: URI malformed
+</span><span style="color:#888">//     at decodeURIComponent (&lt;anonymous&gt;)
+</span><span style="color:#888">//    at &lt;anonymous&gt;:1:1
+</span></code></pre></div>
+<p>解决方法：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">try</span> {
+  <span style="color:#007020">decodeURIComponent</span>(<span style="background-color:#fff0f0">&#39;%C4%97%&#39;</span>)
 }
-<span style=color:#080;font-weight:700>catch</span>(){
+<span style="color:#080;font-weight:bold">catch</span>(){
 
-}</code></pre></div></div></article></section></div></div></li><li class=notes-li><h2 style=margin-top:0><a class=title href=https://maoxunxing.com/zh-cn/notes/packagejson/>pageckage.json的files是干嘛用的</a></h2><p class="date gray-card"><em>December 10, 2021</em></p><div class=summary><div><section class="page book-report"><article><div><p>package.json的files 能保证npm打包包含的内容:
-<a href=https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files>https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</a></p></div></article></section></div></div></li><li class=notes-li><h2 style=margin-top:0><a class=title href=https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/>Hooks don&#39;t work with yarn link</a></h2><p class="date gray-card"><em>November 29, 2021</em></p><div class=summary><div><section class="page book-report"><article><div><p>When linking multiple packages in local tnpm, the error Hooks Only Run in Function Component is reported. this situation is usually caused by multiple replicated versions of react.</p><p>The solution is to link all react react-dom to the same</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#007020>cd</span> PACKAGE_YOU_DEBUG_LOCALLY
+}</code></pre></div>
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/packagejson/">pageckage.json的files是干嘛用的</a></h2>
+  <p class="date gray-card"><em>December 10, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>package.json的files 能保证npm打包包含的内容:
+<a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files">https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</a></p>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/">Hooks don&#39;t work with yarn link</a></h2>
+  <p class="date gray-card"><em>November 29, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>在本地tnpm link多个包时，报错Hooks Only Run in Function Component。这个情况一般是react有多个复制版本导致的。</p>
+
+<p>解决方案是将react react-dom都link到同一个</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#007020">cd</span> PACKAGE_YOU_DEBUG_LOCALLY
 yarn link
 yarn install
-<span style=color:#007020>cd</span> node_modules/react
+<span style="color:#007020">cd</span> node_modules/react
 yarn link
-<span style=color:#007020>cd</span> ../../node_modules/react-dom
+<span style="color:#007020">cd</span> ../../node_modules/react-dom
 yarn link
-<span style=color:#007020>cd</span> YOUR_PROJECT
+<span style="color:#007020">cd</span> YOUR_PROJECT
 yarn link PACKAGE_YOU_DEBUG_LOCALLY
 yarn link react
-yarn link react-dom</code></pre></div></div></article></section></div></div></li><li class=notes-li><h2 style=margin-top:0><a class=title href=https://maoxunxing.com/zh-cn/notes/export-get-undefined/>Export Get Undefined</a></h2><p class="date gray-card"><em>November 25, 2021</em></p><div class=summary><div><section class="page book-report"><article><div><p>a.ts:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#080;font-weight:700>export</span> <span style=color:#080;font-weight:700>const</span> xx <span style=color:#333>=</span> <span style=background-color:#fff0f0>&#39;123&#39;</span></code></pre></div><p>b.ts:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#080;font-weight:700>import</span> { xx } from <span style=background-color:#fff0f0>&#39;a&#39;</span>
-console.log(xx) <span style=color:red;background-color:#faa>// got undefined</span></code></pre></div><p>This is usually caused by circular references</p></div></article></section></div></div></li></ul></section></div><footer class=footer><section class=container><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/ style=color:inherit>CC BY-NC-SA 4.0</a>
-2022
-©
-Xunxing Mao</section></footer></main><script src=https://maoxunxing.com/js/coder.min.158f22d7bc754e28d7c61accc0aef7952c2b949889ec9503466e5d4db0548808.js integrity="sha256-FY8i17x1TijXxhrMwK73lSwrlJiJ7JUDRm5dTbBUiAg="></script><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-199510588-1','auto');ga('require','outboundLinkTracker');ga('send','pageview');</script><script src=https://www.google-analytics.com/analytics.js async></script><script src=https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js async></script><script type=module>
+yarn link react-dom</code></pre></div>
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/export-get-undefined/">Export Get Undefined</a></h2>
+  <p class="date gray-card"><em>November 25, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>情况说明：</p>
+
+<p>a.ts:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">export</span> <span style="color:#080;font-weight:bold">const</span> xx <span style="color:#333">=</span> <span style="background-color:#fff0f0">&#39;123&#39;</span></code></pre></div>
+<p>b.ts:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">import</span> { xx } from <span style="background-color:#fff0f0">&#39;a&#39;</span>
+console.log(xx) <span style="color:#f00;background-color:#faa">// got undefined</span></code></pre></div>
+<p>这个一般是循环引用导致的</p>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+</ul>
+
+    
+
+
+
+
+
+
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
+      2022
+      ©
+       Xunxing Mao 
+    
+    
+    
+  </section>
+</footer>
+
+
+
+    </main>
+
+
+    
+      
+      <script src="https://maoxunxing.com/js/coder.min.158f22d7bc754e28d7c61accc0aef7952c2b949889ec9503466e5d4db0548808.js" integrity="sha256-FY8i17x1TijXxhrMwK73lSwrlJiJ7JUDRm5dTbBUiAg="></script>
+    
+
+    
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-199510588-1', 'auto');
+
+  ga('require', 'outboundLinkTracker');
+
+  ga('send', 'pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
+
+
+
+    <script type="module">
     // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
@@ -64,4 +450,25 @@ Xunxing Mao</section></footer></main><script src=https://maoxunxing.com/js/coder
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-</script><script>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'}).then(function(registration){});navigator.serviceWorker.ready.then(function(registration){});}</script></body></html>
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+
+
+  </body>
+
+</html>

@@ -1,1 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on maoxunxing&#39;s life</title><link>https://maoxunxing.com/en/tags/</link><description>Recent content in Tags on maoxunxing&#39;s life</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://maoxunxing.com/en/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/</link>
+    <description>Recent content in Tags on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Oct 2021 14:28:57 +0800</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NodeJS</title>
+      <link>https://maoxunxing.com/en/tags/nodejs/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>成长</title>
+      <link>https://maoxunxing.com/en/tags/%E6%88%90%E9%95%BF/</link>
+      <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/%E6%88%90%E9%95%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://maoxunxing.com/en/tags/algorithm/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interview</title>
+      <link>https://maoxunxing.com/en/tags/interview/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Operation System</title>
+      <link>https://maoxunxing.com/en/tags/operation-system/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/operation-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tree</title>
+      <link>https://maoxunxing.com/en/tags/tree/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecture</title>
+      <link>https://maoxunxing.com/en/tags/architecture/</link>
+      <pubDate>Fri, 06 Aug 2021 15:25:06 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/architecture/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
