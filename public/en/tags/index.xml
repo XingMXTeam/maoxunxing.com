@@ -6,10 +6,19 @@
     <description>Recent content in Tags on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Oct 2021 14:28:57 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Oct 2021 19:17:54 +0800</lastBuildDate>
     
 	<atom:link href="https://maoxunxing.com/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ES6</title>
+      <link>https://maoxunxing.com/en/tags/es6/</link>
+      <pubDate>Thu, 21 Oct 2021 19:17:54 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/es6/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>NodeJS</title>
@@ -26,6 +35,15 @@
       <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
       
       <guid>https://maoxunxing.com/en/tags/%E6%88%90%E9%95%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>https://maoxunxing.com/en/tags/open-source/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/open-source/</guid>
       <description></description>
     </item>
     
@@ -62,6 +80,33 @@
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://maoxunxing.com/en/tags/tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exception-handle</title>
+      <link>https://maoxunxing.com/en/tags/exception-handle/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/exception-handle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>front-end</title>
+      <link>https://maoxunxing.com/en/tags/front-end/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://maoxunxing.com/en/tags/programming/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/tags/programming/</guid>
       <description></description>
     </item>
     

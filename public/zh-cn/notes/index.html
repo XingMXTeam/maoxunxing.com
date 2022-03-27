@@ -201,10 +201,7 @@
     
 
     <div>
-      
-
-<h3 id="iframe-deny">iframe deny<a href="#iframe-deny" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Content-Security-Policy: frame-ancestors self https://xxxx </code></pre></div>
+      <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Content-Security-Policy: frame-ancestors self https://xxxx </code></pre></div>
 <p>通过增加这个，允许iframe被嵌入</p>
 
     </div>
@@ -216,7 +213,7 @@
   </div>
 </li>
 <li class='notes-li'>
-  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">Jsx Runtime</a></h2>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">Jsx Runtime报错</a></h2>
   <p class="date gray-card"><em>January 24, 2022</em></p>
   <div class="summary">
     
@@ -247,6 +244,90 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
     <span style="color:#070">&#34;allowJs&#34;</span>: <span style="color:#080;font-weight:bold">false</span>,
     <span style="color:#070">&#34;jsx&#34;</span>: <span style="background-color:#fff0f0">&#34;react&#34;</span>, <span style="color:#f00;background-color:#faa">//</span> <span style="color:#f00;background-color:#faa">change</span> <span style="color:#f00;background-color:#faa">react-jsx</span> <span style="color:#f00;background-color:#faa">to</span> <span style="color:#f00;background-color:#faa">react</span>
 }</code></pre></div>
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/http-i-learned/">Http I Learned</a></h2>
+  <p class="date gray-card"><em>December 22, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>请求参数可以是数组么？答案是可以。 我以前一直以为json的就是对象， 或者key=value的形式</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">$.ajax({
+    type<span style="color:#333">:</span> <span style="background-color:#fff0f0">&#34;POST&#34;</span>,
+    url<span style="color:#333">:</span> <span style="background-color:#fff0f0">&#34;index.php&#34;</span>,
+    dataType<span style="color:#333">:</span> <span style="background-color:#fff0f0">&#34;json&#34;</span>,
+    data: <span style="color:#339;font-weight:bold">JSON.stringify</span>({ paramName: <span style="color:#339;font-weight:bold">info</span> }),
+    success: <span style="color:#339;font-weight:bold">function</span>(msg){
+        $(<span style="background-color:#fff0f0">&#39;.answer&#39;</span>).html(msg);
+    }
+});</code></pre></div>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/8890524/pass-array-to-ajax-request-in-ajax">https://stackoverflow.com/questions/8890524/pass-array-to-ajax-request-in-ajax</a></p>
+</blockquote>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/typescript-i-learned/">Typescript类型报错</a></h2>
+  <p class="date gray-card"><em>December 22, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>报错：元素隐式具有 &ldquo;any&rdquo; 类型，因为索引表达式的类型不为 &ldquo;number&rdquo;</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TS" data-lang="TS"><span style="color:#080;font-weight:bold">const</span> GLOBAL_SYMBOL <span style="color:#333">=</span> Symbol.<span style="color:#080;font-weight:bold">for</span>(<span style="background-color:#fff0f0">&#39;xxx&#39;</span>);
+
+<span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span><span style="color:#007020">window</span>[GLOBAL_SYMBOL]) {
+  <span style="color:#007020">window</span>[GLOBAL_SYMBOL] <span style="color:#333">=</span> {};
+}</code></pre></div>
+<p>根目录声明global.d.ts:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">declare</span> <span style="color:#080;font-weight:bold">interface</span> Window {
+  [GLOBAL_SYMBOL: <span style="color:#339;font-weight:bold">symbol</span>]<span style="color:#333">:</span> {};
+}</code></pre></div>
+<hr />
+
+<p>Could not find a declaration file for module &lsquo;js-cookie&rsquo;. &lsquo;/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js&rsquo; implicitly has an &lsquo;any&rsquo; type.</p>
+
+<p>解决方案：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">declare</span> module <span style="background-color:#fff0f0">&#39;js-cookie&#39;</span> {
+  <span style="color:#080;font-weight:bold">export</span> <span style="color:#080;font-weight:bold">interface</span> CookieAttributes {
+    
+  }
+}</code></pre></div>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam">https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam</a></p>
+
+<p><a href="https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam">https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam</a></p>
+</blockquote>
+
+<hr />
+
     </div>
   </article>
 </section>
@@ -290,7 +371,7 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
   </div>
 </li>
 <li class='notes-li'>
-  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/packagejson/">pageckage.json的files是干嘛用的</a></h2>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/packagejson/">pageckage.json的files</a></h2>
   <p class="date gray-card"><em>December 10, 2021</em></p>
   <div class="summary">
     
@@ -302,8 +383,84 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
     
 
     <div>
-      <p>package.json的files 能保证npm打包包含的内容:
-<a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files">https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</a></p>
+      <p>package.json的files 能保证npm打包包含的内容:</p>
+
+<p><a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files">https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</a></p>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/">SyntaxError Unexpected Token Export</a></h2>
+  <p class="date gray-card"><em>December 1, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>一般是模块不兼容</p>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/reamde/">readme</a></h2>
+  <p class="date gray-card"><em>December 1, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>快速通过命令行查看readme</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">readme net</code></pre></div>
+<p>快速安装npmi</p>
+
+    </div>
+  </article>
+</section>
+
+      
+    </div>
+  </div>
+</li>
+<li class='notes-li'>
+  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/download-avoid/">下载文件如何规避跨域问题</a></h2>
+  <p class="date gray-card"><em>December 1, 2021</em></p>
+  <div class="summary">
+    
+    <div>
+      
+      
+      <section class=" page book-report">
+  <article>
+    
+
+    <div>
+      <p>一般我们的下载功能会通过XHR对象 发送，不可避免的会出现跨域问题。</p>
+
+<p>解决办法：</p>
+
+<p>可以通过修改为http Get请求，前端通过window.open(<code>downloadLink</code>)的方式下载</p>
 
     </div>
   </article>
@@ -348,36 +505,6 @@ yarn link react-dom</code></pre></div>
     </div>
   </div>
 </li>
-<li class='notes-li'>
-  <h2 style="margin-top: 0;"><a class="title" href="https://maoxunxing.com/zh-cn/notes/export-get-undefined/">Export Get Undefined</a></h2>
-  <p class="date gray-card"><em>November 25, 2021</em></p>
-  <div class="summary">
-    
-    <div>
-      
-      
-      <section class=" page book-report">
-  <article>
-    
-
-    <div>
-      <p>情况说明：</p>
-
-<p>a.ts:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">export</span> <span style="color:#080;font-weight:bold">const</span> xx <span style="color:#333">=</span> <span style="background-color:#fff0f0">&#39;123&#39;</span></code></pre></div>
-<p>b.ts:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">import</span> { xx } from <span style="background-color:#fff0f0">&#39;a&#39;</span>
-console.log(xx) <span style="color:#f00;background-color:#faa">// got undefined</span></code></pre></div>
-<p>这个一般是循环引用导致的</p>
-
-    </div>
-  </article>
-</section>
-
-      
-    </div>
-  </div>
-</li>
 </ul>
 
     
@@ -385,6 +512,37 @@ console.log(xx) <span style="color:#f00;background-color:#faa">// got undefined<
 
 
 
+
+<ul class="pagination">
+  
+  
+    
+    
+      
+    
+    
+      
+      <li>1</li>
+      
+    
+  
+    
+    
+      
+    
+    
+      
+      <li><a href="https://maoxunxing.com/zh-cn/notes/page/2/">2</a></li>
+      
+    
+  
+  
+    <li class="hidden"><a href="https://maoxunxing.com/zh-cn/notes/page/2/">&rsaquo;</a></li>
+    
+    <li><a href="https://maoxunxing.com/zh-cn/notes/page/2/">&raquo;</a></li>
+    
+  
+</ul>
 
 
   </section>

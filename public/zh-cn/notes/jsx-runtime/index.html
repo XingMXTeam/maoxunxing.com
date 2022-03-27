@@ -15,7 +15,7 @@
     <meta name="twitter:creator" content="@maoxunxing"/>
 
 
-    <meta property="og:title" content="Jsx Runtime" />
+    <meta property="og:title" content="Jsx Runtime报错" />
 <meta property="og:description" content="node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &#34;react/jsx-runtime&#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
 &#34;compilerOptions&#34;: { &#34;baseUrl&#34;: &#34;.&#34;, &#34;outDir&#34;: &#34;./lib&#34;, &#34;module&#34;: &#34;esnext&#34;, &#34;target&#34;: &#34;es6&#34;, &#34;lib&#34;: [&#34;esnext&#34;, &#34;dom&#34;], &#34;sourceMap&#34;: true, &#34;allowJs&#34;: false, &#34;jsx&#34;: &#34;react&#34;, // change react-jsx to react }" />
 <meta property="og:type" content="article" />
@@ -28,7 +28,7 @@
     
       <base href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">
     
-    <title>Jsx Runtime · 毛训星的网络日志</title>
+    <title>Jsx Runtime报错 · 毛训星的网络日志</title>
 
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">

@@ -72,5 +72,20 @@ const duplexify = require(&amp;#39;duplexify&amp;#39;) const fs = require(&amp;#
 function ResponseReader(encoding) { stream.Transform.call(this); this.</description>
     </item>
     
+    <item>
+      <title>Nodejs Debug</title>
+      <link>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</guid>
+      <description>1 如何调试：
+第一步：启动inspector
+nodemon --inspect-brk xx.js 运行结果：
+[nodemon] starting `node --inspect-brk /Users/maoxunxing/alibaba/vite-comp/bin/index.js` Debugger listening on ws://127.0.0.1:9229/b789951b-b593-482e-a365-575f547e3fc3 For help, see: https://nodejs.org/en/docs/inspector Debugger attached. 第二步： chrome开启监听client
+chrome://inspect/#devices 配置127.0.0.1:9229，然后点击inspect
+2 更多进阶
+https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
+    </item>
+    
   </channel>
 </rss>

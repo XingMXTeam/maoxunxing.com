@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>front-end on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/front-end/</link>
+    <description>Recent content in front-end on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/en/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>前端异常处理</title>
+      <link>https://maoxunxing.com/en/notes/exception-handle/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/exception-handle/</guid>
+      <description>1 异常隔离
+try {} catch {}
+主要场景vm js代码
+2 promise异常处理
+promise.then().catch()
+主要场景处理try catch无法捕获的异常</description>
+    </item>
+    
+  </channel>
+</rss>

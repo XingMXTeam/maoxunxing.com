@@ -17,17 +17,43 @@
       <pubDate>Sun, 27 Mar 2022 14:48:25 +0800</pubDate>
       
       <guid>https://maoxunxing.com/zh-cn/notes/allowiframe/</guid>
-      <description>iframe deny Content-Security-Policy: frame-ancestors self https://xxxx  通过增加这个，允许iframe被嵌入</description>
+      <description>Content-Security-Policy: frame-ancestors self https://xxxx  通过增加这个，允许iframe被嵌入</description>
     </item>
     
     <item>
-      <title>Jsx Runtime</title>
+      <title>Jsx Runtime报错</title>
       <link>https://maoxunxing.com/zh-cn/notes/jsx-runtime/</link>
       <pubDate>Mon, 24 Jan 2022 13:15:59 +0800</pubDate>
       
       <guid>https://maoxunxing.com/zh-cn/notes/jsx-runtime/</guid>
       <description>node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &amp;#34;react/jsx-runtime&amp;#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
 &amp;#34;compilerOptions&amp;#34;: { &amp;#34;baseUrl&amp;#34;: &amp;#34;.&amp;#34;, &amp;#34;outDir&amp;#34;: &amp;#34;./lib&amp;#34;, &amp;#34;module&amp;#34;: &amp;#34;esnext&amp;#34;, &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;lib&amp;#34;: [&amp;#34;esnext&amp;#34;, &amp;#34;dom&amp;#34;], &amp;#34;sourceMap&amp;#34;: true, &amp;#34;allowJs&amp;#34;: false, &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;, // change react-jsx to react }</description>
+    </item>
+    
+    <item>
+      <title>Http I Learned</title>
+      <link>https://maoxunxing.com/zh-cn/notes/http-i-learned/</link>
+      <pubDate>Wed, 22 Dec 2021 20:10:28 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/http-i-learned/</guid>
+      <description>请求参数可以是数组么？答案是可以。 我以前一直以为json的就是对象， 或者key=value的形式
+$.ajax({ type: &amp;#34;POST&amp;#34;, url: &amp;#34;index.php&amp;#34;, dataType: &amp;#34;json&amp;#34;, data: JSON.stringify({ paramName: info }), success: function(msg){ $(&amp;#39;.answer&amp;#39;).html(msg); } });  https://stackoverflow.com/questions/8890524/pass-array-to-ajax-request-in-ajax
+ </description>
+    </item>
+    
+    <item>
+      <title>Typescript类型报错</title>
+      <link>https://maoxunxing.com/zh-cn/notes/typescript-i-learned/</link>
+      <pubDate>Wed, 22 Dec 2021 18:06:49 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/typescript-i-learned/</guid>
+      <description>报错：元素隐式具有 &amp;ldquo;any&amp;rdquo; 类型，因为索引表达式的类型不为 &amp;ldquo;number&amp;rdquo;
+const GLOBAL_SYMBOL = Symbol.for(&amp;#39;xxx&amp;#39;); if (!window[GLOBAL_SYMBOL]) { window[GLOBAL_SYMBOL] = {}; } 根目录声明global.d.ts:
+declare interface Window { [GLOBAL_SYMBOL: symbol]: {}; } Could not find a declaration file for module &amp;lsquo;js-cookie&amp;rsquo;. &amp;lsquo;/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js&amp;rsquo; implicitly has an &amp;lsquo;any&amp;rsquo; type.
+解决方案：
+declare module &amp;#39;js-cookie&amp;#39; { export interface CookieAttributes { } }  https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
+https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
+ </description>
     </item>
     
     <item>
@@ -42,12 +68,13 @@ try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
     </item>
     
     <item>
-      <title>pageckage.json的files是干嘛用的</title>
+      <title>pageckage.json的files</title>
       <link>https://maoxunxing.com/zh-cn/notes/packagejson/</link>
       <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
       
       <guid>https://maoxunxing.com/zh-cn/notes/packagejson/</guid>
-      <description>package.json的files 能保证npm打包包含的内容: https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
+      <description>package.json的files 能保证npm打包包含的内容:
+https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
     </item>
     
     <item>
@@ -58,6 +85,36 @@ try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
       <guid>https://maoxunxing.com/zh-cn/book-reports/lamb-in-his-bosom/</guid>
       <description> 主要是描写的是生活在美国佐治亚州的农民，南北战争爆发前。 他们不是种植园主，也不是资本家。 只是普通的人生活在一片土地，需要自食其力，在恶劣的生活环境下抗争，为了需要养活一家子人而努力劳作，为了家庭和孩子，体现每个人不同的命运，生活冷暖自知。
 What I Liked  自然环境的描写  What I Disliked  平淡的生活描述缺少小说的引入入胜的情节 结尾比较仓促  </description>
+    </item>
+    
+    <item>
+      <title>SyntaxError Unexpected Token Export</title>
+      <link>https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/</link>
+      <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/</guid>
+      <description>一般是模块不兼容</description>
+    </item>
+    
+    <item>
+      <title>readme</title>
+      <link>https://maoxunxing.com/zh-cn/notes/reamde/</link>
+      <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/reamde/</guid>
+      <description>快速通过命令行查看readme
+readme net 快速安装npmi</description>
+    </item>
+    
+    <item>
+      <title>下载文件如何规避跨域问题</title>
+      <link>https://maoxunxing.com/zh-cn/notes/download-avoid/</link>
+      <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/download-avoid/</guid>
+      <description>一般我们的下载功能会通过XHR对象 发送，不可避免的会出现跨域问题。
+解决办法：
+可以通过修改为http Get请求，前端通过window.open(downloadLink)的方式下载</description>
     </item>
     
     <item>
@@ -93,6 +150,39 @@ import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined 这个�
 What I Liked  女性内心世界，细腻入微 跨越50年的女性友谊 时代的变迁，人心的阐述  What I Disliked 无
 Key Takeaways  看透社区里面那些人的本质，即便被社会上的那些人裹挟，仍然努力保持独立，努力向上 两个女主人的友谊，互相成就非常让人羡慕。要珍视友谊。   HBO电影《我的天才女友》海报
   </description>
+    </item>
+    
+    <item>
+      <title>Webpack Federation</title>
+      <link>https://maoxunxing.com/zh-cn/notes/webpack-federation/</link>
+      <pubDate>Fri, 19 Nov 2021 14:04:15 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/webpack-federation/</guid>
+      <description>https://webpack.js.org/concepts/module-federation/?spm=ata.21736010.0.0.29e513e5BV7ohe
+各个模块独立开发，独立部署。没有依赖。但是可以一起构建。</description>
+    </item>
+    
+    <item>
+      <title>时区的理解</title>
+      <link>https://maoxunxing.com/zh-cn/notes/timezone/</link>
+      <pubDate>Thu, 11 Nov 2021 19:29:05 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/timezone/</guid>
+      <description>美国西部时间和北京时间相差多少
+　西八时区和东八时区时间差16小时，美国西部时间比北京时间晚16小时；4-10月夏令时间相差15个小时，美国西部时间比北京晚15小时。 例：中国是在UTC+8区上，比格林威治时间快8小时，以西雅图为例，其处于UTC-8区，比格林威治时间慢8小时，总的来说，西雅图时间比北京时间慢16个小时，如果是西雅图时间是下午2：50PM，则北京时间是次日的凌晨6：50.如果是在夏天，则西雅图为UTC-7，下午2：50的话，就是北京的次日凌晨5：50.</description>
+    </item>
+    
+    <item>
+      <title>如何写一个装饰器</title>
+      <link>https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/</link>
+      <pubDate>Thu, 21 Oct 2021 19:17:54 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/</guid>
+      <description>本质上是一个高阶组件（参数是函数，返回一个新函数）。结合babel插件进行编译。
+ class Provider extends React.Component { render() { return this.props.children } } export const DecoratorDemo = props =&amp;gt; WrappedComponent =&amp;gt; { const Wrapped = React.forwardRef(function(innerProps, ref)) { return ( &amp;lt;Provider {...props} innerProps={...innerProps}&amp;gt; &amp;lt;WrappedComponent {...innerProps} ref={ref} /&amp;gt; &amp;lt;/Provider&amp;gt; ) } // copy static method  return Object.assign(Wrapped, WrappedComponent) }  装饰器的弊端:
+1 在运行时注入隐藏的代码，给那些期望源代码遵循传统语义的开发者造成混乱
+2 可能难以调试，因为装饰器需要编译
+3 可能影响api约定 因为是运行时生成的</description>
     </item>
     
     <item>
@@ -154,6 +244,60 @@ duplexify duplify.js
 const duplexify = require(&amp;#39;duplexify&amp;#39;) const fs = require(&amp;#39;fs&amp;#39;) function log() { const d = duplexify(); var w = fs.createWriteStream(&amp;#39;logs/test.log&amp;#39;) d.setWritable(w) return d } const stream = log(); stream.write(Date.now() + &amp;#39;\n&amp;#39;) stream.end(); concat-stream  如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。
 正常实现方式：
 function ResponseReader(encoding) { stream.Transform.call(this); this.</description>
+    </item>
+    
+    <item>
+      <title>Nodejs Debug</title>
+      <link>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</link>
+      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</guid>
+      <description>1 如何调试：
+第一步：启动inspector
+nodemon --inspect-brk xx.js 运行结果：
+[nodemon] starting `node --inspect-brk /Users/maoxunxing/alibaba/vite-comp/bin/index.js` Debugger listening on ws://127.0.0.1:9229/b789951b-b593-482e-a365-575f547e3fc3 For help, see: https://nodejs.org/en/docs/inspector Debugger attached. 第二步： chrome开启监听client
+chrome://inspect/#devices 配置127.0.0.1:9229，然后点击inspect
+2 更多进阶
+https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
+    </item>
+    
+    <item>
+      <title>视频制作</title>
+      <link>https://maoxunxing.com/zh-cn/notes/make-video/</link>
+      <pubDate>Mon, 27 Sep 2021 18:58:45 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/make-video/</guid>
+      <description>流程：
+1 制作脚本： 地点，录制哪些内容，多长
+2 分开录制视频（如有必要声音可以单独录制，关闭视频的原声，其他素材替换视频）
+3 麦克风设备别在胸口
+4 美颜修图瘦脸 洗头
+5 屏幕截图用Mac的Kap软件
+6 剪映
+7 字幕用标准体
+9 视频关联公众号
+10 封面大小适合视频好尺寸（封面加上必要的文字）
+11 1-2分钟
+13 标题要有传播性 共鸣
+14 主播要帅/专家
+15 节奏： 每月/每周发一个</description>
+    </item>
+    
+    <item>
+      <title>用增的策略</title>
+      <link>https://maoxunxing.com/zh-cn/notes/user-increase/</link>
+      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/user-increase/</guid>
+      <description>用增策略
+1 定义用户生命周期和用户成长动线，通过关键时间或者魔法数字发现有效手段
+2 用户流失到达某个阈值提前干预刺激
+3 自助分析+指标交叉对比+用户画像+ab实验 -&amp;gt; 制定产品和运营策略
+关键概念
+归因分析： 识别所有对最终转换有贡献的过程
+分析方法：
+1 数据统计 2 EBM可解释模型 3 网络化分析 4 标准化偏好 5 单样本方法
+流量作弊</description>
     </item>
     
     <item>
@@ -309,6 +453,38 @@ R: 效率、效果、质量、成本。虚实结合（定量+定性）
 4 可度量： 问题的严重程度可以被度量出来
 5 关联性：问题之间可能存在关联或者因果，需要考虑它的基本命题
 任何名词都有结构  任何动词都有流程  任何形容词都度量 步骤： 1 现象/新概念（结构） 2 现有的方案副作用，多维度思考（洞见，历史） 3 梳理指标（度量问题的严重性，现在） 5 发现机会（本质） 6 规划（未来） -- OKR规划： 关注业务目标，KPI关注数据指标。</description>
+    </item>
+    
+    <item>
+      <title>开源的价值</title>
+      <link>https://maoxunxing.com/zh-cn/notes/open-source-value/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/open-source-value/</guid>
+      <description>1 概念
+教堂： 商业软件
+集市： 开源
+学术型协议： 修改需要注明原著和免责声明 比如BSD Apache MIT PHP
+CopyLeft/病毒型协议： 学术型要求+衍生作品发行了必须也开源 比如GPL LGPL AGPL CDDL CPL EPL MPL LGPL
+何为衍生作品？
+衍生作品：修改过代码(BlackDuck识别为使用了部分代码)；编译；GPL，AGPL静态链接 非衍生作品： 不同层面运行；开源和我的程序独立运行没有交互；是远程调用
+何为发行？
+1 下载到用户端 2 通过网络和用户交互，都不算发行（AGPL CPAL OSL除外） 3 AGPL在服务端使用
+2 为什么开源
+通过社区运营，促进技术发展
+3 收费
+技术支持收费
+提供商业版本收费</description>
+    </item>
+    
+    <item>
+      <title>前端异常处理</title>
+      <link>https://maoxunxing.com/zh-cn/notes/exception-handle/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/exception-handle/</guid>
+      <description>1 异常隔离 : 主要场景vm js代码
+try {} catch {} 2 promise异常处理: 主要场景处理try catch无法捕获的异常</description>
     </item>
     
     <item>
