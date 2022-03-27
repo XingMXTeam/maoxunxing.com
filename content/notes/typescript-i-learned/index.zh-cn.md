@@ -1,7 +1,6 @@
 ---
-title: "Typescript I Learned"
+title: "Typescript类型报错"
 date: 2021-12-22T18:06:49+08:00
-draft: true
 ---
 
 报错：元素隐式具有 "any" 类型，因为索引表达式的类型不为 "number"

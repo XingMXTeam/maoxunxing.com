@@ -1,7 +1,6 @@
 --- 
 title: "前端异常处理"
 date: 2021-08-24
-draft: true
 tags:
 - front-end
 - programming
@@ -11,13 +10,13 @@ images:
 - exception-handle/eception-handle.png
 ---
 
-## 异常隔离
+1 异常隔离
 
 try {} catch {}
 
 主要场景vm  js代码
 
-## promise异常处理
+2 promise异常处理  
 
 promise.then().catch()
 

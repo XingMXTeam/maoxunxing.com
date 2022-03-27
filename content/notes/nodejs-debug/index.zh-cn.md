@@ -1,12 +1,11 @@
 ---
 title: "Nodejs Debug"
 date: 2021-10-19T14:28:57+08:00
-draft: true
 tags:
 - NodeJS
 ---
 
-## 如何调试
+1 如何调试：
 
 第一步：启动inspector
 
@@ -31,7 +30,7 @@ chrome://inspect/#devices
 
 配置127.0.0.1:9229，然后点击inspect
 
-## 更多进阶
+2 更多进阶  
 
 https://nodejs.org/en/docs/guides/debugging-getting-started/
 
