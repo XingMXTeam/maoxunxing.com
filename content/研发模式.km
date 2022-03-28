@@ -31,7 +31,7 @@
                                         "data": {
                                             "id": "cioshpcme2o0",
                                             "created": 1647789115439,
-                                            "text": "关心Schema"
+                                            "text": "不用关心Schema"
                                         },
                                         "children": []
                                     }
@@ -53,6 +53,14 @@
                                         "children": []
                                     }
                                 ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cipjnis53ow0",
+                                    "created": 1647865741292,
+                                    "text": "Fast Build Website"
+                                },
+                                "children": []
                             }
                         ]
                     },
@@ -67,7 +75,7 @@
                                 "data": {
                                     "id": "ciorqanr9wg0",
                                     "created": 1647786967628,
-                                    "text": "优化源码页面链路"
+                                    "text": "过渡方案：Dada 2.0链路优化"
                                 },
                                 "children": []
                             },
@@ -75,7 +83,7 @@
                                 "data": {
                                     "id": "ciosif0abww0",
                                     "created": 1647789171289,
-                                    "text": "优化多语言链路"
+                                    "text": "Dada 3.0新链路对接"
                                 },
                                 "children": []
                             }
@@ -93,8 +101,9 @@
                                 "data": {
                                     "id": "ciort7dsj8g0",
                                     "created": 1647787195588,
-                                    "text": "1 只需要配置源码资源",
-                                    "expandState": "expand"
+                                    "text": "Dada 2.0链路优化完成",
+                                    "expandState": "expand",
+                                    "progress": 9
                                 },
                                 "children": []
                             },
@@ -102,25 +111,27 @@
                                 "data": {
                                     "id": "ciosj5b12ps0",
                                     "created": 1647789228535,
-                                    "text": "2 提供命令行工具，自动同步多语言"
+                                    "text": "优化多语言链路",
+                                    "progress": 9
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cipjnzc3xkw0",
+                                    "created": 1647865777328,
+                                    "text": "中台推进",
+                                    "progress": 7
                                 },
                                 "children": []
                             }
                         ]
-                    },
-                    {
-                        "data": {
-                            "id": "ciorn41ig3c0",
-                            "created": 1647786718130,
-                            "text": "Result"
-                        },
-                        "children": []
                     }
                 ]
             }
         ]
     },
     "template": "right",
-    "theme": "fresh-blue",
+    "theme": "fresh-red",
     "version": "1.4.43"
 }

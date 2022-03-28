@@ -3,7 +3,7 @@
         "data": {
             "id": "cior5ed4qg00",
             "created": 1647785330045,
-            "text": "研发模式"
+            "text": "规模化"
         },
         "children": [
             {
@@ -24,7 +24,7 @@
                                 "data": {
                                     "id": "ciorpitwcyo0",
                                     "created": 1647786907049,
-                                    "text": "物料研发低效"
+                                    "text": "研发低效"
                                 },
                                 "children": []
                             },
@@ -32,9 +32,18 @@
                                 "data": {
                                     "id": "ciosym0catk0",
                                     "created": 1647790440357,
-                                    "text": "精品化"
+                                    "text": "精品化程度低，少"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cipjrq2l26w0",
+                                            "created": 1647866070618,
+                                            "text": "外包同学基本都是复制，黏贴，引起性能问题，bug反复"
+                                        },
+                                        "children": []
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -58,7 +67,7 @@
                                 "data": {
                                     "id": "ciorqanr9wg0",
                                     "created": 1647786967628,
-                                    "text": "丰富物料生态",
+                                    "text": "丰富物料生态，场景化沉淀",
                                     "expandState": "expand"
                                 },
                                 "children": []
@@ -77,7 +86,8 @@
                                 "data": {
                                     "id": "ciosj5b12ps0",
                                     "created": 1647789228535,
-                                    "text": "GMP物料平台建设物料"
+                                    "text": "GMP物料平台共建物料",
+                                    "progress": 8
                                 },
                                 "children": []
                             },
@@ -85,40 +95,17 @@
                                 "data": {
                                     "id": "ciosyw14sbs0",
                                     "created": 1647790462172,
-                                    "text": "共创规范和机制"
-                                },
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "data": {
-                            "id": "ciorn41ig3c0",
-                            "created": 1647786718130,
-                            "text": "Result"
-                        },
-                        "children": [
-                            {
-                                "data": {
-                                    "id": "cioszg7di9c0",
-                                    "created": 1647790506086,
-                                    "text": "中后台物料库"
+                                    "text": "共创规范和运营机制",
+                                    "progress": 8
                                 },
                                 "children": []
                             },
                             {
                                 "data": {
-                                    "id": "cioszjvsu540",
-                                    "created": 1647790514093,
-                                    "text": "中后台规范"
-                                },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cioszmep5pk0",
-                                    "created": 1647790519589,
-                                    "text": "vscode插件"
+                                    "id": "cipk1bdmx940",
+                                    "created": 1647866822276,
+                                    "text": "VSCode插件",
+                                    "progress": 8
                                 },
                                 "children": []
                             }
@@ -129,6 +116,6 @@
         ]
     },
     "template": "right",
-    "theme": "fresh-blue",
+    "theme": "fresh-red",
     "version": "1.4.43"
 }

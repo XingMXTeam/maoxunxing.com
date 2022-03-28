@@ -49,7 +49,7 @@
                                 "data": {
                                     "id": "ciorqanr9wg0",
                                     "created": 1647786967628,
-                                    "text": "基于Tailwind规范开发"
+                                    "text": "技术引入"
                                 },
                                 "children": []
                             }
@@ -68,25 +68,27 @@
                                     "id": "ciort7dsj8g0",
                                     "created": 1647787195588,
                                     "text": "应用模版集成Tailwind解决方案",
-                                    "expandState": "expand"
+                                    "expandState": "expand",
+                                    "progress": 9
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cipjjwf2v4w0",
+                                    "created": 1647865457521,
+                                    "text": "确保基于设计规范开发",
+                                    "progress": 9
                                 },
                                 "children": []
                             }
                         ]
-                    },
-                    {
-                        "data": {
-                            "id": "ciorn41ig3c0",
-                            "created": 1647786718130,
-                            "text": "Result"
-                        },
-                        "children": []
                     }
                 ]
             }
         ]
     },
     "template": "right",
-    "theme": "fresh-blue",
+    "theme": "fresh-red",
     "version": "1.4.43"
 }

@@ -45,6 +45,14 @@
                                                 "children": []
                                             }
                                         ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cipjclxahko0",
+                                            "created": 1647864886128,
+                                            "text": "集团飞冰方案优秀：比如支持vite"
+                                        },
+                                        "children": []
                                     }
                                 ]
                             },
@@ -52,7 +60,7 @@
                                 "data": {
                                     "id": "ciorg794wco0",
                                     "created": 1647786176572,
-                                    "text": "es build/vite盛行"
+                                    "text": "行业创新：es build/vite盛行"
                                 },
                                 "children": [
                                     {
@@ -103,49 +111,55 @@
                                 "data": {
                                     "id": "ciorr70yh1s0",
                                     "created": 1647787038083,
-                                    "text": "DEF脚手架/应用模版飞冰"
+                                    "text": "组件模版"
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "ciorv4zbge00",
                                             "created": 1647787347087,
-                                            "text": "组件库不需要编译全部组件，按需编译；"
+                                            "text": "优势：组件库不需要编译全部组件，按需编译；esbuild hmr",
+                                            "progress": 9
                                         },
                                         "children": []
                                     },
                                     {
                                         "data": {
-                                            "id": "ciorvacfcw80",
-                                            "created": 1647787358764,
-                                            "text": "esbuild hmr"
+                                            "id": "cipjczvk77c0",
+                                            "created": 1647864916499,
+                                            "text": "业务组件库开发，可集成到GMP平台",
+                                            "progress": 9
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cipjeegl2g00",
+                                            "created": 1647865026609,
+                                            "text": "DEF打通",
+                                            "progress": 9
                                         },
                                         "children": []
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        "data": {
-                            "id": "cior6jlbuh40",
-                            "created": 1647785419789,
-                            "text": "Result"
-                        },
-                        "children": [
+                            },
                             {
                                 "data": {
-                                    "id": "cioroxmgeww0",
-                                    "created": 1647786860887,
-                                    "text": " ",
-                                    "image": "https://img.alicdn.com/imgextra/i3/O1CN01SgcWiy21FRNoY4evg_!!6000000006955-0-tps-1312-743.jpg",
-                                    "imageTitle": "",
-                                    "imageSize": {
-                                        "width": 200,
-                                        "height": 113
-                                    }
+                                    "id": "cipjb71rcy00",
+                                    "created": 1647864775382,
+                                    "text": "应用模版"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cipjbk7rh9c0",
+                                            "created": 1647864804044,
+                                            "text": "GMP打通",
+                                            "progress": 9
+                                        },
+                                        "children": []
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -154,6 +168,6 @@
         ]
     },
     "template": "right",
-    "theme": "fresh-blue",
+    "theme": "fresh-red",
     "version": "1.4.43"
 }
