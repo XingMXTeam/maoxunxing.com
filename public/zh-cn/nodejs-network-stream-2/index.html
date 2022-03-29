@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/nodejs-network-stream-2/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -208,31 +213,45 @@
 
         </div>
       </header><div>
-        <h2 id="流的类型">流的类型<a href="#流的类型" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="流的类型">流的类型<a href="#流的类型" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>1 readable 可读 <code>readable.pipe(A)</code>
 2 writable 可写 <code>A.pipe(writable)</code>
 3 duplex： 复式：既可读也可写  <code>A.pipe(duplex).pipe(A)</code>
 4 transform：duplex的一种类型 可读可写 输出是从输入转换过来 <code>A.pipe(transform).pipe(B)</code></p>
+
 <p>pipe方法:
 所有的readable/transform/duplex流都有这个方法, 并且返回readable/transform/duplex的流</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">src.pipe(dst) <span style="color:#998;font-style:italic">// 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &#39;console&#39;
-</span></code></pre></div><p>可读流的常用方法：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">src.pipe(dst) <span style="color:#888">// 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &#39;console&#39;
+</span></code></pre></div>
+<p>可读流的常用方法：</p>
+
 <ul>
 <li><code>stream.pipe(...)</code></li>
-<li><code>stream.once('end', function() {})</code></li>
+<li><code>stream.once('end', function() {})</code>
+<br /></li>
 </ul>
+
 <p>两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式</p>
+
 <ul>
 <li><code>stream.resume()</code></li>
-<li><code>stream.on('data', function(buf) {}) </code> 绑定会自动触发流动模式</li>
+<li><code>stream.on('data', function(buf) {})</code> 绑定会自动触发流动模式</li>
 </ul>
+
 <p>资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如</p>
+
 <ul>
 <li>消费者主动执行了 .pause()</li>
 <li>消费速度比数据 push 到缓存池的生产速度慢</li>
 </ul>
+
 <p>都会返回false, 这种情况也叫做「背压」Backpressure</p>
+
 <p>可写流的常用方法：</p>
+
 <ul>
 <li><code>.write(buf)</code></li>
 <li><code>.end()</code></li>
@@ -240,14 +259,18 @@
 <li><code>.on('finish',function() {})</code></li>
 <li>(&hellip;).pipe(stream)</li>
 </ul>
+
 <p>数据流先到资源池，如果写入较慢或者暂停，会被缓存；如果太快，write会返回false,触发drain事件</p>
+
 <p>transform/duplex流可以用上面的所有方法</p>
+
 <h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br>
-<a href="../nodejs-network-stream2">NodeJS Stream系列第二篇之流的类型</a><br>
-<a href="../nodejs-network-stream3">NodeJS Stream系列第三篇之基本用法</a><br>
-<a href="../nodejs-network-stream4">NodeJS Stream系列第四篇之高级用法</a><br>
-<a href="../nodejs-network-stream5">NodeJS Stream系列第五篇之实际场景</a></p>
+
+<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br />
+<a href="../nodejs-network-stream-2">NodeJS Stream系列第二篇之流的类型</a><br />
+<a href="../nodejs-network-stream-3">NodeJS Stream系列第三篇之基本用法</a><br />
+<a href="../nodejs-network-stream-4">NodeJS Stream系列第四篇之高级用法</a><br />
+<a href="../nodejs-network-stream-5">NodeJS Stream系列第五篇之实际场景</a></p>
 
       </div>
 
@@ -430,6 +453,47 @@
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

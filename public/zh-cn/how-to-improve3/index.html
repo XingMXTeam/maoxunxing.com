@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/how-to-improve3/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -208,23 +213,32 @@
 
         </div>
       </header><div>
-        <h2 id="衡量能力">衡量能力<a href="#衡量能力" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="衡量能力">衡量能力<a href="#衡量能力" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>基础意味着会做，熟练意味着做好，精通意味着优化（采取不同的方式、思维和工具来做同样的事情，并取得突破，引入新技术到工作中也算优化）</p>
+
 <p>从COMD模型说明一个人的能力模型：</p>
+
 <p>4个复杂度：</p>
+
 <ul>
 <li>规模复杂度： 比如代码量、团队人数、功能点、关联方，系统数量</li>
 <li>时间复杂度： 3年业务规划</li>
 <li>环境复杂度：</li>
 <li>创新复杂度： 理论、思想、技巧的创新 从0到1 &gt; 架构重构 &gt; 项目方案设计 &gt; 编码</li>
 </ul>
-<p>3个维度：<br>
+
+<p>3个维度：<br />
 技术、管理、业务</p>
+
 <h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="../how-to-improve">学习和成长之道系列第一篇之学什么</a><br>
-<a href="../how-to-improve2">学习和成长之道系列第二篇之怎么学</a><br>
-<a href="../how-to-improve3">学习和成长之道系列第三篇之能力模型</a><br>
-<a href="../how-to-improve4">学习和成长之道系列第四篇之解决问题</a><br>
+
+<p><a href="../how-to-improve">学习和成长之道系列第一篇之学什么</a><br />
+<a href="../how-to-improve2">学习和成长之道系列第二篇之怎么学</a><br />
+<a href="../how-to-improve3">学习和成长之道系列第三篇之能力模型</a><br />
+<a href="../how-to-improve4">学习和成长之道系列第四篇之解决问题</a><br />
 <a href="../how-to-improve5">学习和成长之道系列第五篇之影响力</a></p>
 
       </div>
@@ -408,6 +422,47 @@
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

@@ -1,98 +1,266 @@
 ---
-title: "Learning and Growing"
+title: "学什么系列 - 成长模型"
 date: 2021-08-27T10:20:36+08:00
-description: "From a technical person's perspective, how to grow fast and how to build your own growth model"
+description: "人生有限，在有限的时间内掌握更多内容显得非常关键"
 tags:
-- Growth
+- 成长
 images:
 - how-to-improve/test.png
----
-### Learning Methods
+---  
 
-721 Principle: The "721" learning rule was formally introduced by Morgan, Robert and Mike in their book "Building a Career Development Plan", and is summarized as follows.
+## 学什么？
 
-* 70% learning by doing (practice)
-* 20% learning from others (review, summarize, share and exchange)  
-* 10% self-learning (input: training, books)  
+每个人因为岗位不同，学习的内容不一样，掌握的程度也不一样。这里包含的是成长模型（内容）
 
-The methodology is simple.  
-**input**: what quality sources of information you have, this needs to be consciously collected, more books, training, join the bullying platform, contact more people, but also have an open mind  
-**MEMORY UNDERSTANDING**: Summarize and refine through structured thinking/charts/thought maps, and strengthen your memory through card tools like Anki. Have a structure in your mind, just like a library can index at any time  
-**expression use**: learn from sharing through articles and communicating with others. Participate in work, learn from projects, learn from solving real problems, learn from teaching others knowledge. Can reinforce and complement your refinement  
+**成长模型**： 
 
-### Growth Model
+主要考虑两方面软技能（综合能力：包括沟通、说服、团队建设、影响力等）、硬技能
 
-What do you have to learn once you have a growth approach? This is the growth model. It contains two aspects one is soft skills and one is hard skills.
+硬技能，不同岗位不太一样。比如互联网领域一级领域，针对程序员，主要是二级领域：开发，涵盖内容：
 
-Soft skills are mainly communication and persuasion skills. Daily work is mainly with the help of documents, PPT (generally need to speak) and so on.  
-1 documents should be less adjectives, no nonsense, to have the main line and structure  
-2 PPT is generally a combination of speech, PPT generally accounts for 30%, 70% by speech to say. When making PPT pay attention to these points: 1 font (strong contrast) 1 big picture (funny diagram philosophical words Do not get a very large structure diagram) 3 colors (the same color, level gradient), general diagram > table > word; and the speech has several points    
+1 基础知识：底层原理、操作系统、程序语言、算法、数据结构、数据、网络、安全  
+2 软件工程：设计模式、规范、日志、单测、故障恢复、方案优劣对比、技术选型、敏捷开发  
+3 编程能力：性能、扩展性、维护成本、鲁棒性
 
-* need to consider the audience, try not to be too in-depth at the beginning, need to introduce the background knowledge  
-* In order to avoid tension, you can slow down the speed, just like chatting  
-* The topic should not be loose, around the main line gradually in-depth  
-* Interact appropriately in the middle, and answer questions for the public, not the questioner. If the questions are not within the scope or tricky, you can record them and communicate with them individually after the meeting.  
+三级领域：
+具体开发岗位（*重点学习内容*） 比如前端：交互体验和设计； 服务端： 数据处理和架构  
+不同级别的重点不同， 比如低级别主要重深度(关注业务细节) 高级别重广度（关注整体业务）  
 
-And hard skills, different positions are not quite the same. For programmers, if you are not a technical manager or architect, then only need to consider  
-1 basic knowledge: underlying principles, operating systems, programming languages, algorithms, data structures, data, networks, security  
-2 software engineering: design patterns, specifications, logging, single test, fault recovery, program advantages and disadvantages of comparison, technology selection, agile development  
-3 programming capabilities: performance, scalability, maintenance costs, robustness
+理解业务从四个方面： 我们的用户是谁；用户价值；获客方式；获利方式
+1 行业总的用户规模；自己的用户规模，用户的特征分布
+2 熟悉行业的竞品（行业的排名、竞品的数据和差异对比）
+3 常见的获客手段和效果指标
+4 获利来源  
 
-Off-topic.  
-About depth and breadth: growing up under a platform, you don't have to know everything, all know the details. Some things, just know what problems it solves, this is the breadth, depth is you need to understand all the details of your industry, it is your core competencies, breadth and depth is not separated, breadth can sometimes strengthen your depth. In the competitive field, individuals are also a product, to weaken their weaknesses and fully highlight your competitiveness
-About hard work: don't cheat yourself, recognize your strengths and do what you love in your field
+更多： 《定位》、《疯传》、《增长黑客》白皮版、《需求：缔造伟大商业传奇的根本力量》、《创新者的窘境》  
 
-### Needs analysis
+题外话：  
+关于深度和广度：在一个平台下成长，不用面面俱到，所有都知道细节。有些东西，知道它解决什么问题就行，这是广度，深度是你需要了解所有细节的，在你所在行业领域，它是你的核心竞争力，广度和深度不是割裂开的，广度有时候能加强你的深度。在竞争场，个人也是一个产品，要弱化自己的弱点，充分突出你的竞争力
+关于努力工作：不要欺骗自己，要认识自己的长处，做你所热爱领域的事
 
-After you have the ability, you need to solve the actual problem. Only then can you maximize your value. The software engineering dimension is requirements analysis. First I'll throw out a methodology: 5W2H model
-> 5W2H analysis, also known as the Seven Questions Analysis, was pioneered by the U.S. Army Ordnance Repair Department in World War II. It is simple, convenient, easy to understand, easy to use, enlightening, widely used in business management and technical activities, and is also very helpful for decision-making and implementation of activity measures, and also helps to make up for omissions in consideration of the problem.
 
-* why: why to do this work  
-* what: what the content is  
-* where: where to do it  
-* when: when to do it  
-* who: who will do it  
-* how: how to do it  
-* how much: how much time and resources it will take  
 
-The essence of **why** is to define the problem.  
-Without a clear definition of the problem, decisions cannot be made, and good results, such as great products and solutions, cannot be produced. Albert Einstein once said.
-> It is more important to ask a question than to solve a problem.
 
-The essence of a problem is the contradiction of things that do not match
 
-There are several general characteristics.  
-1 Universality: is ordinary existence  
-2 Kinematic: in constant flux, what is now a problem may later become not a problem or a problem becomes another
-         Different stages, different problem points. Through the indicators can reflect the movement, time and space to evolve
-3 self-contained: problems generally have larger problems or sub-problems. It is critical to filter out the problems that need to be solved by you and can be solved well.  
-4 Measurable: The severity of the problem can be measured  
-5 Relevance: Problems may be related or causal and need to consider its underlying proposition  
 
-How to solve the problem.  
-Methodology.
-> Any noun has a structure  
-> Any verb has a process  
-> Any adjective has a measure  
+<!-- ### 产品化
 
-Steps.  
-1 Phenomenon/new concept (structure)  
-2 Existing program side effects, multidimensional thinking (insight, history)  
-3 Sorting through metrics (metrics of the severity of the problem, now)  
-5 Identify opportunities (essence)  
-6 Planning (future)  
+需求分析后，最终产出一套解决方案。解决方案是为解决某类问题的产品化产物。
 
-Off-topic.  
-We often talk about structured thinking. In fact, and software engineering inside the requirements analysis is very similar, that is, to break down a broad requirement, multi-dimensional to think. There are several levels of thinking, the level of abstraction rising: ** base: ** is critical thinking, analytical thinking, innovative thinking, metacognition, abstract thinking (pyramid principles + deliberate practice), etc.; ** advanced ** is structured thinking: thinking from multiple sides, profound analysis of the causes of the problem, the system to develop a plan of action, and finally complete the work; ** upper level ** is product thinking, business thinking, etc.
+### 评价工具
 
-### Influence building
+用户体验：
+1 用户洞察：
+> 不用的用户视角，用户洞察的指标是不一样的。比如用户是程序员，关注的可能是是否好用、高效
+客观：跳失漏斗； 表单分析
+主观：用户反馈
 
-If your product solves the problem. Then how to sell this product to other students. You need to tell your story well.
-Let's throw in a theory first: the SCQA model
+2 视觉还原
+有范：全局风格
+有料：物料默认好用
 
-S (Situation) Scenario - introduced by a familiar scenario, a fact.  
-C (Complication) Conflict - the actual situation often conflicts with what we want.  
-Q (Question) question - what to do?  
-A (Answer) Answer - Our solution is  
+3 稳定性
+有流程规范
+发布系统稳定，可灰度、可回滚；
+监控，流量监控
+安全性
 
-Make things clear through structured expressions.
+4 性能优化
+有指标：CWV(core web vital: LCP)/good urls 
+通用解决方案: PWA、工程化手段: 瘦包、vm直出、请求前置/串行,  单页面改造 -->
+
+<!-- ### 其他话题 * 关于影响力
+
+一般个人能力很强也不一定能做出很大的成绩，很强的能力最终是表现在影响力上，影响力哪里来，通过演讲、文档、产品、观点输出等等，而这些需要你对自己有一个比较好的认知，有没有相应的特性：  
+1 热爱+自信：跟随内心的激情，强认知下有形成自己的观点，并且勇于表达自己的观点  
+2 大局观：强认知看到更大的世界，看到当前节点的趋势，借力跃升  
+3 行动力：技术积累能让你写出好的代码，不断编码能打造更多产品；写文章（PPT+演讲），纠错，再输出能形成自己的方法论 -->
+
+<!-- 有推导过程让别人相信你的产出或者观点 -->
+
+
+<!-- 
+### 能力特质
+
+1 舍得投入，目标要高，遇强则强  
+2 有主见，有要性： 需要主动争取 主动承担责任 勇敢地冲！主管是你最好的资源；  
+3 更多关注内在驱动力和动机：  
+
+> 人生的成功=思维方式x能力x热情 ---稻盛和夫  
+> 取乎其上，得乎其中；取乎其中，得乎其下；取乎其下，则无所得矣 ---孔子  
+> 夏虫不可以语于冰者，笃于时也；曲土不可以语于道者，束于教也 ---庄子  
+
+领导力： 说服并引领他人达成目标 -> 乔哈里视窗  
+影响力： 个人影响力（能说+会写） + 产品影响力
+心态： 聪明 乐观 皮实 自省  
+
+道家-顺势而为  
+<!-- - 客户第一 员工第二 股东第三   -->
+<!-- 儒家-团结好他人   -->
+<!-- - 因为信任 所以简单 ； 唯一不变的是变化   -->
+<!-- 释家-如何成为更好的自己   -->
+<!-- - 今天最好的表现是明天最低的要求； 此时此刻 非我莫属； 认真生活、快乐工作   --> 
+
+<!-- 提效数据如何推导；把一件事做到极致；中后台同学架构方向思考，而不是组件、模版、可视化三件套；勇于颠覆最佳实践 -->
+
+<!-- 
+### 技术建设
+
+当具备一定认知和学习方法，以及成长模型后，在工作中就能表现杰出，获得一致好评么？当然不是，根据我这几年的工作，我总结出来。 -->
+
+<!-- 
+体（CEO）：立足业务、调配团队资源制定战略目标和思路  
+面（CTO、技术总监): 战略落地贯穿执行、输出业务架构图、技术架构图、人力分配，指定执行标准  
+线（技术经理、架构师）：架构的设计和实现、核心代码、攻坚。任务拆分、标准细化执行  
+点（工程师）：具体实现，严格执行标准，按质完成任务  
+
+横向技能树： 基础理论（20）、源码解析（20）、架构设计（20）、软件工程（20）、工程实操（20） -- 系统底层、技术底层 
+纵向掌握深度：点10（会用，理解基本概念）、线15（掌握原理、优劣对比和技术选型、熟练解决问题）、面20（洞察本质输出思想、融会贯通、实战灵活运用、优化、设计新事物和标准）  
+
+基础理论指标：
+
+1. 编码原理  
+2. 运算本质  
+3. 程序语言  
+4. 数据结构
+5. 算法基础
+6. 网络通信
+7. 操作系统
+8. 数据检索
+9. 软件安全
+10. js核心
+11. vm
+12. Node Fass体系 
+
+源码解析指标：
+React
+
+架构设计指标：
+
+1. 分布式
+2. 高并发
+3. 高性能
+
+软件工程指标：
+
+1. 设计模式
+2. 领域驱动
+3. 敏捷开发
+
+工程实操指标：
+
+1. 代码管理
+2. 编码规范
+3. 日志应用
+4. 软件测试
+5. 代码审查
+6. 发布管理
+7. 文档规范
+8. 故障修复
+9. 系统重构
+
+归纳总结：  
+程序员的五事和七计：性能 扩展 维护 成本 安全  
+网络IO 磁盘IO 数据结构 算法 域模型
+
+决策模型： 权重/纬度
+
+技术规划：技术盘点/架构演进/技术创新/未来挑战（降本提效、流量冲击、资源瓶颈）/新生技术 
+
+ ### 业务能力
+
+业务： 本质是模型
+业务先赢（短期收割）-> 业务沉淀（规模可复制，影响力扩大）-〉业务规划（理想）  
+规划： 行业背景/业务梳理/战略抓手
+业务深耕：产品逻辑/行业视野/业务延伸（商业价值、运营模式，包括对行业的思考）  
+综合能力： 沟通协同、创新思维、市场运营、业务推动 
+
+* 带着思考参会、帮助产品完善需求、帮助做会议记要，主动想产品体验问题 帮助改善；后端 测试 文档 规范 组织活动。
+* 看大做小，由小及大。 不断调研->找输入->脑暴推导出来的
+* PDAC闭环： Plan Do Act Check  
+
+ ### 技术建设的心得
+
+* 懂得借力，共建生态（智能组件、智能搭建  如果有问题直接MR补充
+* 闪蝶+Sherry Components 
+* 尽量降低纯业务投入的占比。提升单位时间的输出，或者提炼抽象公共组件/SDK 或者培训外包独立交付
+* 明确优先级： 不接零时沟通需求，拒绝倒排；与业务沟通目标：建立技术试点和落地；适当地超出业务预期
+* 从业务需求里发现共性诉求（数据分析+和业务对话）-> 挖掘需求 -> 技术驱动
+* 提前规划到KPI： 看差距，规划路径，经常性review，业务增长+技术贡献+团队贡献+技术风险只是一个好绩效， 不成体系 没看到领域深度 -> 大概率不能晋升： 专注中台能力建设（Why/how/what) ；找到关键问题（业务问题/研发痛点）-> 如何解决问题 用什么技术手段 协同多少资源 投入产出比。别的团队的相似问题，策略是怎么样； 要做成什么样，最终取得什么技术结果和业务结果
+* 主动成立技术专项+乐于分享/写文章/CodeReview/团建/招牌新人/帮助->影响团队 
+
+## 软技能
+
+三件套： PPT制作、演讲技巧、思路归纳
+
+PPT: 
+1种字体（对比度） 
+3种颜色（同一色系） 突出之重点 层次分明 色彩渐进： 图 > 表 > 字
+图片大一点，对齐，图片穿插 （搞笑的图 哲理话）
+
+演讲：
+根据受众选择主题范围和深度
+1 老板要高度
+2 架构师要广度和深度
+3 工程师要深度
+4 产品要业务共识
+
+原则：
+1 不要太多用户不懂的概念, 5个概念最多, 用关键字,减少文字篇幅
+2 开头内容简单易懂，根据主线循序渐进，后面开始难一点也没关系
+3 30%内容PPT 70%靠自己讲
+
+克服紧张：
+前三分钟背下；有意识训练；越透彻越自信；开场活跃气氛（段子手 big bang 猜谜语）
+穿着： 衬衫、牛仔、休闲鞋  
+手：开与合  
+站姿：站中间、与肩同宽的站、面向观众（不要稍息 不要抖腿 不要走动过于频繁 动作太大）  
+眼睛是窗口： 对着大家讲 环顾观众 适当停顿  
+互动： 填空题或者选择题  
+互动之听众提问： 对方提问走近她，回答问题时慢慢离开他，回答问题时不要只盯着提问者（避免和提问者单独对话） 提前准备可能问到的问题  
+遇到棘手问题： 特别细节/不属于演讲领域/无厘头 请别人记下，会后讨论/把问题抛给别人  
+语言表达：抑扬顿挫/语速适中/声音大小适中/吐词清晰  像聊天一样 照顾听众的心理
+
+## 关于能力调研
+
+要求or问题 | 做得好的（次数） | 不好的（次数) |  备注
+---------|----------|---------|---------
+ 技术深度 | 1 | 7 | 提效数据如何推导；把一件事做到极致；中后台同学架构方向思考，而不是组件、模版、可视化三件套；勇于颠覆最佳实践
+ 技术视野 | 1 | 5 | 单点；技术产品化输出少，0-1多，1-n少 数据化思维做突破；集团基建之上构建业务能力；复用跨BU的能力/方案充分的调研/避免重复建设；复用跨BU的能力保证有沉淀，不是只有成为平台是沉淀
+ 业务价值和技术的关联 | 7 | 业务目标-问题识别-技术选型的视野，方案对比没有推导，缺乏深入挖掘；价值关联;技术助力业务用数据说话；结果和定义问题的匹配
+ 专业度：系统学习和实践、未来发展的思考（共建） | 1  | 5 | 形成体系或者体系的互补（事小，但思考的体系化、结构化思维）；关键问题定义不清，功能大而全；多看书，多总结
+ 技术架构/方案的精准、合理性、随着业务的演进（业务前端） |  | 1 
+ 业务理解 |  | 8 | 全链路;业务背后的思考和价值; 缺乏业务/技术持续规划（昨天、今天、明天）要有推导，确定性比较高的思考;业务影响力，对未来几年业务的影响不足; 业务目标，产品策略，数据关注不够；解决方案型前端 
+
+## 产品思维
+
+1 无形无价的而免费的产品，核心竞争力是体验；
+  有价和有型的产品的核心竞争力是品牌
+2 团队的综合能力要求越来越高
+3 每个人都可以发表意见，决策权归LD -->
+
+
+<!-- ## 快速学习
+
+费曼学习法
+
+## 技术成长 -->
+<!-- 冥想->本质->抽象 -->
+<!-- {{< img src="know.jpg" alt="know" maxWidth="600px" >}} -->
+<!-- ## 能力要求
+
+技术专家：系统性思考并解决这个领域的问题，取得很好的业务结果并影响了其他业务团队（体系化 讲清楚why/how/what 如何把故事讲好)
+
+高级技术专家： 掌握了一套方法论，代表作可以超出BU影响到客户 -->
+<!-- 书： 《能力陷阱》等 阅读->脑图
+文档 -->
+<!-- 周报/yq文档/ata -->
+<!-- （服务对象的变化） -->
+
+### 其他文章
+
+[学什么系列 - 成长模型](../how-to-improve)  
+[怎么学系列 - 方法论](../how-to-improve2)  
+[评价标准系列 - 衡量能力](../how-to-improve3)  
+[怎么学系列 - 解决问题](../how-to-improve4)  
+[评价标准系列 - 影响力](../how-to-improve5)  

@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     
 
@@ -35,11 +35,16 @@ import { xx } from &#39;a&#39; console.log(xx) // got undefined 这个一般是�
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/notes/export-get-undefined/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -73,7 +78,7 @@ import { xx } from &#39;a&#39; console.log(xx) // got undefined 这个一般是�
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -94,7 +99,7 @@ import { xx } from &#39;a&#39; console.log(xx) // got undefined 这个一般是�
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -188,12 +193,13 @@ import { xx } from &#39;a&#39; console.log(xx) // got undefined 这个一般是�
 
     <div>
       <p>情况说明：</p>
+
 <p>a.ts:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">const</span> xx <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;123&#39;</span>
-</code></pre></div><p>b.ts:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#000;font-weight:bold">import</span> { xx } <span style="color:#000;font-weight:bold">from</span> <span style="color:#d14">&#39;a&#39;</span>
-console.log(xx) <span style="color:#998;font-style:italic">// got undefined
-</span></code></pre></div><p>这个一般是循环引用导致的</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">export</span> <span style="color:#080;font-weight:bold">const</span> xx <span style="color:#333">=</span> <span style="background-color:#fff0f0">&#39;123&#39;</span></code></pre></div>
+<p>b.ts:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#080;font-weight:bold">import</span> { xx } from <span style="background-color:#fff0f0">&#39;a&#39;</span>
+console.log(xx) <span style="color:#f00;background-color:#faa">// got undefined</span></code></pre></div>
+<p>这个一般是循环引用导致的</p>
 
     </div>
   </article>
@@ -237,6 +243,47 @@ console.log(xx) <span style="color:#998;font-style:italic">// got undefined
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

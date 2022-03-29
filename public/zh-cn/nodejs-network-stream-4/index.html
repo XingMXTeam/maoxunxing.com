@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/nodejs-network-stream-4/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -208,7 +213,10 @@
 
         </div>
       </header><div>
-        <h2 id="核心流模块">核心流模块：<a href="#核心流模块" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="核心流模块">核心流模块：<a href="#核心流模块" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <ul>
 <li>crypto:  加密</li>
 <li>zlib： 压缩</li>
@@ -222,187 +230,205 @@
 <li>pumpify</li>
 <li>end-of-stream： 判断流是否结束，接收一个回调函数</li>
 </ul>
-<h3 id="collect-stream">collect-stream<a href="#collect-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="./collect.js">collect.js</a></p>
-<p>和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试</p>
-<h3 id="duplexify">duplexify<a href="#duplexify" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="./duplify.js">duplify.js</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> duplexify <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;duplexify&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> fs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>)
 
-<span style="color:#000;font-weight:bold">function</span> log() {
-	<span style="color:#000;font-weight:bold">const</span> d <span style="color:#000;font-weight:bold">=</span> duplexify();
-  <span style="color:#000;font-weight:bold">var</span> w <span style="color:#000;font-weight:bold">=</span> fs.createWriteStream(<span style="color:#d14">&#39;logs/test.log&#39;</span>)
+<h3 id="collect-stream">collect-stream<a href="#collect-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p><a href="./collect.js">collect.js</a></p>
+
+<p>和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试</p>
+
+<h3 id="duplexify">duplexify<a href="#duplexify" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p><a href="./duplify.js">duplify.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> duplexify <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;duplexify&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> fs <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;fs&#39;</span>)
+
+<span style="color:#080;font-weight:bold">function</span> log() {
+	<span style="color:#080;font-weight:bold">const</span> d <span style="color:#333">=</span> duplexify();
+  <span style="color:#080;font-weight:bold">var</span> w <span style="color:#333">=</span> fs.createWriteStream(<span style="background-color:#fff0f0">&#39;logs/test.log&#39;</span>)
   d.setWritable(w)
-  <span style="color:#000;font-weight:bold">return</span> d
+  <span style="color:#080;font-weight:bold">return</span> d
 }
 
-<span style="color:#000;font-weight:bold">const</span> stream <span style="color:#000;font-weight:bold">=</span> log();
-stream.write(<span style="color:#0086b3">Date</span>.now() <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39;\n&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> stream <span style="color:#333">=</span> log();
+stream.write(<span style="color:#007020">Date</span>.now() <span style="color:#333">+</span> <span style="background-color:#fff0f0">&#39;\n&#39;</span>)
 stream.end();
-concat<span style="color:#000;font-weight:bold">-</span>stream
+concat<span style="color:#333">-</span>stream
+</code></pre></div>
+<p>如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。</p>
 
-</code></pre></div><p>如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。</p>
 <p>正常实现方式：</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">function</span> ResponseReader(encoding) {
-  stream.Transform.call(<span style="color:#000;font-weight:bold">this</span>);
-  <span style="color:#000;font-weight:bold">this</span>._chuncks <span style="color:#000;font-weight:bold">=</span> [];
-  <span style="color:#000;font-weight:bold">this</span>._encoding <span style="color:#000;font-weight:bold">=</span> encoding;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">function</span> ResponseReader(encoding) {
+  stream.Transform.call(<span style="color:#080;font-weight:bold">this</span>);
+  <span style="color:#080;font-weight:bold">this</span>._chuncks <span style="color:#333">=</span> [];
+  <span style="color:#080;font-weight:bold">this</span>._encoding <span style="color:#333">=</span> encoding;
 }
 util.inherits(ResponseReader, stream.Transform);
 
-ResponseReader.prototype._transform <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(chunk, encoding, callback) {
-  <span style="color:#000;font-weight:bold">this</span>._chuncks.push(chunk);
+ResponseReader.prototype._transform <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">function</span>(chunk, encoding, callback) {
+  <span style="color:#080;font-weight:bold">this</span>._chuncks.push(chunk);
   callback();
 };
 
-ResponseReader.prototype._flush  <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(callback) {
-  <span style="color:#000;font-weight:bold">this</span>.push(Buffer.concat(<span style="color:#000;font-weight:bold">this</span>._chuncks).toString(<span style="color:#000;font-weight:bold">this</span>._encoding));
+ResponseReader.prototype._flush  <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">function</span>(callback) {
+  <span style="color:#080;font-weight:bold">this</span>.push(Buffer.concat(<span style="color:#080;font-weight:bold">this</span>._chuncks).toString(<span style="color:#080;font-weight:bold">this</span>._encoding));
   callback();
 };
  concat.js
 
-<span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
-process.stdin.pipe(concat(<span style="color:#000;font-weight:bold">function</span>(body) {
-    console.log(body.length) <span style="color:#998;font-style:italic">//ctr+d 会一次性打印出来
-</span><span style="color:#998;font-style:italic"></span>}))
-</code></pre></div><p>复杂的场景。比如我们响应返回完整数据(比如图片)才进行下一步操作 concat2.js
+<span style="color:#080;font-weight:bold">const</span> concat <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;concat-stream&#39;</span>)
+process.stdin.pipe(concat(<span style="color:#080;font-weight:bold">function</span>(body) {
+    console.log(body.length) <span style="color:#888">//ctr+d 会一次性打印出来
+</span><span style="color:#888"></span>}))
+</code></pre></div>
+<p>复杂的场景。比如我们响应返回完整数据(比如图片)才进行下一步操作 concat2.js
 // curl -d msg=hello localhost:6000</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> http <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;http&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> qs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;querystring&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> through <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;through2&#39;</span>)
-<span style="color:#000;font-weight:bold">function</span> counter() {
-  <span style="color:#000;font-weight:bold">let</span> size <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-  <span style="color:#000;font-weight:bold">return</span> through(<span style="color:#000;font-weight:bold">function</span>(buf, enc, next) {
-    size <span style="color:#000;font-weight:bold">+=</span> buf.length
-    <span style="color:#000;font-weight:bold">if</span>(size <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#099">20</span>) next(<span style="color:#000;font-weight:bold">null</span>, <span style="color:#000;font-weight:bold">null</span>) <span style="color:#998;font-style:italic">// 需要判断请求参数的长度: 超过20 则终止流
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">else</span> next(<span style="color:#000;font-weight:bold">null</span>, buf)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> concat <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;concat-stream&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> http <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;http&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> qs <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;querystring&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> through <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;through2&#39;</span>)
+<span style="color:#080;font-weight:bold">function</span> counter() {
+  <span style="color:#080;font-weight:bold">let</span> size <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>
+  <span style="color:#080;font-weight:bold">return</span> through(<span style="color:#080;font-weight:bold">function</span>(buf, enc, next) {
+    size <span style="color:#333">+=</span> buf.length
+    <span style="color:#080;font-weight:bold">if</span>(size <span style="color:#333">&gt;</span> <span style="color:#00d;font-weight:bold">20</span>) next(<span style="color:#080;font-weight:bold">null</span>, <span style="color:#080;font-weight:bold">null</span>) <span style="color:#888">// 需要判断请求参数的长度: 超过20 则终止流
+</span><span style="color:#888"></span>    <span style="color:#080;font-weight:bold">else</span> next(<span style="color:#080;font-weight:bold">null</span>, buf)
   })
 }
 
-<span style="color:#000;font-weight:bold">const</span> server <span style="color:#000;font-weight:bold">=</span> http.createServer(<span style="color:#000;font-weight:bold">function</span>(req, res) {
+<span style="color:#080;font-weight:bold">const</span> server <span style="color:#333">=</span> http.createServer(<span style="color:#080;font-weight:bold">function</span>(req, res) {
     req
     .pipe(counter())
-    .pipe(concat({ encoding<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;string&#39;</span> }, <span style="color:#000;font-weight:bold">function</span>(body) {
-        <span style="color:#000;font-weight:bold">const</span> params <span style="color:#000;font-weight:bold">=</span> qs.parse(body) <span style="color:#998;font-style:italic">// 读取的是空
-</span><span style="color:#998;font-style:italic"></span>        console.log(params)
-        res.end(<span style="color:#d14">&#39;ok\n&#39;</span>)
+    .pipe(concat({ encoding<span style="color:#333">:</span> <span style="background-color:#fff0f0">&#39;string&#39;</span> }, <span style="color:#080;font-weight:bold">function</span>(body) {
+        <span style="color:#080;font-weight:bold">const</span> params <span style="color:#333">=</span> qs.parse(body) <span style="color:#888">// 读取的是空
+</span><span style="color:#888"></span>        console.log(params)
+        res.end(<span style="background-color:#fff0f0">&#39;ok\n&#39;</span>)
     }))
 })
 
-server.listen(<span style="color:#099">6000</span>)
+server.listen(<span style="color:#00d;font-weight:bold">6000</span>)
+</code></pre></div>
+<h3 id="pump">pump<a href="#pump" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 
-</code></pre></div><h3 id="pump">pump<a href="#pump" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 <p>解决10.x版本前，当目标流被销毁的时候，源流不会自动销毁，也没有回调的问题。处理异常</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">var</span> pump <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;pump&#39;</span>)
-<span style="color:#000;font-weight:bold">var</span> fs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">var</span> pump <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;pump&#39;</span>)
+<span style="color:#080;font-weight:bold">var</span> fs <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;fs&#39;</span>)
 
-<span style="color:#000;font-weight:bold">var</span> source <span style="color:#000;font-weight:bold">=</span> fs.createReadStream(<span style="color:#d14">&#39;/dev/random&#39;</span>)
-<span style="color:#000;font-weight:bold">var</span> dest <span style="color:#000;font-weight:bold">=</span> fs.createWriteStream(<span style="color:#d14">&#39;/dev/null&#39;</span>)
+<span style="color:#080;font-weight:bold">var</span> source <span style="color:#333">=</span> fs.createReadStream(<span style="background-color:#fff0f0">&#39;/dev/random&#39;</span>)
+<span style="color:#080;font-weight:bold">var</span> dest <span style="color:#333">=</span> fs.createWriteStream(<span style="background-color:#fff0f0">&#39;/dev/null&#39;</span>)
 
-<span style="color:#998;font-style:italic">// source.pipe(dst) 但是会有异常函数回调
-</span><span style="color:#998;font-style:italic"></span>pump(source, dest, <span style="color:#000;font-weight:bold">function</span>(err) {
-  console.log(<span style="color:#d14">&#39;pipe finished&#39;</span>, err)
+<span style="color:#888">// source.pipe(dst) 但是会有异常函数回调
+</span><span style="color:#888"></span>pump(source, dest, <span style="color:#080;font-weight:bold">function</span>(err) {
+  console.log(<span style="background-color:#fff0f0">&#39;pipe finished&#39;</span>, err)
 })
 
-setTimeout(<span style="color:#000;font-weight:bold">function</span>() {
-  dest.destroy() <span style="color:#998;font-style:italic">// when dest is closed pump will destroy source
-</span><span style="color:#998;font-style:italic"></span>}, <span style="color:#099">1000</span>)
-</code></pre></div><p>10.x版本后可以用pipeline</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> { pipeline } <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>);
-<span style="color:#000;font-weight:bold">const</span> fs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>);
-<span style="color:#000;font-weight:bold">const</span> zlib <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;zlib&#39;</span>);
+setTimeout(<span style="color:#080;font-weight:bold">function</span>() {
+  dest.destroy() <span style="color:#888">// when dest is closed pump will destroy source
+</span><span style="color:#888"></span>}, <span style="color:#00d;font-weight:bold">1000</span>)
+</code></pre></div>
+<p>10.x版本后可以用pipeline</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> { pipeline } <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;stream&#39;</span>);
+<span style="color:#080;font-weight:bold">const</span> fs <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;fs&#39;</span>);
+<span style="color:#080;font-weight:bold">const</span> zlib <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;zlib&#39;</span>);
 
-<span style="color:#998;font-style:italic">// Use the pipeline API to easily pipe a series of streams
-</span><span style="color:#998;font-style:italic">// together and get notified when the pipeline is fully done.
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#998;font-style:italic">// A pipeline to gzip a potentially huge tar file efficiently:
-</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#888">// Use the pipeline API to easily pipe a series of streams
+</span><span style="color:#888">// together and get notified when the pipeline is fully done.
+</span><span style="color:#888"></span>
+<span style="color:#888">// A pipeline to gzip a potentially huge tar file efficiently:
+</span><span style="color:#888"></span>
 pipeline(
-  fs.createReadStream(<span style="color:#d14">&#39;archive.tar&#39;</span>),
+  fs.createReadStream(<span style="background-color:#fff0f0">&#39;archive.tar&#39;</span>),
   zlib.createGzip(),
-  fs.createWriteStream(<span style="color:#d14">&#39;archive.tar.gz&#39;</span>),
+  fs.createWriteStream(<span style="background-color:#fff0f0">&#39;archive.tar.gz&#39;</span>),
   (err) =&gt; {
-    <span style="color:#000;font-weight:bold">if</span> (err) {
-      console.error(<span style="color:#d14">&#39;Pipeline failed.&#39;</span>, err);
-    } <span style="color:#000;font-weight:bold">else</span> {
-      console.log(<span style="color:#d14">&#39;Pipeline succeeded.&#39;</span>);
+    <span style="color:#080;font-weight:bold">if</span> (err) {
+      console.error(<span style="background-color:#fff0f0">&#39;Pipeline failed.&#39;</span>, err);
+    } <span style="color:#080;font-weight:bold">else</span> {
+      console.log(<span style="background-color:#fff0f0">&#39;Pipeline succeeded.&#39;</span>);
     }
   }
 );
+</code></pre></div>
+<h3 id="pumpify">pumpify<a href="#pumpify" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 
-</code></pre></div><h3 id="pumpify">pumpify<a href="#pumpify" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 <p>pump and duplexify 的结合 会返回一个duplex流</p>
-<h2 id="如何把流缓存起来一次性读取-concatjsconcatjs">如何把流缓存起来一次性读取： <a href="./concat.js">concat.js</a><a href="#如何把流缓存起来一次性读取-concatjsconcatjs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<h2 id="如何把流缓存起来一次性读取-concat-js-concat-js">如何把流缓存起来一次性读取： <a href="./concat.js">concat.js</a><a href="#如何把流缓存起来一次性读取-concat-js-concat-js" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <h3 id="concat-stream">concat-stream<a href="#concat-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
-process.stdin.pipe(concat(<span style="color:#000;font-weight:bold">function</span>(body) {
-    console.log(body.length) <span style="color:#998;font-style:italic">//ctr+d 会一次性打印出来
-</span><span style="color:#998;font-style:italic"></span>}))
-</code></pre></div><p>复杂的场景。比如我们需要判断请求参数的长度: <a href="./concat2.js">concat2.js</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// curl -d msg=hello localhost:6000
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> http <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;http&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> qs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;querystring&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> through <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;through2&#39;</span>)
-<span style="color:#000;font-weight:bold">function</span> counter() {
-  <span style="color:#000;font-weight:bold">let</span> size <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-  <span style="color:#000;font-weight:bold">return</span> through(<span style="color:#000;font-weight:bold">function</span>(buf, enc, next) {
-    size <span style="color:#000;font-weight:bold">+=</span> buf.length
-    <span style="color:#000;font-weight:bold">if</span>(size <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#099">20</span>) next(<span style="color:#000;font-weight:bold">null</span>, <span style="color:#000;font-weight:bold">null</span>) <span style="color:#998;font-style:italic">// 终止流
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">else</span> next(<span style="color:#000;font-weight:bold">null</span>, buf)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> concat <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;concat-stream&#39;</span>)
+process.stdin.pipe(concat(<span style="color:#080;font-weight:bold">function</span>(body) {
+    console.log(body.length) <span style="color:#888">//ctr+d 会一次性打印出来
+</span><span style="color:#888"></span>}))
+</code></pre></div>
+<p>复杂的场景。比如我们需要判断请求参数的长度: <a href="./concat2.js">concat2.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#888">// curl -d msg=hello localhost:6000
+</span><span style="color:#888"></span><span style="color:#080;font-weight:bold">const</span> concat <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;concat-stream&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> http <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;http&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> qs <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;querystring&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> through <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;through2&#39;</span>)
+<span style="color:#080;font-weight:bold">function</span> counter() {
+  <span style="color:#080;font-weight:bold">let</span> size <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>
+  <span style="color:#080;font-weight:bold">return</span> through(<span style="color:#080;font-weight:bold">function</span>(buf, enc, next) {
+    size <span style="color:#333">+=</span> buf.length
+    <span style="color:#080;font-weight:bold">if</span>(size <span style="color:#333">&gt;</span> <span style="color:#00d;font-weight:bold">20</span>) next(<span style="color:#080;font-weight:bold">null</span>, <span style="color:#080;font-weight:bold">null</span>) <span style="color:#888">// 终止流
+</span><span style="color:#888"></span>    <span style="color:#080;font-weight:bold">else</span> next(<span style="color:#080;font-weight:bold">null</span>, buf)
   })
 }
 
-<span style="color:#000;font-weight:bold">const</span> server <span style="color:#000;font-weight:bold">=</span> http.createServer(<span style="color:#000;font-weight:bold">function</span>(req, res) {
+<span style="color:#080;font-weight:bold">const</span> server <span style="color:#333">=</span> http.createServer(<span style="color:#080;font-weight:bold">function</span>(req, res) {
     req
     .pipe(counter())
-    .pipe(concat({ encoding<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;string&#39;</span> }, <span style="color:#000;font-weight:bold">function</span>(body) {
-        <span style="color:#000;font-weight:bold">const</span> params <span style="color:#000;font-weight:bold">=</span> qs.parse(body) <span style="color:#998;font-style:italic">// 读取的是空
-</span><span style="color:#998;font-style:italic"></span>        console.log(params)
-        res.end(<span style="color:#d14">&#39;ok\n&#39;</span>)
+    .pipe(concat({ encoding<span style="color:#333">:</span> <span style="background-color:#fff0f0">&#39;string&#39;</span> }, <span style="color:#080;font-weight:bold">function</span>(body) {
+        <span style="color:#080;font-weight:bold">const</span> params <span style="color:#333">=</span> qs.parse(body) <span style="color:#888">// 读取的是空
+</span><span style="color:#888"></span>        console.log(params)
+        res.end(<span style="background-color:#fff0f0">&#39;ok\n&#39;</span>)
     }))
 })
 
-server.listen(<span style="color:#099">6000</span>)
+server.listen(<span style="color:#00d;font-weight:bold">6000</span>)
+</code></pre></div>
+<h2 id="rpc-stream">rpc-stream<a href="#rpc-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
 
-</code></pre></div><h2 id="rpc-stream">rpc-stream<a href="#rpc-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
 <p>RPC（Remote Procedure Call）中文名『远程过程调用』
 其实就是调用其他机器上的函数。一般是基于TCP。比如我们集团的HSF 其实就是一个远程调用。源码很值得读一读，关于如何设计好的接口。</p>
-<p><a href="./rpc-server.js">rpc-server.js</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> rpc <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;rpc-stream&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> net <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;net&#39;</span>)
 
-net.createServer(<span style="color:#000;font-weight:bold">function</span> (stream) {
-  <span style="color:#000;font-weight:bold">const</span> server <span style="color:#000;font-weight:bold">=</span> rpc({ <span style="color:#998;font-style:italic">// duplex类型
-</span><span style="color:#998;font-style:italic"></span>    hello<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span> (name, cb) {
-      cb(<span style="color:#000;font-weight:bold">null</span>, <span style="color:#d14">&#39;hello, &#39;</span> <span style="color:#000;font-weight:bold">+</span> name)
+<p><a href="./rpc-server.js">rpc-server.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> rpc <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;rpc-stream&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> net <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;net&#39;</span>)
+
+net.createServer(<span style="color:#080;font-weight:bold">function</span> (stream) {
+  <span style="color:#080;font-weight:bold">const</span> server <span style="color:#333">=</span> rpc({ <span style="color:#888">// duplex类型
+</span><span style="color:#888"></span>    hello<span style="color:#333">:</span> <span style="color:#080;font-weight:bold">function</span> (name, cb) {
+      cb(<span style="color:#080;font-weight:bold">null</span>, <span style="background-color:#fff0f0">&#39;hello, &#39;</span> <span style="color:#333">+</span> name)
     }
   })
-  server.pipe(stream).pipe(server) <span style="color:#998;font-style:italic">//需要传递给server
-</span><span style="color:#998;font-style:italic"></span>}).listen(<span style="color:#099">8001</span>)
-</code></pre></div><p><a href="./rpc-client.js">rpc-client.js</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> rpc <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;rpc-stream&#39;</span>)
-<span style="color:#000;font-weight:bold">const</span> net <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;net&#39;</span>)
+  server.pipe(stream).pipe(server) <span style="color:#888">//需要传递给server
+</span><span style="color:#888"></span>}).listen(<span style="color:#00d;font-weight:bold">8001</span>)
+</code></pre></div>
+<p><a href="./rpc-client.js">rpc-client.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> rpc <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;rpc-stream&#39;</span>)
+<span style="color:#080;font-weight:bold">const</span> net <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;net&#39;</span>)
 
-<span style="color:#000;font-weight:bold">const</span> client <span style="color:#000;font-weight:bold">=</span> rpc()
-client.pipe(net.connect(<span style="color:#099">8001</span>, <span style="color:#d14">&#39;localhost&#39;</span>)).pipe(client) <span style="color:#998;font-style:italic">// 需要再次pipe(client)
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#000;font-weight:bold">const</span> remote <span style="color:#000;font-weight:bold">=</span> client.wrap([<span style="color:#d14">&#39;hello&#39;</span>])
+<span style="color:#080;font-weight:bold">const</span> client <span style="color:#333">=</span> rpc()
+client.pipe(net.connect(<span style="color:#00d;font-weight:bold">8001</span>, <span style="background-color:#fff0f0">&#39;localhost&#39;</span>)).pipe(client) <span style="color:#888">// 需要再次pipe(client)
+</span><span style="color:#888"></span>
+<span style="color:#080;font-weight:bold">const</span> remote <span style="color:#333">=</span> client.wrap([<span style="background-color:#fff0f0">&#39;hello&#39;</span>])
 
-remote.hello(<span style="color:#d14">&#39;JIM&#39;</span>, <span style="color:#000;font-weight:bold">function</span> (err, mess) {
-  <span style="color:#000;font-weight:bold">if</span>(err) <span style="color:#000;font-weight:bold">throw</span> err
+remote.hello(<span style="background-color:#fff0f0">&#39;JIM&#39;</span>, <span style="color:#080;font-weight:bold">function</span> (err, mess) {
+  <span style="color:#080;font-weight:bold">if</span>(err) <span style="color:#080;font-weight:bold">throw</span> err
   console.log(mess)
 })
+</code></pre></div>
+<p>用rpc协议不需要json格式。这个是优势。</p>
 
-</code></pre></div><p>用rpc协议不需要json格式。这个是优势。</p>
 <h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br>
-<a href="../nodejs-network-stream2">NodeJS Stream系列第二篇之流的类型</a><br>
-<a href="../nodejs-network-stream3">NodeJS Stream系列第三篇之基本用法</a><br>
-<a href="../nodejs-network-stream4">NodeJS Stream系列第四篇之高级用法</a><br>
-<a href="../nodejs-network-stream5">NodeJS Stream系列第五篇之实际场景</a></p>
+
+<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br />
+<a href="../nodejs-network-stream-2">NodeJS Stream系列第二篇之流的类型</a><br />
+<a href="../nodejs-network-stream-3">NodeJS Stream系列第三篇之基本用法</a><br />
+<a href="../nodejs-network-stream-4">NodeJS Stream系列第四篇之高级用法</a><br />
+<a href="../nodejs-network-stream-5">NodeJS Stream系列第五篇之实际场景</a></p>
 
       </div>
 
@@ -585,6 +611,47 @@ remote.hello(<span style="color:#d14">&#39;JIM&#39;</span>, <span style="color:#
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

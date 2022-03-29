@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/how-to-improve4/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -208,43 +213,54 @@
 
         </div>
       </header><div>
-        <h2 id="解决问题">解决问题<a href="#解决问题" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="解决问题">解决问题<a href="#解决问题" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>有了能力以后，需要去解决实际的问题。才能最大化你的价值。如何评价一个问题被解决的很好：</p>
-<h3 id="1-具备闭环思维从端到端的角度去思考和落地">1 具备闭环思维：从端到端的角度去思考和落地<a href="#1-具备闭环思维从端到端的角度去思考和落地" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<h3 id="1-具备闭环思维-从端到端的角度去思考和落地">1 具备闭环思维：从端到端的角度去思考和落地<a href="#1-具备闭环思维-从端到端的角度去思考和落地" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>也就是事前规划、事中执行、事后总结</p>
+
 <p>事前： 为什么，价值？
 事后： 上线后的结果？具体的业务数据？通过这个事我收获了什么？</p>
-<p>事前： OKR规划<br>
-事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法<br>
+
+<p>事前： OKR规划<br />
+事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法<br />
 事后： 4D总结法；四线复盘法；金子塔汇报法</p>
-<h3 id="2-方法论指导-更有说服力前提保证方法论是否适用当前场景">2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景）<a href="#2-方法论指导-更有说服力前提保证方法论是否适用当前场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<h3 id="2-方法论指导-更有说服力-前提保证方法论是否适用当前场景">2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景）<a href="#2-方法论指导-更有说服力-前提保证方法论是否适用当前场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p><strong>定义问题</strong>：</p>
-<p>5W2H模型</p>
-<blockquote>
-<p>5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。</p>
-</blockquote>
+
+<p>5W2H模型
+&gt; 5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。</p>
+
 <ul>
-<li>why: 为什么要做这个工作</li>
-<li>what: 内容是什么</li>
-<li>where： 在哪里做</li>
-<li>when: 什么时候来做</li>
-<li>who: 由谁来做</li>
-<li>how: 怎么做</li>
-<li>how much: 要花多少时间和资源</li>
+<li>why: 为什么要做这个工作<br /></li>
+<li>what: 内容是什么<br /></li>
+<li>where： 在哪里做<br /></li>
+<li>when: 什么时候来做<br /></li>
+<li>who: 由谁来做<br /></li>
+<li>how: 怎么做<br /></li>
+<li>how much: 要花多少时间和资源<br /></li>
 </ul>
-<p>本质就是定义问题：<br>
-定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说：</p>
-<blockquote>
-<p>提出一个问题比解决一个问题更重要。</p>
-</blockquote>
+
+<p>本质就是定义问题：<br />
+定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说：
+&gt; 提出一个问题比解决一个问题更重要。</p>
+
 <p>问题本质就是事物的矛盾，不匹配</p>
-<p>一般有几个特点：<br>
-1 普遍性：是普通存在的<br>
+
+<p>一般有几个特点：<br />
+1 普遍性：是普通存在的<br />
 2 运动性：不断变化中，现在是问题可能后面就变成不是问题了或者问题变成另外一个了；
-不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进
-3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。<br>
-4 可度量： 问题的严重程度可以被度量出来<br>
+         不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进
+3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。<br />
+4 可度量： 问题的严重程度可以被度量出来<br />
 5 关联性：问题之间可能存在关联或者因果，需要考虑它的基本命题</p>
+
 <!-- 怎么解决问题：  
 方法论：
 > 任何名词都有结构  
@@ -257,47 +273,61 @@
 3 梳理指标（度量问题的严重性，现在）  
 5 发现机会（本质）  
 6 规划（未来）   -->
+
 <p><strong>OKR规划</strong>：
-关注业务目标，KPI关注数据指标。<br>
+关注业务目标，KPI关注数据指标。<br />
 1 OKR能让我们关注事情本身，目标不一样关注的指标不一样，而且指标之间一般都会互相影响，甚至冲突
 2 业务目标自上而下，技术目标自下而上，要和业务目标进行关联</p>
+
 <p><strong>方案执行</strong>：</p>
-<p>3C方案设计法： （用来制定自己的OKR，做那些事才是正确的）<br>
+
+<p>3C方案设计法： （用来制定自己的OKR，做那些事才是正确的）<br />
 1 多个备选方案，避免思维狭隘，有理有据 ：技术方案设计；团队管理措施；团队规划方向
 2 在回答why的时候能更加自如</p>
-<p>PDCA执行法：责任人<br>
-P阶段：<br>
-1 紧急的事情长短结合：先止血再根本解决<br>
-2 重要不紧急的事：拆分小项目，业务版本中逐步落地<br>
+
+<p>PDCA执行法：责任人<br />
+P阶段：<br />
+1 紧急的事情长短结合：先止血再根本解决<br />
+2 重要不紧急的事：拆分小项目，业务版本中逐步落地<br />
 3 协调资源</p>
-<p>D阶段：<br>
-1 管理风格<br>
-2 信息同步： 出问题必须同步；任务双周同步<br>
+
+<p>D阶段：<br />
+1 管理风格<br />
+2 信息同步： 出问题必须同步；任务双周同步<br />
 3 里程碑也要同步</p>
+
 <p>C阶段：
 5W根因分析法（连续问为什么，既可以检查业务目标OKR等，也能找到问题根本原因，技术了解深度）</p>
-<p>A阶段：<br>
-1 总结汇报：是否符合预期，是否继续执行P<br>
+
+<p>A阶段：<br />
+1 总结汇报：是否符合预期，是否继续执行P<br />
 2 挑选出三个改进点</p>
-<p><strong>结果衡量</strong>：<br>
+
+<p><strong>结果衡量</strong>：<br />
 通过价值原则 判断</p>
-<p>题外话：<br>
-1 我们经常讲结构化思维。其实和软件工程里面的需求分析非常像，就是要把一个宽泛的需求拆解出来，多维度去思考。思维有几个层次，抽象程度不断提升：**底座：**是批判思维，分析思维，创新思维，元认知，抽象思维（金字塔原理+刻意练习）等；<strong>进阶</strong>是结构化思维： 从多个侧面进行思考，深刻分析导致问题出现的原因，系统制定行动方案，最后完成工作；<strong>上层</strong>是产品思维、商业思维等
+
+<p>题外话：<br />
+1 我们经常讲结构化思维。其实和软件工程里面的需求分析非常像，就是要把一个宽泛的需求拆解出来，多维度去思考。思维有几个层次，抽象程度不断提升：<strong>底座：</strong>是批判思维，分析思维，创新思维，元认知，抽象思维（金字塔原理+刻意练习）等；<strong>进阶</strong>是结构化思维： 从多个侧面进行思考，深刻分析导致问题出现的原因，系统制定行动方案，最后完成工作；<strong>上层</strong>是产品思维、商业思维等
 2 文中讲了可度量： 度量是很重要的，不可度量则无法评价。它一定是面向用户体验设计的。 一定要关注用户，用户最关心什么？他关心的这个点，用哪个度量指标？这个度量指标的改善 进一步分解到技术指标。另外一点，要分清楚结果指标还是输入指标，结果指标一般无法操控，你可以控制的指标主要是输入指标（说抓手），有哪些：比如有多少供给量，成本多低，发货多快</p>
+
 <p><strong>总结&amp;汇报</strong></p>
-<p>4D总结法：衡量最终的价值 -&gt; 分享/培训<br>
-1 结果： 自己的贡献部分是什么？ 业务开发团队从业务结果、技术方案给业务带来的价值、管理角度提升了效率和质量（支持了更多项目）<br>
-2 数据： <strong>对数据的评价和评价的标准</strong>，理解数据背后的意义；一切皆数据，怎么评估数据结论（功在平时）<br>
-3 技术： 学到了什么技术、对哪些技术有更深的理解或者更全面的理解 （可以画领域封层图、细节分层图和方案对比的思维导图）<br>
-4 成长： 业务理解能力、项目组织能力、带领团队的能力、沟通能力和做事方法<br>
+
+<p>4D总结法：衡量最终的价值 -&gt; 分享/培训<br />
+1 结果： 自己的贡献部分是什么？ 业务开发团队从业务结果、技术方案给业务带来的价值、管理角度提升了效率和质量（支持了更多项目）<br />
+2 数据： <strong>对数据的评价和评价的标准</strong>，理解数据背后的意义；一切皆数据，怎么评估数据结论（功在平时）<br />
+3 技术： 学到了什么技术、对哪些技术有更深的理解或者更全面的理解 （可以画领域封层图、细节分层图和方案对比的思维导图）<br />
+4 成长： 业务理解能力、项目组织能力、带领团队的能力、沟通能力和做事方法<br />
 比如业务理解能力： 业务的适应场景是什么？目标用户是谁？目标用户有什么特点？解决了目标用户的什么问题？实际的效果如何？用户为什么喜欢 / 不喜欢这个功能？  平时可以零碎记录一些信息</p>
-<p>金字塔汇报<br>
+
+<p>金字塔汇报<br />
 4线复盘法： 时间线；问题链；责任链；改进线</p>
+
 <h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="../how-to-improve">学习和成长之道系列第一篇之学什么</a><br>
-<a href="../how-to-improve2">学习和成长之道系列第二篇之怎么学</a><br>
-<a href="../how-to-improve3">学习和成长之道系列第三篇之能力模型</a><br>
-<a href="../how-to-improve4">学习和成长之道系列第四篇之解决问题</a><br>
+
+<p><a href="../how-to-improve">学习和成长之道系列第一篇之学什么</a><br />
+<a href="../how-to-improve2">学习和成长之道系列第二篇之怎么学</a><br />
+<a href="../how-to-improve3">学习和成长之道系列第三篇之能力模型</a><br />
+<a href="../how-to-improve4">学习和成长之道系列第四篇之解决问题</a><br />
 <a href="../how-to-improve5">学习和成长之道系列第五篇之影响力</a></p>
 
       </div>
@@ -481,6 +511,47 @@ P阶段：<br>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

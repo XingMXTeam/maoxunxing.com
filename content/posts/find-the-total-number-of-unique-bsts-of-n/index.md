@@ -1,5 +1,5 @@
 ---
-title: "Given N, Find The Total Number of Unique BSTs"
+title: "Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
 date: 2021-08-16
 tags:
 - Algorithm

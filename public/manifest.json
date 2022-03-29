@@ -1,0 +1,37 @@
+{
+  "name": "maoxunxing",
+  "short_name": "maoxunxing",
+  "icons": [
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/avatar.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF"
+}
+

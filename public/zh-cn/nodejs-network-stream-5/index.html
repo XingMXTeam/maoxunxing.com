@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/nodejs-network-stream-5/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -208,124 +213,140 @@
 
         </div>
       </header><div>
-        <h2 id="实际应用场景">实际应用场景<a href="#实际应用场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
-<h3 id="1-文件下载导入导出">1 文件下载/导入导出<a href="#1-文件下载导入导出" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+        
+
+<h2 id="实际应用场景">实际应用场景<a href="#实际应用场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<h3 id="1-文件下载-导入导出">1 文件下载/导入导出<a href="#1-文件下载-导入导出" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p><a href="https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html">https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> {
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> {
     ctx,
-} <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>;
-<span style="color:#000;font-weight:bold">const</span> parts <span style="color:#000;font-weight:bold">=</span> ctx.multipart();
-<span style="color:#000;font-weight:bold">let</span> object;
-<span style="color:#000;font-weight:bold">let</span> part;
-part <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">yield</span> parts;
-<span style="color:#000;font-weight:bold">while</span> (part) {
-    <span style="color:#000;font-weight:bold">if</span> (part.length) {
-        <span style="color:#998;font-style:italic">// arrays are busboy fields
-</span><span style="color:#998;font-style:italic"></span>    } <span style="color:#000;font-weight:bold">else</span> {
-        <span style="color:#998;font-style:italic">// otherwise, it&#39;s a stream
-</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// 文件处理，上传到云存储等等
-</span><span style="color:#998;font-style:italic"></span>        object <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">yield</span> ctx.oss.put(<span style="color:#d14">&#39;egg-oss-demo-&#39;</span> <span style="color:#000;font-weight:bold">+</span> part.filename, part);
+} <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>;
+<span style="color:#080;font-weight:bold">const</span> parts <span style="color:#333">=</span> ctx.multipart();
+<span style="color:#080;font-weight:bold">let</span> object;
+<span style="color:#080;font-weight:bold">let</span> part;
+part <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">yield</span> parts;
+<span style="color:#080;font-weight:bold">while</span> (part) {
+    <span style="color:#080;font-weight:bold">if</span> (part.length) {
+        <span style="color:#888">// arrays are busboy fields
+</span><span style="color:#888"></span>    } <span style="color:#080;font-weight:bold">else</span> {
+        <span style="color:#888">// otherwise, it&#39;s a stream
+</span><span style="color:#888"></span>        <span style="color:#888">// 文件处理，上传到云存储等等
+</span><span style="color:#888"></span>        object <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">yield</span> ctx.oss.put(<span style="background-color:#fff0f0">&#39;egg-oss-demo-&#39;</span> <span style="color:#333">+</span> part.filename, part);
     }
-    part <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">yield</span> parts;
+    part <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">yield</span> parts;
 }
-
-
-</code></pre></div><h3 id="2-网络传输比如从远端下载文件">2 网络传输：比如从远端下载文件<a href="#2-网络传输比如从远端下载文件" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">yield</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Promise</span>((resolve, reject)=&gt;{
+</code></pre></div>
+<h3 id="2-网络传输-比如从远端下载文件">2 网络传输：比如从远端下载文件<a href="#2-网络传输-比如从远端下载文件" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">yield</span> <span style="color:#080;font-weight:bold">new</span> <span style="color:#007020">Promise</span>((resolve, reject)=&gt;{
   ctx.safeCurl(whitelistExcelLink).then(response =&gt; {
-    <span style="color:#000;font-weight:bold">const</span> data <span style="color:#000;font-weight:bold">=</span> response.data;
-    <span style="color:#000;font-weight:bold">const</span> stream <span style="color:#000;font-weight:bold">=</span> fs.createWriteStream(filepath)
+    <span style="color:#080;font-weight:bold">const</span> data <span style="color:#333">=</span> response.data;
+    <span style="color:#080;font-weight:bold">const</span> stream <span style="color:#333">=</span> fs.createWriteStream(filepath)
     stream.write(data, () =&gt; {
-      resolve <span style="color:#000;font-weight:bold">&amp;&amp;</span> resolve()
+      resolve <span style="color:#333">&amp;&amp;</span> resolve()
     });
-  }).<span style="color:#000;font-weight:bold">catch</span>(e =&gt; {
+  }).<span style="color:#080;font-weight:bold">catch</span>(e =&gt; {
     ctx.logger.error(e)
   });
 }); 
+</code></pre></div>
+<h3 id="3-vpn">3 vpn<a href="#3-vpn" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 
-</code></pre></div><h3 id="3-vpn">3 vpn<a href="#3-vpn" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 <p>代码太多： 请打开文件查看：</p>
+
 <p><a href="./vpn-client.js">vpn-client.js</a>
 <a href="./vpn-server.js">vpn-server.js</a></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node vpn-client.js
 node vpn-server.js
-node echo.js
-</code></pre></div><h3 id="4-实时通信-websocket">4 实时通信 websocket<a href="#4-实时通信-websocket" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+node echo.js</code></pre></div>
+<h3 id="4-实时通信-websocket">4 实时通信 websocket<a href="#4-实时通信-websocket" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p><a href="./websocket-client.js">websocket-client.js</a>
 <a href="./websocket-server.js">websocket-server.js</a></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">browserify websocket-client.js &gt; public/bundle.js <span style="color:#000;font-weight:bold">(</span>或者nodejs client也行）
-node websocket-server.js
-</code></pre></div><p>问题： websocket和<a href="https://github.com/socketio/socket.io/blob/master/lib/index.ts">socket.io</a>的区别？</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">browserify websocket-client.js &gt; public/bundle.js <span style="color:#333">(</span>或者nodejs client也行）
+node websocket-server.js</code></pre></div>
+<p>问题： websocket和<a href="https://github.com/socketio/socket.io/blob/master/lib/index.ts">socket.io</a>的区别？</p>
+
 <h3 id="5-p2p">5 p2p<a href="#5-p2p" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>点对点（P2P）服务是一个去中心化的平台，两个人在此平台上直接互动，没有第三方的中介。<a href="./webrtc.js">webrtc.js</a></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tnpm run signalhub
-budo webrtc.js
-</code></pre></div><p>问题： discord是不是点对点？</p>
+budo webrtc.js</code></pre></div>
+<p>问题： discord是不是点对点？</p>
+
 <h3 id="6-工程化">6 工程化<a href="#6-工程化" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <blockquote>
 <p>gulp 需要频繁对文件操作</p>
 </blockquote>
+
 <h3 id="7-webassembly">7 webassembly<a href="#7-webassembly" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p><a href="https://developers.google.com/web/updates/2018/04/loading-wasm">https://developers.google.com/web/updates/2018/04/loading-wasm</a></p>
+
 <h3 id="扩展">扩展<a href="#扩展" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>在实际应用中可能需要扩展去实现定制化的需求</p>
+
 <p>1 自定义实现
 实现一个writable流
 可以用来自定义了 stream 写入的时机，当 chunk 大小超过某个阈值，才真的写入文件，提升写入速度</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// strace -cfe trace=write node index.js
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">var</span> Writable <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>).Writable;
-<span style="color:#000;font-weight:bold">var</span> util <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;util&#39;</span>);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#888">// strace -cfe trace=write node index.js
+</span><span style="color:#888"></span><span style="color:#080;font-weight:bold">var</span> Writable <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;stream&#39;</span>).Writable;
+<span style="color:#080;font-weight:bold">var</span> util <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;util&#39;</span>);
 
-<span style="color:#000;font-weight:bold">function</span> MyWritable(options) {
-    Writable.call(<span style="color:#000;font-weight:bold">this</span>, options);
-} <span style="color:#998;font-style:italic">// 构造函数
-</span><span style="color:#998;font-style:italic"></span>util.inherits(MyWritable, Writable); <span style="color:#998;font-style:italic">// 继承自Writable
-</span><span style="color:#998;font-style:italic"></span>MyWritable.prototype._write <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(chunk, encoding, callback) {
-    console.log(<span style="color:#d14">&#34;被写入的数据是:&#34;</span>, chunk.toString()); <span style="color:#998;font-style:italic">// 此处可对写入的数据进行处理
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">//this.data.push(chunk); 先缓存
-</span><span style="color:#998;font-style:italic"></span>    callback();<span style="color:#998;font-style:italic">// 最终写入
-</span><span style="color:#998;font-style:italic"></span>};
-process.stdin.pipe(<span style="color:#000;font-weight:bold">new</span> MyWritable()); <span style="color:#998;font-style:italic">// stdin作为输入源，MyWritable作为输出源
-</span><span style="color:#998;font-style:italic"></span>实现一个readable流
-<span style="color:#000;font-weight:bold">const</span> Readable <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>).Readable;
+<span style="color:#080;font-weight:bold">function</span> MyWritable(options) {
+    Writable.call(<span style="color:#080;font-weight:bold">this</span>, options);
+} <span style="color:#888">// 构造函数
+</span><span style="color:#888"></span>util.inherits(MyWritable, Writable); <span style="color:#888">// 继承自Writable
+</span><span style="color:#888"></span>MyWritable.prototype._write <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">function</span>(chunk, encoding, callback) {
+    console.log(<span style="background-color:#fff0f0">&#34;被写入的数据是:&#34;</span>, chunk.toString()); <span style="color:#888">// 此处可对写入的数据进行处理
+</span><span style="color:#888"></span>    <span style="color:#888">//this.data.push(chunk); 先缓存
+</span><span style="color:#888"></span>    callback();<span style="color:#888">// 最终写入
+</span><span style="color:#888"></span>};
+process.stdin.pipe(<span style="color:#080;font-weight:bold">new</span> MyWritable()); <span style="color:#888">// stdin作为输入源，MyWritable作为输出源
+</span><span style="color:#888"></span>实现一个readable流
+<span style="color:#080;font-weight:bold">const</span> Readable <span style="color:#333">=</span> require(<span style="background-color:#fff0f0">&#39;stream&#39;</span>).Readable;
 
-<span style="color:#998;font-style:italic">// Stream 实现
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">class</span> MyReadable <span style="color:#000;font-weight:bold">extends</span> Readable {
+<span style="color:#888">// Stream 实现
+</span><span style="color:#888"></span><span style="color:#080;font-weight:bold">class</span> MyReadable <span style="color:#080;font-weight:bold">extends</span> Readable {
   constructor(dataSource, options) {
-    <span style="color:#000;font-weight:bold">super</span>(options);
-    <span style="color:#000;font-weight:bold">this</span>.dataSource <span style="color:#000;font-weight:bold">=</span> dataSource;
+    <span style="color:#080;font-weight:bold">super</span>(options);
+    <span style="color:#080;font-weight:bold">this</span>.dataSource <span style="color:#333">=</span> dataSource;
   }
-  <span style="color:#998;font-style:italic">// 继承了 Readable 的类必须实现这个函数
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#998;font-style:italic">// 触发系统底层对流的读取
-</span><span style="color:#998;font-style:italic"></span>  _read() {
-    <span style="color:#000;font-weight:bold">const</span> data <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.dataSource.makeData();
-    <span style="color:#000;font-weight:bold">this</span>.push(data);
+  <span style="color:#888">// 继承了 Readable 的类必须实现这个函数
+</span><span style="color:#888"></span>  <span style="color:#888">// 触发系统底层对流的读取
+</span><span style="color:#888"></span>  _read() {
+    <span style="color:#080;font-weight:bold">const</span> data <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.dataSource.makeData();
+    <span style="color:#080;font-weight:bold">this</span>.push(data);
   }
 }
-
-</code></pre></div><p>实现pipe</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Readable.prototype.pipe <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(writable, options) {
-  <span style="color:#000;font-weight:bold">this</span>.on(<span style="color:#d14">&#39;data&#39;</span>, (chunk) =&gt; {
-    <span style="color:#000;font-weight:bold">let</span> ok <span style="color:#000;font-weight:bold">=</span> writable.write(chunk);
-    <span style="color:#998;font-style:italic">// 背压，暂停
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">!</span>ok <span style="color:#000;font-weight:bold">&amp;&amp;</span> <span style="color:#000;font-weight:bold">this</span>.pause();
+</code></pre></div>
+<p>实现pipe</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Readable.prototype.pipe <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">function</span>(writable, options) {
+  <span style="color:#080;font-weight:bold">this</span>.on(<span style="background-color:#fff0f0">&#39;data&#39;</span>, (chunk) =&gt; {
+    <span style="color:#080;font-weight:bold">let</span> ok <span style="color:#333">=</span> writable.write(chunk);
+    <span style="color:#888">// 背压，暂停
+</span><span style="color:#888"></span>    <span style="color:#333">!</span>ok <span style="color:#333">&amp;&amp;</span> <span style="color:#080;font-weight:bold">this</span>.pause();
   });
-  writable.on(<span style="color:#d14">&#39;drain&#39;</span>, () =&gt; {
-    <span style="color:#998;font-style:italic">// 恢复
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">this</span>.resume();
+  writable.on(<span style="background-color:#fff0f0">&#39;drain&#39;</span>, () =&gt; {
+    <span style="color:#888">// 恢复
+</span><span style="color:#888"></span>    <span style="color:#080;font-weight:bold">this</span>.resume();
   });
-  <span style="color:#998;font-style:italic">// 告诉 writable 有流要导入
-</span><span style="color:#998;font-style:italic"></span>  writable.emit(<span style="color:#d14">&#39;pipe&#39;</span>, <span style="color:#000;font-weight:bold">this</span>);
-  <span style="color:#998;font-style:italic">// 支持链式调用
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">return</span> writable;
+  <span style="color:#888">// 告诉 writable 有流要导入
+</span><span style="color:#888"></span>  writable.emit(<span style="background-color:#fff0f0">&#39;pipe&#39;</span>, <span style="color:#080;font-weight:bold">this</span>);
+  <span style="color:#888">// 支持链式调用
+</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">return</span> writable;
 };
+</code></pre></div>
+<h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 
-</code></pre></div><h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br>
-<a href="../nodejs-network-stream2">NodeJS Stream系列第二篇之流的类型</a><br>
-<a href="../nodejs-network-stream3">NodeJS Stream系列第三篇之基本用法</a><br>
-<a href="../nodejs-network-stream4">NodeJS Stream系列第四篇之高级用法</a><br>
-<a href="../nodejs-network-stream5">NodeJS Stream系列第五篇之实际场景</a></p>
+<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br />
+<a href="../nodejs-network-stream-2">NodeJS Stream系列第二篇之流的类型</a><br />
+<a href="../nodejs-network-stream-3">NodeJS Stream系列第三篇之基本用法</a><br />
+<a href="../nodejs-network-stream-4">NodeJS Stream系列第四篇之高级用法</a><br />
+<a href="../nodejs-network-stream-5">NodeJS Stream系列第五篇之实际场景</a></p>
 
       </div>
 
@@ -508,6 +529,47 @@ process.stdin.pipe(<span style="color:#000;font-weight:bold">new</span> MyWritab
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

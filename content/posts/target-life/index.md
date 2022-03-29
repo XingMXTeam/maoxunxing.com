@@ -1,65 +1,49 @@
 ---
-title: "My Life Experience And Plan"
+title: "我的人生经历和计划"
 date: 2021-09-17T13:12:13+08:00
 tags:
-- Growth
-description: "On how to define yourself and plan your life, here are some of my thoughts"
+- 成长
+description: "如何定义自己，规划自己的人生，以下是我的一些想法"
 images:
-- target-life/life-target.jpeg
+- target-life/plan.jpeg
 ---
-## A little emotion
 
- 21 years I bought a house in Hangzhou to put down roots, in a trance, has been 32, work in general, life in general, not so exciting, most of the time as the walking dead. When I was young, I did my best to feel the splendor of life, and when I was old, my children and grandchildren were full of children and grandchildren, and I did not suffer from physical illnesses, so I did not have any regrets.
 
-## Cut to the chase
+## 一点感慨 
 
-There is a saying that there is no dream and what is the difference between a salted fish. All dreams need to be rooted in reality, otherwise it is a pavilion in the sky, a fool's dream. In reality, to draw the joy of life. And work is a large part of life, the degree of happiness in the workplace determines the degree of happiness in your life. Think of your career as a journey and experience it deeply instead of feeling that work is a waste of time and life. The following is my workplace trajectory.
+21年我在杭州买房扎根，恍恍惚惚，已经32岁了，工作一般，生活一般，不那么精彩，大部分时间如行尸走肉。年轻时尽心尽力感受生活的精彩，年老时儿孙满堂，身体没有病痛，没有什么遗憾。
 
-+ 2014: I graduated from NanChang University. Started working at HitThink Corp as a front-end engineer. I did'not have a life target, just working as a tool. I am happy with my girl friend. 
-+ 2016.7 ~ 2019.9:  I leave HitThink Corp because i start to hate work with my colleagues. And i started to realise that i should work with excellent colleagues and good company. I started to interview with NetEase Corp by recommendation. Luckily,  i had made it, entered the Education Business Unit. I had learned much and knew some good friends, and also I had got promotion. 
-+ 2019.9 ~ now: I had thought i would work at NetEase Corp for a long time. But everything just not process as the way you want. The Business Unit's Dissolution made me to find a another job, and also i had broke up with my eight years' girl friend. Everything changed for me. And i had a big illness, slim down to 90 pounds. I had not have a high salary when i worked at NetEase Corp. I started to thought to buy my own house, and i need to promote my salary. So i interviewed with Alibaba Corp.  I had made it. When you learned a lot and tried hard, you can always made it by my heart deep thoughts. The first two years at Alibaba Group, i worked hard, but i got nothing but salary. I had not promotion. That is sad, but i finally bought my own house where i wanted. If you cannot promotion, you should learn as much as you know, write as much as you can, you should presents yourself as much as possible, that is what i think now. 
+## 正文
 
-<!-- {{< img src="target.jpg" alt="target" maxWidth="600px" align="center" >}}  -->
+俗话说，没有梦想和咸鱼有什么区别。所有的梦想都需要扎根于现实，否则就是空中楼阁，痴人说梦。在现实中，要汲取生活的乐趣。而工作是生活的一大部分，工作中的快乐程度决定了你生活中的快乐程度。把你的职业生涯当成一段旅程，深入体验，而不是觉得工作是在浪费时间和生命。以下是我的职场轨迹。
 
-As a summary: Work in a routine, no breakthrough in the workplace promotion. But also slowly to a large platform, is the opportunity to break through upwards or make some achievements. There is no chapter, need to pay more attention to interests and hobbies, to inspire their own work passion. Need to develop good habits, through the scientific method, management of self.
++ 2014: 我从南昌大学毕业。开始在HitThink公司工作，担任前端工程师。我没有生活目标，只是作为一个工具工作。我和我的女朋友很幸福。
++ 2016.7 ~ 2019.9: 我离开了HitThink公司，因为我开始讨厌和我的同事一起工作。我开始意识到，我应该和优秀的同事和好的公司一起工作。通过推荐，我开始到网易公司面试。幸运的是，我成功了，进入了教育业务部。我学到了很多东西，认识了一些好朋友，也得到了晋升。
++ 2019.9～现在。我曾以为自己会在网易公司工作很长时间。但是，一切都没有按照自己的意愿进行。业务部门的解散使我不得不另找工作，同时我也和我八年的女朋友分手了。我的一切都变了。我还生了一场大病，瘦到了90磅。在网易公司工作时，我的工资并不高。我开始考虑要买自己的房子，我需要提高我的工资。所以我去了阿里巴巴公司面试。 我已经成功了。当你学了很多东西，努力了很多，你总是可以通过我的内心深处的想法来实现的。在阿里巴巴集团的前两年，我努力工作，但除了工资，我什么都没有得到。我没有晋升。这是很可悲的，但我终于在我想要的地方买了自己的房子。如果你不能晋升，你应该尽可能多地学习，尽可能多地写作，尽可能多地展示自己，这就是我现在的想法。
 
-[Work] Core to improve coding and problem-solving skills, as well as the ability to land on the job, need to have a strong attitude and upward drive.
+总结：按部就班的工作，在职场上没有突破性的提升。但也要慢慢到一个大的平台，才有机会向上突破或做出一些成绩。没有章法，需要多关注兴趣和爱好，激发自己的工作激情。需要养成良好的习惯，通过科学的方法，管理好自己。
 
-[Family] Start a family as soon as possible. The people and things in the past can only be remembered, not changed. Running into the future is the only way out, and a stable family is the foundation for a successful career.
+工作核心是提高编码和解决问题的能力，以及落地工作的能力，需要有强烈的态度和向上的动力。
 
-[Personal] Positive energy, continuous learning, input, output. Enhance self-awareness, make friends, be more interesting and more compatible with others.
+家庭尽快成家。过去的人和事，只能回忆，不能改变。奔向未来是唯一的出路，一个稳定的家庭是事业成功的基础。
 
-Why have a growth flywheel, because without theoretical guidance, it is difficult to form a fighting force. Drive self through growth closed loop: the core is to have a Polaris goal every year, then develop a strategy to implement it and drive it through habit.
+个人正能量，不断学习，投入，产出。增强自我意识，结交朋友，更加有趣，与他人更加融洽。
 
-<!-- {{< img src="grow.jpg" alt="grow" maxWidth="600px" align="center" >}} -->
+通过成长闭环驱动自我：核心是每年有一个北极星目标，然后制定战略来实施，通过习惯驱动。
 
-## 2021 Plan
+## 2021年计划
 
-Goal: Become a technical expert
+北极星目标：成为一名技术专家
 
-<!-- {{< img src="2021.jpg" alt="2021" maxWidth="600px" align="center" >}} -->
+有两个大的方向  
+1 向内。职场力量，关注OKR+可能性  
+2 向外：巩固基础+产品力和影响力建设
 
-Strategy.  
-There are two general directions  
-1 Inward: Workplace power, focus on OKR + Possibilities  
-2 Outward: strengthen the foundation + product power and influence building   
+具体规划:
 
-<!-- * 形成全方位的能力图谱
-
- <div style='width: 120px;' >分类</div> | 信息输入 | <div style='width: 120px;' >思考本质</div> | 形成观点
----------|----------|---------|---------
- 远见/认知 | 网络资源：内容运营/流量运营/理财/技术方法论；认识10个领域方向的最Top的大佬；关注同层级 | | 
- 产品/商业 | 36kr、[MBA](http://mba.zju.edu.cn/page-ckb.html)、混沌大学 |  | 调研、产品分析、商业模式分析；大事件、总结、判断
- 领导才能 | 书籍：金字塔原理 | 
- 智慧 | 历史/经典/毛泽东、马克思 |  -->
-
- Specific planning:  
-
- <!-- 成长的底层逻辑、方法文章/全栈思维文章/教练文章 -->
-
-Categories | Subgoals | Completion Time
+类别|子目标|完成时间
 ---------|----------|---------
- Personal Blog | Complete at least 10 articles, pv to 200 | 2021.12.01
- juejin booklet | Algorithm a book | 2021.12.30
- Wechat Public Account | 10,000 followers | 2022.01.10
- Team | 4 shares / 10 articles | 2022.02.01
+ 个人博客 | 至少完成10篇文章，pv到200 | 2021.12.01
+ 跃进小册子 | 算法一本书 | 2021.12.30
+ 微信公众账号 | 10,000个粉丝 | 2022.01.10
+ 团队 | 4次分享 / 10篇文章 | 2022.02.01

@@ -20,34 +20,35 @@ other = "and"
 other = "build something cool"
 
 [homeSubTitle6]
-other = "I am a front-end engineer working at Alibaba Group in Hangzhou. This site is mainly a record of my personal life."
+other = "Now I am a developer. This site is mainly to record my personal life and learning. If there is any infringement, please add my WeChat: maoxunxing."
 
 [homeCat1]
 other = "Articles about Algorithm"
 
 [homeCat1Article1]
-other = "Detect Cycle in an Undirected Graph"
+other = "Tree Part 1 - Detect Cycle in an Undirected Graph"
 
 [homeCat1Article2]
-other = "Given N, Find The Total Number of Unique BSTs"
+other = "Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
+
 
 [homeCat2]
 other = "Articles About Growth"
 
 [homeCat2Article1]
-other = "The Way to Learn and Grow Series Part 1 - What to Learn"
+other = "What to Learn Part 1 - Growth Model"
 
 [homeCat2Article2]
-other = "The Way to Learn and Grow Series Part 2 - How to Learn"
+other = "How to Learn Part 1 - Methodology"
 
 [homeCat2Article3]
-other = "The Way to Learn and Grow Series Part 3 - Competency Models"
+other = "How to Learn Part 2 - Solving Problem"
 
 [homeCat2Article4]
-other = "The Way to Learn and Grow Series Part 4 - Problem Solving"
+other = "Evaluation Criteria Part 1 - Competency Model"
 
 [homeCat2Article5]
-other = "The Way to Learn and Grow Series Part 5 - Influence"
+other = "Evaluation Criteria Part 2 - Influence"
 
 [homeCat3]
 other = "Articles about Software Development"

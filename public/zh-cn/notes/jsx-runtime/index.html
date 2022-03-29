@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     
 
@@ -15,9 +15,9 @@
     <meta name="twitter:creator" content="@maoxunxing"/>
 
 
-    <meta property="og:title" content="Jsx Runtime" />
+    <meta property="og:title" content="Jsx Runtime报错" />
 <meta property="og:description" content="node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &#34;react/jsx-runtime&#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
-&#34;compilerOptions&#34;: { &#34;baseUrl&#34;: &#34;.&#34;, &#34;outDir&#34;: &#34;./lib&#34;, &#34;module&#34;: &#34;esnext&#34;, &#34;target&#34;: &#34;es6&#34;, &#34;lib&#34;: [&#34;esnext&#34;, &#34;dom&#34;], &#34;sourceMap&#34;: true, &#34;allowJs&#34;: false, &#34;jsx&#34;: &#34;react&#34;, // change react-jsx to react } " />
+&#34;compilerOptions&#34;: { &#34;baseUrl&#34;: &#34;.&#34;, &#34;outDir&#34;: &#34;./lib&#34;, &#34;module&#34;: &#34;esnext&#34;, &#34;target&#34;: &#34;es6&#34;, &#34;lib&#34;: [&#34;esnext&#34;, &#34;dom&#34;], &#34;sourceMap&#34;: true, &#34;allowJs&#34;: false, &#34;jsx&#34;: &#34;react&#34;, // change react-jsx to react }" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://maoxunxing.com/zh-cn/notes/jsx-runtime/" />
 
@@ -28,16 +28,21 @@
     
       <base href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">
     
-    <title>Jsx Runtime · 毛训星的网络日志</title>
+    <title>Jsx Runtime报错 · 毛训星的网络日志</title>
 
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -71,7 +76,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -92,7 +97,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -185,26 +190,25 @@
     
 
     <div>
-      <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style="color:#0086b3">read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime
-    <span style="color:#099">10</span> │ import <span style="color:#000;font-weight:bold">{</span> jsx as _jsx <span style="color:#000;font-weight:bold">}</span> from <span style="color:#d14">&#34;react/jsx-runtime&#34;</span>;
+      <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style="color:#007020">read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime
+    <span style="color:#60e;font-weight:bold">10</span> │ import <span style="color:#333">{</span> jsx as _jsx <span style="color:#333">}</span> from <span style="background-color:#fff0f0">&#34;react/jsx-runtime&#34;</span>;
        ╵                             ~~~~~~~~~~~~~~~~~~~
 
 error when starting dev server:
-Error: Build failed with <span style="color:#099">1</span> error:
-node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style="color:#0086b3">read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime
-</code></pre></div><p>解决方案：
+Error: Build failed with <span style="color:#60e;font-weight:bold">1</span> error:
+node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not <span style="color:#007020">read</span> from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime</code></pre></div>
+<p>解决方案：
 修改tsconfig.ts</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#d14">&#34;compilerOptions&#34;</span><span style="color:#a61717;background-color:#e3d2d2">:</span> {
-    <span style="color:#000080">&#34;baseUrl&#34;</span>: <span style="color:#d14">&#34;.&#34;</span>,
-    <span style="color:#000080">&#34;outDir&#34;</span>: <span style="color:#d14">&#34;./lib&#34;</span>,
-    <span style="color:#000080">&#34;module&#34;</span>: <span style="color:#d14">&#34;esnext&#34;</span>,
-    <span style="color:#000080">&#34;target&#34;</span>: <span style="color:#d14">&#34;es6&#34;</span>,
-    <span style="color:#000080">&#34;lib&#34;</span>: [<span style="color:#d14">&#34;esnext&#34;</span>, <span style="color:#d14">&#34;dom&#34;</span>],
-    <span style="color:#000080">&#34;sourceMap&#34;</span>: <span style="color:#000;font-weight:bold">true</span>,
-    <span style="color:#000080">&#34;allowJs&#34;</span>: <span style="color:#000;font-weight:bold">false</span>,
-    <span style="color:#000080">&#34;jsx&#34;</span>: <span style="color:#d14">&#34;react&#34;</span>, <span style="color:#a61717;background-color:#e3d2d2">//</span> <span style="color:#a61717;background-color:#e3d2d2">change</span> <span style="color:#a61717;background-color:#e3d2d2">react-jsx</span> <span style="color:#a61717;background-color:#e3d2d2">to</span> <span style="color:#a61717;background-color:#e3d2d2">react</span>
-}
-</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="background-color:#fff0f0">&#34;compilerOptions&#34;</span><span style="color:#f00;background-color:#faa">:</span> {
+    <span style="color:#070">&#34;baseUrl&#34;</span>: <span style="background-color:#fff0f0">&#34;.&#34;</span>,
+    <span style="color:#070">&#34;outDir&#34;</span>: <span style="background-color:#fff0f0">&#34;./lib&#34;</span>,
+    <span style="color:#070">&#34;module&#34;</span>: <span style="background-color:#fff0f0">&#34;esnext&#34;</span>,
+    <span style="color:#070">&#34;target&#34;</span>: <span style="background-color:#fff0f0">&#34;es6&#34;</span>,
+    <span style="color:#070">&#34;lib&#34;</span>: [<span style="background-color:#fff0f0">&#34;esnext&#34;</span>, <span style="background-color:#fff0f0">&#34;dom&#34;</span>],
+    <span style="color:#070">&#34;sourceMap&#34;</span>: <span style="color:#080;font-weight:bold">true</span>,
+    <span style="color:#070">&#34;allowJs&#34;</span>: <span style="color:#080;font-weight:bold">false</span>,
+    <span style="color:#070">&#34;jsx&#34;</span>: <span style="background-color:#fff0f0">&#34;react&#34;</span>, <span style="color:#f00;background-color:#faa">//</span> <span style="color:#f00;background-color:#faa">change</span> <span style="color:#f00;background-color:#faa">react-jsx</span> <span style="color:#f00;background-color:#faa">to</span> <span style="color:#f00;background-color:#faa">react</span>
+}</code></pre></div>
     </div>
   </article>
 </section>
@@ -247,6 +251,47 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 毛训星的网络日志</title>
     <link>https://maoxunxing.com/zh-cn/posts/</link>
     <description>Recent content in Posts on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 19 Oct 2021 14:28:57 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Oct 2021 14:28:57 +0800</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>NodeJS Stream系列第一篇之什么是流</title>
       <link>https://maoxunxing.com/zh-cn/nodejs-network-stream/</link>
@@ -25,7 +29,7 @@ cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
       <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-3/</guid>
-      <description>创建可读的流：readable.js const rs = new (require(&amp;#39;stream&amp;#39;).Readable); rs.push(&amp;#39;beep&amp;#39;); rs.push(null); // null告诉消费者数据结束 rs.pipe(process.stdout); 创建一个可写的流： writable.js const Stream = require(&amp;#39;stream&amp;#39;) const writableStream = new Stream.Writable(({ decodeString: false, write(chunk, encoding, next) { // 当写入的时候会调用  console.log(chunk.toString()) next();// 告知读取更多数据  } })) process.stdin.pipe(writableStream) 消费一个可读的流：consume0.js //(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js process.stdin.on(&amp;#39;readable&amp;#39;, function () { var buf = process.stdin.read();// 可以给read传参数 告知读取几个字节  console.dir(buf);// 打印对象所有属性  process.stdin.read(0); /// 0告知读取后续的所有字节 }); //output: //&amp;lt;Buffer 61 62 63 0a&amp;gt; abc\0 //&amp;lt;Buffer 64 65 66 0a&amp;gt; def\0 //&amp;lt;Buffer 67 68 69 0a&amp;gt; ghi\0 你也可以在消费者读取数据的时候，再缓存内容: read1.</description>
+      <description>创建可读的流：readable.js const rs = new (require(&amp;#39;stream&amp;#39;).Readable); rs.push(&amp;#39;beep&amp;#39;); rs.push(null); // null告诉消费者数据结束 rs.pipe(process.stdout);  创建一个可写的流： writable.js const Stream = require(&amp;#39;stream&amp;#39;) const writableStream = new Stream.Writable(({ decodeString: false, write(chunk, encoding, next) { // 当写入的时候会调用  console.log(chunk.toString()) next();// 告知读取更多数据  } })) process.stdin.pipe(writableStream)  消费一个可读的流：consume0.js //(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js process.stdin.on(&amp;#39;readable&amp;#39;, function () { var buf = process.stdin.read();// 可以给read传参数 告知读取几个字节  console.dir(buf);// 打印对象所有属性  process.stdin.read(0); /// 0告知读取后续的所有字节 }); //output: //&amp;lt;Buffer 61 62 63 0a&amp;gt; abc\0 //&amp;lt;Buffer 64 65 66 0a&amp;gt; def\0 //&amp;lt;Buffer 67 68 69 0a&amp;gt; ghi\0  你也可以在消费者读取数据的时候，再缓存内容: read1.</description>
     </item>
     
     <item>
@@ -36,12 +40,12 @@ cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹
       <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-2/</guid>
       <description>流的类型 1 readable 可读 readable.pipe(A) 2 writable 可写 A.pipe(writable) 3 duplex： 复式：既可读也可写 A.pipe(duplex).pipe(A) 4 transform：duplex的一种类型 可读可写 输出是从输入转换过来 A.pipe(transform).pipe(B)
 pipe方法: 所有的readable/transform/duplex流都有这个方法, 并且返回readable/transform/duplex的流
-src.pipe(dst) // 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &amp;#39;console&amp;#39; 可读流的常用方法：
- stream.pipe(...) stream.once(&#39;end&#39;, function() {})  两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式
- stream.resume() stream.on(&#39;data&#39;, function(buf) {})  绑定会自动触发流动模式  资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如
+src.pipe(dst) // 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &amp;#39;console&amp;#39;  可读流的常用方法：
+ stream.pipe(...) stream.once(&#39;end&#39;, function() {})   两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式
+ stream.resume() stream.on(&#39;data&#39;, function(buf) {}) 绑定会自动触发流动模式  资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如
  消费者主动执行了 .pause() 消费速度比数据 push 到缓存池的生产速度慢  都会返回false, 这种情况也叫做「背压」Backpressure
 可写流的常用方法：
- .write(buf) .end() .end(buf) .on(&#39;finish&#39;,function() {}) (&amp;hellip;).</description>
+ .write(buf) .end() .end(buf) .</description>
     </item>
     
     <item>
@@ -51,7 +55,7 @@ src.pipe(dst) // 返回一个可读的流 所以可以链式调用 和unix的管
       
       <guid>https://maoxunxing.com/zh-cn/nodejs-network-stream-5/</guid>
       <description>实际应用场景 1 文件下载/导入导出 https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html
-const { ctx, } = this; const parts = ctx.multipart(); let object; let part; part = yield parts; while (part) { if (part.length) { // arrays are busboy fields  } else { // otherwise, it&amp;#39;s a stream  // 文件处理，上传到云存储等等  object = yield ctx.oss.put(&amp;#39;egg-oss-demo-&amp;#39; + part.filename, part); } part = yield parts; } 2 网络传输：比如从远端下载文件 yield new Promise((resolve, reject)=&amp;gt;{ ctx.safeCurl(whitelistExcelLink).then(response =&amp;gt; { const data = response.</description>
+const { ctx, } = this; const parts = ctx.multipart(); let object; let part; part = yield parts; while (part) { if (part.length) { // arrays are busboy fields  } else { // otherwise, it&amp;#39;s a stream  // 文件处理，上传到云存储等等  object = yield ctx.oss.put(&amp;#39;egg-oss-demo-&amp;#39; + part.filename, part); } part = yield parts; }  2 网络传输：比如从远端下载文件 yield new Promise((resolve, reject)=&amp;gt;{ ctx.safeCurl(whitelistExcelLink).then(response =&amp;gt; { const data = response.</description>
     </item>
     
     <item>
@@ -63,9 +67,9 @@ const { ctx, } = this; const parts = ctx.multipart(); let object; let part; part
       <description>核心流模块：  crypto: 加密 zlib： 压缩 split2： 按行返回数据，比如读取一个文件 websocket-stream collect-stream from2: 直接转为可读流 to2： 直接转为可写流 duplexify: 支持将流转为duplex类型 pump pumpify end-of-stream： 判断流是否结束，接收一个回调函数  collect-stream collect.js
 和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试
 duplexify duplify.js
-const duplexify = require(&amp;#39;duplexify&amp;#39;) const fs = require(&amp;#39;fs&amp;#39;) function log() { const d = duplexify(); var w = fs.createWriteStream(&amp;#39;logs/test.log&amp;#39;) d.setWritable(w) return d } const stream = log(); stream.write(Date.now() + &amp;#39;\n&amp;#39;) stream.end(); concat-stream 如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。
+const duplexify = require(&amp;#39;duplexify&amp;#39;) const fs = require(&amp;#39;fs&amp;#39;) function log() { const d = duplexify(); var w = fs.createWriteStream(&amp;#39;logs/test.log&amp;#39;) d.setWritable(w) return d } const stream = log(); stream.write(Date.now() + &amp;#39;\n&amp;#39;) stream.end(); concat-stream  如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。
 正常实现方式：
-function ResponseReader(encoding) { stream.Transform.call(this); this._chuncks = []; this.</description>
+function ResponseReader(encoding) { stream.Transform.call(this); this.</description>
     </item>
     
     <item>
@@ -74,7 +78,7 @@ function ResponseReader(encoding) { stream.Transform.call(this); this._chuncks =
       <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
       
       <guid>https://maoxunxing.com/zh-cn/target-life/</guid>
-      <description>一点感慨 21年我在杭州买房扎根，恍恍惚惚，已经32岁了，工作一般，生活一般，不那么精彩，大部分时间如行尸走肉。年轻时尽心尽力感受生活的精彩，年老时儿孙满堂，身体没有病痛，没有什么遗憾。
+      <description> 一点感慨 21年我在杭州买房扎根，恍恍惚惚，已经32岁了，工作一般，生活一般，不那么精彩，大部分时间如行尸走肉。年轻时尽心尽力感受生活的精彩，年老时儿孙满堂，身体没有病痛，没有什么遗憾。
 正文 俗话说，没有梦想和咸鱼有什么区别。所有的梦想都需要扎根于现实，否则就是空中楼阁，痴人说梦。在现实中，要汲取生活的乐趣。而工作是生活的一大部分，工作中的快乐程度决定了你生活中的快乐程度。把你的职业生涯当成一段旅程，深入体验，而不是觉得工作是在浪费时间和生命。以下是我的职场轨迹。
  2014: 我从南昌大学毕业。开始在HitThink公司工作，担任前端工程师。我没有生活目标，只是作为一个工具工作。我和我的女朋友很幸福。 2016.7 ~ 2019.9: 我离开了HitThink公司，因为我开始讨厌和我的同事一起工作。我开始意识到，我应该和优秀的同事和好的公司一起工作。通过推荐，我开始到网易公司面试。幸运的是，我成功了，进入了教育业务部。我学到了很多东西，认识了一些好朋友，也得到了晋升。 2019.9～现在。我曾以为自己会在网易公司工作很长时间。但是，一切都没有按照自己的意愿进行。业务部门的解散使我不得不另找工作，同时我也和我八年的女朋友分手了。我的一切都变了。我还生了一场大病，瘦到了90磅。在网易公司工作时，我的工资并不高。我开始考虑要买自己的房子，我需要提高我的工资。所以我去了阿里巴巴公司面试。 我已经成功了。当你学了很多东西，努力了很多，你总是可以通过我的内心深处的想法来实现的。在阿里巴巴集团的前两年，我努力工作，但除了工资，我什么都没有得到。我没有晋升。这是很可悲的，但我终于在我想要的地方买了自己的房子。如果你不能晋升，你应该尽可能多地学习，尽可能多地写作，尽可能多地展示自己，这就是我现在的想法。  总结：按部就班的工作，在职场上没有突破性的提升。但也要慢慢到一个大的平台，才有机会向上突破或做出一些成绩。没有章法，需要多关注兴趣和爱好，激发自己的工作激情。需要养成良好的习惯，通过科学的方法，管理好自己。
 【工作】核心是提高编码和解决问题的能力，以及落地工作的能力，需要有强烈的态度和向上的动力。
@@ -102,7 +106,7 @@ function ResponseReader(encoding) { stream.Transform.call(this); this._chuncks =
 1 基础知识：底层原理、操作系统、程序语言、算法、数据结构、数据、网络、安全
 2 软件工程：设计模式、规范、日志、单测、故障恢复、方案优劣对比、技术选型、敏捷开发
 3 编程能力：性能、扩展性、维护成本、鲁棒性
-三级领域： 具体开发岗位（重点学习内容） 比如前端：交互体验和设计； 服务端： 数据处理和架构
+三级领域： 具体开发岗位（*重点学习内容*） 比如前端：交互体验和设计； 服务端： 数据处理和架构
 不同级别的重点不同， 比如低级别主要重深度(关注业务细节) 高级别重广度（关注整体业务）
 理解业务从四个方面： 我们的用户是谁；用户价值；获客方式；获利方式 1 行业总的用户规模；自己的用户规模，用户的特征分布 2 熟悉行业的竞品（行业的排名、竞品的数据和差异对比） 3 常见的获客手段和效果指标 4 获利来源
 更多： 《定位》、《疯传》、《增长黑客》白皮版、《需求：缔造伟大商业传奇的根本力量》、《创新者的窘境》
@@ -138,7 +142,9 @@ function ResponseReader(encoding) { stream.Transform.call(this); this._chuncks =
       <description>怎么学？ 1 认知优先 确保你有优质的信息来源，这个需要有意识地收集，这样能保证掌握最新资料：
  优质书 优质培训 牛逼平台+牛逼的人+开放的心态  学习时间分配 海绵学习法 工作时间并不代表学习时间，需要主动学习复杂度更强的内容，尽量每天1小时
 学习方法论 掌握正确的学习方法论能事半功倍，但是基本上也脱离不了1万小时定律（连续10年平均每天三小时）
- 分解等级-&amp;gt;分解技能-&amp;gt;分解行动 链式提升深度(why、领域分层图/细节分层图)、比较提升宽度(which、思维导图)、环式提升广度  记忆理解 如何对信息进行整理归纳，强化。脑海中有结构，就像图书馆随时能索引。
+ 分解等级-&amp;gt;分解技能-&amp;gt;分解行动
+ 链式提升深度(why、领域分层图/细节分层图)、比较提升宽度(which、思维导图)、环式提升广度
+  记忆理解 如何对信息进行整理归纳，强化。脑海中有结构，就像图书馆随时能索引。
  理解思路： 金子塔原理和思维导图 理解发展规律： 时间线模型 理解系统： 架构图 理解业务： 流程图 理解代码： 类图 加强记忆： 卡片工具 比如Anki  效果验证 以教带学/以玩带学，根据721原则，人的大部分经验/能力来自实践，所以要加强实践的比例。
  文章分享 会议分享 项目实践 小组讨论  更多：《认知天性：让学习变得轻而易举的心理学规律》
 其他文章 学习和成长之道系列第一篇之学什么
@@ -186,7 +192,7 @@ T: 重点你负责的内容和担任的角色
 A: 最核心的部分做了什么（不用写为什么这么做），一张图（架构图、思维导图）+ 核心的几个点 其他靠讲
 R: 效率、效果、质量、成本。虚实结合（定量+定性）
 比如 提升了系统性能，xx基数从多少提升到多少
- 先有基数再有比例 用绝对值（从多少提升到多少 不用写比例） 和钱相关（成本）  5 自我总结+发展规划</description>
+ 先有基数再有比例 用绝对值（从多少提升到多少 不用写比例） 和钱相关（成本）   5 自我总结+发展规划</description>
     </item>
     
     <item>
@@ -202,12 +208,17 @@ R: 效率、效果、质量、成本。虚实结合（定量+定性）
 事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法
 事后： 4D总结法；四线复盘法；金子塔汇报法
 2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景） 定义问题：
-5W2H模型
- 5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。
-  why: 为什么要做这个工作 what: 内容是什么 where： 在哪里做 when: 什么时候来做 who: 由谁来做 how: 怎么做 how much: 要花多少时间和资源  本质就是定义问题：
-定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说：
- 提出一个问题比解决一个问题更重要。
- 问题本质就是事物的矛盾，不匹配
+5W2H模型 &amp;gt; 5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。
+ why: 为什么要做这个工作
+ what: 内容是什么
+ where： 在哪里做
+ when: 什么时候来做
+ who: 由谁来做
+ how: 怎么做
+ how much: 要花多少时间和资源
+  本质就是定义问题：
+定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说： &amp;gt; 提出一个问题比解决一个问题更重要。
+问题本质就是事物的矛盾，不匹配
 一般有几个特点：
 1 普遍性：是普通存在的
 2 运动性：不断变化中，现在是问题可能后面就变成不是问题了或者问题变成另外一个了； 不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进 3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。
@@ -265,8 +276,7 @@ R: 效率、效果、质量、成本。虚实结合（定量+定性）
 1010(-6) 0110（6）
 1001(-7) 0111（7）
 范围是 [-7, 7] 1000没有被表示，刚好拿来表示-8（-8的补码表示： 1000（原） -&amp;gt; 取反 0111 -&amp;gt; 加一 1000）
-所以最终是[-8, 7]。 同理[-128,127]也解释得通。
-为什么小数会有精度问题？</description>
+所以最终是[-8, 7]。 同理[-128,127]也解释得通。</description>
     </item>
     
     <item>
@@ -284,10 +294,8 @@ For n = 3, preorder traversal of
 输出: 14
 问题分析 起初，我不太明白这个问题的意思。什么是BST？它的定义是：任何节点的值都小于右子树的任何节点，大于左子树的任何节点。我想一开始觉得就一种可能。实际上也可能有多种情况。
 例如，给定节点3 1 2，至少下面的排列可以满足BST的条件。   如果你仔细思考，你可以继续想出其他的情况   ok，问题的意思已经清楚了。那么，如何分析有n个节点的BST树的数量。算法是关键，目前，我们还不知道用什么数据结构。我们用分析归纳的方法来寻找规律。
-  1 只有一个节点，显然只有一种情况。T(1) = 1
-  2 如果有两个节点，就有两种情况。T(2) = 2
-  3 如果有三个节点。
- 假设1是根节点，2 3在根节点的右边，结果将是。 T(0) * T(2) ( 我们已经知道T(2) = 2) 假设2是根节点，1 3分别在两侧，结果将是。T(1) * T(1) 假设3是根节点，1 2在根节点的左边，结果将是。T(2) * T(0) 这样，我们遍历了所有可能的情况。 T（2）+ T（1）+ T（2）= 2 + 1 + 2 = 5 所以结果是5，这与问题定义中的案例结果一致    3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</description>
+ 1 只有一个节点，显然只有一种情况。T(1) = 1 2 如果有两个节点，就有两种情况。T(2) = 2 3 如果有三个节点。
+ 假设1是根节点，2 3在根节点的右边，结果将是。 T(0) * T(2) ( 我们已经知道T(2) = 2) 假设2是根节点，1 3分别在两侧，结果将是。T(1) * T(1) 假设3是根节点，1 2在根节点的左边，结果将是。T(2) * T(0) 这样，我们遍历了所有可能的情况。 T（2）+ T（1）+ T（2）= 2 + 1 + 2 = 5 所以结果是5，这与问题定义中的案例结果一致  3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</description>
     </item>
     
     <item>

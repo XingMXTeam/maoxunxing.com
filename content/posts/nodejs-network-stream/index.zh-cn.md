@@ -1,5 +1,5 @@
 ---
-title: "NodeJS Stream系列第一篇之什么是流"
+title: "NodeJS Stream系列 - 什么是流"
 date: 2021-10-19T14:28:57+08:00
 tags:
 - NodeJS 
@@ -100,7 +100,7 @@ server.listen(3000)
 ### 其他文章
 
 [NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream)  
-[NodeJS Stream系列第二篇之流的类型](../nodejs-network-stream2)  
-[NodeJS Stream系列第三篇之基本用法](../nodejs-network-stream3)  
-[NodeJS Stream系列第四篇之高级用法](../nodejs-network-stream4)  
-[NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream5)  
+[NodeJS Stream系列 - 流的类型](../nodejs-network-stream-2)  
+[NodeJS Stream系列 - 基本用法](../nodejs-network-stream-3)  
+[NodeJS Stream系列第四篇之高级用法](../nodejs-network-stream-4)  
+[NodeJS Stream系列第五篇之实际场景](../nodejs-network-stream-5)  

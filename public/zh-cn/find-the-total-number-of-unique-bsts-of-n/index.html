@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -212,12 +217,17 @@
 
         </div>
       </header><div>
-        <h2 id="问题定义">问题定义<a href="#问题定义" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="问题定义">问题定义<a href="#问题定义" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>给定N，找出可以用1到N的值制作的唯一BST的总数</p>
-<p><strong>用例:</strong><br>
-输入: n = 3<br>
-输出: 5<br>
+
+<p><strong>用例:</strong><br />
+输入: n = 3<br />
+输出: 5<br />
 For n = 3, preorder traversal of</p>
+
 <ol>
 <li>1 2 3</li>
 <li>1 3 2</li>
@@ -225,10 +235,14 @@ For n = 3, preorder traversal of</p>
 <li>3 1 2</li>
 <li>3 2 1</li>
 </ol>
-<p>输入: 4<br>
+
+<p>输入: 4<br />
 输出: 14</p>
+
 <h2 id="问题分析">问题分析<a href="#问题分析" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>起初，我不太明白这个问题的意思。什么是BST？它的定义是：任何节点的值都小于右子树的任何节点，大于左子树的任何节点。我想一开始觉得就一种可能。实际上也可能有多种情况。</p>
+
 <p>例如，给定节点3 1 2，至少下面的排列可以满足BST的条件。
 
 
@@ -286,6 +300,7 @@ For n = 3, preorder traversal of</p>
   
 
 </p>
+
 <p>如果你仔细思考，你可以继续想出其他的情况
 
 
@@ -343,55 +358,60 @@ For n = 3, preorder traversal of</p>
   
 
 </p>
+
 <p>ok，问题的意思已经清楚了。那么，如何分析有n个节点的BST树的数量。算法是关键，目前，我们还不知道用什么数据结构。我们用分析归纳的方法来寻找规律。</p>
+
 <ul>
-<li>
-<p>1 只有一个节点，显然只有一种情况。T(1) = 1</p>
-</li>
-<li>
-<p>2 如果有两个节点，就有两种情况。T(2) = 2</p>
-</li>
-<li>
-<p>3 如果有三个节点。</p>
+<li>1 只有一个节点，显然只有一种情况。T(1) = 1</li>
+<li>2 如果有两个节点，就有两种情况。T(2) = 2</li>
+
+<li><p>3 如果有三个节点。</p>
+
 <ul>
 <li>假设1是根节点，2 3在根节点的右边，结果将是。 T(0) * T(2) ( 我们已经知道T(2) = 2)</li>
 <li>假设2是根节点，1 3分别在两侧，结果将是。T(1) * T(1)</li>
 <li>假设3是根节点，1 2在根节点的左边，结果将是。T(2) * T(0)
 这样，我们遍历了所有可能的情况。 T（2）+ T（1）+ T（2）= 2 + 1 + 2 = 5
 所以结果是5，这与问题定义中的案例结果一致</li>
-</ul>
-</li>
-<li>
-<p>3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</p>
+</ul></li>
+
+<li><p>3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</p>
+
 <ul>
 <li>T(0) * T(3), i = 1</li>
 <li>T(1) * T(2), i = 2</li>
-<li>T(2) * T(1), i = 3</li>
-<li>T(3) * T(0), i = 4</li>
+<li>T(2) * T(1), i = 3<br /></li>
+<li>T(3) * T(0), i = 4<br />
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <p>然后，把它们全部加起来： 5+2+2+5=14 对，结果是正确的</p>
+
 <p>根据上面的分析，我们可以大概知道这个规律：假设i是根节点，T[i-1]*T[n-i]是当前情况下的BST树的数量。而最终BST树的数量是通过遍历所有作为根节点的节点，然后得到的。将它们的数量加在一起。</p>
+
 <h3 id="编码">编码<a href="#编码" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>暴力方案。采用递归</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#998;font-style:italic">// i is the root, n is the total nodes&#39; number
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> G <span style="color:#000;font-weight:bold">=</span> (i,n)=&gt;{
-      <span style="color:#000;font-weight:bold">return</span> fn(i <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">*</span> fn(n <span style="color:#000;font-weight:bold">-</span> i)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#888">// i is the root, n is the total nodes&#39; number
+</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> G <span style="color:#333">=</span> (i,n)=&gt;{
+      <span style="color:#080;font-weight:bold">return</span> fn(i <span style="color:#333">-</span> <span style="color:#00d;font-weight:bold">1</span>) <span style="color:#333">*</span> fn(n <span style="color:#333">-</span> i)
   }
   
-  <span style="color:#998;font-style:italic">// Get the total number of BST trees with n nodes.
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> fn <span style="color:#000;font-weight:bold">=</span> n=&gt;{
-      <span style="color:#000;font-weight:bold">let</span> _ <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-      <span style="color:#000;font-weight:bold">if</span>(n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">0</span><span style="color:#000;font-weight:bold">||</span>n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>
-      <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span>) {
-          _ <span style="color:#000;font-weight:bold">+=</span> G(i, n)
+  <span style="color:#888">// Get the total number of BST trees with n nodes.
+</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> fn <span style="color:#333">=</span> n=&gt;{
+      <span style="color:#080;font-weight:bold">let</span> _ <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>
+      <span style="color:#080;font-weight:bold">if</span>(n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">0</span><span style="color:#333">||</span>n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">1</span>) <span style="color:#080;font-weight:bold">return</span> <span style="color:#00d;font-weight:bold">1</span>
+      <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>; i <span style="color:#333">&lt;=</span> n; i<span style="color:#333">++</span>) {
+          _ <span style="color:#333">+=</span> G(i, n)
       }
-      <span style="color:#000;font-weight:bold">return</span> _
+      <span style="color:#080;font-weight:bold">return</span> _
   }
-  console.log(fn(<span style="color:#099">3</span>))
-</code></pre></div><p>如果你以前学过CS课程，因为代码中都是递归的内容。我们可以画出递归树：f(3)是最终结果，3个节点的数字。 G(1,3)表示1为根，3为节点的总数。
+  console.log(fn(<span style="color:#00d;font-weight:bold">3</span>))
+</code></pre></div>
+<p>如果你以前学过CS课程，因为代码中都是递归的内容。我们可以画出递归树：f(3)是最终结果，3个节点的数字。 G(1,3)表示1为根，3为节点的总数。
 我们还可以做一个结论。G(i, n) = f(i-1)*f(n-i)</p>
+
 
 
 
@@ -442,44 +462,49 @@ For n = 3, preorder traversal of</p>
   
 
 
+
 <p>从递归树中，我们还可以看到f(1)f(2)f(0)是重复计算的，我们可以缓存这些数据以避免重复计算。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#998;font-style:italic">// get the total number of BST tress with i as the root node
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> G <span style="color:#000;font-weight:bold">=</span> (i,n)=&gt;{
-      <span style="color:#000;font-weight:bold">return</span> fn(i <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">*</span> fn(n <span style="color:#000;font-weight:bold">-</span> i)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#888">// get the total number of BST tress with i as the root node
+</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> G <span style="color:#333">=</span> (i,n)=&gt;{
+      <span style="color:#080;font-weight:bold">return</span> fn(i <span style="color:#333">-</span> <span style="color:#00d;font-weight:bold">1</span>) <span style="color:#333">*</span> fn(n <span style="color:#333">-</span> i)
   }
-  <span style="color:#000;font-weight:bold">const</span> dp <span style="color:#000;font-weight:bold">=</span> []; 
-  <span style="color:#000;font-weight:bold">const</span> fn <span style="color:#000;font-weight:bold">=</span> n=&gt;{
-      <span style="color:#000;font-weight:bold">let</span> _ <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-      <span style="color:#000;font-weight:bold">if</span>(n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">0</span><span style="color:#000;font-weight:bold">||</span>n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>;
-      <span style="color:#000;font-weight:bold">if</span>(dp[n]) {
-        console.log(<span style="color:#d14">&#39;hit cache&#39;</span>)
-        <span style="color:#000;font-weight:bold">return</span> dp[n]
+  <span style="color:#080;font-weight:bold">const</span> dp <span style="color:#333">=</span> []; 
+  <span style="color:#080;font-weight:bold">const</span> fn <span style="color:#333">=</span> n=&gt;{
+      <span style="color:#080;font-weight:bold">let</span> _ <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>
+      <span style="color:#080;font-weight:bold">if</span>(n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">0</span><span style="color:#333">||</span>n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">1</span>) <span style="color:#080;font-weight:bold">return</span> <span style="color:#00d;font-weight:bold">1</span>;
+      <span style="color:#080;font-weight:bold">if</span>(dp[n]) {
+        console.log(<span style="background-color:#fff0f0">&#39;hit cache&#39;</span>)
+        <span style="color:#080;font-weight:bold">return</span> dp[n]
       }
-      <span style="color:#998;font-style:italic">// loop all nodes
-</span><span style="color:#998;font-style:italic"></span>      <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span>) {
-         <span style="color:#998;font-style:italic">// add them all
-</span><span style="color:#998;font-style:italic"></span>          _ <span style="color:#000;font-weight:bold">+=</span> G(i, n)
+      <span style="color:#888">// loop all nodes
+</span><span style="color:#888"></span>      <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>; i <span style="color:#333">&lt;=</span> n; i<span style="color:#333">++</span>) {
+         <span style="color:#888">// add them all
+</span><span style="color:#888"></span>          _ <span style="color:#333">+=</span> G(i, n)
       }
-      <span style="color:#998;font-style:italic">// cache result
-</span><span style="color:#998;font-style:italic"></span>      dp[n] <span style="color:#000;font-weight:bold">=</span> _
-      <span style="color:#000;font-weight:bold">return</span> _
+      <span style="color:#888">// cache result
+</span><span style="color:#888"></span>      dp[n] <span style="color:#333">=</span> _
+      <span style="color:#080;font-weight:bold">return</span> _
   }
-  console.log(fn(<span style="color:#099">3</span>))
-</code></pre></div><p>应该有三个命中重复的，但我们只有一个。所以这样一来，我们就不能完全利用重复计算。我们可以从上到下进行决策。例如，在i为根的情况下，我们先以i-1&hellip;1为根的值进行计算。</p>
+  console.log(fn(<span style="color:#00d;font-weight:bold">3</span>))
+</code></pre></div>
+<p>应该有三个命中重复的，但我们只有一个。所以这样一来，我们就不能完全利用重复计算。我们可以从上到下进行决策。例如，在i为根的情况下，我们先以i-1&hellip;1为根的值进行计算。</p>
+
 <p>优化结果如下:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> getNumberOfBSTs <span style="color:#000;font-weight:bold">=</span> n =&gt; {
-  <span style="color:#000;font-weight:bold">const</span> T <span style="color:#000;font-weight:bold">=</span> []
-  T[<span style="color:#099">0</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>
-  T[<span style="color:#099">1</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>
-  <span style="color:#000;font-weight:bold">for</span>(<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span>) {
-    <span style="color:#998;font-style:italic">// j form 1 to i represents the already calculated results
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">for</span>(<span style="color:#000;font-weight:bold">let</span> j <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>; j <span style="color:#000;font-weight:bold">&lt;=</span>i; j<span style="color:#000;font-weight:bold">++</span>) {
-        <span style="color:#998;font-style:italic">// This is the conclusion derived from the recursive tree above
-</span><span style="color:#998;font-style:italic"></span>        T[i] <span style="color:#000;font-weight:bold">+=</span> T[j<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>]<span style="color:#000;font-weight:bold">*</span>T[i<span style="color:#000;font-weight:bold">-</span>j]
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> getNumberOfBSTs <span style="color:#333">=</span> n =&gt; {
+  <span style="color:#080;font-weight:bold">const</span> T <span style="color:#333">=</span> []
+  T[<span style="color:#00d;font-weight:bold">0</span>] <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>
+  T[<span style="color:#00d;font-weight:bold">1</span>] <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>
+  <span style="color:#080;font-weight:bold">for</span>(<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">2</span>; i <span style="color:#333">&lt;=</span> n; i<span style="color:#333">++</span>) {
+    <span style="color:#888">// j form 1 to i represents the already calculated results
+</span><span style="color:#888"></span>    <span style="color:#080;font-weight:bold">for</span>(<span style="color:#080;font-weight:bold">let</span> j <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>; j <span style="color:#333">&lt;=</span>i; j<span style="color:#333">++</span>) {
+        <span style="color:#888">// This is the conclusion derived from the recursive tree above
+</span><span style="color:#888"></span>        T[i] <span style="color:#333">+=</span> T[j<span style="color:#333">-</span><span style="color:#00d;font-weight:bold">1</span>]<span style="color:#333">*</span>T[i<span style="color:#333">-</span>j]
     }
   }
 }
-</code></pre></div><h2 id="时间复杂度">时间复杂度<a href="#时间复杂度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+</code></pre></div>
+<h2 id="时间复杂度">时间复杂度<a href="#时间复杂度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>双层循环： O(n^2)</p>
 
       </div>
@@ -663,6 +688,47 @@ For n = 3, preorder traversal of</p>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

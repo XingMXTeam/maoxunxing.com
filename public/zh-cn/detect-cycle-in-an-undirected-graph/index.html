@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/detect-cycle-in-an-undirected-graph/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -212,12 +217,17 @@
 
         </div>
       </header><div>
-        <h2 id="问题定义">问题定义<a href="#问题定义" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="问题定义">问题定义<a href="#问题定义" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>给定一个无向图，如何检查图中是否有一个环 ?</p>
-<p><strong>用例1:</strong><br>
-输入：n  = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }<br>
-输出: yes<br>
+
+<p><strong>用例1:</strong><br />
+输入：n  = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }<br />
+输出: yes<br />
 示例:</p>
+
 
 
 
@@ -266,10 +276,12 @@
   
 
 
-<p><strong>用例2:</strong><br>
-输入: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }<br>
-输出: No<br>
+
+<p><strong>用例2:</strong><br />
+输入: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }<br />
+输出: No<br />
 示例:</p>
+
 
 
 
@@ -318,32 +330,41 @@
   
 
 
+
 <h2 id="问题分析">问题分析<a href="#问题分析" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <p>我们都知道:</p>
+
 <blockquote>
 <p>算法 + 数据结构 = 程序</p>
 </blockquote>
+
 <p>因此，我们需要创建一个数据结构来代表无向图。有两种数据结构可以做到这一点:</p>
+
 <ul>
 <li><strong>邻接表</strong> - 如果顶点1与顶点2,3相连，因此邻接表 : { 1 : [2, 4] }.</li>
-<li><strong>邻接矩阵</strong> - JS中我们可以用 <strong>map</strong> .</li>
+<li><strong>邻接矩阵</strong> - JS中我们可以用 <strong>map</strong> .<br /></li>
 </ul>
+
 <p>算法：如何检测环:</p>
+
 <ul>
 <li><strong>方案1</strong>: 并查集 创建集合、合并、找到集合
+
 <ul>
 <li>最初，所有顶点都是不同的集合</li>
 <li>然后我们循环所有边的节点，如果这些节点在不同的集合中，我们就联合它们。我们如何检查它们是否在同一个集合中，每个节点的父节点是现在的节点，那么它们就在同一个集合中。而代表节点的父节点是负数n，n代表它在其集合中有n个孩子。</li>
 <li>如果这些节点都在同一个集合中，那么我们就知道它们有另一种方式可以到达对方，这意味着循环存在。</li>
-</ul>
-</li>
+</ul></li>
 <li><strong>方案2</strong>: 深度和广度遍历
+
 <ul>
 <li>我们需要一个被访问的队列，如果我们访问了一个节点，则设置为visited。如果我们发现一个节点是当前节点的邻接节点，同时，它被访问过，那么我们发现了一个环</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h2 id="编码">编码<a href="#编码" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 
 
 
@@ -392,271 +413,273 @@
   
 
 
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic">  Graph using adjacency list. Support opertaions:
-</span><span style="color:#998;font-style:italic">  1 traverse by dfs\bfs
-</span><span style="color:#998;font-style:italic">  2 hasCircleByDfs
-</span><span style="color:#998;font-style:italic">  3 hasCircleByBfs
-</span><span style="color:#998;font-style:italic">  4 hasCircleByDss(Disjoint Set)
-</span><span style="color:#998;font-style:italic">  */</span>
-  <span style="color:#000;font-weight:bold">class</span> Graph {
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#888">/*
+</span><span style="color:#888">  Graph using adjacency list. Support opertaions:
+</span><span style="color:#888">  1 traverse by dfs\bfs
+</span><span style="color:#888">  2 hasCircleByDfs
+</span><span style="color:#888">  3 hasCircleByBfs
+</span><span style="color:#888">  4 hasCircleByDss(Disjoint Set)
+</span><span style="color:#888">  */</span>
+  <span style="color:#080;font-weight:bold">class</span> Graph {
       constructor() {
-          <span style="color:#000;font-weight:bold">this</span>.allVertexes <span style="color:#000;font-weight:bold">=</span> []
-          <span style="color:#000;font-weight:bold">this</span>.allEdges <span style="color:#000;font-weight:bold">=</span> []
-          <span style="color:#000;font-weight:bold">this</span>.adList <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Map()
+          <span style="color:#080;font-weight:bold">this</span>.allVertexes <span style="color:#333">=</span> []
+          <span style="color:#080;font-weight:bold">this</span>.allEdges <span style="color:#333">=</span> []
+          <span style="color:#080;font-weight:bold">this</span>.adList <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">new</span> Map()
       }
 
       addV(v) {
-          <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span><span style="color:#000;font-weight:bold">this</span>.adList.has(v)) {
-              <span style="color:#000;font-weight:bold">this</span>.adList.set(v, [])
+          <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span><span style="color:#080;font-weight:bold">this</span>.adList.has(v)) {
+              <span style="color:#080;font-weight:bold">this</span>.adList.set(v, [])
           }
-          <span style="color:#000;font-weight:bold">this</span>.allVertexes.push(v)
+          <span style="color:#080;font-weight:bold">this</span>.allVertexes.push(v)
       }
 
       addE(source, dest) {
-          <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span><span style="color:#000;font-weight:bold">this</span>.adList.has(source)) {
-              <span style="color:#000;font-weight:bold">this</span>.addV(source)
+          <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span><span style="color:#080;font-weight:bold">this</span>.adList.has(source)) {
+              <span style="color:#080;font-weight:bold">this</span>.addV(source)
           }
-          <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span><span style="color:#000;font-weight:bold">this</span>.adList.has(dest)) {
-              <span style="color:#000;font-weight:bold">this</span>.addV(dest)
+          <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span><span style="color:#080;font-weight:bold">this</span>.adList.has(dest)) {
+              <span style="color:#080;font-weight:bold">this</span>.addV(dest)
           }
-          <span style="color:#000;font-weight:bold">this</span>.adList.get(source).push(dest)
-          <span style="color:#000;font-weight:bold">this</span>.adList.get(dest).push(source)
-          <span style="color:#000;font-weight:bold">this</span>.allEdges.push({
+          <span style="color:#080;font-weight:bold">this</span>.adList.get(source).push(dest)
+          <span style="color:#080;font-weight:bold">this</span>.adList.get(dest).push(source)
+          <span style="color:#080;font-weight:bold">this</span>.allEdges.push({
               dest,
               source
           })
       }
 
       removeV(v) {
-          <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> adV <span style="color:#000;font-weight:bold">of</span> <span style="color:#000;font-weight:bold">this</span>.adList.get(v)) {
-              <span style="color:#000;font-weight:bold">this</span>.removeE(v, adV)
+          <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> adV <span style="color:#080;font-weight:bold">of</span> <span style="color:#080;font-weight:bold">this</span>.adList.get(v)) {
+              <span style="color:#080;font-weight:bold">this</span>.removeE(v, adV)
           }
-          <span style="color:#000;font-weight:bold">this</span>.adList.<span style="color:#000;font-weight:bold">delete</span>(v)
+          <span style="color:#080;font-weight:bold">this</span>.adList.<span style="color:#080;font-weight:bold">delete</span>(v)
       }
 
       removeE(source, dest) {
-          <span style="color:#000;font-weight:bold">this</span>.adList.set(source, <span style="color:#000;font-weight:bold">this</span>.adList.get(source).filter(v=&gt;v <span style="color:#000;font-weight:bold">!==</span> dest))
-          <span style="color:#000;font-weight:bold">this</span>.adList.set(dest, <span style="color:#000;font-weight:bold">this</span>.adList.get(dest).filter(v=&gt;v <span style="color:#000;font-weight:bold">!==</span> source))
+          <span style="color:#080;font-weight:bold">this</span>.adList.set(source, <span style="color:#080;font-weight:bold">this</span>.adList.get(source).filter(v=&gt;v <span style="color:#333">!==</span> dest))
+          <span style="color:#080;font-weight:bold">this</span>.adList.set(dest, <span style="color:#080;font-weight:bold">this</span>.adList.get(dest).filter(v=&gt;v <span style="color:#333">!==</span> source))
       }
 
       print() {
-          <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> v <span style="color:#000;font-weight:bold">of</span> <span style="color:#000;font-weight:bold">this</span>.adList.keys()) {
-              <span style="color:#000;font-weight:bold">let</span> cons <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;&#39;</span>
-              <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> dest <span style="color:#000;font-weight:bold">of</span> <span style="color:#000;font-weight:bold">this</span>.adList.get(v)) {
-                  cons <span style="color:#000;font-weight:bold">+=</span> dest <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39; &#39;</span>
+          <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> v <span style="color:#080;font-weight:bold">of</span> <span style="color:#080;font-weight:bold">this</span>.adList.keys()) {
+              <span style="color:#080;font-weight:bold">let</span> cons <span style="color:#333">=</span> <span style="background-color:#fff0f0">&#39;&#39;</span>
+              <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> dest <span style="color:#080;font-weight:bold">of</span> <span style="color:#080;font-weight:bold">this</span>.adList.get(v)) {
+                  cons <span style="color:#333">+=</span> dest <span style="color:#333">+</span> <span style="background-color:#fff0f0">&#39; &#39;</span>
               }
-              console.log(v <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39; -&gt; &#39;</span> <span style="color:#000;font-weight:bold">+</span> cons)
+              console.log(v <span style="color:#333">+</span> <span style="background-color:#fff0f0">&#39; -&gt; &#39;</span> <span style="color:#333">+</span> cons)
           }
       }
 
       hasCircleByDss() {
-          <span style="color:#000;font-weight:bold">const</span> dss <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> DisjointSet()
-          <span style="color:#000;font-weight:bold">this</span>.allVertexes.forEach(v=&gt;{
+          <span style="color:#080;font-weight:bold">const</span> dss <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">new</span> DisjointSet()
+          <span style="color:#080;font-weight:bold">this</span>.allVertexes.forEach(v=&gt;{
               dss.makeSet(v)
           }
           )
-          <span style="color:#998;font-style:italic">// if  union return true, we find a cycle
-</span><span style="color:#998;font-style:italic"></span>          <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">this</span>.allEdges.some(e=&gt;dss.union(e.source, e.dest))
+          <span style="color:#888">// if  union return true, we find a cycle
+</span><span style="color:#888"></span>          <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">this</span>.allEdges.some(e=&gt;dss.union(e.source, e.dest))
       }
 
       bfs(start) {
-          <span style="color:#000;font-weight:bold">const</span> queue <span style="color:#000;font-weight:bold">=</span> [start]
-          <span style="color:#000;font-weight:bold">const</span> result <span style="color:#000;font-weight:bold">=</span> []
-          <span style="color:#000;font-weight:bold">const</span> visited <span style="color:#000;font-weight:bold">=</span> {}
-          visited[start] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>
-          <span style="color:#000;font-weight:bold">let</span> curV
-          <span style="color:#000;font-weight:bold">while</span> (queue.length) {
-              curV <span style="color:#000;font-weight:bold">=</span> queue.shift()
+          <span style="color:#080;font-weight:bold">const</span> queue <span style="color:#333">=</span> [start]
+          <span style="color:#080;font-weight:bold">const</span> result <span style="color:#333">=</span> []
+          <span style="color:#080;font-weight:bold">const</span> visited <span style="color:#333">=</span> {}
+          visited[start] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>
+          <span style="color:#080;font-weight:bold">let</span> curV
+          <span style="color:#080;font-weight:bold">while</span> (queue.length) {
+              curV <span style="color:#333">=</span> queue.shift()
               result.push(curV)
-              <span style="color:#000;font-weight:bold">this</span>.adList.get(curV).forEach(dest=&gt;{
-                  <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>visited[dest]) {
-                      visited[dest] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>
+              <span style="color:#080;font-weight:bold">this</span>.adList.get(curV).forEach(dest=&gt;{
+                  <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span>visited[dest]) {
+                      visited[dest] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>
                       queue.push(dest)
                   }
               }
               )
           }
-          <span style="color:#000;font-weight:bold">return</span> result
+          <span style="color:#080;font-weight:bold">return</span> result
       }
       
-      <span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic">          Key Point: if we find a node is visited, but the node is not the current node&#39;s parent
-</span><span style="color:#998;font-style:italic">      */</span>
+      <span style="color:#888">/*
+</span><span style="color:#888">          Key Point: if we find a node is visited, but the node is not the current node&#39;s parent
+</span><span style="color:#888">      */</span>
       hasCircleByBfs() {
-          <span style="color:#000;font-weight:bold">const</span> parent <span style="color:#000;font-weight:bold">=</span> {}
-          <span style="color:#000;font-weight:bold">const</span> result <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">false</span>;
-          <span style="color:#000;font-weight:bold">const</span> visited <span style="color:#000;font-weight:bold">=</span> {}
-          <span style="color:#000;font-weight:bold">const</span> queue <span style="color:#000;font-weight:bold">=</span> []
+          <span style="color:#080;font-weight:bold">const</span> parent <span style="color:#333">=</span> {}
+          <span style="color:#080;font-weight:bold">const</span> result <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">false</span>;
+          <span style="color:#080;font-weight:bold">const</span> visited <span style="color:#333">=</span> {}
+          <span style="color:#080;font-weight:bold">const</span> queue <span style="color:#333">=</span> []
 
-          <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#000;font-weight:bold">this</span>.allVertexes.length; i<span style="color:#000;font-weight:bold">++</span>) {
-              <span style="color:#000;font-weight:bold">const</span> node <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.allVertexes[i]
-              <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>visited[node]) {
-                  visited[node] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;
+          <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>; i <span style="color:#333">&lt;</span> <span style="color:#080;font-weight:bold">this</span>.allVertexes.length; i<span style="color:#333">++</span>) {
+              <span style="color:#080;font-weight:bold">const</span> node <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.allVertexes[i]
+              <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span>visited[node]) {
+                  visited[node] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>;
                   queue.push(node);
-                  <span style="color:#000;font-weight:bold">let</span> curV;
-                  <span style="color:#000;font-weight:bold">while</span> (queue.length) {
-                      curV <span style="color:#000;font-weight:bold">=</span> queue.shift();
-                      visited[curV] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;
-                      <span style="color:#000;font-weight:bold">const</span> allAdNodes <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.adList.get(curV);
-                      <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> j <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; j <span style="color:#000;font-weight:bold">&lt;</span> allAdNodes.length; j<span style="color:#000;font-weight:bold">++</span>) {
-                          <span style="color:#000;font-weight:bold">const</span> dest <span style="color:#000;font-weight:bold">=</span> allAdNodes[j];
-                          <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>visited[dest]) {
-                              visited[dest] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;
-                              parent[dest] <span style="color:#000;font-weight:bold">=</span> curV;
+                  <span style="color:#080;font-weight:bold">let</span> curV;
+                  <span style="color:#080;font-weight:bold">while</span> (queue.length) {
+                      curV <span style="color:#333">=</span> queue.shift();
+                      visited[curV] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>;
+                      <span style="color:#080;font-weight:bold">const</span> allAdNodes <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.adList.get(curV);
+                      <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> j <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>; j <span style="color:#333">&lt;</span> allAdNodes.length; j<span style="color:#333">++</span>) {
+                          <span style="color:#080;font-weight:bold">const</span> dest <span style="color:#333">=</span> allAdNodes[j];
+                          <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span>visited[dest]) {
+                              visited[dest] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>;
+                              parent[dest] <span style="color:#333">=</span> curV;
                               queue.push(dest)
-                          } <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> (dest <span style="color:#000;font-weight:bold">!==</span> parent[curV]) {
-                              <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">true</span>
+                          } <span style="color:#080;font-weight:bold">else</span> <span style="color:#080;font-weight:bold">if</span> (dest <span style="color:#333">!==</span> parent[curV]) {
+                              <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">true</span>
                           }
                       }
                   }
               }
           }
-          <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">false</span>
+          <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">false</span>
       }
 
       dfsRecursive(start) {
-          <span style="color:#000;font-weight:bold">const</span> result <span style="color:#000;font-weight:bold">=</span> []
-          <span style="color:#000;font-weight:bold">const</span> visited <span style="color:#000;font-weight:bold">=</span> {};
-          <span style="color:#000;font-weight:bold">const</span> adList <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.adList;
-          (<span style="color:#000;font-weight:bold">function</span> dfs(v) {
-              <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>v)
-                  <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">null</span>
-              visited[v] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>
+          <span style="color:#080;font-weight:bold">const</span> result <span style="color:#333">=</span> []
+          <span style="color:#080;font-weight:bold">const</span> visited <span style="color:#333">=</span> {};
+          <span style="color:#080;font-weight:bold">const</span> adList <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.adList;
+          (<span style="color:#080;font-weight:bold">function</span> dfs(v) {
+              <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span>v)
+                  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">null</span>
+              visited[v] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>
               result.push(v)
               adList.get(v).forEach(dest=&gt;{
-                  <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>visited[dest]) {
-                      <span style="color:#000;font-weight:bold">return</span> dfs(dest)
+                  <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span>visited[dest]) {
+                      <span style="color:#080;font-weight:bold">return</span> dfs(dest)
                   }
               }
               )
           }
           )(start);
-          <span style="color:#000;font-weight:bold">return</span> result
+          <span style="color:#080;font-weight:bold">return</span> result
       }
 
       dfsIterative(start) {
-          <span style="color:#000;font-weight:bold">const</span> result <span style="color:#000;font-weight:bold">=</span> []
-          <span style="color:#000;font-weight:bold">const</span> visited <span style="color:#000;font-weight:bold">=</span> {}
-          <span style="color:#000;font-weight:bold">const</span> stack <span style="color:#000;font-weight:bold">=</span> [start]
-          <span style="color:#000;font-weight:bold">let</span> curV
-          visited[start] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>
-          <span style="color:#000;font-weight:bold">while</span> (stack.length) {
-              curV <span style="color:#000;font-weight:bold">=</span> stack.pop()
+          <span style="color:#080;font-weight:bold">const</span> result <span style="color:#333">=</span> []
+          <span style="color:#080;font-weight:bold">const</span> visited <span style="color:#333">=</span> {}
+          <span style="color:#080;font-weight:bold">const</span> stack <span style="color:#333">=</span> [start]
+          <span style="color:#080;font-weight:bold">let</span> curV
+          visited[start] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>
+          <span style="color:#080;font-weight:bold">while</span> (stack.length) {
+              curV <span style="color:#333">=</span> stack.pop()
               result.push(curV)
-              <span style="color:#000;font-weight:bold">this</span>.adList.get(curV).forEach(dest=&gt;{
-                  <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>visited[dest]) {
-                      visited[dest] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>
+              <span style="color:#080;font-weight:bold">this</span>.adList.get(curV).forEach(dest=&gt;{
+                  <span style="color:#080;font-weight:bold">if</span> (<span style="color:#333">!</span>visited[dest]) {
+                      visited[dest] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>
                       stack.push(dest)
                   }
               }
               )
           }
-          <span style="color:#000;font-weight:bold">return</span> result
+          <span style="color:#080;font-weight:bold">return</span> result
       }
 
-      <span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic">          the key point is: all visited nodes are keep in array, if we repeated push a exsited node, there are more than one path to it(circle exists).
-</span><span style="color:#998;font-style:italic">          @params {string} current node
-</span><span style="color:#998;font-style:italic">          @params {array} boolean - all visited nodes
-</span><span style="color:#998;font-style:italic">          @params {string} parent - current node&#39;s parent
-</span><span style="color:#998;font-style:italic">      */</span>
+      <span style="color:#888">/*
+</span><span style="color:#888">          the key point is: all visited nodes are keep in array, if we repeated push a exsited node, there are more than one path to it(circle exists).
+</span><span style="color:#888">          @params {string} current node
+</span><span style="color:#888">          @params {array} boolean - all visited nodes
+</span><span style="color:#888">          @params {string} parent - current node&#39;s parent
+</span><span style="color:#888">      */</span>
       hasCircleUtil(node, visited, parent) {
-          <span style="color:#998;font-style:italic">// push all nodes to visited
-</span><span style="color:#998;font-style:italic"></span>          visited[node] <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span>;
-          <span style="color:#000;font-weight:bold">const</span> adList <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.adList.get(node) <span style="color:#000;font-weight:bold">||</span> [];
-          <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> adList.length; i<span style="color:#000;font-weight:bold">++</span>) {
-              <span style="color:#998;font-style:italic">// the repeated path, ignore it
-</span><span style="color:#998;font-style:italic"></span>              <span style="color:#000;font-weight:bold">if</span> (adList[i] <span style="color:#000;font-weight:bold">===</span> parent)
-                  <span style="color:#000;font-weight:bold">continue</span>;
-              <span style="color:#998;font-style:italic">// we find it is already in the visited queue, we know that. we can reach adList[i] by another path(which means there is a circle)
-</span><span style="color:#998;font-style:italic"></span>              <span style="color:#000;font-weight:bold">if</span> (visited[adList[i]])
-                  <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">true</span>;
-              <span style="color:#000;font-weight:bold">const</span> hasCycle <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.hasCircleUtil(adList[i], visited, node)
-              <span style="color:#000;font-weight:bold">if</span> (hasCycle)
-                  <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">true</span>
+          <span style="color:#888">// push all nodes to visited
+</span><span style="color:#888"></span>          visited[node] <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">true</span>;
+          <span style="color:#080;font-weight:bold">const</span> adList <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.adList.get(node) <span style="color:#333">||</span> [];
+          <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>; i <span style="color:#333">&lt;</span> adList.length; i<span style="color:#333">++</span>) {
+              <span style="color:#888">// the repeated path, ignore it
+</span><span style="color:#888"></span>              <span style="color:#080;font-weight:bold">if</span> (adList[i] <span style="color:#333">===</span> parent)
+                  <span style="color:#080;font-weight:bold">continue</span>;
+              <span style="color:#888">// we find it is already in the visited queue, we know that. we can reach adList[i] by another path(which means there is a circle)
+</span><span style="color:#888"></span>              <span style="color:#080;font-weight:bold">if</span> (visited[adList[i]])
+                  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">true</span>;
+              <span style="color:#080;font-weight:bold">const</span> hasCycle <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.hasCircleUtil(adList[i], visited, node)
+              <span style="color:#080;font-weight:bold">if</span> (hasCycle)
+                  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">true</span>
           }
-          <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">false</span>
+          <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">false</span>
       }
       hasCircleByDfs() {
-          <span style="color:#000;font-weight:bold">const</span> visited <span style="color:#000;font-weight:bold">=</span> {}
-            , allV <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.allVertexes
-          <span style="color:#998;font-style:italic">// because it is undirected graph, we need to reverse all nodes. 
-</span><span style="color:#998;font-style:italic"></span>          <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> allV.length; i<span style="color:#000;font-weight:bold">++</span>) {
-              <span style="color:#000;font-weight:bold">if</span> (visited[allV[i]])
-                  <span style="color:#000;font-weight:bold">continue</span>
-              <span style="color:#000;font-weight:bold">const</span> flag <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.hasCircleUtil(allV[i], visited, <span style="color:#000;font-weight:bold">null</span>)
-              <span style="color:#000;font-weight:bold">if</span> (flag)
-                  <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">true</span>
+          <span style="color:#080;font-weight:bold">const</span> visited <span style="color:#333">=</span> {}
+            , allV <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.allVertexes
+          <span style="color:#888">// because it is undirected graph, we need to reverse all nodes. 
+</span><span style="color:#888"></span>          <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>; i <span style="color:#333">&lt;</span> allV.length; i<span style="color:#333">++</span>) {
+              <span style="color:#080;font-weight:bold">if</span> (visited[allV[i]])
+                  <span style="color:#080;font-weight:bold">continue</span>
+              <span style="color:#080;font-weight:bold">const</span> flag <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.hasCircleUtil(allV[i], visited, <span style="color:#080;font-weight:bold">null</span>)
+              <span style="color:#080;font-weight:bold">if</span> (flag)
+                  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">true</span>
           }
-          <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">false</span>
+          <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">false</span>
       }
   }
 
-  <span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic">  three operation: 
-</span><span style="color:#998;font-style:italic">  1 makeset
-</span><span style="color:#998;font-style:italic">  2 find
-</span><span style="color:#998;font-style:italic">  3 union
-</span><span style="color:#998;font-style:italic">  */</span>
-  <span style="color:#000;font-weight:bold">class</span> DisjointSet {
+  <span style="color:#888">/*
+</span><span style="color:#888">  three operation: 
+</span><span style="color:#888">  1 makeset
+</span><span style="color:#888">  2 find
+</span><span style="color:#888">  3 union
+</span><span style="color:#888">  */</span>
+  <span style="color:#080;font-weight:bold">class</span> DisjointSet {
     constructor() {
-        <span style="color:#000;font-weight:bold">this</span>.map <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Map()
+        <span style="color:#080;font-weight:bold">this</span>.map <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">new</span> Map()
     }
     makeSet(data) {
-        <span style="color:#000;font-weight:bold">this</span>.map.set(data, <span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>)
+        <span style="color:#080;font-weight:bold">this</span>.map.set(data, <span style="color:#333">-</span><span style="color:#00d;font-weight:bold">1</span>)
     }
     find(x) {
-        <span style="color:#000;font-weight:bold">const</span> parent <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.map.get(x)
-        <span style="color:#000;font-weight:bold">if</span> (parent <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">0</span>) {
-            <span style="color:#000;font-weight:bold">return</span> x
-        } <span style="color:#000;font-weight:bold">else</span> {
-            <span style="color:#998;font-style:italic">// recurse until you find x&#39;s parent
-</span><span style="color:#998;font-style:italic"></span>            <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">this</span>.find(<span style="color:#000;font-weight:bold">this</span>.map.get(x))
+        <span style="color:#080;font-weight:bold">const</span> parent <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.map.get(x)
+        <span style="color:#080;font-weight:bold">if</span> (parent <span style="color:#333">&lt;</span> <span style="color:#00d;font-weight:bold">0</span>) {
+            <span style="color:#080;font-weight:bold">return</span> x
+        } <span style="color:#080;font-weight:bold">else</span> {
+            <span style="color:#888">// recurse until you find x&#39;s parent
+</span><span style="color:#888"></span>            <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">this</span>.find(<span style="color:#080;font-weight:bold">this</span>.map.get(x))
         }
     }
     union(x, y) {
-        <span style="color:#000;font-weight:bold">const</span> xparent <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.find(x)
-        <span style="color:#000;font-weight:bold">const</span> yparent <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.find(y)
-        <span style="color:#000;font-weight:bold">if</span> (xparent <span style="color:#000;font-weight:bold">!==</span> yparent) {
-            <span style="color:#998;font-style:italic">// make the represent node&#39;s negative plus 1
-</span><span style="color:#998;font-style:italic"></span>            <span style="color:#000;font-weight:bold">this</span>.map.set(xparent, <span style="color:#000;font-weight:bold">this</span>.map.get(xparent) <span style="color:#000;font-weight:bold">+</span> <span style="color:#000;font-weight:bold">this</span>.map.get(yparent))
-            <span style="color:#998;font-style:italic">// make y point to represents node x
-</span><span style="color:#998;font-style:italic"></span>            <span style="color:#000;font-weight:bold">this</span>.map.set(yparent, xparent)
-        } <span style="color:#000;font-weight:bold">else</span> {
-            <span style="color:#998;font-style:italic">// same set
-</span><span style="color:#998;font-style:italic"></span>            <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">true</span>
+        <span style="color:#080;font-weight:bold">const</span> xparent <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.find(x)
+        <span style="color:#080;font-weight:bold">const</span> yparent <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">this</span>.find(y)
+        <span style="color:#080;font-weight:bold">if</span> (xparent <span style="color:#333">!==</span> yparent) {
+            <span style="color:#888">// make the represent node&#39;s negative plus 1
+</span><span style="color:#888"></span>            <span style="color:#080;font-weight:bold">this</span>.map.set(xparent, <span style="color:#080;font-weight:bold">this</span>.map.get(xparent) <span style="color:#333">+</span> <span style="color:#080;font-weight:bold">this</span>.map.get(yparent))
+            <span style="color:#888">// make y point to represents node x
+</span><span style="color:#888"></span>            <span style="color:#080;font-weight:bold">this</span>.map.set(yparent, xparent)
+        } <span style="color:#080;font-weight:bold">else</span> {
+            <span style="color:#888">// same set
+</span><span style="color:#888"></span>            <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">true</span>
         }
     }
 
     console_print() {
-        console.log(JSON.stringify(<span style="color:#000;font-weight:bold">this</span>.map.values()))
+        console.log(JSON.stringify(<span style="color:#080;font-weight:bold">this</span>.map.values()))
     }
   }
 
-  <span style="color:#998;font-style:italic">// test code
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> g <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Graph()
-  <span style="color:#000;font-weight:bold">var</span> vertices <span style="color:#000;font-weight:bold">=</span> [<span style="color:#d14">&#39;A&#39;</span>, <span style="color:#d14">&#39;B&#39;</span>, <span style="color:#d14">&#39;C&#39;</span>, <span style="color:#d14">&#39;D&#39;</span>, <span style="color:#d14">&#39;E&#39;</span>, <span style="color:#d14">&#39;F&#39;</span>];
+  <span style="color:#888">// test code
+</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> g <span style="color:#333">=</span> <span style="color:#080;font-weight:bold">new</span> Graph()
+  <span style="color:#080;font-weight:bold">var</span> vertices <span style="color:#333">=</span> [<span style="background-color:#fff0f0">&#39;A&#39;</span>, <span style="background-color:#fff0f0">&#39;B&#39;</span>, <span style="background-color:#fff0f0">&#39;C&#39;</span>, <span style="background-color:#fff0f0">&#39;D&#39;</span>, <span style="background-color:#fff0f0">&#39;E&#39;</span>, <span style="background-color:#fff0f0">&#39;F&#39;</span>];
 
-  <span style="color:#998;font-style:italic">// adding vertices
-</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">var</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> vertices.length; i<span style="color:#000;font-weight:bold">++</span>) {
+  <span style="color:#888">// adding vertices
+</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">var</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>; i <span style="color:#333">&lt;</span> vertices.length; i<span style="color:#333">++</span>) {
       g.addV(vertices[i]);
   }
 
-  g.addE(<span style="color:#d14">&#39;A&#39;</span>, <span style="color:#d14">&#39;B&#39;</span>);
-  g.addE(<span style="color:#d14">&#39;A&#39;</span>, <span style="color:#d14">&#39;D&#39;</span>);
-  g.addE(<span style="color:#d14">&#39;B&#39;</span>, <span style="color:#d14">&#39;C&#39;</span>);
-  g.addE(<span style="color:#d14">&#39;D&#39;</span>, <span style="color:#d14">&#39;E&#39;</span>);
-  g.addE(<span style="color:#d14">&#39;E&#39;</span>, <span style="color:#d14">&#39;F&#39;</span>);
-  g.addE(<span style="color:#d14">&#39;A&#39;</span>, <span style="color:#d14">&#39;E&#39;</span>);<span style="color:#998;font-style:italic">//circle path
-</span><span style="color:#998;font-style:italic"></span>
+  g.addE(<span style="background-color:#fff0f0">&#39;A&#39;</span>, <span style="background-color:#fff0f0">&#39;B&#39;</span>);
+  g.addE(<span style="background-color:#fff0f0">&#39;A&#39;</span>, <span style="background-color:#fff0f0">&#39;D&#39;</span>);
+  g.addE(<span style="background-color:#fff0f0">&#39;B&#39;</span>, <span style="background-color:#fff0f0">&#39;C&#39;</span>);
+  g.addE(<span style="background-color:#fff0f0">&#39;D&#39;</span>, <span style="background-color:#fff0f0">&#39;E&#39;</span>);
+  g.addE(<span style="background-color:#fff0f0">&#39;E&#39;</span>, <span style="background-color:#fff0f0">&#39;F&#39;</span>);
+  g.addE(<span style="background-color:#fff0f0">&#39;A&#39;</span>, <span style="background-color:#fff0f0">&#39;E&#39;</span>);<span style="color:#888">//circle path
+</span><span style="color:#888"></span>
   g.print()
 
-  g.hasCircleByDss(<span style="color:#d14">&#39;A&#39;</span>);<span style="color:#998;font-style:italic">//true
-</span><span style="color:#998;font-style:italic"></span>  g.hasCircleByDfs();
+  g.hasCircleByDss(<span style="background-color:#fff0f0">&#39;A&#39;</span>);<span style="color:#888">//true
+</span><span style="color:#888"></span>  g.hasCircleByDfs();
   g.hasCircleByBfs()
-</code></pre></div><h2 id="时间复杂度">时间复杂度<a href="#时间复杂度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
-<p>BFS/DFS: O(V+E)<br>
+</code></pre></div>
+<h2 id="时间复杂度">时间复杂度<a href="#时间复杂度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<p>BFS/DFS: O(V+E)<br />
 DisjointSet: O(n) -&gt; O(logn) using Rank</p>
 
       </div>
@@ -840,6 +863,47 @@ DisjointSet: O(n) -&gt; O(logn) using Rank</p>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>

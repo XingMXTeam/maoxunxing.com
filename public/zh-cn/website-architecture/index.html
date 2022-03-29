@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
     <meta name="author" content="Xunxing Mao">
-    <meta name="description" content="Updates about my life and what I learn about creating software">
-    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     <meta name="twitter:card" content="summary_large_image"/>
 
@@ -34,11 +34,16 @@
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/website-architecture/">
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
+    
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
     
     
     
@@ -72,7 +77,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.55.4" />
   </head>
 
   
@@ -93,7 +98,7 @@
     <div class="navigation-author">
       <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
         
-          <img src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
       <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
@@ -208,7 +213,10 @@
 
         </div>
       </header><div>
-        <h2 id="基础概念">基础概念<a href="#基础概念" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+        
+
+<h2 id="基础概念">基础概念<a href="#基础概念" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <table>
 <thead>
 <tr>
@@ -217,72 +225,86 @@
 <th>解释</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>网络</td>
 <td>VPC</td>
 <td>Virtual Private Cloud 虚拟私有云。为什么是虚拟私有？它是一种运行在公有云上，将一部分公有云资源为某个用户隔离出来，给这个用户私有使用的资源的集合，感觉像是在使用自己的私有云一样。什么是云？构建在物理之上的虚拟化网络。VPC采用隧道技术，隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>DNS</td>
 <td>应用层协议和https一样，端口是53，提供根据域名查IP的服务</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>Record</td>
 <td>记录和IP的对应关系</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>A记录</td>
 <td>支持将域名映射到IPV4地址</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>CNAME</td>
 <td>别名 Canonical Name 支持指向另一个域名</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>MX</td>
 <td>Mail Exchanger 支持将域名指向邮件服务器地址</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>NS</td>
 <td>name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>CDN</td>
 <td>Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>节点</td>
 <td>传统的节点是单体的物理机器 -&gt; 单台虚拟机上的服务 -&gt; 轻量级的容器服务，能提供单位服务的逻辑计算资源的集合</td>
 </tr>
+
 <tr>
 <td>网络</td>
 <td>统一接入层</td>
 <td>web server代理，它将请求转发给（proxy_pass）应用服务器。能解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）</td>
 </tr>
+
 <tr>
 <td>分布式</td>
 <td>NTP（网络时间协议）</td>
 <td>在数据网络潜伏时间可变的计算机系统之间通过分组交换进行时钟同步的一个网络协议，位于OSI模型的应用层</td>
 </tr>
+
 <tr>
 <td>分布式</td>
 <td>Lamport逻辑时钟/向量时钟</td>
 <td>一种在分布式环境中为各种操作或事件产生偏序值的技术，它可以检测操作或事件的并行冲突，用来保持系统的一致性</td>
 </tr>
+
 <tr>
 <td>云原生</td>
 <td>K8s</td>
 <td>Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构</td>
 </tr>
+
 <tr>
 <td>云原生</td>
 <td>Docker</td>
@@ -290,20 +312,27 @@
 </tr>
 </tbody>
 </table>
+
 <h2 id="请求链路">请求链路<a href="#请求链路" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <blockquote>
 <p>一个http请求现代化架构下一般会有哪些链路</p>
 </blockquote>
-<p>1 域名解析IP<br>
-2 统一接入层<br>
-3 负载均衡Key&ndash;hash-&gt;集群<br>
-4 网关层<br>
+
+<p>1 域名解析IP<br />
+2 统一接入层<br />
+3 负载均衡Key&ndash;hash-&gt;集群<br />
+4 网关层<br />
 5 应用服务器</p>
-<h2 id="分布式服务架构">分布式服务/架构<a href="#分布式服务架构" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<h2 id="分布式服务-架构">分布式服务/架构<a href="#分布式服务-架构" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <h3 id="发展轨迹">发展轨迹<a href="#发展轨迹" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <blockquote>
 <p>现代化的服务器架构是怎么演进的</p>
 </blockquote>
+
 <p>1 RPC (Remote Process Call)
 
 
@@ -352,13 +381,17 @@
   
 
 </p>
+
 <p>2 SOA（Service-Oriented Architecture, 像hsf, dubbo) 面向服务架构</p>
+
 <p>特点：</p>
+
 <ul>
 <li>分布式部署</li>
 <li>请求分流</li>
 <li>数据读写分离</li>
 </ul>
+
 
 
 
@@ -413,6 +446,7 @@
   
   </div>
   
+
 
 
 <p>3 MSA 微服务架构
@@ -472,163 +506,178 @@
   
 
 </p>
+
 <h3 id="分布式架构理论">分布式架构理论<a href="#分布式架构理论" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <blockquote>
 <p>分布式架构需要了解哪些东西理论</p>
 </blockquote>
+
 <p>一致性理论</p>
+
 <ul>
 <li>CAP（强一致性）</li>
 <li>ACID（分布式一致性）</li>
 <li>Base（弱一致性）
+
 <ul>
 <li><a href="http://thesecretlivesofdata.com/raft/">Distributed consensus theory</a></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <p>一致性算法</p>
+
 <p>CALM-&gt;CRDT-&gt;高可用事务+ZAB协议分析-&gt;Paxos Raft Gossip</p>
+
 <h3 id="分布式应用">分布式应用<a href="#分布式应用" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <blockquote>
 <p>分布式应用有哪些</p>
 </blockquote>
+
 <p>文件系统： HDFS FastDFS Ceph mooseFS
-<a href="https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems?spm=ata.21736010.0.0.30f21d02woZ6di">对比</a><br>
-数据库： Hbase(列式存储)、Elasticsearch/mongodb(文档存储)、redis(kv类型)、spanner(关系型)<br>
-计算： 离线hadoop 实时spark 流式storm/flink/blink<br>
-缓存：持久化redis 非持久化memcache<br>
-消息：kafka rabbitmq rocketmq activemq<br>
-监控：zookeeper<br>
-应用：hsf dubbo<br>
-日志：采集flum、存储elasticsearch/solr sls、定位zipkin<br>
+<a href="https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems?spm=ata.21736010.0.0.30f21d02woZ6di">对比</a><br />
+数据库： Hbase(列式存储)、Elasticsearch/mongodb(文档存储)、redis(kv类型)、spanner(关系型)<br />
+计算： 离线hadoop 实时spark 流式storm/flink/blink<br />
+缓存：持久化redis 非持久化memcache<br />
+消息：kafka rabbitmq rocketmq activemq<br />
+监控：zookeeper<br />
+应用：hsf dubbo<br />
+日志：采集flum、存储elasticsearch/solr sls、定位zipkin<br />
 账本：比特币 以太坊</p>
+
 <p><strong>应用场景</strong>：</p>
+
 <ul>
 <li>异步调用
+
 <ul>
 <li>improve qps capacity 比如实时直播间</li>
-</ul>
-</li>
+</ul></li>
 <li>应用解耦
+
 <ul>
 <li>order system-&gt;message system-&gt;stock system(push or pull)</li>
-</ul>
-</li>
+</ul></li>
 <li>流量控制
+
 <ul>
 <li>spike activity/group buy</li>
-</ul>
-</li>
+</ul></li>
 <li>日志处理
+
 <ul>
 <li>client-&gt;kafka queue-&gt;application 日志同步</li>
-</ul>
-</li>
+</ul></li>
 <li>订阅
+
 <ul>
 <li>point to point / pub sub mode 比如IM</li>
+</ul></li>
+<li>广播方式cache同步
+<br /></li>
 </ul>
-</li>
-<li>广播方式cache同步</li>
-</ul>
+
 <p>举例：</p>
+
 <ul>
 <li>high capability and persistence : Active MQ、Rabbit MQ、Rocket MQ
+
 <ul>
-<li>question is consistency questions?
-<ul>
+<li>question is consistency questions?</li>
 <li>use db and message queue to ensure final consistency</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
 <li>client/zookeeper/kafka/storm clusterf</li>
 <li>JMS
+
 <ul>
 <li>EJB J2EE</li>
 <li>Message mode(p2p/pub sub), Message Consume(async sync )</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <p>如何避免消息丢失：</p>
+
 <ul>
 <li>TCP cannot ensure application no lost*</li>
 <li>sync
+
 <ul>
 <li>wait confirm</li>
 <li>continue ARQ(slide window)</li>
-</ul>
-</li>
+</ul></li>
 <li>async
+
 <ul>
 <li>callback function</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <p>消息幂等：</p>
+
 <ul>
 <li>query/delete: no special handle</li>
 <li>unique index
+
 <ul>
 <li>avoid dirty data</li>
-</ul>
-</li>
+</ul></li>
 <li>token(token+redis/jvm memory)
+
 <ul>
 <li>avoid repeat submit</li>
-<li>token need to apply, only one time
-<ul>
+<li>token need to apply, only one time</li>
 <li>1 apply token</li>
 <li>2 submit and to check token, if delete success that token exsit</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
 <li>Pessimistic lock
+
 <ul>
 <li>query with</li>
-</ul>
-</li>
+</ul></li>
 <li>optimistic lock
+
 <ul>
 <li>update with</li>
-</ul>
-</li>
+</ul></li>
 <li>distributed lock
+
 <ul>
 <li>if system is distributed, it is hard to build unique index. userid_suffix as key to get distributed lock(multiple threads concurrent lock)</li>
-</ul>
-</li>
+</ul></li>
 <li>select+insert
+
 <ul>
 <li>when concurrent not high, we can use this</li>
-<li>search data, if exsit, not run next</li>
+<li>search data, if exsit, not run next
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <p>保证消息的顺序(queue not in order but the message is in order)</p>
+
 <ul>
 <li>sender: async send message, if 1 failed, you need to resend, cannot promise order</li>
 <li>saver:
+
 <ul>
 <li>you cannt split message to different queue</li>
-<li>if you have only one queue, how to promise order if a machine unvailable, you can switch to another machine(when message is not consumed)
-<ul>
+<li>if you have only one queue, how to promise order if a machine unvailable, you can switch to another machine(when message is not consumed)</li>
 <li>sync copy to promise the order</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
 <li>receiver
+
 <ul>
 <li>sync consume</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="分布式缓存">分布式缓存<a href="#分布式缓存" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <blockquote>
 <p>如何解决分布式缓存问题</p>
 </blockquote>
+
 <p>数据流
 
 
@@ -680,119 +729,139 @@
   
 
 </p>
+
 <p>采用中间件 middleware</p>
+
 <p><strong>Redis</strong>：</p>
+
 <ul>
 <li>为什么快
+
 <ul>
 <li>use memory</li>
 <li>non-blocking multiplexing io</li>
 <li>single thread</li>
-</ul>
-</li>
+</ul></li>
 <li>应用场景
+
 <ul>
 <li>sorted set( top N, range find, delay task, )</li>
 <li>set(remove duplicated, common and unique things)</li>
 <li>list(message queue, pagination)</li>
 <li>hash(single point login)</li>
 <li>string(count cache)</li>
-</ul>
-</li>
+</ul></li>
 <li>内存策略
+
 <ul>
 <li>delete regularly and randomly</li>
 <li>lazy delete when get key</li>
 <li>memory elimination</li>
-</ul>
-</li>
+</ul></li>
 <li>渐进式哈希(rehashing)</li>
 <li>缓存穿透
+
 <ul>
 <li>what</li>
-<li>how to solve
-<ul>
+<li>how to solve</li>
 <li>bitmap</li>
 <li>empty value to cache</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
 <li>缓存雪崩
+
 <ul>
 <li>expire time randomly</li>
 <li>limit flow</li>
 <li>distributed lock</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="分布式数据库">分布式数据库<a href="#分布式数据库" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p>读写分离：数据写到主库，读取从备库（数据复制于主库）<br>
+
+<p>读写分离：数据写到主库，读取从备库（数据复制于主库）<br />
 垂直分库：不同业务单元划分到不同的数据库。 ACID被打破；Join操作困难；外键约束受影响
 水平分表：单个表拆分（比如ugc表非常大）。自增主键受影响；单表查询变成多表</p>
-<p>应用场景：<br>
-1 读写分离<br>
-2 分库分表<br>
-3 动态数据源<br>
+
+<p>应用场景：<br />
+1 读写分离<br />
+2 分库分表<br />
+3 动态数据源<br />
 4 主备切换</p>
+
 <h3 id="分布式调度">分布式调度<a href="#分布式调度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>schedulerX</p>
+
 <h3 id="分布式搜索">分布式搜索<a href="#分布式搜索" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>Open Search</p>
+
 <h3 id="分布式事务">分布式事务<a href="#分布式事务" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>TXC(Taobao Transaction Constructor)</p>
+
 <h3 id="分布式计算">分布式计算<a href="#分布式计算" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><strong>blink</strong>: 分布式实时计算<br>
+
+<p><strong>blink</strong>: 分布式实时计算<br />
 <strong>odps</strong>（Open Data Processing Service）: 分布式离线计算 结构化数据的存储和计算, 海量数据仓库的解决方案和大数据的分析和建模</p>
+
 <ul>
-<li>web: 提供服务</li>
-<li>sdk: 封装 api</li>
-<li>clt: 客户端工具，提交命令</li>
-<li>ide: 可视化操作</li>
+<li>web: 提供服务<br /></li>
+<li>sdk: 封装 api<br /></li>
+<li>clt: 客户端工具，提交命令<br /></li>
+<li>ide: 可视化操作<br /></li>
 </ul>
+
 <h2 id="大数据和高并发">大数据和高并发<a href="#大数据和高并发" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <blockquote>
 <p>大数据和高并发场景的解决方案有哪些？</p>
 </blockquote>
+
 <h3 id="bitmap">bitmap<a href="#bitmap" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <ul>
-<li>
-<p>应用场景(data range below int*10)</p>
+<li><p>应用场景(data range below int*10)</p>
+
 <ul>
 <li>quick sort not repeated array</li>
 <li>quick remove repeat</li>
 <li>quick search</li>
-<li>bloom filter（high Accuracy
-<ul>
+<li>bloom filter（high Accuracy</li>
 <li>check url is the same</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>advantage</p>
+</ul></li>
+
+<li><p>advantage</p>
+
 <ul>
 <li>占用内存少</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="限流算法">限流算法<a href="#限流算法" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <ul>
 <li>count number</li>
 <li>sliding window</li>
 <li>leaky bucket</li>
 <li>token bucket</li>
 </ul>
+
 <h3 id="负载均衡">负载均衡<a href="#负载均衡" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <ul>
 <li>dns</li>
 <li>reverse proxy</li>
 <li>http redirect</li>
 <li>Stratification</li>
 </ul>
+
 <h2 id="运维和监控">运维和监控<a href="#运维和监控" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
 <h3 id="概念">概念<a href="#概念" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
 <p>DevOps: 持续开发，持续测试，持续集成，持续部署，持续监控</p>
+
 
 
 
@@ -846,7 +915,9 @@
   
 
 
+
 <!-- 租户：将资源隔离 -->
+
 <!-- ### 系统
 
 监控体系：  
@@ -861,6 +932,7 @@ switch 开发和动态配置项管理框架
 sentinel 资源调度控制（限流 降级 授权 调用统计）
 onelog 日志管控系统
 log service(sls) 日志服务实时数据一站式服务 -->
+
 <!-- 
 
 
@@ -914,17 +986,22 @@ log service(sls) 日志服务实时数据一站式服务 -->
   
 
  -->
+
 <!-- 
 售卖区： ecs rds(vpc隔离成多个子网)
 OXS: ots oss odps ons ocs -->
+
 <!-- 
 网络： 网络工作模式：同步网络（节点同步执行、消息延迟有限、高效全局锁）、半同步网络（锁范围放宽）、异步网络（节点独立执行、消息延迟无上限、无全局锁、部分算法不可行）   -->
+
 <!-- 统一接入层(AServer)： tengine运行的web server代理。 将请求转发给（proxy_pass）应用服务器 -->
+
 <!-- * 解决https证书申请和更换
 * 证书泄漏：部署在服务器有泄漏风险
 * 应用安全：应用接入全站https、管理私钥
 * 安全管控：收敛安全入口
    -->
+
 <!-- 
 接入层通过VIP Server发现后端可用机器；
 业务层通过VIP Server做服务发现和调用；
@@ -935,14 +1012,18 @@ OXS: ots oss odps ons ocs -->
 2 Aserver填写vip server key和域名
 
 AServer从请求头获取域名； 根据域名找到vip server key； 根据key找到集群 -->
+
 <!-- ### 开发环境
 
 自动化安装脚本
 
 aone回滚时，用基线版本直接覆盖master当前分支版本（不是操作的git回滚)，也就是说会新生成新的提交。
 本地开发 需要重新执行git revert当前回滚版本 -->
+
 <!-- Pouch/Docker: 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps) -->
+
 <!-- K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构。 -->
+
 <!-- **MetaQ**:  
 
 消息模型
@@ -1059,6 +1140,7 @@ name server: 注册服务器，将topic注册到上面
 broker: 存储转发服务器。 和name server建立长连接，从而获得topic信息  
 producer: 消息发送方。 和一个name server建立连接，获得路由信息，再和broker建立长连接且定时向master发送心跳，再由master同步到所有brokder  
 consumer: 消息接收方，需要和其中一个name sever建立连接，获得路由信息，再向提供服务的master、slaver建立长连接，具体接收消息时刻选择broker   -->
+
 <!-- 
 **Tair**:  
 
@@ -1183,7 +1265,9 @@ data server负责数据存储 按照config server的指示完成数据复制和�
 
 数据访问方式1： Hash(key) % Bucketcount，得到具体的数据存储Bucket， 再检索数据路由表到该Bucket所在的DataServer
 数据访问方式2（多级缓存）: DataServer上划分Hotzone存储热点数据的访问，由客户端配置的缓存访问逻辑来处理缓存访问 -->
+
 <!-- TDDL(Taobao Distributed Data Layer) -->
+
 <!-- 
 整体架构  
 
@@ -1398,6 +1482,7 @@ data server负责数据存储 按照config server的指示完成数据复制和�
 Matrix层：SQL的解析、优化，执行; 规则匹配；表名替换；sql转发; 合并atom返回的结果集，返回给client  
 Group层： 读写分离和主备切换（镜像备份，通过日志变化，在从库中执行相同动作；或者需要先路由到从库，再执行动作 - 根据权重选择atom; 具有重试策略的调用atom执行sql  
 Atom层：物理db组成 - 执行sql; 返回结果到matrix   -->
+
 <!-- 
 
 
@@ -1451,10 +1536,12 @@ Atom层：物理db组成 - 执行sql; 返回结果到matrix   -->
   
 
  -->
+
 <!-- odps客户端 
 <!-- 
 接入层：
 http服务，用户认证，cache, load balance -->
+
 <!-- 
 
 
@@ -1511,6 +1598,7 @@ http服务，用户认证，cache, load balance -->
   
 
  -->
+
 <!-- 
 
 
@@ -1567,6 +1655,7 @@ http服务，用户认证，cache, load balance -->
   
 
  -->
+
 <!-- 
 **dubbo**:
 
@@ -1634,6 +1723,7 @@ how to do it ?
 
 Protocol Difference 
 * BSD  -->
+
 <!-- 
 **hsf**:  
 
@@ -1708,10 +1798,12 @@ Protocol Difference
 <!-- 
 * RPC Message
 * Restful -->
+
 <!--   
 ## design mode
 
 SOLID -->
+
 <!-- ## Top k
 
 * how to solve
@@ -1905,6 +1997,47 @@ SOLID -->
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
 
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
 
 
   </body>
