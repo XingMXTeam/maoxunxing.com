@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://maoxunxing.com/zh-cn/notes/</loc>
-    <lastmod>2022-03-27T14:48:25+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2022-03-28T17:14:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,9 +18,23 @@
   </url>
   
   <url>
+    <loc>https://maoxunxing.com/zh-cn/notes/tailwind/</loc>
+    <lastmod>2022-03-28T17:14:19+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/notes/tailwind/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/notes/tailwind/"
+                />
+  </url>
+  
+  <url>
     <loc>https://maoxunxing.com/zh-cn/</loc>
-    <lastmod>2022-03-27T14:48:25+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2022-03-28T17:14:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -31,6 +44,21 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://maoxunxing.com/zh-cn/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/zh-cn/notes/share-tips/</loc>
+    <lastmod>2022-03-27T18:15:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/notes/share-tips/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/notes/share-tips/"
                 />
   </url>
   
@@ -127,7 +155,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/book-reports/</loc>
     <lastmod>2021-12-09T15:05:59+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -156,21 +183,6 @@
   </url>
   
   <url>
-    <loc>https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/</loc>
-    <lastmod>2021-12-01T14:53:11+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/"
-                />
-  </url>
-  
-  <url>
     <loc>https://maoxunxing.com/zh-cn/notes/reamde/</loc>
     <lastmod>2021-12-01T14:53:11+08:00</lastmod>
     <xhtml:link
@@ -182,6 +194,21 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://maoxunxing.com/zh-cn/notes/reamde/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/</loc>
+    <lastmod>2021-12-01T14:53:11+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/"
                 />
   </url>
   
@@ -278,7 +305,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/es6/</loc>
     <lastmod>2021-10-21T19:17:54+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -294,7 +320,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/</loc>
     <lastmod>2021-10-21T19:17:54+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -325,7 +350,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/nodejs/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -335,6 +359,21 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://maoxunxing.com/zh-cn/tags/nodejs/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</loc>
+    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/notes/nodejs-debug/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/notes/nodejs-debug/"
                 />
   </url>
   
@@ -414,24 +453,8 @@
   </url>
   
   <url>
-    <loc>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</loc>
-    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maoxunxing.com/en/notes/nodejs-debug/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://maoxunxing.com/zh-cn/notes/nodejs-debug/"
-                />
-  </url>
-  
-  <url>
     <loc>https://maoxunxing.com/zh-cn/posts/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -477,7 +500,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/%E6%88%90%E9%95%BF/</loc>
     <lastmod>2021-09-17T13:12:13+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -508,7 +530,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/open-source/</loc>
     <lastmod>2021-08-27T10:20:36+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -537,17 +558,17 @@
   </url>
   
   <url>
-    <loc>https://maoxunxing.com/zh-cn/how-to-improve3/</loc>
+    <loc>https://maoxunxing.com/zh-cn/notes/open-source-value/</loc>
     <lastmod>2021-08-27T10:20:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://maoxunxing.com/en/how-to-improve3/"
+                href="https://maoxunxing.com/en/notes/open-source-value/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://maoxunxing.com/zh-cn/how-to-improve3/"
+                href="https://maoxunxing.com/zh-cn/notes/open-source-value/"
                 />
   </url>
   
@@ -567,21 +588,6 @@
   </url>
   
   <url>
-    <loc>https://maoxunxing.com/zh-cn/how-to-improve5/</loc>
-    <lastmod>2021-08-27T10:20:36+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://maoxunxing.com/en/how-to-improve5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://maoxunxing.com/zh-cn/how-to-improve5/"
-                />
-  </url>
-  
-  <url>
     <loc>https://maoxunxing.com/zh-cn/how-to-improve4/</loc>
     <lastmod>2021-08-27T10:20:36+08:00</lastmod>
     <xhtml:link
@@ -597,24 +603,38 @@
   </url>
   
   <url>
-    <loc>https://maoxunxing.com/zh-cn/notes/open-source-value/</loc>
+    <loc>https://maoxunxing.com/zh-cn/how-to-improve5/</loc>
     <lastmod>2021-08-27T10:20:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://maoxunxing.com/en/notes/open-source-value/"
+                href="https://maoxunxing.com/en/how-to-improve5/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://maoxunxing.com/zh-cn/notes/open-source-value/"
+                href="https://maoxunxing.com/zh-cn/how-to-improve5/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/zh-cn/how-to-improve3/</loc>
+    <lastmod>2021-08-27T10:20:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/how-to-improve3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/how-to-improve3/"
                 />
   </url>
   
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/exception-handle/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -630,7 +650,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/front-end/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -646,7 +665,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/programming/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -677,13 +695,11 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/%E6%A0%91/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -704,7 +720,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -725,7 +740,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -761,7 +775,6 @@
   <url>
     <loc>https://maoxunxing.com/zh-cn/tags/%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2021-08-06T15:25:06+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -781,7 +794,6 @@
   
   <url>
     <loc>https://maoxunxing.com/zh-cn/categories/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

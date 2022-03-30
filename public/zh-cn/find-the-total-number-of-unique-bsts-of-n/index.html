@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF"/>
     <link rel="manifest" href="https://maoxunxing.com/manifest.json">
+    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar.jpg">
     <meta name="author" content="Xunxing Mao">
     <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
     <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
@@ -16,7 +18,7 @@
     <meta name="twitter:creator" content="@maoxunxing"/>
 
 
-    <meta property="og:title" content="给出N，求唯一BST的总数" />
+    <meta property="og:title" content="树系列 - 给出N，求唯一BST的总数" />
 <meta property="og:description" content="我正在学习算法。本篇讨论的算法关于BST" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/" />
@@ -29,21 +31,22 @@
     
       <base href="https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/">
     
-    <title>给出N，求唯一BST的总数 · 毛训星的网络日志</title>
+    <title>树系列 - 给出N，求唯一BST的总数 · 毛训星的网络日志</title>
 
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/">
     
     
     <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
-    
     <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" />
 
     
     
-    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../../css/font.css" crossorigin="anonymous">
     
-    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    
     
     
     
@@ -77,7 +80,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.55.4" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   
@@ -144,14 +147,14 @@
               
             </li>
             <li class="navigation-item">
-              <a href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
+              <a rel="noopener" href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
             </li>
             
             <li class="navigation-item">
-              <a href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
+              <a rel="noopener" href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
             </li>
             <li class="navigation-item">
-              <a href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
+              <a rel="noopener" href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
             </li>
             <li class="navigation-item">
               <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
@@ -191,7 +194,7 @@
       <header>
         
         <div class="post-title">
-          <h1 class="title">给出N，求唯一BST的总数</h1>
+          <h1 class="title">树系列 - 给出N，求唯一BST的总数</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -217,17 +220,12 @@
 
         </div>
       </header><div>
-        
-
-<h2 id="问题定义">问题定义<a href="#问题定义" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
-
+        <h2 id="问题定义">问题定义<a href="#问题定义" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
 <p>给定N，找出可以用1到N的值制作的唯一BST的总数</p>
-
-<p><strong>用例:</strong><br />
-输入: n = 3<br />
-输出: 5<br />
+<p><strong>用例:</strong><br>
+输入: n = 3<br>
+输出: 5<br>
 For n = 3, preorder traversal of</p>
-
 <ol>
 <li>1 2 3</li>
 <li>1 3 2</li>
@@ -235,14 +233,10 @@ For n = 3, preorder traversal of</p>
 <li>3 1 2</li>
 <li>3 2 1</li>
 </ol>
-
-<p>输入: 4<br />
+<p>输入: 4<br>
 输出: 14</p>
-
 <h2 id="问题分析">问题分析<a href="#问题分析" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
-
 <p>起初，我不太明白这个问题的意思。什么是BST？它的定义是：任何节点的值都小于右子树的任何节点，大于左子树的任何节点。我想一开始觉得就一种可能。实际上也可能有多种情况。</p>
-
 <p>例如，给定节点3 1 2，至少下面的排列可以满足BST的条件。
 
 
@@ -300,7 +294,6 @@ For n = 3, preorder traversal of</p>
   
 
 </p>
-
 <p>如果你仔细思考，你可以继续想出其他的情况
 
 
@@ -358,60 +351,55 @@ For n = 3, preorder traversal of</p>
   
 
 </p>
-
 <p>ok，问题的意思已经清楚了。那么，如何分析有n个节点的BST树的数量。算法是关键，目前，我们还不知道用什么数据结构。我们用分析归纳的方法来寻找规律。</p>
-
 <ul>
-<li>1 只有一个节点，显然只有一种情况。T(1) = 1</li>
-<li>2 如果有两个节点，就有两种情况。T(2) = 2</li>
-
-<li><p>3 如果有三个节点。</p>
-
+<li>
+<p>1 只有一个节点，显然只有一种情况。T(1) = 1</p>
+</li>
+<li>
+<p>2 如果有两个节点，就有两种情况。T(2) = 2</p>
+</li>
+<li>
+<p>3 如果有三个节点。</p>
 <ul>
 <li>假设1是根节点，2 3在根节点的右边，结果将是。 T(0) * T(2) ( 我们已经知道T(2) = 2)</li>
 <li>假设2是根节点，1 3分别在两侧，结果将是。T(1) * T(1)</li>
 <li>假设3是根节点，1 2在根节点的左边，结果将是。T(2) * T(0)
 这样，我们遍历了所有可能的情况。 T（2）+ T（1）+ T（2）= 2 + 1 + 2 = 5
 所以结果是5，这与问题定义中的案例结果一致</li>
-</ul></li>
-
-<li><p>3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</p>
-
+</ul>
+</li>
+<li>
+<p>3 如果有4个节点，如1 2 3 4，怎么办。还是按照上面的思路，有。</p>
 <ul>
 <li>T(0) * T(3), i = 1</li>
 <li>T(1) * T(2), i = 2</li>
-<li>T(2) * T(1), i = 3<br /></li>
-<li>T(3) * T(0), i = 4<br />
-<br /></li>
-</ul></li>
+<li>T(2) * T(1), i = 3</li>
+<li>T(3) * T(0), i = 4</li>
 </ul>
-
+</li>
+</ul>
 <p>然后，把它们全部加起来： 5+2+2+5=14 对，结果是正确的</p>
-
 <p>根据上面的分析，我们可以大概知道这个规律：假设i是根节点，T[i-1]*T[n-i]是当前情况下的BST树的数量。而最终BST树的数量是通过遍历所有作为根节点的节点，然后得到的。将它们的数量加在一起。</p>
-
 <h3 id="编码">编码<a href="#编码" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-
 <p>暴力方案。采用递归</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#888">// i is the root, n is the total nodes&#39; number
-</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> G <span style="color:#333">=</span> (i,n)=&gt;{
-      <span style="color:#080;font-weight:bold">return</span> fn(i <span style="color:#333">-</span> <span style="color:#00d;font-weight:bold">1</span>) <span style="color:#333">*</span> fn(n <span style="color:#333">-</span> i)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#998;font-style:italic">// i is the root, n is the total nodes&#39; number
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> G <span style="color:#000;font-weight:bold">=</span> (i,n)=&gt;{
+      <span style="color:#000;font-weight:bold">return</span> fn(i <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">*</span> fn(n <span style="color:#000;font-weight:bold">-</span> i)
   }
   
-  <span style="color:#888">// Get the total number of BST trees with n nodes.
-</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> fn <span style="color:#333">=</span> n=&gt;{
-      <span style="color:#080;font-weight:bold">let</span> _ <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>
-      <span style="color:#080;font-weight:bold">if</span>(n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">0</span><span style="color:#333">||</span>n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">1</span>) <span style="color:#080;font-weight:bold">return</span> <span style="color:#00d;font-weight:bold">1</span>
-      <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>; i <span style="color:#333">&lt;=</span> n; i<span style="color:#333">++</span>) {
-          _ <span style="color:#333">+=</span> G(i, n)
+  <span style="color:#998;font-style:italic">// Get the total number of BST trees with n nodes.
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> fn <span style="color:#000;font-weight:bold">=</span> n=&gt;{
+      <span style="color:#000;font-weight:bold">let</span> _ <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+      <span style="color:#000;font-weight:bold">if</span>(n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">0</span><span style="color:#000;font-weight:bold">||</span>n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>
+      <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span>) {
+          _ <span style="color:#000;font-weight:bold">+=</span> G(i, n)
       }
-      <span style="color:#080;font-weight:bold">return</span> _
+      <span style="color:#000;font-weight:bold">return</span> _
   }
-  console.log(fn(<span style="color:#00d;font-weight:bold">3</span>))
-</code></pre></div>
-<p>如果你以前学过CS课程，因为代码中都是递归的内容。我们可以画出递归树：f(3)是最终结果，3个节点的数字。 G(1,3)表示1为根，3为节点的总数。
+  console.log(fn(<span style="color:#099">3</span>))
+</code></pre></div><p>如果你以前学过CS课程，因为代码中都是递归的内容。我们可以画出递归树：f(3)是最终结果，3个节点的数字。 G(1,3)表示1为根，3为节点的总数。
 我们还可以做一个结论。G(i, n) = f(i-1)*f(n-i)</p>
-
 
 
 
@@ -462,49 +450,44 @@ For n = 3, preorder traversal of</p>
   
 
 
-
 <p>从递归树中，我们还可以看到f(1)f(2)f(0)是重复计算的，我们可以缓存这些数据以避免重复计算。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#888">// get the total number of BST tress with i as the root node
-</span><span style="color:#888"></span>  <span style="color:#080;font-weight:bold">const</span> G <span style="color:#333">=</span> (i,n)=&gt;{
-      <span style="color:#080;font-weight:bold">return</span> fn(i <span style="color:#333">-</span> <span style="color:#00d;font-weight:bold">1</span>) <span style="color:#333">*</span> fn(n <span style="color:#333">-</span> i)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#998;font-style:italic">// get the total number of BST tress with i as the root node
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">const</span> G <span style="color:#000;font-weight:bold">=</span> (i,n)=&gt;{
+      <span style="color:#000;font-weight:bold">return</span> fn(i <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">*</span> fn(n <span style="color:#000;font-weight:bold">-</span> i)
   }
-  <span style="color:#080;font-weight:bold">const</span> dp <span style="color:#333">=</span> []; 
-  <span style="color:#080;font-weight:bold">const</span> fn <span style="color:#333">=</span> n=&gt;{
-      <span style="color:#080;font-weight:bold">let</span> _ <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">0</span>
-      <span style="color:#080;font-weight:bold">if</span>(n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">0</span><span style="color:#333">||</span>n<span style="color:#333">===</span><span style="color:#00d;font-weight:bold">1</span>) <span style="color:#080;font-weight:bold">return</span> <span style="color:#00d;font-weight:bold">1</span>;
-      <span style="color:#080;font-weight:bold">if</span>(dp[n]) {
-        console.log(<span style="background-color:#fff0f0">&#39;hit cache&#39;</span>)
-        <span style="color:#080;font-weight:bold">return</span> dp[n]
+  <span style="color:#000;font-weight:bold">const</span> dp <span style="color:#000;font-weight:bold">=</span> []; 
+  <span style="color:#000;font-weight:bold">const</span> fn <span style="color:#000;font-weight:bold">=</span> n=&gt;{
+      <span style="color:#000;font-weight:bold">let</span> _ <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+      <span style="color:#000;font-weight:bold">if</span>(n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">0</span><span style="color:#000;font-weight:bold">||</span>n<span style="color:#000;font-weight:bold">===</span><span style="color:#099">1</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>;
+      <span style="color:#000;font-weight:bold">if</span>(dp[n]) {
+        console.log(<span style="color:#d14">&#39;hit cache&#39;</span>)
+        <span style="color:#000;font-weight:bold">return</span> dp[n]
       }
-      <span style="color:#888">// loop all nodes
-</span><span style="color:#888"></span>      <span style="color:#080;font-weight:bold">for</span> (<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>; i <span style="color:#333">&lt;=</span> n; i<span style="color:#333">++</span>) {
-         <span style="color:#888">// add them all
-</span><span style="color:#888"></span>          _ <span style="color:#333">+=</span> G(i, n)
+      <span style="color:#998;font-style:italic">// loop all nodes
+</span><span style="color:#998;font-style:italic"></span>      <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span>) {
+         <span style="color:#998;font-style:italic">// add them all
+</span><span style="color:#998;font-style:italic"></span>          _ <span style="color:#000;font-weight:bold">+=</span> G(i, n)
       }
-      <span style="color:#888">// cache result
-</span><span style="color:#888"></span>      dp[n] <span style="color:#333">=</span> _
-      <span style="color:#080;font-weight:bold">return</span> _
+      <span style="color:#998;font-style:italic">// cache result
+</span><span style="color:#998;font-style:italic"></span>      dp[n] <span style="color:#000;font-weight:bold">=</span> _
+      <span style="color:#000;font-weight:bold">return</span> _
   }
-  console.log(fn(<span style="color:#00d;font-weight:bold">3</span>))
-</code></pre></div>
-<p>应该有三个命中重复的，但我们只有一个。所以这样一来，我们就不能完全利用重复计算。我们可以从上到下进行决策。例如，在i为根的情况下，我们先以i-1&hellip;1为根的值进行计算。</p>
-
+  console.log(fn(<span style="color:#099">3</span>))
+</code></pre></div><p>应该有三个命中重复的，但我们只有一个。所以这样一来，我们就不能完全利用重复计算。我们可以从上到下进行决策。例如，在i为根的情况下，我们先以i-1&hellip;1为根的值进行计算。</p>
 <p>优化结果如下:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;font-weight:bold">const</span> getNumberOfBSTs <span style="color:#333">=</span> n =&gt; {
-  <span style="color:#080;font-weight:bold">const</span> T <span style="color:#333">=</span> []
-  T[<span style="color:#00d;font-weight:bold">0</span>] <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>
-  T[<span style="color:#00d;font-weight:bold">1</span>] <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>
-  <span style="color:#080;font-weight:bold">for</span>(<span style="color:#080;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">2</span>; i <span style="color:#333">&lt;=</span> n; i<span style="color:#333">++</span>) {
-    <span style="color:#888">// j form 1 to i represents the already calculated results
-</span><span style="color:#888"></span>    <span style="color:#080;font-weight:bold">for</span>(<span style="color:#080;font-weight:bold">let</span> j <span style="color:#333">=</span> <span style="color:#00d;font-weight:bold">1</span>; j <span style="color:#333">&lt;=</span>i; j<span style="color:#333">++</span>) {
-        <span style="color:#888">// This is the conclusion derived from the recursive tree above
-</span><span style="color:#888"></span>        T[i] <span style="color:#333">+=</span> T[j<span style="color:#333">-</span><span style="color:#00d;font-weight:bold">1</span>]<span style="color:#333">*</span>T[i<span style="color:#333">-</span>j]
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> getNumberOfBSTs <span style="color:#000;font-weight:bold">=</span> n =&gt; {
+  <span style="color:#000;font-weight:bold">const</span> T <span style="color:#000;font-weight:bold">=</span> []
+  T[<span style="color:#099">0</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>
+  T[<span style="color:#099">1</span>] <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>
+  <span style="color:#000;font-weight:bold">for</span>(<span style="color:#000;font-weight:bold">let</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span>; i <span style="color:#000;font-weight:bold">&lt;=</span> n; i<span style="color:#000;font-weight:bold">++</span>) {
+    <span style="color:#998;font-style:italic">// j form 1 to i represents the already calculated results
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">for</span>(<span style="color:#000;font-weight:bold">let</span> j <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>; j <span style="color:#000;font-weight:bold">&lt;=</span>i; j<span style="color:#000;font-weight:bold">++</span>) {
+        <span style="color:#998;font-style:italic">// This is the conclusion derived from the recursive tree above
+</span><span style="color:#998;font-style:italic"></span>        T[i] <span style="color:#000;font-weight:bold">+=</span> T[j<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>]<span style="color:#000;font-weight:bold">*</span>T[i<span style="color:#000;font-weight:bold">-</span>j]
     }
   }
 }
-</code></pre></div>
-<h2 id="时间复杂度">时间复杂度<a href="#时间复杂度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
-
+</code></pre></div><h2 id="时间复杂度">时间复杂度<a href="#时间复杂度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
 <p>双层循环： O(n^2)</p>
 
       </div>
@@ -591,7 +574,7 @@ For n = 3, preorder traversal of</p>
 
   <h4>分享到</h4>
 
-  <a href="https://twitter.com/intent/tweet?via=maoxunxing&text=%e7%bb%99%e5%87%baN%ef%bc%8c%e6%b1%82%e5%94%af%e4%b8%80BST%e7%9a%84%e6%80%bb%e6%95%b0%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2ffind-the-total-number-of-unique-bsts-of-n%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
+  <a href="https://twitter.com/intent/tweet?via=maoxunxing&text=%e6%a0%91%e7%b3%bb%e5%88%97%20-%20%e7%bb%99%e5%87%baN%ef%bc%8c%e6%b1%82%e5%94%af%e4%b8%80BST%e7%9a%84%e6%80%bb%e6%95%b0%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2ffind-the-total-number-of-unique-bsts-of-n%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
     <i class="fab fa-fw fa-twitter" aria-hidden="true"></i>
     <span>Twitter</span>
   </a>
@@ -656,7 +639,7 @@ For n = 3, preorder traversal of</p>
       <footer class="footer">
   <section class="container">
     
-      <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
+      <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
       2022
       ©
        Xunxing Mao 
@@ -673,7 +656,7 @@ For n = 3, preorder traversal of</p>
 
     
       
-      <script src="https://maoxunxing.com/js/coder.min.158f22d7bc754e28d7c61accc0aef7952c2b949889ec9503466e5d4db0548808.js" integrity="sha256-FY8i17x1TijXxhrMwK73lSwrlJiJ7JUDRm5dTbBUiAg="></script>
+      <script src="https://maoxunxing.com/js/coder.min.38467c7bff5bee331546cad763003ffd2f8be17f96fa146dc1ad0f89c9124cd6.js" integrity="sha256-OEZ8e/9b7jMVRsrXYwA//S&#43;L4X&#43;W&#43;hRtwa0PickSTNY="></script>
     
 
     
@@ -691,14 +674,14 @@ For n = 3, preorder traversal of</p>
 
 
     <script type="module">
-    // Import the functions you need from the SDKs you need
+    
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
+  
   const firebaseConfig = {
     apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
     authDomain: "blog-6a0bf.firebaseapp.com",
@@ -709,7 +692,7 @@ For n = 3, preorder traversal of</p>
     measurementId: "G-65M6Z03PV2"
   };
 
-  // Initialize Firebase
+  
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>

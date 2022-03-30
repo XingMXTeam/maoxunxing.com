@@ -1,6 +1,7 @@
 ---
 title: "The Nature of Computers"
 date: 2021-08-24
+draft: true
 tags:
 - Operation System
 description: "What is the nature of computers?"
