@@ -1,0 +1,48 @@
+{
+    "root": {
+        "data": {
+            "id": "cizem72r8f40",
+            "created": 1648867131466,
+            "text": "a11y"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cizemd1a9y80",
+                    "created": 1648867144437,
+                    "text": "w3c"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cizemf4ona80",
+                            "created": 1648867148997,
+                            "text": "https://www.w3.org/WAI/GL/"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cizeq4wtcqo0",
+                                    "created": 1648867440210,
+                                    "text": "https://www.w3.org/TR/wai-aria/"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cizeqa97lvc0",
+                                    "created": 1648867451843,
+                                    "text": "https://w3c.github.io/html-aria/"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
