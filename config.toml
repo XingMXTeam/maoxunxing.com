@@ -39,8 +39,8 @@ buildFuture = true
 [permalinks]
     posts = "/:filename/"
 
-[social]
-twitter = "maoxunxing"
+##[social]
+##twitter = "maoxunxing"
 
 [params]
     author = "Xunxing Mao"

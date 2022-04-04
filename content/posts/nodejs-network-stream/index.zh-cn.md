@@ -5,7 +5,7 @@ tags:
 - NodeJS 
 description: "什么是流？"
 images:
-- nodejs-network-stream/streams.png
+- nodejs-network-stream/a.jpeg
 ---
 
 ## 什么是流

@@ -5,7 +5,7 @@ tags:
 - 成长
 description: "如何定义自己，规划自己的人生，以下是我的一些想法"
 images:
-- target-life/plan.jpeg
+- target-life/a.jpeg
 ---
 
 
