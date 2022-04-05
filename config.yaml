@@ -1,0 +1,10 @@
+---
+baseURL: "/"
+languageCode: "en-us"
+description: "A cool site!"
+
+algolia:
+  index: "my-blog-index"
+  key: "6b7501b9dc80cb53905ec0d901efb21b"
+  appID: "D7NQ3RODEC"
+---

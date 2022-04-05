@@ -1,0 +1,106 @@
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+<!-- for the search only version -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script>
+  const { autocomplete, getAlgoliaResults } = window['@algolia/autocomplete-js'];
+  const algoliasearch = window.algoliasearch;
+  const searchClient = algoliasearch(
+    'D7NQ3RODEC',
+    'cac594df3c563fecd3ad54a0e399c173'
+  );
+
+  const hitTemplate = 
+        '<div class="col-lg-12 col-md-12 mb-4">' + 
+            '<article class="card post-card" id="summary-{{ safeHTML "{{{ key }}}" }}">' + 
+                '{{ safeHTML "<img loading=\"lazy\" class=\"w-100 rounded\" style=\"height:200px;object-fit:cover;\"src=\"{{{ image }}}\" alt=\"{{{ name }}}\">" }}' + 
+                '<div class="card-body">' + 
+                    '<h3 class="h4 mb-4">' + 
+                    '{{ safeHTML "<a class=\"post-title\" href=\"{{{ permalink }}}\">{{{ title }}}</a>" }}' + 
+                    '</h3>' + 
+                    '<p>{{ safeHTML "{{{ summary }}}" }}</p>' + 
+                '</div>' + 
+            '</article>' + 
+        '</div>';
+    const missTemplate = 
+        '<div class="col-lg-10 col-md-10 mb-4">' + 
+            '<article class="card post-card">' + 
+                '<div class="card-body">' + 
+                    '<h3 class="h4 mb-4">No results</h3>' + 
+                    '<p>There were no results matching your search terms {{ safeHTML "<em>{{{ query }}}</em>" }}.</p>' + 
+                '</div>' + 
+            '</article>' + 
+        '</div>';
+
+  autocomplete({
+    container: '#autocomplete',
+    placeholder: 'Search for products',
+    getSources({ query }) {
+      return [
+        {
+          sourceId: 'products',
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+               queries: [
+                {
+                  indexName: 'my-blog-index',
+                  query,
+                  params: {
+                    hitsPerPage: 5,
+                  },
+                },
+              ],
+            });
+          },
+          templates: {
+            item({ item, createElement }) {
+            //   {
+            //     "title": "Projects",
+            //     "uri": "projects",
+            //     "content": "Book Translation  2020   Modern Javascript impatient",
+            //     "objectID": "projects",
+            //     "_highlightResult": {
+            //         "title": {
+            //             "value": "__aa-highlight__P__/aa-highlight__rojects",
+            //             "matchLevel": "full",
+            //             "fullyHighlighted": false,
+            //             "matchedWords": [
+            //                 "p"
+            //             ]
+            //         },
+            //         "uri": {
+            //             "value": "__aa-highlight__p__/aa-highlight__rojects",
+            //             "matchLevel": "full",
+            //             "fullyHighlighted": false,
+            //             "matchedWords": [
+            //                 "p"
+            //             ]
+            //         },
+            //         "content": {
+            //             "value": "Book Translation  2020   Modern Javascript impatient",
+            //             "matchLevel": "none",
+            //             "matchedWords": []
+            //         }
+            //     },
+            //     "__autocomplete_indexName": "my-blog-index",
+            //     "__autocomplete_id": 0
+            // }
+              return createElement(
+                'div',
+                { className: 'search-title' },
+                item.title
+              );
+            },
+            noResults() {
+              return 'No results';
+            },
+          },
+          getItemUrl({ item }) {
+            return item.url;
+          },
+        },
+      ];
+    },
+  });
+</script>
+

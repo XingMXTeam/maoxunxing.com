@@ -7,11 +7,15 @@
     "newnotes": "hugo new --kind notes",
     "newbook": "hugo new --kind book-reports",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/hugo/bin"
+    "build": "./node_modules/hugo/bin",
+    "index": "hugo-algolia --toml",
+    "index-and-send": "hugo-algolia -s -i \"content/**/*.md\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-
+    "@algolia/autocomplete-theme-classic": "^1.5.6",
+    "algoliasearch": "^4.13.0",
+    "hugo-algolia": "^1.2.14"
   }
 }

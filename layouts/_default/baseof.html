@@ -103,6 +103,9 @@
       {{ printf `<link rel="alternate" type="application/rss+xml" href="%s/%s" title="%s" />` .Site.BaseURL "index.xml" $.Site.Title | safeHTML }}
     {{ end -}}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
+
     {{ hugo.Generator }}
   </head>
 
@@ -137,6 +140,7 @@
 
     {{ partial "perfomance.html" . }}
     {{ partial "serviceworker.html" . }}
+    {{ partial "search.html" . }}
 
   </body>
 
