@@ -32,7 +32,7 @@ blockquote {
   background: #fafafa;
   top: 0;
   height: 7rem;
-  z-index: 999;
+  z-index: 99;
 }
 
 .navigation-author {
@@ -54,6 +54,7 @@ blockquote {
 
 .container {
   padding: 0.5rem 1rem;
+  max-width: 100%;
 }
 
 .navigation-avatar img {
@@ -404,6 +405,13 @@ h4:hover .hanchor {
 
 .btn-social span {
   display: none;
+}
+
+.nav-search-box {
+  /* display: inline-block;
+  float: right;
+  margin: 0;
+  position: relative;  */
 }
 
 @media screen and (min-width: 768px) {

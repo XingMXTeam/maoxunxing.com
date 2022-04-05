@@ -33,7 +33,13 @@
 
   autocomplete({
     container: '#autocomplete',
+    detachedMediaQuery: '',
     placeholder: 'Search for products',
+    navigator: {
+      navigate({ itemUrl }) {
+        navigate(itemUrl);
+      },
+    },
     getSources({ query }) {
       return [
         {
