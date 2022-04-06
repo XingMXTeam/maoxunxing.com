@@ -7,5 +7,11 @@
         appId: 'D7NQ3RODEC',
         indexName: 'my-blog-index',
         apiKey: 'cac594df3c563fecd3ad54a0e399c173',
+        transformItems(items) {
+          return items.map((item) => ({
+            ...item,
+            content: item.content.toUpperCase(),
+          }));
+        },
     });
 </script>

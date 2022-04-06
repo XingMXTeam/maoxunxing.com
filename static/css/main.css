@@ -2,6 +2,7 @@ body {
   font-family: "Inter", Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-size: 1.9em;
   line-height: 1.65em;
+  margin: 0;
 }
 
 blockquote {
@@ -34,6 +35,13 @@ blockquote {
   height: 7rem;
   z-index: 99;
 }
+
+@media (min-width:1025px) {
+  .navigation-list {
+    margin-right: 200px;
+  }
+}
+
 
 .navigation-author {
   display: inline-flex;
@@ -610,4 +618,37 @@ h4:hover .hanchor {
   color: #555;
   opacity: .5;
   font-size: .8em;
+}
+
+/* .DocSearch {
+  font-size: 16px;
+} */
+
+/* 搜索框样式 */
+
+.nav-search-box {
+  position: fixed;
+  right: 1rem;
+  top: 16px;
+  z-index: 100;
+}
+
+.aa-List .aa-ItemLink {
+  display: flex;
+  text-decoration: none;
+}
+
+@media (min-width:320px) and (max-width: 1025px) {
+  .nav-search-box {
+    right: 42px;
+    top: 14px;
+  }
+
+  .aa-Autocomplete .aa-DetachedSearchButton {
+    border: none;
+    background-color: inherit;
+  }
+  .aa-DetachedSearchButtonPlaceholder {
+    display: none;
+  }
 }

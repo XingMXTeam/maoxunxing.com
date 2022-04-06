@@ -14,6 +14,7 @@
 
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+
     <ul class="navigation-list">
       {{ with .Site.Menus.main}}
         {{ range sort . }}
@@ -68,14 +69,10 @@
           {{ end }}
         {{ end }}
       {{ end }}
-      <li class="navigation-item">
-        <div class="nav-search-box" id="docsearch"></div>
-      </li>
     </ul>
-    
-    <div id="autocomplete"></div>
   </section>
 </nav>
+<div class="nav-search-box" id="docsearch"></div>
 
 <script>
   window.addEventListener('load', () => {
