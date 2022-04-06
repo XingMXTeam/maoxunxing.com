@@ -93,9 +93,13 @@
             //     "__autocomplete_indexName": "my-blog-index",
             //     "__autocomplete_id": 0
             // }
+              const lang = location.pathname.split("/")[1];
+              item.uri = item.uri.replace(/posts\//g, '');
+              // if(item.uri =='projects.zh-cn') return ''
+
               return createElement(
                 'a',
-                { className: 'aa-ItemLink', href: `${location.href}/${item.uri}` },
+                { className: 'aa-ItemLink', href: `${location.protocol}\/\/${location.host}/${lang}/${item.uri}` },
                 createElement(
                   'div',
                   {

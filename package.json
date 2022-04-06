@@ -8,7 +8,7 @@
     "newbook": "hugo new --kind book-reports",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/hugo/bin",
-    "index": "hugo-algolia --toml",
+    "index": "hugo-algolia",
     "index-and-send": "hugo-algolia -s -i \"content/**/*.md\""
   },
   "author": "",
