@@ -38,7 +38,7 @@ blockquote {
 
 @media (min-width:1025px) {
   .navigation-list {
-    margin-right: 200px;
+    /* margin-right: 200px; */
   }
 }
 
@@ -62,7 +62,7 @@ blockquote {
 
 .container {
   padding: 0.5rem 1rem;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 .navigation-avatar img {
@@ -643,7 +643,6 @@ h4:hover .hanchor {
     right: 42px;
     top: 14px;
   }
-
   .aa-Autocomplete .aa-DetachedSearchButton {
     border: none;
     background-color: inherit;
