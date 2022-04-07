@@ -2,6 +2,7 @@
 title: "怎么学系列 - 解决问题"
 date: 2021-08-27T10:20:36+08:00
 description: "如何解决问题"
+draft: true
 tags:
 - 成长
 images:

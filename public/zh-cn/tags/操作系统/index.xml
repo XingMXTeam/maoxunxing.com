@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>操作系统 on 毛训星的网络日志</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 操作系统 on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maoxunxing.com/zh-cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>计算机本质的理解</title>
       <link>https://maoxunxing.com/zh-cn/code-computer/</link>
@@ -37,7 +33,8 @@
 1010(-6) 0110（6）
 1001(-7) 0111（7）
 范围是 [-7, 7] 1000没有被表示，刚好拿来表示-8（-8的补码表示： 1000（原） -&amp;gt; 取反 0111 -&amp;gt; 加一 1000）
-所以最终是[-8, 7]。 同理[-128,127]也解释得通。</description>
+所以最终是[-8, 7]。 同理[-128,127]也解释得通。
+为什么小数会有精度问题？</description>
     </item>
     
   </channel>

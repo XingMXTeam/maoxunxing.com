@@ -2,6 +2,7 @@
 title: "评价标准系列 - 衡量能力"
 date: 2021-08-27T10:20:36+08:00
 description: "如何评价和构建能力模型"
+draft: true
 tags:
 - 成长
 images:

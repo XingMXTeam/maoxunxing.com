@@ -22,6 +22,7 @@
     "split2": "^4.1.0",
     "through2": "^4.0.2",
     "to2": "^1.0.0",
+    "webrtc-swarm": "^2.9.0",
     "websocket-stream": "^5.5.2",
     "yo-yo": "^1.4.1"
   }

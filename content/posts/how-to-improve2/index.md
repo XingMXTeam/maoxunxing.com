@@ -2,6 +2,7 @@
 title: "怎么学系列 - 方法论"
 date: 2021-08-27T10:20:36+08:00
 description: "每个人都有不同的学习方法，怎么学是一门学问"
+draft: true
 tags:
 - 成长
 images:

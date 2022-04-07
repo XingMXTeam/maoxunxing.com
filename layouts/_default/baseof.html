@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FFFFFF"/>
     <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/images/avatar.jpg">
+    <link rel="apple-touch-icon" href="/images/avatar3.jpg">
     {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
     {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
     {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
@@ -26,10 +26,14 @@
     {{ end }}
     <!-- <link rel="preconnect dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect dns-prefetch" href="//use.fontawesome.com" /> -->
-    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
-    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" />
-    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" />
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//D7NQ3RODEC-dsn.algolia.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-1.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-2.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-3.algolianet.com" crossorigin />
 
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" /> -->
@@ -103,6 +107,10 @@
       {{ printf `<link rel="alternate" type="application/rss+xml" href="%s/%s" title="%s" />` .Site.BaseURL "index.xml" $.Site.Title | safeHTML }}
     {{ end -}}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
+
     {{ hugo.Generator }}
   </head>
 
@@ -137,6 +145,7 @@
 
     {{ partial "perfomance.html" . }}
     {{ partial "serviceworker.html" . }}
+    {{ partial "search.html" . }}
 
   </body>
 

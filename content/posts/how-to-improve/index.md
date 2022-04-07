@@ -2,6 +2,7 @@
 title: "学什么系列 - 成长模型"
 date: 2021-08-27T10:20:36+08:00
 description: "人生有限，在有限的时间内掌握更多内容显得非常关键"
+draft: true
 tags:
 - 成长
 images:

@@ -1,6 +1,7 @@
 ---
 title: "计算机本质的理解"
 date: 2021-08-24
+draft: true
 tags:
 - 操作系统
 description: "计算机本质是什么？"

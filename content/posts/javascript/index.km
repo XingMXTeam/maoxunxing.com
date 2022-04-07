@@ -1,0 +1,31 @@
+{
+    "root": {
+        "data": {
+            "id": "cj08wnj8ke00",
+            "created": 1648952584230,
+            "text": "javascript"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cj08wrrekpk0",
+                    "created": 1648952593431,
+                    "text": "提案"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cj08wuq5qk00",
+                            "created": 1648952599886,
+                            "text": "https://github.com/tc39"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

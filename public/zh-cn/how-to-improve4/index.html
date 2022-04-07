@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF"/>
     <link rel="manifest" href="https://maoxunxing.com/manifest.json">
+    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar.jpg">
     <meta name="author" content="Xunxing Mao">
     <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
     <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
@@ -16,7 +18,7 @@
     <meta name="twitter:creator" content="@maoxunxing"/>
 
 
-    <meta property="og:title" content="学习和成长之道系列第四篇之解决问题" />
+    <meta property="og:title" content="怎么学系列 - 解决问题" />
 <meta property="og:description" content="如何解决问题" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://maoxunxing.com/zh-cn/how-to-improve4/" />
@@ -29,21 +31,22 @@
     
       <base href="https://maoxunxing.com/zh-cn/how-to-improve4/">
     
-    <title>学习和成长之道系列第四篇之解决问题 · 毛训星的网络日志</title>
+    <title>怎么学系列 - 解决问题 · 毛训星的网络日志</title>
 
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/how-to-improve4/">
     
     
     <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
-    
     <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" />
 
     
     
-    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../css/font.css" crossorigin="anonymous">
+    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../../css/font.css" crossorigin="anonymous">
     
-    <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous">
+    
     
     
     
@@ -77,7 +80,7 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
-    <meta name="generator" content="Hugo 0.55.4" />
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   
@@ -144,14 +147,14 @@
               
             </li>
             <li class="navigation-item">
-              <a href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
+              <a rel="noopener" href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
             </li>
             
             <li class="navigation-item">
-              <a href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
+              <a rel="noopener" href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
             </li>
             <li class="navigation-item">
-              <a href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
+              <a rel="noopener" href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
             </li>
             <li class="navigation-item">
               <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
@@ -191,7 +194,7 @@
       <header>
         
         <div class="post-title">
-          <h1 class="title">学习和成长之道系列第四篇之解决问题</h1>
+          <h1 class="title">怎么学系列 - 解决问题</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -213,54 +216,43 @@
 
         </div>
       </header><div>
-        
-
-<h2 id="解决问题">解决问题<a href="#解决问题" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
-
+        <h2 id="解决问题">解决问题<a href="#解决问题" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
 <p>有了能力以后，需要去解决实际的问题。才能最大化你的价值。如何评价一个问题被解决的很好：</p>
-
-<h3 id="1-具备闭环思维-从端到端的角度去思考和落地">1 具备闭环思维：从端到端的角度去思考和落地<a href="#1-具备闭环思维-从端到端的角度去思考和落地" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-
+<h3 id="1-具备闭环思维从端到端的角度去思考和落地">1 具备闭环思维：从端到端的角度去思考和落地<a href="#1-具备闭环思维从端到端的角度去思考和落地" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 <p>也就是事前规划、事中执行、事后总结</p>
-
 <p>事前： 为什么，价值？
 事后： 上线后的结果？具体的业务数据？通过这个事我收获了什么？</p>
-
-<p>事前： OKR规划<br />
-事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法<br />
+<p>事前： OKR规划<br>
+事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法<br>
 事后： 4D总结法；四线复盘法；金子塔汇报法</p>
-
-<h3 id="2-方法论指导-更有说服力-前提保证方法论是否适用当前场景">2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景）<a href="#2-方法论指导-更有说服力-前提保证方法论是否适用当前场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-
+<h3 id="2-方法论指导-更有说服力前提保证方法论是否适用当前场景">2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景）<a href="#2-方法论指导-更有说服力前提保证方法论是否适用当前场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
 <p><strong>定义问题</strong>：</p>
-
-<p>5W2H模型
-&gt; 5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。</p>
-
+<p>5W2H模型</p>
+<blockquote>
+<p>5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。</p>
+</blockquote>
 <ul>
-<li>why: 为什么要做这个工作<br /></li>
-<li>what: 内容是什么<br /></li>
-<li>where： 在哪里做<br /></li>
-<li>when: 什么时候来做<br /></li>
-<li>who: 由谁来做<br /></li>
-<li>how: 怎么做<br /></li>
-<li>how much: 要花多少时间和资源<br /></li>
+<li>why: 为什么要做这个工作</li>
+<li>what: 内容是什么</li>
+<li>where： 在哪里做</li>
+<li>when: 什么时候来做</li>
+<li>who: 由谁来做</li>
+<li>how: 怎么做</li>
+<li>how much: 要花多少时间和资源</li>
 </ul>
-
-<p>本质就是定义问题：<br />
-定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说：
-&gt; 提出一个问题比解决一个问题更重要。</p>
-
+<p>本质就是定义问题：<br>
+定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说：</p>
+<blockquote>
+<p>提出一个问题比解决一个问题更重要。</p>
+</blockquote>
 <p>问题本质就是事物的矛盾，不匹配</p>
-
-<p>一般有几个特点：<br />
-1 普遍性：是普通存在的<br />
+<p>一般有几个特点：<br>
+1 普遍性：是普通存在的<br>
 2 运动性：不断变化中，现在是问题可能后面就变成不是问题了或者问题变成另外一个了；
-         不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进
-3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。<br />
-4 可度量： 问题的严重程度可以被度量出来<br />
+不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进
+3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。<br>
+4 可度量： 问题的严重程度可以被度量出来<br>
 5 关联性：问题之间可能存在关联或者因果，需要考虑它的基本命题</p>
-
 <!-- 怎么解决问题：  
 方法论：
 > 任何名词都有结构  
@@ -273,62 +265,52 @@
 3 梳理指标（度量问题的严重性，现在）  
 5 发现机会（本质）  
 6 规划（未来）   -->
-
 <p><strong>OKR规划</strong>：
-关注业务目标，KPI关注数据指标。<br />
+关注业务目标，KPI关注数据指标。<br>
 1 OKR能让我们关注事情本身，目标不一样关注的指标不一样，而且指标之间一般都会互相影响，甚至冲突
 2 业务目标自上而下，技术目标自下而上，要和业务目标进行关联</p>
-
 <p><strong>方案执行</strong>：</p>
-
-<p>3C方案设计法： （用来制定自己的OKR，做那些事才是正确的）<br />
+<p>3C方案设计法： （用来制定自己的OKR，做那些事才是正确的）<br>
 1 多个备选方案，避免思维狭隘，有理有据 ：技术方案设计；团队管理措施；团队规划方向
 2 在回答why的时候能更加自如</p>
-
-<p>PDCA执行法：责任人<br />
-P阶段：<br />
-1 紧急的事情长短结合：先止血再根本解决<br />
-2 重要不紧急的事：拆分小项目，业务版本中逐步落地<br />
+<hr>
+<p>PDCA执行法：追过程
+P阶段：<br>
+1 紧急的事情长短结合：先止血再根本解决<br>
+2 重要不紧急的事：拆分小项目，业务版本中逐步落地<br>
 3 协调资源</p>
-
-<p>D阶段：<br />
-1 管理风格<br />
-2 信息同步： 出问题必须同步；任务双周同步<br />
+<p>D阶段：<br>
+1 管理风格<br>
+2 信息同步： 出问题必须同步；任务双周同步<br>
 3 里程碑也要同步</p>
-
 <p>C阶段：
 5W根因分析法（连续问为什么，既可以检查业务目标OKR等，也能找到问题根本原因，技术了解深度）</p>
-
-<p>A阶段：<br />
-1 总结汇报：是否符合预期，是否继续执行P<br />
+<p>A阶段：<br>
+1 总结汇报：是否符合预期，是否继续执行P<br>
 2 挑选出三个改进点</p>
-
-<p><strong>结果衡量</strong>：<br />
+<hr>
+<p><strong>结果衡量</strong>：<br>
 通过价值原则 判断</p>
-
-<p>题外话：<br />
-1 我们经常讲结构化思维。其实和软件工程里面的需求分析非常像，就是要把一个宽泛的需求拆解出来，多维度去思考。思维有几个层次，抽象程度不断提升：<strong>底座：</strong>是批判思维，分析思维，创新思维，元认知，抽象思维（金字塔原理+刻意练习）等；<strong>进阶</strong>是结构化思维： 从多个侧面进行思考，深刻分析导致问题出现的原因，系统制定行动方案，最后完成工作；<strong>上层</strong>是产品思维、商业思维等
+<hr>
+<p>题外话：<br>
+1 我们经常讲结构化思维。其实和软件工程里面的需求分析非常像，就是要把一个宽泛的需求拆解出来，多维度去思考。思维有几个层次，抽象程度不断提升：**底座：**是批判思维，分析思维，创新思维，元认知，抽象思维（金字塔原理+刻意练习）等；<strong>进阶</strong>是结构化思维： 从多个侧面进行思考，深刻分析导致问题出现的原因，系统制定行动方案，最后完成工作；<strong>上层</strong>是产品思维、商业思维等
 2 文中讲了可度量： 度量是很重要的，不可度量则无法评价。它一定是面向用户体验设计的。 一定要关注用户，用户最关心什么？他关心的这个点，用哪个度量指标？这个度量指标的改善 进一步分解到技术指标。另外一点，要分清楚结果指标还是输入指标，结果指标一般无法操控，你可以控制的指标主要是输入指标（说抓手），有哪些：比如有多少供给量，成本多低，发货多快</p>
-
+<hr>
 <p><strong>总结&amp;汇报</strong></p>
-
-<p>4D总结法：衡量最终的价值 -&gt; 分享/培训<br />
-1 结果： 自己的贡献部分是什么？ 业务开发团队从业务结果、技术方案给业务带来的价值、管理角度提升了效率和质量（支持了更多项目）<br />
-2 数据： <strong>对数据的评价和评价的标准</strong>，理解数据背后的意义；一切皆数据，怎么评估数据结论（功在平时）<br />
-3 技术： 学到了什么技术、对哪些技术有更深的理解或者更全面的理解 （可以画领域封层图、细节分层图和方案对比的思维导图）<br />
-4 成长： 业务理解能力、项目组织能力、带领团队的能力、沟通能力和做事方法<br />
+<p>4D总结法：衡量最终的价值 -&gt; 分享/培训<br>
+1 结果： 自己的贡献部分是什么？ 业务开发团队从业务结果、技术方案给业务带来的价值、管理角度提升了效率和质量（支持了更多项目）<br>
+2 数据： <strong>对数据的评价和评价的标准</strong>，理解数据背后的意义；一切皆数据，怎么评估数据结论（功在平时）<br>
+3 技术： 学到了什么技术、对哪些技术有更深的理解或者更全面的理解 （可以画领域封层图、细节分层图和方案对比的思维导图）<br>
+4 成长： 业务理解能力、项目组织能力、带领团队的能力、沟通能力和做事方法<br>
 比如业务理解能力： 业务的适应场景是什么？目标用户是谁？目标用户有什么特点？解决了目标用户的什么问题？实际的效果如何？用户为什么喜欢 / 不喜欢这个功能？  平时可以零碎记录一些信息</p>
-
-<p>金字塔汇报<br />
+<p>金字塔汇报<br>
 4线复盘法： 时间线；问题链；责任链；改进线</p>
-
 <h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-
-<p><a href="../how-to-improve">学习和成长之道系列第一篇之学什么</a><br />
-<a href="../how-to-improve2">学习和成长之道系列第二篇之怎么学</a><br />
-<a href="../how-to-improve3">学习和成长之道系列第三篇之能力模型</a><br />
-<a href="../how-to-improve4">学习和成长之道系列第四篇之解决问题</a><br />
-<a href="../how-to-improve5">学习和成长之道系列第五篇之影响力</a></p>
+<p><a href="../how-to-improve">学什么系列 - 成长模型</a><br>
+<a href="../how-to-improve2">怎么学系列 - 方法论</a><br>
+<a href="../how-to-improve3">评价标准系列 - 衡量能力</a><br>
+<a href="../how-to-improve4">怎么学系列 - 解决问题</a><br>
+<a href="../how-to-improve5">评价标准系列 - 影响力</a></p>
 
       </div>
 
@@ -414,7 +396,7 @@ P阶段：<br />
 
   <h4>分享到</h4>
 
-  <a href="https://twitter.com/intent/tweet?via=maoxunxing&text=%e5%ad%a6%e4%b9%a0%e5%92%8c%e6%88%90%e9%95%bf%e4%b9%8b%e9%81%93%e7%b3%bb%e5%88%97%e7%ac%ac%e5%9b%9b%e7%af%87%e4%b9%8b%e8%a7%a3%e5%86%b3%e9%97%ae%e9%a2%98%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fhow-to-improve4%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
+  <a href="https://twitter.com/intent/tweet?via=maoxunxing&text=%e6%80%8e%e4%b9%88%e5%ad%a6%e7%b3%bb%e5%88%97%20-%20%e8%a7%a3%e5%86%b3%e9%97%ae%e9%a2%98%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fhow-to-improve4%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
     <i class="fab fa-fw fa-twitter" aria-hidden="true"></i>
     <span>Twitter</span>
   </a>
@@ -479,7 +461,7 @@ P阶段：<br />
       <footer class="footer">
   <section class="container">
     
-      <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
+      <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
       2022
       ©
        Xunxing Mao 
@@ -496,7 +478,7 @@ P阶段：<br />
 
     
       
-      <script src="https://maoxunxing.com/js/coder.min.158f22d7bc754e28d7c61accc0aef7952c2b949889ec9503466e5d4db0548808.js" integrity="sha256-FY8i17x1TijXxhrMwK73lSwrlJiJ7JUDRm5dTbBUiAg="></script>
+      <script src="https://maoxunxing.com/js/coder.min.38467c7bff5bee331546cad763003ffd2f8be17f96fa146dc1ad0f89c9124cd6.js" integrity="sha256-OEZ8e/9b7jMVRsrXYwA//S&#43;L4X&#43;W&#43;hRtwa0PickSTNY="></script>
     
 
     
@@ -514,14 +496,14 @@ P阶段：<br />
 
 
     <script type="module">
-    // Import the functions you need from the SDKs you need
+    
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
+  
   const firebaseConfig = {
     apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
     authDomain: "blog-6a0bf.firebaseapp.com",
@@ -532,7 +514,7 @@ P阶段：<br />
     measurementId: "G-65M6Z03PV2"
   };
 
-  // Initialize Firebase
+  
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>

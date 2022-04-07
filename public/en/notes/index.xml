@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on maoxunxing&#39;s life</title>
@@ -6,10 +6,27 @@
     <description>Recent content in Notes on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Mar 2022 14:48:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2022 17:14:19 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/en/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailwind编译报错</title>
+      <link>https://maoxunxing.com/en/notes/tailwind/</link>
+      <pubDate>Mon, 28 Mar 2022 17:14:19 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/tailwind/</guid>
+      <description>Error: PostCSS plugin postcss-nested requires PostCSS 8.
+[Error - 4:52:42 PM] Tailwind CSS: Cannot set property &amp;lsquo;parent&amp;rsquo; of undefined TypeError: Cannot set property &amp;lsquo;parent&amp;rsquo; of undefined
+npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 </description>
+    </item>
     
-	<atom:link href="https://maoxunxing.com/en/notes/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>分享的经验</title>
+      <link>https://maoxunxing.com/en/notes/share-tips/</link>
+      <pubDate>Sun, 27 Mar 2022 18:15:02 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/share-tips/</guid>
+      <description>技术人员在组内分享的几个经验：
+1 出现新的词汇或者工具需要解释 2 演示时避免频繁切换界面 3 要有主线 4 避免分享内容太多</description>
+    </item>
     
     <item>
       <title>页面允许以iframe方式嵌入</title>
@@ -17,7 +34,7 @@
       <pubDate>Sun, 27 Mar 2022 14:48:25 +0800</pubDate>
       
       <guid>https://maoxunxing.com/en/notes/allowiframe/</guid>
-      <description>Content-Security-Policy: frame-ancestors self https://xxxx  通过增加这个，允许iframe被嵌入</description>
+      <description>Content-Security-Policy: frame-ancestors self https://xxxx 通过增加这个，允许iframe被嵌入</description>
     </item>
     
     <item>
@@ -27,11 +44,11 @@
       
       <guid>https://maoxunxing.com/en/notes/jsx-runtime/</guid>
       <description>node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &amp;#34;react/jsx-runtime&amp;#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
-&amp;#34;compilerOptions&amp;#34;: { &amp;#34;baseUrl&amp;#34;: &amp;#34;.&amp;#34;, &amp;#34;outDir&amp;#34;: &amp;#34;./lib&amp;#34;, &amp;#34;module&amp;#34;: &amp;#34;esnext&amp;#34;, &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;lib&amp;#34;: [&amp;#34;esnext&amp;#34;, &amp;#34;dom&amp;#34;], &amp;#34;sourceMap&amp;#34;: true, &amp;#34;allowJs&amp;#34;: false, &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;, // change react-jsx to react }</description>
+&amp;#34;compilerOptions&amp;#34;: { &amp;#34;baseUrl&amp;#34;: &amp;#34;.&amp;#34;, &amp;#34;outDir&amp;#34;: &amp;#34;./lib&amp;#34;, &amp;#34;module&amp;#34;: &amp;#34;esnext&amp;#34;, &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;lib&amp;#34;: [&amp;#34;esnext&amp;#34;, &amp;#34;dom&amp;#34;], &amp;#34;sourceMap&amp;#34;: true, &amp;#34;allowJs&amp;#34;: false, &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;, // change react-jsx to react } </description>
     </item>
     
     <item>
-      <title>Http I Learned</title>
+      <title>http参数是数组</title>
       <link>https://maoxunxing.com/en/notes/http-i-learned/</link>
       <pubDate>Wed, 22 Dec 2021 20:10:28 +0800</pubDate>
       
@@ -49,11 +66,11 @@ $.ajax({ type: &amp;#34;POST&amp;#34;, url: &amp;#34;index.php&amp;#34;, dataTyp
       <guid>https://maoxunxing.com/en/notes/typescript-i-learned/</guid>
       <description>报错：元素隐式具有 &amp;ldquo;any&amp;rdquo; 类型，因为索引表达式的类型不为 &amp;ldquo;number&amp;rdquo;
 const GLOBAL_SYMBOL = Symbol.for(&amp;#39;xxx&amp;#39;); if (!window[GLOBAL_SYMBOL]) { window[GLOBAL_SYMBOL] = {}; } 根目录声明global.d.ts:
-declare interface Window { [GLOBAL_SYMBOL: symbol]: {}; } Could not find a declaration file for module &amp;lsquo;js-cookie&amp;rsquo;. &amp;lsquo;/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js&amp;rsquo; implicitly has an &amp;lsquo;any&amp;rsquo; type.
+declare interface Window { [GLOBAL_SYMBOL: symbol]: {}; }  Could not find a declaration file for module &amp;lsquo;js-cookie&amp;rsquo;. &amp;lsquo;/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js&amp;rsquo; implicitly has an &amp;lsquo;any&amp;rsquo; type.
 解决方案：
 declare module &amp;#39;js-cookie&amp;#39; { export interface CookieAttributes { } }  https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
-https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
- </description>
+  https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
+  </description>
     </item>
     
     <item>
@@ -63,27 +80,18 @@ https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-f
       
       <guid>https://maoxunxing.com/en/notes/decode-url-safe/</guid>
       <description>decodeUrlComponent may throw error
-decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) // VM158:1 Uncaught URIError: URI malformed // at decodeURIComponent (&amp;lt;anonymous&amp;gt;) // at &amp;lt;anonymous&amp;gt;:1:1  Solution:
-try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
+decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) // VM158:1 Uncaught URIError: URI malformed // at decodeURIComponent (&amp;lt;anonymous&amp;gt;) // at &amp;lt;anonymous&amp;gt;:1:1 Solution:
+try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ } </description>
     </item>
     
     <item>
-      <title>pageckage.json的files</title>
+      <title>package.json的files</title>
       <link>https://maoxunxing.com/en/notes/packagejson/</link>
       <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
       
       <guid>https://maoxunxing.com/en/notes/packagejson/</guid>
       <description>package.json的files 能保证npm打包包含的内容:
 https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
-    </item>
-    
-    <item>
-      <title>SyntaxError Unexpected Token Export</title>
-      <link>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</link>
-      <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</guid>
-      <description>一般是模块不兼容</description>
     </item>
     
     <item>
@@ -94,6 +102,15 @@ https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
       <guid>https://maoxunxing.com/en/notes/reamde/</guid>
       <description>快速通过命令行查看readme
 readme net 快速安装npmi</description>
+    </item>
+    
+    <item>
+      <title>SyntaxError Unexpected Token Export</title>
+      <link>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</link>
+      <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</guid>
+      <description>一般是模块不兼容</description>
     </item>
     
     <item>
@@ -115,7 +132,7 @@ readme net 快速安装npmi</description>
       <guid>https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/</guid>
       <description>When linking multiple packages in local tnpm, the error Hooks Only Run in Function Component is reported. this situation is usually caused by multiple replicated versions of react.
 The solution is to link all react react-dom to the same
-cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn link cd ../../node_modules/react-dom yarn link cd YOUR_PROJECT yarn link PACKAGE_YOU_DEBUG_LOCALLY yarn link react yarn link react-dom</description>
+cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn link cd ../../node_modules/react-dom yarn link cd YOUR_PROJECT yarn link PACKAGE_YOU_DEBUG_LOCALLY yarn link react yarn link react-dom </description>
     </item>
     
     <item>
@@ -156,7 +173,7 @@ import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined This is 
       
       <guid>https://maoxunxing.com/en/notes/how-to-write-decorator/</guid>
       <description>本质上是一个高阶组件（参数是函数，返回一个新函数）。结合babel插件进行编译。
- class Provider extends React.Component { render() { return this.props.children } } export const DecoratorDemo = props =&amp;gt; WrappedComponent =&amp;gt; { const Wrapped = React.forwardRef(function(innerProps, ref)) { return ( &amp;lt;Provider {...props} innerProps={...innerProps}&amp;gt; &amp;lt;WrappedComponent {...innerProps} ref={ref} /&amp;gt; &amp;lt;/Provider&amp;gt; ) } // copy static method  return Object.assign(Wrapped, WrappedComponent) }  装饰器的弊端:
+ class Provider extends React.Component { render() { return this.props.children } } export const DecoratorDemo = props =&amp;gt; WrappedComponent =&amp;gt; { const Wrapped = React.forwardRef(function(innerProps, ref)) { return ( &amp;lt;Provider {...props} innerProps={...innerProps}&amp;gt; &amp;lt;WrappedComponent {...innerProps} ref={ref} /&amp;gt; &amp;lt;/Provider&amp;gt; ) } // copy static method  return Object.assign(Wrapped, WrappedComponent) } 装饰器的弊端:
 1 在运行时注入隐藏的代码，给那些期望源代码遵循传统语义的开发者造成混乱。 2 可能难以调试，因为装饰器需要编译 3 可能影响api约定 因为是运行时生成的</description>
     </item>
     

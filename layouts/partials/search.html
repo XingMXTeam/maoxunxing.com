@@ -1,0 +1,177 @@
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+<!-- for the search only version -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script>
+  const { autocomplete, getAlgoliaResults } = window['@algolia/autocomplete-js'];
+  const algoliasearch = window.algoliasearch;
+  const searchClient = algoliasearch(
+    'D7NQ3RODEC',
+    'cac594df3c563fecd3ad54a0e399c173'
+  );
+
+  const hitTemplate =
+        '<div class="col-lg-12 col-md-12 mb-4">' +
+            '<article class="card post-card" id="summary-{{ safeHTML "{{{ key }}}" }}">' +
+                '{{ safeHTML "<img loading=\"lazy\" class=\"w-100 rounded\" style=\"height:200px;object-fit:cover;\"src=\"{{{ image }}}\" alt=\"{{{ name }}}\">" }}' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">' +
+                    '{{ safeHTML "<a class=\"post-title\" href=\"{{{ permalink }}}\">{{{ title }}}</a>" }}' +
+                    '</h3>' +
+                    '<p>{{ safeHTML "{{{ summary }}}" }}</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+    const missTemplate =
+        '<div class="col-lg-10 col-md-10 mb-4">' +
+            '<article class="card post-card">' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">No results</h3>' +
+                    '<p>There were no results matching your search terms {{ safeHTML "<em>{{{ query }}}</em>" }}.</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+
+  autocomplete({
+    container: '#docsearch',
+    detachedMediaQuery: '',
+    placeholder: 'Search for articles',
+    // openOnFocus: true,
+    // debug: true,
+    navigator: {
+      navigate({ itemUrl }) {
+        navigate(itemUrl);
+      },
+    },
+    getSources({ query }) {
+      return [
+        {
+          sourceId: 'products',
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+               queries: [
+                {
+                  indexName: 'my-blog-index',
+                  query,
+                  params: {
+                    hitsPerPage: 5,
+                  },
+                },
+              ],
+            });
+          },
+          templates: {
+            item({ item, components, createElement }) {
+            //   {
+            //     "title": "Projects",
+            //     "uri": "projects",
+            //     "content": "Book Translation  2020   Modern Javascript impatient",
+            //     "objectID": "projects",
+            //     "_highlightResult": {
+            //         "title": {
+            //             "value": "__aa-highlight__P__/aa-highlight__rojects",
+            //             "matchLevel": "full",
+            //             "fullyHighlighted": false,
+            //             "matchedWords": [
+            //                 "p"
+            //             ]
+            //         },
+            //         "uri": {
+            //             "value": "__aa-highlight__p__/aa-highlight__rojects",
+            //             "matchLevel": "full",
+            //             "fullyHighlighted": false,
+            //             "matchedWords": [
+            //                 "p"
+            //             ]
+            //         },
+            //         "content": {
+            //             "value": "Book Translation  2020   Modern Javascript impatient",
+            //             "matchLevel": "none",
+            //             "matchedWords": []
+            //         }
+            //     },
+            //     "__autocomplete_indexName": "my-blog-index",
+            //     "__autocomplete_id": 0
+            // }
+              const lang = location.pathname.split("/")[1];
+              item.uri = item.uri.replace(/posts\//g, '');
+              // if(item.uri =='projects.zh-cn') return ''
+
+              return createElement(
+                'a',
+                { className: 'aa-ItemLink', href: `${location.protocol}\/\/${location.host}/${lang}/${item.uri}` },
+                createElement(
+                  'div',
+                  {
+                    className: 'aa-ItemWrapper',
+                  },
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContent' },
+                    item.image ? createElement(
+                      'div',
+                      { className: 'aa-ItemIcon' },
+                      createElement('img', {
+                        src: item.images[0],
+                        alt: item.title,
+                        width: 40,
+                        height: 40,
+                      })
+                    ) : null
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContentBody' },
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentTitle' },
+                      components.Snippet({ hit: item, attribute: 'title' })
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentDescription' },
+                      components.Snippet({ hit: item, attribute: 'description' })
+                    )
+                  ),
+                  createElement(
+                    'div',
+                    {
+                      className: 'aa-ItemActions',
+                    },
+                    createElement(
+                      'button',
+                      {
+                        className: 'aa-ItemActionButton aa-DesktopOnly aa-ActiveOnly',
+                        type: 'button',
+                        title: 'Select',
+                      },
+                      createElement(
+                        'svg',
+                        {
+                          viewBox: '0 0 24 24',
+                          width: 20,
+                          height: 20,
+                          fill: 'currentColor',
+                        },
+                        createElement('path', {
+                          d: 'M18.984 6.984h2.016v6h-15.188l3.609 3.609-1.406 1.406-6-6 6-6 1.406 1.406-3.609 3.609h13.172v-4.031z',
+                        })
+                      )
+                    )
+                  )
+                )
+              );
+            },
+            noResults() {
+              return 'No results';
+            },
+          },
+          getItemUrl({ item }) {
+            return item.url;
+          },
+        },
+      ];
+    },
+  });
+</script>
+
