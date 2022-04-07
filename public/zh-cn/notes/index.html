@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FFFFFF"/>
     <link rel="manifest" href="https://maoxunxing.com/manifest.json">
-    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar.jpg">
+    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar3.jpg">
     <meta name="author" content="Xunxing Mao">
     <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
     <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
 
     
-
-    <meta name="twitter:site" content="@maoxunxing"/>
-    <meta name="twitter:creator" content="@maoxunxing"/>
 
 
     <meta property="og:title" content="Notes" />
@@ -36,10 +33,14 @@
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/notes/">
     
     
-    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
-    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" />
-    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" />
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//D7NQ3RODEC-dsn.algolia.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-1.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-2.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-3.algolianet.com" crossorigin />
 
     
     
@@ -78,7 +79,11 @@
     <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-16x16.png" sizes="16x16">
 
     <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com/zh-cn/notes/index.xml" title="毛训星的网络日志" />
-      <meta name="generator" content="Hugo 0.80.0" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
+    
+    
+
+    <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
   
@@ -94,6 +99,8 @@
 
     <main class="wrapper">
       
+
+
 <nav class="navigation">
   <section class="container">
     <div class="navigation-author">
@@ -102,11 +109,12 @@
           <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
-      <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
+      <a class="name" href="https://maoxunxing.com/zh-cn">训星</a>
     </div>
 
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+
     <ul class="navigation-list">
       
         
@@ -151,9 +159,7 @@
             <li class="navigation-item">
               <a rel="noopener" href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
             </li>
-            <li class="navigation-item">
-              <a rel="noopener" href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
-            </li>
+            
             <li class="navigation-item">
               <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
             </li>
@@ -171,10 +177,10 @@
           
         
       
-
     </ul>
   </section>
 </nav>
+<div class="nav-search-box" id="docsearch"></div>
 
 <script>
   window.addEventListener('load', () => {
@@ -381,7 +387,6 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
 <blockquote>
 <p><a href="https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam">https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam</a></p>
 </blockquote>
-<hr>
 
     </div>
   </article>
@@ -627,6 +632,184 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
           });
   }
 </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script>
+  const { autocomplete, getAlgoliaResults } = window['@algolia/autocomplete-js'];
+  const algoliasearch = window.algoliasearch;
+  const searchClient = algoliasearch(
+    'D7NQ3RODEC',
+    'cac594df3c563fecd3ad54a0e399c173'
+  );
+
+  const hitTemplate =
+        '<div class="col-lg-12 col-md-12 mb-4">' +
+            '<article class="card post-card" id="summary-{{{ key }}}">' +
+                '\u003cimg loading=\u0022lazy\u0022 class=\u0022w-100 rounded\u0022 style=\u0022height:200px;object-fit:cover;\u0022src=\u0022{{{ image }}}\u0022 alt=\u0022{{{ name }}}\u0022\u003e' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">' +
+                    '\u003ca class=\u0022post-title\u0022 href=\u0022{{{ permalink }}}\u0022\u003e{{{ title }}}\u003c\/a\u003e' +
+                    '</h3>' +
+                    '<p>{{{ summary }}}</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+    const missTemplate =
+        '<div class="col-lg-10 col-md-10 mb-4">' +
+            '<article class="card post-card">' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">No results</h3>' +
+                    '<p>There were no results matching your search terms \u003cem\u003e{{{ query }}}\u003c\/em\u003e.</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+
+  autocomplete({
+    container: '#docsearch',
+    detachedMediaQuery: '',
+    placeholder: 'Search for articles',
+    
+    
+    navigator: {
+      navigate({ itemUrl }) {
+        navigate(itemUrl);
+      },
+    },
+    getSources({ query }) {
+      return [
+        {
+          sourceId: 'products',
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+               queries: [
+                {
+                  indexName: 'my-blog-index',
+                  query,
+                  params: {
+                    hitsPerPage: 5,
+                  },
+                },
+              ],
+            });
+          },
+          templates: {
+            item({ item, components, createElement }) {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              const lang = location.pathname.split("/")[1];
+              item.uri = item.uri.replace(/posts\//g, '');
+              
+
+              return createElement(
+                'a',
+                { className: 'aa-ItemLink', href: `${location.protocol}\/\/${location.host}/${lang}/${item.uri}` },
+                createElement(
+                  'div',
+                  {
+                    className: 'aa-ItemWrapper',
+                  },
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContent' },
+                    item.image ? createElement(
+                      'div',
+                      { className: 'aa-ItemIcon' },
+                      createElement('img', {
+                        src: item.images[0],
+                        alt: item.title,
+                        width: 40,
+                        height: 40,
+                      })
+                    ) : null
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContentBody' },
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentTitle' },
+                      components.Snippet({ hit: item, attribute: 'title' })
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentDescription' },
+                      components.Snippet({ hit: item, attribute: 'description' })
+                    )
+                  ),
+                  createElement(
+                    'div',
+                    {
+                      className: 'aa-ItemActions',
+                    },
+                    createElement(
+                      'button',
+                      {
+                        className: 'aa-ItemActionButton aa-DesktopOnly aa-ActiveOnly',
+                        type: 'button',
+                        title: 'Select',
+                      },
+                      createElement(
+                        'svg',
+                        {
+                          viewBox: '0 0 24 24',
+                          width: 20,
+                          height: 20,
+                          fill: 'currentColor',
+                        },
+                        createElement('path', {
+                          d: 'M18.984 6.984h2.016v6h-15.188l3.609 3.609-1.406 1.406-6-6 6-6 1.406 1.406-3.609 3.609h13.172v-4.031z',
+                        })
+                      )
+                    )
+                  )
+                )
+              );
+            },
+            noResults() {
+              return 'No results';
+            },
+          },
+          getItemUrl({ item }) {
+            return item.url;
+          },
+        },
+      ];
+    },
+  });
+</script>
+
 
 
   </body>

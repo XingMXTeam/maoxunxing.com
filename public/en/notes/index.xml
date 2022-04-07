@@ -70,7 +70,7 @@ declare interface Window { [GLOBAL_SYMBOL: symbol]: {}; }  Could not find a decl
 解决方案：
 declare module &amp;#39;js-cookie&amp;#39; { export interface CookieAttributes { } }  https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
   https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam
-  </description>
+ </description>
     </item>
     
     <item>

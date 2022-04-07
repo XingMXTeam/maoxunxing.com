@@ -23,7 +23,7 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     </item>
     
     <item>
-      <title>NodeJS Stream系列 - 什么是流</title>
+      <title>NodeJS系列 - Stream</title>
       <link>https://maoxunxing.com/en/nodejs-network-stream/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
@@ -32,55 +32,6 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
 cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹配内容。实际上，node的流的概念是来源于unix系统，最早是来自Douglas McIlroy管道的概念 最初的来源。
 维基百科：
  Malcolm Douglas McIlroy (born 1932) is a mathematician, engineer, and programmer. As of 2019 he is an Adjunct Professor of Computer Science at Dartmouth College. McIlroy is best known for having originally proposed Unix pipelines and developed several Unix tools, such as spell, diff, sort, join, graph, speak, and tr.[1] He was also one of the pioneering researchers of macro processors and programming language extensibility.</description>
-    </item>
-    
-    <item>
-      <title>NodeJS Stream系列 - 基本用法</title>
-      <link>https://maoxunxing.com/en/nodejs-network-stream-3/</link>
-      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/nodejs-network-stream-3/</guid>
-      <description>创建可读的流：readable.js const rs = new (require(&amp;#39;stream&amp;#39;).Readable); rs.push(&amp;#39;beep&amp;#39;); rs.push(null); // null告诉消费者数据结束 rs.pipe(process.stdout); 创建一个可写的流： writable.js const Stream = require(&amp;#39;stream&amp;#39;) const writableStream = new Stream.Writable(({ decodeString: false, write(chunk, encoding, next) { // 当写入的时候会调用  console.log(chunk.toString()) next();// 告知读取更多数据  } })) process.stdin.pipe(writableStream) 消费一个可读的流：consume0.js //(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js process.stdin.on(&amp;#39;readable&amp;#39;, function () { var buf = process.stdin.read();// 可以给read传参数 告知读取几个字节  console.dir(buf);// 打印对象所有属性  process.stdin.read(0); /// 0告知读取后续的所有字节 }); //output: //&amp;lt;Buffer 61 62 63 0a&amp;gt; abc\0 //&amp;lt;Buffer 64 65 66 0a&amp;gt; def\0 //&amp;lt;Buffer 67 68 69 0a&amp;gt; ghi\0 你也可以在消费者读取数据的时候，再缓存内容: read1.</description>
-    </item>
-    
-    <item>
-      <title>NodeJS Stream系列 - 流的类型</title>
-      <link>https://maoxunxing.com/en/nodejs-network-stream-2/</link>
-      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/nodejs-network-stream-2/</guid>
-      <description>流的类型 1 readable 可读 readable.pipe(A) 2 writable 可写 A.pipe(writable) 3 duplex： 复式：既可读也可写 A.pipe(duplex).pipe(A) 4 transform：duplex的一种类型 可读可写 输出是从输入转换过来 A.pipe(transform).pipe(B)
-pipe方法: 所有的readable/transform/duplex流都有这个方法, 并且返回readable/transform/duplex的流
-src.pipe(dst) // 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &amp;#39;console&amp;#39; 可读流的常用方法：
- stream.pipe(...) stream.once(&#39;end&#39;, function() {})  两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式
- stream.resume() stream.on(&#39;data&#39;, function(buf) {})  绑定会自动触发流动模式  资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如
- 消费者主动执行了 .pause() 消费速度比数据 push 到缓存池的生产速度慢  都会返回false, 这种情况也叫做「背压」Backpressure
-可写流的常用方法：
- .write(buf) .end() .end(buf) .on(&#39;finish&#39;,function() {}) (&amp;hellip;).</description>
-    </item>
-    
-    <item>
-      <title>NodeJS Stream系列第五篇之实际场景</title>
-      <link>https://maoxunxing.com/en/nodejs-network-stream-5/</link>
-      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/nodejs-network-stream-5/</guid>
-      <description>实际应用场景 1 文件下载/导入导出 https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html
-const { ctx, } = this; const parts = ctx.multipart(); let object; let part; part = yield parts; while (part) { if (part.length) { // arrays are busboy fields  } else { // otherwise, it&amp;#39;s a stream  // 文件处理，上传到云存储等等  object = yield ctx.oss.put(&amp;#39;egg-oss-demo-&amp;#39; + part.filename, part); } part = yield parts; } 2 网络传输：比如从远端下载文件 yield new Promise((resolve, reject)=&amp;gt;{ ctx.safeCurl(whitelistExcelLink).then(response =&amp;gt; { const data = response.</description>
-    </item>
-    
-    <item>
-      <title>NodeJS Stream系列第四篇之高级用法</title>
-      <link>https://maoxunxing.com/en/nodejs-network-stream-4/</link>
-      <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/nodejs-network-stream-4/</guid>
-      <description>核心流模块：  crypto: 加密 zlib： 压缩 split2： 按行返回数据，比如读取一个文件 websocket-stream collect-stream from2: 直接转为可读流 to2： 直接转为可写流 duplexify: 支持将流转为duplex类型 pump pumpify end-of-stream： 判断流是否结束，接收一个回调函数  collect-stream collect.js
-和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试
-duplexify duplify.js
-const duplexify = require(&amp;#39;duplexify&amp;#39;) const fs = require(&amp;#39;fs&amp;#39;) function log() { const d = duplexify(); var w = fs.createWriteStream(&amp;#39;logs/test.log&amp;#39;) d.setWritable(w) return d } const stream = log(); stream.write(Date.now() + &amp;#39;\n&amp;#39;) stream.end(); concat-stream 如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。
-正常实现方式：
-function ResponseReader(encoding) { stream.Transform.call(this); this._chuncks = []; this.</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FFFFFF"/>
     <link rel="manifest" href="https://maoxunxing.com/manifest.json">
-    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar.jpg">
+    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar3.jpg">
     <meta name="author" content="Xunxing Mao">
     <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
     <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
@@ -14,16 +14,13 @@
     <meta name="twitter:card" content="summary_large_image"/>
 
 
-    <meta name="twitter:site" content="@maoxunxing"/>
-    <meta name="twitter:creator" content="@maoxunxing"/>
 
-
-    <meta property="og:title" content="NodeJS Stream系列 - 什么是流" />
+    <meta property="og:title" content="NodeJS系列 - Stream" />
 <meta property="og:description" content="什么是流？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://maoxunxing.com/zh-cn/nodejs-network-stream/" />
 
-<meta property="og:image" content="https://maoxunxing.com/nodejs-network-stream/streams.png" />
+<meta property="og:image" content="https://maoxunxing.com/nodejs-network-stream/a.jpeg" />
 <meta property="article:published_time" content="2021-10-19T14:28:57+08:00" />
 <meta property="article:modified_time" content="2021-10-19T14:28:57+08:00" /><meta property="og:site_name" content="毛训星的网络日志" />
 
@@ -31,16 +28,20 @@
     
       <base href="https://maoxunxing.com/zh-cn/nodejs-network-stream/">
     
-    <title>NodeJS Stream系列 - 什么是流 · 毛训星的网络日志</title>
+    <title>NodeJS系列 - Stream · 毛训星的网络日志</title>
 
     
       <link rel="canonical" href="https://maoxunxing.com/zh-cn/nodejs-network-stream/">
     
     
-    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" />
-    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" />
-    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" />
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//D7NQ3RODEC-dsn.algolia.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-1.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-2.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-3.algolianet.com" crossorigin />
 
     
     
@@ -80,6 +81,10 @@
 
     
       <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
+    
+    
+
     <meta name="generator" content="Hugo 0.80.0" />
   </head>
 
@@ -96,6 +101,8 @@
 
     <main class="wrapper">
       
+
+
 <nav class="navigation">
   <section class="container">
     <div class="navigation-author">
@@ -104,11 +111,12 @@
           <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
         
       </a>
-      <a class="name" href="https://maoxunxing.com/zh-cn">训星个人站</a>
+      <a class="name" href="https://maoxunxing.com/zh-cn">训星</a>
     </div>
 
     <input type="checkbox" id="menu-toggle" />
     <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+
     <ul class="navigation-list">
       
         
@@ -153,9 +161,7 @@
             <li class="navigation-item">
               <a rel="noopener" href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
             </li>
-            <li class="navigation-item">
-              <a rel="noopener" href="https://twitter.com/maoxunxing/" target="_blank" title="Twitter" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></g></svg></a>
-            </li>
+            
             <li class="navigation-item">
               <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
             </li>
@@ -173,10 +179,10 @@
           
         
       
-
     </ul>
   </section>
 </nav>
+<div class="nav-search-box" id="docsearch"></div>
 
 <script>
   window.addEventListener('load', () => {
@@ -194,7 +200,7 @@
       <header>
         
         <div class="post-title">
-          <h1 class="title">NodeJS Stream系列 - 什么是流</h1>
+          <h1 class="title">NodeJS系列 - Stream</h1>
         </div>
         <div class="post-meta">
           <div class="date">
@@ -206,7 +212,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2 分钟阅读时间
+              7 分钟阅读时间
             </span>
           </div>
           
@@ -280,13 +286,513 @@ server.listen(<span style="color:#099">3000</span>)
   stream.pipe(oppressor(req)).pipe(res)
 })
 server.listen(<span style="color:#099">3000</span>)
-</code></pre></div><h3 id="其他文章">其他文章<a href="#其他文章" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
-<p><a href="../nodejs-network-stream">NodeJS Stream系列第五篇之实际场景</a><br>
-<a href="../nodejs-network-stream-2">NodeJS Stream系列 - 流的类型</a><br>
-<a href="../nodejs-network-stream-3">NodeJS Stream系列 - 基本用法</a><br>
-<a href="../nodejs-network-stream-4">NodeJS Stream系列第四篇之高级用法</a><br>
-<a href="../nodejs-network-stream-5">NodeJS Stream系列第五篇之实际场景</a></p>
+</code></pre></div><h2 id="流的类型">流的类型<a href="#流的类型" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<p>1 readable 可读 <code>readable.pipe(A)</code>
+2 writable 可写 <code>A.pipe(writable)</code>
+3 duplex： 复式：既可读也可写  <code>A.pipe(duplex).pipe(A)</code>
+4 transform：duplex的一种类型 可读可写 输出是从输入转换过来 <code>A.pipe(transform).pipe(B)</code></p>
+<p>pipe方法:
+所有的readable/transform/duplex流都有这个方法, 并且返回readable/transform/duplex的流</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">src.pipe(dst) <span style="color:#998;font-style:italic">// 返回一个可读的流 所以可以链式调用 和unix的管道操作符是一样的 比如 cat xx.txt | grep &#39;console&#39;
+</span></code></pre></div><p>可读流的常用方法：</p>
+<ul>
+<li><code>stream.pipe(...)</code></li>
+<li><code>stream.once('end', function() {})</code></li>
+</ul>
+<p>两种模式： 默认是暂停模式，也就是你需要手动调用next/read方法，可以开启流动模式</p>
+<ul>
+<li><code>stream.resume()</code></li>
+<li><code>stream.on('data', function(buf) {}) </code> 绑定会自动触发流动模式</li>
+</ul>
+<p>资源的数据流并不是直接流向消费者，而是先 push 到缓存池，有水位，如果超过这个水位，push 的时候会返回 false：比如</p>
+<ul>
+<li>消费者主动执行了 .pause()</li>
+<li>消费速度比数据 push 到缓存池的生产速度慢</li>
+</ul>
+<p>都会返回false, 这种情况也叫做「背压」Backpressure</p>
+<p>可写流的常用方法：</p>
+<ul>
+<li><code>.write(buf)</code></li>
+<li><code>.end()</code></li>
+<li><code>.end(buf)</code></li>
+<li><code>.on('finish',function() {})</code></li>
+<li>(&hellip;).pipe(stream)</li>
+</ul>
+<p>数据流先到资源池，如果写入较慢或者暂停，会被缓存；如果太快，write会返回false,触发drain事件</p>
+<p>transform/duplex流可以用上面的所有方法</p>
+<h2 id="创建可读的流readablejsreadablejs">创建可读的流：<a href="./readable.js">readable.js</a><a href="#创建可读的流readablejsreadablejs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> rs <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> (require(<span style="color:#d14">&#39;stream&#39;</span>).Readable);
+rs.push(<span style="color:#d14">&#39;beep&#39;</span>);
+rs.push(<span style="color:#000;font-weight:bold">null</span>); <span style="color:#998;font-style:italic">// null告诉消费者数据结束
+</span><span style="color:#998;font-style:italic"></span>rs.pipe(process.stdout);
+</code></pre></div><h2 id="创建一个可写的流-writablejswritablejs">创建一个可写的流： <a href="./writable.js">writable.js</a><a href="#创建一个可写的流-writablejswritablejs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> Stream <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> writableStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Stream.Writable(({
+  decodeString<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span>,
+  write(chunk, encoding, next) { <span style="color:#998;font-style:italic">// 当写入的时候会调用
+</span><span style="color:#998;font-style:italic"></span>    console.log(chunk.toString())
+    next();<span style="color:#998;font-style:italic">// 告知读取更多数据
+</span><span style="color:#998;font-style:italic"></span>  }
+}))
+process.stdin.pipe(writableStream)
+</code></pre></div><h2 id="消费一个可读的流consume0jsconsume0js">消费一个可读的流：<a href="./consume0.js">consume0.js</a><a href="#消费一个可读的流consume0jsconsume0js" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">//(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js 
+</span><span style="color:#998;font-style:italic"></span>process.stdin.on(<span style="color:#d14">&#39;readable&#39;</span>, <span style="color:#000;font-weight:bold">function</span> () {
+    <span style="color:#000;font-weight:bold">var</span> buf <span style="color:#000;font-weight:bold">=</span> process.stdin.read();<span style="color:#998;font-style:italic">// 可以给read传参数 告知读取几个字节
+</span><span style="color:#998;font-style:italic"></span>    console.dir(buf);<span style="color:#998;font-style:italic">// 打印对象所有属性
+</span><span style="color:#998;font-style:italic"></span>    process.stdin.read(<span style="color:#099">0</span>); <span style="color:#998;font-style:italic">/// 0告知读取后续的所有字节
+</span><span style="color:#998;font-style:italic"></span>});
+<span style="color:#998;font-style:italic">//output:
+</span><span style="color:#998;font-style:italic">//&lt;Buffer 61 62 63 0a&gt; abc\0
+</span><span style="color:#998;font-style:italic">//&lt;Buffer 64 65 66 0a&gt; def\0
+</span><span style="color:#998;font-style:italic">//&lt;Buffer 67 68 69 0a&gt; ghi\0
+</span></code></pre></div><p>你也可以在消费者读取数据的时候，再缓存内容: <a href="./read1.js">read1.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> rs <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> (require(<span style="color:#d14">&#39;stream&#39;</span>).Readable);
 
+<span style="color:#000;font-weight:bold">let</span> c <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">97</span>
+rs._read <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>() { <span style="color:#998;font-style:italic">// 当读取的时候会调用
+</span><span style="color:#998;font-style:italic"></span>  rs.push(<span style="color:#0086b3">String</span>.fromCharCode(c<span style="color:#000;font-weight:bold">++</span>))
+  <span style="color:#000;font-weight:bold">if</span>(c <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#d14">&#39;z&#39;</span>.charCodeAt(<span style="color:#099">0</span>)) rs.push(<span style="color:#000;font-weight:bold">null</span>)
+}
+
+rs.pipe(process.stdout)
+
+
+process.on(<span style="color:#d14">&#39;exit&#39;</span>, <span style="color:#000;font-weight:bold">function</span> () {
+  console.error(<span style="color:#d14">&#39;\n_read() called &#39;</span> <span style="color:#000;font-weight:bold">+</span> (c <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">97</span>) <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39; times&#39;</span>);
+});
+
+</code></pre></div><p>从readable流读取数据：<a href="./read2.js">read2.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> Stream <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>)
+
+<span style="color:#000;font-weight:bold">const</span> readableStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Stream.Readable({
+  read() {}
+})
+<span style="color:#000;font-weight:bold">const</span> writableStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Stream.Writable()
+
+writableStream._write <span style="color:#000;font-weight:bold">=</span> (chunk, encoding, next) =&gt; {
+  console.log(chunk.toString())
+  next()
+}
+
+readableStream.pipe(writableStream)
+<span style="color:#998;font-style:italic">// or 因为所有的类都继承自EventEmitter， 所有自带一些基本的事件，比如（close...） 和扩展的事件
+</span><span style="color:#998;font-style:italic">// readableStream.on(&#39;readable&#39;, () =&gt; {
+</span><span style="color:#998;font-style:italic">//   console.log(readableStream.read().toString())
+</span><span style="color:#998;font-style:italic">// })
+</span><span style="color:#998;font-style:italic"></span>
+readableStream.push(<span style="color:#d14">&#39;hi!&#39;</span>)
+readableStream.push(<span style="color:#d14">&#39;ho!&#39;</span>)
+
+</code></pre></div><h2 id="写入数据到可写的流-write1jswrite1js">写入数据到可写的流： <a href="./write1.js">write1.js</a><a href="#写入数据到可写的流-write1jswrite1js" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> Stream <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> writableStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Stream.Writable()
+
+<span style="color:#998;font-style:italic">// var fs = require(&#39;fs&#39;);
+</span><span style="color:#998;font-style:italic">// var ws = fs.createWriteStream(&#39;message.txt&#39;);
+</span><span style="color:#998;font-style:italic"></span>writableStream.write(<span style="color:#d14">&#39;hey!\n&#39;</span>)
+
+</code></pre></div><h2 id="如何关闭流-close1jsclose1js">如何关闭流： <a href="./close1.js">close1.js</a><a href="#如何关闭流-close1jsclose1js" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> Stream <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>)
+
+<span style="color:#000;font-weight:bold">const</span> readableStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Stream.Readable({
+  read() {}
+})
+<span style="color:#000;font-weight:bold">const</span> writableStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Stream.Writable()
+
+writableStream._write <span style="color:#000;font-weight:bold">=</span> (chunk, encoding, next) =&gt; {
+  console.log(chunk.toString())
+  next()
+}
+
+writableStream.on(<span style="color:#d14">&#39;error&#39;</span>, (err) =&gt; {
+  console.log(err)
+})
+
+readableStream.pipe(writableStream)
+
+readableStream.push(<span style="color:#d14">&#39;hi!&#39;</span>)
+readableStream.push(<span style="color:#d14">&#39;ho!&#39;</span>)
+
+readableStream.on(<span style="color:#d14">&#39;close&#39;</span>, () =&gt; {
+  writableStream.end()
+  <span style="color:#998;font-style:italic">// writableStream.write(&#39;111&#39;) 关闭后再写会触发error事件。
+</span><span style="color:#998;font-style:italic"></span>})<span style="color:#998;font-style:italic">// 关闭可写流。
+</span><span style="color:#998;font-style:italic"></span>writableStream.on(<span style="color:#d14">&#39;close&#39;</span>, () =&gt; console.log(<span style="color:#d14">&#39;ended&#39;</span>))
+
+readableStream.destroy() <span style="color:#998;font-style:italic">// 销毁可读流。 触发close事件
+</span><span style="color:#998;font-style:italic"></span>
+</code></pre></div><h2 id="如何创建transform流-transformjstransformjs">如何创建transform流： <a href="./transform.js">transform.js</a><a href="#如何创建transform流-transformjstransformjs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> { Transform } <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> TransformStream <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Transform(({
+  transform(chunk, encoding, callback) {
+    <span style="color:#000;font-weight:bold">this</span>.push(chunk.toString().toUpperCase())
+    callback()
+  }
+}));
+
+process.stdin.pipe(TransformStream).pipe(process.stdout)
+
+</code></pre></div><p>一般为了减少每次实例化，我们会用through2: through2.js</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// node through2.js hello.txt
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> f <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> through <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;through2&#39;</span>)
+fs.createReadStream(process.argv[<span style="color:#099">2</span>]).pipe(toUpper()).pipe(process.stdout)
+
+<span style="color:#000;font-weight:bold">function</span> toUpper() {
+  <span style="color:#000;font-weight:bold">return</span> through(<span style="color:#000;font-weight:bold">function</span>(chunk, enc, next) {
+    next(<span style="color:#000;font-weight:bold">null</span>, chunk.toString().toUpperCase())
+    <span style="color:#998;font-style:italic">// or 两个是等价的
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">// this.push(chunk.toString().toUpperCase())
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">// next()
+</span><span style="color:#998;font-style:italic"></span>  })
+}
+
+</code></pre></div><h2 id="如何创建duplex流-duplexjsduplexjs">如何创建duplex流： <a href="./duplex.js">duplex.js</a><a href="#如何创建duplex流-duplexjsduplexjs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// nc localhost 8000
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> net <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;net&#39;</span>) <span style="color:#998;font-style:italic">// create tcp server
+</span><span style="color:#998;font-style:italic"></span>net.createServer(<span style="color:#000;font-weight:bold">function</span>(stream) {
+  stream.pipe(stream)
+}).listen(<span style="color:#099">8000</span>)
+</code></pre></div><p>复杂的例子。我们可以创建一个代理的服务器，中间转发一下(有点像vpn)：duplex2.js</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// nc localhost 8001 结果是通过8000服务器转发的
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> net <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;net&#39;</span>) <span style="color:#998;font-style:italic">// create tcp server
+</span><span style="color:#998;font-style:italic"></span>net.createServer(<span style="color:#000;font-weight:bold">function</span>(stream) {
+  stream.pipe(net.connect(<span style="color:#099">8000</span>, <span style="color:#d14">&#39;localhost&#39;</span>)).pipe(stream)
+}).listen(<span style="color:#099">8001</span>)
+</code></pre></div><h2 id="对象流-objectjsobjectjs">对象流 <a href="./object.js">object.js</a><a href="#对象流-objectjsobjectjs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<p>正常情况下，你只能读和写buffers（比如文本文件） 和字符串。 如果要读取对象，
+需要开启对象模式</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> through <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;through2&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> tr <span style="color:#000;font-weight:bold">=</span> through.obj(<span style="color:#000;font-weight:bold">function</span>(row, enc, next) {
+  next(<span style="color:#000;font-weight:bold">null</span>, (row.n <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1000</span>) <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39;\n&#39;</span>)
+})
+tr.pipe(process.stdout)
+tr.write({ n<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">5</span> })
+tr.write({ n<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">10</span> })
+tr.write({ n<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">3</span> })
+tr.end()
+</code></pre></div><h3 id="内置的流">内置的流<a href="#内置的流" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<ul>
+<li>process.stdin: 可读的流</li>
+<li>process.stdout：可写的流</li>
+<li>process.stderr：可写的流</li>
+<li>fs.createReadStream()</li>
+<li>fs.createWriteStream()</li>
+<li>net.connect()： Duplex流 建立tcp连接用的</li>
+<li>net.createServer()</li>
+<li>http.request()</li>
+<li>http.createServer()</li>
+<li>zlib.createGzip()</li>
+<li>zlib.createGunzip() : gzip解压</li>
+<li>zlib.createDeflate(): 用deflate算法压缩</li>
+<li>zlib.createInflate(): 用deflate算法解压</li>
+<li>tls.connect()</li>
+<li>tls.createServer()</li>
+<li>child_process spawn: 创建一个新进程</li>
+</ul>
+<h2 id="核心流模块">核心流模块：<a href="#核心流模块" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<ul>
+<li>crypto:  加密</li>
+<li>zlib： 压缩</li>
+<li>split2： 按行返回数据，比如读取一个文件</li>
+<li>websocket-stream</li>
+<li>collect-stream</li>
+<li>from2: 直接转为可读流</li>
+<li>to2： 直接转为可写流</li>
+<li>duplexify: 支持将流转为duplex类型</li>
+<li>pump</li>
+<li>pumpify</li>
+<li>end-of-stream： 判断流是否结束，接收一个回调函数</li>
+</ul>
+<h3 id="collect-stream">collect-stream<a href="#collect-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p><a href="./collect.js">collect.js</a></p>
+<p>和concat-stream是同一个东西， 只不过它有异常处理。 可以用于单元测试</p>
+<h3 id="duplexify">duplexify<a href="#duplexify" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p><a href="./duplify.js">duplify.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> duplexify <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;duplexify&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> fs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>)
+
+<span style="color:#000;font-weight:bold">function</span> log() {
+	<span style="color:#000;font-weight:bold">const</span> d <span style="color:#000;font-weight:bold">=</span> duplexify();
+  <span style="color:#000;font-weight:bold">var</span> w <span style="color:#000;font-weight:bold">=</span> fs.createWriteStream(<span style="color:#d14">&#39;logs/test.log&#39;</span>)
+  d.setWritable(w)
+  <span style="color:#000;font-weight:bold">return</span> d
+}
+
+<span style="color:#000;font-weight:bold">const</span> stream <span style="color:#000;font-weight:bold">=</span> log();
+stream.write(<span style="color:#0086b3">Date</span>.now() <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#39;\n&#39;</span>)
+stream.end();
+concat<span style="color:#000;font-weight:bold">-</span>stream
+
+</code></pre></div><p>如何把流缓存起来一次性读取: 将流输出为一个buffer； 如果是对象，则是对象数组。</p>
+<p>正常实现方式：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">function</span> ResponseReader(encoding) {
+  stream.Transform.call(<span style="color:#000;font-weight:bold">this</span>);
+  <span style="color:#000;font-weight:bold">this</span>._chuncks <span style="color:#000;font-weight:bold">=</span> [];
+  <span style="color:#000;font-weight:bold">this</span>._encoding <span style="color:#000;font-weight:bold">=</span> encoding;
+}
+util.inherits(ResponseReader, stream.Transform);
+
+ResponseReader.prototype._transform <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(chunk, encoding, callback) {
+  <span style="color:#000;font-weight:bold">this</span>._chuncks.push(chunk);
+  callback();
+};
+
+ResponseReader.prototype._flush  <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(callback) {
+  <span style="color:#000;font-weight:bold">this</span>.push(Buffer.concat(<span style="color:#000;font-weight:bold">this</span>._chuncks).toString(<span style="color:#000;font-weight:bold">this</span>._encoding));
+  callback();
+};
+ concat.js
+
+<span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
+process.stdin.pipe(concat(<span style="color:#000;font-weight:bold">function</span>(body) {
+    console.log(body.length) <span style="color:#998;font-style:italic">//ctr+d 会一次性打印出来
+</span><span style="color:#998;font-style:italic"></span>}))
+</code></pre></div><p>复杂的场景。比如我们响应返回完整数据(比如图片)才进行下一步操作 concat2.js
+// curl -d msg=hello localhost:6000</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> http <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;http&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> qs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;querystring&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> through <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;through2&#39;</span>)
+<span style="color:#000;font-weight:bold">function</span> counter() {
+  <span style="color:#000;font-weight:bold">let</span> size <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+  <span style="color:#000;font-weight:bold">return</span> through(<span style="color:#000;font-weight:bold">function</span>(buf, enc, next) {
+    size <span style="color:#000;font-weight:bold">+=</span> buf.length
+    <span style="color:#000;font-weight:bold">if</span>(size <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#099">20</span>) next(<span style="color:#000;font-weight:bold">null</span>, <span style="color:#000;font-weight:bold">null</span>) <span style="color:#998;font-style:italic">// 需要判断请求参数的长度: 超过20 则终止流
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">else</span> next(<span style="color:#000;font-weight:bold">null</span>, buf)
+  })
+}
+
+<span style="color:#000;font-weight:bold">const</span> server <span style="color:#000;font-weight:bold">=</span> http.createServer(<span style="color:#000;font-weight:bold">function</span>(req, res) {
+    req
+    .pipe(counter())
+    .pipe(concat({ encoding<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;string&#39;</span> }, <span style="color:#000;font-weight:bold">function</span>(body) {
+        <span style="color:#000;font-weight:bold">const</span> params <span style="color:#000;font-weight:bold">=</span> qs.parse(body) <span style="color:#998;font-style:italic">// 读取的是空
+</span><span style="color:#998;font-style:italic"></span>        console.log(params)
+        res.end(<span style="color:#d14">&#39;ok\n&#39;</span>)
+    }))
+})
+
+server.listen(<span style="color:#099">6000</span>)
+
+</code></pre></div><h3 id="pump">pump<a href="#pump" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p>解决10.x版本前，当目标流被销毁的时候，源流不会自动销毁，也没有回调的问题。处理异常</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">var</span> pump <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;pump&#39;</span>)
+<span style="color:#000;font-weight:bold">var</span> fs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>)
+
+<span style="color:#000;font-weight:bold">var</span> source <span style="color:#000;font-weight:bold">=</span> fs.createReadStream(<span style="color:#d14">&#39;/dev/random&#39;</span>)
+<span style="color:#000;font-weight:bold">var</span> dest <span style="color:#000;font-weight:bold">=</span> fs.createWriteStream(<span style="color:#d14">&#39;/dev/null&#39;</span>)
+
+<span style="color:#998;font-style:italic">// source.pipe(dst) 但是会有异常函数回调
+</span><span style="color:#998;font-style:italic"></span>pump(source, dest, <span style="color:#000;font-weight:bold">function</span>(err) {
+  console.log(<span style="color:#d14">&#39;pipe finished&#39;</span>, err)
+})
+
+setTimeout(<span style="color:#000;font-weight:bold">function</span>() {
+  dest.destroy() <span style="color:#998;font-style:italic">// when dest is closed pump will destroy source
+</span><span style="color:#998;font-style:italic"></span>}, <span style="color:#099">1000</span>)
+</code></pre></div><p>10.x版本后可以用pipeline</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> { pipeline } <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>);
+<span style="color:#000;font-weight:bold">const</span> fs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;fs&#39;</span>);
+<span style="color:#000;font-weight:bold">const</span> zlib <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;zlib&#39;</span>);
+
+<span style="color:#998;font-style:italic">// Use the pipeline API to easily pipe a series of streams
+</span><span style="color:#998;font-style:italic">// together and get notified when the pipeline is fully done.
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#998;font-style:italic">// A pipeline to gzip a potentially huge tar file efficiently:
+</span><span style="color:#998;font-style:italic"></span>
+pipeline(
+  fs.createReadStream(<span style="color:#d14">&#39;archive.tar&#39;</span>),
+  zlib.createGzip(),
+  fs.createWriteStream(<span style="color:#d14">&#39;archive.tar.gz&#39;</span>),
+  (err) =&gt; {
+    <span style="color:#000;font-weight:bold">if</span> (err) {
+      console.error(<span style="color:#d14">&#39;Pipeline failed.&#39;</span>, err);
+    } <span style="color:#000;font-weight:bold">else</span> {
+      console.log(<span style="color:#d14">&#39;Pipeline succeeded.&#39;</span>);
+    }
+  }
+);
+
+</code></pre></div><h3 id="pumpify">pumpify<a href="#pumpify" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p>pump and duplexify 的结合 会返回一个duplex流</p>
+<h2 id="如何把流缓存起来一次性读取-concatjsconcatjs">如何把流缓存起来一次性读取： <a href="./concat.js">concat.js</a><a href="#如何把流缓存起来一次性读取-concatjsconcatjs" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<h3 id="concat-stream">concat-stream<a href="#concat-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
+process.stdin.pipe(concat(<span style="color:#000;font-weight:bold">function</span>(body) {
+    console.log(body.length) <span style="color:#998;font-style:italic">//ctr+d 会一次性打印出来
+</span><span style="color:#998;font-style:italic"></span>}))
+</code></pre></div><p>复杂的场景。比如我们需要判断请求参数的长度: <a href="./concat2.js">concat2.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// curl -d msg=hello localhost:6000
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">const</span> concat <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;concat-stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> http <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;http&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> qs <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;querystring&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> through <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;through2&#39;</span>)
+<span style="color:#000;font-weight:bold">function</span> counter() {
+  <span style="color:#000;font-weight:bold">let</span> size <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
+  <span style="color:#000;font-weight:bold">return</span> through(<span style="color:#000;font-weight:bold">function</span>(buf, enc, next) {
+    size <span style="color:#000;font-weight:bold">+=</span> buf.length
+    <span style="color:#000;font-weight:bold">if</span>(size <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#099">20</span>) next(<span style="color:#000;font-weight:bold">null</span>, <span style="color:#000;font-weight:bold">null</span>) <span style="color:#998;font-style:italic">// 终止流
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">else</span> next(<span style="color:#000;font-weight:bold">null</span>, buf)
+  })
+}
+
+<span style="color:#000;font-weight:bold">const</span> server <span style="color:#000;font-weight:bold">=</span> http.createServer(<span style="color:#000;font-weight:bold">function</span>(req, res) {
+    req
+    .pipe(counter())
+    .pipe(concat({ encoding<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#39;string&#39;</span> }, <span style="color:#000;font-weight:bold">function</span>(body) {
+        <span style="color:#000;font-weight:bold">const</span> params <span style="color:#000;font-weight:bold">=</span> qs.parse(body) <span style="color:#998;font-style:italic">// 读取的是空
+</span><span style="color:#998;font-style:italic"></span>        console.log(params)
+        res.end(<span style="color:#d14">&#39;ok\n&#39;</span>)
+    }))
+})
+
+server.listen(<span style="color:#099">6000</span>)
+
+</code></pre></div><h2 id="rpc-stream">rpc-stream<a href="#rpc-stream" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<p>RPC（Remote Procedure Call）中文名『远程过程调用』
+其实就是调用其他机器上的函数。一般是基于TCP。比如我们集团的HSF 其实就是一个远程调用。源码很值得读一读，关于如何设计好的接口。</p>
+<p><a href="./rpc-server.js">rpc-server.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> rpc <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;rpc-stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> net <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;net&#39;</span>)
+
+net.createServer(<span style="color:#000;font-weight:bold">function</span> (stream) {
+  <span style="color:#000;font-weight:bold">const</span> server <span style="color:#000;font-weight:bold">=</span> rpc({ <span style="color:#998;font-style:italic">// duplex类型
+</span><span style="color:#998;font-style:italic"></span>    hello<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span> (name, cb) {
+      cb(<span style="color:#000;font-weight:bold">null</span>, <span style="color:#d14">&#39;hello, &#39;</span> <span style="color:#000;font-weight:bold">+</span> name)
+    }
+  })
+  server.pipe(stream).pipe(server) <span style="color:#998;font-style:italic">//需要传递给server
+</span><span style="color:#998;font-style:italic"></span>}).listen(<span style="color:#099">8001</span>)
+</code></pre></div><p><a href="./rpc-client.js">rpc-client.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> rpc <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;rpc-stream&#39;</span>)
+<span style="color:#000;font-weight:bold">const</span> net <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;net&#39;</span>)
+
+<span style="color:#000;font-weight:bold">const</span> client <span style="color:#000;font-weight:bold">=</span> rpc()
+client.pipe(net.connect(<span style="color:#099">8001</span>, <span style="color:#d14">&#39;localhost&#39;</span>)).pipe(client) <span style="color:#998;font-style:italic">// 需要再次pipe(client)
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#000;font-weight:bold">const</span> remote <span style="color:#000;font-weight:bold">=</span> client.wrap([<span style="color:#d14">&#39;hello&#39;</span>])
+
+remote.hello(<span style="color:#d14">&#39;JIM&#39;</span>, <span style="color:#000;font-weight:bold">function</span> (err, mess) {
+  <span style="color:#000;font-weight:bold">if</span>(err) <span style="color:#000;font-weight:bold">throw</span> err
+  console.log(mess)
+})
+
+</code></pre></div><p>用rpc协议不需要json格式。这个是优势。</p>
+<h2 id="实际应用场景">实际应用场景<a href="#实际应用场景" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<h3 id="1-文件下载导入导出">1 文件下载/导入导出<a href="#1-文件下载导入导出" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p><a href="https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html">https://www.eggjs.org/api/node_modules_egg-multipart_app_extend_context.js.html</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">const</span> {
+    ctx,
+} <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>;
+<span style="color:#000;font-weight:bold">const</span> parts <span style="color:#000;font-weight:bold">=</span> ctx.multipart();
+<span style="color:#000;font-weight:bold">let</span> object;
+<span style="color:#000;font-weight:bold">let</span> part;
+part <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">yield</span> parts;
+<span style="color:#000;font-weight:bold">while</span> (part) {
+    <span style="color:#000;font-weight:bold">if</span> (part.length) {
+        <span style="color:#998;font-style:italic">// arrays are busboy fields
+</span><span style="color:#998;font-style:italic"></span>    } <span style="color:#000;font-weight:bold">else</span> {
+        <span style="color:#998;font-style:italic">// otherwise, it&#39;s a stream
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// 文件处理，上传到云存储等等
+</span><span style="color:#998;font-style:italic"></span>        object <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">yield</span> ctx.oss.put(<span style="color:#d14">&#39;egg-oss-demo-&#39;</span> <span style="color:#000;font-weight:bold">+</span> part.filename, part);
+    }
+    part <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">yield</span> parts;
+}
+
+
+</code></pre></div><h3 id="2-网络传输比如从远端下载文件">2 网络传输：比如从远端下载文件<a href="#2-网络传输比如从远端下载文件" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000;font-weight:bold">yield</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Promise</span>((resolve, reject)=&gt;{
+  ctx.safeCurl(whitelistExcelLink).then(response =&gt; {
+    <span style="color:#000;font-weight:bold">const</span> data <span style="color:#000;font-weight:bold">=</span> response.data;
+    <span style="color:#000;font-weight:bold">const</span> stream <span style="color:#000;font-weight:bold">=</span> fs.createWriteStream(filepath)
+    stream.write(data, () =&gt; {
+      resolve <span style="color:#000;font-weight:bold">&amp;&amp;</span> resolve()
+    });
+  }).<span style="color:#000;font-weight:bold">catch</span>(e =&gt; {
+    ctx.logger.error(e)
+  });
+}); 
+
+</code></pre></div><h3 id="3-vpn">3 vpn<a href="#3-vpn" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p>代码太多： 请打开文件查看：</p>
+<p><a href="./vpn-client.js">vpn-client.js</a>
+<a href="./vpn-server.js">vpn-server.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">node vpn-client.js
+node vpn-server.js
+node echo.js
+</code></pre></div><h3 id="4-实时通信-websocket">4 实时通信 websocket<a href="#4-实时通信-websocket" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p><a href="./websocket-client.js">websocket-client.js</a>
+<a href="./websocket-server.js">websocket-server.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">browserify websocket-client.js &gt; public/bundle.js <span style="color:#000;font-weight:bold">(</span>或者nodejs client也行）
+node websocket-server.js
+</code></pre></div><p>问题： websocket和<a href="https://github.com/socketio/socket.io/blob/master/lib/index.ts">socket.io</a>的区别？</p>
+<h3 id="5-p2p">5 p2p<a href="#5-p2p" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p>点对点（P2P）服务是一个去中心化的平台，两个人在此平台上直接互动，没有第三方的中介。<a href="./webrtc.js">webrtc.js</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tnpm run signalhub
+budo webrtc.js
+</code></pre></div><p>问题： discord是不是点对点？</p>
+<h3 id="6-工程化">6 工程化<a href="#6-工程化" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<blockquote>
+<p>gulp 需要频繁对文件操作</p>
+</blockquote>
+<h3 id="7-webassembly">7 webassembly<a href="#7-webassembly" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p><a href="https://developers.google.com/web/updates/2018/04/loading-wasm">https://developers.google.com/web/updates/2018/04/loading-wasm</a></p>
+<h3 id="扩展">扩展<a href="#扩展" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+<p>在实际应用中可能需要扩展去实现定制化的需求</p>
+<p>1 自定义实现
+实现一个writable流
+可以用来自定义了 stream 写入的时机，当 chunk 大小超过某个阈值，才真的写入文件，提升写入速度</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#998;font-style:italic">// strace -cfe trace=write node index.js
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">var</span> Writable <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>).Writable;
+<span style="color:#000;font-weight:bold">var</span> util <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;util&#39;</span>);
+
+<span style="color:#000;font-weight:bold">function</span> MyWritable(options) {
+    Writable.call(<span style="color:#000;font-weight:bold">this</span>, options);
+} <span style="color:#998;font-style:italic">// 构造函数
+</span><span style="color:#998;font-style:italic"></span>util.inherits(MyWritable, Writable); <span style="color:#998;font-style:italic">// 继承自Writable
+</span><span style="color:#998;font-style:italic"></span>MyWritable.prototype._write <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(chunk, encoding, callback) {
+    console.log(<span style="color:#d14">&#34;被写入的数据是:&#34;</span>, chunk.toString()); <span style="color:#998;font-style:italic">// 此处可对写入的数据进行处理
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">//this.data.push(chunk); 先缓存
+</span><span style="color:#998;font-style:italic"></span>    callback();<span style="color:#998;font-style:italic">// 最终写入
+</span><span style="color:#998;font-style:italic"></span>};
+process.stdin.pipe(<span style="color:#000;font-weight:bold">new</span> MyWritable()); <span style="color:#998;font-style:italic">// stdin作为输入源，MyWritable作为输出源
+</span><span style="color:#998;font-style:italic"></span>实现一个readable流
+<span style="color:#000;font-weight:bold">const</span> Readable <span style="color:#000;font-weight:bold">=</span> require(<span style="color:#d14">&#39;stream&#39;</span>).Readable;
+
+<span style="color:#998;font-style:italic">// Stream 实现
+</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">class</span> MyReadable <span style="color:#000;font-weight:bold">extends</span> Readable {
+  constructor(dataSource, options) {
+    <span style="color:#000;font-weight:bold">super</span>(options);
+    <span style="color:#000;font-weight:bold">this</span>.dataSource <span style="color:#000;font-weight:bold">=</span> dataSource;
+  }
+  <span style="color:#998;font-style:italic">// 继承了 Readable 的类必须实现这个函数
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#998;font-style:italic">// 触发系统底层对流的读取
+</span><span style="color:#998;font-style:italic"></span>  _read() {
+    <span style="color:#000;font-weight:bold">const</span> data <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">this</span>.dataSource.makeData();
+    <span style="color:#000;font-weight:bold">this</span>.push(data);
+  }
+}
+
+</code></pre></div><p>实现pipe</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Readable.prototype.pipe <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span>(writable, options) {
+  <span style="color:#000;font-weight:bold">this</span>.on(<span style="color:#d14">&#39;data&#39;</span>, (chunk) =&gt; {
+    <span style="color:#000;font-weight:bold">let</span> ok <span style="color:#000;font-weight:bold">=</span> writable.write(chunk);
+    <span style="color:#998;font-style:italic">// 背压，暂停
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">!</span>ok <span style="color:#000;font-weight:bold">&amp;&amp;</span> <span style="color:#000;font-weight:bold">this</span>.pause();
+  });
+  writable.on(<span style="color:#d14">&#39;drain&#39;</span>, () =&gt; {
+    <span style="color:#998;font-style:italic">// 恢复
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">this</span>.resume();
+  });
+  <span style="color:#998;font-style:italic">// 告诉 writable 有流要导入
+</span><span style="color:#998;font-style:italic"></span>  writable.emit(<span style="color:#d14">&#39;pipe&#39;</span>, <span style="color:#000;font-weight:bold">this</span>);
+  <span style="color:#998;font-style:italic">// 支持链式调用
+</span><span style="color:#998;font-style:italic"></span>  <span style="color:#000;font-weight:bold">return</span> writable;
+};
+
+</code></pre></div>
       </div>
 
 <style type="text/css">
@@ -371,7 +877,7 @@ server.listen(<span style="color:#099">3000</span>)
 
   <h4>分享到</h4>
 
-  <a href="https://twitter.com/intent/tweet?via=maoxunxing&text=NodeJS%20Stream%e7%b3%bb%e5%88%97%20-%20%e4%bb%80%e4%b9%88%e6%98%af%e6%b5%81%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fnodejs-network-stream%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
+  <a href="https://twitter.com/intent/tweet?via=&text=NodeJS%e7%b3%bb%e5%88%97%20-%20Stream%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fnodejs-network-stream%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
     <i class="fab fa-fw fa-twitter" aria-hidden="true"></i>
     <span>Twitter</span>
   </a>
@@ -509,6 +1015,184 @@ server.listen(<span style="color:#099">3000</span>)
           });
   }
 </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script>
+  const { autocomplete, getAlgoliaResults } = window['@algolia/autocomplete-js'];
+  const algoliasearch = window.algoliasearch;
+  const searchClient = algoliasearch(
+    'D7NQ3RODEC',
+    'cac594df3c563fecd3ad54a0e399c173'
+  );
+
+  const hitTemplate =
+        '<div class="col-lg-12 col-md-12 mb-4">' +
+            '<article class="card post-card" id="summary-{{{ key }}}">' +
+                '\u003cimg loading=\u0022lazy\u0022 class=\u0022w-100 rounded\u0022 style=\u0022height:200px;object-fit:cover;\u0022src=\u0022{{{ image }}}\u0022 alt=\u0022{{{ name }}}\u0022\u003e' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">' +
+                    '\u003ca class=\u0022post-title\u0022 href=\u0022{{{ permalink }}}\u0022\u003e{{{ title }}}\u003c\/a\u003e' +
+                    '</h3>' +
+                    '<p>{{{ summary }}}</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+    const missTemplate =
+        '<div class="col-lg-10 col-md-10 mb-4">' +
+            '<article class="card post-card">' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">No results</h3>' +
+                    '<p>There were no results matching your search terms \u003cem\u003e{{{ query }}}\u003c\/em\u003e.</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+
+  autocomplete({
+    container: '#docsearch',
+    detachedMediaQuery: '',
+    placeholder: 'Search for articles',
+    
+    
+    navigator: {
+      navigate({ itemUrl }) {
+        navigate(itemUrl);
+      },
+    },
+    getSources({ query }) {
+      return [
+        {
+          sourceId: 'products',
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+               queries: [
+                {
+                  indexName: 'my-blog-index',
+                  query,
+                  params: {
+                    hitsPerPage: 5,
+                  },
+                },
+              ],
+            });
+          },
+          templates: {
+            item({ item, components, createElement }) {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              const lang = location.pathname.split("/")[1];
+              item.uri = item.uri.replace(/posts\//g, '');
+              
+
+              return createElement(
+                'a',
+                { className: 'aa-ItemLink', href: `${location.protocol}\/\/${location.host}/${lang}/${item.uri}` },
+                createElement(
+                  'div',
+                  {
+                    className: 'aa-ItemWrapper',
+                  },
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContent' },
+                    item.image ? createElement(
+                      'div',
+                      { className: 'aa-ItemIcon' },
+                      createElement('img', {
+                        src: item.images[0],
+                        alt: item.title,
+                        width: 40,
+                        height: 40,
+                      })
+                    ) : null
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContentBody' },
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentTitle' },
+                      components.Snippet({ hit: item, attribute: 'title' })
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentDescription' },
+                      components.Snippet({ hit: item, attribute: 'description' })
+                    )
+                  ),
+                  createElement(
+                    'div',
+                    {
+                      className: 'aa-ItemActions',
+                    },
+                    createElement(
+                      'button',
+                      {
+                        className: 'aa-ItemActionButton aa-DesktopOnly aa-ActiveOnly',
+                        type: 'button',
+                        title: 'Select',
+                      },
+                      createElement(
+                        'svg',
+                        {
+                          viewBox: '0 0 24 24',
+                          width: 20,
+                          height: 20,
+                          fill: 'currentColor',
+                        },
+                        createElement('path', {
+                          d: 'M18.984 6.984h2.016v6h-15.188l3.609 3.609-1.406 1.406-6-6 6-6 1.406 1.406-3.609 3.609h13.172v-4.031z',
+                        })
+                      )
+                    )
+                  )
+                )
+              );
+            },
+            noResults() {
+              return 'No results';
+            },
+          },
+          getItemUrl({ item }) {
+            return item.url;
+          },
+        },
+      ];
+    },
+  });
+</script>
+
 
 
   </body>
