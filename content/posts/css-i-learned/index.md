@@ -1,7 +1,6 @@
 ---
-title: "Css I Learned"
+title: "CSS实现细节梳理"
 date: 2021-12-23T20:03:38+08:00
-draft: true
 ---
 
 布局组件：
@@ -55,7 +54,7 @@ text-overflow: ellipsis;
 white-space: nowrap; 
 ```
 
-以上在flexbox容器还是会溢出？ min-width: 0
+以上在flexbox容器还是会溢出？ min-width: 0(配合flex: 1使用)
 
 vs:
 
@@ -158,7 +157,7 @@ box-shadow: inset 0 0 0 1px #aaa;
 font-size: var(--default-size, 12px)
 ```
 
----
+### flex
 
 flex-box*(Flex Formatting Context)：对齐 通用需要以下设置
 
