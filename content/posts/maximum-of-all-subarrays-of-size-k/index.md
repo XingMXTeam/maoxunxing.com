@@ -83,3 +83,65 @@ function getMaxK(arr, k) {
 空间复杂度： logk
 
 如何用js构建AVL树？ 主要是节点做左右子旋的理解。
+
+这里总结了一套代码模版： 
+
+1 节点平衡模版
+
+``` ts
+const balance = this.getBalance(node);
+//  左左
+if (balance > 1 && data < node.left.data) {
+    return this.rightRotate(node);
+}
+
+// 右右
+if (balance < -1 && data > node.right.data) {
+    return this.leftRotate(node);
+}
+
+// 左右
+if (balance > 1 && data > node.left.data) {
+    node.left = this.leftRotate(node.left);
+    return this.rightRotate(node);
+}
+
+// 右左
+if (balance < -1 && data < node.right.data) {
+    node.right = this.rightRotate(node.right);
+    return this.leftRotate(node);
+}
+```
+
+2 左旋模版
+
+```ts
+function leftRotate(x) {
+    let y = x.right;
+    let T2 = y.left
+    y.left = x
+    x.right = T2
+    x.height = Math.max(height(x.left), height(x.right)) + 1
+    y.height = Math.max(height(y.left), height(y.right)) + 1
+    return y
+}
+```
+
+3 右旋模版
+
+``` ts
+function rightRotate() {
+    let x = y.left;
+    let T2 = x.right;
+    x.right = y;
+    y.left = T2;
+    y.height = Math.max(height(y.left), height(y.right)) + 1;
+    x.height = Math.max(height(x.left), height(x.right)) + 1;
+    return x;
+}
+```
+
+插入节点简单就是递归删除，删除节点需要考虑删除根节点的情况
+
+Method 3: Two Stack 双栈
+
