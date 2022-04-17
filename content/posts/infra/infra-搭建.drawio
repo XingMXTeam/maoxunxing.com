@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e">
+    <diagram id="6hVZ6s4z2ipbsrGMKAL2" name="第 1 页">
+        <mxGraphModel dx="582" dy="376" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="212.5" width="690" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="72.5" width="690" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="搭建细节分层" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="接口设计" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="92.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="容器&lt;br&gt;大组件/registerComponent/runApp/useData" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="89" width="290" height="41" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="142.5" width="690" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="设计原理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="162.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="引擎&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%E5%BC%95%E6%93%8E%26lt%3Bbr%26gt%3B%E6%B8%B2%E6%9F%93%2F%E5%9F%8B%E7%82%B9%2F%E7%9B%91%E6%8E%A7%2F%E6%95%B0%E6%8D%AE%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22220%22%20y%3D%22228.25%22%20width%3D%22110%22%20height%3D%2238.5%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;br&gt;渲染" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="228.25" width="80" height="41.75" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="设计方案" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="232.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="hox" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="162.5" width="60" height="31.75" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="282.5" width="690" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="实现源码" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="302.5" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="useModel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="89" width="90" height="41" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="奥创协议" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="162.5" width="60" height="31.75" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="容器&lt;br&gt;埋点/监控/数据转换" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="228.25" width="110" height="40.88" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="workbox生命周期实现" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="161.63" width="90" height="38.37" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
