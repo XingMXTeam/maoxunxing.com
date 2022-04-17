@@ -1,6 +1,6 @@
-//i
-// asddsa
-//ls i   h
+//  i
+// forgeeksskeegfor
+// l h
 
 function logestPStr(str) {
     let n = str.length
@@ -11,12 +11,15 @@ function logestPStr(str) {
     for (let index = 0; index < n; index++) {
         low = index - 1
         high = index + 1
+        // 跳掉重复
         while( high < n && str[high] == str[index]){
             high++
         }
+        // 跳掉重复
         while( low >= 0 && str[low] == str[index]) {
             low--
         }
+        // 中间是回文
         while( low >= 0 && high < n && str[low] == str[high]) {
             low--
             high++

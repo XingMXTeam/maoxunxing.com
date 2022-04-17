@@ -6,7 +6,7 @@ tags:
 - Tree
 description: "滑动窗口的用法，AVL树的用法"
 images:
-- maximum-of-all-subarrays-of-size-k/maxresdefault.jpeg
+- maximum-of-all-subarrays-of-size-k/test.png
 ---
 ## 问题
 

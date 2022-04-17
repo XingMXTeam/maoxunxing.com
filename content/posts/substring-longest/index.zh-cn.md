@@ -1,8 +1,10 @@
 ---
-title: "Longest Palindromic Substring"
+title: "String Part 1 - Longest Palindromic Substring"
 date: 2022-04-16T23:59:19+08:00
 tags:
 - String
+images:
+- substring-longest/test.png
 ---
 
 ## 问题
