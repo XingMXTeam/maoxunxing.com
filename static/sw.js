@@ -5,8 +5,10 @@ const BASE_CACHE_FILES = [
   '/images/avatar3.jpg',
   '/images/favicon/favicon-32x32.png',
   '/images/favicon/favicon-16x16.png',
+  'https://use.fontawesome.com/releases/v5.11.2/css/all.css',
+  'https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700',
 
-  '/css/font.css',
+  // '/css/font.css',
   '/css/main.css',
   // '/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css',
   // '/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css',
@@ -19,7 +21,7 @@ const OFFLINE_CACHE_FILES = [
   '/images/favicon/favicon-32x32.png',
   '/images/favicon/favicon-16x16.png',
 
-  '/css/font.css',
+  // '/css/font.css',
   '/css/main.css',
   '/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css',
   '/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css'
