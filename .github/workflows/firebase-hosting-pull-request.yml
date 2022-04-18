@@ -17,7 +17,7 @@ jobs:
         with:
           hugo-version: '0.94.0'
       - name: Build
-        run: rm -rf public & hugo --minify & npm run index-and-send
+        run: npm update && rm -rf public & hugo --minify & npm run index-and-send
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

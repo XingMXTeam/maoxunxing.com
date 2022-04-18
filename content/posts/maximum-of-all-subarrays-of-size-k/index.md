@@ -1,197 +1,147 @@
 ---
-title: "Maximum of all subarrays of size k"
+title: "Tree Part 3 - 长度为k的子数组的最大值"
 date: 2021-08-26T15:16:39+08:00
-draft: true
 tags:
-- algorithm
-- programming
-- BST
-- AVL
-- max-top-heap
-description: "I am learning algorithm."
+- Tree
+description: "滑动窗口的用法，AVL树的用法"
 images:
 - maximum-of-all-subarrays-of-size-k/maxresdefault.jpeg
 ---
-## Question Definition(S & T)
+## 问题
 
 Give an array and an integer **K**, find the maximum for each and every condiguous subarray of size k.
 
-Examples: 
-Input: arr[] = { 1, 2, 3, 1, 4, 5, 2, 3, 6 } K = 3
-Ouput: 3 3 4 5 5 5 6
-Maximum of 1, 2, 3 is 3
-Maximum of 2, 3, 1 is 3
-Maximum of 3, 1, 4 is 4
-Maximum of 1, 4, 5 is 5
-Maximum of 4, 5, 2 is 5
-Maximum of 5, 2, 3 is 5
-Maximum of 2, 3, 6 is 6
+Examples:  
+Input: arr[] = { 1, 2, 3, 1, 4, 5, 2, 3, 6 } K = 3  
+Ouput: 3 3 4 5 5 5 6  
+Maximum of 1, 2, 3 is 3  
+Maximum of 2, 3, 1 is 3  
+Maximum of 3, 1, 4 is 4  
+Maximum of 1, 4, 5 is 5  
+Maximum of 4, 5, 2 is 5  
+Maximum of 5, 2, 3 is 5  
+Maximum of 2, 3, 6 is 6  
 
 ## Problem Analysis(A)
-Method 1: violent solution
+
+Method 1: 暴力解法 [代码示例](./暴力解法.ts)
 
 ``` js
+
+function getMaxK(arr, k) {
+    if(!arr) return;
+    if(arr.length<=k) {
+        return Math.max(...arr)
+    }
+    for (let index = 0; index <= arr.length - k; index++) {
+        let result = Math.max(arr[index], arr[index+1], arr[index+2])
+        console.log(result+' ')
+    }
+}
 
 ```
 
-Method 2: use AVL tree data structure to solve the problem
+二层遍历，外层循环是(n-k)，里层是k, 根据乘法原则：(n-k) * k，所以时间复杂度是O(n*k) 
+不要额外空间，所以空间复杂度是O(1)
 
-BST definition: left tree is lower than root , root is greater 
-AVL: is a unique BST,any left and right tree's height diff less than 1. It has benefits: we can lookup, insert, delete at log n time, and the maximum is  at the deep right tree. The problem is how we keep the balance of AVL tree,  we need to know if the tree is unbalanced( we can calculated the left tree and right tree's height diff value, if greater than 1, then the tree is not balanced), rotate nodes when we delete and add nodes. And we should know what rotate operation we should do.
+Method 2: 用AVL树
 
-Basically, rotate should have a node with.
+AVL是一个人名的简称，是一种高度平衡(左右子树高度差不超过1)的二叉搜索树，它**方便寻找最值，并且保证查找/删除/插入时间复杂度都是O(logn)**。二叉搜索树也叫BST，它的左子树小于根节点，根节点小于右子树。
 
+只需要构建k个节点的树，并且打印出这个树的最值。在JS中可以用sort函数去获得最值（底层实现用了AVL树）。
 
-``` js
-/*
-we need to create a AVL tree
-keep balance operations:
-1 leftRotate
-2 rightRotate
+```ts
+function getMaxK(arr, k) {
+    const res = []
 
-basic operations:
-1 insert
-2 delete
-*/
-const max = (a, b) => {
-  return a > b ? a : b
-}
-class Node {
-  constructor(data) {
-    this.data = data
-    this.height = 1
-    this.left = null
-    this.right = null
-  }
-}
-class AVLTree {
-  constructor() {
-    this.root = null
-  }
-  height(node) {
-    if(!node) return 0
-    return node.height
-  }
-  getBalance(node) {
-    if(!node) return 0
-    return this.height(node.left) - this.height(node.right)
-  }
-  /*
-    because we need recursive, so wee need pass node reference 
-    @params {Node} node - the root of current insert tree
-    @params {any}  data - the inserted data
-    @return {Node} tree root 
-  */
-  insert(node, data) {
-    // if leaf node (when root is null , return a new node)
-    if(!node) {
-      return new Node(data)
+    const queue = []
+    let index = 0
+    for (; index < k ; index++) {
+        queue.push(arr[index])
     }
-
-    // 1 insert to the tree
-    if(data < node.data) {
-      node.left = this.insert(node->left, data)
-    }
-    else if(data > node.data) {
-      node.right = this.insert(node->right, data)
-    }
-    else {
-      // duplicated data
-      return node
-    }
-
-    // 2 update node's height
-    node.height = max(this.height(node.left), this.height(node.right)) + 1
-
-    // 3 balance tree
-    const balance = this.getBalance(node)
-    //  we always think about three nodes
-    if(balance > 1 && data < node.left.data) {
-      return this.rightRotate(node)
-    }
-    if(balance < -1 && data > node.right.data) {
-      return this.leftRotate(node)
-    }
-    if(balance > 1 && data > node.left.data) {
-      // rotate left part
-      node.left = this.leftRotate(node.left)
-      return this.rightRotate(node)
-    }
-    if(balance < -1 && data < node.right.data) {
-      // rotate right part
-      node.right = this.rightRotate(node.right)
-      return this.leftRotate(node)
-    }
-    return node
-  }
-  rightRotate(node) {
-    // use two pointer
-    const x = node.left
-    // ref to old x.right
-    const y = x.right
-
-    // perform rotate
-    x.right = node // change x.right keep x.left
-    node.left = y // change node.left keep node.right
-
-    // update nodes
-    node.height = max(this.height(node.left), this.height(node.right)) + 1;
-    x.height = max(this.height(x.left), this.height(x.right)) + 1;
-
-    return x
-  }
-  leftRotate(x) {
-    const y = x.right;
-    // cache y.left
-    const T2 = y.left;
-
-    y.left = x;
-    x.right = T2;
-
-    x.height = max(this.height(x.left), this.height(x.right)) + 1;
-    y.height = max(this.height(y.left), this.height(y.height)) + 1;
-  }
-  deleteNode(x) {
-    if(this.root === null)  return null;
     
-  }
-}
+    queue.sort((a, b) => b-a)
+    res.push(queue[0])
 
-const findMax = (root) => {
-  if(root===null) return null;
-  const data = root.data;
-  const ldata = findMax(root.left);
-  const rdata = findMax(root.right);
-  if(ldata > data) {
-    data = ldata
-  }
-  if(rdata > data) {
-    data = rdata
-  }
-  return data;
-}
+    // 删除数组第一个元素
+    queue.splice(arr[0], 1);
 
-const printKMax(arr, k) {
-  const avl = new AVLTree();
-  arr.forEach(i=>{
-    avl.insert(null, i)
-  });
-  // for(let i =0; i<arr.length;i++) {
-    console.log(findMax(avl.root))
-  // }
+    for (; index < arr.length; index++) {
+        const element = arr[index];
+        queue.push(element)
+        queue.sort((a,b) => b-a)
+        res.push(queue[0])   
+        
+        queue.splice(arr[index-k+1], 1)     
+    }
+    return res
 }
-
-const testCases() {
-  const arr = [8, 5, 10, 7,9,4,15,12,90,13];
-  printKMax(arr, 3);
-}
-
-testCases()
 
 ```
 
+时间复杂度： 遍历数组n， 删除元素logk, 所以n*logk
+空间复杂度： logk
 
-## Time Complex(R)
+如何用js构建AVL树？ 主要是节点做左右子旋的理解。
 
+这里总结了一套代码模版： 
 
+1 节点平衡模版
+
+``` ts
+const balance = this.getBalance(node);
+//  左左
+if (balance > 1 && data < node.left.data) {
+    return this.rightRotate(node);
+}
+
+// 右右
+if (balance < -1 && data > node.right.data) {
+    return this.leftRotate(node);
+}
+
+// 左右
+if (balance > 1 && data > node.left.data) {
+    node.left = this.leftRotate(node.left);
+    return this.rightRotate(node);
+}
+
+// 右左
+if (balance < -1 && data < node.right.data) {
+    node.right = this.rightRotate(node.right);
+    return this.leftRotate(node);
+}
+```
+
+2 左旋模版
+
+```ts
+function leftRotate(x) {
+    let y = x.right;
+    let T2 = y.left
+    y.left = x
+    x.right = T2
+    x.height = Math.max(height(x.left), height(x.right)) + 1
+    y.height = Math.max(height(y.left), height(y.right)) + 1
+    return y
+}
+```
+
+3 右旋模版
+
+``` ts
+function rightRotate() {
+    let x = y.left;
+    let T2 = x.right;
+    x.right = y;
+    y.left = T2;
+    y.height = Math.max(height(y.left), height(y.right)) + 1;
+    x.height = Math.max(height(x.left), height(x.right)) + 1;
+    return x;
+}
+```
+
+插入节点简单就是递归删除，删除节点需要考虑删除根节点的情况
+
+Method 3: Two Stack 双栈
 

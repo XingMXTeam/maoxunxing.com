@@ -1,9 +1,9 @@
 ---
-title: "我的人生经历和计划"
+title: "2021年度总结"
 date: 2021-09-17T13:12:13+08:00
 tags:
 - 成长
-description: "如何定义自己，规划自己的人生，以下是我的一些想法"
+description: "每年一次总结，从此刻，向未来"
 images:
 - target-life/a.jpeg
 ---
