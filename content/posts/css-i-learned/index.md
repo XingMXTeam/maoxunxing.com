@@ -190,3 +190,11 @@ Grid：布局 兼容性： PC场景没啥问题 mobile兼容有待确认
 * grid-gap: 8px
 * 不会自动折行。需要结合media查询
   
+--
+
+不同浏览器支持的最小字体不一样：  
+uc: 8px  
+chrome(pc): 12px  
+safari,firefox,chrome: 1px
+
+

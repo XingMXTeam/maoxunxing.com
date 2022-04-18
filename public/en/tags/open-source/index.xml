@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>open-source on maoxunxing's life</title><link>https://maoxunxing.com/en/tags/open-source/</link><description>Recent content in open-source on maoxunxing's life</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 27 Aug 2021 10:20:36 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/en/tags/open-source/index.xml" rel="self" type="application/rss+xml"/><item><title>开源的价值</title><link>https://maoxunxing.com/en/notes/open-source-value/</link><pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate><guid>https://maoxunxing.com/en/notes/open-source-value/</guid><description>1 概念
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>open-source on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/open-source/</link>
+    <description>Recent content in open-source on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 Aug 2021 10:20:36 +0800</lastBuildDate><atom:link href="https://maoxunxing.com/en/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源的价值</title>
+      <link>https://maoxunxing.com/en/notes/open-source-value/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/en/notes/open-source-value/</guid>
+      <description>1 概念
 教堂： 商业软件
 集市： 开源
 学术型协议： 修改需要注明原著和免责声明 比如BSD Apache MIT PHP
@@ -11,4 +26,8 @@ CopyLeft/病毒型协议： 学术型要求+衍生作品发行了必须也开源
 通过社区运营，促进技术发展
 3 收费
 技术支持收费
-提供商业版本收费</description></item></channel></rss>
+提供商业版本收费</description>
+    </item>
+    
+  </channel>
+</rss>

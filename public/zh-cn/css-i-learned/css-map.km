@@ -1,0 +1,39 @@
+{
+    "root": {
+        "data": {
+            "id": "cj7b1c0z2qg0",
+            "created": 1649669512918,
+            "text": "css"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cj7b1f9lkzk0",
+                    "created": 1649669519970,
+                    "text": "flex"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cj7b25g13ps0",
+                    "created": 1649669576955,
+                    "text": "icon"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cj7b26kgtyo0",
+                            "created": 1649669579400,
+                            "text": "margin-left: 4px"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
