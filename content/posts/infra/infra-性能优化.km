@@ -142,10 +142,53 @@
                         ]
                     }
                 ]
+            },
+            {
+                "data": {
+                    "id": "cjdw7uyak3s0",
+                    "created": 1650338627348,
+                    "text": "构建服务"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjdw841iz2g0",
+                            "created": 1650338647134,
+                            "text": "分屏构建"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cje0q49z0s80",
+                                    "created": 1650351342640,
+                                    "text": "按需加载"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cjdw88adwzc0",
+                            "created": 1650338656377,
+                            "text": "分端构建"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cje0qaw8qso0",
+                                    "created": 1650351357047,
+                                    "text": "按需加载"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
-    "template": "default",
+    "template": "right",
     "theme": "fresh-blue",
     "version": "1.4.43"
 }
