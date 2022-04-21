@@ -1,0 +1,19 @@
+<mxfile host="65bd71144e">
+    <diagram id="Mf5Vz4bhn5kHqlJDICH1" name="第 1 页">
+        <mxGraphModel dx="853" dy="340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="调度器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="100" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="协调器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="150" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="渲染器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="200" width="220" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

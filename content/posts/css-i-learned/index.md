@@ -1,7 +1,13 @@
 ---
-title: "Css I Learned"
+title: "CSS实现细节梳理"
 date: 2021-12-23T20:03:38+08:00
-draft: true
+description: "当写CSS的时候，我脑子里想的是什么？"
+tags:
+- CSS
+- Flex
+- Grid
+images:
+- css-i-learned/test.jpg
 ---
 
 布局组件：
@@ -55,7 +61,7 @@ text-overflow: ellipsis;
 white-space: nowrap; 
 ```
 
-以上在flexbox容器还是会溢出？ min-width: 0
+以上在flexbox容器还是会溢出？ min-width: 0(配合flex: 1使用)
 
 vs:
 
@@ -158,7 +164,7 @@ box-shadow: inset 0 0 0 1px #aaa;
 font-size: var(--default-size, 12px)
 ```
 
----
+### flex
 
 flex-box*(Flex Formatting Context)：对齐 通用需要以下设置
 
@@ -191,3 +197,11 @@ Grid：布局 兼容性： PC场景没啥问题 mobile兼容有待确认
 * grid-gap: 8px
 * 不会自动折行。需要结合media查询
   
+--
+
+不同浏览器支持的最小字体不一样：  
+uc: 8px  
+chrome(pc): 12px  
+safari,firefox,chrome: 1px
+
+
