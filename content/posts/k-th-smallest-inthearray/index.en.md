@@ -3,6 +3,9 @@ title: "Array Part 4 - K’th Smallest/Largest Element in Unsorted"
 date: 2022-04-21T22:37:20+08:00
 tags:
 - Array
+- Max-Heap
+- Min-Heap
+- QuickSort
 description: "1 快速排序 2 大顶堆 小顶堆"
 images:
 - k-th-smallest-inthearray/test.png
