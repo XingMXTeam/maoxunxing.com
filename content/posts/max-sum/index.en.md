@@ -18,9 +18,43 @@ Explain: 4 + -1 + -2 + 1 + 5 = 7
 
 ## 解答
 
+这个能处理全为负数的情况
+
 ``` ts
-let maxint = Math.pow(2, 53)
-let maxSoFar = -maxint - 1
+
+// DP ?
+let maxSoFar = arr[0]
+let maxEndingHere = arr[0]
+
+for(let i = 1; i < arr.length; i++) {
+    // 计算出来的和 和当前值 取更大的那个作为当前最大值
+    maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i])
+    maxSoFar = Math.max(maxEndingHere, maxSoFar)
+}
+```
+
+```ts
+let maxSoFar = Number.MIN_VALUE
+let maxEndingHere = 0
+for(let i = 0 ; i < arr.length; i++) {
+    // 如果和累积 则继续添加
+    if( maxEndingHere + arr[i] >= arr[i]) {
+        maxEndingHere += arr[i]
+    }
+    // 否则重新开始
+    else {
+        maxEndingHere = arr[i]
+    }
+    if(maxEndingHere > maxSoFar) {
+        maxSoFar = maxEndingHere
+    }
+}
+```
+
+``` ts
+// let maxint = Math.pow(2, 53)
+// let maxSoFar = -maxint - 1
+let maxSoFar = Number.MIN_VALUE
 let maxEndingHere = 0
 for (let index = 0; index < arr.length; index++) {
     maxEndingHere = maxEndingHere + arr[index]
@@ -33,4 +67,6 @@ for (let index = 0; index < arr.length; index++) {
     }
 }
 ```
+
+只遍历了一遍，时间复杂度是O(n)  空间复杂度为O(1)
 
