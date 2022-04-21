@@ -3,7 +3,7 @@ title: "NodeJS系列 - Stream"
 date: 2021-10-19T14:28:57+08:00
 tags:
 - NodeJS 
-description: "什么是流？"
+description: "什么是流？这篇文章详细介绍了Nodejs的流技术，带你从入门到进阶"
 images:
 - nodejs-network-stream/a.jpeg
 ---

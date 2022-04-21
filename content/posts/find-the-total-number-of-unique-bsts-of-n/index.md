@@ -5,7 +5,7 @@ tags:
 - Algorithm
 - Tree
 - Interview
-description: "I am learning algorithm. This blog talks about BST."
+description: "1 递归树 2 DP解法"
 images:
 - find-the-total-number-of-unique-bsts-of-n/test.png
 ---
