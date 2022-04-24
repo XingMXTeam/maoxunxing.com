@@ -36,7 +36,6 @@ React架构是包含三个部分：
 
 我们上面设计原理讲了React引入了Fiber架构，我们将jsx转为dom节点渲染时，如果jsx节点非常多，这个过程会非常长（导致卡顿），所以需要利用fiber架构，拆分渲染任务。 Fiber架构其实就是一颗树，每个节点作为一个单独的工作单元。
 
-
 ## react 18新特性
 
 ### Suspense
@@ -45,18 +44,15 @@ request library： Relay
 
 ### concurrent rendering
 
-1 默认能批量更新； 
+<!-- 1 默认能批量更新； 
 2 新API:
   useTransition and startTransition 优先级控制；
   useDeferredValue 渲染旧数据
-  <Suspense> 处理loading
-
+  <Suspense> 处理loading -->
 
 ### Diff算法 
 
 只比较同级别
-
-
 
 ### 参考资料
 

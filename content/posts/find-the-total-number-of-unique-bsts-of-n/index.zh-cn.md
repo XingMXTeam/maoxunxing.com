@@ -5,7 +5,9 @@ tags:
 - 算法
 - 树
 - 面试
-description: "我正在学习算法。本篇讨论的算法关于BST"
+- 动态规划
+- 递归树
+description: "1 递归树 2 DP解法"
 images:
 - find-the-total-number-of-unique-bsts-of-n/test.png
 ---

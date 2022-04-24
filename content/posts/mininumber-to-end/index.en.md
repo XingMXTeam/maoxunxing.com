@@ -3,6 +3,7 @@ title: "Array Part 2 - Minimum number of jumps to reach end"
 date: 2022-04-16T22:29:56+08:00
 tags:
 - Array
+description: "数组移动"
 images:
 - mininumber-to-end/test.png
 ---

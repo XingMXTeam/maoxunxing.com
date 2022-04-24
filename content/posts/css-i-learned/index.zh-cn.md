@@ -1,6 +1,12 @@
 ---
 title: "CSS实现细节梳理"
 date: 2021-12-23T20:03:38+08:00
+tags:
+- CSS
+- Flex
+- Grid
+images:
+- css-i-learned/test.jpg
 ---
 
 布局组件：

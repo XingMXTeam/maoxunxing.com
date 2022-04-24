@@ -5,7 +5,8 @@ tags:
 - Algorithm
 - Tree
 - Interview
-description: "I am learning algorithm. This article talks about undirected graph."
+- Disjoint
+description: "1 图的构造和遍历 2 disjoint 算法"
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---

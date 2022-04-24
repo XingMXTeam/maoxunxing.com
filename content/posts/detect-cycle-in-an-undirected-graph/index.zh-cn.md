@@ -5,7 +5,8 @@ tags:
 - 算法
 - 树
 - 面试
-description: "我正在学习算法。这篇文章讲述了无向图中检测环的问题."
+- Disjoint
+description: "1 图的构造和遍历 2 disjoint 算法"
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---

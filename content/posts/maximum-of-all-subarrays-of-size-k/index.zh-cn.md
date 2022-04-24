@@ -4,6 +4,8 @@ date: 2021-08-26T15:16:39+08:00
 tags:
 - Array
 - Tree
+- AVL
+- Slide Window
 description: "滑动窗口的用法，AVL树的用法"
 images:
 - maximum-of-all-subarrays-of-size-k/test.png
