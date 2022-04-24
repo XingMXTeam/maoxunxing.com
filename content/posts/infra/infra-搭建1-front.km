@@ -88,6 +88,40 @@
                                                     "text": "DEF一次构建"
                                                 },
                                                 "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cji5o5ni2yw0",
+                                                    "created": 1650771534282,
+                                                    "text": "xx.json",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cji5o2791sg0",
+                                                            "created": 1650771526769,
+                                                            "text": "mock: 静态数据"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cji5nw054wg0",
+                                                            "created": 1650771513279,
+                                                            "text": "schema: 页面静态配置: 给平台使用 formily的schema协议 http://json-schema.org/?spm=ata.13261165.0.0.40346db9L8HLXK"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cji5nin58680",
+                                                            "created": 1650771484195,
+                                                            "text": "isContainer: 表示是否可以拖入子组件"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
@@ -116,6 +150,76 @@
                                                 ]
                                             }
                                         ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cji4bwf7kjc0",
+                                            "created": 1650767752710,
+                                            "text": "接口"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cji4byow6rc0",
+                                                    "created": 1650767757649,
+                                                    "text": "commit"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cji4c051zq80",
+                                                    "created": 1650767760803,
+                                                    "text": "setData： 更新组件",
+                                                    "layout_right_offset": {
+                                                        "x": 25,
+                                                        "y": 8
+                                                    }
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cji4cerrcfc0",
+                                                    "created": 1650767792651,
+                                                    "text": "data:  下发的奥创协议的静态数据"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cji4cp9tttk0",
+                                                    "created": 1650767815511,
+                                                    "text": "getAll/setAll: 全局"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cji4cy83wb40",
+                                                    "created": 1650767834998,
+                                                    "text": "联动： useModel/selectModel/useAllModel/selctAllModel"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cji4fqbbxsw0",
+                                                            "created": 1650768052872,
+                                                            "text": "selectModel不会订阅更新"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cji4e0va5g80",
+                                                    "created": 1650767919117,
+                                                    "text": "id： 组件id"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -133,6 +237,23 @@
                                             "text": "hox"
                                         },
                                         "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cji5f6way1c0",
+                                            "created": 1650770831714,
+                                            "text": "useModel中的变量是共享的。 会触发联动更新"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cji5ffkx9l40",
+                                                    "created": 1650770850617,
+                                                    "text": "不想共享的话直接提取出单独组件"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -148,6 +269,14 @@
                                             "id": "cjdvxzw00c80",
                                             "created": 1650337854451,
                                             "text": "上下文commit方法提交请求"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cji59shv1f40",
+                                            "created": 1650770408545,
+                                            "text": "{\ndata: xx\noptions: {\neventName: faas函数的方法名称（默认onchange)\ndependency: [] //不依赖任何组件\nautologin:\n}\n}"
                                         },
                                         "children": []
                                     }
@@ -192,7 +321,11 @@
                                                 "data": {
                                                     "id": "cje4jrrb7940",
                                                     "created": 1650362129645,
-                                                    "text": "hierarchy: {\nroot: 'root',\nstructure: {\nroot: [\n]\n}\n},\ncomponents: [\n]"
+                                                    "text": "container: {\n   \"data\": {. // 三方模块信息 用于本地mock\n\ttype: \"@alife/xx\"\nverson: \"\"\nname:\"xx\"\n\t }\n},\nhierarchy: {用于本地mock\nroot: 'root',\nstructure: {\nroot: [\n]\n}\n},\ncomponents: [\n]",
+                                                    "layout_right_offset": {
+                                                        "x": 97,
+                                                        "y": -333
+                                                    }
                                                 },
                                                 "children": []
                                             },
@@ -784,8 +917,8 @@
                                             "created": 1650282202112,
                                             "text": "DataProxy： 处理请求",
                                             "layout_right_offset": {
-                                                "x": 3,
-                                                "y": -202
+                                                "x": 9,
+                                                "y": -295
                                             }
                                         },
                                         "children": [
@@ -1013,8 +1146,8 @@
                                             "created": 1650337656175,
                                             "text": "插件有一些钩子函数",
                                             "layout_right_offset": {
-                                                "x": 7,
-                                                "y": -132
+                                                "x": 23,
+                                                "y": -269
                                             }
                                         },
                                         "children": []
@@ -1400,6 +1533,14 @@
                                             "id": "cje6fniojvc0",
                                             "created": 1650367449179,
                                             "text": "生成dd.json的components"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cji5khbyk480",
+                                            "created": 1650771246249,
+                                            "text": "\"husky\": {\n\t\"hooks\": {\n\t  \"pre-commit\": \"dida build --add\"\n\t}\n  } 提交时自动构建任务（修改dd.json文件内容）"
                                         },
                                         "children": []
                                     }

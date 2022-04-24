@@ -57,6 +57,14 @@
                                                     "text": "从url获取多语言"
                                                 },
                                                 "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjiaadq1x280",
+                                                    "created": 1650784560302,
+                                                    "text": "网关协议： 请求上下文协议定义是否开始ssr"
+                                                },
+                                                "children": []
                                             }
                                         ]
                                     },
@@ -89,8 +97,8 @@
                                     "created": 1650436048169,
                                     "text": "node fass网关",
                                     "layout_right_offset": {
-                                        "x": 120,
-                                        "y": 105
+                                        "x": 161,
+                                        "y": 159
                                     }
                                 },
                                 "children": [
@@ -143,7 +151,16 @@
                                                     "created": 1650443419068,
                                                     "text": "如果命中灰度规则则走灰度模版"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjgoa0kb1hs0",
+                                                            "created": 1650620907282,
+                                                            "text": "灰度验证： 一种通过url带参数 一种是修改cookie的e_id"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "data": {
@@ -271,9 +288,34 @@
                                                 "data": {
                                                     "id": "cjez8cvy9i00",
                                                     "created": 1650448689675,
-                                                    "text": " "
+                                                    "text": "接口"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cji60oj78zc0",
+                                                            "created": 1650772515751,
+                                                            "text": "system: 判断环境"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cji62nffm5c0",
+                                                            "created": 1650772670075,
+                                                            "text": "include包含"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cji62uw8t5c0",
+                                                            "created": 1650772686329,
+                                                            "text": "getAssetsUrl"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
@@ -310,7 +352,7 @@
                                     "text": "功能",
                                     "layout_right_offset": {
                                         "x": 104,
-                                        "y": -694
+                                        "y": -812
                                     },
                                     "expandState": "expand"
                                 },
@@ -625,6 +667,23 @@
                                                         "children": []
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjgoggo9va80",
+                                                    "created": 1650621412535,
+                                                    "text": "getAssetsURL('构建的entry文件名')"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjgogpxyp7k0",
+                                                            "created": 1650621432712,
+                                                            "text": "获取entry文件"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -632,15 +691,41 @@
                             },
                             {
                                 "data": {
-                                    "id": "cjev7m5eyaw0",
-                                    "created": 1650437347034,
-                                    "text": "fass",
+                                    "id": "cjias07k67c0",
+                                    "created": 1650785941441,
+                                    "text": "ssr",
                                     "layout_right_offset": {
-                                        "x": -48,
-                                        "y": 114
-                                    }
+                                        "x": -2,
+                                        "y": 247
+                                    },
+                                    "expandState": "expand"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjias2vw6hs0",
+                                            "created": 1650785947266,
+                                            "text": "build.json: 开启ssr"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjiasckbzq00",
+                                            "created": 1650785968334,
+                                            "text": "不支持react.lazy用loadable/component"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjias7el7fk0",
+                                            "created": 1650785957103,
+                                            "text": "node不支持cookie需要磨平"
+                                        },
+                                        "children": []
+                                    }
+                                ]
                             }
                         ]
                     }

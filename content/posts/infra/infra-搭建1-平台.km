@@ -1,0 +1,57 @@
+{
+    "root": {
+        "data": {
+            "id": "cjgnwo7h6q00",
+            "created": 1650619861651,
+            "text": "平台"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cjgo3dawb1k0",
+                    "created": 1650620386462,
+                    "text": "设计原理",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjgnwrzxc0g0",
+                            "created": 1650619869901,
+                            "text": "模块+页面结构+节点配置"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cjgo3iwz0s00",
+                            "created": 1650620398681,
+                            "text": "节点配置： 静态数据配置；投放规则配置"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjgo3torbwg0",
+                                    "created": 1650620422129,
+                                    "text": "投哪个国家/人群"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cjia4cdcpy80",
+                            "created": 1650784087172,
+                            "text": "多迭代同时研发"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
