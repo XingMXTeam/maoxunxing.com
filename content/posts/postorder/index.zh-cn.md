@@ -3,7 +3,7 @@ title: "Tree Part 1 - Find postorder traversal of BST from preorder traversal"
 date: 2022-04-24T21:03:45+08:00
 tags:
 - Recursive
-description: "递归法； 分治思想"
+description: "递归法，分治思想"
 images:
 - postorder/test.png
 ---

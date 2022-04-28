@@ -6,7 +6,7 @@ tags:
 - 树
 - 面试
 - Disjoint
-description: "1 图的构造和遍历 2 disjoint 算法"
+description: "图的构造和遍历，disjoint 算法"
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---

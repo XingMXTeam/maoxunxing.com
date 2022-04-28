@@ -6,7 +6,7 @@ tags:
 - Max-Heap
 - Min-Heap
 - QuickSort
-description: "1 快速排序 2 大顶堆 小顶堆"
+description: "快速排序，大顶堆 小顶堆"
 images:
 - k-th-smallest-inthearray/test.png
 ---

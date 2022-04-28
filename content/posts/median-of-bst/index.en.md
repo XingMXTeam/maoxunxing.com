@@ -5,6 +5,7 @@ tags:
 - Tree
 images:
 - median-of-bst/test.png
+description: "Morris中序遍历"
 ---
 
 
@@ -13,26 +14,6 @@ images:
 Given a Binary Search Tree, find median of it. 
 If no. of nodes are even: then median = ((n/2th node + (n+1)/2th node) /2 
 If no. of nodes are odd : then median = (n+1)/2th node.
-
-Given BST(with odd no. of nodes) is : 
-                    6
-                 /    \
-                3       8
-              /   \    /  \
-             1     4  7    9
-
-Inorder of Given BST will be : 1, 3, 4, 6, 7, 8, 9
-So, here median will 6.
-
-Given BST(with even no. of nodes) is :  
-                    6
-                 /    \
-                3       8
-              /   \    /  
-             1     4  7    
-
-Inorder of Given BST will be : 1, 3, 4, 6, 7, 8
-So, here median will  (4+6)/2 = 5.
 
 ## 解答
 
@@ -69,4 +50,5 @@ So, here median will  (4+6)/2 = 5.
 }
 ```
 
-
+因为每个元素都遍历了一遍，所以时间复杂度是O(n)
+因为只使用了current和pre指针，所以空间复杂度为O(1)
