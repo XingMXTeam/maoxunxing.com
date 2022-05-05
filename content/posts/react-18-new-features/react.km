@@ -1,0 +1,158 @@
+{
+    "root": {
+        "data": {
+            "id": "cjrt23q88s80",
+            "created": 1651751552330,
+            "text": "react最佳实践"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cjrt2b3kqew0",
+                    "created": 1651751568374,
+                    "text": "https://dev.to/awnton/7-code-smells-in-react-components-5f66?spm=ata.21736010.0.0.19677536NZxTx1"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cjrt41nagm80",
+                    "created": 1651751704527,
+                    "text": "https://overreacted.io/zh-hans/writing-resilient-components/"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cjrtkzjrl880",
+                    "created": 1651753032151,
+                    "text": "不要阻断数据流",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjrt7gplly80",
+                            "created": 1651751972411,
+                            "text": "render要响应props的变化,",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjrt7q9jqj40",
+                                    "created": 1651751993208,
+                                    "text": "结合useMemo避免重复计算"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjrt94x4rwg0",
+                                    "created": 1651752103473,
+                                    "text": "避免将初始的值传递给useState(不会响应props的变化）"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cjrti4z42fs0",
+                            "created": 1651752808870,
+                            "text": "不要自己写shouldComponentUpdate"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjrtiq50uzk0",
+                                    "created": 1651752854941,
+                                    "text": "https://codesandbox.io/s/shouldcomponentupdate-bad-case-5msisq?file=/src/App.js"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjrtjqltilk0",
+                                    "created": 1651752934320,
+                                    "text": "建议用React.memo"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjrtkfjk4t40",
+                                    "created": 1651752988603,
+                                    "text": "如果确定要自定义比较 不要跳过函数的比较"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cjrt8dqn93c0",
+                            "created": 1651752044308,
+                            "text": "通过useEffect响应props和state的变化"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjrtp1yodf40",
+                    "created": 1651753350863,
+                    "text": "随时准备渲染"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjrtp4ibtq80",
+                            "created": 1651753356405,
+                            "text": "不要用componentWillReceiveProps"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjrtpcstulc0",
+                                    "created": 1651753374454,
+                                    "text": "要不组件完全受控 要不完全不受控"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cjrtsed0pfs0",
+                            "created": 1651753612944,
+                            "text": "没有组件是单例"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjrtu1n5ct40",
+                    "created": 1651753741987,
+                    "text": "隔离本地状态"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjrtu4dh65c0",
+                            "created": 1651753747932,
+                            "text": "怎么判断是否是本地状态： 渲染出现两个地方有没有可能？没有可能就是本地"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

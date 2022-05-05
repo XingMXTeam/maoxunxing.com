@@ -8,72 +8,79 @@
         "children": [
             {
                 "data": {
-                    "id": "cj4rk7fgj0g0",
-                    "created": 1649411449718,
-                    "text": "react"
+                    "id": "cjrqkrgs9400",
+                    "created": 1651744551227,
+                    "text": "原理"
                 },
                 "children": [
                     {
                         "data": {
-                            "id": "cj75vnlihwg0",
-                            "created": 1649654962370,
-                            "text": "不要使用匿名函数"
+                            "id": "cjrqktooc540",
+                            "created": 1651744556058,
+                            "text": "加载阶段： PRPL模型"
                         },
                         "children": [
                             {
                                 "data": {
-                                    "id": "cj75vt4of8w0",
-                                    "created": 1649654974413,
-                                    "text": "useCallBack"
-                                },
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "data": {
-                            "id": "cj760m9rm140",
-                            "created": 1649655351304,
-                            "text": "数据请求"
-                        },
-                        "children": [
-                            {
-                                "data": {
-                                    "id": "cj760p126pc0",
-                                    "created": 1649655357308,
-                                    "text": "https://github.com/vercel/swr"
-                                },
-                                "children": []
-                            }
-                        ]
-                    },
-                    {
-                        "data": {
-                            "id": "cj76k8ol8xk0",
-                            "created": 1649656889008,
-                            "text": "减少重新渲染次数",
-                            "expandState": "expand"
-                        },
-                        "children": [
-                            {
-                                "data": {
-                                    "id": "cj4rkmbzvds0",
-                                    "created": 1649411482160,
-                                    "text": "memo"
+                                    "id": "cjrqlez5d5s0",
+                                    "created": 1651744602403,
+                                    "text": "尽可能早"
                                 },
                                 "children": [
                                     {
                                         "data": {
-                                            "id": "cj7bptc2ysg0",
-                                            "created": 1649671431335,
-                                            "text": "高阶组件"
+                                            "id": "cjrqlp6p31k0",
+                                            "created": 1651744624627,
+                                            "text": "预请求"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjrquu4zcm80",
+                                            "created": 1651745340685,
+                                            "text": "二级缓存"
                                         },
                                         "children": [
                                             {
                                                 "data": {
-                                                    "id": "cj7bpzj0vmo0",
-                                                    "created": 1649671444815,
-                                                    "text": "相同的props渲染同样的结果"
+                                                    "id": "cjrquy7rjvk0",
+                                                    "created": 1651745349561,
+                                                    "text": "service worker有坑，用cacheStorage缓存骨架屏代码"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjrqv33h61s0",
+                                                    "created": 1651745360185,
+                                                    "text": "http缓存"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjrsff08u400",
+                                                            "created": 1651749774504,
+                                                            "text": "https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjrrhu255b40",
+                                            "created": 1651747142889,
+                                            "text": "link"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjrrhw6afq00",
+                                                    "created": 1651747147494,
+                                                    "text": "prefetch/preconnect/preload/dns-prefetch"
                                                 },
                                                 "children": []
                                             }
@@ -83,32 +90,32 @@
                             },
                             {
                                 "data": {
-                                    "id": "cj4rkj4uhsw0",
-                                    "created": 1649411475197,
-                                    "text": "useMemo"
-                                },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cj4rko0beqg0",
-                                    "created": 1649411485807,
-                                    "text": "move state down & lift content up"
+                                    "id": "cjrqlhcc8ww0",
+                                    "created": 1651744607554,
+                                    "text": "尽可能小"
                                 },
                                 "children": [
                                     {
                                         "data": {
-                                            "id": "cj4rlydlbl40",
-                                            "created": 1649411586742,
-                                            "text": "https://overreacted.io/before-you-memo/"
+                                            "id": "cjrquj8bmow0",
+                                            "created": 1651745316943,
+                                            "text": "code split"
                                         },
                                         "children": []
                                     },
                                     {
                                         "data": {
-                                            "id": "cj75wfi3fcg0",
-                                            "created": 1649655023113,
-                                            "text": "本质上是隔离状态"
+                                            "id": "cjrqukwg7280",
+                                            "created": 1651745320578,
+                                            "text": "按需"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjrqup340rc0",
+                                            "created": 1651745329688,
+                                            "text": "用day替换moment"
                                         },
                                         "children": []
                                     }
@@ -116,52 +123,17 @@
                             },
                             {
                                 "data": {
-                                    "id": "cj75vv27nd40",
-                                    "created": 1649654978617,
-                                    "text": "使用key"
+                                    "id": "cjrqvnx7x9k0",
+                                    "created": 1651745405519,
+                                    "text": "冗余文案/css"
                                 },
                                 "children": []
                             },
                             {
                                 "data": {
-                                    "id": "cj76nwwc4bs0",
-                                    "created": 1649657176812,
-                                    "text": "PureComponent"
-                                },
-                                "children": [
-                                    {
-                                        "data": {
-                                            "id": "cj76o1f0us00",
-                                            "created": 1649657186650,
-                                            "text": "它实现了shouldComponentUpdate()， 浅比较props和state, 如果一样，则返回相同结果 一般是展示形组件"
-                                        },
-                                        "children": []
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "data": {
-                    "id": "cjdw7uyak3s0",
-                    "created": 1650338627348,
-                    "text": "构建服务"
-                },
-                "children": [
-                    {
-                        "data": {
-                            "id": "cjdw841iz2g0",
-                            "created": 1650338647134,
-                            "text": "分屏构建"
-                        },
-                        "children": [
-                            {
-                                "data": {
-                                    "id": "cje0q49z0s80",
-                                    "created": 1650351342640,
-                                    "text": "按需加载"
+                                    "id": "cjrrg6wu6qw0",
+                                    "created": 1651747014138,
+                                    "text": "关键链路性能优化(CRP)"
                                 },
                                 "children": []
                             }
@@ -169,18 +141,215 @@
                     },
                     {
                         "data": {
-                            "id": "cjdw88adwzc0",
-                            "created": 1650338656377,
-                            "text": "分端构建"
+                            "id": "cjrql76qjog0",
+                            "created": 1651744585448,
+                            "text": "执行阶段： "
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cjrqmvnhdpc0",
+                            "created": 1651744717067,
+                            "text": "TTFB： 页面响应时间"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cjrrkhm8oc80",
+                            "created": 1651747350899,
+                            "text": "指标：LCP FMP(这个不同页面可定义不同）-> pcp:perceivable contentful painting"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjrqkvrgprk0",
+                    "created": 1651744560580,
+                    "text": "方案",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjdw7uyak3s0",
+                            "created": 1650338627348,
+                            "text": "构建服务"
                         },
                         "children": [
                             {
                                 "data": {
-                                    "id": "cje0qaw8qso0",
-                                    "created": 1650351357047,
-                                    "text": "按需加载"
+                                    "id": "cjdw841iz2g0",
+                                    "created": 1650338647134,
+                                    "text": "分屏构建"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cje0q49z0s80",
+                                            "created": 1650351342640,
+                                            "text": "按需加载"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjdw88adwzc0",
+                                    "created": 1650338656377,
+                                    "text": "分端构建"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cje0qaw8qso0",
+                                            "created": 1650351357047,
+                                            "text": "按需加载"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj4rk7fgj0g0",
+                            "created": 1649411449718,
+                            "text": "react"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj75vnlihwg0",
+                                    "created": 1649654962370,
+                                    "text": "不要使用匿名函数"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj75vt4of8w0",
+                                            "created": 1649654974413,
+                                            "text": "useCallBack"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj760m9rm140",
+                                    "created": 1649655351304,
+                                    "text": "数据请求"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj760p126pc0",
+                                            "created": 1649655357308,
+                                            "text": "https://github.com/vercel/swr"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj76k8ol8xk0",
+                                    "created": 1649656889008,
+                                    "text": "减少重新渲染次数",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj4rkmbzvds0",
+                                            "created": 1649411482160,
+                                            "text": "memo"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj7bptc2ysg0",
+                                                    "created": 1649671431335,
+                                                    "text": "高阶组件"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cj7bpzj0vmo0",
+                                                            "created": 1649671444815,
+                                                            "text": "相同的props渲染同样的结果"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj4rkj4uhsw0",
+                                            "created": 1649411475197,
+                                            "text": "useMemo"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj4rko0beqg0",
+                                            "created": 1649411485807,
+                                            "text": "move state down & lift content up"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj4rlydlbl40",
+                                                    "created": 1649411586742,
+                                                    "text": "https://overreacted.io/before-you-memo/"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cj75wfi3fcg0",
+                                                    "created": 1649655023113,
+                                                    "text": "本质上是隔离状态"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj75vv27nd40",
+                                            "created": 1649654978617,
+                                            "text": "使用key"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj76nwwc4bs0",
+                                            "created": 1649657176812,
+                                            "text": "PureComponent"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj76o1f0us00",
+                                                    "created": 1649657186650,
+                                                    "text": "它实现了shouldComponentUpdate()， 浅比较props和state, 如果一样，则返回相同结果 一般是展示形组件"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     }
