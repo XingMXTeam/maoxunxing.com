@@ -22,11 +22,12 @@ If no. of nodes are odd : then median = (n+1)/2th node.
 代码模版：
 
 ``` ts
+ // 适用于一次性遍历
  while(current != null) {
     // 到最左边了 。访问该数字
     if(current.left === null) {
-        count++
         current = current.right
+        // do something
     }
     else {
         // 一直往右（这里pre.right==current 表示到了最后一个节点
@@ -43,8 +44,8 @@ If no. of nodes are odd : then median = (n+1)/2th node.
         // 走到了最右边了。 访问该数字
         else {
             pre.right = null
-            count++
             current = current.right
+            // do something
         }
     }
 }
