@@ -48,7 +48,16 @@
                                                     "created": 1651745349561,
                                                     "text": "service worker有坑，用cacheStorage缓存骨架屏代码"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjrty65go3k0",
+                                                            "created": 1651754065258,
+                                                            "text": "importScripts加载脚本到sw线程"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "data": {
@@ -162,6 +171,145 @@
                             "text": "指标：LCP FMP(这个不同页面可定义不同）-> pcp:perceivable contentful painting"
                         },
                         "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cjsgki739i00",
+                            "created": 1651817879907,
+                            "text": "客户端"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjsgly8ub8w0",
+                                    "created": 1651817993206,
+                                    "text": "加载性能",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjsgm2u80bc0",
+                                            "created": 1651818003206,
+                                            "text": "资源预加载",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjsgkk0ex1s0",
+                                                    "created": 1651817883857,
+                                                    "text": "zcache"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjsgrty8tpc0",
+                                                    "created": 1651818454043,
+                                                    "text": "点击跳转下一个页面前预先发请求获取资源"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjsgm8ygzs80",
+                                            "created": 1651818016523,
+                                            "text": "数据预加载"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjsgn2hrjbs0",
+                                                    "created": 1651818080817,
+                                                    "text": "客户端提前发请求"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjsgrixkrco0",
+                                            "created": 1651818430058,
+                                            "text": "图片/网络优化"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjsgrphea1k0",
+                                            "created": 1651818444317,
+                                            "text": "接口收敛"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjsjcgw1r2o0",
+                                            "created": 1651825713479,
+                                            "text": "瘦包"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjsjcnexh000",
+                                                    "created": 1651825727682,
+                                                    "text": "多版本统一到一个版本",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjsjclbis4w0",
+                                                            "created": 1651825723122,
+                                                            "text": "\"options\": {\n\t\"alias\": {\n\t  \"@ali/universal-goldlog\": \"node_modules/_@ali_universal-goldlog@6.1.1@@ali/universal-goldlog\",\n\t  \"@ali/universal-mtop\": \"node_modules/_@ali_universal-mtop@2.0.11@@ali/universal-mtop\"\n\t}\n  }"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjsgsq3pyxs0",
+                                    "created": 1651818524031,
+                                    "text": "渲染性能"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjsgxo2skpc0",
+                                            "created": 1651818911442,
+                                            "text": "动画： requestAnimationFrame"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjsgxvv2oz40",
+                                            "created": 1651818928390,
+                                            "text": "降低try catch消耗"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjsh0d6w5140",
+                                                    "created": 1651819122838,
+                                                    "text": "scope内变量尽量少"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },

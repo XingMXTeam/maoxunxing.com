@@ -149,10 +149,102 @@
                         "children": []
                     }
                 ]
+            },
+            {
+                "data": {
+                    "id": "cjrtyqxjbgw0",
+                    "created": 1651754110491,
+                    "text": "避免过多的属性"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjrtyy7o1sw0",
+                            "created": 1651754126341,
+                            "text": "组件组合进行拆分"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cjrtz57epsg0",
+                            "created": 1651754141563,
+                            "text": "属性合并到一起"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjrtzfahxd40",
+                    "created": 1651754163518,
+                    "text": "属性不兼容： 不能同时为某个值"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjrtzhz8z000",
+                            "created": 1651754169368,
+                            "text": "拆分两个组件"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjru0h0j0bk0",
+                    "created": 1651754245632,
+                    "text": "组件内部不要再内嵌一个组件"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjru2umaxio0",
+                            "created": 1651754431976,
+                            "text": "xstate或者typescript方式定义状态枚举"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjru3uopdps0",
+                    "created": 1651754510485,
+                    "text": "避免过多useState"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjru3zb5jnc0",
+                            "created": 1651754520549,
+                            "text": "说明组件职责太多"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cjru4xxlzhc0",
+                    "created": 1651754595918,
+                    "text": "尽量拆分useEffect"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cjrugag7mjs0",
+                    "created": 1651755485170,
+                    "text": "useState和useRef"
+                },
+                "children": []
             }
         ]
     },
     "template": "right",
-    "theme": "fresh-blue",
+    "theme": "fresh-purple-compat",
     "version": "1.4.43"
 }
