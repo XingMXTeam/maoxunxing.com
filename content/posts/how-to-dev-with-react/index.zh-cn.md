@@ -38,13 +38,59 @@ Hooks状态不共享，不持久，数据是多份
 2 缺少devtools？无法查看变化的状态
 3 可否在model里面写副作用？
 
-
 方案2: Redux
 方案3: Dva
 方案4: mobx
 方案5: immer
 
 
+## Render Props
+
+通过props传递函数，达到组件间共享状态的目的（Hooks只能封装状态，它每次都是不同的实例，无法做到组件间状态共享而且不是持久化）
+
+方式1： 在Mouse组件内部可以调用render方法 传递给Cat组件
+
+```ts
+function App extends React.Component {
+  render() {
+    return <Mouse render={(data) => <Cat data={data}>}> 
+  }
+}
+
+```方式2:  采用HOC方式封装
+
+```ts
+function useMouse(Component) {
+  return class extends React.component {
+     render() {
+       return <Mouse render={data => <Component {...this.props} data={data} />} />
+     }
+  }
+}
+
+```方式3: 使用Children传递
+
+```ts
+function App() {
+  return <Mouse>
+    {
+      data => <Cat data={data} />
+    }
+  </Mouse>
+}
+
+function App() {
+  // 注意: 这里的方法，每次的引用都会重新创建。如果想避免它，最好挂载在对象下面或者用useCallBack
+  return <Mouse children={data => <Cat data={data} />} />
+}
+
+
+```
+
+## Pure Component
+
+* ● 会实现一个shouldComponentUpdate，它会浅比较prop和state，告知要不要调用render 来提高性能。对于复杂的props或者state数据变更，你可以调用forceUpdate主动实现渲染
+* ● 跳过子组件的Props更新，所以需要子组件也是pure
 
 
 
