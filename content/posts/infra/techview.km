@@ -1,0 +1,152 @@
+{
+    "root": {
+        "data": {
+            "id": "ckcz2dt02tc0",
+            "created": 1653901260015,
+            "text": "中后台",
+            "expandState": "expand"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "ckcz3fnoclk0",
+                    "created": 1653901342411,
+                    "text": "低代码",
+                    "layout_right_offset": {
+                        "x": 0,
+                        "y": -18
+                    },
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ckcz51e3ke80",
+                            "created": 1653901468085,
+                            "text": "Serveless"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "ckcz3x468rk0",
+                    "created": 1653901380413,
+                    "text": "ProCode"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ckcz719g7rk0",
+                            "created": 1653901624532,
+                            "text": "servless+一体化"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "ckcz82d45io0",
+                            "created": 1653901705295,
+                            "text": "ssr"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "ckcz3p8ncio0",
+                    "created": 1653901363270,
+                    "text": "开箱即用+Schema定制化"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "ckcz2ia1j0g0",
+                    "created": 1653901269752,
+                    "text": "微前端"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ckcz5im06cw0",
+                            "created": 1653901505568,
+                            "text": "qiankun"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "ckcz5m30kzc0",
+                            "created": 1653901513127,
+                            "text": "icestark"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "ckcz3njgw7s0",
+                    "created": 1653901359570,
+                    "text": "SOP"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "ckcz4eov8gw0",
+                    "created": 1653901418670,
+                    "text": "视觉统一"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "ckcz4iadxxk0",
+                    "created": 1653901426502,
+                    "text": "站点统一"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "ckcz58d831k0",
+                    "created": 1653901483269,
+                    "text": "打包：webpack fedaration+vite"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "ckczzklauds0",
+                    "created": 1653903860804,
+                    "text": "同构"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ckczzmzfsxc0",
+                            "created": 1653903866013,
+                            "text": "北斗"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "ckczztmpimo0",
+                            "created": 1653903880480,
+                            "text": "saga"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
