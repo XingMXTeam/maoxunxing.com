@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/hugo/bin",
     "index": "hugo-algolia",
-    "start": "git pull & hugo server",
+    "start": "git pull && hugo server",
     "index-and-send": "hugo-algolia -s -i \"content/**/*.md\""
   },
   "author": "",
