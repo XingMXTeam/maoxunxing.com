@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plugin on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/plugin/</link>
+    <description>Recent content in plugin on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/en/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何实现插件能力</title>
+      <link>https://maoxunxing.com/en/how-to-implement-a-plugin-system/</link>
+      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/how-to-implement-a-plugin-system/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

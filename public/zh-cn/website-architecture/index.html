@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <link rel="manifest" href="https://maoxunxing.com/manifest.json">
+    <link rel="apple-touch-icon" href="https://maoxunxing.com/images/avatar3.jpg">
+    <meta name="author" content="Xunxing Mao">
+    <meta name="description" content="articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture">
+    <meta name="keywords" content="blog,developer,personal,毛训星,maoxunxing,front-end,html,css,javascript,nodejs">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+
+
+
+    <meta property="og:title" content="Web是如何工作的" />
+<meta property="og:description" content="有哪些概念？请求链路是怎么样的？分布式系统是什么，有哪些问题要解决？大数据和高并发的问题解法？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://maoxunxing.com/zh-cn/website-architecture/" />
+
+<meta property="og:image" content="https://maoxunxing.com/website-architecture/test.png" />
+<meta property="article:published_time" content="2021-08-06T15:25:06+08:00" />
+<meta property="article:modified_time" content="2021-08-06T15:25:06+08:00" /><meta property="og:site_name" content="毛训星的网络日志" />
+
+
+    
+      <base href="https://maoxunxing.com/zh-cn/website-architecture/">
+    
+    <title>Web是如何工作的 · 毛训星的网络日志</title>
+
+    
+      <link rel="canonical" href="https://maoxunxing.com/zh-cn/website-architecture/">
+    
+    <link rel="preconnect dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect dns-prefetch" href="//use.fontawesome.com" />
+    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//D7NQ3RODEC-dsn.algolia.net" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-1.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-2.algolianet.com" crossorigin />
+    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-3.algolianet.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    
+    
+    
+    
+    
+    
+
+    
+      
+      
+      <link rel="stylesheet" href="https://maoxunxing.com/css/coder.min.8b74f2a917b62bc11fd3bb6cdbb2f369faa9711339338533e3cf2d9997c70b38.css" integrity="sha256-i3TyqRe2K8Ef07ts27LzafqpcRM5M4Uz488tmZfHCzg=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://maoxunxing.com/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://maoxunxing.com/css/main.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://maoxunxing.com/images/favicon/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" type="application/rss+xml" href="https://maoxunxing.com//index.xml" title="毛训星的网络日志" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
+    
+    
+
+    <meta name="generator" content="Hugo 0.55.4" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    
+<div class="float-container">
+    
+</div>
+
+
+    <main class="wrapper">
+      
+
+
+<nav class="navigation">
+  <section class="container">
+    <div class="navigation-author">
+      <a class="navigation-avatar" href="https://maoxunxing.com/zh-cn">
+        
+          <img style="width: 50x; height:50px;" src="https://maoxunxing.com/images/avatar.jpg" alt="Author photo">
+        
+      </a>
+      <a class="name" href="https://maoxunxing.com/zh-cn">训星</a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/posts/">博客</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/projects/">项目</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/book-reports/">读书报告</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maoxunxing.com/zh-cn/about/">关于</a>
+          </li>
+        
+      
+
+      
+        
+        
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              
+              <a href="https://maoxunxing.com/zh-cn/notes" class="router-link-active router-link-exact-active" title="Notes" data-v-939756fc="" aria-current="page"><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M21 15l-6 5.996L4.002 21A.998.998 0 0 1 3 20.007V3.993C3 3.445 3.445 3 3.993 3h16.014c.548 0 .993.456.993 1.002V15zM19 5H5v14h8v-5a1 1 0 0 1 .883-.993L14 13l5-.001V5zm-.829 9.999L15 15v3.169l3.171-3.17z" fill="currentColor"></path></svg></a>
+              
+            </li>
+            <li class="navigation-item">
+              <a rel="noopener" href="https://github.com/XingMXTeam/" target="_blank" title="GitHub" data-v-939756fc=""><svg class="inline" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-v-939756fc="" style="vertical-align: sub;"><path d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182zM20.737 5.377c.032-.125.063-.264.09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.881 4.881 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826z" fill="currentColor"></path></svg></a>
+            </li>
+            
+            <li class="navigation-item">
+              <a rel="noopener" href="https://www.douban.com/people/maoxingxing/" target="_blank" title="douban" class="lt-md:hidden" data-v-939756fc=""><svg t="1637423568461" class="icon douban" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4782" width="1.2em" height="1.2em"><path d="M715.824 611.542h-395.425c42.209 71.089 82.194 148.841 115.519 228.812h162.166c48.875-75.533 88.861-151.060 117.739-228.812zM762.474 524.904v-168.833h-486.503v168.833h486.503zM960.187 929.214h-888.596v-86.637h266.579c-33.322-71.089-66.646-133.289-102.189-184.386l68.865-44.427h-119.961v-346.555h675.334v346.555h-126.623l68.865 44.427c-33.322 71.089-66.646 133.289-99.966 184.386h259.916v86.637zM940.196 165.023h-841.946v-86.637h841.946v86.637z" fill="currentColor" p-id="4783"></path></svg></a>
+            </li>
+            
+            <li class="navigation-item">
+              <a href="https://maoxunxing.com/en/posts/index.xml" target="_blank" title="RSS" class="lt-md:hidden" data-v-939756fc=""><svg class="inline rss" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" data-v-939756fc="" style="vertical-align: sub; font-size: 2rem; margin: 0px -0.125rem;"><path d="M5 5v22h22V5zm2 2h18v18H7zm5 3c-.684 0-1.355.055-2 .188v2.062a7.86 7.86 0 0 1 2-.25c4.41 0 8 3.59 8 8c0 .691-.086 1.36-.25 2h2.063A9.923 9.923 0 0 0 22 20c0-5.516-4.484-10-10-10zm0 4a5.96 5.96 0 0 0-2 .344v2.219A3.968 3.968 0 0 1 12 16c2.207 0 4 1.793 4 4c0 .73-.219 1.41-.563 2h2.22A5.96 5.96 0 0 0 18 20c0-3.309-2.691-6-6-6zm0 4a1.999 1.999 0 1 0 0 4a1.999 1.999 0 1 0 0-4z" fill="currentColor"></path></svg></a>
+            </li>
+            <li class="navigation-item">
+              <a href='javascript:void' id="dark-mode-toggle" title="Toggle Color Scheme">
+                <svg class="inline dark-mode-icon" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="vertical-align: sub;"><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z" fill="currentColor"></path></svg>
+                <svg class="inline light-mode-icon" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="vertical-align: sub;"><path d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" fill="currentColor"></path></svg>
+              </a>
+            </li>
+            <li class="navigation-item" >
+              <a href="https://maoxunxing.com/en/" id='languageMenu'>EN</a>
+            </li>
+          
+        
+          
+        
+      
+    </ul>
+  </section>
+</nav>
+<div class="nav-search-box" id="docsearch"></div>
+
+<script>
+  window.addEventListener('load', () => {
+    const menu = document.getElementById('languageMenu')
+    const arr = location.pathname.split("/");
+    menu.setAttribute('href', menu.getAttribute('href') + (arr.length>=4 ? arr[arr.length-2]: ''))
+  })
+</script>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        
+        <div class="post-title">
+          <h1 class="title">Web是如何工作的</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2021-08-06T15:25:06&#43;08:00'>
+                August 6, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 分钟阅读时间
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://maoxunxing.com/zh-cn/tags/%E6%9E%B6%E6%9E%84/">架构</a></div>
+
+        </div>
+      </header><div>
+        
+
+<h2 id="基础概念">基础概念<a href="#基础概念" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<table>
+<thead>
+<tr>
+<th>分类<div style='width:100px'></div></th>
+<th>名称<div style='width:200px'></div></th>
+<th>解释</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>网络</td>
+<td>VPC</td>
+<td>Virtual Private Cloud 虚拟私有云。为什么是虚拟私有？它是一种运行在公有云上，将一部分公有云资源为某个用户隔离出来，给这个用户私有使用的资源的集合，感觉像是在使用自己的私有云一样。什么是云？构建在物理之上的虚拟化网络。VPC采用隧道技术，隔离虚拟网络。每个VPC有一个独立的隧道号，一个隧道号对应一个虚拟化网络。由私网网段（子网）+一个路由器（总入口）+交换机（进一步切分）组成。</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>DNS</td>
+<td>应用层协议和https一样，端口是53，提供根据域名查IP的服务</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>Record</td>
+<td>记录和IP的对应关系</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>A记录</td>
+<td>支持将域名映射到IPV4地址</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>CNAME</td>
+<td>别名 Canonical Name 支持指向另一个域名</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>MX</td>
+<td>Mail Exchanger 支持将域名指向邮件服务器地址</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>NS</td>
+<td>name server 名称服务器记录。支持将子域名委托给其他DNS服务商解析</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>CDN</td>
+<td>Content Delivery Network 解决网络带宽小、访问量大、网点分布不均导致访问网站慢的问题</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>节点</td>
+<td>传统的节点是单体的物理机器 -&gt; 单台虚拟机上的服务 -&gt; 轻量级的容器服务，能提供单位服务的逻辑计算资源的集合</td>
+</tr>
+
+<tr>
+<td>网络</td>
+<td>统一接入层</td>
+<td>web server代理，它将请求转发给（proxy_pass）应用服务器。能解决域名管理、证书管理、安全管理（应用接入全站https、私钥落地）</td>
+</tr>
+
+<tr>
+<td>分布式</td>
+<td>NTP（网络时间协议）</td>
+<td>在数据网络潜伏时间可变的计算机系统之间通过分组交换进行时钟同步的一个网络协议，位于OSI模型的应用层</td>
+</tr>
+
+<tr>
+<td>分布式</td>
+<td>Lamport逻辑时钟/向量时钟</td>
+<td>一种在分布式环境中为各种操作或事件产生偏序值的技术，它可以检测操作或事件的并行冲突，用来保持系统的一致性</td>
+</tr>
+
+<tr>
+<td>云原生</td>
+<td>K8s</td>
+<td>Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构</td>
+</tr>
+
+<tr>
+<td>云原生</td>
+<td>Docker</td>
+<td>系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="请求链路">请求链路<a href="#请求链路" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<blockquote>
+<p>一个http请求现代化架构下一般会有哪些链路</p>
+</blockquote>
+
+<p>1 域名解析IP<br />
+2 统一接入层<br />
+3 负载均衡Key&ndash;hash-&gt;集群<br />
+4 网关层<br />
+5 应用服务器</p>
+
+<h2 id="分布式服务-架构">分布式服务/架构<a href="#分布式服务-架构" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<h3 id="发展轨迹">发展轨迹<a href="#发展轨迹" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>现代化的服务器架构是怎么演进的</p>
+</blockquote>
+
+<p>1 RPC (Remote Process Call)
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/rpc.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/rpc_hu60fc0e5288536b5022c159efd9350eaf_12270_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                
+                
+                
+                /zh-cn/website-architecture/rpc.png 594w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/rpc.png" alt="rpc" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+</p>
+
+<p>2 SOA（Service-Oriented Architecture, 像hsf, dubbo) 面向服务架构</p>
+
+<p>特点：</p>
+
+<ul>
+<li>分布式部署</li>
+<li>请求分流</li>
+<li>数据读写分离</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/soa.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/soa_hu2f1e02e515e351c311ec896043222feb_195908_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/soa_hu2f1e02e515e351c311ec896043222feb_195908_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/soa_hu2f1e02e515e351c311ec896043222feb_195908_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/soa_hu2f1e02e515e351c311ec896043222feb_195908_1200x0_resize_q90_lanczos.jpg 1200w,
+                  
+                
+                /zh-cn/website-architecture/soa.jpg 1252w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/soa.jpg" alt="soa" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+<p>3 MSA 微服务架构
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/msa.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/msa_hu2f1e02e515e351c311ec896043222feb_84415_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/msa_hu2f1e02e515e351c311ec896043222feb_84415_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/msa_hu2f1e02e515e351c311ec896043222feb_84415_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/msa_hu2f1e02e515e351c311ec896043222feb_84415_1200x0_resize_q90_lanczos.jpg 1200w,
+                  
+                
+                /zh-cn/website-architecture/msa.jpg 1256w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/msa.jpg" alt="msa" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+</p>
+
+<h3 id="分布式架构理论">分布式架构理论<a href="#分布式架构理论" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>分布式架构需要了解哪些东西理论</p>
+</blockquote>
+
+<p>一致性理论</p>
+
+<ul>
+<li>CAP（强一致性）</li>
+<li>ACID（分布式一致性）</li>
+<li>Base（弱一致性）
+
+<ul>
+<li><a href="http://thesecretlivesofdata.com/raft/">Distributed consensus theory</a></li>
+</ul></li>
+</ul>
+
+<p>一致性算法</p>
+
+<p>CALM-&gt;CRDT-&gt;高可用事务+ZAB协议分析-&gt;Paxos Raft Gossip</p>
+
+<h3 id="分布式应用">分布式应用<a href="#分布式应用" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>分布式应用有哪些</p>
+</blockquote>
+
+<p>文件系统： HDFS FastDFS Ceph mooseFS
+<a href="https://en.wikipedia.org/wiki/Comparison_of_distributed_file_systems?spm=ata.21736010.0.0.30f21d02woZ6di">对比</a><br />
+数据库： Hbase(列式存储)、Elasticsearch/mongodb(文档存储)、redis(kv类型)、spanner(关系型)<br />
+计算： 离线hadoop 实时spark 流式storm/flink/blink<br />
+缓存：持久化redis 非持久化memcache<br />
+消息：kafka rabbitmq rocketmq activemq<br />
+监控：zookeeper<br />
+应用：hsf dubbo<br />
+日志：采集flum、存储elasticsearch/solr sls、定位zipkin<br />
+账本：比特币 以太坊</p>
+
+<p><strong>应用场景</strong>：</p>
+
+<ul>
+<li>异步调用
+
+<ul>
+<li>improve qps capacity 比如实时直播间</li>
+</ul></li>
+<li>应用解耦
+
+<ul>
+<li>order system-&gt;message system-&gt;stock system(push or pull)</li>
+</ul></li>
+<li>流量控制
+
+<ul>
+<li>spike activity/group buy</li>
+</ul></li>
+<li>日志处理
+
+<ul>
+<li>client-&gt;kafka queue-&gt;application 日志同步</li>
+</ul></li>
+<li>订阅
+
+<ul>
+<li>point to point / pub sub mode 比如IM</li>
+</ul></li>
+<li>广播方式cache同步
+<br /></li>
+</ul>
+
+<p>举例：</p>
+
+<ul>
+<li>high capability and persistence : Active MQ、Rabbit MQ、Rocket MQ
+
+<ul>
+<li>question is consistency questions?</li>
+<li>use db and message queue to ensure final consistency</li>
+</ul></li>
+<li>client/zookeeper/kafka/storm clusterf</li>
+<li>JMS
+
+<ul>
+<li>EJB J2EE</li>
+<li>Message mode(p2p/pub sub), Message Consume(async sync )</li>
+</ul></li>
+</ul>
+
+<p>如何避免消息丢失：</p>
+
+<ul>
+<li>TCP cannot ensure application no lost*</li>
+<li>sync
+
+<ul>
+<li>wait confirm</li>
+<li>continue ARQ(slide window)</li>
+</ul></li>
+<li>async
+
+<ul>
+<li>callback function</li>
+</ul></li>
+</ul>
+
+<p>消息幂等：</p>
+
+<ul>
+<li>query/delete: no special handle</li>
+<li>unique index
+
+<ul>
+<li>avoid dirty data</li>
+</ul></li>
+<li>token(token+redis/jvm memory)
+
+<ul>
+<li>avoid repeat submit</li>
+<li>token need to apply, only one time</li>
+<li>1 apply token</li>
+<li>2 submit and to check token, if delete success that token exsit</li>
+</ul></li>
+<li>Pessimistic lock
+
+<ul>
+<li>query with</li>
+</ul></li>
+<li>optimistic lock
+
+<ul>
+<li>update with</li>
+</ul></li>
+<li>distributed lock
+
+<ul>
+<li>if system is distributed, it is hard to build unique index. userid_suffix as key to get distributed lock(multiple threads concurrent lock)</li>
+</ul></li>
+<li>select+insert
+
+<ul>
+<li>when concurrent not high, we can use this</li>
+<li>search data, if exsit, not run next
+<br /></li>
+</ul></li>
+</ul>
+
+<p>保证消息的顺序(queue not in order but the message is in order)</p>
+
+<ul>
+<li>sender: async send message, if 1 failed, you need to resend, cannot promise order</li>
+<li>saver:
+
+<ul>
+<li>you cannt split message to different queue</li>
+<li>if you have only one queue, how to promise order if a machine unvailable, you can switch to another machine(when message is not consumed)</li>
+<li>sync copy to promise the order</li>
+</ul></li>
+<li>receiver
+
+<ul>
+<li>sync consume</li>
+</ul></li>
+</ul>
+
+<h3 id="分布式缓存">分布式缓存<a href="#分布式缓存" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<blockquote>
+<p>如何解决分布式缓存问题</p>
+</blockquote>
+
+<p>数据流
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/data-flow.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/data-flow_hua1ab566bdefc2d492e8dd2a288e94b5b_81854_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/data-flow_hua1ab566bdefc2d492e8dd2a288e94b5b_81854_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                
+                
+                /zh-cn/website-architecture/data-flow.png 722w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/data-flow.png" alt="data-flow" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+</p>
+
+<p>采用中间件 middleware</p>
+
+<p><strong>Redis</strong>：</p>
+
+<ul>
+<li>为什么快
+
+<ul>
+<li>use memory</li>
+<li>non-blocking multiplexing io</li>
+<li>single thread</li>
+</ul></li>
+<li>应用场景
+
+<ul>
+<li>sorted set( top N, range find, delay task, )</li>
+<li>set(remove duplicated, common and unique things)</li>
+<li>list(message queue, pagination)</li>
+<li>hash(single point login)</li>
+<li>string(count cache)</li>
+</ul></li>
+<li>内存策略
+
+<ul>
+<li>delete regularly and randomly</li>
+<li>lazy delete when get key</li>
+<li>memory elimination</li>
+</ul></li>
+<li>渐进式哈希(rehashing)</li>
+<li>缓存穿透
+
+<ul>
+<li>what</li>
+<li>how to solve</li>
+<li>bitmap</li>
+<li>empty value to cache</li>
+</ul></li>
+<li>缓存雪崩
+
+<ul>
+<li>expire time randomly</li>
+<li>limit flow</li>
+<li>distributed lock</li>
+</ul></li>
+</ul>
+
+<h3 id="分布式数据库">分布式数据库<a href="#分布式数据库" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>读写分离：数据写到主库，读取从备库（数据复制于主库）<br />
+垂直分库：不同业务单元划分到不同的数据库。 ACID被打破；Join操作困难；外键约束受影响
+水平分表：单个表拆分（比如ugc表非常大）。自增主键受影响；单表查询变成多表</p>
+
+<p>应用场景：<br />
+1 读写分离<br />
+2 分库分表<br />
+3 动态数据源<br />
+4 主备切换</p>
+
+<h3 id="分布式调度">分布式调度<a href="#分布式调度" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>schedulerX</p>
+
+<h3 id="分布式搜索">分布式搜索<a href="#分布式搜索" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>Open Search</p>
+
+<h3 id="分布式事务">分布式事务<a href="#分布式事务" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>TXC(Taobao Transaction Constructor)</p>
+
+<h3 id="分布式计算">分布式计算<a href="#分布式计算" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p><strong>blink</strong>: 分布式实时计算<br />
+<strong>odps</strong>（Open Data Processing Service）: 分布式离线计算 结构化数据的存储和计算, 海量数据仓库的解决方案和大数据的分析和建模</p>
+
+<ul>
+<li>web: 提供服务<br /></li>
+<li>sdk: 封装 api<br /></li>
+<li>clt: 客户端工具，提交命令<br /></li>
+<li>ide: 可视化操作<br /></li>
+</ul>
+
+<h2 id="大数据和高并发">大数据和高并发<a href="#大数据和高并发" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<blockquote>
+<p>大数据和高并发场景的解决方案有哪些？</p>
+</blockquote>
+
+<h3 id="bitmap">bitmap<a href="#bitmap" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<ul>
+<li><p>应用场景(data range below int*10)</p>
+
+<ul>
+<li>quick sort not repeated array</li>
+<li>quick remove repeat</li>
+<li>quick search</li>
+<li>bloom filter（high Accuracy</li>
+<li>check url is the same</li>
+</ul></li>
+
+<li><p>advantage</p>
+
+<ul>
+<li>占用内存少</li>
+</ul></li>
+</ul>
+
+<h3 id="限流算法">限流算法<a href="#限流算法" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<ul>
+<li>count number</li>
+<li>sliding window</li>
+<li>leaky bucket</li>
+<li>token bucket</li>
+</ul>
+
+<h3 id="负载均衡">负载均衡<a href="#负载均衡" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<ul>
+<li>dns</li>
+<li>reverse proxy</li>
+<li>http redirect</li>
+<li>Stratification</li>
+</ul>
+
+<h2 id="运维和监控">运维和监控<a href="#运维和监控" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+
+<h3 id="概念">概念<a href="#概念" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h3>
+
+<p>DevOps: 持续开发，持续测试，持续集成，持续部署，持续监控</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/devops.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/devops_hu2f1e02e515e351c311ec896043222feb_66170_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/devops_hu2f1e02e515e351c311ec896043222feb_66170_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/devops_hu2f1e02e515e351c311ec896043222feb_66170_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/devops.jpg 914w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/devops.jpg" alt="devops" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+<!-- 租户：将资源隔离 -->
+
+<!-- ### 系统
+
+监控体系：  
+EagleEye/Dapper(google) 分布式调用跟踪系统
+Sunfire（Xflush） 应用可用性监控系统
+Alimonitor 应用监控系统
+
+工具体系：  
+Arthas java诊断工具
+zprofile jvm性能分析工具
+switch 开发和动态配置项管理框架
+sentinel 资源调度控制（限流 降级 授权 调用统计）
+onelog 日志管控系统
+log service(sls) 日志服务实时数据一站式服务 -->
+
+<!-- 
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/network.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/network_hu2f1e02e515e351c311ec896043222feb_101986_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/network_hu2f1e02e515e351c311ec896043222feb_101986_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/network_hu2f1e02e515e351c311ec896043222feb_101986_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/network.jpg 1110w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/network.jpg" alt="network" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+ -->
+
+<!-- 
+售卖区： ecs rds(vpc隔离成多个子网)
+OXS: ots oss odps ons ocs -->
+
+<!-- 
+网络： 网络工作模式：同步网络（节点同步执行、消息延迟有限、高效全局锁）、半同步网络（锁范围放宽）、异步网络（节点独立执行、消息延迟无上限、无全局锁、部分算法不可行）   -->
+
+<!-- 统一接入层(AServer)： tengine运行的web server代理。 将请求转发给（proxy_pass）应用服务器 -->
+
+<!-- * 解决https证书申请和更换
+* 证书泄漏：部署在服务器有泄漏风险
+* 应用安全：应用接入全站https、管理私钥
+* 安全管控：收敛安全入口
+   -->
+
+<!-- 
+接入层通过VIP Server发现后端可用机器；
+业务层通过VIP Server做服务发现和调用；
+中间件通过VIP Server做环境路由；
+数据库通过VIP Server解决DNS 解析和上下线问题
+
+1 VIP Server需要添加vip server key（和域名是一对多） + 应用分组
+2 Aserver填写vip server key和域名
+
+AServer从请求头获取域名； 根据域名找到vip server key； 根据key找到集群 -->
+
+<!-- ### 开发环境
+
+自动化安装脚本
+
+aone回滚时，用基线版本直接覆盖master当前分支版本（不是操作的git回滚)，也就是说会新生成新的提交。
+本地开发 需要重新执行git revert当前回滚版本 -->
+
+<!-- Pouch/Docker: 系统级别的一次构建到处运行，测试环境搭建、持续集成、持续交付带来了很大便利。打开视野走向全栈（DevOps) -->
+
+<!-- K8s：Kubernetes 跨主机集群的开源容器调度平台，自动化应用容器的部署、扩展和操作。提供以容器为中心的基础架构，是云原生的基础架构。 -->
+
+<!-- **MetaQ**:  
+
+消息模型
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/message-model.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/message-model_hu2f291963b315710d6e5e629732335abd_86198_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/message-model_hu2f291963b315710d6e5e629732335abd_86198_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/message-model_hu2f291963b315710d6e5e629732335abd_86198_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/message-model.png 1122w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/message-model.png" alt="message-model" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+物理模型
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/physical.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/physical_hu551ef07353c7b44de5b4e24d0afc2ef5_214382_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/physical_hu551ef07353c7b44de5b4e24d0afc2ef5_214382_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/physical_hu551ef07353c7b44de5b4e24d0afc2ef5_214382_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/physical.png 1149w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/physical.png" alt="physical" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+name server: 注册服务器，将topic注册到上面  
+broker: 存储转发服务器。 和name server建立长连接，从而获得topic信息  
+producer: 消息发送方。 和一个name server建立连接，获得路由信息，再和broker建立长连接且定时向master发送心跳，再由master同步到所有brokder  
+consumer: 消息接收方，需要和其中一个name sever建立连接，获得路由信息，再向提供服务的master、slaver建立长连接，具体接收消息时刻选择broker   -->
+
+<!-- 
+**Tair**:  
+
+物理架构  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/tair-physic.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/tair-physic_huec06276eadda23b5a1d0d92e76d6d3ae_144331_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/tair-physic_huec06276eadda23b5a1d0d92e76d6d3ae_144331_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/tair-physic_huec06276eadda23b5a1d0d92e76d6d3ae_144331_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/tair-physic.png 1107w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/tair-physic.png" alt="tair-physic" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+config server 管理data server结点，维护data server的状态信息（单点 主备方式保证可靠性）
+data server负责数据存储 按照config server的指示完成数据复制和迁移，并给config server发送心跳信息
+
+逻辑架构
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/tair-logic.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/tair-logic_hudc1cc7cfe30575bc7d3dce3a105b7a33_292869_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/tair-logic_hudc1cc7cfe30575bc7d3dce3a105b7a33_292869_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/tair-logic_hudc1cc7cfe30575bc7d3dce3a105b7a33_292869_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/tair-logic_hudc1cc7cfe30575bc7d3dce3a105b7a33_292869_1200x0_resize_lanczos_2.png 1200w,
+                  
+                
+                /zh-cn/website-architecture/tair-logic.png 1386w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/tair-logic.png" alt="tair-logic" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+数据一致性： 通过version保证
+负载均衡：一致性哈希算法
+
+数据访问方式1： Hash(key) % Bucketcount，得到具体的数据存储Bucket， 再检索数据路由表到该Bucket所在的DataServer
+数据访问方式2（多级缓存）: DataServer上划分Hotzone存储热点数据的访问，由客户端配置的缓存访问逻辑来处理缓存访问 -->
+
+<!-- TDDL(Taobao Distributed Data Layer) -->
+
+<!-- 
+整体架构  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/db-arch.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/db-arch_hu02318d2c86051ca96bfb0deab943ed53_208800_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/db-arch_hu02318d2c86051ca96bfb0deab943ed53_208800_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                
+                
+                /zh-cn/website-architecture/db-arch.png 646w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/db-arch.png" alt="db-arch" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+客户端架构
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/client-arch.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/client-arch_hue2d3d19c95d7b311a4575c2c21a97052_101284_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                
+                
+                
+                /zh-cn/website-architecture/client-arch.png 495w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/client-arch.png" alt="client-arch" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+服务端架构
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/db-server-arch.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/db-server-arch_hufd3c8f08569a1e8ba11168c5ec97dae0_146194_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/db-server-arch_hufd3c8f08569a1e8ba11168c5ec97dae0_146194_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                
+                
+                /zh-cn/website-architecture/db-server-arch.png 651w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/db-server-arch.png" alt="db-server-arch" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+数据源架构：  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/db-matrix.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/db-matrix_hu2f1e02e515e351c311ec896043222feb_221572_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/db-matrix_hu2f1e02e515e351c311ec896043222feb_221572_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/db-matrix_hu2f1e02e515e351c311ec896043222feb_221572_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/db-matrix_hu2f1e02e515e351c311ec896043222feb_221572_1200x0_resize_q90_lanczos.jpg 1200w,
+                  
+                
+                /zh-cn/website-architecture/db-matrix.jpg 2544w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/db-matrix.jpg" alt="db-matrix" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+Matrix层：SQL的解析、优化，执行; 规则匹配；表名替换；sql转发; 合并atom返回的结果集，返回给client  
+Group层： 读写分离和主备切换（镜像备份，通过日志变化，在从库中执行相同动作；或者需要先路由到从库，再执行动作 - 根据权重选择atom; 具有重试策略的调用atom执行sql  
+Atom层：物理db组成 - 执行sql; 返回结果到matrix   -->
+
+<!-- 
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/odps-arch.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/odps-arch_hu2f1e02e515e351c311ec896043222feb_158617_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/odps-arch_hu2f1e02e515e351c311ec896043222feb_158617_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/odps-arch_hu2f1e02e515e351c311ec896043222feb_158617_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/odps-arch.jpg 1148w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/odps-arch.jpg" alt="odps-arch" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+ -->
+
+<!-- odps客户端 
+<!-- 
+接入层：
+http服务，用户认证，cache, load balance -->
+
+<!-- 
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/request-chain.jpg">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/request-chain_hu139135f894b6fada86d014d0b0a028d0_127458_300x0_resize_q90_lanczos.jpg 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/request-chain_hu139135f894b6fada86d014d0b0a028d0_127458_600x0_resize_q90_lanczos.jpg 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/request-chain_hu139135f894b6fada86d014d0b0a028d0_127458_800x0_resize_q90_lanczos.jpg 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/request-chain_hu139135f894b6fada86d014d0b0a028d0_127458_1200x0_resize_q90_lanczos.jpg 1200w,
+                  
+                
+                /zh-cn/website-architecture/request-chain.jpg 1851w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/request-chain.jpg" alt="request-chain" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+ -->
+
+<!-- 
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/soa.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/soa_hu71d3a2bf53eb6e0ecf791e5dcee0e958_62112_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/soa_hu71d3a2bf53eb6e0ecf791e5dcee0e958_62112_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/soa_hu71d3a2bf53eb6e0ecf791e5dcee0e958_62112_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/soa_hu71d3a2bf53eb6e0ecf791e5dcee0e958_62112_1200x0_resize_lanczos_2.png 1200w,
+                  
+                
+                /zh-cn/website-architecture/soa.png 1295w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/soa.png" alt="soa" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+ -->
+
+<!-- 
+**dubbo**:
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/dubbo.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/dubbo_huf6ed3c7f3450b4d90141bbfcb2904941_71890_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/dubbo_huf6ed3c7f3450b4d90141bbfcb2904941_71890_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/dubbo_huf6ed3c7f3450b4d90141bbfcb2904941_71890_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                
+                /zh-cn/website-architecture/dubbo.png 906w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/dubbo.png" alt="dubbo" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+ 
+
+* cdn
+  * why
+* reverse proxy
+  * why 
+  
+### 分流和容灾 
+
+how to do it ? 
+
+Protocol Difference 
+* BSD  -->
+
+<!-- 
+**hsf**:  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+  <div
+    class="img" style="max-width: 600px">
+  
+
+  
+    <a href="https://maoxunxing.com/zh-cn/website-architecture/hsf-module.png">
+      <img
+        
+        sizes="(min-width: 768px) 600px, 98vw"
+        srcset='
+                    
+                    /zh-cn/website-architecture/hsf-module_huaf9d39867e6781c414c954095ff18c4c_95904_300x0_resize_lanczos_2.png 300w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/hsf-module_huaf9d39867e6781c414c954095ff18c4c_95904_600x0_resize_lanczos_2.png 600w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/hsf-module_huaf9d39867e6781c414c954095ff18c4c_95904_800x0_resize_lanczos_2.png 800w,
+                  
+                
+                    
+                    /zh-cn/website-architecture/hsf-module_huaf9d39867e6781c414c954095ff18c4c_95904_1200x0_resize_lanczos_2.png 1200w,
+                  
+                
+                /zh-cn/website-architecture/hsf-module.png 1210w'
+        src="https://maoxunxing.com/zh-cn/website-architecture/hsf-module.png" alt="hsf-module" loading="lazy"/>
+    </a>
+  
+
+  
+  </div>
+  
+
+
+
+调用方式：
+
+* 同步实时调用
+* Future异步调用
+* Callback异步调用
+* Generic调用
+* 服务端Sycn调用
+* Http调用
+
+### 分布式消息
+
+> 什么是分布式消息，和分布式应用的区别是？
+<!-- 
+* RPC Message
+* Restful -->
+
+<!--   
+## design mode
+
+SOLID -->
+
+<!-- ## Top k
+
+* how to solve
+  * 1 sort
+  * 2 partial elimination
+    * save k in container, and other numbers compare with them
+  * 3 divide and conque
+    * split to n group, find top k in the group
+  * 4 hash remove repeat number , then divide and conque
+  * 5 minimum heap
+  code -->
+
+      </div>
+
+<style type="text/css">
+
+   
+  #mc_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 3%}
+  #mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+  #mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+  #mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+  #mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+  #mc_embed_signup input:focus {border-color:#333;}
+  #mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+  #mc_embed_signup .button:hover {background-color:#777;}
+  #mc_embed_signup .small-meta {font-size: 11px;}
+  #mc_embed_signup .nowrap {white-space:nowrap;}
+
+  #mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:3%; min-height:50px;}
+  #mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
+  * html #mc_embed_signup .size1of2 {margin-right:2%;  }
+  #mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
+  #mc_embed_signup .mc-field-group input {display:block; width:100%; padding:8px 0; text-indent:2%;}
+  #mc_embed_signup .mc-field-group select {display:inline-block; width:99%; padding:5px 0; margin-bottom:2px;}
+
+  #mc_embed_signup .datefield, #mc_embed_signup .phonefield-us{padding:5px 0;}
+  #mc_embed_signup .datefield input, #mc_embed_signup .phonefield-us input{display:inline; width:60px; margin:0 2px; letter-spacing:1px; text-align:center; padding:5px 0 2px 0;}
+  #mc_embed_signup .phonefield-us .phonearea input, #mc_embed_signup .phonefield-us .phonedetail1 input{width:40px;}
+  #mc_embed_signup .datefield .monthfield input, #mc_embed_signup .datefield .dayfield input{width:30px;}
+  #mc_embed_signup .datefield label, #mc_embed_signup .phonefield-us label{display:none;}
+
+  #mc_embed_signup .indicates-required {text-align:right; font-size:11px; margin-right:4%;}
+  #mc_embed_signup .asterisk {color:#e85c41; font-size:150%; font-weight:normal; position:relative; top:5px;}
+  #mc_embed_signup .clear {clear:both;}
+
+  #mc_embed_signup .mc-field-group.input-group ul {margin:0; padding:5px 0; list-style:none;}
+  #mc_embed_signup .mc-field-group.input-group ul li {display:block; padding:3px 0; margin:0;}
+  #mc_embed_signup .mc-field-group.input-group label {display:inline;}
+  #mc_embed_signup .mc-field-group.input-group input {display:inline; width:auto; border:none;}
+
+  #mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%; margin: 0 5%; clear: both;}
+  #mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+  #mc_embed_signup #mce-error-response {display:none;}
+  #mc_embed_signup #mce-success-response {color:#529214; display:none;}
+  #mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+
+  #mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+  #mc_embed_signup #num-subscribers {font-size:1.1em;}
+  #mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
+
+  #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {display:inline-block; margin:2px 0 1em 0; padding:5px 10px; background-color:rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size:14px; font-weight:normal; z-index:1; color:#e85c41;}
+  #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {border:2px solid #e85c41;}
+   
+  .colorscheme-dark #mc_embed_signup { background:#212121; border: 1px solid; }
+  .colorscheme-dark input[type=email] { background: #181818; color:silver; }
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	 
+</style>
+<div id="mc_embed_signup">
+  <form action="https://gmail.us5.list-manage.com/subscribe/post?u=c3b0164459768548b7bef380c&amp;id=1103acd526" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+  <h3 style='text-align: center;'>当发布很酷的东西时，请第一时间通知我</h3>
+  <p style='text-align: center;'>订阅电子邮件，以获得我的最新文章。</p>
+
+<div class="mc-field-group">
+	<label for="mce-EMAIL">邮箱地址  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c3b0164459768548b7bef380c_1103acd526" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="订阅" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+
+      <section class="social-sharing">
+
+  <h4>分享到</h4>
+
+  <a href="https://twitter.com/intent/tweet?via=&text=Web%e6%98%af%e5%a6%82%e4%bd%95%e5%b7%a5%e4%bd%9c%e7%9a%84%20https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fwebsite-architecture%2f" class="btn btn-twitter btn-social" title="Share on Twitter">
+    <i class="fab fa-fw fa-twitter" aria-hidden="true"></i>
+    <span>Twitter</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fwebsite-architecture%2f" class="btn btn-facebook btn-social" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i>
+    <span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fmaoxunxing.com%2fzh-cn%2fwebsite-architecture%2f" class="btn btn-linkedin btn-social" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
+    <span> LinkedIn</span>
+  </a>
+
+</section>
+
+
+      
+
+
+      <style>
+  .utterances {
+    max-width: initial !important;
+    margin-top: 40px;
+  }
+</style>
+<script src="https://utteranc.es/client.js"
+        repo="XingMXTeam/XingMXTeam.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+      
+        <script>
+  talkyardServerUrl='';
+  talkyardLogLevel = 'warn';
+</script>
+<script async defer src=""></script>
+<section>
+  <div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+    <noscript>Please enable JavaScript to view comments.</noscript>
+  </div>
+</section>
+
+      
+
+      <footer>
+        
+
+
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
+      2023
+      ©
+       Xunxing Mao 
+    
+    
+    
+  </section>
+</footer>
+
+
+
+    </main>
+
+
+    
+      
+      <script src="https://maoxunxing.com/js/coder.min.b5c9bb7067a176a6ea5d67dce62948c146afa3df08c0ececbad8651db7889818.js" integrity="sha256-tcm7cGehdqbqXWfc5ilIwUavo98IwOzsuthlHbeImBg="></script>
+    
+
+    
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-199510588-1', 'auto');
+
+  ga('require', 'outboundLinkTracker');
+
+  ga('send', 'pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" async></script>
+
+
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRvV151FcMlUQq5-5zUqaR1BHJ8RhwkTw",
+    authDomain: "blog-6a0bf.firebaseapp.com",
+    projectId: "blog-6a0bf",
+    storageBucket: "blog-6a0bf.appspot.com",
+    messagingSenderId: "379181681011",
+    appId: "1:379181681011:web:cb9abcf9cfb01c2f181d06",
+    measurementId: "G-65M6Z03PV2"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+    <script>
+  if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+          .register('/sw.js', { scope: '/' })
+          .then(function(registration) {
+              
+          });
+
+      navigator.serviceWorker
+          .ready
+          .then(function(registration) {
+              
+          });
+  }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script>
+  const { autocomplete, getAlgoliaResults } = window['@algolia/autocomplete-js'];
+  const algoliasearch = window.algoliasearch;
+  const searchClient = algoliasearch(
+    'D7NQ3RODEC',
+    'cac594df3c563fecd3ad54a0e399c173'
+  );
+
+  const hitTemplate =
+        '<div class="col-lg-12 col-md-12 mb-4">' +
+            '<article class="card post-card" id="summary-{{{ key }}}">' +
+                '\x3cimg loading=\x22lazy\x22 class=\x22w-100 rounded\x22 style=\x22height:200px;object-fit:cover;\x22src=\x22{{{ image }}}\x22 alt=\x22{{{ name }}}\x22\x3e' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">' +
+                    '\x3ca class=\x22post-title\x22 href=\x22{{{ permalink }}}\x22\x3e{{{ title }}}\x3c\/a\x3e' +
+                    '</h3>' +
+                    '<p>{{{ summary }}}</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+    const missTemplate =
+        '<div class="col-lg-10 col-md-10 mb-4">' +
+            '<article class="card post-card">' +
+                '<div class="card-body">' +
+                    '<h3 class="h4 mb-4">No results</h3>' +
+                    '<p>There were no results matching your search terms \x3cem\x3e{{{ query }}}\x3c\/em\x3e.</p>' +
+                '</div>' +
+            '</article>' +
+        '</div>';
+
+  autocomplete({
+    container: '#docsearch',
+    detachedMediaQuery: '',
+    placeholder: 'Search for articles',
+    
+    
+    navigator: {
+      navigate({ itemUrl }) {
+        navigate(itemUrl);
+      },
+    },
+    getSources({ query }) {
+      return [
+        {
+          sourceId: 'products',
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+               queries: [
+                {
+                  indexName: 'my-blog-index',
+                  query,
+                  params: {
+                    hitsPerPage: 5,
+                  },
+                },
+              ],
+            });
+          },
+          templates: {
+            item({ item, components, createElement }) {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              const lang = location.pathname.split("/")[1];
+              item.uri = item.uri.replace(/posts\//g, '');
+              
+
+              return createElement(
+                'a',
+                { className: 'aa-ItemLink', href: `${location.protocol}\/\/${location.host}/${lang}/${item.uri}` },
+                createElement(
+                  'div',
+                  {
+                    className: 'aa-ItemWrapper',
+                  },
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContent' },
+                    item.image ? createElement(
+                      'div',
+                      { className: 'aa-ItemIcon' },
+                      createElement('img', {
+                        src: item.images[0],
+                        alt: item.title,
+                        width: 40,
+                        height: 40,
+                      })
+                    ) : null
+                  ),
+                  createElement(
+                    'div',
+                    { className: 'aa-ItemContentBody' },
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentTitle' },
+                      components.Snippet({ hit: item, attribute: 'title' })
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'aa-ItemContentDescription' },
+                      components.Snippet({ hit: item, attribute: 'description' })
+                    )
+                  ),
+                  createElement(
+                    'div',
+                    {
+                      className: 'aa-ItemActions',
+                    },
+                    createElement(
+                      'button',
+                      {
+                        className: 'aa-ItemActionButton aa-DesktopOnly aa-ActiveOnly',
+                        type: 'button',
+                        title: 'Select',
+                      },
+                      createElement(
+                        'svg',
+                        {
+                          viewBox: '0 0 24 24',
+                          width: 20,
+                          height: 20,
+                          fill: 'currentColor',
+                        },
+                        createElement('path', {
+                          d: 'M18.984 6.984h2.016v6h-15.188l3.609 3.609-1.406 1.406-6-6 6-6 1.406 1.406-3.609 3.609h13.172v-4.031z',
+                        })
+                      )
+                    )
+                  )
+                )
+              );
+            },
+            noResults() {
+              return 'No results';
+            },
+          },
+          getItemUrl({ item }) {
+            return item.url;
+          },
+        },
+      ];
+    },
+  });
+</script>
+
+
+
+  </body>
+
+</html>

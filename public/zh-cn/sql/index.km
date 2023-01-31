@@ -1,0 +1,782 @@
+{
+    "root": {
+        "data": {
+            "id": "cj091rnvdds0",
+            "created": 1648952985038,
+            "text": "sql"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cj0960gppiw0",
+                    "created": 1648953317653,
+                    "text": "ddl语句(Data Definition Language)"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cj12nm03ckw0",
+                            "created": 1649036508915,
+                            "text": "create table"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj12wke7ddc0",
+                                    "created": 1649037210692,
+                                    "text": "基本用法",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj12q6sojyw0",
+                                            "created": 1649036710908,
+                                            "text": "分区"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj12r89gtqo0",
+                                                    "created": 1649036792464,
+                                                    "text": "逻辑上只有一个表或者索引，但实际上你有多个物理分区"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cj12sbbuucg0",
+                                                    "created": 1649036877503,
+                                                    "text": "生命周期： 从最后一次分区数据被修改开始计算。 分区表的回收后，该表不会被删除"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj12tdzztm80",
+                                            "created": 1649036961680,
+                                            "text": "例子",
+                                            "layout_right_offset": {
+                                                "x": 13,
+                                                "y": -25
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj12um3tl4w0",
+                                                    "created": 1649037057690,
+                                                    "text": "CREATE TABLE IF NOT EXISTS test(\n  a STRING, b BIGINT, d STRING\n) PARTITIONED BY(ds STRING) \nLIFECYCLE 180; \n创建这一张分区表，生命周期180天"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj12ufflhzs0",
+                                            "created": 1649037043164,
+                                            "text": "LIFECYCLE",
+                                            "layout_right_offset": {
+                                                "x": 5,
+                                                "y": -21
+                                            }
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj12ua49ohk0",
+                                            "created": 1649037031595,
+                                            "text": "PARTITIONED BY",
+                                            "layout_right_offset": {
+                                                "x": 13,
+                                                "y": -21
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj12w4k3ku80",
+                                                    "created": 1649037176220,
+                                                    "text": "创建分区，如果没有分区，可以不设置"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj12u61fy5s0",
+                                            "created": 1649037022717,
+                                            "text": "IF NOT EXSITS",
+                                            "layout_right_offset": {
+                                                "x": 12,
+                                                "y": -19
+                                            }
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj12tzqoxhc0",
+                                            "created": 1649037009007,
+                                            "text": "CREATE TABLE",
+                                            "layout_right_offset": {
+                                                "x": 1,
+                                                "y": -19
+                                            }
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj12x3wcmg00",
+                                    "created": 1649037253148,
+                                    "text": "高级"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj12xa3wj0o0",
+                                            "created": 1649037266666,
+                                            "text": "按照另外一个表结果创建表，结构和注释一致，但是生命周期不一致"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj12z4hek7s0",
+                                                    "created": 1649037411150,
+                                                    "text": "CREATE TABLE IF NOT EXISTS test\nLIKE bbb"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj12xm945co0",
+                                            "created": 1649037293102,
+                                            "text": "按照SELECT结果创建表； 没有分区"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj12xwifheo0",
+                                                    "created": 1649037315433,
+                                                    "text": "CREATE TABLE ttt AS \nSELECT a, b\nFROM sss\nWHERE ds = '20180212'"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cj12yjy4uwg0",
+                                                    "created": 1649037366449,
+                                                    "text": "topic"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj12nnxxcs00",
+                            "created": 1649036513138,
+                            "text": "drop table"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj1301wb55c0",
+                                    "created": 1649037483885,
+                                    "text": "直接删除表，不能恢复",
+                                    "layout_right_offset": {
+                                        "x": 19,
+                                        "y": 10
+                                    },
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj12zjr08jc0",
+                                            "created": 1649037444382,
+                                            "text": "DROP TABLE IF EXISTS table_name"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj130ltr57c0",
+                            "created": 1649037527266,
+                            "text": "alter table"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj130qdp1wo0",
+                                    "created": 1649037537179,
+                                    "text": "重命名"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj130v13oww0",
+                                            "created": 1649037547301,
+                                            "text": "ALTER TABLE table_name RENAME TO new_table_name"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj1313ln8zc0",
+                                    "created": 1649037565958,
+                                    "text": "添加分区&删除分区"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj13181lmo00",
+                                            "created": 1649037575630,
+                                            "text": "ALTER TABLE table_name ADD IF NOT EXSITS PARTITION partition_spec partition_sepc: (particon_col1=partition_col1_value1,...)"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj132c386q00",
+                                            "created": 1649037662799,
+                                            "text": "ALTER TABLE table_name DROP IF EXISTS PARTITION partition_spec partition_spec:(partition_col1=partition_col1_value1, ...)"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13313ipog0",
+                                    "created": 1649037717236,
+                                    "text": "修改表结构"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj13366ash40",
+                                            "created": 1649037728288,
+                                            "text": "修改表注释"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj133a2t7ls0",
+                                                    "created": 1649037736785,
+                                                    "text": "ALTER TABLE table_name SET COMMENT 'table_comments';"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj133kv52480",
+                                            "created": 1649037760265,
+                                            "text": "增加表字段"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj134ksb6e80",
+                                                    "created": 1649037838458,
+                                                    "text": "ALTER TABLE table_name ADD COLUMNS (col1 type, col2 type, ...)"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj134up9avs0",
+                                            "created": 1649037860042,
+                                            "text": "修改列名"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj1350crzjs0",
+                                                    "created": 1649037872348,
+                                                    "text": "ALTER TABLE table_name change COLUMN old_col RENAME TO new_col"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj135d5cx1k0",
+                                            "created": 1649037900197,
+                                            "text": "修改列注释（包含分区列注释）"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj135nchep40",
+                                                    "created": 1649037922396,
+                                                    "text": "ALTER TABLE table_name change COLUMN col1 COMMENT 'commnets'"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj1360mhbr40",
+                                            "created": 1649037951299,
+                                            "text": "修改表的生命周期"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj1365szthk0",
+                                                    "created": 1649037962576,
+                                                    "text": "ALTER TABLE table_name SET LIFECYCLE days;"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj136l43rq80",
+                            "created": 1649037995900,
+                            "text": "查看表结构"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj136ojehgo0",
+                                    "created": 1649038003355,
+                                    "text": "DESC table_name"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cj12nd7nxcw0",
+                    "created": 1649036489783,
+                    "text": "dml语句(Data Manipulation Language)"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cj12nq2byj40",
+                            "created": 1649036517758,
+                            "text": "select"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj137fi9lfc0",
+                                    "created": 1649038062060,
+                                    "text": "基础"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj137nqk9s00",
+                                            "created": 1649038079976,
+                                            "text": "SELECT a FROM aa where ds='20120201'"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj1385qc1v40",
+                                    "created": 1649038119144,
+                                    "text": "限制条数"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj138av2seo0",
+                                            "created": 1649038130315,
+                                            "text": "SELECT a FROM aa where ds='20120201' LIMIT 10"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj138lhkcmo0",
+                                    "created": 1649038153442,
+                                    "text": "去重"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj138omzsoo0",
+                                            "created": 1649038160301,
+                                            "text": "SELECT  distinct a FROM aa where ds='20120201' "
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj1394emehs0",
+                                    "created": 1649038194623,
+                                    "text": "数据聚合"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj1398r4ihk0",
+                                            "created": 1649038204086,
+                                            "text": "SELECT  a，count(1) AS CNT FROM aa where ds='20120201' GROUP BY a"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj139yn6le80",
+                                            "created": 1649038260444,
+                                            "text": "聚合函数： Sum Count AVG MAX/MIN"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13ahg7ers0",
+                                    "created": 1649038301381,
+                                    "text": "过滤分组统计结果集"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj13ap56x9c0",
+                                            "created": 1649038318129,
+                                            "text": "SELECT  a，count(1) AS CNT FROM aa where ds='20120201' GROUP BY a HAVING count(1) > 1000"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13b5wxreo0",
+                                    "created": 1649038354636,
+                                    "text": "子查询： 将一个查询结果作为子表使用"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj13beh0gtk0",
+                                            "created": 1649038373264,
+                                            "text": "SELECT a FROM \n( SELECT b AS b_rename FROM btable WHERE ds='20120202' AND cc='1' GROUP BY b ) atable\nWHERE atable.cc > 1000"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13d93pm800",
+                                    "created": 1649038518304,
+                                    "text": "合并多张表的数据"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj13dgdnih40",
+                                            "created": 1649038534142,
+                                            "text": "限制条件： union all的子表，必须是字段命名相同，字段类型相同"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj13dvkot6o0",
+                                            "created": 1649038567220,
+                                            "text": "SELECT a FROM\n( \nSELECT b AS b_rename \nFROM btable \nWHERE ds='20120202' AND cc='1' \nUNION ALL\nSELECT c AS b_rename\nFROM ctable\nWHERE ds='20100202'\n ) atable\nWHERE atable.cc > 1000",
+                                            "layout_right_offset": {
+                                                "x": 16,
+                                                "y": 2
+                                            }
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13ge8kg1c0",
+                                    "created": 1649038764574,
+                                    "text": "表关联操作，关联多个表进行数据分析"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cj13gi8vj800",
+                                            "created": 1649038773300,
+                                            "text": "内连Inner join"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj13k4819tk0",
+                                                    "created": 1649039056231,
+                                                    "text": "只有两个记录完全匹配才会显示出来（交集）"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cj13jaozfso0",
+                                                    "created": 1649038991952,
+                                                    "text": "SELECT a.* FROM a JOIN b ON (a.id=b.id)"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj13h1m2y540",
+                                            "created": 1649038815457,
+                                            "text": "左连Left outer join"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj13kgok8o00",
+                                                    "created": 1649039083351,
+                                                    "text": "左表全部查询；右表查询不到赋空"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj13h6048800",
+                                            "created": 1649038825013,
+                                            "text": "右连Right outer join"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj13larha2g0",
+                                                    "created": 1649039148831,
+                                                    "text": "右表全部查询；左表查询不到赋空"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cj13h9z0kf40",
+                                            "created": 1649038833653,
+                                            "text": "全连接Full outer join"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cj13loh6nww0",
+                                                    "created": 1649039178684,
+                                                    "text": "2个表都选择出来，匹配不上赋值为空"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj12ns1ry000",
+                            "created": 1649036522077,
+                            "text": "insert"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cj12nj44ng00",
+                    "created": 1649036502629,
+                    "text": "dcl语句(Data Contol Language)"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cj12nt9in740",
+                            "created": 1649036524723,
+                            "text": "权限控制语句"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cj12nw60u280",
+                    "created": 1649036531041,
+                    "text": "函数"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cj12nymcq0w0",
+                            "created": 1649036536382,
+                            "text": "系统自带、自定义"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cj13mezitv40",
+                            "created": 1649039236389,
+                            "text": "日期格式化"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj13mj755go0",
+                                    "created": 1649039245557,
+                                    "text": "to_char('2013-03-01 00:00:02', 'yyyymmdd')"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj13nb6ntw00",
+                            "created": 1649039306477,
+                            "text": "日期加减"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj13opixr140",
+                                    "created": 1649039416059,
+                                    "text": "DATETIME DATEADD(DATETIME date, BIGINT delta, STRING datepart) \ndatepart: dd、mm、yyyy、hh、mi、ss"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13o83u6ww0",
+                                    "created": 1649039378141,
+                                    "text": "dateadd('2005-02-28 00:00:12', 1, 'dd')'"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj13po3fhaw0",
+                            "created": 1649039491309,
+                            "text": "字符串拼接"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj13ptc104g0",
+                                    "created": 1649039502712,
+                                    "text": "concat('ab', 'c')"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj13qzymjlk0",
+                            "created": 1649039595504,
+                            "text": "按照某个字段多少排序"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj13ryspd9k0",
+                                    "created": 1649039671333,
+                                    "text": "ROW_NUMBER() OVER(PARTITION BY col1 ORDER BY col2 DESC)"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cj13sim8bkg0",
+                                    "created": 1649039714477,
+                                    "text": "SELECT a,b ROW_NUMBER() OVER(PARTITION BY a ORDER BY b DESC) AS rnk\nFROM \n(\n SELECT ...\n) atable ",
+                                    "layout_right_offset": {
+                                        "x": 5,
+                                        "y": 56
+                                    }
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cj13uaj65s80",
+                            "created": 1649039853606,
+                            "text": "取某个表的最新分区",
+                            "layout_right_offset": {
+                                "x": 1,
+                                "y": 86
+                            }
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cj13uiqtqa80",
+                                    "created": 1649039871483,
+                                    "text": "SELECT * FROM xx\nWHERE ds=max_pt('xx')"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

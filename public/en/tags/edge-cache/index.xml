@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>edge-cache on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/edge-cache/</link>
+    <description>Recent content in edge-cache on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/en/tags/edge-cache/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Edge Cache</title>
+      <link>https://maoxunxing.com/en/edge-cache/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/edge-cache/</guid>
+      <description>Situation  what is edge cache what problem it solves?  the first visit webpage cannot make advantage of cache, like pwa, connection reuse.The client side cache can also not be used when first visit.  what is the edge cache node position of request link what the difference with ssr、csr/cdn  ssr long server time make the page white time long csr/cdn cache all html to the cdn. because every user have different page view, it is not realibility.</description>
+    </item>
+    
+  </channel>
+</rss>

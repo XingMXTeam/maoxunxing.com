@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>career on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/career/</link>
+    <description>Recent content in career on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/en/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>前端工程师的成长模型指标</title>
+      <link>https://maoxunxing.com/en/front-end-engineer-future/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/front-end-engineer-future/</guid>
+      <description> 上一篇谈及前端工程师的学习和成长之道。这一篇主要谈前端工程师的成长模型指标。
+基础知识 网络 Http代理需要安装可信证书。隧道代理是建立TCP连接。
+安全 1 csrf: 构造好一个站内URL或者第三方站点放置自动提交的表单，当用户在登陆态时，用户点击了。执行了攻击者的请求。比如在我们自己的页面，伪造了一个用户请求，导致用户资产损失，或者删除用户等操作。比如通过IM提供一个删除差评的接口，就删除了。
+软件工程  对软件设计方法的理解，设计模式
+ 编程能力  最终落地到产品的能力。主要是架构
+ 微前端 模型驱动 1 交付高质量、高还原度产品 2 高标准化
+可视化搭建是布局 模型驱动： 模型驱动逻辑/流程/视图。 业务数据模型-1对n-&amp;gt;组件协议-&amp;gt;插槽映射协议-1对n-&amp;gt;视图协议-&amp;gt;页面
+提前计算好 数据立方 需要的时候取出来就行 -- </description>
+    </item>
+    
+  </channel>
+</rss>

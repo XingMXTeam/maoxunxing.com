@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grid on 毛训星的网络日志</title>
+    <link>https://maoxunxing.com/zh-cn/tags/grid/</link>
+    <description>Recent content in Grid on 毛训星的网络日志</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Dec 2021 20:03:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/zh-cn/tags/grid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS实现细节梳理</title>
+      <link>https://maoxunxing.com/zh-cn/css-i-learned/</link>
+      <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/css-i-learned/</guid>
+      <description>布局组件：
+ 不要用wrapper这样的dom结构， 避免表格思维，有多余的行/列元素   不用javascript控制布局  所有布局和对齐都用Flexbox/Grids实现，不用absolute, display:table, float
+height/line-height，display: inline-block/vertical-align: middle 不可靠
+滚动链问题：
+/* chrome63+ firefox 59+ / safari edge not support */ overflow-behaviour: contain; 避免同时出现水平和垂直滚动：
+overflow-x: auto; overflow-x: hidden; 折行：
+overfloww-wrap: break-word; hyphens: auto; /* 限制行数 */ -webkit-line-clamp: 3;  不折行： 标题 列头 按钮
+overflow: hidden; text-overflow: ellipsis; /* th */ white-space: nowrap;  以上在flexbox容器还是会溢出？ min-width: 0
+vs:
+width: max-content; 防止内容显示不全/被截断：
+ 避免定宽/定高，用min-width/min-height替代
+定宽高会出现内容溢出，对齐用Flex-box
+避免侵入性样式
+ 变量模块化 z-index: 1-9 10~99 不要用style，!</description>
+    </item>
+    
+  </channel>
+</rss>

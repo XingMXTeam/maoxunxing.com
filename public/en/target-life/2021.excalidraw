@@ -1,0 +1,63 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "csQGY0tnlY6tJcKswEyl6",
+      "type": "rectangle",
+      "x": 310.31714630126976,
+      "y": 228.3721955617271,
+      "width": 216.37680053710938,
+      "height": 89.7431640625,
+      "angle": 0,
+      "strokeColor": "#364fc7",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "strokeSharpness": "sharp",
+      "seed": 1296130503,
+      "version": 51,
+      "versionNonce": 600468903,
+      "isDeleted": false,
+      "boundElementIds": null
+    },
+    {
+      "id": "QhSvdobgxK4OA6W7XmwXj",
+      "type": "text",
+      "x": 336.96042633056663,
+      "y": 265.9780610402427,
+      "width": 101,
+      "height": 22,
+      "angle": 0,
+      "strokeColor": "#364fc7",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "strokeSharpness": "sharp",
+      "seed": 647619657,
+      "version": 33,
+      "versionNonce": 602439977,
+      "isDeleted": false,
+      "boundElementIds": null,
+      "text": "北极星目标： ",
+      "fontSize": 16,
+      "fontFamily": 3,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "baseline": 17
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  }
+}

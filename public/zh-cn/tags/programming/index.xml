@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on 毛训星的网络日志</title>
+    <link>https://maoxunxing.com/zh-cn/tags/programming/</link>
+    <description>Recent content in programming on 毛训星的网络日志</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/zh-cn/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>我对Fass的理解</title>
+      <link>https://maoxunxing.com/zh-cn/fass/</link>
+      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/fass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diff Dom</title>
+      <link>https://maoxunxing.com/zh-cn/diff-dom/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/diff-dom/</guid>
+      <description> Question Definition Front-End developer all know React, React use diff dom algorithm to diff two virtual dom tree.
+1 Method 1: Two pointers
+Problem Analysis Time Complex </description>
+    </item>
+    
+    <item>
+      <title>nodejs你需要知道的</title>
+      <link>https://maoxunxing.com/zh-cn/node-js/</link>
+      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/node-js/</guid>
+      <description>运维 服务重启
+cd /home/admin/{appname}/bin/ # 仅重启 ./nodejsctl stop &amp;amp;&amp;amp; ./nodejsctl start # 重新解压资源包，然后启动服务 ./nodejsctl pubstart  多租户hsf服务调用 采用中间件透传租户标的方式
+多租户环境部署 1 多租户环境部署 2 通过URL做配置化（生成租户标）
+日志 错误日志 admin/logs/{app}/common-error.log 常规记录日志 admin/logs/{app}/{app}-web.log 应用access日志 admin/{app}/logs/access-123.log Nginx Access log admin/cai/logs/cronolog/2021/.log
+docker 把不常变化的内容(如基础RPM、启动脚本等)做成基础镜像，在应用发布的指定Dockerfile中FROM基础镜像，重复的内容不再执行，应用基础镜像被 推送到全部的构建机器，提高镜像构建速度，再也不用坐在那里干等构建了
+工具 nodemon : watch file change</description>
+    </item>
+    
+    <item>
+      <title>Edge Cache</title>
+      <link>https://maoxunxing.com/zh-cn/edge-cache/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/edge-cache/</guid>
+      <description>Situation  what is edge cache what problem it solves?  the first visit webpage cannot make advantage of cache, like pwa, connection reuse.The client side cache can also not be used when first visit.  what is the edge cache node position of request link what the difference with ssr、csr/cdn  ssr long server time make the page white time long csr/cdn cache all html to the cdn. because every user have different page view, it is not realibility.</description>
+    </item>
+    
+    <item>
+      <title>前端异常处理</title>
+      <link>https://maoxunxing.com/zh-cn/notes/exception-handle/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/zh-cn/notes/exception-handle/</guid>
+      <description>1 异常隔离 : 主要场景vm js代码
+try {} catch {} 2 promise异常处理: 主要场景处理try catch无法捕获的异常</description>
+    </item>
+    
+  </channel>
+</rss>

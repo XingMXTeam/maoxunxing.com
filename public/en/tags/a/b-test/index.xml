@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A/B Test on maoxunxing&#39;s life</title>
+    <link>https://maoxunxing.com/en/tags/a/b-test/</link>
+    <description>Recent content in A/B Test on maoxunxing&#39;s life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://maoxunxing.com/en/tags/a/b-test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>我对A/B实验的理解</title>
+      <link>https://maoxunxing.com/en/ab-test/</link>
+      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maoxunxing.com/en/ab-test/</guid>
+      <description>关键概念 H0: A、B没有本质差异 H1: A、B确实存在本质差异
+p值： 根据z检验算出p值，如果p&amp;lt;0.05，则取H0 置信区间：是一个我们相当肯定会包含真实值的数据范围 比如95%置信区间 在[0.88, 0.97]范围内。 因为是采样，所以结果有好（在置信区间的数值范围内）有坏（不在范围内）。 解释
+分流原理 《overlapping experiment infrastructure: more, better, faster experimentation》
+未完待续&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>
