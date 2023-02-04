@@ -2,480 +2,336 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/tags/</link>
+    <link>/zh-cn/tags/</link>
     <description>Recent content in Tags on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Apr 2022 22:37:20 +0800</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Array</title>
-      <link>https://maoxunxing.com/zh-cn/tags/array/</link>
+      <link>/zh-cn/tags/array/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/array/</guid>
+      <guid>/zh-cn/tags/array/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Max-Heap</title>
-      <link>https://maoxunxing.com/zh-cn/tags/max-heap/</link>
+      <link>/zh-cn/tags/max-heap/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/max-heap/</guid>
+      <guid>/zh-cn/tags/max-heap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Min-Heap</title>
-      <link>https://maoxunxing.com/zh-cn/tags/min-heap/</link>
+      <link>/zh-cn/tags/min-heap/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/min-heap/</guid>
+      <guid>/zh-cn/tags/min-heap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>QuickSort</title>
-      <link>https://maoxunxing.com/zh-cn/tags/quicksort/</link>
+      <link>/zh-cn/tags/quicksort/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/quicksort/</guid>
+      <guid>/zh-cn/tags/quicksort/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DP</title>
-      <link>https://maoxunxing.com/zh-cn/tags/dp/</link>
+      <link>/zh-cn/tags/dp/</link>
       <pubDate>Sun, 17 Apr 2022 20:44:08 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/dp/</guid>
+      <guid>/zh-cn/tags/dp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Double Point</title>
-      <link>https://maoxunxing.com/zh-cn/tags/double-point/</link>
+      <link>/zh-cn/tags/double-point/</link>
       <pubDate>Sat, 16 Apr 2022 23:59:19 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/double-point/</guid>
+      <guid>/zh-cn/tags/double-point/</guid>
       <description></description>
     </item>
     
     <item>
       <title>String</title>
-      <link>https://maoxunxing.com/zh-cn/tags/string/</link>
+      <link>/zh-cn/tags/string/</link>
       <pubDate>Sat, 16 Apr 2022 23:59:19 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/string/</guid>
+      <guid>/zh-cn/tags/string/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal Grow</title>
-      <link>https://maoxunxing.com/zh-cn/tags/personal-grow/</link>
+      <link>/zh-cn/tags/personal-grow/</link>
       <pubDate>Sat, 02 Apr 2022 17:27:56 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/personal-grow/</guid>
+      <guid>/zh-cn/tags/personal-grow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A11Y</title>
-      <link>https://maoxunxing.com/zh-cn/tags/a11y/</link>
+      <link>/zh-cn/tags/a11y/</link>
       <pubDate>Sat, 02 Apr 2022 10:31:39 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/a11y/</guid>
+      <guid>/zh-cn/tags/a11y/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>https://maoxunxing.com/zh-cn/tags/css/</link>
+      <link>/zh-cn/tags/css/</link>
       <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/css/</guid>
+      <guid>/zh-cn/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flex</title>
-      <link>https://maoxunxing.com/zh-cn/tags/flex/</link>
+      <link>/zh-cn/tags/flex/</link>
       <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/flex/</guid>
+      <guid>/zh-cn/tags/flex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Grid</title>
-      <link>https://maoxunxing.com/zh-cn/tags/grid/</link>
+      <link>/zh-cn/tags/grid/</link>
       <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/grid/</guid>
+      <guid>/zh-cn/tags/grid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ES6</title>
-      <link>https://maoxunxing.com/zh-cn/tags/es6/</link>
+      <link>/zh-cn/tags/es6/</link>
       <pubDate>Thu, 21 Oct 2021 19:17:54 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/es6/</guid>
+      <guid>/zh-cn/tags/es6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Network</title>
-      <link>https://maoxunxing.com/zh-cn/tags/network/</link>
+      <link>/zh-cn/tags/network/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/network/</guid>
+      <guid>/zh-cn/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NodeJS</title>
-      <link>https://maoxunxing.com/zh-cn/tags/nodejs/</link>
+      <link>/zh-cn/tags/nodejs/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/nodejs/</guid>
+      <guid>/zh-cn/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>P2P</title>
-      <link>https://maoxunxing.com/zh-cn/tags/p2p/</link>
+      <link>/zh-cn/tags/p2p/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/p2p/</guid>
+      <guid>/zh-cn/tags/p2p/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RPC</title>
-      <link>https://maoxunxing.com/zh-cn/tags/rpc/</link>
+      <link>/zh-cn/tags/rpc/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/rpc/</guid>
+      <guid>/zh-cn/tags/rpc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VPN</title>
-      <link>https://maoxunxing.com/zh-cn/tags/vpn/</link>
+      <link>/zh-cn/tags/vpn/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/vpn/</guid>
+      <guid>/zh-cn/tags/vpn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WebSocket</title>
-      <link>https://maoxunxing.com/zh-cn/tags/websocket/</link>
+      <link>/zh-cn/tags/websocket/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/websocket/</guid>
+      <guid>/zh-cn/tags/websocket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>成长</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E6%88%90%E9%95%BF/</link>
-      <pubDate>Wed, 06 Oct 2021 11:20:33 +0800</pubDate>
+      <link>/zh-cn/tags/%E6%88%90%E9%95%BF/</link>
+      <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E6%88%90%E9%95%BF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debug</title>
-      <link>https://maoxunxing.com/zh-cn/tags/debug/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/debug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fass</title>
-      <link>https://maoxunxing.com/zh-cn/tags/fass/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/fass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>front-end</title>
-      <link>https://maoxunxing.com/zh-cn/tags/front-end/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/front-end/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plugin</title>
-      <link>https://maoxunxing.com/zh-cn/tags/plugin/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/plugin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://maoxunxing.com/zh-cn/tags/programming/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>component</title>
-      <link>https://maoxunxing.com/zh-cn/tags/component/</link>
-      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/component/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A/B Test</title>
-      <link>https://maoxunxing.com/zh-cn/tags/a/b-test/</link>
-      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/a/b-test/</guid>
+      <guid>/zh-cn/tags/%E6%88%90%E9%95%BF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NFT</title>
-      <link>https://maoxunxing.com/zh-cn/tags/nft/</link>
+      <link>/zh-cn/tags/nft/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/nft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>User Growth</title>
-      <link>https://maoxunxing.com/zh-cn/tags/user-growth/</link>
-      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/user-growth/</guid>
+      <guid>/zh-cn/tags/nft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bitcion</title>
-      <link>https://maoxunxing.com/zh-cn/tags/bitcion/</link>
+      <link>/zh-cn/tags/bitcion/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/bitcion/</guid>
+      <guid>/zh-cn/tags/bitcion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>元宇宙</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E5%85%83%E5%AE%87%E5%AE%99/</link>
+      <link>/zh-cn/tags/%E5%85%83%E5%AE%87%E5%AE%99/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E5%85%83%E5%AE%87%E5%AE%99/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>people</title>
-      <link>https://maoxunxing.com/zh-cn/tags/people/</link>
-      <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/people/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>需求分析</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/</link>
-      <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cloud native</title>
-      <link>https://maoxunxing.com/zh-cn/tags/cloud-native/</link>
-      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/cloud-native/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>algorithm</title>
-      <link>https://maoxunxing.com/zh-cn/tags/algorithm/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>interview</title>
-      <link>https://maoxunxing.com/zh-cn/tags/interview/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/interview/</guid>
+      <guid>/zh-cn/tags/%E5%85%83%E5%AE%87%E5%AE%99/</guid>
       <description></description>
     </item>
     
     <item>
       <title>open-source</title>
-      <link>https://maoxunxing.com/zh-cn/tags/open-source/</link>
+      <link>/zh-cn/tags/open-source/</link>
       <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/open-source/</guid>
+      <guid>/zh-cn/tags/open-source/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AVL</title>
-      <link>https://maoxunxing.com/zh-cn/tags/avl/</link>
+      <link>/zh-cn/tags/avl/</link>
       <pubDate>Thu, 26 Aug 2021 15:16:39 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/avl/</guid>
+      <guid>/zh-cn/tags/avl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Slide Window</title>
-      <link>https://maoxunxing.com/zh-cn/tags/slide-window/</link>
+      <link>/zh-cn/tags/slide-window/</link>
       <pubDate>Thu, 26 Aug 2021 15:16:39 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/slide-window/</guid>
+      <guid>/zh-cn/tags/slide-window/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tree</title>
-      <link>https://maoxunxing.com/zh-cn/tags/tree/</link>
+      <link>/zh-cn/tags/tree/</link>
       <pubDate>Thu, 26 Aug 2021 15:16:39 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/tree/</guid>
+      <guid>/zh-cn/tags/tree/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Disjoint</title>
-      <link>https://maoxunxing.com/zh-cn/tags/disjoint/</link>
+      <link>/zh-cn/tags/disjoint/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/disjoint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>career</title>
-      <link>https://maoxunxing.com/zh-cn/tags/career/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/career/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>edge-cache</title>
-      <link>https://maoxunxing.com/zh-cn/tags/edge-cache/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/edge-cache/</guid>
+      <guid>/zh-cn/tags/disjoint/</guid>
       <description></description>
     </item>
     
     <item>
       <title>exception-handle</title>
-      <link>https://maoxunxing.com/zh-cn/tags/exception-handle/</link>
+      <link>/zh-cn/tags/exception-handle/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/exception-handle/</guid>
+      <guid>/zh-cn/tags/exception-handle/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>操作系统</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <title>front-end</title>
+      <link>/zh-cn/tags/front-end/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>/zh-cn/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>/zh-cn/tags/programming/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>树</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E6%A0%91/</link>
+      <link>/zh-cn/tags/%E6%A0%91/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E6%A0%91/</guid>
+      <guid>/zh-cn/tags/%E6%A0%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E7%AE%97%E6%B3%95/</link>
+      <link>/zh-cn/tags/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E7%AE%97%E6%B3%95/</guid>
+      <guid>/zh-cn/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>面试</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E9%9D%A2%E8%AF%95/</link>
+      <link>/zh-cn/tags/%E9%9D%A2%E8%AF%95/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E9%9D%A2%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>翻译</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E7%BF%BB%E8%AF%91/</link>
-      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/%E7%BF%BB%E8%AF%91/</guid>
+      <guid>/zh-cn/tags/%E9%9D%A2%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>动态规划</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <link>/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <guid>/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
       <description></description>
     </item>
     
     <item>
       <title>递归树</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/</link>
+      <link>/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>架构</title>
-      <link>https://maoxunxing.com/zh-cn/tags/%E6%9E%B6%E6%9E%84/</link>
-      <pubDate>Fri, 06 Aug 2021 15:25:06 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/tags/%E6%9E%B6%E6%9E%84/</guid>
+      <guid>/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/</guid>
       <description></description>
     </item>
     

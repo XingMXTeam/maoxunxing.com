@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>maoxunxing&#39;s life</title>
-    <link>https://maoxunxing.com/en/</link>
+    <link>/en/</link>
     <description>Recent content on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Apr 2022 22:37:20 +0800</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/en/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Array Part 4 - K’th Smallest/Largest Element in Unsorted</title>
-      <link>https://maoxunxing.com/en/k-th-smallest-inthearray/</link>
+      <link>/en/k-th-smallest-inthearray/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/k-th-smallest-inthearray/</guid>
+      <guid>/en/k-th-smallest-inthearray/</guid>
       <description>问题 Given an array and a number k where k is smaller than the size of the array, we need to find the k’th smallest element in the given array. It is given that all array elements are distinct.
 Input: arr[] = {7, 10, 4, 3, 20, 15} k = 3 Output: 7
 Input: arr[] = {7, 10, 4, 3, 20, 15} k = 4 Output: 10
@@ -25,10 +25,10 @@ Input: arr[] = {7, 10, 4, 3, 20, 15} k = 4 Output: 10
     
     <item>
       <title>Array Part 3 - Find the Largest Sum of Contiguous Subarray </title>
-      <link>https://maoxunxing.com/en/max-sum/</link>
+      <link>/en/max-sum/</link>
       <pubDate>Sun, 17 Apr 2022 20:44:08 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/max-sum/</guid>
+      <guid>/en/max-sum/</guid>
       <description>问题 Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers that has the largest sum.
 arr = [-2, -3, 4, -1, -2, 1, 5, -3]
 OutPut: 7 Explain: 4 + -1 + -2 + 1 + 5 = 7
@@ -38,10 +38,10 @@ OutPut: 7 Explain: 4 + -1 + -2 + 1 + 5 = 7
     
     <item>
       <title>String Part 1 - Longest Palindromic Substring</title>
-      <link>https://maoxunxing.com/en/substring-longest/</link>
+      <link>/en/substring-longest/</link>
       <pubDate>Sat, 16 Apr 2022 23:59:19 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/substring-longest/</guid>
+      <guid>/en/substring-longest/</guid>
       <description>问题 Given a string, find the longest substring which is a palindrome. For Example:
 Input: Given string :&amp;ldquo;forgeeksskeegfor&amp;rdquo;, Output: &amp;ldquo;geeksskeeg&amp;rdquo;.
 Input: Given string :&amp;ldquo;Geeks&amp;rdquo;, Output: &amp;ldquo;ee&amp;rdquo;.
@@ -51,20 +51,20 @@ low = index - 1 high = index + 1 // 跳掉重复 while( high &amp;lt; n &amp;amp
     
     <item>
       <title>Array Part 2 - Minimum number of jumps to reach end</title>
-      <link>https://maoxunxing.com/en/mininumber-to-end/</link>
+      <link>/en/mininumber-to-end/</link>
       <pubDate>Sat, 16 Apr 2022 22:29:56 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/mininumber-to-end/</guid>
+      <guid>/en/mininumber-to-end/</guid>
       <description>问题 Given an array of integers where each element represents the max number of steps that can be made forward from that element. Write a function to return the minimum number of jumps to reach the end of the array (starting from the first element). If an element is 0, then we cannot move through that element. If we can’t reach the end, return -1. Examples:
 Input: arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9} Output: 3 (1-&amp;gt; 3 -&amp;gt; 8 -&amp;gt; 9) Explanation: Jump from 1st element to 2nd element as there is only 1 step, now there are three options 5, 8 or 9.</description>
     </item>
     
     <item>
       <title>个人如何快速成长</title>
-      <link>https://maoxunxing.com/en/personal-grow/</link>
+      <link>/en/personal-grow/</link>
       <pubDate>Sat, 02 Apr 2022 17:27:56 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/personal-grow/</guid>
+      <guid>/en/personal-grow/</guid>
       <description>背景 方法论虽然虚，但的确有用。在工作中能从更高维度指导你的工作和学习。最近有学一些，做一些总结，欢迎指正。
 学什么 关于学什么，每个人的岗位不同和职级不同，当然情况也不一样。比如针对P6级别，要向P7级别上升。个人理解总结起来就两方面基础能力和业务能力。基础能力要求专精、代码可扩展、可移植，能将能力产品化（有体系化建设）；业务理解深入，可根据数据挖掘定义问题，参与规划，带领至少5人完成项目（个人理解不仅仅是完成上级任务），拿到结果。
 所以需重点关注本领域开发岗知识。对于业务理解，主要从用户是谁、用户价值、获客获利等角度去思考。
@@ -92,39 +92,21 @@ Input: arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9} Output: 3 (1-&amp;gt; 3 -&amp;g
     
     <item>
       <title>A11Y - 无障碍编程</title>
-      <link>https://maoxunxing.com/en/aria/</link>
+      <link>/en/aria/</link>
       <pubDate>Sat, 02 Apr 2022 10:31:39 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/aria/</guid>
+      <guid>/en/aria/</guid>
       <description> What is A11Y? Accessibility (often abbreviated to A11y — as in “a” then 11 characters then “y”) in Web development means enabling as many people as possible to use Web sites, even when those people&amp;rsquo;s abilities are limited in some way.
 网络开发中的可访问性（通常缩写为A11y&amp;ndash;如 &amp;ldquo;a &amp;ldquo;然后是11个字符然后是 &amp;ldquo;y&amp;rdquo;）意味着使尽可能多的人能够使用网站，即使这些人的能力在某些方面受到限制。
 Knowledge Mapping 知识图谱   </description>
     </item>
     
     <item>
-      <title>Tech Writing</title>
-      <link>https://maoxunxing.com/en/tech-writing/</link>
-      <pubDate>Wed, 30 Mar 2022 17:34:38 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/tech-writing/</guid>
-      <description>参考 https://developers.google.com/tech-writing/one</description>
-    </item>
-    
-    <item>
-      <title>Finacial</title>
-      <link>https://maoxunxing.com/en/finacial/</link>
-      <pubDate>Tue, 29 Mar 2022 13:25:48 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/finacial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Tailwind编译报错</title>
-      <link>https://maoxunxing.com/en/notes/tailwind/</link>
+      <link>/en/notes/tailwind/</link>
       <pubDate>Mon, 28 Mar 2022 17:14:19 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/tailwind/</guid>
+      <guid>/en/notes/tailwind/</guid>
       <description>Error: PostCSS plugin postcss-nested requires PostCSS 8.
 [Error - 4:52:42 PM] Tailwind CSS: Cannot set property &amp;lsquo;parent&amp;rsquo; of undefined TypeError: Cannot set property &amp;lsquo;parent&amp;rsquo; of undefined
 npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9</description>
@@ -132,50 +114,39 @@ npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer
     
     <item>
       <title>分享的经验</title>
-      <link>https://maoxunxing.com/en/notes/share-tips/</link>
+      <link>/en/notes/share-tips/</link>
       <pubDate>Sun, 27 Mar 2022 18:15:02 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/share-tips/</guid>
+      <guid>/en/notes/share-tips/</guid>
       <description>技术人员在组内分享的几个经验：
 1 出现新的词汇或者工具需要解释 2 演示时避免频繁切换界面 3 要有主线 4 避免分享内容太多</description>
     </item>
     
     <item>
       <title>页面允许以iframe方式嵌入</title>
-      <link>https://maoxunxing.com/en/notes/allowiframe/</link>
+      <link>/en/notes/allowiframe/</link>
       <pubDate>Sun, 27 Mar 2022 14:48:25 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/allowiframe/</guid>
+      <guid>/en/notes/allowiframe/</guid>
       <description>Content-Security-Policy: frame-ancestors self https://xxxx  通过增加这个，允许iframe被嵌入</description>
     </item>
     
     <item>
       <title>Jsx Runtime报错</title>
-      <link>https://maoxunxing.com/en/notes/jsx-runtime/</link>
+      <link>/en/notes/jsx-runtime/</link>
       <pubDate>Mon, 24 Jan 2022 13:15:59 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/jsx-runtime/</guid>
+      <guid>/en/notes/jsx-runtime/</guid>
       <description>node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &amp;#34;react/jsx-runtime&amp;#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
 &amp;#34;compilerOptions&amp;#34;: { &amp;#34;baseUrl&amp;#34;: &amp;#34;.&amp;#34;, &amp;#34;outDir&amp;#34;: &amp;#34;./lib&amp;#34;, &amp;#34;module&amp;#34;: &amp;#34;esnext&amp;#34;, &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;lib&amp;#34;: [&amp;#34;esnext&amp;#34;, &amp;#34;dom&amp;#34;], &amp;#34;sourceMap&amp;#34;: true, &amp;#34;allowJs&amp;#34;: false, &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;, // change react-jsx to react }</description>
     </item>
     
     <item>
-      <title>Leadershiop</title>
-      <link>https://maoxunxing.com/en/notes/leadershiop/</link>
-      <pubDate>Fri, 24 Dec 2021 11:14:58 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/notes/leadershiop/</guid>
-      <description>单线领导: 就是只对某一件单独的事负责 比如业务负责人： 专注整个业务结果而不是某个具体项目
-如何体现领导力：从亚马逊得到总结
-1 文档化，服务接口化 2 不依赖邮件或者会议沟通 2 文档进行协作</description>
-    </item>
-    
-    <item>
       <title>CSS实现细节梳理</title>
-      <link>https://maoxunxing.com/en/css-i-learned/</link>
+      <link>/en/css-i-learned/</link>
       <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/css-i-learned/</guid>
+      <guid>/en/css-i-learned/</guid>
       <description>布局组件：
  不要用wrapper这样的dom结构， 避免表格思维，有多余的行/列元素   不用javascript控制布局  所有布局和对齐都用Flexbox/Grids实现，不用absolute, display:table, float
 height/line-height，display: inline-block/vertical-align: middle 不可靠
@@ -191,20 +162,11 @@ width: max-content; 防止内容显示不全/被截断：
     </item>
     
     <item>
-      <title>Format Data I Learned</title>
-      <link>https://maoxunxing.com/en/format-data-i-learned/</link>
-      <pubDate>Wed, 22 Dec 2021 21:04:53 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/format-data-i-learned/</guid>
-      <description>D3Format 是一个库能很好地格式化数字</description>
-    </item>
-    
-    <item>
       <title>http参数是数组</title>
-      <link>https://maoxunxing.com/en/notes/http-i-learned/</link>
+      <link>/en/notes/http-i-learned/</link>
       <pubDate>Wed, 22 Dec 2021 20:10:28 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/http-i-learned/</guid>
+      <guid>/en/notes/http-i-learned/</guid>
       <description>请求参数可以是数组么？答案是可以。 我以前一直以为json的就是对象， 或者key=value的形式
 $.ajax({ type: &amp;#34;POST&amp;#34;, url: &amp;#34;index.php&amp;#34;, dataType: &amp;#34;json&amp;#34;, data: JSON.stringify({ paramName: info }), success: function(msg){ $(&amp;#39;.answer&amp;#39;).html(msg); } });  https://stackoverflow.com/questions/8890524/pass-array-to-ajax-request-in-ajax
  </description>
@@ -212,10 +174,10 @@ $.ajax({ type: &amp;#34;POST&amp;#34;, url: &amp;#34;index.php&amp;#34;, dataTyp
     
     <item>
       <title>Typescript类型报错</title>
-      <link>https://maoxunxing.com/en/notes/typescript-i-learned/</link>
+      <link>/en/notes/typescript-i-learned/</link>
       <pubDate>Wed, 22 Dec 2021 18:06:49 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/typescript-i-learned/</guid>
+      <guid>/en/notes/typescript-i-learned/</guid>
       <description>报错：元素隐式具有 &amp;ldquo;any&amp;rdquo; 类型，因为索引表达式的类型不为 &amp;ldquo;number&amp;rdquo;
 const GLOBAL_SYMBOL = Symbol.for(&amp;#39;xxx&amp;#39;); if (!window[GLOBAL_SYMBOL]) { window[GLOBAL_SYMBOL] = {}; } 根目录声明global.d.ts:
 declare interface Window { [GLOBAL_SYMBOL: symbol]: {}; } Could not find a declaration file for module &amp;lsquo;js-cookie&amp;rsquo;. &amp;lsquo;/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js&amp;rsquo; implicitly has an &amp;lsquo;any&amp;rsquo; type.
@@ -227,10 +189,10 @@ https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-f
     
     <item>
       <title>Decode Url Safe</title>
-      <link>https://maoxunxing.com/en/notes/decode-url-safe/</link>
+      <link>/en/notes/decode-url-safe/</link>
       <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/decode-url-safe/</guid>
+      <guid>/en/notes/decode-url-safe/</guid>
       <description>decodeUrlComponent may throw error
 decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) // VM158:1 Uncaught URIError: URI malformed // at decodeURIComponent (&amp;lt;anonymous&amp;gt;) // at &amp;lt;anonymous&amp;gt;:1:1  Solution:
 try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
@@ -238,69 +200,48 @@ try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
     
     <item>
       <title>package.json的files</title>
-      <link>https://maoxunxing.com/en/notes/packagejson/</link>
+      <link>/en/notes/packagejson/</link>
       <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/packagejson/</guid>
+      <guid>/en/notes/packagejson/</guid>
       <description>package.json的files 能保证npm打包包含的内容:
 https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
     </item>
     
     <item>
       <title>Lamb in His Bosom</title>
-      <link>https://maoxunxing.com/en/book-reports/lamb-in-his-bosom/</link>
+      <link>/en/book-reports/lamb-in-his-bosom/</link>
       <pubDate>Thu, 09 Dec 2021 15:05:59 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/book-reports/lamb-in-his-bosom/</guid>
+      <guid>/en/book-reports/lamb-in-his-bosom/</guid>
       <description>It is mainly a depiction of farmers living in Georgia, USA, before the outbreak of the Civil War. They were not plantation owners, nor were they capitalists. Just ordinary people living on a piece of land, needing to feed themselves, fighting against the harsh living conditions, working hard for the need to feed their families, for their families and children, reflecting the different fates of each person, living a cold and warm life.</description>
     </item>
     
     <item>
-      <title>React 18 KeyNote</title>
-      <link>https://maoxunxing.com/en/index.zh-ch/</link>
-      <pubDate>Thu, 09 Dec 2021 14:43:31 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/index.zh-ch/</guid>
-      <description> Suspense request library： Relay
-concurrent rendering </description>
-    </item>
-    
-    <item>
-      <title>现代化React开发最佳实践</title>
-      <link>https://maoxunxing.com/en/how-to-dev-with-react/</link>
-      <pubDate>Thu, 02 Dec 2021 15:00:46 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-dev-with-react/</guid>
-      <description>hooks还是class? 显然hooks目前正大行其道。 class有啥弊端呢？ 1 一般class结合typescript时，需要定义一堆的类型，而Hooks 函数能简化 2 hooks能规避掉HOC的嵌套地狱，HOC层层嵌套一般通过迭代器模式实现，hooks通过组合模式能很好规避这个问题 3 HOC存在消费黑盒，props下传排查难度大，可能某些props丢失导致渲染异常 4 多个HOC使用存在前后依赖关系
-class有啥好处？ 1 消费数据实体的时候，非常清晰。因为面向对象的缘故，而不是散落的字段 2 扩展方便。需要扩展对数据的处理，只要新增方法就行 3 数据之间的关联关系，通过类型判断能清晰理解 4 多个数据判断做UI渲染或者交互时，会显得更清晰
-所以数据模型借助class， 而组件渲染借助hooks。利用装饰器、类元数据、依赖注入，将数据、服务、消费灵活组合。以前需要借助目录规定定义、特殊命名规则定义来完成相互调用和组合。借助装饰器可以在项目任意位置进行自由组合。</description>
-    </item>
-    
-    <item>
       <title>SyntaxError Unexpected Token Export</title>
-      <link>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</link>
+      <link>/en/notes/syntaxerror-unexpected-token-export/</link>
       <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</guid>
+      <guid>/en/notes/syntaxerror-unexpected-token-export/</guid>
       <description>一般是模块不兼容</description>
     </item>
     
     <item>
       <title>readme</title>
-      <link>https://maoxunxing.com/en/notes/reamde/</link>
+      <link>/en/notes/reamde/</link>
       <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/reamde/</guid>
+      <guid>/en/notes/reamde/</guid>
       <description>快速通过命令行查看readme
 readme net 快速安装npmi</description>
     </item>
     
     <item>
       <title>下载文件如何规避跨域问题</title>
-      <link>https://maoxunxing.com/en/notes/download-avoid/</link>
+      <link>/en/notes/download-avoid/</link>
       <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/download-avoid/</guid>
+      <guid>/en/notes/download-avoid/</guid>
       <description>一般我们的下载功能会通过XHR对象 发送，不可避免的会出现跨域问题。
 解决办法：
 可以通过修改为http Get请求，前端通过window.open(downloadLink)的方式下载</description>
@@ -308,10 +249,10 @@ readme net 快速安装npmi</description>
     
     <item>
       <title>Hooks don&#39;t work with yarn link</title>
-      <link>https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/</link>
+      <link>/en/notes/hooks-only-run-in-function-component/</link>
       <pubDate>Mon, 29 Nov 2021 12:06:58 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/</guid>
+      <guid>/en/notes/hooks-only-run-in-function-component/</guid>
       <description>When linking multiple packages in local tnpm, the error Hooks Only Run in Function Component is reported. this situation is usually caused by multiple replicated versions of react.
 The solution is to link all react react-dom to the same
 cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn link cd ../../node_modules/react-dom yarn link cd YOUR_PROJECT yarn link PACKAGE_YOU_DEBUG_LOCALLY yarn link react yarn link react-dom</description>
@@ -319,10 +260,10 @@ cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn l
     
     <item>
       <title>Export Get Undefined</title>
-      <link>https://maoxunxing.com/en/notes/export-get-undefined/</link>
+      <link>/en/notes/export-get-undefined/</link>
       <pubDate>Thu, 25 Nov 2021 15:05:52 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/export-get-undefined/</guid>
+      <guid>/en/notes/export-get-undefined/</guid>
       <description>a.ts:
 export const xx = &amp;#39;123&amp;#39; b.ts:
 import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined This is usually caused by circular references</description>
@@ -330,72 +271,39 @@ import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined This is 
     
     <item>
       <title>My Genius Girlfriend - The Naples Quartet</title>
-      <link>https://maoxunxing.com/en/book-reports/my-genius-girlfriend/</link>
+      <link>/en/book-reports/my-genius-girlfriend/</link>
       <pubDate>Sat, 20 Nov 2021 17:30:45 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/book-reports/my-genius-girlfriend/</guid>
+      <guid>/en/book-reports/my-genius-girlfriend/</guid>
       <description>Overall, around the two women as the main line, with the changing times of those who happen to love, friendship, family matters, pay attention to the psychological description, delicate and fascinating. While people are almost always wrapped up in the context of the times in their lives, Leila maintains an independent personality with different character qualities. Leila comes out of the times and influences her community with her tenacious qualities and smart, independent personality.</description>
     </item>
     
     <item>
       <title>Webpack Federation</title>
-      <link>https://maoxunxing.com/en/notes/webpack-federation/</link>
+      <link>/en/notes/webpack-federation/</link>
       <pubDate>Fri, 19 Nov 2021 14:04:15 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/webpack-federation/</guid>
+      <guid>/en/notes/webpack-federation/</guid>
       <description>https://webpack.js.org/concepts/module-federation/?spm=ata.21736010.0.0.29e513e5BV7ohe
 各个模块独立开发，独立部署。没有依赖。但是可以一起构建。</description>
     </item>
     
     <item>
-      <title>删除所有node_modules</title>
-      <link>https://maoxunxing.com/en/notes/useful-commands/</link>
-      <pubDate>Mon, 15 Nov 2021 14:13:17 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/notes/useful-commands/</guid>
-      <description>find . -name &amp;#34;node_modules&amp;#34; -type d -prune -print -exec rm -rf &amp;#34;{}&amp;#34; \;</description>
-    </item>
-    
-    <item>
       <title>时区的理解</title>
-      <link>https://maoxunxing.com/en/notes/timezone/</link>
+      <link>/en/notes/timezone/</link>
       <pubDate>Thu, 11 Nov 2021 19:29:05 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/timezone/</guid>
+      <guid>/en/notes/timezone/</guid>
       <description>美国西部时间和北京时间相差多少
 　西八时区和东八时区时间差16小时，美国西部时间比北京时间晚16小时；4-10月夏令时间相差15个小时，美国西部时间比北京晚15小时。 例：中国是在UTC+8区上，比格林威治时间快8小时，以西雅图为例，其处于UTC-8区，比格林威治时间慢8小时，总的来说，西雅图时间比北京时间慢16个小时，如果是西雅图时间是下午2：50PM，则北京时间是次日的凌晨6：50.如果是在夏天，则西雅图为UTC-7，下午2：50的话，就是北京的次日凌晨5：50.</description>
     </item>
     
     <item>
-      <title>E-Commerce Concept</title>
-      <link>https://maoxunxing.com/en/e-commerce-concept/</link>
-      <pubDate>Wed, 27 Oct 2021 11:58:30 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/e-commerce-concept/</guid>
-      <description>Takerate 商家的利润中投放到营销的比例
-ROI 投放的金额带来的收益占比
-d到o o到p detail页面到下单页面 下单页面到支付页面
-CPC 按点击付
-CVR conversion rate: 转化率 转化为注册用户、激活用户/付费用户 （转化量/点击量）*100%
-CTR click through rate: 点击率 点击次数/展示次数
-POC Proof of concept 概念验证：数据分析的一种手段 对某些想法的一个不完整的实现，以证明其可行性</description>
-    </item>
-    
-    <item>
-      <title>如何写一个好玩的油猴插件</title>
-      <link>https://maoxunxing.com/en/notes/how-to-write-chrome-plugin/</link>
-      <pubDate>Thu, 21 Oct 2021 20:24:04 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/notes/how-to-write-chrome-plugin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>如何写一个装饰器</title>
-      <link>https://maoxunxing.com/en/notes/how-to-write-decorator/</link>
+      <link>/en/notes/how-to-write-decorator/</link>
       <pubDate>Thu, 21 Oct 2021 19:17:54 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/how-to-write-decorator/</guid>
+      <guid>/en/notes/how-to-write-decorator/</guid>
       <description>本质上是一个高阶组件（参数是函数，返回一个新函数）。结合babel插件进行编译。
  class Provider extends React.Component { render() { return this.props.children } } export const DecoratorDemo = props =&amp;gt; WrappedComponent =&amp;gt; { const Wrapped = React.forwardRef(function(innerProps, ref)) { return ( &amp;lt;Provider {...props} innerProps={...innerProps}&amp;gt; &amp;lt;WrappedComponent {...innerProps} ref={ref} /&amp;gt; &amp;lt;/Provider&amp;gt; ) } // copy static method  return Object.assign(Wrapped, WrappedComponent) }  装饰器的弊端:
 1 在运行时注入隐藏的代码，给那些期望源代码遵循传统语义的开发者造成混乱。 2 可能难以调试，因为装饰器需要编译 3 可能影响api约定 因为是运行时生成的</description>
@@ -403,10 +311,10 @@ POC Proof of concept 概念验证：数据分析的一种手段 对某些想法�
     
     <item>
       <title>NodeJS系列 - Stream</title>
-      <link>https://maoxunxing.com/en/nodejs-network-stream/</link>
+      <link>/en/nodejs-network-stream/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/nodejs-network-stream/</guid>
+      <guid>/en/nodejs-network-stream/</guid>
       <description>什么是流 流不是仅存在于Nodejs, 在unix操作系统中也有类似的概念。 比如管道操作符号
 cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹配内容。实际上，node的流的概念是来源于unix系统，最早是来自Douglas McIlroy管道的概念 最初的来源。
 维基百科：
@@ -415,10 +323,10 @@ cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹
     
     <item>
       <title>Nodejs Debug</title>
-      <link>https://maoxunxing.com/en/notes/nodejs-debug/</link>
+      <link>/en/notes/nodejs-debug/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/nodejs-debug/</guid>
+      <guid>/en/notes/nodejs-debug/</guid>
       <description>1 如何调试
 第一步：启动inspector
 nodemon --inspect-brk xx.js 运行结果：
@@ -429,20 +337,11 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     </item>
     
     <item>
-      <title>How to stand out</title>
-      <link>https://maoxunxing.com/en/how-to-be-different/</link>
-      <pubDate>Wed, 06 Oct 2021 11:20:33 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-be-different/</guid>
-      <description>Last week, I attended a meeting. Now I will talk about some things I learned from the meeting. A guy who will leave Alibaba Group made a talk. He is a high level engineer, he really made something successful and had a strong influence on the company.I really appreciate what learned: The way to learn things better, collaborate more efficiently with your colleague, and be more successful with your product.</description>
-    </item>
-    
-    <item>
       <title>视频制作</title>
-      <link>https://maoxunxing.com/en/notes/make-video/</link>
+      <link>/en/notes/make-video/</link>
       <pubDate>Mon, 27 Sep 2021 18:58:45 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/make-video/</guid>
+      <guid>/en/notes/make-video/</guid>
       <description>流程：
 1 制作脚本： 地点，录制哪些内容，多长
 2 分开录制视频（如有必要声音可以单独录制，关闭视频的原声，其他素材替换视频）
@@ -461,10 +360,10 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     
     <item>
       <title>用增的策略</title>
-      <link>https://maoxunxing.com/en/notes/user-increase/</link>
+      <link>/en/notes/user-increase/</link>
       <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/user-increase/</guid>
+      <guid>/en/notes/user-increase/</guid>
       <description>用增策略
 1 定义用户生命周期和用户成长动线，通过关键时间或者魔法数字发现有效手段
 2 用户流失到达某个阈值提前干预刺激
@@ -477,39 +376,11 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     </item>
     
     <item>
-      <title>前端调试技巧</title>
-      <link>https://maoxunxing.com/en/debug-skill/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/debug-skill/</guid>
-      <description>chrome 保存日志 chrome://net-export/
-查看日志 netlog-viewer</description>
-    </item>
-    
-    <item>
-      <title>如何实现插件能力</title>
-      <link>https://maoxunxing.com/en/how-to-implement-a-plugin-system/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-implement-a-plugin-system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>我对Fass的理解</title>
-      <link>https://maoxunxing.com/en/fass/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/fass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>2021年度总结</title>
-      <link>https://maoxunxing.com/en/target-life/</link>
+      <link>/en/target-life/</link>
       <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/target-life/</guid>
+      <guid>/en/target-life/</guid>
       <description>俗话说，没有梦想和咸鱼有什么区别。所有的梦想都需要扎根于现实，否则就是空中楼阁，痴人说梦。在现实中，要汲取生活的乐趣。而工作是生活的一大部分，工作中的快乐程度决定了你生活中的快乐程度。把你的职业生涯当成一段旅程，深入体验，而不是觉得工作是在浪费时间和生命
 2014我从南昌大学毕业。开始在HitThink公司工作，担任前端工程师。我没有生活目标，只是作为一个工具工作。我和我的女朋友很幸福。 2016.7 ~ 2019.9: 我离开了HitThink公司，因为我开始讨厌和我的同事一起工作。我开始意识到，我应该和优秀的同事和好的公司一起工作。通过推荐，我开始到网易公司面试。幸运的是，我成功了，进入了教育业务部。我学到了很多东西，认识了一些好朋友，也得到了晋升。 2019.9～现在。我曾以为自己会在网易公司工作很长时间。但是，一切都没有按照自己的意愿进行。业务部门的解散使我不得不另找工作，同时我也和我八年的女朋友分手了。我的一切都变了。我还生了一场大病，瘦到了90磅。在网易公司工作时，我的工资并不高。我开始考虑要买自己的房子，我需要提高我的工资。所以我去了阿里巴巴公司面试。 我成功了。当你学了很多东西，努力了很多，你总是可以通过我的内心深处的想法来实现的。在阿里巴巴集团的前两年，我努力工作，除了没有晋升，我觉得我收获的很多。另外终于我在我想要的地方买了自己的房子。如果你不能晋升，你应该尽可能多地学习，尽可能多地写作，尽可能多地展示自己，这就是我现在的想法，因为终究别人的认可，不是我快乐的源泉，我希望能走向自己的一条道路。
 按部就班的工作，在职场上永远不可能突破性的提升，需要往前走一步，没有章法，需要多关注兴趣和爱好，激发自己的工作激情。需要养成良好的习惯，通过科学的方法，管理好自己。2021年我在杭州买房扎根，恍恍惚惚，已经32岁了，一路走来，不那么精彩，大部分时间如行尸走肉般，有犯一些错误，走一些弯路。未来希望尽心尽力感受生活的精彩，身体没有病痛，没有什么遗憾，及时行乐。
@@ -525,36 +396,11 @@ O4: 对工程技术非常熟悉，工程答疑 KR1: 梳理常见工程原理，�
     </item>
     
     <item>
-      <title>我对组件的思考</title>
-      <link>https://maoxunxing.com/en/component-thought/</link>
-      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/component-thought/</guid>
-      <description>关键概念 什么是组件？ 组件是一个较小的、独立于较大的实体或者系统的一部分。它能执行一些功能，可能需要一些输入或产生一些输出。软件中的组件通常是类来表示。
-什么是web组件？
-web组件是一组由web平台API创建的自定义、可重用、封装的HTML标签。用于网页或者网络应用。
-组件有哪些分类?
- 大型库: Antd、Element标准的大库 单组件  复用性高，用完还会维护 业务组件，用完就扔  项目融合型: 耦合其他内容，无法独立使用  30人天）： 按时交付率90%，业务目标达标率80% + 日常：吞吐率85%，需求交付时长80% + 稳定性：无P1P2故障，故障分收敛30% -- 问题分析   方案分析 核心规划 未完待续&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>我对A/B实验的理解</title>
-      <link>https://maoxunxing.com/en/ab-test/</link>
-      <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/ab-test/</guid>
-      <description>关键概念 H0: A、B没有本质差异 H1: A、B确实存在本质差异
-p值： 根据z检验算出p值，如果p&amp;lt;0.05，则取H0 置信区间：是一个我们相当肯定会包含真实值的数据范围 比如95%置信区间 在[0.88, 0.97]范围内。 因为是采样，所以结果有好（在置信区间的数值范围内）有坏（不在范围内）。 解释
-分流原理 《overlapping experiment infrastructure: more, better, faster experimentation》
-未完待续&amp;hellip;</description>
-    </item>
-    
-    <item>
       <title>我对数字货币的理解</title>
-      <link>https://maoxunxing.com/en/bitcion/</link>
+      <link>/en/bitcion/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/bitcion/</guid>
+      <guid>/en/bitcion/</guid>
       <description>Concepts 概念 1 非同质化代币（NFT)
 典型作品： cryptopunks/cryptokitties.co/nbatopshot.com/cryptoslam.io
 平台： opensea.io/sandbox.game/淘宝店发行/Rarible/幻核
@@ -564,113 +410,11 @@ p值： 根据z检验算出p值，如果p&amp;lt;0.05，则取H0 置信区间：
     </item>
     
     <item>
-      <title>How to define the problem</title>
-      <link>https://maoxunxing.com/en/how-to-define-question/</link>
-      <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-define-question/</guid>
-      <description>Why define the question Without a clear definition of the problem, decisions cannot be made and good results, such as great products and solutions, cannot be produced. Albert Einstein said: &amp;ldquo;It is more important to ask a question than to solve a problem.
-What does a problem mean? A problem is a contradiction in things, a mismatch
-There are several general characteristics.
-1 Universality: it is ordinary existence
-2 Movement: in constant flux, what is a problem now may become not a problem later or the problem may become another; the point of the problem is different at different stages.</description>
-    </item>
-    
-    <item>
-      <title>如何识人</title>
-      <link>https://maoxunxing.com/en/how-to-recognise-people/</link>
-      <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-recognise-people/</guid>
-      <description> INTL 人格类型 </description>
-    </item>
-    
-    <item>
-      <title>我对云原生的理解</title>
-      <link>https://maoxunxing.com/en/cloud-native/</link>
-      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/cloud-native/</guid>
-      <description>概念    概念 解释 其他     云原生  适用于云计算的架构理念，实践云原生技术理念的应用或者业务可以最大化享受云计算的技术红利，包括弹性计算、按量计费、无厂商绑定、高SLA    云计算时代 以计算为中心，存储、网络、计算三大件    云原生技术 容器、声明式API、不可变基础设施、服务网络、Serverless      has circle
-  --  has circle
-  运维效率： 应用Serverless化、后端服务Bass化，全托管、免运维 应用和基础设施解耦，中间件可一天升级 统一Fass平台，提升一倍研发效率 稳定性： 永远在线 成本： 大促应用0增成本 资源成本每年优化 上云0成本 可伸缩： 单元封闭配置分片、支撑100w/s的交易能力 可信原生 -- 未完待续..</description>
-    </item>
-    
-    <item>
-      <title>Diff Dom</title>
-      <link>https://maoxunxing.com/en/diff-dom/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/diff-dom/</guid>
-      <description> Question Definition Front-End developer all know React, React use diff dom algorithm to diff two virtual dom tree.
-1 Method 1: Two pointers
-Problem Analysis Time Complex </description>
-    </item>
-    
-    <item>
-      <title>nodejs你需要知道的</title>
-      <link>https://maoxunxing.com/en/node-js/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/node-js/</guid>
-      <description>运维 服务重启
-cd /home/admin/{appname}/bin/ # 仅重启 ./nodejsctl stop &amp;amp;&amp;amp; ./nodejsctl start # 重新解压资源包，然后启动服务 ./nodejsctl pubstart  多租户hsf服务调用 采用中间件透传租户标的方式
-多租户环境部署 1 多租户环境部署 2 通过URL做配置化（生成租户标）
-日志 错误日志 admin/logs/{app}/common-error.log 常规记录日志 admin/logs/{app}/{app}-web.log 应用access日志 admin/{app}/logs/access-123.log Nginx Access log admin/cai/logs/cronolog/2021/.log
-docker 把不常变化的内容(如基础RPM、启动脚本等)做成基础镜像，在应用发布的指定Dockerfile中FROM基础镜像，重复的内容不再执行，应用基础镜像被 推送到全部的构建机器，提高镜像构建速度，再也不用坐在那里干等构建了
-工具 nodemon : watch file change</description>
-    </item>
-    
-    <item>
-      <title>pwa</title>
-      <link>https://maoxunxing.com/en/pwa/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/pwa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>如何写单测</title>
-      <link>https://maoxunxing.com/en/unit-test/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/unit-test/</guid>
-      <description>单测 @types/mocha ts-node
-mocha.opts
---require ts-node/register test/**/*.test.tsimport &amp;#39;mocha&amp;#39;  覆盖率 // cov: nyc mocha npm run cov { &amp;#34;nyc&amp;#34;: { &amp;#34;include&amp;#34;: { &amp;#34;src/*.tx&amp;#34;, &amp;#34;src/**/*.ts&amp;#34; }, &amp;#34;exclude&amp;#34;: { &amp;#34;typings&amp;#34;, &amp;#34;dist&amp;#34; }, &amp;#34;extensions&amp;#34;: { &amp;#34;.ts&amp;#34; }, &amp;#34;require&amp;#34;: { &amp;#34;ts-node/register&amp;#34; }, &amp;#34;reporter&amp;#34;: { &amp;#34;json&amp;#34;, &amp;#34;html&amp;#34; }, &amp;#34;all&amp;#34;: true } }  lerna 下统计测试覆盖率
-nyc lerna run cov --concurrency = 1  spawn-wrapper 注入子进程
-{ &amp;#34;include&amp;#34;: [ &amp;#34;packages/*/src/*.ts&amp;#34;, &amp;#34;packages/*/src/**/*.ts&amp;#34; ], &amp;#34;exclude&amp;#34;: [ &amp;#34;**/typings&amp;#34;, &amp;#34;**/*.</description>
-    </item>
-    
-    <item>
-      <title>学什么系列 - 成长模型</title>
-      <link>https://maoxunxing.com/en/how-to-improve/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-improve/</guid>
-      <description>学什么？ 每个人因为岗位不同，学习的内容不一样，掌握的程度也不一样。这里包含的是成长模型（内容）
-成长模型：
-主要考虑两方面软技能（综合能力：包括沟通、说服、团队建设、影响力等）、硬技能
-硬技能，不同岗位不太一样。比如互联网领域一级领域，针对程序员，主要是二级领域：开发，涵盖内容：
-1 基础知识：底层原理、操作系统、程序语言、算法、数据结构、数据、网络、安全
-2 软件工程：设计模式、规范、日志、单测、故障恢复、方案优劣对比、技术选型、敏捷开发
-3 编程能力：性能、扩展性、维护成本、鲁棒性
-三级领域： 具体开发岗位（*重点学习内容*） 比如前端：交互体验和设计； 服务端： 数据处理和架构
-不同级别的重点不同， 比如低级别主要重深度(关注业务细节) 高级别重广度（关注整体业务）
-理解业务从四个方面： 我们的用户是谁；用户价值；获客方式；获利方式 1 行业总的用户规模；自己的用户规模，用户的特征分布 2 熟悉行业的竞品（行业的排名、竞品的数据和差异对比） 3 常见的获客手段和效果指标 4 获利来源
-更多： 《定位》、《疯传》、《增长黑客》白皮版、《需求：缔造伟大商业传奇的根本力量》、《创新者的窘境》
-题外话：
-关于深度和广度：在一个平台下成长，不用面面俱到，所有都知道细节。有些东西，知道它解决什么问题就行，这是广度，深度是你需要了解所有细节的，在你所在行业领域，它是你的核心竞争力，广度和深度不是割裂开的，广度有时候能加强你的深度。在竞争场，个人也是一个产品，要弱化自己的弱点，充分突出你的竞争力 关于努力工作：不要欺骗自己，要认识自己的长处，做你所热爱领域的事
-不用的用户视角，用户洞察的指标是不一样的。比如用户是程序员，关注的可能是是否好用、高效 客观：跳失漏斗； 表单分析 主观：用户反馈 2 视觉还原 有范：全局风格 有料：物料默认好用 3 稳定性 有流程规范 发布系统稳定，可灰度、可回滚； 监控，流量监控 安全性 4 性能优化 有指标：CWV(core web vital: LCP)/good urls 通用解决方案: PWA、工程化手段: 瘦包、vm直出、请求前置/串行, 单页面改造 -- 人生的成功=思维方式x能力x热情 ---稻盛和夫  取乎其上，得乎其中；取乎其中，得乎其下；取乎其下，则无所得矣 ---孔子  夏虫不可以语于冰者，笃于时也；曲土不可以语于道者，束于教也 ---庄子 领导力： 说服并引领他人达成目标 - 乔哈里视窗 影响力： 个人影响力（能说+会写） + 产品影响力 心态： 聪明 乐观 皮实 自省 道家-顺势而为 业务沉淀（规模可复制，影响力扩大）-〉业务规划（理想） 规划： 行业背景/业务梳理/战略抓手 业务深耕：产品逻辑/行业视野/业务延伸（商业价值、运营模式，包括对行业的思考） 综合能力： 沟通协同、创新思维、市场运营、业务推动 * 带着思考参会、帮助产品完善需求、帮助做会议记要，主动想产品体验问题 帮助改善；后端 测试 文档 规范 组织活动。 * 看大做小，由小及大。 不断调研-找输入-脑暴推导出来的 * PDAC闭环： Plan Do Act Check ### 技术建设的心得 * 懂得借力，共建生态（智能组件、智能搭建 如果有问题直接MR补充 * 闪蝶+Sherry Components * 尽量降低纯业务投入的占比。提升单位时间的输出，或者提炼抽象公共组件/SDK 或者培训外包独立交付 * 明确优先级： 不接零时沟通需求，拒绝倒排；与业务沟通目标：建立技术试点和落地；适当地超出业务预期 * 从业务需求里发现共性诉求（数据分析+和业务对话）- 挖掘需求 - 技术驱动 * 提前规划到KPI： 看差距，规划路径，经常性review，业务增长+技术贡献+团队贡献+技术风险只是一个好绩效， 不成体系 没看到领域深度 - 大概率不能晋升： 专注中台能力建设（Why/how/what) ；找到关键问题（业务问题/研发痛点）- 如何解决问题 用什么技术手段 协同多少资源 投入产出比。别的团队的相似问题，策略是怎么样； 要做成什么样，最终取得什么技术结果和业务结果 * 主动成立技术专项+乐于分享/写文章/CodeReview/团建/招牌新人/帮助-影响团队 ## 软技能 三件套： PPT制作、演讲技巧、思路归纳 PPT: 1种字体（对比度） 3种颜色（同一色系） 突出之重点 层次分明 色彩渐进： 图  表  字 图片大一点，对齐，图片穿插 （搞笑的图 哲理话） 演讲： 根据受众选择主题范围和深度 1 老板要高度 2 架构师要广度和深度 3 工程师要深度 4 产品要业务共识 原则： 1 不要太多用户不懂的概念, 5个概念最多, 用关键字,减少文字篇幅 2 开头内容简单易懂，根据主线循序渐进，后面开始难一点也没关系 3 30%内容PPT 70%靠自己讲 克服紧张： 前三分钟背下；有意识训练；越透彻越自信；开场活跃气氛（段子手 big bang 猜谜语） 穿着： 衬衫、牛仔、休闲鞋 手：开与合 站姿：站中间、与肩同宽的站、面向观众（不要稍息 不要抖腿 不要走动过于频繁 动作太大） 眼睛是窗口： 对着大家讲 环顾观众 适当停顿 互动： 填空题或者选择题 互动之听众提问： 对方提问走近她，回答问题时慢慢离开他，回答问题时不要只盯着提问者（避免和提问者单独对话） 提前准备可能问到的问题 遇到棘手问题： 特别细节/不属于演讲领域/无厘头 请别人记下，会后讨论/把问题抛给别人 语言表达：抑扬顿挫/语速适中/声音大小适中/吐词清晰 像聊天一样 照顾听众的心理 ## 关于能力调研 要求or问题 | 做得好的（次数） | 不好的（次数) | 备注 ---------|----------|---------|--------- 技术深度 | 1 | 7 | 提效数据如何推导；把一件事做到极致；中后台同学架构方向思考，而不是组件、模版、可视化三件套；勇于颠覆最佳实践 技术视野 | 1 | 5 | 单点；技术产品化输出少，0-1多，1-n少 数据化思维做突破；集团基建之上构建业务能力；复用跨BU的能力/方案充分的调研/避免重复建设；复用跨BU的能力保证有沉淀，不是只有成为平台是沉淀 业务价值和技术的关联 | 7 | 业务目标-问题识别-技术选型的视野，方案对比没有推导，缺乏深入挖掘；价值关联;技术助力业务用数据说话；结果和定义问题的匹配 专业度：系统学习和实践、未来发展的思考（共建） | 1 | 5 | 形成体系或者体系的互补（事小，但思考的体系化、结构化思维）；关键问题定义不清，功能大而全；多看书，多总结 技术架构/方案的精准、合理性、随着业务的演进（业务前端） | | 1 业务理解 | | 8 | 全链路;业务背后的思考和价值; 缺乏业务/技术持续规划（昨天、今天、明天）要有推导，确定性比较高的思考;业务影响力，对未来几年业务的影响不足; 业务目标，产品策略，数据关注不够；解决方案型前端 ## 产品思维 1 无形无价的而免费的产品，核心竞争力是体验； 有价和有型的产品的核心竞争力是品牌 2 团队的综合能力要求越来越高 3 每个人都可以发表意见，决策权归LD -- 本质-抽象 --   -- 脑图 文档 -- 其他文章 学什么系列 - 成长模型</description>
-    </item>
-    
-    <item>
       <title>开源的价值</title>
-      <link>https://maoxunxing.com/en/notes/open-source-value/</link>
+      <link>/en/notes/open-source-value/</link>
       <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/open-source-value/</guid>
+      <guid>/en/notes/open-source-value/</guid>
       <description>1 概念
 教堂： 商业软件
 集市： 开源
@@ -688,123 +432,11 @@ CopyLeft/病毒型协议： 学术型要求+衍生作品发行了必须也开源
     </item>
     
     <item>
-      <title>怎么学系列 - 方法论</title>
-      <link>https://maoxunxing.com/en/how-to-improve2/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-improve2/</guid>
-      <description>怎么学？ 1 认知优先 确保你有优质的信息来源，这个需要有意识地收集，这样能保证掌握最新资料：
- 优质书 优质培训 牛逼平台+牛逼的人+开放的心态  学习时间分配 海绵学习法 工作时间并不代表学习时间，需要主动学习复杂度更强的内容，尽量每天1小时
-学习方法论 掌握正确的学习方法论能事半功倍，但是基本上也脱离不了1万小时定律（连续10年平均每天三小时）
- 分解等级-&amp;gt;分解技能-&amp;gt;分解行动
- 链式提升深度(why、领域分层图/细节分层图)、比较提升宽度(which、思维导图)、环式提升广度
-  记忆理解 如何对信息进行整理归纳，强化。脑海中有结构，就像图书馆随时能索引。
- 理解思路： 金子塔原理和思维导图 理解发展规律： 时间线模型 理解系统： 架构图 理解业务： 流程图 理解代码： 类图 加强记忆： 卡片工具 比如Anki  效果验证 以教带学/以玩带学，根据721原则，人的大部分经验/能力来自实践，所以要加强实践的比例。
- 文章分享 会议分享 项目实践 小组讨论  更多：《认知天性：让学习变得轻而易举的心理学规律》
-其他文章 学什么系列 - 成长模型
-怎么学系列 - 方法论
-评价标准系列 - 衡量能力
-怎么学系列 - 解决问题
-评价标准系列 - 影响力</description>
-    </item>
-    
-    <item>
-      <title>怎么学系列 - 解决问题</title>
-      <link>https://maoxunxing.com/en/how-to-improve3/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-improve3/</guid>
-      <description>衡量能力 基础意味着会做，熟练意味着做好，精通意味着优化（采取不同的方式、思维和工具来做同样的事情，并取得突破，引入新技术到工作中也算优化）
-从COMD模型说明一个人的能力模型：
-4个复杂度：
- 规模复杂度： 比如代码量、团队人数、功能点、关联方，系统数量 时间复杂度： 3年业务规划 环境复杂度： 创新复杂度： 理论、思想、技巧的创新 从0到1 &amp;gt; 架构重构 &amp;gt; 项目方案设计 &amp;gt; 编码  3个维度：
-技术、管理、业务
-其他文章 学什么系列 - 成长模型
-怎么学系列 - 方法论
-评价标准系列 - 衡量能力
-怎么学系列 - 解决问题
-评价标准系列 - 影响力</description>
-    </item>
-    
-    <item>
-      <title>怎么学系列 - 解决问题</title>
-      <link>https://maoxunxing.com/en/how-to-improve4/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-improve4/</guid>
-      <description>解决问题 有了能力以后，需要去解决实际的问题。才能最大化你的价值。如何评价一个问题被解决的很好：
-1 具备闭环思维：从端到端的角度去思考和落地 也就是事前规划、事中执行、事后总结
-事前： 为什么，价值？ 事后： 上线后的结果？具体的业务数据？通过这个事我收获了什么？
-事前： OKR规划
-事中： 3C方案设计法；PDCA执行法；5W根因分析法；5S问题处理法
-事后： 4D总结法；四线复盘法；金子塔汇报法
-2 方法论指导： 更有说服力（前提保证方法论是否适用当前场景） 定义问题：
-5W2H模型 &amp;gt; 5W2H分析法又叫七问分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。
- why: 为什么要做这个工作
- what: 内容是什么
- where： 在哪里做
- when: 什么时候来做
- who: 由谁来做
- how: 怎么做
- how much: 要花多少时间和资源
-  本质就是定义问题：
-定义问题不清楚，则无法做决策，也就无法产出好的结果，比如优秀的产品和解决方案。爱因斯坦曾说： &amp;gt; 提出一个问题比解决一个问题更重要。
-问题本质就是事物的矛盾，不匹配
-一般有几个特点：
-1 普遍性：是普通存在的
-2 运动性：不断变化中，现在是问题可能后面就变成不是问题了或者问题变成另外一个了； 不同阶段，问题点不一样。通过指标可以反应出运动性，时间和空间上演进 3 自包含性：问题一般存在更大的问题或者子问题。筛选出需要你解决，并且能解决好的问题非常关键。
-4 可度量： 问题的严重程度可以被度量出来
-5 关联性：问题之间可能存在关联或者因果，需要考虑它的基本命题
-任何名词都有结构  任何动词都有流程  任何形容词都度量 步骤： 1 现象/新概念（结构） 2 现有的方案副作用，多维度思考（洞见，历史） 3 梳理指标（度量问题的严重性，现在） 5 发现机会（本质） 6 规划（未来） -- OKR规划： 关注业务目标，KPI关注数据指标。</description>
-    </item>
-    
-    <item>
-      <title>评价标准系列 - 影响力</title>
-      <link>https://maoxunxing.com/en/how-to-improve5/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-improve5/</guid>
-      <description>影响力 如果你的产品解决了问题。 那如何把这个产品推销给其他同学。你需要把你的故事讲好。 先抛一个理论：SCQA模型
-S（Situation）情景——由大家都熟悉的情景、事实引入。
-C（Complication）冲突——实际情况往往和我们的要求有冲突。
-Q（Question）疑问——怎么办？
-A（Answer）回答——我们的解决方案是
-通过结构化的表达，将事情讲清楚
-晋升 在职场可能通过晋升带来了影响力。但是解决了问题就能晋升么？不一定。因为首先要被认可，其次要通过答辩（面评）。
-认可要点：
-1 主动原则
- 主动沟通：沟通工作想法和意愿，听从建议 主动接收：业务信息：上线效果，技术架构。从晋升角度考虑查漏补缺  2 成长原则
-方案设计-&amp;gt;架构设计-&amp;gt;系统优化 不断提升自己的能力点
-3 价值原则
-结合个人业务、岗位要求，学习对公司有价值的知识
-SOP：
-1 以上三点做的好，拿到结果，并且能力到精通
-2 达到下一级别的要求的能力
-3 主动找下一级别的事做
-面评要点：
-1 自我介绍（所在团队和业务、当前级别、晋升级别）
-2 当前职责：负责业务、是否带团队、团队规模、关键岗位
-3 工作经历：在职时间/公司名称/最高岗位 项目：最多三个
-4 自述： 金字塔原理（讲what，答辩讲why）
-达到了什么能力
-论据1 论据2 论据3
-STAR STAR STAR
-核心论据： 根据《学什么》那一节，对应能力模型能力强相关的复杂度高的工作。持续时间长、规模大、不确定性高、有一定挑战和创新性。
-辅助论据： 参加大会、文章分享、虚拟组长、参与开源等
-S: 必须是总结性质（讲的时候细说）
-T: 重点你负责的内容和担任的角色
-A: 最核心的部分做了什么（不用写为什么这么做），一张图（架构图、思维导图）+ 核心的几个点 其他靠讲
-R: 效率、效果、质量、成本。虚实结合（定量+定性）
-比如 提升了系统性能，xx基数从多少提升到多少
- 先有基数再有比例 用绝对值（从多少提升到多少 不用写比例） 和钱相关（成本）   5 自我总结+发展规划</description>
-    </item>
-    
-    <item>
       <title>Array Part 1 - 长度为k的子数组的最大值</title>
-      <link>https://maoxunxing.com/en/maximum-of-all-subarrays-of-size-k/</link>
+      <link>/en/maximum-of-all-subarrays-of-size-k/</link>
       <pubDate>Thu, 26 Aug 2021 15:16:39 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/maximum-of-all-subarrays-of-size-k/</guid>
+      <guid>/en/maximum-of-all-subarrays-of-size-k/</guid>
       <description>问题 Give an array and an integer K, find the maximum for each and every condiguous subarray of size k.
 Examples:
 Input: arr[] = { 1, 2, 3, 1, 4, 5, 2, 3, 6 } K = 3
@@ -816,20 +448,11 @@ Maximum of 1, 4, 5 is 5</description>
     </item>
     
     <item>
-      <title>Edge Cache</title>
-      <link>https://maoxunxing.com/en/edge-cache/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/edge-cache/</guid>
-      <description>Situation  what is edge cache what problem it solves?  the first visit webpage cannot make advantage of cache, like pwa, connection reuse.The client side cache can also not be used when first visit.  what is the edge cache node position of request link what the difference with ssr、csr/cdn  ssr long server time make the page white time long csr/cdn cache all html to the cdn. because every user have different page view, it is not realibility.</description>
-    </item>
-    
-    <item>
       <title>Graphs Part 1 - Detect Cycle in an Undirected Graph</title>
-      <link>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</link>
+      <link>/en/detect-cycle-in-an-undirected-graph/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</guid>
+      <guid>/en/detect-cycle-in-an-undirected-graph/</guid>
       <description>Question Definition (S &amp;amp; T) Given an undirected graph, how to check if there is a cycle in the graph ?
 Example 1:
 Input：n = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }
@@ -841,40 +464,11 @@ Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }</description>
     </item>
     
     <item>
-      <title>The Nature of Computers</title>
-      <link>https://maoxunxing.com/en/code-computer/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/code-computer/</guid>
-      <description>Coding principles  Computers are by nature a world of 0/1, and if expressing this world in 0/1. The conclusion is: it needs to be encoded by.
- Number encoding  First how to express numbers
- ** Why is there a complement code? **
- Complement is to facilitate computer operations, it is easier for computers to do addition
- For example: 5+(-3) is calculated by complement (definition: positive number remains the same, negative number is inverted and +1)</description>
-    </item>
-    
-    <item>
-      <title>前端工程师的成长模型指标</title>
-      <link>https://maoxunxing.com/en/front-end-engineer-future/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/front-end-engineer-future/</guid>
-      <description> 上一篇谈及前端工程师的学习和成长之道。这一篇主要谈前端工程师的成长模型指标。
-基础知识 网络 Http代理需要安装可信证书。隧道代理是建立TCP连接。
-安全 1 csrf: 构造好一个站内URL或者第三方站点放置自动提交的表单，当用户在登陆态时，用户点击了。执行了攻击者的请求。比如在我们自己的页面，伪造了一个用户请求，导致用户资产损失，或者删除用户等操作。比如通过IM提供一个删除差评的接口，就删除了。
-软件工程  对软件设计方法的理解，设计模式
- 编程能力  最终落地到产品的能力。主要是架构
- 微前端 模型驱动 1 交付高质量、高还原度产品 2 高标准化
-可视化搭建是布局 模型驱动： 模型驱动逻辑/流程/视图。 业务数据模型-1对n-&amp;gt;组件协议-&amp;gt;插槽映射协议-1对n-&amp;gt;视图协议-&amp;gt;页面
-提前计算好 数据立方 需要的时候取出来就行 -- </description>
-    </item>
-    
-    <item>
       <title>前端异常处理</title>
-      <link>https://maoxunxing.com/en/notes/exception-handle/</link>
+      <link>/en/notes/exception-handle/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/notes/exception-handle/</guid>
+      <guid>/en/notes/exception-handle/</guid>
       <description>1 异常隔离
 try {} catch {}
 主要场景vm js代码
@@ -884,22 +478,11 @@ promise.then().catch()
     </item>
     
     <item>
-      <title>[Translation] How To Work Hard</title>
-      <link>https://maoxunxing.com/en/how-to-work-hard/</link>
-      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/en/how-to-work-hard/</guid>
-      <description>Paul Graham
-原文：http://paulgraham.com/hwh.html
- My summary: The essence of hard work is to not cheat yourself, to recognize your strengths, and to do what you love in your field.</description>
-    </item>
-    
-    <item>
       <title>Tree Part 2 - Given N, Find The Total Number of Unique BSTs</title>
-      <link>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</link>
+      <link>/en/find-the-total-number-of-unique-bsts-of-n/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</guid>
+      <guid>/en/find-the-total-number-of-unique-bsts-of-n/</guid>
       <description>Question Definition (S &amp;amp; T) Given N, Find the total number of unique BSTs that can be made using values from 1 to N
 Examples:
 Input: n = 3
@@ -911,49 +494,30 @@ Problem Analysis(A) At first, I did not quite understand what the question means
     </item>
     
     <item>
-      <title>我家是如何装修的</title>
-      <link>https://maoxunxing.com/en/new-home/</link>
-      <pubDate>Thu, 12 Aug 2021 10:36:40 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/new-home/</guid>
-      <description>装修模式选择 独立设计师+独立项目经理（半包）+监理
-怎么选 好的设计师： 兼顾功能性和美观性，从工艺角度评估可行性，有多个成熟类似案例 设计师分类： *</description>
-    </item>
-    
-    <item>
-      <title>How Web Works</title>
-      <link>https://maoxunxing.com/en/website-architecture/</link>
-      <pubDate>Fri, 06 Aug 2021 15:25:06 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/website-architecture/</guid>
-      <description>Basic Concepts    Category Name Explanation     Network VPC Virtual Private Cloud Virtual Private Cloud. Why Virtual Private? It is a collection of resources that run on a public cloud, isolating a portion of the public cloud resources for a particular user, and giving that user private access to resources that feel like they are using their own private cloud. What is a cloud? A virtualized network built on top of a physical one, VPCs use tunneling technology to isolate the virtual network.</description>
-    </item>
-    
-    <item>
       <title>About</title>
-      <link>https://maoxunxing.com/en/about/</link>
+      <link>/en/about/</link>
       <pubDate>Tue, 15 Jun 2021 22:49:06 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/about/</guid>
+      <guid>/en/about/</guid>
       <description>-- Mao Xunxing is a front-end developer working at Alibaba Group at Hangzhou, China. He graduated from NanChang University in 2014 with a BS in Computer Science. You can follow him on Twitter @maoxunxing, and GitHub, or reach him by email at xunxing1989@gmail.com.
 If you happen to speak Chinese, his Chinese name is 毛训星(máo xùn xīng), you can follow him on 知乎 and 豆瓣.</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://maoxunxing.com/en/projects/</link>
+      <link>/en/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/projects/</guid>
+      <guid>/en/projects/</guid>
       <description>Book Translation (2020) 《Modern Javascript for the impatient》</description>
     </item>
     
     <item>
       <title>Vortex - Representative works of Junji Ito</title>
-      <link>https://maoxunxing.com/en/book-reports/vortex/</link>
+      <link>/en/book-reports/vortex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/book-reports/vortex/</guid>
+      <guid>/en/book-reports/vortex/</guid>
       <description> Divided into two volumes, it is a classic Japanese horror manga. To be honest, I&amp;rsquo;m a bit uncomfortable with this genre.
 This book looks all write whirlwind, actually a bit of realistic allegory. Mainly reflects the current situation of Japanese people under the economic problems of Japan at that time. When everyone is tied to capital, humanity is lost, society becomes deformed&amp;hellip;
 What I Liked  Reacts to the problems in society through abstraction ♪ The storytelling is stronger  ♪ What I Disliked  Look a little horror movie feeling  Key Takeaways  Be wary of capital and be an independent and free soul  </description>

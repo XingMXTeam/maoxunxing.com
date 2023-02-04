@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ES6 on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/tags/es6/</link>
+    <link>/zh-cn/tags/es6/</link>
     <description>Recent content in ES6 on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Oct 2021 19:17:54 +0800</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/tags/es6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>如何写一个装饰器</title>
-      <link>https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/</link>
+      <link>/zh-cn/notes/how-to-write-decorator/</link>
       <pubDate>Thu, 21 Oct 2021 19:17:54 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/</guid>
+      <guid>/zh-cn/notes/how-to-write-decorator/</guid>
       <description>本质上是一个高阶组件（参数是函数，返回一个新函数）。结合babel插件进行编译。
  class Provider extends React.Component { render() { return this.props.children } } export const DecoratorDemo = props =&amp;gt; WrappedComponent =&amp;gt; { const Wrapped = React.forwardRef(function(innerProps, ref)) { return ( &amp;lt;Provider {...props} innerProps={...innerProps}&amp;gt; &amp;lt;WrappedComponent {...innerProps} ref={ref} /&amp;gt; &amp;lt;/Provider&amp;gt; ) } // copy static method  return Object.assign(Wrapped, WrappedComponent) }  装饰器的弊端:
 1 在运行时注入隐藏的代码，给那些期望源代码遵循传统语义的开发者造成混乱

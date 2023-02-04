@@ -2,68 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>front-end on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/tags/front-end/</link>
+    <link>/zh-cn/tags/front-end/</link>
     <description>Recent content in front-end on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>我对Fass的理解</title>
-      <link>https://maoxunxing.com/zh-cn/fass/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/fass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>我对组件的思考</title>
-      <link>https://maoxunxing.com/zh-cn/component-thought/</link>
-      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/component-thought/</guid>
-      <description>关键概念 什么是组件？ 组件是一个较小的、独立于较大的实体或者系统的一部分。它能执行一些功能，可能需要一些输入或产生一些输出。软件中的组件通常是类来表示。
-什么是web组件？
-web组件是一组由web平台API创建的自定义、可重用、封装的HTML标签。用于网页或者网络应用。
-组件有哪些分类?
- 大型库: Antd、Element标准的大库 单组件  复用性高，用完还会维护 业务组件，用完就扔  项目融合型: 耦合其他内容，无法独立使用  30人天）： 按时交付率90%，业务目标达标率80% + 日常：吞吐率85%，需求交付时长80% + 稳定性：无P1P2故障，故障分收敛30% -- 问题分析   方案分析 核心规划 未完待续&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Edge Cache</title>
-      <link>https://maoxunxing.com/zh-cn/edge-cache/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/edge-cache/</guid>
-      <description>Situation  what is edge cache what problem it solves?  the first visit webpage cannot make advantage of cache, like pwa, connection reuse.The client side cache can also not be used when first visit.  what is the edge cache node position of request link what the difference with ssr、csr/cdn  ssr long server time make the page white time long csr/cdn cache all html to the cdn. because every user have different page view, it is not realibility.</description>
-    </item>
-    
-    <item>
-      <title>前端工程师的成长模型指标</title>
-      <link>https://maoxunxing.com/zh-cn/front-end-engineer-future/</link>
-      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/front-end-engineer-future/</guid>
-      <description> 上一篇谈及前端工程师的学习和成长之道。这一篇主要谈前端工程师的成长模型指标。
-基础知识 网络 Http代理需要安装可信证书。隧道代理是建立TCP连接。
-安全 1 csrf: 构造好一个站内URL或者第三方站点放置自动提交的表单，当用户在登陆态时，用户点击了。执行了攻击者的请求。比如在我们自己的页面，伪造了一个用户请求，导致用户资产损失，或者删除用户等操作。比如通过IM提供一个删除差评的接口，就删除了。
-软件工程  对软件设计方法的理解，设计模式
- 编程能力  最终落地到产品的能力。主要是架构
- 微前端 模型驱动 1 交付高质量、高还原度产品 2 高标准化
-可视化搭建是布局 模型驱动： 模型驱动逻辑/流程/视图。 业务数据模型-1对n-&amp;gt;组件协议-&amp;gt;插槽映射协议-1对n-&amp;gt;视图协议-&amp;gt;页面
-提前计算好 数据立方 需要的时候取出来就行 -- </description>
-    </item>
     
     <item>
       <title>前端异常处理</title>
-      <link>https://maoxunxing.com/zh-cn/notes/exception-handle/</link>
+      <link>/zh-cn/notes/exception-handle/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/exception-handle/</guid>
+      <guid>/zh-cn/notes/exception-handle/</guid>
       <description>1 异常隔离 : 主要场景vm js代码
 try {} catch {} 2 promise异常处理: 主要场景处理try catch无法捕获的异常</description>
     </item>

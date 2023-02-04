@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Disjoint on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/tags/disjoint/</link>
+    <link>/zh-cn/tags/disjoint/</link>
     <description>Recent content in Disjoint on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/disjoint/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/tags/disjoint/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>图系列 - 检测无定向图中的环</title>
-      <link>https://maoxunxing.com/zh-cn/detect-cycle-in-an-undirected-graph/</link>
+      <link>/zh-cn/detect-cycle-in-an-undirected-graph/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/detect-cycle-in-an-undirected-graph/</guid>
+      <guid>/zh-cn/detect-cycle-in-an-undirected-graph/</guid>
       <description>问题定义 给定一个无向图，如何检查图中是否有一个环 ?
 用例1:
 输入：n = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }

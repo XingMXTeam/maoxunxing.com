@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/notes/</link>
+    <link>/zh-cn/notes/</link>
     <description>Recent content in Notes on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 28 Mar 2022 17:14:19 +0800</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/notes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tailwind编译报错</title>
-      <link>https://maoxunxing.com/zh-cn/notes/tailwind/</link>
+      <link>/zh-cn/notes/tailwind/</link>
       <pubDate>Mon, 28 Mar 2022 17:14:19 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/tailwind/</guid>
+      <guid>/zh-cn/notes/tailwind/</guid>
       <description>Error: PostCSS plugin postcss-nested requires PostCSS 8.
 [Error - 4:52:42 PM] Tailwind CSS: Cannot set property &amp;lsquo;parent&amp;rsquo; of undefined TypeError: Cannot set property &amp;lsquo;parent&amp;rsquo; of undefined
 npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9</description>
@@ -24,50 +24,39 @@ npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer
     
     <item>
       <title>分享的经验</title>
-      <link>https://maoxunxing.com/zh-cn/notes/share-tips/</link>
+      <link>/zh-cn/notes/share-tips/</link>
       <pubDate>Sun, 27 Mar 2022 18:15:02 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/share-tips/</guid>
+      <guid>/zh-cn/notes/share-tips/</guid>
       <description>技术人员分享的几个经验：
 1 出现新的词汇或者工具需要解释 2 演示时避免频繁切换界面，跳来跳去 3 要有主线 4 避免分享内容太多</description>
     </item>
     
     <item>
       <title>页面允许以iframe方式嵌入</title>
-      <link>https://maoxunxing.com/zh-cn/notes/allowiframe/</link>
+      <link>/zh-cn/notes/allowiframe/</link>
       <pubDate>Sun, 27 Mar 2022 14:48:25 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/allowiframe/</guid>
+      <guid>/zh-cn/notes/allowiframe/</guid>
       <description>Content-Security-Policy: frame-ancestors self https://xxxx  通过增加这个，允许iframe被嵌入</description>
     </item>
     
     <item>
       <title>Jsx Runtime报错</title>
-      <link>https://maoxunxing.com/zh-cn/notes/jsx-runtime/</link>
+      <link>/zh-cn/notes/jsx-runtime/</link>
       <pubDate>Mon, 24 Jan 2022 13:15:59 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/jsx-runtime/</guid>
+      <guid>/zh-cn/notes/jsx-runtime/</guid>
       <description>node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 10 │ import { jsx as _jsx } from &amp;#34;react/jsx-runtime&amp;#34;; ╵ ~~~~~~~~~~~~~~~~~~~ error when starting dev server: Error: Build failed with 1 error: node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/lib/hooks/medusa/index.js:10:28: error: Could not read from file: /Users/maoxunxing/alibaba/ae-seller-components/node_modules/.vite-plugin-externals/react.1a37f6a0.js/jsx-runtime 解决方案： 修改tsconfig.ts
 &amp;#34;compilerOptions&amp;#34;: { &amp;#34;baseUrl&amp;#34;: &amp;#34;.&amp;#34;, &amp;#34;outDir&amp;#34;: &amp;#34;./lib&amp;#34;, &amp;#34;module&amp;#34;: &amp;#34;esnext&amp;#34;, &amp;#34;target&amp;#34;: &amp;#34;es6&amp;#34;, &amp;#34;lib&amp;#34;: [&amp;#34;esnext&amp;#34;, &amp;#34;dom&amp;#34;], &amp;#34;sourceMap&amp;#34;: true, &amp;#34;allowJs&amp;#34;: false, &amp;#34;jsx&amp;#34;: &amp;#34;react&amp;#34;, // change react-jsx to react }</description>
     </item>
     
     <item>
-      <title>Leadershiop</title>
-      <link>https://maoxunxing.com/zh-cn/notes/leadershiop/</link>
-      <pubDate>Fri, 24 Dec 2021 11:14:58 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/notes/leadershiop/</guid>
-      <description>单线领导: 就是只对某一件单独的事负责 比如业务负责人： 专注整个业务结果而不是某个具体项目
-如何体现领导力：从亚马逊得到总结
-1 文档化，服务接口化 2 不依赖邮件或者会议沟通 2 文档进行协作</description>
-    </item>
-    
-    <item>
       <title>http参数是数组</title>
-      <link>https://maoxunxing.com/zh-cn/notes/http-i-learned/</link>
+      <link>/zh-cn/notes/http-i-learned/</link>
       <pubDate>Wed, 22 Dec 2021 20:10:28 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/http-i-learned/</guid>
+      <guid>/zh-cn/notes/http-i-learned/</guid>
       <description>请求参数可以是数组么？答案是可以。 我以前一直以为json的就是对象， 或者key=value的形式
 $.ajax({ type: &amp;#34;POST&amp;#34;, url: &amp;#34;index.php&amp;#34;, dataType: &amp;#34;json&amp;#34;, data: JSON.stringify({ paramName: info }), success: function(msg){ $(&amp;#39;.answer&amp;#39;).html(msg); } });  https://stackoverflow.com/questions/8890524/pass-array-to-ajax-request-in-ajax
  </description>
@@ -75,10 +64,10 @@ $.ajax({ type: &amp;#34;POST&amp;#34;, url: &amp;#34;index.php&amp;#34;, dataTyp
     
     <item>
       <title>Typescript类型报错</title>
-      <link>https://maoxunxing.com/zh-cn/notes/typescript-i-learned/</link>
+      <link>/zh-cn/notes/typescript-i-learned/</link>
       <pubDate>Wed, 22 Dec 2021 18:06:49 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/typescript-i-learned/</guid>
+      <guid>/zh-cn/notes/typescript-i-learned/</guid>
       <description>报错：元素隐式具有 &amp;ldquo;any&amp;rdquo; 类型，因为索引表达式的类型不为 &amp;ldquo;number&amp;rdquo;
 const GLOBAL_SYMBOL = Symbol.for(&amp;#39;xxx&amp;#39;); if (!window[GLOBAL_SYMBOL]) { window[GLOBAL_SYMBOL] = {}; } 根目录声明global.d.ts:
 declare interface Window { [GLOBAL_SYMBOL: symbol]: {}; } Could not find a declaration file for module &amp;lsquo;js-cookie&amp;rsquo;. &amp;lsquo;/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js&amp;rsquo; implicitly has an &amp;lsquo;any&amp;rsquo; type.
@@ -90,10 +79,10 @@ https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-f
     
     <item>
       <title>Decode Url Safe</title>
-      <link>https://maoxunxing.com/zh-cn/notes/decode-url-safe/</link>
+      <link>/zh-cn/notes/decode-url-safe/</link>
       <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/decode-url-safe/</guid>
+      <guid>/zh-cn/notes/decode-url-safe/</guid>
       <description>decodeUrlComponent 可能会抛出异常
 decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) // VM158:1 Uncaught URIError: URI malformed // at decodeURIComponent (&amp;lt;anonymous&amp;gt;) // at &amp;lt;anonymous&amp;gt;:1:1  解决方法：
 try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
@@ -101,39 +90,39 @@ try { decodeURIComponent(&amp;#39;%C4%97%&amp;#39;) } catch(){ }</description>
     
     <item>
       <title>package.json的files</title>
-      <link>https://maoxunxing.com/zh-cn/notes/packagejson/</link>
+      <link>/zh-cn/notes/packagejson/</link>
       <pubDate>Fri, 10 Dec 2021 10:12:21 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/packagejson/</guid>
+      <guid>/zh-cn/notes/packagejson/</guid>
       <description>package.json的files 能保证npm打包包含的内容:
 https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files</description>
     </item>
     
     <item>
       <title>SyntaxError Unexpected Token Export</title>
-      <link>https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/</link>
+      <link>/zh-cn/notes/syntaxerror-unexpected-token-export/</link>
       <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/</guid>
+      <guid>/zh-cn/notes/syntaxerror-unexpected-token-export/</guid>
       <description>一般是模块不兼容</description>
     </item>
     
     <item>
       <title>readme</title>
-      <link>https://maoxunxing.com/zh-cn/notes/reamde/</link>
+      <link>/zh-cn/notes/reamde/</link>
       <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/reamde/</guid>
+      <guid>/zh-cn/notes/reamde/</guid>
       <description>快速通过命令行查看readme
 readme net 快速安装npmi</description>
     </item>
     
     <item>
       <title>下载文件如何规避跨域问题</title>
-      <link>https://maoxunxing.com/zh-cn/notes/download-avoid/</link>
+      <link>/zh-cn/notes/download-avoid/</link>
       <pubDate>Wed, 01 Dec 2021 14:53:11 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/download-avoid/</guid>
+      <guid>/zh-cn/notes/download-avoid/</guid>
       <description>一般我们的下载功能会通过XHR对象 发送，不可避免的会出现跨域问题。
 解决办法：
 可以通过修改为http Get请求，前端通过window.open(downloadLink)的方式下载</description>
@@ -141,10 +130,10 @@ readme net 快速安装npmi</description>
     
     <item>
       <title>Hooks don&#39;t work with yarn link</title>
-      <link>https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/</link>
+      <link>/zh-cn/notes/hooks-only-run-in-function-component/</link>
       <pubDate>Mon, 29 Nov 2021 12:06:58 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/</guid>
+      <guid>/zh-cn/notes/hooks-only-run-in-function-component/</guid>
       <description>在本地tnpm link多个包时，报错Hooks Only Run in Function Component。这个情况一般是react有多个复制版本导致的。
 解决方案是将react react-dom都link到同一个
 cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn link cd ../../node_modules/react-dom yarn link cd YOUR_PROJECT yarn link PACKAGE_YOU_DEBUG_LOCALLY yarn link react yarn link react-dom</description>
@@ -152,10 +141,10 @@ cd PACKAGE_YOU_DEBUG_LOCALLY yarn link yarn install cd node_modules/react yarn l
     
     <item>
       <title>Export Get Undefined</title>
-      <link>https://maoxunxing.com/zh-cn/notes/export-get-undefined/</link>
+      <link>/zh-cn/notes/export-get-undefined/</link>
       <pubDate>Thu, 25 Nov 2021 15:05:52 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/export-get-undefined/</guid>
+      <guid>/zh-cn/notes/export-get-undefined/</guid>
       <description>情况说明：
 a.ts:
 export const xx = &amp;#39;123&amp;#39; b.ts:
@@ -164,48 +153,30 @@ import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined 这个�
     
     <item>
       <title>Webpack Federation</title>
-      <link>https://maoxunxing.com/zh-cn/notes/webpack-federation/</link>
+      <link>/zh-cn/notes/webpack-federation/</link>
       <pubDate>Fri, 19 Nov 2021 14:04:15 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/webpack-federation/</guid>
+      <guid>/zh-cn/notes/webpack-federation/</guid>
       <description>https://webpack.js.org/concepts/module-federation/?spm=ata.21736010.0.0.29e513e5BV7ohe
 各个模块独立开发，独立部署。没有依赖。但是可以一起构建。</description>
     </item>
     
     <item>
-      <title>删除所有node_modules</title>
-      <link>https://maoxunxing.com/zh-cn/notes/useful-commands/</link>
-      <pubDate>Mon, 15 Nov 2021 14:13:17 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/notes/useful-commands/</guid>
-      <description>find . -name &amp;#34;node_modules&amp;#34; -type d -prune -print -exec rm -rf &amp;#34;{}&amp;#34; \;</description>
-    </item>
-    
-    <item>
       <title>时区的理解</title>
-      <link>https://maoxunxing.com/zh-cn/notes/timezone/</link>
+      <link>/zh-cn/notes/timezone/</link>
       <pubDate>Thu, 11 Nov 2021 19:29:05 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/timezone/</guid>
+      <guid>/zh-cn/notes/timezone/</guid>
       <description>美国西部时间和北京时间相差多少
 　西八时区和东八时区时间差16小时，美国西部时间比北京时间晚16小时；4-10月夏令时间相差15个小时，美国西部时间比北京晚15小时。 例：中国是在UTC+8区上，比格林威治时间快8小时，以西雅图为例，其处于UTC-8区，比格林威治时间慢8小时，总的来说，西雅图时间比北京时间慢16个小时，如果是西雅图时间是下午2：50PM，则北京时间是次日的凌晨6：50.如果是在夏天，则西雅图为UTC-7，下午2：50的话，就是北京的次日凌晨5：50.</description>
     </item>
     
     <item>
-      <title>如何写一个好玩的油猴插件</title>
-      <link>https://maoxunxing.com/zh-cn/notes/how-to-write-chrome-plugin/</link>
-      <pubDate>Thu, 21 Oct 2021 20:24:04 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/zh-cn/notes/how-to-write-chrome-plugin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>如何写一个装饰器</title>
-      <link>https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/</link>
+      <link>/zh-cn/notes/how-to-write-decorator/</link>
       <pubDate>Thu, 21 Oct 2021 19:17:54 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/</guid>
+      <guid>/zh-cn/notes/how-to-write-decorator/</guid>
       <description>本质上是一个高阶组件（参数是函数，返回一个新函数）。结合babel插件进行编译。
  class Provider extends React.Component { render() { return this.props.children } } export const DecoratorDemo = props =&amp;gt; WrappedComponent =&amp;gt; { const Wrapped = React.forwardRef(function(innerProps, ref)) { return ( &amp;lt;Provider {...props} innerProps={...innerProps}&amp;gt; &amp;lt;WrappedComponent {...innerProps} ref={ref} /&amp;gt; &amp;lt;/Provider&amp;gt; ) } // copy static method  return Object.assign(Wrapped, WrappedComponent) }  装饰器的弊端:
 1 在运行时注入隐藏的代码，给那些期望源代码遵循传统语义的开发者造成混乱
@@ -215,10 +186,10 @@ import { xx } from &amp;#39;a&amp;#39; console.log(xx) // got undefined 这个�
     
     <item>
       <title>Nodejs Debug</title>
-      <link>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</link>
+      <link>/zh-cn/notes/nodejs-debug/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/nodejs-debug/</guid>
+      <guid>/zh-cn/notes/nodejs-debug/</guid>
       <description>1 如何调试：
 第一步：启动inspector
 nodemon --inspect-brk xx.js 运行结果：
@@ -230,10 +201,10 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     
     <item>
       <title>视频制作</title>
-      <link>https://maoxunxing.com/zh-cn/notes/make-video/</link>
+      <link>/zh-cn/notes/make-video/</link>
       <pubDate>Mon, 27 Sep 2021 18:58:45 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/make-video/</guid>
+      <guid>/zh-cn/notes/make-video/</guid>
       <description>流程：
 1 制作脚本： 地点，录制哪些内容，多长
 2 分开录制视频（如有必要声音可以单独录制，关闭视频的原声，其他素材替换视频）
@@ -252,10 +223,10 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     
     <item>
       <title>用增的策略</title>
-      <link>https://maoxunxing.com/zh-cn/notes/user-increase/</link>
+      <link>/zh-cn/notes/user-increase/</link>
       <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/user-increase/</guid>
+      <guid>/zh-cn/notes/user-increase/</guid>
       <description>用增策略
 1 定义用户生命周期和用户成长动线，通过关键时间或者魔法数字发现有效手段
 2 用户流失到达某个阈值提前干预刺激
@@ -269,10 +240,10 @@ https://nodejs.org/en/docs/guides/debugging-getting-started/</description>
     
     <item>
       <title>开源的价值</title>
-      <link>https://maoxunxing.com/zh-cn/notes/open-source-value/</link>
+      <link>/zh-cn/notes/open-source-value/</link>
       <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/open-source-value/</guid>
+      <guid>/zh-cn/notes/open-source-value/</guid>
       <description>1 概念
 教堂： 商业软件
 集市： 开源
@@ -291,10 +262,10 @@ CopyLeft/病毒型协议： 学术型要求+衍生作品发行了必须也开源
     
     <item>
       <title>前端异常处理</title>
-      <link>https://maoxunxing.com/zh-cn/notes/exception-handle/</link>
+      <link>/zh-cn/notes/exception-handle/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/notes/exception-handle/</guid>
+      <guid>/zh-cn/notes/exception-handle/</guid>
       <description>1 异常隔离 : 主要场景vm js代码
 try {} catch {} 2 promise异常处理: 主要场景处理try catch无法捕获的异常</description>
     </item>

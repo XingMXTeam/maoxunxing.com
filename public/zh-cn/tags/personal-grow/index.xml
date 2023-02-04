@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal Grow on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/tags/personal-grow/</link>
+    <link>/zh-cn/tags/personal-grow/</link>
     <description>Recent content in Personal Grow on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 02 Apr 2022 17:27:56 +0800</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/personal-grow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/tags/personal-grow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>个人如何快速成长</title>
-      <link>https://maoxunxing.com/zh-cn/personal-grow/</link>
+      <link>/zh-cn/personal-grow/</link>
       <pubDate>Sat, 02 Apr 2022 17:27:56 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/personal-grow/</guid>
+      <guid>/zh-cn/personal-grow/</guid>
       <description>背景 方法论虽然虚，但的确有用。在工作中能从更高维度指导你的工作和学习。最近有学一些，做一些总结，欢迎指正。
 学什么 关于学什么，每个人的岗位不同和职级不同，当然情况也不一样。比如针对P6级别，要向P7级别上升。个人理解总结起来就两方面基础能力和业务能力。基础能力要求专精、代码可扩展、可移植，能将能力产品化（有体系化建设）；业务理解深入，可根据数据挖掘定义问题，参与规划，带领至少5人完成项目（个人理解不仅仅是完成上级任务），拿到结果。
 所以需重点关注本领域开发岗知识。对于业务理解，主要从用户是谁、用户价值、获客获利等角度去思考。

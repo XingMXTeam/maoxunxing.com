@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on maoxunxing&#39;s life</title>
-    <link>https://maoxunxing.com/en/tags/css/</link>
+    <link>/en/tags/css/</link>
     <description>Recent content in CSS on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Dec 2021 20:03:38 +0800</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/en/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/en/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CSS实现细节梳理</title>
-      <link>https://maoxunxing.com/en/css-i-learned/</link>
+      <link>/en/css-i-learned/</link>
       <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
       
-      <guid>https://maoxunxing.com/en/css-i-learned/</guid>
+      <guid>/en/css-i-learned/</guid>
       <description>布局组件：
  不要用wrapper这样的dom结构， 避免表格思维，有多余的行/列元素   不用javascript控制布局  所有布局和对齐都用Flexbox/Grids实现，不用absolute, display:table, float
 height/line-height，display: inline-block/vertical-align: middle 不可靠

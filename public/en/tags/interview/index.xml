@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>interview on maoxunxing&#39;s life</title>
-    <link>https://maoxunxing.com/en/tags/interview/</link>
-    <description>Recent content in interview on maoxunxing&#39;s life</description>
+    <title>Interview on maoxunxing&#39;s life</title>
+    <link>/en/tags/interview/</link>
+    <description>Recent content in Interview on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Aug 2021 10:20:36 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/en/tags/interview/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/en/tags/interview/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Diff Dom</title>
-      <link>https://maoxunxing.com/en/diff-dom/</link>
-      <pubDate>Fri, 27 Aug 2021 10:20:36 +0800</pubDate>
-      
-      <guid>https://maoxunxing.com/en/diff-dom/</guid>
-      <description> Question Definition Front-End developer all know React, React use diff dom algorithm to diff two virtual dom tree.
-1 Method 1: Two pointers
-Problem Analysis Time Complex </description>
-    </item>
     
     <item>
       <title>Graphs Part 1 - Detect Cycle in an Undirected Graph</title>
-      <link>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</link>
+      <link>/en/detect-cycle-in-an-undirected-graph/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</guid>
+      <guid>/en/detect-cycle-in-an-undirected-graph/</guid>
       <description>Question Definition (S &amp;amp; T) Given an undirected graph, how to check if there is a cycle in the graph ?
 Example 1:
 Input：n = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }
@@ -40,10 +29,10 @@ Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }</description>
     
     <item>
       <title>Tree Part 2 - Given N, Find The Total Number of Unique BSTs</title>
-      <link>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</link>
+      <link>/en/find-the-total-number-of-unique-bsts-of-n/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</guid>
+      <guid>/en/find-the-total-number-of-unique-bsts-of-n/</guid>
       <description>Question Definition (S &amp;amp; T) Given N, Find the total number of unique BSTs that can be made using values from 1 to N
 Examples:
 Input: n = 3

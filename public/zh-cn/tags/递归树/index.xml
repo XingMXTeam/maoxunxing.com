@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>递归树 on 毛训星的网络日志</title>
-    <link>https://maoxunxing.com/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/</link>
+    <link>/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/</link>
     <description>Recent content in 递归树 on 毛训星的网络日志</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 16 Aug 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://maoxunxing.com/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh-cn/tags/%E9%80%92%E5%BD%92%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>树系列 - 给出N，求唯一BST的总数</title>
-      <link>https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/</link>
+      <link>/zh-cn/find-the-total-number-of-unique-bsts-of-n/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/</guid>
+      <guid>/zh-cn/find-the-total-number-of-unique-bsts-of-n/</guid>
       <description>问题定义 给定N，找出可以用1到N的值制作的唯一BST的总数
 用例:
 输入: n = 3
