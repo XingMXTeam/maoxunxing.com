@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>String on maoxunxing&#39;s life</title>
-    <link>/en/tags/string/</link>
+    <link>https://maoxunxing.com/en/tags/string/</link>
     <description>Recent content in String on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 16 Apr 2022 23:59:19 +0800</lastBuildDate>
     
-	<atom:link href="/en/tags/string/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://maoxunxing.com/en/tags/string/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>String Part 1 - Longest Palindromic Substring</title>
-      <link>/en/substring-longest/</link>
+      <link>https://maoxunxing.com/en/substring-longest/</link>
       <pubDate>Sat, 16 Apr 2022 23:59:19 +0800</pubDate>
       
-      <guid>/en/substring-longest/</guid>
+      <guid>https://maoxunxing.com/en/substring-longest/</guid>
       <description>问题 Given a string, find the longest substring which is a palindrome. For Example:
 Input: Given string :&amp;ldquo;forgeeksskeegfor&amp;rdquo;, Output: &amp;ldquo;geeksskeeg&amp;rdquo;.
 Input: Given string :&amp;ldquo;Geeks&amp;rdquo;, Output: &amp;ldquo;ee&amp;rdquo;.

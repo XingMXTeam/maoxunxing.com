@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on maoxunxing&#39;s life</title>
-    <link>/en/posts/</link>
+    <link>https://maoxunxing.com/en/posts/</link>
     <description>Recent content in Posts on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Apr 2022 22:37:20 +0800</lastBuildDate>
     
-	<atom:link href="/en/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://maoxunxing.com/en/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Array Part 4 - K’th Smallest/Largest Element in Unsorted</title>
-      <link>/en/k-th-smallest-inthearray/</link>
+      <link>https://maoxunxing.com/en/k-th-smallest-inthearray/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>/en/k-th-smallest-inthearray/</guid>
+      <guid>https://maoxunxing.com/en/k-th-smallest-inthearray/</guid>
       <description>问题 Given an array and a number k where k is smaller than the size of the array, we need to find the k’th smallest element in the given array. It is given that all array elements are distinct.
 Input: arr[] = {7, 10, 4, 3, 20, 15} k = 3 Output: 7
 Input: arr[] = {7, 10, 4, 3, 20, 15} k = 4 Output: 10
@@ -25,10 +25,10 @@ Input: arr[] = {7, 10, 4, 3, 20, 15} k = 4 Output: 10
     
     <item>
       <title>Array Part 3 - Find the Largest Sum of Contiguous Subarray </title>
-      <link>/en/max-sum/</link>
+      <link>https://maoxunxing.com/en/max-sum/</link>
       <pubDate>Sun, 17 Apr 2022 20:44:08 +0800</pubDate>
       
-      <guid>/en/max-sum/</guid>
+      <guid>https://maoxunxing.com/en/max-sum/</guid>
       <description>问题 Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers that has the largest sum.
 arr = [-2, -3, 4, -1, -2, 1, 5, -3]
 OutPut: 7 Explain: 4 + -1 + -2 + 1 + 5 = 7
@@ -38,10 +38,10 @@ OutPut: 7 Explain: 4 + -1 + -2 + 1 + 5 = 7
     
     <item>
       <title>String Part 1 - Longest Palindromic Substring</title>
-      <link>/en/substring-longest/</link>
+      <link>https://maoxunxing.com/en/substring-longest/</link>
       <pubDate>Sat, 16 Apr 2022 23:59:19 +0800</pubDate>
       
-      <guid>/en/substring-longest/</guid>
+      <guid>https://maoxunxing.com/en/substring-longest/</guid>
       <description>问题 Given a string, find the longest substring which is a palindrome. For Example:
 Input: Given string :&amp;ldquo;forgeeksskeegfor&amp;rdquo;, Output: &amp;ldquo;geeksskeeg&amp;rdquo;.
 Input: Given string :&amp;ldquo;Geeks&amp;rdquo;, Output: &amp;ldquo;ee&amp;rdquo;.
@@ -51,20 +51,20 @@ low = index - 1 high = index + 1 // 跳掉重复 while( high &amp;lt; n &amp;amp
     
     <item>
       <title>Array Part 2 - Minimum number of jumps to reach end</title>
-      <link>/en/mininumber-to-end/</link>
+      <link>https://maoxunxing.com/en/mininumber-to-end/</link>
       <pubDate>Sat, 16 Apr 2022 22:29:56 +0800</pubDate>
       
-      <guid>/en/mininumber-to-end/</guid>
+      <guid>https://maoxunxing.com/en/mininumber-to-end/</guid>
       <description>问题 Given an array of integers where each element represents the max number of steps that can be made forward from that element. Write a function to return the minimum number of jumps to reach the end of the array (starting from the first element). If an element is 0, then we cannot move through that element. If we can’t reach the end, return -1. Examples:
 Input: arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9} Output: 3 (1-&amp;gt; 3 -&amp;gt; 8 -&amp;gt; 9) Explanation: Jump from 1st element to 2nd element as there is only 1 step, now there are three options 5, 8 or 9.</description>
     </item>
     
     <item>
       <title>个人如何快速成长</title>
-      <link>/en/personal-grow/</link>
+      <link>https://maoxunxing.com/en/personal-grow/</link>
       <pubDate>Sat, 02 Apr 2022 17:27:56 +0800</pubDate>
       
-      <guid>/en/personal-grow/</guid>
+      <guid>https://maoxunxing.com/en/personal-grow/</guid>
       <description>背景 方法论虽然虚，但的确有用。在工作中能从更高维度指导你的工作和学习。最近有学一些，做一些总结，欢迎指正。
 学什么 关于学什么，每个人的岗位不同和职级不同，当然情况也不一样。比如针对P6级别，要向P7级别上升。个人理解总结起来就两方面基础能力和业务能力。基础能力要求专精、代码可扩展、可移植，能将能力产品化（有体系化建设）；业务理解深入，可根据数据挖掘定义问题，参与规划，带领至少5人完成项目（个人理解不仅仅是完成上级任务），拿到结果。
 所以需重点关注本领域开发岗知识。对于业务理解，主要从用户是谁、用户价值、获客获利等角度去思考。
@@ -92,10 +92,10 @@ Input: arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9} Output: 3 (1-&amp;gt; 3 -&amp;g
     
     <item>
       <title>A11Y - 无障碍编程</title>
-      <link>/en/aria/</link>
+      <link>https://maoxunxing.com/en/aria/</link>
       <pubDate>Sat, 02 Apr 2022 10:31:39 +0800</pubDate>
       
-      <guid>/en/aria/</guid>
+      <guid>https://maoxunxing.com/en/aria/</guid>
       <description> What is A11Y? Accessibility (often abbreviated to A11y — as in “a” then 11 characters then “y”) in Web development means enabling as many people as possible to use Web sites, even when those people&amp;rsquo;s abilities are limited in some way.
 网络开发中的可访问性（通常缩写为A11y&amp;ndash;如 &amp;ldquo;a &amp;ldquo;然后是11个字符然后是 &amp;ldquo;y&amp;rdquo;）意味着使尽可能多的人能够使用网站，即使这些人的能力在某些方面受到限制。
 Knowledge Mapping 知识图谱   </description>
@@ -103,10 +103,10 @@ Knowledge Mapping 知识图谱   </description>
     
     <item>
       <title>CSS实现细节梳理</title>
-      <link>/en/css-i-learned/</link>
+      <link>https://maoxunxing.com/en/css-i-learned/</link>
       <pubDate>Thu, 23 Dec 2021 20:03:38 +0800</pubDate>
       
-      <guid>/en/css-i-learned/</guid>
+      <guid>https://maoxunxing.com/en/css-i-learned/</guid>
       <description>布局组件：
  不要用wrapper这样的dom结构， 避免表格思维，有多余的行/列元素   不用javascript控制布局  所有布局和对齐都用Flexbox/Grids实现，不用absolute, display:table, float
 height/line-height，display: inline-block/vertical-align: middle 不可靠
@@ -123,10 +123,10 @@ width: max-content; 防止内容显示不全/被截断：
     
     <item>
       <title>NodeJS系列 - Stream</title>
-      <link>/en/nodejs-network-stream/</link>
+      <link>https://maoxunxing.com/en/nodejs-network-stream/</link>
       <pubDate>Tue, 19 Oct 2021 14:28:57 +0800</pubDate>
       
-      <guid>/en/nodejs-network-stream/</guid>
+      <guid>https://maoxunxing.com/en/nodejs-network-stream/</guid>
       <description>什么是流 流不是仅存在于Nodejs, 在unix操作系统中也有类似的概念。 比如管道操作符号
 cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹配内容。实际上，node的流的概念是来源于unix系统，最早是来自Douglas McIlroy管道的概念 最初的来源。
 维基百科：
@@ -135,10 +135,10 @@ cat xx.ts | grep &amp;#39;console.log&amp;#39; 能从文件中找到对应的匹
     
     <item>
       <title>2021年度总结</title>
-      <link>/en/target-life/</link>
+      <link>https://maoxunxing.com/en/target-life/</link>
       <pubDate>Fri, 17 Sep 2021 13:12:13 +0800</pubDate>
       
-      <guid>/en/target-life/</guid>
+      <guid>https://maoxunxing.com/en/target-life/</guid>
       <description>俗话说，没有梦想和咸鱼有什么区别。所有的梦想都需要扎根于现实，否则就是空中楼阁，痴人说梦。在现实中，要汲取生活的乐趣。而工作是生活的一大部分，工作中的快乐程度决定了你生活中的快乐程度。把你的职业生涯当成一段旅程，深入体验，而不是觉得工作是在浪费时间和生命
 2014我从南昌大学毕业。开始在HitThink公司工作，担任前端工程师。我没有生活目标，只是作为一个工具工作。我和我的女朋友很幸福。 2016.7 ~ 2019.9: 我离开了HitThink公司，因为我开始讨厌和我的同事一起工作。我开始意识到，我应该和优秀的同事和好的公司一起工作。通过推荐，我开始到网易公司面试。幸运的是，我成功了，进入了教育业务部。我学到了很多东西，认识了一些好朋友，也得到了晋升。 2019.9～现在。我曾以为自己会在网易公司工作很长时间。但是，一切都没有按照自己的意愿进行。业务部门的解散使我不得不另找工作，同时我也和我八年的女朋友分手了。我的一切都变了。我还生了一场大病，瘦到了90磅。在网易公司工作时，我的工资并不高。我开始考虑要买自己的房子，我需要提高我的工资。所以我去了阿里巴巴公司面试。 我成功了。当你学了很多东西，努力了很多，你总是可以通过我的内心深处的想法来实现的。在阿里巴巴集团的前两年，我努力工作，除了没有晋升，我觉得我收获的很多。另外终于我在我想要的地方买了自己的房子。如果你不能晋升，你应该尽可能多地学习，尽可能多地写作，尽可能多地展示自己，这就是我现在的想法，因为终究别人的认可，不是我快乐的源泉，我希望能走向自己的一条道路。
 按部就班的工作，在职场上永远不可能突破性的提升，需要往前走一步，没有章法，需要多关注兴趣和爱好，激发自己的工作激情。需要养成良好的习惯，通过科学的方法，管理好自己。2021年我在杭州买房扎根，恍恍惚惚，已经32岁了，一路走来，不那么精彩，大部分时间如行尸走肉般，有犯一些错误，走一些弯路。未来希望尽心尽力感受生活的精彩，身体没有病痛，没有什么遗憾，及时行乐。
@@ -155,10 +155,10 @@ O4: 对工程技术非常熟悉，工程答疑 KR1: 梳理常见工程原理，�
     
     <item>
       <title>我对数字货币的理解</title>
-      <link>/en/bitcion/</link>
+      <link>https://maoxunxing.com/en/bitcion/</link>
       <pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>/en/bitcion/</guid>
+      <guid>https://maoxunxing.com/en/bitcion/</guid>
       <description>Concepts 概念 1 非同质化代币（NFT)
 典型作品： cryptopunks/cryptokitties.co/nbatopshot.com/cryptoslam.io
 平台： opensea.io/sandbox.game/淘宝店发行/Rarible/幻核
@@ -169,10 +169,10 @@ O4: 对工程技术非常熟悉，工程答疑 KR1: 梳理常见工程原理，�
     
     <item>
       <title>Array Part 1 - 长度为k的子数组的最大值</title>
-      <link>/en/maximum-of-all-subarrays-of-size-k/</link>
+      <link>https://maoxunxing.com/en/maximum-of-all-subarrays-of-size-k/</link>
       <pubDate>Thu, 26 Aug 2021 15:16:39 +0800</pubDate>
       
-      <guid>/en/maximum-of-all-subarrays-of-size-k/</guid>
+      <guid>https://maoxunxing.com/en/maximum-of-all-subarrays-of-size-k/</guid>
       <description>问题 Give an array and an integer K, find the maximum for each and every condiguous subarray of size k.
 Examples:
 Input: arr[] = { 1, 2, 3, 1, 4, 5, 2, 3, 6 } K = 3
@@ -185,10 +185,10 @@ Maximum of 1, 4, 5 is 5</description>
     
     <item>
       <title>Graphs Part 1 - Detect Cycle in an Undirected Graph</title>
-      <link>/en/detect-cycle-in-an-undirected-graph/</link>
+      <link>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/en/detect-cycle-in-an-undirected-graph/</guid>
+      <guid>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</guid>
       <description>Question Definition (S &amp;amp; T) Given an undirected graph, how to check if there is a cycle in the graph ?
 Example 1:
 Input：n = 4 , e = 4, the edges = { 0 1, 1 2, 2 3, 0 2 }
@@ -201,10 +201,10 @@ Input: n = 4, e = 3, the edges: { 0 1, 1 2, 2 3 }</description>
     
     <item>
       <title>Tree Part 2 - Given N, Find The Total Number of Unique BSTs</title>
-      <link>/en/find-the-total-number-of-unique-bsts-of-n/</link>
+      <link>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>/en/find-the-total-number-of-unique-bsts-of-n/</guid>
+      <guid>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</guid>
       <description>Question Definition (S &amp;amp; T) Given N, Find the total number of unique BSTs that can be made using values from 1 to N
 Examples:
 Input: n = 3

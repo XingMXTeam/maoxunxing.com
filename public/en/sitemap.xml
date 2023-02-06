@@ -3,1184 +3,1184 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/en/tags/array/</loc>
+    <loc>https://maoxunxing.com/en/tags/array/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/array/"
+                href="https://maoxunxing.com/zh-cn/tags/array/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/array/"
+                href="https://maoxunxing.com/en/tags/array/"
                 />
   </url>
   
   <url>
-    <loc>/en/k-th-smallest-inthearray/</loc>
+    <loc>https://maoxunxing.com/en/k-th-smallest-inthearray/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/k-th-smallest-inthearray/"
+                href="https://maoxunxing.com/zh-cn/k-th-smallest-inthearray/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/k-th-smallest-inthearray/"
+                href="https://maoxunxing.com/en/k-th-smallest-inthearray/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/max-heap/</loc>
-    <lastmod>2022-04-21T22:37:20+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/zh-cn/tags/max-heap/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/max-heap/"
-                />
-  </url>
-  
-  <url>
-    <loc>/en/tags/min-heap/</loc>
+    <loc>https://maoxunxing.com/en/tags/max-heap/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/min-heap/"
+                href="https://maoxunxing.com/zh-cn/tags/max-heap/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/min-heap/"
+                href="https://maoxunxing.com/en/tags/max-heap/"
                 />
   </url>
   
   <url>
-    <loc>/en/posts/</loc>
+    <loc>https://maoxunxing.com/en/tags/min-heap/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/"
+                href="https://maoxunxing.com/zh-cn/tags/min-heap/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/"
+                href="https://maoxunxing.com/en/tags/min-heap/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/quicksort/</loc>
+    <loc>https://maoxunxing.com/en/posts/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/quicksort/"
+                href="https://maoxunxing.com/zh-cn/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/quicksort/"
+                href="https://maoxunxing.com/en/posts/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/</loc>
+    <loc>https://maoxunxing.com/en/tags/quicksort/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/"
+                href="https://maoxunxing.com/zh-cn/tags/quicksort/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
+                href="https://maoxunxing.com/en/tags/quicksort/"
                 />
   </url>
   
   <url>
-    <loc>/en/</loc>
+    <loc>https://maoxunxing.com/en/tags/</loc>
     <lastmod>2022-04-21T22:37:20+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/"
+                href="https://maoxunxing.com/zh-cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="https://maoxunxing.com/en/tags/"
                 />
   </url>
   
   <url>
-    <loc>/en/max-sum/</loc>
+    <loc>https://maoxunxing.com/en/</loc>
+    <lastmod>2022-04-21T22:37:20+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/en/max-sum/</loc>
     <lastmod>2022-04-17T20:44:08+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/max-sum/"
+                href="https://maoxunxing.com/zh-cn/max-sum/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/max-sum/"
+                href="https://maoxunxing.com/en/max-sum/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/double-point/</loc>
+    <loc>https://maoxunxing.com/en/tags/double-point/</loc>
     <lastmod>2022-04-16T23:59:19+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/double-point/"
+                href="https://maoxunxing.com/zh-cn/tags/double-point/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/double-point/"
+                href="https://maoxunxing.com/en/tags/double-point/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/string/</loc>
+    <loc>https://maoxunxing.com/en/tags/string/</loc>
     <lastmod>2022-04-16T23:59:19+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/string/"
+                href="https://maoxunxing.com/zh-cn/tags/string/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/string/"
+                href="https://maoxunxing.com/en/tags/string/"
                 />
   </url>
   
   <url>
-    <loc>/en/substring-longest/</loc>
+    <loc>https://maoxunxing.com/en/substring-longest/</loc>
     <lastmod>2022-04-16T23:59:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/substring-longest/"
+                href="https://maoxunxing.com/zh-cn/substring-longest/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/substring-longest/"
+                href="https://maoxunxing.com/en/substring-longest/"
                 />
   </url>
   
   <url>
-    <loc>/en/mininumber-to-end/</loc>
+    <loc>https://maoxunxing.com/en/mininumber-to-end/</loc>
     <lastmod>2022-04-16T22:29:56+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/mininumber-to-end/"
+                href="https://maoxunxing.com/zh-cn/mininumber-to-end/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/mininumber-to-end/"
+                href="https://maoxunxing.com/en/mininumber-to-end/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/personal-grow/</loc>
+    <loc>https://maoxunxing.com/en/tags/personal-grow/</loc>
     <lastmod>2022-04-02T17:27:56+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/personal-grow/"
+                href="https://maoxunxing.com/zh-cn/tags/personal-grow/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/personal-grow/"
+                href="https://maoxunxing.com/en/tags/personal-grow/"
                 />
   </url>
   
   <url>
-    <loc>/en/personal-grow/</loc>
+    <loc>https://maoxunxing.com/en/personal-grow/</loc>
     <lastmod>2022-04-02T17:27:56+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/personal-grow/"
+                href="https://maoxunxing.com/zh-cn/personal-grow/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/personal-grow/"
+                href="https://maoxunxing.com/en/personal-grow/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/a11y/</loc>
+    <loc>https://maoxunxing.com/en/tags/a11y/</loc>
     <lastmod>2022-04-02T10:31:39+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/a11y/"
+                href="https://maoxunxing.com/zh-cn/tags/a11y/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/a11y/"
+                href="https://maoxunxing.com/en/tags/a11y/"
                 />
   </url>
   
   <url>
-    <loc>/en/aria/</loc>
+    <loc>https://maoxunxing.com/en/aria/</loc>
     <lastmod>2022-04-02T10:31:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/aria/"
+                href="https://maoxunxing.com/zh-cn/aria/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/aria/"
+                href="https://maoxunxing.com/en/aria/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/</loc>
+    <loc>https://maoxunxing.com/en/notes/</loc>
     <lastmod>2022-03-28T17:14:19+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/"
+                href="https://maoxunxing.com/zh-cn/notes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/"
+                href="https://maoxunxing.com/en/notes/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/tailwind/</loc>
+    <loc>https://maoxunxing.com/en/notes/tailwind/</loc>
     <lastmod>2022-03-28T17:14:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/tailwind/"
+                href="https://maoxunxing.com/zh-cn/notes/tailwind/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/tailwind/"
+                href="https://maoxunxing.com/en/notes/tailwind/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/share-tips/</loc>
+    <loc>https://maoxunxing.com/en/notes/share-tips/</loc>
     <lastmod>2022-03-27T18:15:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/share-tips/"
+                href="https://maoxunxing.com/zh-cn/notes/share-tips/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/share-tips/"
+                href="https://maoxunxing.com/en/notes/share-tips/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/allowiframe/</loc>
+    <loc>https://maoxunxing.com/en/notes/allowiframe/</loc>
     <lastmod>2022-03-27T14:48:25+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/allowiframe/"
+                href="https://maoxunxing.com/zh-cn/notes/allowiframe/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/allowiframe/"
+                href="https://maoxunxing.com/en/notes/allowiframe/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/jsx-runtime/</loc>
+    <loc>https://maoxunxing.com/en/notes/jsx-runtime/</loc>
     <lastmod>2022-01-24T13:15:59+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/jsx-runtime/"
+                href="https://maoxunxing.com/zh-cn/notes/jsx-runtime/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/jsx-runtime/"
+                href="https://maoxunxing.com/en/notes/jsx-runtime/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/css/</loc>
+    <loc>https://maoxunxing.com/en/tags/css/</loc>
     <lastmod>2021-12-23T20:03:38+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/css/"
+                href="https://maoxunxing.com/zh-cn/tags/css/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/css/"
+                href="https://maoxunxing.com/en/tags/css/"
                 />
   </url>
   
   <url>
-    <loc>/en/css-i-learned/</loc>
+    <loc>https://maoxunxing.com/en/css-i-learned/</loc>
     <lastmod>2021-12-23T20:03:38+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/css-i-learned/"
+                href="https://maoxunxing.com/zh-cn/css-i-learned/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/css-i-learned/"
+                href="https://maoxunxing.com/en/css-i-learned/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/flex/</loc>
-    <lastmod>2021-12-23T20:03:38+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/zh-cn/tags/flex/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/flex/"
-                />
-  </url>
-  
-  <url>
-    <loc>/en/tags/grid/</loc>
+    <loc>https://maoxunxing.com/en/tags/flex/</loc>
     <lastmod>2021-12-23T20:03:38+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/grid/"
+                href="https://maoxunxing.com/zh-cn/tags/flex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/grid/"
+                href="https://maoxunxing.com/en/tags/flex/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/http-i-learned/</loc>
+    <loc>https://maoxunxing.com/en/tags/grid/</loc>
+    <lastmod>2021-12-23T20:03:38+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/tags/grid/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/tags/grid/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/en/notes/http-i-learned/</loc>
     <lastmod>2021-12-22T20:10:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/http-i-learned/"
+                href="https://maoxunxing.com/zh-cn/notes/http-i-learned/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/http-i-learned/"
+                href="https://maoxunxing.com/en/notes/http-i-learned/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/typescript-i-learned/</loc>
+    <loc>https://maoxunxing.com/en/notes/typescript-i-learned/</loc>
     <lastmod>2021-12-22T18:06:49+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/typescript-i-learned/"
+                href="https://maoxunxing.com/zh-cn/notes/typescript-i-learned/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/typescript-i-learned/"
+                href="https://maoxunxing.com/en/notes/typescript-i-learned/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/decode-url-safe/</loc>
+    <loc>https://maoxunxing.com/en/notes/decode-url-safe/</loc>
     <lastmod>2021-12-10T10:12:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/decode-url-safe/"
+                href="https://maoxunxing.com/zh-cn/notes/decode-url-safe/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/decode-url-safe/"
+                href="https://maoxunxing.com/en/notes/decode-url-safe/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/packagejson/</loc>
+    <loc>https://maoxunxing.com/en/notes/packagejson/</loc>
     <lastmod>2021-12-10T10:12:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/packagejson/"
+                href="https://maoxunxing.com/zh-cn/notes/packagejson/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/packagejson/"
+                href="https://maoxunxing.com/en/notes/packagejson/"
                 />
   </url>
   
   <url>
-    <loc>/en/book-reports/</loc>
+    <loc>https://maoxunxing.com/en/book-reports/</loc>
     <lastmod>2021-12-09T15:05:59+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/book-reports/"
+                href="https://maoxunxing.com/zh-cn/book-reports/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/book-reports/"
+                href="https://maoxunxing.com/en/book-reports/"
                 />
   </url>
   
   <url>
-    <loc>/en/book-reports/lamb-in-his-bosom/</loc>
+    <loc>https://maoxunxing.com/en/book-reports/lamb-in-his-bosom/</loc>
     <lastmod>2021-12-09T15:05:59+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/book-reports/lamb-in-his-bosom/"
+                href="https://maoxunxing.com/zh-cn/book-reports/lamb-in-his-bosom/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/book-reports/lamb-in-his-bosom/"
+                href="https://maoxunxing.com/en/book-reports/lamb-in-his-bosom/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/syntaxerror-unexpected-token-export/</loc>
+    <loc>https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/</loc>
     <lastmod>2021-12-01T14:53:11+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/syntaxerror-unexpected-token-export/"
+                href="https://maoxunxing.com/zh-cn/notes/syntaxerror-unexpected-token-export/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/syntaxerror-unexpected-token-export/"
+                href="https://maoxunxing.com/en/notes/syntaxerror-unexpected-token-export/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/reamde/</loc>
+    <loc>https://maoxunxing.com/en/notes/reamde/</loc>
     <lastmod>2021-12-01T14:53:11+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/reamde/"
+                href="https://maoxunxing.com/zh-cn/notes/reamde/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/reamde/"
+                href="https://maoxunxing.com/en/notes/reamde/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/download-avoid/</loc>
+    <loc>https://maoxunxing.com/en/notes/download-avoid/</loc>
     <lastmod>2021-12-01T14:53:11+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/download-avoid/"
+                href="https://maoxunxing.com/zh-cn/notes/download-avoid/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/download-avoid/"
+                href="https://maoxunxing.com/en/notes/download-avoid/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/hooks-only-run-in-function-component/</loc>
+    <loc>https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/</loc>
     <lastmod>2021-11-29T12:06:58+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/hooks-only-run-in-function-component/"
+                href="https://maoxunxing.com/zh-cn/notes/hooks-only-run-in-function-component/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/hooks-only-run-in-function-component/"
+                href="https://maoxunxing.com/en/notes/hooks-only-run-in-function-component/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/export-get-undefined/</loc>
+    <loc>https://maoxunxing.com/en/notes/export-get-undefined/</loc>
     <lastmod>2021-11-25T15:05:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/export-get-undefined/"
+                href="https://maoxunxing.com/zh-cn/notes/export-get-undefined/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/export-get-undefined/"
+                href="https://maoxunxing.com/en/notes/export-get-undefined/"
                 />
   </url>
   
   <url>
-    <loc>/en/book-reports/my-genius-girlfriend/</loc>
+    <loc>https://maoxunxing.com/en/book-reports/my-genius-girlfriend/</loc>
     <lastmod>2021-11-20T17:30:45+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/book-reports/my-genius-girlfriend/"
+                href="https://maoxunxing.com/zh-cn/book-reports/my-genius-girlfriend/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/book-reports/my-genius-girlfriend/"
+                href="https://maoxunxing.com/en/book-reports/my-genius-girlfriend/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/webpack-federation/</loc>
+    <loc>https://maoxunxing.com/en/notes/webpack-federation/</loc>
     <lastmod>2021-11-19T14:04:15+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/webpack-federation/"
+                href="https://maoxunxing.com/zh-cn/notes/webpack-federation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/webpack-federation/"
+                href="https://maoxunxing.com/en/notes/webpack-federation/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/timezone/</loc>
+    <loc>https://maoxunxing.com/en/notes/timezone/</loc>
     <lastmod>2021-11-11T19:29:05+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/timezone/"
+                href="https://maoxunxing.com/zh-cn/notes/timezone/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/timezone/"
+                href="https://maoxunxing.com/en/notes/timezone/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/es6/</loc>
+    <loc>https://maoxunxing.com/en/tags/es6/</loc>
     <lastmod>2021-10-21T19:17:54+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/es6/"
+                href="https://maoxunxing.com/zh-cn/tags/es6/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/es6/"
+                href="https://maoxunxing.com/en/tags/es6/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/how-to-write-decorator/</loc>
+    <loc>https://maoxunxing.com/en/notes/how-to-write-decorator/</loc>
     <lastmod>2021-10-21T19:17:54+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/how-to-write-decorator/"
+                href="https://maoxunxing.com/zh-cn/notes/how-to-write-decorator/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/how-to-write-decorator/"
+                href="https://maoxunxing.com/en/notes/how-to-write-decorator/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/network/</loc>
+    <loc>https://maoxunxing.com/en/tags/network/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/network/"
+                href="https://maoxunxing.com/zh-cn/tags/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/network/"
+                href="https://maoxunxing.com/en/tags/network/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/nodejs/</loc>
+    <loc>https://maoxunxing.com/en/tags/nodejs/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/nodejs/"
+                href="https://maoxunxing.com/zh-cn/tags/nodejs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/nodejs/"
+                href="https://maoxunxing.com/en/tags/nodejs/"
                 />
   </url>
   
   <url>
-    <loc>/en/nodejs-network-stream/</loc>
+    <loc>https://maoxunxing.com/en/nodejs-network-stream/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/nodejs-network-stream/"
+                href="https://maoxunxing.com/zh-cn/nodejs-network-stream/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/nodejs-network-stream/"
+                href="https://maoxunxing.com/en/nodejs-network-stream/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/nodejs-debug/</loc>
+    <loc>https://maoxunxing.com/en/notes/nodejs-debug/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/nodejs-debug/"
+                href="https://maoxunxing.com/zh-cn/notes/nodejs-debug/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/nodejs-debug/"
+                href="https://maoxunxing.com/en/notes/nodejs-debug/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/p2p/</loc>
-    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/zh-cn/tags/p2p/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/p2p/"
-                />
-  </url>
-  
-  <url>
-    <loc>/en/tags/rpc/</loc>
+    <loc>https://maoxunxing.com/en/tags/p2p/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/rpc/"
+                href="https://maoxunxing.com/zh-cn/tags/p2p/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/rpc/"
+                href="https://maoxunxing.com/en/tags/p2p/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/vpn/</loc>
+    <loc>https://maoxunxing.com/en/tags/rpc/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/vpn/"
+                href="https://maoxunxing.com/zh-cn/tags/rpc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/vpn/"
+                href="https://maoxunxing.com/en/tags/rpc/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/websocket/</loc>
+    <loc>https://maoxunxing.com/en/tags/vpn/</loc>
     <lastmod>2021-10-19T14:28:57+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/websocket/"
+                href="https://maoxunxing.com/zh-cn/tags/vpn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/websocket/"
+                href="https://maoxunxing.com/en/tags/vpn/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/make-video/</loc>
+    <loc>https://maoxunxing.com/en/tags/websocket/</loc>
+    <lastmod>2021-10-19T14:28:57+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/tags/websocket/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/tags/websocket/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/en/notes/make-video/</loc>
     <lastmod>2021-09-27T18:58:45+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/make-video/"
+                href="https://maoxunxing.com/zh-cn/notes/make-video/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/make-video/"
+                href="https://maoxunxing.com/en/notes/make-video/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/user-increase/</loc>
+    <loc>https://maoxunxing.com/en/notes/user-increase/</loc>
     <lastmod>2021-09-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/user-increase/"
+                href="https://maoxunxing.com/zh-cn/notes/user-increase/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/user-increase/"
+                href="https://maoxunxing.com/en/notes/user-increase/"
                 />
   </url>
   
   <url>
-    <loc>/en/target-life/</loc>
+    <loc>https://maoxunxing.com/en/target-life/</loc>
     <lastmod>2021-09-17T13:12:13+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/target-life/"
+                href="https://maoxunxing.com/zh-cn/target-life/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/target-life/"
+                href="https://maoxunxing.com/en/target-life/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/%E6%88%90%E9%95%BF/</loc>
+    <loc>https://maoxunxing.com/en/tags/%E6%88%90%E9%95%BF/</loc>
     <lastmod>2021-09-17T13:12:13+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/%E6%88%90%E9%95%BF/"
+                href="https://maoxunxing.com/zh-cn/tags/%E6%88%90%E9%95%BF/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/%E6%88%90%E9%95%BF/"
+                href="https://maoxunxing.com/en/tags/%E6%88%90%E9%95%BF/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/meta/</loc>
+    <loc>https://maoxunxing.com/en/tags/meta/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/en/tags/nft/</loc>
+    <loc>https://maoxunxing.com/en/tags/nft/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/nft/"
+                href="https://maoxunxing.com/zh-cn/tags/nft/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/nft/"
+                href="https://maoxunxing.com/en/tags/nft/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/bitcion/</loc>
+    <loc>https://maoxunxing.com/en/tags/bitcion/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/bitcion/"
+                href="https://maoxunxing.com/zh-cn/tags/bitcion/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/bitcion/"
+                href="https://maoxunxing.com/en/tags/bitcion/"
                 />
   </url>
   
   <url>
-    <loc>/en/bitcion/</loc>
+    <loc>https://maoxunxing.com/en/bitcion/</loc>
     <lastmod>2021-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/bitcion/"
+                href="https://maoxunxing.com/zh-cn/bitcion/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/bitcion/"
+                href="https://maoxunxing.com/en/bitcion/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/open-source/</loc>
+    <loc>https://maoxunxing.com/en/tags/open-source/</loc>
     <lastmod>2021-08-27T10:20:36+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/open-source/"
+                href="https://maoxunxing.com/zh-cn/tags/open-source/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/open-source/"
+                href="https://maoxunxing.com/en/tags/open-source/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/open-source-value/</loc>
+    <loc>https://maoxunxing.com/en/notes/open-source-value/</loc>
     <lastmod>2021-08-27T10:20:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/open-source-value/"
+                href="https://maoxunxing.com/zh-cn/notes/open-source-value/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/open-source-value/"
+                href="https://maoxunxing.com/en/notes/open-source-value/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/avl/</loc>
+    <loc>https://maoxunxing.com/en/tags/avl/</loc>
     <lastmod>2021-08-26T15:16:39+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/avl/"
+                href="https://maoxunxing.com/zh-cn/tags/avl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/avl/"
+                href="https://maoxunxing.com/en/tags/avl/"
                 />
   </url>
   
   <url>
-    <loc>/en/maximum-of-all-subarrays-of-size-k/</loc>
+    <loc>https://maoxunxing.com/en/maximum-of-all-subarrays-of-size-k/</loc>
     <lastmod>2021-08-26T15:16:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/maximum-of-all-subarrays-of-size-k/"
+                href="https://maoxunxing.com/zh-cn/maximum-of-all-subarrays-of-size-k/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/maximum-of-all-subarrays-of-size-k/"
+                href="https://maoxunxing.com/en/maximum-of-all-subarrays-of-size-k/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/slide-window/</loc>
-    <lastmod>2021-08-26T15:16:39+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/zh-cn/tags/slide-window/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/slide-window/"
-                />
-  </url>
-  
-  <url>
-    <loc>/en/tags/tree/</loc>
+    <loc>https://maoxunxing.com/en/tags/slide-window/</loc>
     <lastmod>2021-08-26T15:16:39+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/tree/"
+                href="https://maoxunxing.com/zh-cn/tags/slide-window/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/tree/"
+                href="https://maoxunxing.com/en/tags/slide-window/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/algorithm/</loc>
+    <loc>https://maoxunxing.com/en/tags/tree/</loc>
+    <lastmod>2021-08-26T15:16:39+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://maoxunxing.com/zh-cn/tags/tree/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://maoxunxing.com/en/tags/tree/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://maoxunxing.com/en/tags/algorithm/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/en/tags/disjoint/</loc>
+    <loc>https://maoxunxing.com/en/tags/disjoint/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/disjoint/"
+                href="https://maoxunxing.com/zh-cn/tags/disjoint/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/disjoint/"
+                href="https://maoxunxing.com/en/tags/disjoint/"
                 />
   </url>
   
   <url>
-    <loc>/en/detect-cycle-in-an-undirected-graph/</loc>
+    <loc>https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/detect-cycle-in-an-undirected-graph/"
+                href="https://maoxunxing.com/zh-cn/detect-cycle-in-an-undirected-graph/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/detect-cycle-in-an-undirected-graph/"
+                href="https://maoxunxing.com/en/detect-cycle-in-an-undirected-graph/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/interview/</loc>
+    <loc>https://maoxunxing.com/en/tags/interview/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/en/tags/exception-handle/</loc>
+    <loc>https://maoxunxing.com/en/tags/exception-handle/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/exception-handle/"
+                href="https://maoxunxing.com/zh-cn/tags/exception-handle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/exception-handle/"
+                href="https://maoxunxing.com/en/tags/exception-handle/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/front-end/</loc>
+    <loc>https://maoxunxing.com/en/tags/front-end/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/front-end/"
+                href="https://maoxunxing.com/zh-cn/tags/front-end/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/front-end/"
+                href="https://maoxunxing.com/en/tags/front-end/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/programming/</loc>
+    <loc>https://maoxunxing.com/en/tags/programming/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/programming/"
+                href="https://maoxunxing.com/zh-cn/tags/programming/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/programming/"
+                href="https://maoxunxing.com/en/tags/programming/"
                 />
   </url>
   
   <url>
-    <loc>/en/notes/exception-handle/</loc>
+    <loc>https://maoxunxing.com/en/notes/exception-handle/</loc>
     <lastmod>2021-08-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/notes/exception-handle/"
+                href="https://maoxunxing.com/zh-cn/notes/exception-handle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/notes/exception-handle/"
+                href="https://maoxunxing.com/en/notes/exception-handle/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/dp/</loc>
+    <loc>https://maoxunxing.com/en/tags/dp/</loc>
     <lastmod>2021-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/dp/"
+                href="https://maoxunxing.com/zh-cn/tags/dp/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/dp/"
+                href="https://maoxunxing.com/en/tags/dp/"
                 />
   </url>
   
   <url>
-    <loc>/en/tags/recursive-tree/</loc>
+    <loc>https://maoxunxing.com/en/tags/recursive-tree/</loc>
     <lastmod>2021-08-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/en/find-the-total-number-of-unique-bsts-of-n/</loc>
+    <loc>https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/</loc>
     <lastmod>2021-08-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/find-the-total-number-of-unique-bsts-of-n/"
+                href="https://maoxunxing.com/zh-cn/find-the-total-number-of-unique-bsts-of-n/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/find-the-total-number-of-unique-bsts-of-n/"
+                href="https://maoxunxing.com/en/find-the-total-number-of-unique-bsts-of-n/"
                 />
   </url>
   
   <url>
-    <loc>/en/about/</loc>
+    <loc>https://maoxunxing.com/en/about/</loc>
     <lastmod>2021-06-15T22:49:06+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/about/"
+                href="https://maoxunxing.com/zh-cn/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/about/"
+                href="https://maoxunxing.com/en/about/"
                 />
   </url>
   
   <url>
-    <loc>/en/categories/</loc>
+    <loc>https://maoxunxing.com/en/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/categories/"
+                href="https://maoxunxing.com/zh-cn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
+                href="https://maoxunxing.com/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>/en/projects/</loc>
+    <loc>https://maoxunxing.com/en/projects/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/projects/"
+                href="https://maoxunxing.com/zh-cn/projects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/projects/"
+                href="https://maoxunxing.com/en/projects/"
                 />
   </url>
   
   <url>
-    <loc>/en/book-reports/vortex/</loc>
+    <loc>https://maoxunxing.com/en/book-reports/vortex/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/book-reports/vortex/"
+                href="https://maoxunxing.com/zh-cn/book-reports/vortex/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/book-reports/vortex/"
+                href="https://maoxunxing.com/en/book-reports/vortex/"
                 />
   </url>
   

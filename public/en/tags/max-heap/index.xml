@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Max-Heap on maoxunxing&#39;s life</title>
-    <link>/en/tags/max-heap/</link>
+    <link>https://maoxunxing.com/en/tags/max-heap/</link>
     <description>Recent content in Max-Heap on maoxunxing&#39;s life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Apr 2022 22:37:20 +0800</lastBuildDate>
     
-	<atom:link href="/en/tags/max-heap/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://maoxunxing.com/en/tags/max-heap/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Array Part 4 - K’th Smallest/Largest Element in Unsorted</title>
-      <link>/en/k-th-smallest-inthearray/</link>
+      <link>https://maoxunxing.com/en/k-th-smallest-inthearray/</link>
       <pubDate>Thu, 21 Apr 2022 22:37:20 +0800</pubDate>
       
-      <guid>/en/k-th-smallest-inthearray/</guid>
+      <guid>https://maoxunxing.com/en/k-th-smallest-inthearray/</guid>
       <description>问题 Given an array and a number k where k is smaller than the size of the array, we need to find the k’th smallest element in the given array. It is given that all array elements are distinct.
 Input: arr[] = {7, 10, 4, 3, 20, 15} k = 3 Output: 7
 Input: arr[] = {7, 10, 4, 3, 20, 15} k = 4 Output: 10
