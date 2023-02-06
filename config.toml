@@ -1,4 +1,4 @@
-#baseurl = "https://maoxunxing.com/"
+baseurl = "https://maoxunxing.com/"
 title = "maoxunxing"
 theme = "hugo-coder"
 languagecode = "en"
