@@ -415,13 +415,6 @@ h4:hover .hanchor {
   display: none;
 }
 
-.nav-search-box {
-  /* display: inline-block;
-  float: right;
-  margin: 0;
-  position: relative;  */
-}
-
 @media screen and (min-width: 768px) {
   .btn-social span {
     display: inline-block;
@@ -633,6 +626,31 @@ h4:hover .hanchor {
   z-index: 100;
 }
 
+.aa-Autocomplete .aa-DetachedSearchButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.aa-DetachedSearchButtonIcon {
+  cursor: pointer !important;
+}
+
+.aa-DetachedSearchButtonPlaceholder {
+  display: none;
+}
+
+.aa-ItemContentBody {
+  margin: 10px 0;
+  padding: 0 12px;
+  font-size: 2rem;
+}
+
+.aa-ItemContentTitle {
+  line-height: 2rem;
+  margin-bottom: 6px !important;
+}
+
 .aa-List .aa-ItemLink {
   display: flex;
   text-decoration: none;
@@ -643,11 +661,7 @@ h4:hover .hanchor {
     right: 42px;
     top: 14px;
   }
-  .aa-Autocomplete .aa-DetachedSearchButton {
-    border: none;
-    background-color: inherit;
-  }
-  .aa-DetachedSearchButtonPlaceholder {
-    display: none;
+  .aa-ItemContentDescription {
+    overflow-x: visible !important;
   }
 }
