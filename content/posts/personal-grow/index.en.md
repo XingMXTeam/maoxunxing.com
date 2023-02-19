@@ -1,6 +1,7 @@
 ---
 title: "个人如何快速成长"
 date: 2022-04-02T17:27:56+08:00
+draft: true
 tags:
 - Personal Grow
 description: "关于我个人怎么思考成长这件事的总结"

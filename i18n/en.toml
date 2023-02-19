@@ -23,7 +23,7 @@ other = "build something cool"
 other = "Now I am a front end developer, focus on full stack technologies. This site is mainly to record my personal life and learning. "
 
 [homeCat1]
-other = "Articles about Algorithm"
+other = "Articles about Technologies"
 
 [homeCat1Article1]
 other = "Tree Part 1 - Detect Cycle in an Undirected Graph"

@@ -1,5 +1,5 @@
 ---
-title: "上帝怀中的羔羊"
+title: "Lamb in His Bosom"
 date: 2021-12-09T15:05:59+08:00
 rating: 6
 purchase_url: https://u.jd.com/ndoGqnU
