@@ -10,7 +10,7 @@ html {
 body {
   color: #212121;
   background-color: #FAFAFA;
-  font-family: Merriweather, Georgia, serif;
+  font-family: "PingFang SC", "Microsoft YaHei", Merriweather, Georgia, serif;
   font-size: 1.6em;
   font-weight: 300;
   line-height: 1.8em; }
@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "PingFang SC", "Microsoft YaHei", Lato, Helvetica, sans-serif;
   font-weight: 700;
   color: #000;
   margin: 6.4rem 0 3.2rem 0; }
@@ -247,7 +247,7 @@ img {
     .list ul li .title {
       font-size: 1.8rem;
       color: #212121;
-      font-family: Lato, Helvetica, sans-serif;
+      font-family: "PingFang SC", "Microsoft YaHei", Lato, Helvetica, sans-serif;
       font-weight: 700; }
       .list ul li .title:hover, .list ul li .title:focus {
         color: #1565c0; }
@@ -311,7 +311,7 @@ img {
   .navigation a, .navigation span {
     display: inline;
     font-size: 1.6rem;
-    font-family: Lato, Helvetica, sans-serif;
+    font-family: "PingFang SC", "Microsoft YaHei", Lato, Helvetica, sans-serif;
     font-weight: 700;
     line-height: 6.0rem;
     color: #212121; }
@@ -384,7 +384,7 @@ img {
 .pagination {
   margin-top: 6.0rem;
   text-align: center;
-  font-family: Lato, Helvetica, sans-serif; }
+  font-family: "PingFang SC", "Microsoft YaHei", Lato, Helvetica, sans-serif; }
   .pagination li {
     display: inline;
     text-align: center;
