@@ -96,3 +96,4 @@ https://promptomania.com/
 ##  6、社区
 https://www.reddit.com/r/StableDiffusion/
 
+转载请注明出处。
