@@ -2,25 +2,13 @@
 other = "毛毛星"
 
 [homeTitle]
-other = "你好，我是毛毛星"
+other = "你好！"
 
 [homeSubTitle1]
-other = "我热爱"
+other = "我的名字是毛毛星，我对写作、编码和创建创新项目充满热情。作为一个前端开发者，我擅长全栈技术，并一直努力提高自己的技能。这个网站作为一个平台，记录了我的个人旅程和不断学习的经历。"
 
 [homeSubTitle2]
-other = "写作"
-
-[homeSubTitle3]
-other = "编程"
-
-[homeSubTitle4]
-other = "和"
-
-[homeSubTitle5]
-other = "创建有趣的工具"
-
-[homeSubTitle6]
-other = "现在我是一名前端开发者，专注全栈技术。这个网站主要是记录我的个人生活和学习。"
+other = "谢谢你的光临，希望你喜欢我的内容!"
 
 [homeCat1]
 other = "技术课系列"

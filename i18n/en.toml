@@ -2,25 +2,13 @@
 other = "Felix Mao"
 
 [homeTitle]
-other = "Hey, I am Felix Mao"
+other = "Hello there!"
 
 [homeSubTitle1]
-other = "I love to"
+other = "My name is Felix Mao, and I am passionate about writing, coding, and creating innovative projects. As a front-end developer, I specialize in full-stack technologies and am always striving to improve my skills. This website serves as a platform for documenting my personal journey and ongoing learning experiences."
 
 [homeSubTitle2]
-other = "write"
-
-[homeSubTitle3]
-other = "code"
-
-[homeSubTitle4]
-other = "and"
-
-[homeSubTitle5]
-other = "build something cool"
-
-[homeSubTitle6]
-other = "Now I am a front end developer, focus on full stack technologies. This site is mainly to record my personal life and learning. "
+other = "Thank you for stopping by, and I hope you enjoy exploring my content!"
 
 [homeCat1]
 other = "Articles about Technologies"
