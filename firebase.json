@@ -15,7 +15,7 @@
      ],
      "headers":[
         {
-           "source":"**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
+           "source":"**/*.@(eot|otf|ttf|ttc|woff|woff2|font|coder|coder-dark.css)",
            "headers":[
               {
                  "key":"Access-Control-Allow-Origin",
@@ -23,16 +23,16 @@
               },
               {
                   "key":"Cache-Control",
-                  "value":"max-age=7200"
+                  "value":"max-age=31536000"
                }
            ]
         },
         {
-           "source":"**/*.(analytics|firebase-analytics.js)",
+           "source":"**/*.(analytics|firebase-analytics|livereload|coder.js)",
            "headers":[
               {
                  "key":"Cache-Control",
-                 "value":"max-age=7200"
+                 "value":"max-age=31536000"
               }
            ]
         },
@@ -41,16 +41,34 @@
           "headers":[
             {
                 "key":"Cache-Control",
-                "value":"max-age=7200"
+                "value":"max-age=31536000"
             }
           ]
         },
+       {
+         "source":"**/@algolia/autocomplete-js",
+         "headers":[
+           {
+             "key":"Cache-Control",
+             "value":"max-age=31536000"
+           }
+         ]
+       },
+       {
+         "source":"**/@algolia/autocomplete-theme-classic",
+         "headers":[
+           {
+             "key":"Cache-Control",
+             "value":"max-age=31536000"
+           }
+         ]
+       },
         {
            "source":"404.html",
            "headers":[
               {
                  "key":"Cache-Control",
-                 "value":"max-age=300"
+                 "value":"max-age=31536000"
               }
            ]
         }
