@@ -13,7 +13,6 @@ const BASE_CACHE_FILES = [
 
 const OFFLINE_CACHE_FILES = [
   '/manifest.json',
-  '/images/avatar3.jpg',
   '/images/favicon/favicon-32x32.png',
   '/images/favicon/favicon-16x16.png',
 
