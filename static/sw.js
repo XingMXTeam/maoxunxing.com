@@ -11,11 +11,7 @@ const BASE_CACHE_FILES = [
     'https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js',
     '/css/font.css',
     '/css/main.css',
-    '/css/coder-dark.css',
-    '/css/coder.css',
-    '/livereload.js?mindelay=10&v=2&port=1313&path=livereload',
-    '/images/avatar.jpg',
-    '/js/coder.js'
+    '/images/avatar.jpg'
 ];
 
 const OFFLINE_CACHE_FILES = [
@@ -27,11 +23,7 @@ const OFFLINE_CACHE_FILES = [
     'https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js',
     '/css/font.css',
     '/css/main.css',
-    '/css/coder-dark.css',
-    '/css/coder.css',
-    '/livereload.js?mindelay=10&v=2&port=1313&path=livereload',
     '/images/avatar.jpg',
-    '/js/coder.js'
 ];
 
 const NOT_FOUND_CACHE_FILES = [
