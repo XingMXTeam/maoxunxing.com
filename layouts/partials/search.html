@@ -1,6 +1,6 @@
-<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+<script src="/third-party/algolia/autocomplete-js.js"></script>
 <!-- for the search only version -->
-<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script src="/third-party/algolia/algoliasearch-lite.umd.js"></script>
 <script>
   const { autocomplete, getAlgoliaResults } = window['@algolia/autocomplete-js'];
   const algoliasearch = window.algoliasearch;
@@ -8,7 +8,6 @@
     'D7NQ3RODEC',
     'cac594df3c563fecd3ad54a0e399c173'
   );
-
   const hitTemplate =
         '<div class="col-lg-12 col-md-12 mb-4">' +
             '<article class="card post-card" id="summary-{{ safeHTML "{{{ key }}}" }}">' +
@@ -34,7 +33,7 @@
   autocomplete({
     container: '#docsearch',
     detachedMediaQuery: '',
-    placeholder: '搜索',
+    placeholder: 'Search',
     // openOnFocus: true,
     // debug: true,
     navigator: {
