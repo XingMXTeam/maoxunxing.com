@@ -5,8 +5,11 @@ description: "前端工程师的价值"
 tags:
 - 职业
 images:
-- why-front-end-engineer/bg.jpg
+- why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---
+
+{{< img src="simon-abrams-k_T9Zj3SE8k-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Simon Abrams on Unsplash" >}}
+
 前端是一个靠近终端或产品的工作。
 
 他们所做的工作就像翻译或装修工人一样，将业务运作的逻辑、信息和情感转化到各个终端（APP、浏览器、小程序、扩展）。

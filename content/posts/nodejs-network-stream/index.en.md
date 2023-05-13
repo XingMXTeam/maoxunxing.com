@@ -10,8 +10,11 @@ tags:
 - P2P
 description: "What is Streaming? This article details Nodejs' streaming technology, taking you from introductory to advanced. And learn about networking, RPC, WebSocket and other high level technologies"
 images:
-- nodejs-network-stream/a.jpeg
+- nodejs-network-stream/juanjo-jaramillo-mZnx9429i94-unsplash.jpg
 ---
+
+{{< img src="juanjo-jaramillo-mZnx9429i94-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Juanjo Jaramillo on Unsplash" >}}
+
 
 ## What is a stream
 

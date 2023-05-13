@@ -5,8 +5,12 @@ description: "The value of front-end engineers"
 tags:
 - Career
 images:
-- why-front-end-engineer/bg.jpg
+- why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---
+
+{{< img src="simon-abrams-k_T9Zj3SE8k-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Simon Abrams on Unsplash" >}}
+
+
 Front-end is a job near terminal or products.
 
 They do a job like translation or renovation workers which transform the logic, information, and emotion of the business's operations to each terminal (APP, browser, applet, extensions).
