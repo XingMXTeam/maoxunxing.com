@@ -43,7 +43,7 @@ buildFuture = true
 ##twitter = "maoxunxing"
 
 [params]
-    author = "Xunxing Mao"
+    author = "Felix Mao"
     info = "By day, a simple software engineer. By night, also a software engineer."
     description = "articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"
     keywords = "blog,developer,personal,毛毛星,maoxunxing,front-end,html,css,javascript,nodejs"
@@ -100,41 +100,41 @@ resampleFilter = "Lanczos"
     # url = "https://maoxunxing.com/index.xml"
 
 [[languages.en.menu.main]]
-  name = "Notes"
-  url = "/notes/"
-  weight = 1
-[[languages.en.menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 2
+    weight = 1
 [[languages.en.menu.main]]
     name = "Projects"
     url = "/projects/"
-    weight = 3
+    weight = 2
 [[languages.en.menu.main]]
     name = "Book"
     url = "/book-reports/"
-    weight = 4
+    weight = 3
+[[languages.en.menu.main]]
+  name = "Notes"
+  url = "/notes/"
+  weight = 4
 [[languages.en.menu.main]]
     name = "About"
     url = "/about/"
     weight = 5
 
 [[languages.zh-CN.menu.main]]
-  name = "随笔"
-  url = "/notes/"
-  weight = 1
-[[languages.zh-CN.menu.main]]
   name = "博客"
   url = "/posts/"
-  weight = 2
+  weight = 1
 [[languages.zh-CN.menu.main]]
   name = "项目"
   url = "/projects/"
-  weight = 3
+  weight = 2
 [[languages.zh-CN.menu.main]]
   name = "读书报告"
   url = "/book-reports/"
+  weight = 3
+[[languages.zh-CN.menu.main]]
+  name = "随笔"
+  url = "/notes/"
   weight = 4
 [[languages.zh-CN.menu.main]]
   name = "关于"

@@ -1,14 +1,14 @@
 ---
 title: "Array Part 3 - Find the Largest Sum of Contiguous Subarray "
 date: 2022-04-17T20:44:08+08:00
-description: "DP解法"
+description: "DP Solution"
 tags: 
 - Array
 images:
 - max-sum/test.png
 ---
 
-## 问题
+## Question
 
 Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers that has the largest sum. 
 
@@ -17,9 +17,9 @@ arr = [-2, -3, 4, -1, -2, 1, 5, -3]
 OutPut: 7
 Explain: 4 + -1 + -2 + 1 + 5 = 7
 
-## 解答
+## Code
 
-这个能处理全为负数的情况
+This can handle the all-negative case
 
 ``` ts
 
@@ -69,5 +69,7 @@ for (let index = 0; index < arr.length; index++) {
 }
 ```
 
-只遍历了一遍，时间复杂度是O(n)  空间复杂度为O(1)
+## Time Complex
+
+Only traversed once, time complexity is O(n) space complexity is O(1)
 

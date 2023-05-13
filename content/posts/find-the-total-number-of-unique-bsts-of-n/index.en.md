@@ -7,7 +7,7 @@ tags:
 - Interview
 - DP
 - Recursive Tree
-description: "1 递归树 2 DP解法"
+description: "1 Recursive tree 2 DP solution method"
 images:
 - find-the-total-number-of-unique-bsts-of-n/test.png
 ---

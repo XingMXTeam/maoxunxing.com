@@ -1,16 +1,16 @@
 ---
-title: "Array Part 1 - 长度为k的子数组的最大值"
+title: "Array Part 1 - The maximum value of a subarray of length k"
 date: 2021-08-26T15:16:39+08:00
 tags:
 - Array
 - Tree
 - AVL
 - Slide Window
-description: "滑动窗口的用法，AVL树的用法"
+description: "Usage of sliding window, usage of AVL tree"
 images:
 - maximum-of-all-subarrays-of-size-k/test.png
 ---
-## 问题
+## Question
 
 Give an array and an integer **K**, find the maximum for each and every condiguous subarray of size k.
 
@@ -27,7 +27,7 @@ Maximum of 2, 3, 6 is 6
 
 ## Problem Analysis(A)
 
-Method 1: 暴力解法 [代码示例](./暴力解法.ts)
+Method 1: Violent solution [code example](./暴力解法.ts)
 
 ``` js
 
@@ -44,14 +44,14 @@ function getMaxK(arr, k) {
 
 ```
 
-二层遍历，外层循环是(n-k)，里层是k, 根据乘法原则：(n-k) * k，所以时间复杂度是O(n*k) 
-不要额外空间，所以空间复杂度是O(1)
+Two-level traversal, outer loop is (n-k), inner layer is k, according to the multiplication principle: (n-k) * k, so the time complexity is O(n*k)
+No extra space, so the space complexity is O(1)
 
-Method 2: 用AVL树
+Method 2: Using AVL tree
 
-AVL是一个人名的简称，是一种高度平衡(左右子树高度差不超过1)的二叉搜索树，它**方便寻找最值，并且保证查找/删除/插入时间复杂度都是O(logn)**。二叉搜索树也叫BST，它的左子树小于根节点，根节点小于右子树。
+AVL is a short name for a highly balanced (left and right subtree height difference not more than 1) binary search tree, which ** facilitates finding the most value and guarantees that the find/delete/insert time complexity is O(logn)**. A binary search tree, also called a BST, has a left subtree smaller than the root node and a root node smaller than the right subtree.
 
-只需要构建k个节点的树，并且打印出这个树的最值。在JS中可以用sort函数去获得最值（底层实现用了AVL树）。
+It is only necessary to construct the tree with k nodes and print out the most value of this tree. In JS you can use the sort function to get the most value (the underlying implementation uses an AVL tree).
 
 ```ts
 function getMaxK(arr, k) {
@@ -82,41 +82,43 @@ function getMaxK(arr, k) {
 
 ```
 
-时间复杂度： 遍历数组n， 删除元素logk, 所以n*logk
-空间复杂度： logk
+## Time and Space Complex
 
-如何用js构建AVL树？ 主要是节点做左右子旋的理解。
+Time complexity: traverse array n, delete element logk, so n*logk
+Space complexity: logk
 
-这里总结了一套代码模版： 
+How to build AVL tree with js? The main thing is that the nodes do left and right subspin understanding.
 
-1 节点平衡模版
+Here is a summary of a set of code templates:
+
+1 Node balancing template
 
 ``` ts
 const balance = this.getBalance(node);
-//  左左
+//  left left
 if (balance > 1 && data < node.left.data) {
     return this.rightRotate(node);
 }
 
-// 右右
+// right right
 if (balance < -1 && data > node.right.data) {
     return this.leftRotate(node);
 }
 
-// 左右
+// left right
 if (balance > 1 && data > node.left.data) {
     node.left = this.leftRotate(node.left);
     return this.rightRotate(node);
 }
 
-// 右左
+// right left
 if (balance < -1 && data < node.right.data) {
     node.right = this.rightRotate(node.right);
     return this.leftRotate(node);
 }
 ```
 
-2 左旋模版
+2 Left-rotate template
 
 ```ts
 function leftRotate(x) {
@@ -130,7 +132,7 @@ function leftRotate(x) {
 }
 ```
 
-3 右旋模版
+3 right-rotate template
 
 ``` ts
 function rightRotate() {
@@ -144,11 +146,11 @@ function rightRotate() {
 }
 ```
 
-插入节点简单就是递归删除，删除节点需要考虑删除根节点的情况
+Inserting a node is simply recursive deletion, and deleting a node requires consideration of the deletion of the root node
 
-Method 3: Two Stack 双栈
+Method 3: Two Stack 
 
-代码模版：
+Code Template：
 
 ``` ts
 
@@ -174,7 +176,7 @@ for(let i = 0; i <= n-k; i++) {
 
 ```
 
-因为只需要遍历一次，所以时间复杂度是O(n) 因为两个栈最多只有k个元素 再根据加法原理，空间复杂度是O(k)
+Because it only needs to be traversed once, the time complexity is O(n) Because the two stacks have at most k elements And according to the addition principle, the space complexity is O(k)
 
-Method 4: Max-Heap 大顶堆
+Method 4: Max-Heap 
 

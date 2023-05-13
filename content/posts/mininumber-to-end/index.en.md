@@ -3,12 +3,12 @@ title: "Array Part 2 - Minimum number of jumps to reach end"
 date: 2022-04-16T22:29:56+08:00
 tags:
 - Array
-description: "数组移动"
+description: "Arrays move"
 images:
 - mininumber-to-end/test.png
 ---
 
-## 问题
+## Questions
 
 Given an array of integers where each element represents the max number of steps that can be made forward from that element. Write a function to return the minimum number of jumps to reach the end of the array (starting from the first element). If an element is 0, then we cannot move through that element. If we can’t reach the end, return -1.
 Examples:  
@@ -22,9 +22,9 @@ Output: 10
 Explanation: In every step a jump is 
 needed so the count of jumps is 10.
 
-## 解答
+## Solution
 
-1 Method 1： 暴力解法
+1 Method 1：Violent solution
 
 ``` ts
 //   i=1   
@@ -65,5 +65,7 @@ function miniJumpsToEnd(arr) {
 
 ```
 
-暴力解法有点不暴力呀，只遍历了一遍时间复杂度是O(n) 
-通过三个变量记录当前状态，空间复杂度是O(1)
+## Time Complex
+
+The violent solution is a bit non-violent ah, only traversed the time complexity is O(n)
+Record the current state by three variables, the space complexity is O(1)

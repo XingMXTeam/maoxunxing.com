@@ -1,7 +1,7 @@
 ---
 title: "String Part 1 - Longest Palindromic Substring"
 date: 2022-04-16T23:59:19+08:00
-description: "双指针用法"
+description: "Double Pointer Usage"
 tags:
 - String
 - Double Point
@@ -9,7 +9,7 @@ images:
 - substring-longest/test.png
 ---
 
-## 问题
+## Questions
 
 Given a string, find the longest substring which is a palindrome. 
 For Example:
@@ -20,9 +20,8 @@ Output: "geeksskeeg".
 Input: Given string :"Geeks",
 Output: "ee".
 
-## 解答
+## Code
 
-代码模版： 
 
 ``` ts
 low = index - 1
@@ -47,5 +46,7 @@ if(maxLength < length) {
 }
 ```
 
-存在两个循环，外面遍历整个字符串，里面从i开始往外扩，最坏就是扩到头尾，所以时间复杂度是O(n)
-空间只有单个变量，空间复杂度是O(1)
+## Time Complex
+
+There are two loops, the outside traverses the whole string, the inside expands from i to the outside, the worst is to expand to the beginning and the end, so the time complexity is O(n)
+The space is only a single variable, and the space complexity is O(1)

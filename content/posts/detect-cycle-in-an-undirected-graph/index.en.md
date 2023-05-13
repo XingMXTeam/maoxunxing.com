@@ -6,7 +6,7 @@ tags:
 - Tree
 - Interview
 - Disjoint
-description: "1 图的构造和遍历 2 disjoint 算法"
+description: "1 graph construction and traversal 2 disjoint algorithm"
 images:
 - detect-cycle-in-an-undirected-graph/graph.png
 ---
