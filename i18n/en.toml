@@ -11,7 +11,7 @@ other = "My name is Felix Mao, and I am passionate about writing, coding, and cr
 other = "Thank you for stopping by, and I hope you enjoy exploring my content!"
 
 [homeCat1]
-other = "Articles about Technologies"
+other = "Articles about Algorithm"
 
 [homeCat1Article1]
 other = "Tree Part 1 - Detect Cycle in an Undirected Graph"
@@ -19,15 +19,14 @@ other = "Tree Part 1 - Detect Cycle in an Undirected Graph"
 [homeCat1Article2]
 other = "Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
 
-
 [homeCat2]
-other = "Articles About Growth"
+other = "Articles about Career"
 
 [homeCat2Article1]
-other = "What to Learn Part 1 - Growth Model"
+other = "Why You Need A Front-End Engineer"
 
 [homeCat2Article2]
-other = "How to Learn Part 1 - Methodology"
+other = "How To Be Different And Successful As An Engineer"
 
 [homeCat2Article3]
 other = "How to Learn Part 2 - Solving Problem"

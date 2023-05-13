@@ -11,7 +11,7 @@ other = "我的名字是毛毛星，我对写作、编码和创建创新项目�
 other = "谢谢你的光临，希望你喜欢我的内容!"
 
 [homeCat1]
-other = "技术课系列"
+other = "关于算法的文章"
 
 [homeCat1Article1]
 other = "树系列 - 检测无定向图中的环"
@@ -20,12 +20,12 @@ other = "树系列 - 检测无定向图中的环"
 other = "树系列 - 给出N，求唯一BST的总数"
 
 [homeCat2]
-other = "关于成长的文章"
+other = "关于职场的文章"
 
 [homeCat2Article1]
-other = "学什么系列 - 成长模型"
+other = "为什么需要前端工程师"
 [homeCat2Article2]
-other = "怎么学系列 - 方法论"
+other = "如何做一个与众不同的成功的工程师"
 [homeCat2Article3]
 other = "怎么学系列 - 解决问题"
 [homeCat2Article4]
