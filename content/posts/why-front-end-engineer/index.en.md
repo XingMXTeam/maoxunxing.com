@@ -1,5 +1,5 @@
 ---
-title: "Why you need a front-end engineer"
+title: "Why You Need A Front-End Engineer"
 date: 2023-05-13
 description: "The value of front-end engineers"
 tags:
