@@ -1,7 +1,7 @@
 ---
 title: "深度工作力"
 date: 2023-02-19
-rating: 4 
+rating: 7 
 purchase_url: https://u.jd.com/KQ1brBw
 ---
 

@@ -1,14 +1,14 @@
 ---
 title: "Deep Work"
 date: 2023-02-19
-rating: 4 
+rating: 7 
 purchase_url: https://u.jd.com/KQ1brBw
 ---
 
-主要是阐述了核心观点：当下如果要成功，有足够的产出，必须保证深度工作的时间。只有在深度工作时候能发挥一个人的创意，产出有价值的内容/产品。
+The main point is to state the core idea that if one wants to be successful and have enough output at the moment, one must ensure time for deep work. Only when working in depth can one's creativity be brought to bear to produce valuable content/products.
 
 ---
 
 ## What I Liked
 
-对这个观点我是非常赞同的，当下的人浅层思考太多，时间碎片化。如果能保证足够的时间投入工作，又何必担心无法获得成就呢？
+I strongly agree with this viewpoint. People today think too much at a shallow level and have fragmented time. If one can guarantee enough time to devote to work, why worry about not being able to get achievements?

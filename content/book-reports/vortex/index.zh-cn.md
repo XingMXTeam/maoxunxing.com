@@ -1,7 +1,7 @@
 ---
 title: "旋涡 - 伊藤润二代表作"
 date: 2021-8-11T21:51:14+08:00
-rating: 5
+rating: 6
 purchase_url: https://item.jd.com/12706501.html
 ---
 
@@ -23,4 +23,4 @@ purchase_url: https://item.jd.com/12706501.html
 
 ## Key Takeaways
 
-* 给我的启示是：对资本要保持警惕，不要被金钱裹挟，要做个独立自由的灵魂，钱很重要，不要成为它的奴隶
+* 对资本要保持警惕，不要被金钱裹挟，要做个独立自由的灵魂，钱很重要，不要成为它的奴隶

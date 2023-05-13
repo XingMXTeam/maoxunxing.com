@@ -5,14 +5,14 @@ rating: 8
 purchase_url: https://www.zhihu.com/xen/market/mall/detail/1356561052302422016?mcn_card_id=1445445969823735808&source= goodsRecommend-pc&zh_nav_left=back&zh_nav_right=empty
 ---
 
-总体来说，围绕着两个女人的作为主线，随着时代变迁的发生的那些爱情、友情、家庭的事，关注心理描写，细腻入微，引人入胜。人的一生几乎都会被时代背景下的人裹挟，而莉拉却保持了独立的人格，具有不一样的性格品质，莉拉从时代中走出来，靠着她顽强的品质、聪明独立的个性影响着她所在的社区。我觉得正是莉拉的存在让埃莱娜成为成功的作家，埃莱娜是莉拉的延续，她们紧密相连。
+On the whole, it revolves around two women's as the main line of those love, friendship and family happenings as the times change, focusing on psychological descriptions that are delicate and fascinating. While people are almost always wrapped up in the context of the times in their lives, Leila maintains an independent personality with different character qualities. Leila comes out of the times and influences her community with her tenacious qualities and smart, independent personality. I think it is Lila's presence that makes Elena a successful writer, and Elena is a continuation of Lila, and they are closely connected.
 
 ---
 
 ## What I Liked
 
-* 作者很细腻地描写了两个女性的内心世界，非常厉害
-* 时间跨越50年，随着时代的变迁，人心的演变，让人着迷
+* The author is very subtle in portraying the inner world of two women, very powerful
+* Time spans 50 years, and it's fascinating to see how hearts evolve as times change
 
 ## What I Disliked
 
@@ -20,8 +20,8 @@ purchase_url: https://www.zhihu.com/xen/market/mall/detail/1356561052302422016?m
 
 ## Key Takeaways
 
-* 社区里面那些人的生命简单，而让人惋惜，坏到极处，或者可怜到极处，莉拉即便在这样的环境下，仍然努力保持独立，不管是从思想层面，还是行为上， 让人敬佩和喜欢。
-* 两个女主人的友谊，互相嫉妒、也互相成就非常让人羡慕，感动，人的一生何其短暂啊。。像花一样尽情绽放吧。
+* The simplicity of the lives of those in the community, and the lamentable, bad to the core, or pathetic to the core, Leila, even in such circumstances, still tries to remain independent, both on the level of thought and behavior, to be admired and liked.
+* The friendship between the two hostesses, who are jealous of each other as well as each other's achievements, is very enviable and moving. Let's bloom like a flower.
 
 {{< img src="bg.jpeg" alt="hbo bg" maxWidth="900px" caption="HBO电影《我的天才女友》海报" >}}
 
