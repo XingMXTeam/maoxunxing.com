@@ -39,8 +39,8 @@ buildFuture = true
 [permalinks]
     posts = "/:filename/"
 
-##[social]
-##twitter = "maoxunxing"
+[social]
+twitter = "maoxunxing"
 
 [params]
     author = "Felix Mao"
@@ -72,32 +72,32 @@ quality = 90
 resampleFilter = "Lanczos"
 
 # Social links
-# [[params.social]]
-    # name = "Github"
-    # icon = "fab fa-github fa-2x"
-    # weight = 1
-    # url = "https://github.com/XingMXTeam/"
-# [[params.social]]
-  #   name = "Twitter"
-    # icon = "fab fa-twitter fa-2x"
-    # weight = 2
-    # url = "https://twitter.com/maoxunxing/"
-# [[params.social]]
-  #   name = "Zhihu"
-#     icon = "fab fa-zhihu fa-2x"
-  #   weight = 3
-    # url = "https://www.zhihu.com/people/feng-zi-63-44"
-# [[params.social]]
-  #   name = "Douban"
-    # link = "https://i.ibb.co/PxptbT0/image.png"
-    # weight = 4
-    # clazz = "douban"
-    # url = "https://www.douban.com/people/maoxingxing/"
-# [[params.social]]
-  #   name = "Rss"
-    # icon = "fa fa-rss fa-2x"
-    # weight = 5
-    # url = "https://maoxunxing.com/index.xml"
+ [[params.social]]
+     name = "Github"
+     icon = "fab fa-github fa-2x"
+     weight = 1
+     url = "https://github.com/XingMXTeam/"
+ [[params.social]]
+     name = "Twitter"
+     icon = "fab fa-twitter fa-2x"
+     weight = 2
+     url = "https://twitter.com/maoxunxing/"
+ #[[params.social]]
+ #   name = "Zhihu"
+ #   icon = "fab fa-zhihu fa-2x"
+ #   weight = 3
+#   url = "https://www.zhihu.com/people/feng-zi-63-44"
+ #[[params.social]]
+ #   name = "Douban"
+ #   link = "https://i.ibb.co/PxptbT0/image.png"
+ #   weight = 4
+ #   clazz = "douban"
+#   url = "https://www.douban.com/people/maoxingxing/"
+ #[[params.social]]
+ #   name = "Rss"
+ #   icon = "fa fa-rss fa-2x"
+ #   weight = 5
+#   url = "https://maoxunxing.com/index.xml"
 
 [[languages.en.menu.main]]
     name = "Blog"
