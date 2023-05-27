@@ -4,33 +4,33 @@ date: 2021-08-27T10:20:36+08:00
 draft: true
 description: ""
 images:
-- unit-test/unit-test.jpeg
+  - unit-test/unit-test.jpeg
 ---
 
 ## 单测
 
-@types/mocha 
+@types/mocha
 ts-node
 
-mocha.opts  
+mocha.opts
 
 ```
 --require ts-node/register
 test/**/*.test.ts
 ```
 
-``` js
-import 'mocha'
+```js
+import "mocha";
 ```
 
 ## 覆盖率
 
-``` js
+```js
 // cov: nyc mocha
 npm run cov
 ```
 
-``` js
+```js
 {
   "nyc": {
     "include": {
@@ -58,13 +58,13 @@ npm run cov
 
 lerna 下统计测试覆盖率
 
-``` js
+```js
 nyc lerna run cov --concurrency = 1
 ```
 
 spawn-wrapper 注入子进程
 
-``` js
+```js
 {
   "include": [
     "packages/*/src/*.ts",

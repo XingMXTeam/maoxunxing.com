@@ -6,30 +6,29 @@
 // s: 2
 
 function getLargetSubArrSum(arr, size) {
-    let maxSoFar = Number.MIN_VALUE
-    let maxEndingHere = 0
-    let start = 0
-    let end = 0
-    let s = 0
+  let maxSoFar = Number.MIN_VALUE;
+  let maxEndingHere = 0;
+  let start = 0;
+  let end = 0;
+  let s = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
-        maxEndingHere += element
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    maxEndingHere += element;
 
-        if(maxSoFar < maxEndingHere) {
-            maxSoFar = maxEndingHere
+    if (maxSoFar < maxEndingHere) {
+      maxSoFar = maxEndingHere;
 
-            start = s
-            end = i
-        }
-
-        // 肯定要大于0 所以负数就舍弃了 
-        if(maxEndingHere < 0) {
-            maxEndingHere = 0
-            s = i + 1
-        }
-        
+      start = s;
+      end = i;
     }
+
+    // 肯定要大于0 所以负数就舍弃了
+    if (maxEndingHere < 0) {
+      maxEndingHere = 0;
+      s = i + 1;
+    }
+  }
 }
 
 // function getLargetSubArrSum(arr, size) {
@@ -42,7 +41,6 @@ function getLargetSubArrSum(arr, size) {
 //     }
 
 // }
-
 
 // function getLargetSubArrSum(arr, size) {
 

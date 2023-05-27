@@ -1,1 +1,5 @@
-{"Target":"js/coder.min.b5c9bb7067a176a6ea5d67dce62948c146afa3df08c0ececbad8651db7889818.js","MediaType":"application/javascript","Data":{"Integrity":"sha256-tcm7cGehdqbqXWfc5ilIwUavo98IwOzsuthlHbeImBg="}}
+{
+  "Target": "js/coder.min.b5c9bb7067a176a6ea5d67dce62948c146afa3df08c0ececbad8651db7889818.js",
+  "MediaType": "application/javascript",
+  "Data": { "Integrity": "sha256-tcm7cGehdqbqXWfc5ilIwUavo98IwOzsuthlHbeImBg=" }
+}

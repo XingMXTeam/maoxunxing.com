@@ -1,78 +1,134 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFFFFF"/>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/images/avatar.jpg">
-    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-    {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/images/avatar.jpg" />
+    {{ with .Site.Params.author }}
+      <meta name="author" content="{{ . }}" />
+    {{ end }}
+    {{ with .Site.Params.description }}
+      <meta name="description" content="{{ . }}" />
+    {{ end }}
+    {{ with .Site.Params.keywords }}
+      <meta name="keywords" content="{{ . }}" />
+    {{ end }}
 
     {{ partial "twitter-card.html" . }}
     {{ partial "opengraph.html" . }}
 
     {{ if .Permalink }}
-      <base href="{{ .Permalink }}">
+      <base href="{{ .Permalink }}" />
     {{ end }}
     <title>{{ block "title" . }}{{- .Site.Title -}}{{ end }}</title>
 
     {{ if .Params.canonical_url }}
-      <link rel="canonical" href="{{ .Params.canonical_url }}">
+      <link rel="canonical" href="{{ .Params.canonical_url }}" />
     {{ else if .Permalink }}
-      <link rel="canonical" href="{{ .Permalink }}">
+      <link rel="canonical" href="{{ .Permalink }}" />
     {{ end }}
-<!--    <link rel="preconnect dns-prefetch" href="//fonts.googleapis.com" />-->
-<!--    <link rel="preconnect dns-prefetch" href="//use.fontawesome.com" />-->
-<!--    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />-->
-<!--    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />-->
-    <link rel="preconnect dns-prefetch" href="//www.google-analytics.com" crossorigin />
+    <!--    <link rel="preconnect dns-prefetch" href="//fonts.googleapis.com" />-->
+    <!--    <link rel="preconnect dns-prefetch" href="//use.fontawesome.com" />-->
+    <!--    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />-->
+    <!--    <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />-->
+    <link
+      rel="preconnect dns-prefetch"
+      href="//www.google-analytics.com"
+      crossorigin
+    />
     <link rel="preconnect dns-prefetch" href="//www.gstatic.com" crossorigin />
-    <link rel="preconnect dns-prefetch" href="//D7NQ3RODEC-dsn.algolia.net" crossorigin />
-    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-1.algolianet.com" crossorigin />
-    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-2.algolianet.com" crossorigin />
-    <link rel="preconnect dns-prefetch" href="//d7nq3rodec-3.algolianet.com" crossorigin />
+    <link
+      rel="preconnect dns-prefetch"
+      href="//D7NQ3RODEC-dsn.algolia.net"
+      crossorigin
+    />
+    <link
+      rel="preconnect dns-prefetch"
+      href="//d7nq3rodec-1.algolianet.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect dns-prefetch"
+      href="//d7nq3rodec-2.algolianet.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect dns-prefetch"
+      href="//d7nq3rodec-3.algolianet.com"
+      crossorigin
+    />
 
-<!--    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="preload" as="style">-->
-<!--    <link rel="preload" as="style" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />-->
+    <!--    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700" rel="preload" as="style">-->
+    <!--    <link rel="preload" as="style" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />-->
 
-    <link rel="stylesheet" href="/third-party/google-fonts/css/style.css"  />
-    <link rel="stylesheet" href="/third-party/font-awesome/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="/third-party/google-fonts/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="/third-party/font-awesome/v5.11.2/css/all.css"
+    />
 
     <!-- <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="../../css/font.css" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" /> -->
     <!-- <link rel="preload" as="style" rel="stylesheet" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css" integrity="sha256-oeib74n7OcB5VoyaI+aGxJKkNEdyxYjd2m3fi/3gKls=" crossorigin="anonymous"> -->
     {{ if .HasShortcode "zestful-ad" }}
-      <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/zestful.css" media="screen">
+      <link
+        rel="stylesheet"
+        href="{{ .Site.BaseURL }}/css/zestful.css"
+        media="screen"
+      />
     {{ end }}
     {{ if .HasShortcode "tinypilot-ad" }}
-      <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/tinypilot.css" media="screen">
+      <link
+        rel="stylesheet"
+        href="{{ .Site.BaseURL }}/css/tinypilot.css"
+        media="screen"
+      />
     {{ end }}
     {{ if .HasShortcode "htfp-ad" }}
-      <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/htfp.css" media="screen">
+      <link
+        rel="stylesheet"
+        href="{{ .Site.BaseURL }}/css/htfp.css"
+        media="screen"
+      />
     {{ end }}
 
     {{ if .Site.IsServer }}
       {{ $cssOpts := (dict "targetPath" "css/coder.css" "enableSourceMap" true ) }}
       {{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts }}
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen" />
     {{ else }}
       {{ $cssOpts := (dict "targetPath" "css/coder.css" ) }}
       {{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+      <link
+        rel="stylesheet"
+        href="{{ $styles.RelPermalink }}"
+        integrity="{{ $styles.Data.Integrity }}"
+        crossorigin="anonymous"
+        media="screen"
+      />
     {{ end }}
 
     {{ if .Site.Params.rtl }}
       {{ if .Site.IsServer }}
         {{ $cssOpts := (dict "targetPath" "css/coder-rtl.css" "enableSourceMap" true ) }}
         {{ $styles := resources.Get "scss/coder-rtl.scss" | resources.ExecuteAsTemplate "style.coder-rtl.css" . | toCSS $cssOpts }}
-        <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+        <link
+          rel="stylesheet"
+          href="{{ $styles.RelPermalink }}"
+          media="screen"
+        />
       {{ else }}
         {{ $cssOpts := (dict "targetPath" "css/coder-rtl.css" ) }}
         {{ $styles := resources.Get "scss/coder-rtl.scss" | resources.ExecuteAsTemplate "style.coder-rtl.css" . | toCSS $cssOpts | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+        <link
+          rel="stylesheet"
+          href="{{ $styles.RelPermalink }}"
+          integrity="{{ $styles.Data.Integrity }}"
+          crossorigin="anonymous"
+          media="screen"
+        />
       {{ end }}
     {{ end }}
 
@@ -80,11 +136,21 @@
       {{ if .Site.IsServer }}
         {{ $cssOpts := (dict "targetPath" "css/coder-dark.css" "enableSourceMap" true ) }}
         {{ $styles := resources.Get "scss/coder-dark.scss" | resources.ExecuteAsTemplate "style.coder-dark.css" . | toCSS $cssOpts }}
-        <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+        <link
+          rel="stylesheet"
+          href="{{ $styles.RelPermalink }}"
+          media="screen"
+        />
       {{ else }}
         {{ $cssOpts := (dict "targetPath" "css/coder-dark.css" ) }}
         {{ $styles := resources.Get "scss/coder-dark.scss" | resources.ExecuteAsTemplate "style.coder-dark.css" . | toCSS $cssOpts | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+        <link
+          rel="stylesheet"
+          href="{{ $styles.RelPermalink }}"
+          integrity="{{ $styles.Data.Integrity }}"
+          crossorigin="anonymous"
+          media="screen"
+        />
       {{ end }}
     {{ end }}
 
@@ -93,15 +159,30 @@
     {{ end }}
 
     {{ if and .Params.custom_css .Permalink }}
-      <link rel="stylesheet" href="{{ printf `%s%s` .Permalink `pagestyle.css` }}" />
+      <link
+        rel="stylesheet"
+        href="{{ printf `%s%s` .Permalink `pagestyle.css` }}"
+      />
     {{ end }}
 
     {{ range .Site.Params.custom_js }}
       <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32x32.png" | absURL }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16x16.png" | absURL }}" sizes="16x16">
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ .Site.Params.favicon_32 | default "/images/favicon-32x32.png" | absURL }}"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ .Site.Params.favicon_16 | default "/images/favicon-16x16.png" | absURL }}
+      "
+      sizes="16x16"
+    />
 
     {{ if gt (len .AlternativeOutputFormats) 0 -}}
       {{ range .AlternativeOutputFormats -}}
@@ -111,7 +192,11 @@
       {{ printf `<link rel="alternate" type="application/rss+xml" href="%s/%s" title="%s" />` .Site.BaseURL "index.xml" $.Site.Title | safeHTML }}
     {{ end -}}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+    />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" /> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
 
@@ -124,10 +209,11 @@
   {{ else if eq .Site.Params.colorscheme "auto" }}
     {{ $csClass = "colorscheme-auto" }}
   {{ end }}
-  <body class="{{ $csClass }}{{ if .Site.Params.rtl }} rtl{{ end }}">
+  <body class="{{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}">
     {{ partial "float" . }}
     <main class="wrapper">
       {{ partial "header.html" . }}
+
 
       <div class="content">
         {{ block "content" . }}{{ end }}
@@ -136,13 +222,15 @@
       {{ partial "footer.html" . }}
     </main>
 
-
     {{ if .Site.IsServer }}
       {{ $script := resources.Get "js/coder.js" }}
       <script src="{{ $script.RelPermalink }}"></script>
     {{ else }}
       {{ $script := resources.Get "js/coder.js" | minify | fingerprint }}
-      <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+      <script
+        src="{{ $script.RelPermalink }}"
+        integrity="{{ $script.Data.Integrity }}"
+      ></script>
     {{ end }}
 
     {{ partial "google-analytics.html" . }}
@@ -152,5 +240,4 @@
     {{ partial "search.html" . }}
 
   </body>
-
 </html>

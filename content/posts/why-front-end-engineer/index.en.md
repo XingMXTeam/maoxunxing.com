@@ -3,13 +3,12 @@ title: "Why You Need A Front-End Engineer"
 date: 2023-05-13
 description: "The value of front-end engineers"
 tags:
-- Career
+  - Career
 images:
-- why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
+  - why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---
 
 {{< img src="simon-abrams-k_T9Zj3SE8k-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Simon Abrams on Unsplash" >}}
-
 
 Front-end is a job near terminal or products.
 
@@ -22,12 +21,13 @@ They are skilled in the cross-border integration, the best front-end can represe
 Front-end programmers are application developers with an eye towards the future who use modern web development tools and native platform development technologies (Universal JS, Open Web platform, native extensions).
 
 They are multi-talented, both depth and breadth:
-+ Understanding of user experience, product, and business knowledge
-+ Familiarity with mainstream device development tool
-+ Familiarity with web standards
-+ Master knowledge of industry best practices
-+ Master Engineering skills
-+ Master Project management skills
+
+- Understanding of user experience, product, and business knowledge
+- Familiarity with mainstream device development tool
+- Familiarity with web standards
+- Master knowledge of industry best practices
+- Master Engineering skills
+- Master Project management skills
 
 And more, best front-end also master methodologies like 3C program design, 5W1H8C1D analysis method, AARRR model, 5W analysis method, OKR, PDCA execution, 4D summary, Pyramid reporting, 4 line review method, and so on.
 

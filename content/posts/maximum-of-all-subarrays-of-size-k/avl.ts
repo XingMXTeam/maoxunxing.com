@@ -48,7 +48,7 @@ class AVLTree {
     x.height = max(this.height(x.left), this.height(x.right)) + 1;
     y.height = max(this.height(y.left), this.height(y.height)) + 1;
   }
-  
+
   insert(node, data) {
     // if leaf node (when root is null , return a new node)
     if (!node) {
@@ -92,7 +92,6 @@ class AVLTree {
   deleteNode(x) {
     if (this.root === null) return null;
   }
-  
 }
 
 // const findMax = (root) => {

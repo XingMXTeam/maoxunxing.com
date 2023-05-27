@@ -1,5 +1,8 @@
 body {
-  font-family: "PingFang SC", "Microsoft YaHei", "Inter", Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: "PingFang SC", "Microsoft YaHei", "Inter", Inter var, system-ui,
+    -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
+    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
   font-size: 1.9em;
   line-height: 1.65em;
   margin: 0;
@@ -28,7 +31,8 @@ blockquote {
 
 .navigation {
   border-bottom: 1px solid rgba(0, 0, 0, 0);
-  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
   position: sticky;
   background: #fafafa;
   top: 0;
@@ -36,12 +40,11 @@ blockquote {
   z-index: 99;
 }
 
-@media (min-width:1025px) {
+@media (min-width: 1025px) {
   .navigation-list {
     /* margin-right: 200px; */
   }
 }
-
 
 .navigation-author {
   display: inline-flex;
@@ -51,7 +54,7 @@ blockquote {
 }
 .navigation-author img {
   max-width: 50px;
-  height:50px;
+  height: 50px;
   border-radius: 30%;
 }
 .navigation-avatar {
@@ -126,7 +129,6 @@ blockquote {
   border: 1px solid rgba(177, 177, 177, 0.76);
 }
 
-
 @media screen and (min-width: 768px) {
   .align-left {
     float: left;
@@ -147,7 +149,7 @@ blockquote {
   margin: 2em 0 !important;
   padding: 1em;
   color: #494e52;
-  font-size: .8em !important;
+  font-size: 0.8em !important;
   border-radius: 4px;
   text-indent: initial;
   clear: both;
@@ -155,17 +157,17 @@ blockquote {
 
 .notice-info {
   background-color: #eef7fa;
-  box-shadow: 0 1px 1px rgba(82,173,200,0.25);
+  box-shadow: 0 1px 1px rgba(82, 173, 200, 0.25);
 }
 
 .notice-warning {
   background-color: #fef4e6;
-  box-shadow: 0 1px 1px rgba(248,148,6,0.25);
+  box-shadow: 0 1px 1px rgba(248, 148, 6, 0.25);
 }
 
 .notice-danger {
   background-color: #fdefef;
-  box-shadow: 0 1px 1px rgba(238,95,91,0.25);
+  box-shadow: 0 1px 1px rgba(238, 95, 91, 0.25);
 }
 
 .notice h5 {
@@ -176,7 +178,11 @@ h1 {
   margin-top: 0.5rem;
 }
 
-h2, h3, h4, h5, hr {
+h2,
+h3,
+h4,
+h5,
+hr {
   clear: both;
 }
 
@@ -211,12 +217,12 @@ table {
 
 .hanchor {
   visibility: hidden;
-  color:rgb(61, 155, 231);
+  color: rgb(61, 155, 231);
 }
 
 .hanchor:hover {
   visibility: hidden;
-  color:rgb(15, 81, 134);
+  color: rgb(15, 81, 134);
 }
 
 h1:hover .hanchor,
@@ -241,7 +247,6 @@ h4:hover .hanchor {
   text-align: center;
   width: 100%;
   max-width: 100%;
-
 }
 
 .subscribe-container h3 {
@@ -260,7 +265,8 @@ h4:hover .hanchor {
   padding: 5%;
 }
 
-.subscribe-container input[type="text"], .subscribe-container input[type="email"] {
+.subscribe-container input[type="text"],
+.subscribe-container input[type="email"] {
   width: 100%;
   float: none;
   margin-top: 5px;
@@ -273,7 +279,8 @@ h4:hover .hanchor {
   height: 42px;
 }
 
-.subscribe-container input[type="text"]:focus, .subscribe-container input[type="email"]:focus {
+.subscribe-container input[type="text"]:focus,
+.subscribe-container input[type="email"]:focus {
   outline: none;
   border-color: #aaa;
 }
@@ -287,7 +294,7 @@ h4:hover .hanchor {
   float: none;
   margin-top: 5px;
   color: #fff;
-  padding:  11px 0px;
+  padding: 11px 0px;
   font-size: 18px;
   background: #0d6db8;
   border-radius: 3px;
@@ -321,7 +328,7 @@ h4:hover .hanchor {
 
 .subscribe-container .error {
   display: none;
-  color:#963328;
+  color: #963328;
   background: #fdd1bf;
   margin-top: 2rem;
   padding: 1rem 5rem;
@@ -429,14 +436,14 @@ h4:hover .hanchor {
   border-top: 0;
   border-radius: 0 0 4px 4px;
   background-color: #fafafa;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.125);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
   margin-top: -20px;
   z-index: 10;
   position: relative;
   padding: 0.5em 1em;
   float: right;
   margin-left: 1em;
-  font-size: .6875em;
+  font-size: 0.6875em;
 }
 
 .list ul li .date {
@@ -605,8 +612,8 @@ h4:hover .hanchor {
 
 .gray-card {
   color: #555;
-  opacity: .5;
-  font-size: .8em;
+  opacity: 0.5;
+  font-size: 0.8em;
 }
 
 /* .DocSearch {
@@ -652,7 +659,7 @@ h4:hover .hanchor {
   text-decoration: none;
 }
 
-@media (min-width:320px) and (max-width: 1025px) {
+@media (min-width: 320px) and (max-width: 1025px) {
   .nav-search-box {
     right: 42px;
     top: 14px;

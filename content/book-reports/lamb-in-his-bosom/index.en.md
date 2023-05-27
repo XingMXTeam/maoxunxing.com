@@ -12,8 +12,8 @@ They were not plantation owners, nor were they capitalists. Just ordinary people
 
 ## What I Liked
 
-* The depiction of the natural scenery of Georgia, USA is awesome and gave me a desire to see it in the field.
-* No earth-shattering plot descriptions. Talking about life from the point of view and gradually bringing you into the emotion, this may also be a way to make people feel comfortable
+- The depiction of the natural scenery of Georgia, USA is awesome and gave me a desire to see it in the field.
+- No earth-shattering plot descriptions. Talking about life from the point of view and gradually bringing you into the emotion, this may also be a way to make people feel comfortable
 
 ## What I Disliked
 

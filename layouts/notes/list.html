@@ -1,11 +1,19 @@
 {{ define "title" }}
-  {{ .Title }} · {{ .Site.Title }}
+  {{ .Title }} ·
+  {{ .Site.Title }}
 {{ end }}
 {{ define "content" }}
   <section class="container list">
-    <h1 class="title" style='margin-bottom: 0;'>{{ .Title }}</h1>
-    <div class='gray-card'><em>Quick notes / tips</em></div>
-    <p><a href="https://maoxunxing.com/en/notes/index.xml" target="_blank" rel="noopener">RSS Feed</a></p>
+    <h1 class="title" style="margin-bottom: 0;">{{ .Title }}</h1>
+    <div class="gray-card"><em>Quick notes / tips</em></div>
+    <p>
+      <a
+        href="https://maoxunxing.com/en/notes/index.xml"
+        target="_blank"
+        rel="noopener"
+        >RSS Feed</a
+      >
+    </p>
     <ul class="book-reports-list">
       {{- range .Paginator.Pages -}}
         {{- .Render "li" -}}

@@ -3,12 +3,11 @@ title: "Hooks don't work with yarn link"
 date: 2021-11-29T12:06:58+08:00
 ---
 
-在本地tnpm link多个包时，报错Hooks Only Run in Function Component。这个情况一般是react有多个复制版本导致的。 
+在本地 tnpm link 多个包时，报错 Hooks Only Run in Function Component。这个情况一般是 react 有多个复制版本导致的。
 
-解决方案是将react react-dom都link到同一个
+解决方案是将 react react-dom 都 link 到同一个
 
-
-``` shell
+```shell
 cd PACKAGE_YOU_DEBUG_LOCALLY
 yarn link
 yarn install

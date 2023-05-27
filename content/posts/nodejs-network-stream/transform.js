@@ -1,9 +1,9 @@
-const { Transform } = require('stream')
-const TransformStream = new Transform(({
+const { Transform } = require("stream");
+const TransformStream = new Transform({
   transform(chunk, encoding, callback) {
-    this.push(chunk.toString().toUpperCase())
-    callback()
-  }
-}));
+    this.push(chunk.toString().toUpperCase());
+    callback();
+  },
+});
 
-process.stdin.pipe(TransformStream).pipe(process.stdout)
+process.stdin.pipe(TransformStream).pipe(process.stdout);

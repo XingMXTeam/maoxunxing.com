@@ -1,54 +1,83 @@
 <footer class="footer">
   <section class="container">
     {{ if not .Site.Params.hideCopyright }}
-      <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC BY-NC-SA 4.0</a>
+      <a
+        rel="noopener"
+        target="_blank"
+        href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+        style="color: inherit;"
+        >CC BY-NC-SA 4.0</a
+      >
       {{ now.Year }}
       ©
-      {{ if .Site.Params.Author }} {{ .Site.Params.Author }} {{ end }}
+      {{ if .Site.Params.Author }}{{ .Site.Params.Author }}{{ end }}
     {{ end }}
     {{ with .Site.Params.social }}
-      <ul style='margin: 1.5rem 0 1rem'>
-        {{ range sort .}}
+      <ul style="margin: 1.5rem 0 1rem">
+        {{ range sort . }}
           {{ if .icon }}
             <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }} {{ if .type }}type="{{ .type }}"{{ end }}>
+              <a
+                href="{{ .url }}"
+                aria-label="{{ .name }}"
+                {{ if .rel }}rel="{{ .rel }}"{{ end }}
+                {{ if .target }}target="{{ .target }}"{{ end }}
+                {{ if .type }}type="{{ .type }}"{{ end }}
+              >
                 <i class="{{ .icon }}" aria-hidden="true"></i>
               </a>
             </li>
           {{ else if .link }}
             <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }} {{ if .type }}type="{{ .type }}"{{ end }}>
-                <img class="{{ .clazz }}" alt="{{ .name }}" src="{{ .link }}"/>
+              <a
+                href="{{ .url }}"
+                aria-label="{{ .name }}"
+                {{ if .rel }}rel="{{ .rel }}"{{ end }}
+                {{ if .target }}target="{{ .target }}"{{ end }}
+                {{ if .type }}type="{{ .type }}"{{ end }}
+              >
+                <img class="{{ .clazz }}" alt="{{ .name }}" src="{{ .link }}" />
               </a>
             </li>
           {{ else }}
             <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }}>{{ .name }}</a>
+              <a
+                href="{{ .url }}"
+                aria-label="{{ .name }}"
+                {{ if .rel }}rel="{{ .rel }}"{{ end }}
+                {{ if .target }}target="{{ .target }}"{{ end }}
+                >{{ .name }}</a
+              >
             </li>
           {{ end }}
         {{ end }}
       </ul>
     {{ end }}
     <!-- {{ with .Site.Params.footercontent | safeHTML }}
-      <p>{{.}}</p>
+      <p>{{ . }}</p>
     {{ end }}
     {{ if not .Site.Params.hideCopyright }}
       {{ with .Site.Params.since }}
-        © {{ if lt . now.Year }}{{ . }} - {{ end }}{{ now.Year }}
+        ©
+        {{ if lt . now.Year }}{{ . }} -{{ end }}{{ now.Year }}
       {{ else }}
-        © {{ now.Year }}
+        ©
+        {{ now.Year }}
       {{ end }}
-      {{ if .Site.Params.Author }} {{ .Site.Params.Author }} {{ end }}
+      {{ if .Site.Params.Author }}{{ .Site.Params.Author }}{{ end }}
     {{ end }}
     {{ if not .Site.Params.hideCredits }}
-      {{ if not .Site.Params.hideCopyright }} · {{ end }}
-      {{ i18n "powered_by" }} <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      {{ if not .Site.Params.hideCopyright }}·{{ end }}
+      {{ i18n "powered_by" }} <a href="https://gohugo.io/">Hugo</a> &
+      <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
     {{ end }}
     {{ if .Site.Params.commit }}
-      {{ if or (not .Site.Params.hideCredits) (not .Site.Params.hideCopyright) }} · {{ end }}
-      [<a href="{{ .Site.Params.commit }}{{ getenv "GIT_COMMIT_SHA" }}">{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a>]
+      {{ if or (not .Site.Params.hideCredits) (not .Site.Params.hideCopyright) }}
+        ·
+      {{ end }}
+      [<a href="{{ .Site.Params.commit }}{{ getenv "GIT_COMMIT_SHA" }}"
+        >{{ getenv "GIT_COMMIT_SHA_SHORT" }}</a
+      >]
     {{ end }} -->
   </section>
 </footer>
-
-

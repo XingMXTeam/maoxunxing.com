@@ -11,8 +11,8 @@ On the whole, it revolves around two women's as the main line of those love, fri
 
 ## What I Liked
 
-* The author is very subtle in portraying the inner world of two women, very powerful
-* Time spans 50 years, and it's fascinating to see how hearts evolve as times change
+- The author is very subtle in portraying the inner world of two women, very powerful
+- Time spans 50 years, and it's fascinating to see how hearts evolve as times change
 
 ## What I Disliked
 
@@ -20,8 +20,7 @@ On the whole, it revolves around two women's as the main line of those love, fri
 
 ## Key Takeaways
 
-* The simplicity of the lives of those in the community, and the lamentable, bad to the core, or pathetic to the core, Leila, even in such circumstances, still tries to remain independent, both on the level of thought and behavior, to be admired and liked.
-* The friendship between the two hostesses, who are jealous of each other as well as each other's achievements, is very enviable and moving. Let's bloom like a flower.
+- The simplicity of the lives of those in the community, and the lamentable, bad to the core, or pathetic to the core, Leila, even in such circumstances, still tries to remain independent, both on the level of thought and behavior, to be admired and liked.
+- The friendship between the two hostesses, who are jealous of each other as well as each other's achievements, is very enviable and moving. Let's bloom like a flower.
 
 {{< img src="bg.jpeg" alt="hbo bg" maxWidth="900px" caption="HBO电影《我的天才女友》海报" >}}
-

@@ -26,8 +26,7 @@
   {{ if $caption }}
   <figure
     class="img{{ if $align }} align-{{ $align }}{{ end }}"
-    {{- if $maxWidth }} style="max-width: {{ $maxWidth }}"{{ end -}}
-    >
+    {{- if $maxWidth }} style="max-width: {{ $maxWidth }}"{{ end -}}>
   {{ else }}
   <div
     class="img{{ if $align }} align-{{ $align }}{{ end }}"

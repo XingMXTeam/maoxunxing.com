@@ -6,7 +6,7 @@ defaultcontentlanguage = "en"
 defaultContentLanguageInSubdir = "true"
 
 paginate = 10
-canonifyurls = true
+canonifyurls = false
 timeout = 120000
 
 pygmentsstyle = "colorful"

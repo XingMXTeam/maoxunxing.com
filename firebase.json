@@ -1,77 +1,73 @@
 {
-  "hosting":{
-     "public":"public",
-     "ignore":[
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-     ],
-     "redirects":[
-        {
-           "source":"/feed.xml",
-           "destination":"/posts/index.xml",
-           "type":301
-        }
-     ],
-     "headers":[
-        {
-           "source":"**/*.@(eot|otf|ttf|ttc|woff|woff2|font|coder|coder-dark.css)",
-           "headers":[
-              {
-                 "key":"Access-Control-Allow-Origin",
-                 "value":"*"
-              },
-              {
-                  "key":"Cache-Control",
-                  "value":"max-age=31536000"
-               }
-           ]
-        },
-        {
-           "source":"**/*.(analytics|firebase-analytics|livereload|coder.js)",
-           "headers":[
-              {
-                 "key":"Cache-Control",
-                 "value":"max-age=31536000"
-              }
-           ]
-        },
-        {
-          "source":"**/*.@(jpg|jpeg|gif|png)",
-          "headers":[
-            {
-                "key":"Cache-Control",
-                "value":"max-age=31536000"
-            }
-          ]
-        },
-       {
-         "source":"**/@algolia/autocomplete-js",
-         "headers":[
-           {
-             "key":"Cache-Control",
-             "value":"max-age=31536000"
-           }
-         ]
-       },
-       {
-         "source":"**/@algolia/autocomplete-theme-classic",
-         "headers":[
-           {
-             "key":"Cache-Control",
-             "value":"max-age=31536000"
-           }
-         ]
-       },
-        {
-           "source":"404.html",
-           "headers":[
-              {
-                 "key":"Cache-Control",
-                 "value":"max-age=31536000"
-              }
-           ]
-        }
-     ]
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/feed.xml",
+        "destination": "/posts/index.xml",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font|coder|coder-dark.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.(analytics|firebase-analytics|livereload|coder.js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/@algolia/autocomplete-js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/@algolia/autocomplete-theme-classic",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "404.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -9,18 +9,17 @@ Divided into two volumes, it is a classic Japanese horror manga. To be honest, I
 
 This book looks all write whirlwind, actually a bit of realistic allegory. Mainly reflects the current situation of Japanese people under the economic problems of Japan at that time. When everyone is tied to capital, humanity is lost, society becomes deformed...
 
-
 ---
 
 ## What I Liked
 
-* Reacts to the problems in society through abstraction
-* The story is more powerful
+- Reacts to the problems in society through abstraction
+- The story is more powerful
 
 ## ♪ What I Disliked
 
-* Looks a bit like a horror movie
+- Looks a bit like a horror movie
 
 ## Key Takeaways
 
-* be wary of capital, not to be held hostage by money, to be an independent and free soul, money is important, don't be a slave to it
+- be wary of capital, not to be held hostage by money, to be an independent and free soul, money is important, don't be a slave to it

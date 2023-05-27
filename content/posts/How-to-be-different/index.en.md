@@ -3,9 +3,9 @@ title: "How To Be Different And Successful As An Engineer"
 date: 2021-10-06T11:20:33+08:00
 description: "How to become better from a technical person's point of view"
 tags:
-- Career
+  - Career
 images:
-- how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
+  - how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
 ---
 
 {{< img src="jefferson-santos-9SoCnyQmkzI-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Jefferson Santos on Unsplash" >}}
@@ -32,19 +32,19 @@ The most happiness comes from the most pain.
 
 Simple out:
 
-+ Think more and hard  
-+ Pursue excellence  
-+ Love it and coding more  
+- Think more and hard
+- Pursue excellence
+- Love it and coding more
 
 When you think about coding problems or knowledge, you should connect your thoughts more with philosophy and psychology: for example if you want to memorize the Object methods , maybe you should connect with:who i am, where i came from, and where i will go. Pursuing excellence means you should push yourself hard to do better on your products. The last thing is to keep curiosity, so you will love it finally.
 
 Practicality， there are three things you can follow:
 
-+ 1 Reading excellence code resource.
+- 1 Reading excellence code resource.
 
-+ 2 Talked with excellence guys
+- 2 Talked with excellence guys
 
-+ 3 Notes your excellence minds always
+- 3 Notes your excellence minds always
 
 ## 3 Best communication skills
 

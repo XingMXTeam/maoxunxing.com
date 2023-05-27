@@ -7,14 +7,9 @@ tags:
 - interview
 description: "I am learning algorithm."
 ---
-## Question Definition
 
+## Question Definition
 
 ## Problem Analysis
 
-
-
 ## Time Complex
-
-
-

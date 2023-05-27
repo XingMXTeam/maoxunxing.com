@@ -3,12 +3,12 @@ title: "我对数字货币的理解"
 date: 2021-09-09
 draft: true
 tags:
-- bitcion
-- NFT
-- 元宇宙
+  - bitcion
+  - NFT
+  - 元宇宙
 description: "比特币、原生币、代币、NFT到底都是个啥，从中能看到什么机遇"
 images:
-- bitcion/biticon.jpeg
+  - bitcion/biticon.jpeg
 ---
 
 ## Concepts 概念

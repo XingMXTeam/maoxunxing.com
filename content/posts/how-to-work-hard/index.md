@@ -3,11 +3,11 @@ title: "[Translation] How To Work Hard"
 date: 2021-08-20
 draft: true
 tags:
-- Growth
-- Translation
+  - Growth
+  - Translation
 description: "Understanding of how to work hard"
 images:
-- how-to-work-hard/work.jpeg
+  - how-to-work-hard/work.jpeg
 ---
 
 > Paul Graham  

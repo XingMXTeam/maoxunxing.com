@@ -3,11 +3,12 @@ title: "The Nature of Computers"
 date: 2021-08-24
 draft: true
 tags:
-- Operation System
+  - Operation System
 description: "What is the nature of computers?"
 images:
-- code-computer/code-computer.jpeg
+  - code-computer/code-computer.jpeg
 ---
+
 ## Coding principles
 
 > Computers are by nature a world of 0/1, and if expressing this world in 0/1. The conclusion is: it needs to be encoded by.
@@ -18,7 +19,7 @@ images:
 
 ** Why is there a complement code? **
 
-> Complement is to facilitate computer operations, it is easier for computers to do addition  
+> Complement is to facilitate computer operations, it is easier for computers to do addition
 
 **For example**: 5+(-3) is calculated by complement (definition: positive number remains the same, negative number is inverted and +1)  
 Step 1: 0101 (5)  
@@ -35,13 +36,13 @@ The 4-bit binary complement representation is.
 0000 (-0) 0000 (0)  
 1111 (-1) 0001 (1)  
 1110 (-2) 0010 (2)  
-...       ...  
+... ...  
 1011 (-5) 0101 (5)  
 1010 (-6) 0110 (6)  
-1001(-7) 0111(7)  
+1001(-7) 0111(7)
 
-The range is [-7, 7] 1000 is not represented, it is just used to represent -8 (the complement of -8 is represented as: 1000 (original) -> inverted 0111 -> plus one 1000)   
-So the final result is [-8, 7].  Similarly [-128,127] makes sense. 
+The range is [-7, 7] 1000 is not represented, it is just used to represent -8 (the complement of -8 is represented as: 1000 (original) -> inverted 0111 -> plus one 1000)  
+So the final result is [-8, 7]. Similarly [-128,127] makes sense.
 
 **Why do decimals have precision problems? **
 
@@ -83,12 +84,12 @@ The above logical operations can be realized by logic simulation. The input is a
 
 ### half adder: do not consider the input, the unit
 
-Cout = X * Y
+Cout = X \* Y
 S = X ⊕ Y
 
 ### Full adder: takes into account rounding, units
 
-``` 
+```
 S = X ⊕ Y ⊕ Cin
 // both the X and Y values are true, or if either the X or Y value is true and the Cin is true
 Cout = (X*Y) + ((X⊕Y)*Cin)
@@ -97,6 +98,7 @@ Cout = (X*Y) + ((X⊕Y)*Cin)
 ### Two-bit adder
 
 ### Multi-bit adder
+
 ### Memory adder
 
 Save the result of the last calculation
@@ -107,7 +109,7 @@ Get a few more memory adders to avoid starting over when you make a mistake.
 
 ### Automatic adding machine
 
-Automatically enter and add up all numbers with the press of a switch. 
+Automatically enter and add up all numbers with the press of a switch.
 
 ### Free adding machine
 
@@ -140,18 +142,21 @@ A general interpreter will go through the following steps when interpreting and 
 1 Lexer (lexical parser) reads the code and converts it into a sequence of tokens  
 2 Parser (syntax parser) to read the sequence of tokens into AST (in most cases Lexer is part of Parser)  
 3 Lowering (simplifying AST) or Desugar (converting AST nodes from syntactic sugar to standard equivalent AST nodes) of the AST  
-4 Interpreter recursively executes the AST  
+4 Interpreter recursively executes the AST
 
 The interpreter interprets the execution of the AST directly and returns the final result as follows.
 
-``` js
+```js
 function interpret(ast) {
-  switch(ast.type) {
-    case 'number': return ast.value;
-    case 'negative': return -interpret(ast.value);
-    case 'op': 
-      switch(ast.value) {
-        case '+': interpret(ast.v1) + interpret(ast.v2);
+  switch (ast.type) {
+    case "number":
+      return ast.value;
+    case "negative":
+      return -interpret(ast.value);
+    case "op":
+      switch (ast.value) {
+        case "+":
+          interpret(ast.v1) + interpret(ast.v2);
       }
   }
 }
@@ -159,30 +164,39 @@ function interpret(ast) {
 
 Compiler: translate AST to target language, e.g. assembly
 
-``` js
+```js
 // Assume that the target machine is a stack VM, and then execute it via the exec function
 function compile(ast) {
-  switch(ast.type) {
-    case 'number': return "ds.push("+ast.value+")\n";
-    case 'negative':
+  switch (ast.type) {
+    case "number":
+      return "ds.push(" + ast.value + ")\n";
+    case "negative":
       return "ds.push(-ds.pop())\n";
-    case 'op':
-      return compile(ast.v1) + compile(ast.v2) + "ds.push(ds.pop() " + ast.value + " ds.pop())\n";
+    case "op":
+      return (
+        compile(ast.v1) +
+        compile(ast.v2) +
+        "ds.push(ds.pop() " +
+        ast.value +
+        " ds.pop())\n"
+      );
   }
 }
-
 ```
 
 Separate the traversal and implementation of ast, and encapsulate each step of the operation as a separate function
 
-``` js
+```js
 function interpret(ast) {
-  switch(ast.type) {
-    case 'number': return ast.value;
-    case 'negative': return -interpret(ast.value);
-    case 'op': 
-      switch(ast.value) {
-        case '+': interpret(ast.v1) + interpret(ast.v2);
+  switch (ast.type) {
+    case "number":
+      return ast.value;
+    case "negative":
+      return -interpret(ast.value);
+    case "op":
+      switch (ast.value) {
+        case "+":
+          interpret(ast.v1) + interpret(ast.v2);
       }
   }
 }

@@ -3,7 +3,7 @@ title: "我家是如何装修的"
 date: 2021-08-12T10:36:40+08:00
 draft: true
 images:
-- new-home/new-home.jpeg
+  - new-home/new-home.jpeg
 ---
 
 ## 装修模式选择
@@ -13,7 +13,6 @@ images:
 ## 怎么选
 
 好的设计师： 兼顾功能性和美观性，从工艺角度评估可行性，有多个成熟类似案例
-设计师分类： 
-  * 
+设计师分类：
 
-
+-

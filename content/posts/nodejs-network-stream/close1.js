@@ -1,31 +1,28 @@
-const Stream = require('stream')
+const Stream = require("stream");
 
 const readableStream = new Stream.Readable({
-  read() {}
-})
-const writableStream = new Stream.Writable()
+  read() {},
+});
+const writableStream = new Stream.Writable();
 
 writableStream._write = (chunk, encoding, next) => {
-  console.log(chunk.toString())
-  next()
-}
+  console.log(chunk.toString());
+  next();
+};
 
-writableStream.on('error', (err) => {
-  console.log(err)
-})
+writableStream.on("error", (err) => {
+  console.log(err);
+});
 
-readableStream.pipe(writableStream)
+readableStream.pipe(writableStream);
 
-readableStream.push('hi!')
-readableStream.push('ho!')
+readableStream.push("hi!");
+readableStream.push("ho!");
 
-readableStream.on('close', () => {
-  writableStream.end()
+readableStream.on("close", () => {
+  writableStream.end();
   // writableStream.write('111') 关闭后再写会触发error事件。
-})// 关闭可写流。
-writableStream.on('close', () => console.log('ended'))
+}); // 关闭可写流。
+writableStream.on("close", () => console.log("ended"));
 
-readableStream.destroy() // 销毁可读流。 触发close事件
-
-
-
+readableStream.destroy(); // 销毁可读流。 触发close事件

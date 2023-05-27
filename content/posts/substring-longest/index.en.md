@@ -3,15 +3,15 @@ title: "String Part 1 - Longest Palindromic Substring"
 date: 2022-04-16T23:59:19+08:00
 description: "Double Pointer Usage"
 tags:
-- String
-- Double Point
+  - String
+  - Double Point
 images:
-- substring-longest/test.png
+  - substring-longest/test.png
 ---
 
 ## Questions
 
-Given a string, find the longest substring which is a palindrome. 
+Given a string, find the longest substring which is a palindrome.
 For Example:
 
 Input: Given string :"forgeeksskeegfor",
@@ -22,27 +22,26 @@ Output: "ee".
 
 ## Code
 
-
-``` ts
-low = index - 1
-high = index + 1
+```ts
+low = index - 1;
+high = index + 1;
 // 跳掉重复
-while( high < n && str[high] == str[index]){
-    high++
+while (high < n && str[high] == str[index]) {
+  high++;
 }
 // 跳掉重复
-while( low >= 0 && str[low] == str[index]) {
-    low--
+while (low >= 0 && str[low] == str[index]) {
+  low--;
 }
 // 中间是回文
-while( low >= 0 && high < n && str[low] == str[high]) {
-    low--
-    high++
+while (low >= 0 && high < n && str[low] == str[high]) {
+  low--;
+  high++;
 }
-let length = high - low - 1
-if(maxLength < length) {
-    maxLength = length
-    start = low + 1
+let length = high - low - 1;
+if (maxLength < length) {
+  maxLength = length;
+  start = low + 1;
 }
 ```
 

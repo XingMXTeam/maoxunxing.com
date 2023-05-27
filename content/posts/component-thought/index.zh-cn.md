@@ -3,30 +3,30 @@ title: "我对组件的思考"
 date: 2021-09-10
 draft: true
 tags:
-- component
-- front-end
+  - component
+  - front-end
 description: "前端组件、效率工程"
 images:
-- component-thought/web-components.png
+  - component-thought/web-components.png
 ---
+
 ## 关键概念
 
 **什么是组件？**
 组件是一个较小的、独立于较大的实体或者系统的一部分。它能执行一些功能，可能需要一些输入或产生一些输出。软件中的组件通常是类来表示。
 
-**什么是web组件？**  
-web组件是一组由web平台API创建的自定义、可重用、封装的HTML标签。用于网页或者网络应用。
+**什么是 web 组件？**  
+web 组件是一组由 web 平台 API 创建的自定义、可重用、封装的 HTML 标签。用于网页或者网络应用。
 
 **组件有哪些分类?**
 
-+ 大型库: Antd、Element标准的大库
-+ 单组件
-  + 复用性高，用完还会维护
-  + 业务组件，用完就扔
-+ 项目融合型: 耦合其他内容，无法独立使用
+- 大型库: Antd、Element 标准的大库
+- 单组件
+  - 复用性高，用完还会维护
+  - 业务组件，用完就扔
+- 项目融合型: 耦合其他内容，无法独立使用
 
-
-<!-- 
+<!--
 服务SLA(Service-level agreement)标准: 服务提供商与客户之间定义的承诺指标： 质量、可用性、交付周期等。
 
 附 商家中台对业务承诺的服务SLA标准：

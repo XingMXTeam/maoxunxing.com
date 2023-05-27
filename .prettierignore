@@ -1,0 +1,8 @@
+.netlify/state.json
+node_modules/
+public/
+resources/
+static/third-party/
+
+# TODO: Make these play nicely with prettier
+layouts/shortcodes/
