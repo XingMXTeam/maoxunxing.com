@@ -1,6 +1,7 @@
 .DS_Store
 sync/node_modules
 sync/package-lock.json
+sync/*
 public/
 resources/
 .hugo_build.lock
