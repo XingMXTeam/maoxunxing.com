@@ -7,6 +7,11 @@ purchase_url: https://u.jd.com/KQ1brBw
 
 The main point is to state the core idea that if one wants to be successful and have enough output at the moment, one must ensure time for deep work. Only when working in depth can one's creativity be brought to bear to produce valuable content/products.
 
+
+<!--more-->
+
+
+
 ---
 
 ## What I Liked

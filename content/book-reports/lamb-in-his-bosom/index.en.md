@@ -8,6 +8,10 @@ purchase_url: https://u.jd.com/ndoGqnU
 It is mainly a depiction of farmers living in Georgia, USA, before the outbreak of the Civil War.
 They were not plantation owners, nor were they capitalists. Just ordinary people living on a piece of land, needing to feed themselves, fighting against the harsh living conditions, working hard for the need to feed their families, for their families and children, reflecting the different destinies of each person, living a cold and warm life.
 
+
+<!--more-->
+
+
 ---
 
 ## What I Liked

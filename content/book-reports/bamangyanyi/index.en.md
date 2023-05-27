@@ -9,6 +9,11 @@ Mr. Tang's `Art of Value Investing`. Through the writings or words of historical
 
 The Art of Investing, including the cigarette butt school, the index school, the growth school of quality companies, etc. The cigarette butt school is mainly based on Graham as the core, by finding the valuation is lower than the net asset value or liquidation value, by buying its shares, pushing the management of the company to recover cash, and then gaining income.
 
+
+<!--more-->
+
+
+
 ---
 
 ## What I Liked

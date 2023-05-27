@@ -7,6 +7,9 @@ purchase_url: https://www.zhihu.com/xen/market/mall/detail/1356561052302422016?m
 
 On the whole, it revolves around two women's as the main line of those love, friendship and family happenings as the times change, focusing on psychological descriptions that are delicate and fascinating. While people are almost always wrapped up in the context of the times in their lives, Leila maintains an independent personality with different character qualities. Leila comes out of the times and influences her community with her tenacious qualities and smart, independent personality. I think it is Lila's presence that makes Elena a successful writer, and Elena is a continuation of Lila, and they are closely connected.
 
+<!--more-->
+
+
 ---
 
 ## What I Liked

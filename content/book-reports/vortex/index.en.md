@@ -9,6 +9,9 @@ Divided into two volumes, it is a classic Japanese horror manga. To be honest, I
 
 This book looks all write whirlwind, actually a bit of realistic allegory. Mainly reflects the current situation of Japanese people under the economic problems of Japan at that time. When everyone is tied to capital, humanity is lost, society becomes deformed...
 
+<!--more-->
+
+
 ---
 
 ## What I Liked
