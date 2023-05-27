@@ -50,10 +50,6 @@
     margin: 0;
     padding: 0;
   }
-  figure + figure {
-    margin-top: 3rem;
-    padding: 0;
-  }
   figcaption p {
     text-align: center;
     font-style: italic;
@@ -171,6 +167,7 @@
     }
   }
 }
+
 
 .tag {
   font-size: 0.8em;
