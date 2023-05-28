@@ -1,0 +1,70 @@
+@mixin content_dark {
+
+  .content {
+
+    .list {
+      ul {
+        li {
+          .title {
+            color: $fg-color-dark;
+            &:hover,
+            &:focus {
+              color: $link-color-dark;
+            }
+          }
+        }
+      }
+    }
+
+    .centered {
+      .about {
+        ul {
+          li {
+            a {
+              color: $fg-color-dark;
+              &:hover,
+              &:focus {
+                color: $link-color-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+body.colorscheme-dark {
+  @include content_dark()
+}
+
+body.colorscheme-auto {
+  @media (prefers-color-scheme: dark) {
+    @include content_dark()
+  }
+}
+
+
+.tag {
+  font-size: 0.8em;
+  margin-left: 1rem;
+  padding: 0.5rem;
+}
+
+.tag:hover {
+  text-decoration: none;
+}
+
+.tag-posts {
+  background-color: #e3ffe8;
+}
+
+.tag-retrospectives {
+  background-color: #fffade;
+}
+
+.tag-book-reports,
+.tag-notes {
+  background-color: #f5ebfa;
+}
