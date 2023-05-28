@@ -18,7 +18,6 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.111.3"
-          extended: true
       - name: Build
         run: npm update && rm -rf public && go install --tags extended && hugo --minify && npm run index-and-send
       - uses: FirebaseExtended/action-hosting-deploy@v0
