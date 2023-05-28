@@ -17,7 +17,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.111.3"
+          hugo-version: "0.94.0"
       - name: Build
         run: npm update && rm -rf public && hugo --minify && npm run index-and-send
       - uses: FirebaseExtended/action-hosting-deploy@v0
