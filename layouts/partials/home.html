@@ -17,7 +17,7 @@
           <li>
             {{ .Date.Format "2006-01-02" }}:
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <a class="tag tag-{{ .Section }}" href="/{{ .Section }}/"
+            <a class="tag tag-{{ .Section }}" href="/{{.Site.Language.Lang}}/{{ .Section }}/"
               >{{ .Section }}</a
             >
           </li>
