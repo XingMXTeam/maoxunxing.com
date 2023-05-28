@@ -16,6 +16,8 @@ jobs:
           fetch-depth: 0
       - name: Setup Hugo
         uses: peaceiris/hugo:v0.109.0
+        with:
+          hugo-version: "0.109.0"
       - name: Build
         run: npm update && rm -rf public && go install --tags extended && hugo --minify && npm run index-and-send
       - uses: FirebaseExtended/action-hosting-deploy@v0
