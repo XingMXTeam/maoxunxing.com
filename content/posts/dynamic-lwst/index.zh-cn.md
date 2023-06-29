@@ -29,6 +29,8 @@ images:
 min_edit_dist也就是我们的最小编辑操作次数，也就是a[0,i-1]转换为b[0,j-1]字符串的最小编辑次数。另外，通过递归树，我们发现，状态(i,j)可以从(i-1,j)、
 (i, j - 1), (i-1, j-1)任意一个状态中转移过来。 
 
+{{< img src="img.png" alt="bg" maxWidth="960px" align="center" caption="递归树" >}}
+
 + 如果S的第i个字符等于T的第j个字符，则不需要进行任何操作，因此minDist[i][j] = minDist[i-1][j-1]。
 + 如果S的第i个字符不等于T的第j个字符，则可以进行以下三种操作之一：
   + 插入（Insertion）：在S的第i个字符后插入T的第j个字符，这样S的前i个字符与T的前j+1个字符相等，因此minDist[i][j] = minDist[i][j-1] + 1。
