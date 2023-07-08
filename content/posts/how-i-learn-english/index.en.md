@@ -64,6 +64,7 @@ One bad thing about CallAnnie is that it won't communicate your grammar (or I ha
 Optional additional tools:
 [quazel](https://chat.quazel.com/home), which talks to the AI model and will correct your grammar
 [tandem](https://www.tandem.net/zh-hans) real native social conversations, I've tried it, you can find the kind that is particularly enthusiastic and works well, I even added a foreign friend~~.
+discord channel: https://discord.gg/english
 
 The tools are there, then you can have fun and write once a day with your newly learned words or phrases (new words or phrases can be found from video bloggers, speaking books, movies for the most commonly used phrases), and
 Then use the phrases or words you've learned to talk and communicate with various tools to practice.
