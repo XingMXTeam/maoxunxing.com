@@ -3,8 +3,6 @@ title: "关于"
 date: 2021-06-15T22:49:06+08:00
 ---
 
-<!-- {{< img src="author-photo.jpg" alt="Author photo" maxWidth="350px" align="right" >}} -->
+{{< img src="author-photo.jpg" alt="Author photo" maxWidth="350px" align="right" >}}
 
-毛毛星是一位前端开发人员，目前工作地点在中国杭州，就职于阿里巴巴集团。他毕业于南昌大学，获得了计算机科学学士学位。如果您想关注他的最新工作和项目，可以通过[Twitter](https://twitter.com/maoxunxing)和[GitHub](https://github.com/XingMXTeam)上关注他，或通过电子邮件xunxing1989@gmail.com与他联系。
-
-如果你说的是中文，毛毛星的中文名是毛训星（máo xùn xīng），您还可以在[知乎](https://www.zhihu.com/people/feng-zi-63-44)和[豆瓣](https://www.douban.com/people/maoxingxing)上与他联系。
+濯茶是一位前端开发人员，目前工作地点在中国杭州，就职于阿里巴巴集团。他毕业于南昌大学，获得了计算机科学学士学位。如果您想关注他的最新工作和项目，可以通过[Twitter](https://twitter.com/maoxunxing)和[GitHub](https://github.com/XingMXTeam)上关注他，或通过电子邮件xunxing1989@gmail.com与他联系。

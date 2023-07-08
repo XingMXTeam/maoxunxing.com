@@ -3,7 +3,7 @@ title: "Array Part 4 - K’th Smallest/Largest Element in Unsorted"
 date: 2022-04-21T22:37:20+08:00
 draft: true
 tags:
-  - 毛毛星算法课
+  - 濯茶算法课
 description: "1 快速排序 2 大顶堆 小顶堆"
 images:
   - k-th-smallest-inthearray/test.png
