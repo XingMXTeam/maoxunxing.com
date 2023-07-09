@@ -47,7 +47,7 @@ Here are a few tools I recommend to you. Today there is a spurt of big model AI 
 ## Listening ★★★★★
 
 Listening is very important! Because native English has a lot of alliteration, often you don't understand what it's saying, so listen more. Even if you don't know the words, listen more and you'll know what she's saying!!!
-A tool for videos that works very well: [ChatGPT Assistant and YouTube/Netflix Dual Subtitles](https://chrome.google.com/webstore/detail/ai-translator-and-youtube/ mjdbhokoopacimoekfgkcoogikbfgngb?hl=zh-CN)
+A tool for videos that works very well: [ChatGPT Assistant and YouTube/Netflix Dual Subtitles](https://chrome.google.com/webstore/detail/ai-translator-and-youtube/mjdbhokoopacimoekfgkcoogikbfgngb?hl=zh-CN)
 It has a very good practice mode where you can pause the video and then practice listening over and over again.
 
 ## Say ★★★★
