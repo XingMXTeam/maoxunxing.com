@@ -15,7 +15,7 @@ I never took the initiative to learn to read English again, but later I joined a
 I did not study English and did not speak it.
 
 During my 6th year of work, I had to communicate with some foreign friends in Pakistan in English because of a project
-I was barely able to understand, but my ability to express myself was limited and I found that my spoken English was really bad. . **
+I was barely able to understand, but my ability to express myself was limited and I found that my spoken English was really bad. . 
 
 I then signed up for a private lesson in spoken English with Acasol for tens of thousands of dollars.
 The first trial lesson was good, but then I basically didn't take many lessons because of my social phobia, which yielded very little results, and then intermittently.
@@ -41,7 +41,7 @@ The most important thing is to speak. Keep talking. Communicate in English as yo
 
 **I always believe that consistent practice in the right direction will reveal the great rewards that the compounding of time gives you**
 
-Here are a few tools I recommend to you. **Today there is a spurt of big model AI applications, especially as the threshold for learning spoken English has become particularly low**.
+Here are a few tools I recommend to you. Today there is a spurt of big model AI applications, especially as the threshold for learning spoken English has become particularly low.
 
 
 ## Listening ★★★★★
@@ -75,10 +75,7 @@ Then use the phrases or words you've learned to talk and communicate with variou
 ## Reading ★★★
 
 Reading can be trained sometime, as an enhancement. Recommended reading pages or e-books that I highlight: [Immersive Translation](https://chrome.google.com/webstore/detail/immersive-translate/bpoadfkcbjbfhfodiogcnhhhpibjhbnh?hl=zh-CN )
-Primarily to do comparative translations of passages between Chinese and English for web pages or e-books:
-
-{{< video src="https://youtu.be/IZiwEtLGTk0" caption="Intro video" max-width="960px">}}
-
+Primarily to do comparative translations of passages between Chinese and English for web pages or e-books.
 
 And that's it.  
 **If this article was helpful to you, feel free to subscribe and forward it!!!**
