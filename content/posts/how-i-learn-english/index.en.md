@@ -1,5 +1,5 @@
 ---
-title: "Big AI models emerge to make learning English as easy as playing a game"
+title: "Big AI models making learning English as easy as playing a game"
 date: 2023-07-08T11:36:43+08:00
 tags:
 - English
