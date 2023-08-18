@@ -1,14 +1,14 @@
 ---
-title: "前端思考周刊#2：股票大涨有什么意义？"
+title: "前端思考周刊#2期：股票大涨有什么意义？"
 date: 2023-07-31 
 tags:
-- 前端思考周刊
+  - 前端思考周刊
 description: "股票大涨有什么意义？"
 images:
-- weekly2/bg.png
+  - weekly2/cover.jpg
 ---
 
-{{< img src="bg.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
 
 大家好，我是濯茶。
 
@@ -24,6 +24,7 @@ images:
 这两个微习惯对我很有帮助。
 
 ### 二、本周阅读：
+
 > "本周想把两本财务书看完，目前只看了一本。加上之前学习公司内部财务培训视频，希望能形成整体的财务框架“
 
 读完的书籍是： 《玩转财报》。
@@ -56,6 +57,7 @@ images:
 20、识别陷阱：平均薪酬对比同行、往年是否合理  
 
 ### 三、本周编程：
+
 > “业余无编程，工作学习到的几个编程技巧”
 
 编程技巧：以下是我在midway服务端编程习得技巧
@@ -66,7 +68,8 @@ images:
 4、主链路失败比如发布走系统告警，查询之类的可能就报错就OK。  
 5、鉴权提前，避免无效查询。  
 
-###　四、本周投资：
+### 四、本周投资：
+
 > “本周无交易”
 
 感谢阅读，周末愉快！

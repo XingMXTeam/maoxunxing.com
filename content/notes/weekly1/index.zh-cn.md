@@ -1,15 +1,15 @@
 ---
-title: "前端思考周刊#1：投资也是一门哲学"
+title: "前端思考周刊#1期：投资也是一门哲学"
 date: 2023-07-22
 tags:
-- 前端思考周刊
+  - 前端思考周刊
 description: "投资也是一门哲学"
 images:
-- weekly/bg.png
+  - weekly1/cover.jpg
 ---
 
 
-{{< img src="bg.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
 
 大家好，我是濯茶。
 
