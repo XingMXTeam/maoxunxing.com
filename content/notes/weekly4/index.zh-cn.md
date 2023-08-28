@@ -1,9 +1,9 @@
 ---
-title: "前端思考周刊#4期：什么才是核心资产？"
+title: "前端思考周刊#4期：六大核心资产"
 date: 2023-08-11
 tags:
   - 前端思考周刊
-description: "什么才是核心资产？"
+description: "六大核心资产"
 images:
   - weekly4/cover.jpg
 ---

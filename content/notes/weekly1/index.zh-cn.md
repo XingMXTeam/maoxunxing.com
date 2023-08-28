@@ -1,9 +1,9 @@
 ---
-title: "前端思考周刊#1期：投资也是一门哲学"
+title: "前端思考周刊#1期：芒格投资哲学"
 date: 2023-07-22
 tags:
   - 前端思考周刊
-description: "投资也是一门哲学"
+description: "芒格投资哲学"
 images:
   - weekly1/cover.jpg
 ---

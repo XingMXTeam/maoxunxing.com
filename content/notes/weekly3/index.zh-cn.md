@@ -1,9 +1,9 @@
 ---
-title: "前端思考周刊#3期：买股票买的是什么？"
+title: "前端思考周刊#3期：手把手教你读财报"
 date: 2023-08-04
 tags:
   - 前端思考周刊
-description: "买股票买的是什么？"
+description: "手把手教你读财报"
 images:
   - weekly3/cover.jpg
 ---

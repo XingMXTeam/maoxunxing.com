@@ -1,9 +1,9 @@
 ---
-title: "前端思考周刊#2期：股票大涨有什么意义？"
+title: "前端思考周刊#2期：玩转财报"
 date: 2023-07-31 
 tags:
   - 前端思考周刊
-description: "股票大涨有什么意义？"
+description: "股玩转财报"
 images:
   - weekly2/cover.jpg
 ---
