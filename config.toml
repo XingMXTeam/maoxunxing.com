@@ -22,12 +22,12 @@ buildFuture = true
     weight = 2
     icon="1"
     languageName = "CN" # Name shown in the main menu
-    title = "濯茶的网络日志"
+    title = "濯茶 - 初创企业、软件工程、管理"
 
   [languages.en]
     languageName = "EN" # Name shown in the main menu
     weight = 1
-    title = "maoxunxing's life"
+    title = "Felix Mao - Startups, Software Engineering, Management"
 
 [markup]
   [markup.highlight]
