@@ -49,13 +49,13 @@ other = "计算机底层原理"
 other = "分享到"
 
 [subscribe]
-other = "订阅"
+other = "立即订阅！"
 
 [subscribe1]
 other = "当发布很酷的东西时，请第一时间通知我"
 
 [subscribe2]
-other = "订阅电子邮件，以获得我的最新文章。"
+other = "订阅电子邮件，以获得我的最新文章(每月初创企业、软件工程、管理等内容)。"
 
 [emailAddress]
 other = "邮箱地址"

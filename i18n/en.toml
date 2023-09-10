@@ -53,13 +53,13 @@ other = "The Nature of Computers"
 other = "Share on"
 
 [subscribe]
-other = "Subscribe"
+other = "Subscribe Today!"
 
 [subscribe1]
 other = "Be the first to know when I post cool stuff"
 
 [subscribe2]
-other = "Subscribe to get my latest posts by email."
+other = "Subscribe to get my latest posts (monthly startups, software engineering, management, etc.) by email."
 
 [emailAddress]
 other = "Email Address"
