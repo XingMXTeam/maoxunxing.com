@@ -9,8 +9,11 @@
     <p>
       {{ i18n "homeSubTitle2" }}
     </p>
+
+    {{ partial "mailing-list-signup.html" . }}
+    
     <div class="lists">
-      <h2>Recent Posts</h2>
+      <h2>{{ i18n "homeCat0" }}</h2>
 
       <ul>
         {{ range ( .Site.RegularPages | first 10 ) }}
