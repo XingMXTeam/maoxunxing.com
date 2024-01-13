@@ -1,8 +1,8 @@
 ---
-title: "超级个体周刊#9期：茅台投资分析（2022财报）"
+title: "成功日记#9期：茅台投资分析（2022财报）"
 date: 2023-10-22
 tags:
-  - 超级个体周刊
+  - 成功日记
 description: "认知的本质"
 images:
   - weekl6/cover.jpg

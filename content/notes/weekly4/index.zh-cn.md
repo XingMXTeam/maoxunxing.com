@@ -1,8 +1,8 @@
 ---
-title: "超级个体周刊#4期：六大核心资产"
+title: "成功日记#4期：六大核心资产"
 date: 2023-08-11
 tags:
-  - 超级个体周刊
+  - 成功日记
 description: "六大核心资产"
 images:
   - weekly4/cover.jpg

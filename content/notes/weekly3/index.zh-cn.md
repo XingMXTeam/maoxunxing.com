@@ -1,8 +1,8 @@
 ---
-title: "超级个体周刊#3期：手把手教你读财报"
+title: "成功日记#3期：手把手教你读财报"
 date: 2023-08-04
 tags:
-  - 超级个体周刊
+  - 成功日记
 description: "手把手教你读财报"
 images:
   - weekly3/cover.jpg

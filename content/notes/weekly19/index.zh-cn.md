@@ -1,8 +1,8 @@
 ---
-title: "超级个体周刊#19期：读《小狗钱钱》的感悟"
+title: "成功日记#19期：读《小狗钱钱》的感悟"
 date: 2023-12-31
 tags:
-  - 超级个体周刊
+  - 成功日记
 description: "读《小狗钱钱》的感悟"
 images:
   - weekl6/cover.jpg
