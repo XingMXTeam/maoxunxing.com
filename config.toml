@@ -24,12 +24,12 @@ buildFuture = true
     weight = 2
     icon="1"
     languageName = "CN" # Name shown in the main menu
-    title = "濯茶 - 初创企业、软件工程、管理"
+    title = "毛训星 - 初创企业、软件工程、管理"
 
   [languages.en]
     languageName = "EN" # Name shown in the main menu
     weight = 1
-    title = "Chai Mao - Startups, Software Engineering, Management"
+    title = "XunXing Mao - Startups, Software Engineering, Management"
 
 [markup]
   [markup.highlight]
@@ -45,10 +45,10 @@ buildFuture = true
 twitter = "maoxunxing"
 
 [params]
-    author = "Chai Mao"
+    author = "XunXing Mao"
     info = "By day, a simple software engineer. By night, also a software engineer."
     description = "articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"
-    keywords = "blog,developer,personal,濯茶,maoxunxing,front-end,html,css,javascript,nodejs"
+    keywords = "blog,developer,personal,毛训星,毛训星,maoxunxing,front-end,html,css,javascript,nodejs"
     avatarurl = "images/avatar.jpg"
 
     favicon_32 = "/images/favicon/favicon-32x32.png"
