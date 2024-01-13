@@ -1,8 +1,8 @@
 ---
-title: "前端思考周刊#15期：如何开始创建产品"
+title: "超级个体周刊#15期：如何开始创建产品"
 date: 2023-12-09
 tags:
-  - 前端思考周刊
+  - 超级个体周刊
 description: "如何开始创建产品"
 images:
   - weekl6/cover.jpg

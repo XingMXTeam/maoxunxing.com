@@ -1,8 +1,8 @@
 ---
-title: "前端思考周刊#17期：GPT4的理解"
+title: "超级个体周刊#17期：GPT4的理解"
 date: 2023-12-10
 tags:
-  - 前端思考周刊
+  - 超级个体周刊
 description: "GPT4的理解"
 images:
   - weekl6/cover.jpg

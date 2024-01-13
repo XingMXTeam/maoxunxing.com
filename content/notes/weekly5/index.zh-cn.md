@@ -1,8 +1,8 @@
 ---
-title: "前端思考周刊#5期：揭秘国内资产配置"
+title: "超级个体周刊#5期：揭秘国内资产配置"
 date: 2023-08-18
 tags:
-  - 前端思考周刊
+  - 超级个体周刊
 description: "揭秘国内资产配置"
 images:
   - weekly5/cover.jpg

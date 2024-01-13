@@ -1,8 +1,8 @@
 ---
-title: "前端思考周刊#11期：巴菲特估值逻辑"
+title: "超级个体周刊#11期：巴菲特估值逻辑"
 date: 2023-10-29
 tags:
-  - 前端思考周刊
+  - 超级个体周刊
 description: "巴菲特估值逻辑"
 images:
   - weekl6/cover.jpg
