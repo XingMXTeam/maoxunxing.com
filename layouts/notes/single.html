@@ -43,6 +43,8 @@
     {{ if not .Site.IsServer }}
     {{ partial "talkyard.html" . }}
     {{ end }}
+    
+    {{ partial "comment.html" . }}
 
   </article>
 </section>
