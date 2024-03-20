@@ -2,7 +2,7 @@ baseurl = "https://maoxunxing.com/"
 title = "maoxunxing"
 theme = "hugo-coder"
 languagecode = "en"
-defaultcontentlanguage = "zh-cn"
+defaultcontentlanguage = "en"
 defaultContentLanguageInSubdir = "true"
 
 paginate = 10
