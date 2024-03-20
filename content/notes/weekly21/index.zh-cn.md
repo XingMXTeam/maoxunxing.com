@@ -8,6 +8,8 @@ images:
   - weekl6/cover.jpg
 ---
 
+{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center">}}
+
 这篇文章主要是期权理论学习。 仅供参考。 期权不是期货，我们买房子买车会有保险，期权就是你买股票的保险，期权也是你获得高收益的杠杆工具。
 
 ## TL;DR 
