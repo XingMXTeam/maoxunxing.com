@@ -1,5 +1,5 @@
 ---
-title: "Success Diary #22：✍ Generating personal lifetime income"
+title: "Success Diary #22：Generating personal lifetime income"
 date: 2024-03-20
 tags:
   - Success Diary
