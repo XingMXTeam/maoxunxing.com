@@ -6,10 +6,6 @@ This is the source for https://maoxunxing.com/.
 
 Inspired by **mtlynch.io**
 
-## ScreenShots
-
-![ScreenShots](./screenshots/shots.png?raw=true "ScreenShots")
-
 ## Code style guides
 
 New code should adhere to the appropriate Google Style guide for the given language:
