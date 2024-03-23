@@ -8,11 +8,14 @@ images:
   - weekl6/cover.jpg
 ---
 
+{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center">}}
+
 This article focuses on option theory learning. For reference only. Options are not futures, we buy a house and a car will have insurance, options are the insurance you buy stocks, options are also a leverage tool for you to get high returns.
 
-## TL;DR 
+## TL;DR
 
 Options are not futures. It is a risk hedging tool, not a speculative tool.
+
 + BUYER'S OPTION: An insurance policy that enables an investor to buy a stock at a discounted price when the stock is rising. 
 + Seller's Option: Downtrend, the right to sell a stock at a certain price. A long put is an insurance policy that you can buy at a certain price in the future.
 + Buy call is also called a call, and the opposite is called a sell call.
