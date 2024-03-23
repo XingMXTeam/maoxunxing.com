@@ -2,9 +2,7 @@
 
 ## Overview
 
-This is the source for https://maoxunxing.com/. 
-
-Inspired by **mtlynch.io**
+This is the source for https://maoxunxing.com/. Inspired by **mtlynch.io**.
 
 ## Code style guides
 
