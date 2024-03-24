@@ -41,14 +41,14 @@ buildFuture = true
 [languages.en.permalinks]
 posts = "/:filename/"
 notes = "/:filename/"
-about = "/:filename/"
+book-reports = "/:filename/"
 projects = "/:projects/"
 about = "/:about/"
 
 [languages.zh-CN.permalinks]
 posts = "/:filename/"
 notes = "/:filename/"
-about = "/:filename/"
+book-reports = "/:filename/"
 projects = "/:projects/"
 about = "/:about/"
 
