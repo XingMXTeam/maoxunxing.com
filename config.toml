@@ -38,8 +38,19 @@ buildFuture = true
     # Allow Markdown to include embedded HTML.
     unsafe= true
 
-[permalinks]
-    posts = "/:filename/"
+[languages.en.permalinks]
+posts = "/:filename/"
+notes = "/:filename/"
+about = "/:filename/"
+projects = "/:projects/"
+about = "/:about/"
+
+[languages.zh-CN.permalinks]
+posts = "/:filename/"
+notes = "/:filename/"
+about = "/:filename/"
+projects = "/:projects/"
+about = "/:about/"
 
 [social]
 twitter = "maoxunxing"
