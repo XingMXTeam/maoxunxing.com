@@ -42,15 +42,15 @@ buildFuture = true
 posts = "/:filename/"
 notes = "/:filename/"
 book-reports = "/:filename/"
-projects = "/:projects/"
-about = "/:about/"
+projects = "/:filename/"
+about = "/:filename/"
 
 [languages.zh-CN.permalinks]
 posts = "/:filename/"
 notes = "/:filename/"
 book-reports = "/:filename/"
-projects = "/:projects/"
-about = "/:about/"
+projects = "/:filename/"
+about = "/:filename/"
 
 [social]
 twitter = "maoxunxing"
