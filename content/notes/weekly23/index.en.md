@@ -12,7 +12,7 @@ I recently read a book, The Anthology of Balaji
 
 {{<img src="book.png" alt="bg" maxWidth="600px" align="center" caption="The Anthology of Balaji" >}}
 
-Who is Balaji? A quick Google gives us this result: a prominent investor, entrepreneur, covering cryptocurrencies, biology, genetics, and more.
+Who is Balaji? A quick Google gives us this result: Balaji S. Srinivasan is an American entrepreneur and investor. He was the co-founder of Counsyl, the former Chief Technology Officer of Coinbase, and former general partner at the venture capital firm Andreessen Horowitz.
 
 {{<img src="recover.png" alt="bg" maxWidth="960px" align="center" caption="Balaji" >}}
 

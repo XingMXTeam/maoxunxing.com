@@ -9,11 +9,11 @@ images:
 ---
 最近读了一本书，《The Anthology of Balaji》 翻译过来是：Balaji文集。
 
-{{< img src="book.png" alt="bg" maxWidth="600px" align="center" caption="The Anthology of Balaji" >}}
+{{<img src="book.png" alt="bg" maxWidth="600px" align="center" caption="The Anthology of Balaji" >}}
 
-Balaji是谁呢？Google一下给出这样的结果：一名杰出的投资者、企业家，范围涵盖加密货币、生物、基因学等等。
+Balaji是谁呢？Google一下给出这样的结果：巴拉吉-斯里尼瓦桑（Balaji S. Srinivasan）是美国企业家和投资家。他是 Counsyl 的联合创始人、Coinbase 的前首席技术官和风险投资公司 Andreessen Horowitz 的前普通合伙人。
 
-{{< img src="recover.png" alt="bg" maxWidth="960px" align="center" caption="Balaji" >}}
+{{<img src="recover.png" alt="bg" maxWidth="960px" align="center" caption="Balaji" >}}
 
 看完这这书后，发现他是一名狂热的技术信仰者。这本书能让我们看到这些优秀的杰出企业家、投资人的大脑是如何运作的，企业创建、投资、个人认知、管理等等很多东西都有讨论，看完后我是收获满满，然后又推荐了很多历史、技术等一堆书，反正我等不及下载阅读了。
 
