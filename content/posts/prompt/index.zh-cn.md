@@ -1,5 +1,5 @@
 ---
-title: "提示词模版"
+title: "AI提示词模版"
 description: "如何写好提示词"
 date: 2024-07-07
 ---

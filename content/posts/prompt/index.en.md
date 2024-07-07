@@ -1,5 +1,5 @@
 ---
-title: "prompt templates"
+title: "AI Prompt Templates"
 description: "how to write prompt"
 date: 2024-07-07
 ---
