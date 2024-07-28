@@ -1,8 +1,8 @@
 ---
-title: "投资日记#18期：如何选基金"
+title: "投资日记 #18期：如何选基金"
 date: 2023-12-16
 tags:
-  - 投资日记
+  - 投资日记 
 description: "如何选基金"
 images:
   - weekl6/cover.jpg

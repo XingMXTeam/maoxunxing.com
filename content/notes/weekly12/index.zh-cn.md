@@ -1,8 +1,8 @@
 ---
-title: "投资日记#12期：投资，坑比你想象得多"
+title: "投资日记 #12期：投资，坑比你想象得多"
 date: 2023-11-05
 tags:
-  - 投资日记
+  - 投资日记 
 description: "投资，坑比你想象得多"
 images:
   - weekl6/cover.jpg

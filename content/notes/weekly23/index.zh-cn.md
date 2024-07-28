@@ -1,8 +1,8 @@
 ---
-title: "投资日记#23期：《The Anthology of Balaji》技术哲学"
+title: "投资日记 #23期：《The Anthology of Balaji》技术哲学"
 date: 2024-04-06
 tags:
-  - 投资日记
+  - 投资日记 
 description: "这本书能让我们看到这些优秀的杰出企业家、投资人的大脑是如何运作的，企业创建、投资、个人认知、管理等等很多东西都有讨论，看完后我是收获满满，然后又推荐了很多历史、技术等一堆书，反正我等不及下载阅读了。"
 images:
   - weekl6/cover.jpg
