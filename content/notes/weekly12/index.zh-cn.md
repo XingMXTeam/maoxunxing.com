@@ -8,8 +8,6 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
-
 向大家分享下我最近学到的东西，主要聊下投资基金，债券，多元投资的想法，基金的选择。
 
 大部分人可以说99%的人选择个股，都是跟随大流或者盲目的。要想要通过个股的选择获得收益超过指数是非常难的。

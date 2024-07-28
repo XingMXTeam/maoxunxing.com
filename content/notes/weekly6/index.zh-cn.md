@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 ⚡️ Hi， 我是毛训星，欢迎打开新一期的「毛训星的投资日记 」，为您带来编程资讯、好书阅读和投资分享。
 

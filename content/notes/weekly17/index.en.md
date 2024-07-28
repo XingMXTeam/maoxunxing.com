@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 GPT is underestimated and the age of intelligence will eventually come. Individuals will also be greatly empowered
 
 ## What GPT can do

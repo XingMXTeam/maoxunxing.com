@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 I recently read Puppy Money and realised that a lot of the principles in it are similar to what I've seen in books before.
 

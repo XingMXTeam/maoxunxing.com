@@ -8,7 +8,6 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
 Sharing with you what I have learnt recently, mainly talking about investment funds, bonds, diversified investment ideas, fund selection.
 
 Most of the people can say that 99% of the people choose individual stocks by following the crowd or blindly. It's very hard to get returns that outperform the index with individual stock choices.

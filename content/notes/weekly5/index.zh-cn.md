@@ -8,7 +8,7 @@ images:
   - weekly5/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 你好，我是毛训星。 新的一期周刊来了。
 
 

@@ -8,8 +8,6 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
-
 I extracted the screenshots on Douban, and the overall netizen reviews are still good. To be honest, the first time I read this book, I found it to be very unreliable, it was written in a big way, the physicality of reading it wasn't very strong, the benefits to the individual didn't seem to be that obvious, and there was a sense of reading it as if I hadn't read it
 
 ![](aaa.png)

@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 I am more concerned about the financial growth thinking such as investment, startup products, etc., and I have been following the big Twitter V levelsio before.
 Picture he is a very powerful free entrepreneur, can independently run a lot of products, business ability and product ability are very outstanding. This is not he recently wrote a book "make bootstrappers handbook", online link readmake.com.

@@ -8,7 +8,6 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
 大部分底层职工，作为打工者不会关注企业的太多其他信息，包括它的财务、行业和业务属性、客户构成、竞争格局和未来发展，资金配置方向。
 
 但是作为一个企业的管理者，往往这些都是他们要考虑的核心问题。

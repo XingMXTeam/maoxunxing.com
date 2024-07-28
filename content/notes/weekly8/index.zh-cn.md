@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 
 ⚡️ Hi， 我是毛训星，一名前端工程师。欢迎打开新一期的「毛训星的投资日记 」，为您带来前端编程技术、创业投资实践主题分享。

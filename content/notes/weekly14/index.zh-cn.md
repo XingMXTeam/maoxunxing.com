@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 我摘取了《豆瓣》上的截图，总体网友评价还是不错的。说实话，这本书我第一次读的时候，觉得很不靠谱，写了一大堆，阅读的时候体感不是很强，对个人收益好像不那么明显，有一种看了好像没看的感觉
 

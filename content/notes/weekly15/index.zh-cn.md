@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 我对投资、创业产品等财增长思维比较关注，之前一直关注着Twitter大V levelsio。
 图片他是一名很厉害的自由创业者，能独立运作很多产品，商业能力和产品能力都非常出众。这不他最近写了一本书《make bootstrappers handbook》，在线链接readmake.com。

@@ -8,7 +8,7 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
+
 
 I've been seeing the word cognition in recent years, but I'm still not quite sure what cognition can do for me, is it just chicken soup? Recently I've come to a bit of an understanding, not that much, but it's starting to become clearer.
 

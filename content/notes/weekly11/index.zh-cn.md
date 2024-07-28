@@ -8,8 +8,6 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
-
 一句话总结：对行业定性的洞见，结合定量数据验证，管理层的深刻洞察，再加上足够的安全边际。
 
 ![](aaa.png)

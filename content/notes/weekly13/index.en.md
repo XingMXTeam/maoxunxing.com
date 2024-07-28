@@ -8,8 +8,6 @@ images:
   - weekl6/cover.jpg
 ---
 
-{{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
-
 Most bottom-feeders, as wage earners, don't pay much attention to much other information about a business, including its finances, industry and business attributes, customer composition, competitive landscape and future growth, and the direction of capital allocation.
 
 But as a manager of a business, often these are the core issues they have to consider.
