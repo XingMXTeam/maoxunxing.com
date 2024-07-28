@@ -10,9 +10,9 @@ images:
 
 ## Why Design This ?
 
-React.Suspense is specifically designed for handling asynchronous components, like code-splitting with React.lazy, data fetching with concurrent features, or integrating with libraries like Relay for asynchronous data loading. 
+React.Suspense is specifically designed for handling asynchronous components, like code-splitting with React.lazy （React 16.6), data fetching with concurrent features (React 18), or integrating with libraries like Relay for asynchronous data loading.
 
-It provides a declarative way to show a fallback UI (like a spinner) while waiting for the component to load.
+It provides a declarative way to show a fallback UI (like a spinner) while waiting for the component to load. Note: **Only the data source of using `use()` will take effect**
 
 Example:  
 

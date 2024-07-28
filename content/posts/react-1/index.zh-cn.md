@@ -10,9 +10,9 @@ images:
 
 ## 设计初衷
 
-React.Suspense 是专为处理异步组件而设计的，例如使用 React.lazy 进行code-splitting、使用 concurrent features 获取数据，或与 Relay 等库集成以实现异步数据加载。
+React.Suspense 是专为处理异步组件而设计的，例如使用 React.lazy 进行code-splitting ( React 16.6 中）、使用 concurrent features 获取数据（ React 18 中) ，或与 Relay 等库集成以实现异步数据加载。
 
-它提供了一种声明式方法，可在等待组件加载时显示 fallback UI（如Spinner）。
+它提供了一种声明式方法，可在等待组件加载时显示 fallback UI（如Spinner）。需要注意： **只有使用 `use()` 的数据源才会生效**
 
 例子:  
 
