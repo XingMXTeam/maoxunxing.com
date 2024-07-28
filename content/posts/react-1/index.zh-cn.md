@@ -1,5 +1,5 @@
 ---
-title: "React日记#1期：Suspense"
+title: "React日记 #1期：Suspense"
 description: "Why Suspense ?"
 date: 2024-07-28
 images:
