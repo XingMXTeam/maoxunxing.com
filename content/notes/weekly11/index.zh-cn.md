@@ -1,8 +1,8 @@
 ---
-title: "成功日记#11期：巴菲特估值逻辑"
+title: "投资日记#11期：巴菲特估值逻辑"
 date: 2023-10-29
 tags:
-  - 成功日记
+  - 投资日记
 description: "巴菲特估值逻辑"
 images:
   - weekl6/cover.jpg

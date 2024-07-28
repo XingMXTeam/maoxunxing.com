@@ -1,8 +1,8 @@
 ---
-title: "成功日记#7期：职场进阶重要的三个模型"
+title: "投资日记#7期：职场进阶重要的三个模型"
 date: 2023-09-04
 tags:
-  - 成功日记
+  - 投资日记
 description: "职场进阶重要的三个模型"
 images:
   - weekl6/cover.jpg
@@ -10,7 +10,7 @@ images:
 
 {{< img src="cover.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Scarbor Siu on Unsplash" >}}
 
-⚡️ Hi， 我是毛训星，欢迎打开新一期的「毛训星的成功日记」，为您带来编程资讯、好书阅读和投资分享。
+⚡️ Hi， 我是毛训星，欢迎打开新一期的「毛训星的投资日记」，为您带来编程资讯、好书阅读和投资分享。
 
 首先回答上一期的问题： 宏观经济模型能用来作为投资建议么？国内的通缩带来的影响是什么？
 

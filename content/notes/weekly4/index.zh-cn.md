@@ -1,8 +1,8 @@
 ---
-title: "成功日记#4期：六大核心资产"
+title: "投资日记#4期：六大核心资产"
 date: 2023-08-11
 tags:
-  - 成功日记
+  - 投资日记
 description: "六大核心资产"
 images:
   - weekly4/cover.jpg
