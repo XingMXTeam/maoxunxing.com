@@ -1,14 +1,19 @@
 body {
-  font-family: "Lato", "PingFang SC", "Microsoft YaHei", "Inter", Inter var, system-ui,
-    -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
-    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    Noto Color Emoji;
   font-size: 1.9em;
   line-height: 1.65em;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   color: #515151;
   background-color: #ffffff;
+}
+body.en {
+  font-family: "Lato", "PingFang SC", "Microsoft YaHei", "Inter", Inter var, system-ui,
+  -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
+  Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+  Noto Color Emoji;
+}
+body.cn {
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 blockquote {

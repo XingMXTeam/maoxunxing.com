@@ -209,7 +209,15 @@
   {{ else if eq .Site.Params.colorscheme "auto" }}
     {{ $csClass = "colorscheme-auto" }}
   {{ end }}
-  <body class="{{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}">
+
+  {{ $langClass := "en" }}
+  {{ if eq .Language.LanguageName "EN" }}
+    {{ $langClass = "en" }}
+  {{ else if eq .Language.LanguageName "CN" }}
+    {{ $langClass = "cn" }}
+  {{ end }}
+  
+  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}">
     {{ partial "float" . }}
     <main class="wrapper">
       {{ partial "header.html" . }}
