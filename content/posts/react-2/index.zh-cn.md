@@ -61,9 +61,9 @@ Concurrent Mode 的一些关键概念和优势：
 
 ### 自动批量更新
 
-触发场景： 
+触发场景：
 
-- 事件处理函数中
+- 事件处理函数中( React 18 版本之前也会批量处理更新)
 
 ```jsx
 function handleClick() {
@@ -91,6 +91,22 @@ setTimeout(() => {
   setState1(value1);
   setState2(value2);
 }, 1000);
+```
+
+如何退出批量更新:
+
+```jsx
+import { flushSync } from 'react-dom'
+
+setTimeout(() => {
+  flushSync(() => {
+    setState1(value1);
+  })
+  flushSync(() => { 
+    setState2(value2);
+  })
+}, 1000);
+
 ```
 
 ## 如何开启

@@ -61,9 +61,9 @@ Discard rendering:
 
 ### Automatic batch updates
 
-Trigger scene: 
+Trigger scene:
 
-- In the event handler function
+- In the event handler function ( Before React 18, it will batch updates, too)
 
 ```jsx
 function handleClick() {
@@ -93,6 +93,23 @@ setTimeout(() => {
 }, 1000);
 ```
 
+how to exit batch updates:
+
+```jsx
+import { flushSync } from 'react-dom'
+
+setTimeout(() => {
+  flushSync(() => {
+    setState1(value1);
+  })
+  flushSync(() => { 
+    setState2(value2);
+  })
+}, 1000);
+
+```
+
+
 ## How to turn it on
 
 Once you have created the root node using createRoot, all subtree components will automatically run in concurrent mode
@@ -114,7 +131,9 @@ root.render(
 
 ```
 
-### useTransition 避免UI被阻塞
+### useTransition
+
+> avoid stopping ui reader process
 
 ```jsx
 import React, { useState, useTransition } from ‘react’;
@@ -141,7 +160,9 @@ export default App;
 
 ```
 
-### useDeferredValue 延迟更新UI，比如跟随输入的情况
+### useDeferredValue 
+
+> defer render
 
 ```jsx
 import React, { useState, useDeferredValue } from ‘react’;
