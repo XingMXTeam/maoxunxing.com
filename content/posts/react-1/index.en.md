@@ -14,6 +14,8 @@ React.Suspense is specifically designed for handling asynchronous components, li
 
 It provides a declarative way to show a fallback UI (like a spinner) while waiting for the component to load. Note: **Only the data source of using `use()` will take effect**
 
+It can play a huge role in **server-side rendering**, equivalent to exception catching for component rendering.
+
 Example:  
 
 ```jsx
@@ -31,7 +33,10 @@ export default SuspenseWithLazyLoading;
 
 ```
 
-`useState` and `setLoading` are more for solving the problem of state in case of asynchronous data.Suspense can solve a similar problem in a declarative way, **the code is simpler**, and **it doesn't trigger additional refreshes**.
+`useState` and `setLoading` are more for solving the problem of state in case of asynchronous data.
+
+- Suspense can solve a similar problem in a declarative way, **the code is simpler**, and **it doesn't trigger additional refreshes**.
+- Suspense support nesting
 
 ## Version
 
