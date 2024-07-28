@@ -36,6 +36,7 @@ export default SuspenseWithLazyLoading;
 `useState` and `setLoading` are more for solving the problem of state in case of asynchronous data.
 
 - Suspense can solve a similar problem in a declarative way, **the code is simpler**, and **it doesn't trigger additional refreshes**.
+- Suspense can skip loading show when the data fetch is fast
 - Suspense support nesting
 
 ## Version
