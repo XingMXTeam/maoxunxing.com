@@ -82,7 +82,7 @@ useEffect(() => {
   // React will do a one-time re-render after the useEffect is done.
 }, []);
 
-``
+```
 
 - In asynchronous operation
 

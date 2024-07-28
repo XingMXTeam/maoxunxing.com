@@ -1,5 +1,5 @@
 ---
-title: "Investment Diary #23：《The Anthology of Balaji》"
+title: "Investment Diary #23:《The Anthology of Balaji》"
 date: 2024-04-06
 tags:
   - Investment Diary

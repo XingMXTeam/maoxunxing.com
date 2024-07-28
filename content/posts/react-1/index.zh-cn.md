@@ -33,5 +33,4 @@ export default SuspenseWithLazyLoading;
 
 ## 版本
 
->= React 18
-
+`>= React 18`
