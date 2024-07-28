@@ -2,6 +2,8 @@
 title: "React Diary#2: Concurrent Mode"
 description: "what is concurrent mode ?"
 date: 2024-07-28
+tags:
+  - React Diary
 images:
   - react-1/a.png
 ---
