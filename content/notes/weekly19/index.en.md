@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #19: Insights from Reading 'Puppy Money'"
+title: "Investment Diary #19: Insights from Reading 'Puppy Money'"
 date: 2023-12-31
 tags:
-  - Success Diary
+  - Investment Diary
 description: "Understanding Money, Mastering Money"
 images:
   - weekl6/cover.jpg
@@ -28,7 +28,7 @@ If your dream is to make more friends and talk to interesting people, you have m
 
 That's what drives me to want to work hard to make money.
 
-## What Success Diary Solves
+## What Investment Diary Solves
 
 A success diary records your success story and why you are successful.
 

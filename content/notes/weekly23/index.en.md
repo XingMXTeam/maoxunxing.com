@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #23：《The Anthology of Balaji》"
+title: "Investment Diary #23：《The Anthology of Balaji》"
 date: 2024-04-06
 tags:
-  - Success Diary
+  - Investment Diary
 description: "This book gives us a glimpse into how the brains of these great and brilliant entrepreneurs and investors work, business creation, investing, personal perception, management, and many other things are discussed, and I was rewarded for reading it, and then a bunch of recommendations for history, technology, etc., so I can't wait to download and read it anyway."
 images:
   - weekl6/cover.jpg

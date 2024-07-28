@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #22: Generating personal lifetime income"
+title: "Investment Diary #22: Generating personal lifetime income"
 date: 2024-03-20
 tags:
-  - Success Diary
+  - Investment Diary
 description: "How to Become Rich: Make Money and Investments, Solve Unemployment Problems, Avoid Anxiety"
 images:
   - weekl6/cover.jpg

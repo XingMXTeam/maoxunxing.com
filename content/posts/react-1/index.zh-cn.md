@@ -1,9 +1,9 @@
 ---
-title: "React设计系列之Suspense"
-description: "Suspense的设计是为了解决什么问题？"
+title: "React日记#1期：Suspense"
+description: "Why Suspense ?"
 date: 2024-07-28
 images:
-  - react-1/a.jpg
+  - react-1/a.png
 ---
 
 ## 设计初衷
@@ -30,3 +30,8 @@ export default SuspenseWithLazyLoading;
 ```
 
 `useState` and `setLoading` 更多的是为了解决异步数据时状态的问题。Suspense可以以声明式的方式解决类似问题，**代码更简单**， 而且 **不会触发额外的刷新**。
+
+## 版本
+
+>= React 18
+

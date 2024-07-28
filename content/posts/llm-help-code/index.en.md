@@ -1,5 +1,5 @@
 ---
-title: "AI Prompt Templates"
+title: "LLM Diary#1: How To Write Prompt ?"
 description: "how to write prompt"
 date: 2024-07-07
 images:

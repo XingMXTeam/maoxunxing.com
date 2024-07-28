@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #18: How to Choose Funds"
+title: "Investment Diary #18: How to Choose Funds"
 date: 2023-12-16
 tags:
-  - Success Diary
+  - Investment Diary
 description: "How to choose a fund"
 images:
   - weekl6/cover.jpg

@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #13: Taking an investor's view of the business you work for"
+title: "Investment Diary #13: Taking an investor's view of the business you work for"
 date: 2023-11-13
 tags:
-  - Success Diary
+  - Investment Diary
 description: "You'll find something different."
 images:
   - weekl6/cover.jpg

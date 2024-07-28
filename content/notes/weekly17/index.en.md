@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #17: GPT4 Understanding"
+title: "Investment Diary #17: GPT4 Understanding"
 date: 2023-12-10
 tags:
-  - Success Diary
+  - Investment Diary
 description: "GPT4 Understanding"
 images:
   - weekl6/cover.jpg

@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #20: Four Basic Principles of Security Selection"
+title: "Investment Diary #20: Four Basic Principles of Security Selection"
 date: 2024-02-03
 tags:
-  - Success Diary
+  - Investment Diary
 description: "What is the basis when you securities selection? Why do you want to buy this company's stock?"
 images:
   - weekl6/cover.jpg

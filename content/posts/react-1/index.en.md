@@ -1,12 +1,12 @@
 ---
-title: "AI Prompt Templates"
+title: "React Diary#1：Suspense"
 description: "how to write prompt"
 date: 2024-07-07
 images:
-  - llm-help-code/a.jpg
+  - react-1/a.png
 ---
 
-## Design 
+## Why Design This ?
 
 React.Suspense is specifically designed for handling asynchronous components, like code-splitting with React.lazy, data fetching with concurrent features, or integrating with libraries like Relay for asynchronous data loading. 
 
@@ -30,3 +30,7 @@ export default SuspenseWithLazyLoading;
 ```
 
 `useState` and `setLoading` are more for solving the problem of state in case of asynchronous data.Suspense can solve a similar problem in a declarative way, **the code is simpler**, and **it doesn't trigger additional refreshes**.
+
+## Version
+
+>= React 18

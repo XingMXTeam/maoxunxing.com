@@ -1,8 +1,8 @@
 ---
-title: "Success Diary #14: How to Build a Portfolio"
+title: "Investment Diary #14: How to Build a Portfolio"
 date: 2023-11-20
 tags:
-  - Success Diary
+  - Investment Diary
 description: "Reread 《Extraordinary Success》，Simple principles are the truth."
 images:
   - weekl6/cover.jpg
