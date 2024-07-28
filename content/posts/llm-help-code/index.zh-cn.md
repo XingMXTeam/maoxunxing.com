@@ -8,7 +8,7 @@ images:
 
 ## 信息分类
 
-```
+```shell
 You are a bank customer service bot.
 
 Your task is to assess customer intent and categorize custoner inquiry after <<<>>> into one of the following predefined categories
@@ -43,7 +43,7 @@ Category:
 
 ## 信息提取
 
-```
+```shell
 
 Extract infornation from the following medical notes:
 {medical_notes}
