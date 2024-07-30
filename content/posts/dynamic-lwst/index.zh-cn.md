@@ -1,15 +1,12 @@
 ---
-title: "搜索引擎的拼写纠错功能-莱文斯坦距离"
+title: "算法日记 #1期：搜索引擎的拼写纠错功能-莱文斯坦距离"
 date: 2023-06-23T20:46:15+08:00
 tags:
-- Algorithm
+- 算法日记
 description: "拼写纠错功能一直没发现，原来是通过莱文斯坦距离计算的！"
 images:
 - dynamic-lwst/nerdgirl.png
 ---
-
-{{< img src="nerdgirl.png" alt="bg" maxWidth="960px" align="center" caption="Photo by Stable Diffusion" >}}
-
 ## 案例
 
 给定两个字符串，如何量化他们的相似度。 这里引出了“编辑距离”这个概念，就是将一个字符串转为另一个字符串，需要的最小的编辑操作次数。编辑次数

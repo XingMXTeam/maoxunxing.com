@@ -1,14 +1,12 @@
 ---
-title: "为什么需要前端工程师"
+title: "职业日记 #2期：为什么需要前端工程师"
 date: 2023-05-13
 description: "前端工程师的价值"
 tags:
-  - 职业
+  - 职业日记
 images:
   - why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---
-
-{{< img src="simon-abrams-k_T9Zj3SE8k-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Simon Abrams on Unsplash" >}}
 
 前端是一个靠近终端或产品的工作。
 

@@ -1,8 +1,8 @@
 ---
-title: "Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
+title: "Algorithm Diary #8: Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
 date: 2021-08-16
 tags:
-  - Algorithm
+  - Algorithm Diary
   - Tree
   - Interview
   - DP

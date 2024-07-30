@@ -1,8 +1,8 @@
 ---
-title: "Understanding Stream in Node.js"
+title: "NodeJS Diary #1: Understanding Stream in Node.js"
 date: 2021-10-19T14:28:57+08:00
 tags:
-  - NodeJS
+  - NodeJS Diary
   - RPC
   - WebSocket
   - Network
@@ -12,8 +12,6 @@ description: "What is Streaming? This article details Nodejs' streaming technolo
 images:
   - nodejs-network-stream/juanjo-jaramillo-mZnx9429i94-unsplash.jpg
 ---
-
-{{< img src="juanjo-jaramillo-mZnx9429i94-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Juanjo Jaramillo on Unsplash" >}}
 
 ## What is a stream
 

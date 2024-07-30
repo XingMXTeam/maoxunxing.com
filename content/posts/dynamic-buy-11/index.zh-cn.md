@@ -1,16 +1,12 @@
 ---
-title: "双11凑单问题 - 动态规划的使用"
+title: "算法日记 #2期：双11凑单问题 - 动态规划的使用"
 date: 2023-06-23T11:26:08+08:00
 tags:
-- Algorithm
+- 算法日记
 description: "从状态表解决动态规划很简单，但并不是所有动态规划问题都能用状态表解决"
 images:
 - dynamic-buy-11/img.png
 ---
-
-
-{{< img src="img.png" alt="bg" maxWidth="960px" align="center" caption="Photo by Stable Diffusion" >}}
-
 
 ## 案例
 

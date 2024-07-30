@@ -1,15 +1,12 @@
 ---
-title: "How To Be Different And Successful As An Engineer"
+title: "Career Dairy #1: How To Be Different And Successful As An Engineer"
 date: 2021-10-06T11:20:33+08:00
 description: "How to become better from a technical person's point of view"
 tags:
-  - Career
+  - Career Dairy
 images:
   - how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
 ---
-
-{{< img src="jefferson-santos-9SoCnyQmkzI-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Jefferson Santos on Unsplash" >}}
-
 Last week, I attended a meeting. Now I will talk about some things I learned from the meeting. A guy who will leave Alibaba Group made a talk. He is a high level engineer, he really made something successful and had a strong influence on the company.I really appreciate what learned: The way to learn things better, collaborate more efficiently with your colleague, and be more successful with your product.
 
 ## 1 Master things better and know more

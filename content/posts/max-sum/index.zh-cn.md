@@ -1,10 +1,9 @@
 ---
-title: "Array Part 3 - Find the Largest Sum of Contiguous Subarray "
+title: "算法日记 #4期： Array Part 3 - Find the Largest Sum of Contiguous Subarray "
 date: 2022-04-17T20:44:08+08:00
 description: "DP解法"
 tags:
-  - Array
-  - DP
+  - 算法日记
 images:
   - max-sum/test.png
 ---

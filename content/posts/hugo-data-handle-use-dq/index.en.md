@@ -1,8 +1,8 @@
 ---
-title: "Partitioning algorithms in massive data"
+title: "Algorithm Diary #3: Partitioning algorithms in massive data"
 date: 2023-06-18T11:52:40+08:00
 tags:
-- Algorithm
+- Algorithm Diary
 description: "A practical example to illustrate the application of partitioning algorithms in massive data processing"
 images:
 - hugo-data-handle-use-dq/img_2.png

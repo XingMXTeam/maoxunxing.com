@@ -1,15 +1,12 @@
 ---
-title: "AI时代，三大英语学习工具"
+title: "英语日记 #1期：AI时代，三大英语学习工具"
 date: 2023-07-08T11:36:43+08:00
 tags:
-- English
+- 英语日记
 description: "人生应该是有趣而好玩的，包括英语学习。AI大模型让学习英语变得有趣。"
 images:
-- how-i-learn-english/img_1.png
+- how-i-learn-english/img_1.jpg
 ---
-
-{{< img src="img_1.png" alt="Magnificent futuristic vehicle flying through a cyberpunk city" maxWidth="960px" align="center" caption="by stable diffusion" >}}
-
 我从小学到大学就开始学习英语，相信大部分的大学生跟我一样，中国传统教育重视英语的阅读理解， 但是基本都是哑巴英语。
 
 回忆下我的学英语历程，高中时期背诵新概念英语，我在大学期间四六级靠着高中的积累一次性通过后，

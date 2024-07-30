@@ -1,13 +1,13 @@
 ---
-title: "Top 3 English Learning Tools in the Age of AI"
+title: "English Diary #1: Top 3 English Learning Tools in the Age of AI"
 date: 2023-07-08T11:36:43+08:00
 tags:
-- English
+- English Diary
 description: "Life should be fun and interesting, including learning English.AI big models make learning English fun."
 images:
-- how-i-learn-english/img_1.png
+- how-i-learn-english/img_1.jpg
 ---
-{{< img src="img_1.png" alt="Magnificent futuristic vehicle flying through a cyberpunk city" maxWidth="960px" align="center" caption="by stable diffusion" >}}
+
 I started learning English from primary school to university, and I believe that most university students are like me, because traditional Chinese education attaches importance to reading and comprehension of English, but basically it is dumb English.
 
 I recalled my English learning journey, reciting the New Concept English in high school, and after I passed Grade 4 and 6 in college in one go with my high school accumulation, I never took the initiative to learn English reading again.

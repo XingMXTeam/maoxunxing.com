@@ -1,14 +1,12 @@
 ---
-title: "Spelling correction for search engines"
+title: "Algorithm Diary #1: Spelling correction for search engines"
 date: 2023-06-23T20:46:15+08:00
 tags:
-- Algorithm
+- Algorithm Diary
 description: "The spelling correction function was never discovered, but it turns out to be calculated via the Levenstein distance!"
 images:
 - dynamic-lwst/nerdgirl.png
 ---
-
-{{< img src="nerdgirl.png" alt="bg" maxWidth="960px" align="center" caption="Photo by Stable Diffusion" >}}
 
 ## Case
 

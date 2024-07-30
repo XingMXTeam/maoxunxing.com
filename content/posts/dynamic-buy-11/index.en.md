@@ -1,16 +1,12 @@
 ---
-title: "The Double 11 Roundup Problem"
+title: "Algorithm Diary #2: The Double 11 Roundup Problem"
 date: 2023-06-23T11:26:08+08:00
 tags:
-- Algorithm
+- Algorithm Diary
 description: "Solving dynamic planning from state tables is easy, but not all dynamic planning problems can be solved with state tables"
 images:
 - dynamic-buy-11/img.png
 ---
-
-{{< img src="img.png" alt="bg" maxWidth="960px" align="center" caption="Photo by Stable Diffusion" >}}
-
-
 ## Case
 
 Suppose we have n items in our shopping cart (at a known price) and pick from these n items that just meet the price required for a full sale, say $200. How do we pick them?

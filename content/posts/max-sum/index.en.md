@@ -1,8 +1,9 @@
 ---
-title: "Array Part 3 - Find the Largest Sum of Contiguous Subarray "
+title: "Algorithm Diary #4: Array Part 3 - Find the Largest Sum of Contiguous Subarray "
 date: 2022-04-17T20:44:08+08:00
 description: "DP Solution"
 tags:
+  - Algorithm Diary
   - Array
 images:
   - max-sum/test.png

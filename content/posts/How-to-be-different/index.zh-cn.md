@@ -1,14 +1,12 @@
 ---
-title: "如何做一个与众不同的成功的工程师"
+title: "职业日记 #1期：如何做一个与众不同的成功的工程师"
 date: 2021-10-06T11:20:33+08:00
 description: "从技术人角度看，怎么变得更好"
 tags:
-  - 职业
+  - 职业日记
 images:
   - how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
 ---
-
-{{< img src="jefferson-santos-9SoCnyQmkzI-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Jefferson Santos on Unsplash" >}}
 
 上周，我参加了一个会议。现在我将谈谈我从会议上了解到的一些情况。一个即将离开阿里巴巴集团的人做了一个演讲。他是一个高水平的工程师，他真的做出了一些成功的事情，对公司产生了很大的影响。我真的很欣赏所学到的东西。如何更好地学习东西，与同事更有效地合作，并在产品上更成功。
 

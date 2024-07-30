@@ -1,14 +1,12 @@
 ---
-title: "Why You Need A Front-End Engineer"
+title: "Career Diary #2: Why You Need A Front-End Engineer"
 date: 2023-05-13
 description: "The value of front-end engineers"
 tags:
-  - Career
+  - Career Diary
 images:
   - why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---
-
-{{< img src="simon-abrams-k_T9Zj3SE8k-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Simon Abrams on Unsplash" >}}
 
 Front-end is a job near terminal or products.
 

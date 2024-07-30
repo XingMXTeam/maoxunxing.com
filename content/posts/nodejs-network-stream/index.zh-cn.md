@@ -1,8 +1,8 @@
 ---
-title: "Nodejs中Stream的理解"
+title: "NodeJS日记 #1期：Nodejs中Stream的理解"
 date: 2021-10-19T14:28:57+08:00
 tags:
-  - NodeJS
+  - NodeJS日记
   - RPC
   - WebSocket
   - Network
@@ -12,9 +12,6 @@ description: "什么是流？这篇文章详细介绍了Nodejs的流技术，带
 images:
   - nodejs-network-stream/juanjo-jaramillo-mZnx9429i94-unsplash.jpg
 ---
-
-{{< img src="juanjo-jaramillo-mZnx9429i94-unsplash.jpg" alt="bg" maxWidth="960px" align="center" caption="Photo by Juanjo Jaramillo on Unsplash" >}}
-
 ## 什么是流
 
 流不是仅存在于 Nodejs, 在 unix 操作系统中也有类似的概念。 比如管道操作符号
