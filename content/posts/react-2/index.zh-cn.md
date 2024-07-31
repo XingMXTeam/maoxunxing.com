@@ -164,7 +164,7 @@ export default App;
 
 ### useDeferredValue 延迟更新UI，比如跟随输入的情况
 
-同理也是告诉 React，这是一次非紧急更新，`useDeferredValue`的区别是它包装的时值。
+同理也是告诉 React，这是一次非紧急更新，`useDeferredValue`的区别是它包装的是值。
 
 ```jsx
 import React, { useState, useDeferredValue } from 'react';
