@@ -10,11 +10,11 @@ images:
 
 ## Server-Side rendering history
 
-v0.4: Introduced React.renderComponentToString API to start SSR support
-v0.12: Introduced React.renderToString to replace the old API.
-v0.14: Split the react-dom package and updated the API call to ReactDOMServer.renderToString.
-v16: Introduced ReactDomServer.renderToNodeStream API to support stream rendering.
-v18: Implemented a new server-side renderer.
+v0.4: Introduced React.renderComponentToString API to start SSR support  
+v0.12: Introduced React.renderToString to replace the old API.  
+v0.14: Split the react-dom package and updated the API call to ReactDOMServer.renderToString.  
+v16: Introduced ReactDomServer.renderToNodeStream API to support stream rendering.  
+v18: Implemented a new server-side renderer.  
 
 ## Initial design intent
 

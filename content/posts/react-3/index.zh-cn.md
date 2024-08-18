@@ -10,11 +10,11 @@ images:
 
 ## Server-Side rendering历史
 
-v0.4: 推出React.renderComponentToString API开始支持SSR
-v0.12: 推出React.renderToString代替原有API
-v0.14: 拆分出 react-dom 包，更新API调用方式为 ReactDOMServer.renderToString
-v16: 推出ReactDomServer.renderToNodeStream API支持流式渲染
-v18: 实现全新的服务端渲染器
+v0.4: 推出React.renderComponentToString API开始支持SSR  
+v0.12: 推出React.renderToString代替原有API  
+v0.14: 拆分出 react-dom 包，更新API调用方式为 ReactDOMServer.renderToString  
+v16: 推出ReactDomServer.renderToNodeStream API支持流式渲染  
+v18: 实现全新的服务端渲染器  
 
 ## 设计初衷
 

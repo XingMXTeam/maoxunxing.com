@@ -8,6 +8,7 @@ defaultContentLanguageInSubdir = "true"
 paginate = 10
 canonifyurls = false
 timeout = 120000
+tableOfContents = true
 
 pygmentsstyle = "colorful"
 pygmentscodefences = true
