@@ -24,29 +24,29 @@ Generate and complete rendered content on the server side. The difference with C
 2. **Lower Server Resource Consumption**: Similarly, because it's streaming, it can be transmitted while it's being generated, which reduces service load and resource consumption, and better handles concurrent requests.
 
 ```js
-import {renderToString} from ‘react-dom/server’
-app.user(‘/’, (request, response) => {
+import {renderToString} from 'react-dom/server'
+app.user('/', (request, response) => {
   const html = renderToString(<App />)
   response.send(html)
 })
 ```
 
 ```js
-import { hydrateRoot } from ‘react-dom/client’
+import { hydrateRoot } from 'react-dom/client'
 import App from '. /App.js'
 
-hydrateRoot(document.getElementById(‘root’), <App />)
+hydrateRoot(document.getElementById('root'), <App />)
 ```
 
 Streaming SSR is a type of Server-side rendering that features real-time generation of html snippets to send to the client.
 
 ```js
-import { renderToPipeableStream } from ‘react-dom/server’
+import { renderToPipeableStream } from 'react-dom/server'
 
 const { pipe } = renderToPipeableStream(<App />, {
   bootstrapScripts: ['. /main.js'],
   onShellReady() {
-    response.setHeader(‘content-type’, ‘text/html’)
+    response.setHeader('content-type', 'text/html')
     pipe(response)
   }
 })
@@ -96,12 +96,12 @@ The server-side renderer streams HTML in a chaotic fashion that refreshes previo
     <Post />
     <Suspense fallback={<Spinner />}>
       <Comments />
-    </Suspense
+    </Suspense>
   </RightPane>
 </Layout>
 
 
-import { use } from ‘react’
+import { use } from 'react'
 function Comments() {
   const comments = use(fetch('. /api/commets'))
   return (<>
@@ -118,14 +118,14 @@ This code didn't work before v18, now the Comments script starts hydration on th
 The Comments component will hydrate first if the js code hasn't finished loading but the data is in place. It will hydrate again when the js code finishes loading.
 
 ```Js
-import {lazy} from ‘react’
+import {lazy} from 'react'
 
 const Comments = lazy(
   () => import('. /comments.js')
 )
 
 <Suspense fallback={<Spinner />}}
-  <Comments
+  <Comments />
 </Suspense
 
 

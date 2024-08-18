@@ -8,7 +8,6 @@ defaultContentLanguageInSubdir = "true"
 paginate = 10
 canonifyurls = false
 timeout = 120000
-tableOfContents = true
 
 pygmentsstyle = "colorful"
 pygmentscodefences = true
@@ -38,6 +37,10 @@ buildFuture = true
   [markup.goldmark.renderer]
     # Allow Markdown to include embedded HTML.
     unsafe= true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
 
 [languages.en.permalinks]
 posts = "/:filename/"
