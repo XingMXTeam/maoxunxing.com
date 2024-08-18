@@ -8,6 +8,8 @@ images:
   - react-1/a.png
 ---
 
+{{< table_of_contents >}}
+
 ## Server-Side rendering history
 
 v0.4: Introduced React.renderComponentToString API to start SSR support  
@@ -130,5 +132,3 @@ const Comments = lazy(
 
 
 ```
-
-Translated with DeepL.com (free version)

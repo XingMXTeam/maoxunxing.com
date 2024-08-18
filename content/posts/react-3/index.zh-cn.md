@@ -8,6 +8,8 @@ images:
   - react-1/a.png
 ---
 
+{{< table_of_contents >}}
+
 ## Server-Side rendering历史
 
 v0.4: 推出React.renderComponentToString API开始支持SSR  

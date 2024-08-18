@@ -39,7 +39,7 @@ buildFuture = true
     unsafe= true
   [markup.tableOfContents]
     endLevel = 3
-    ordered = false
+    ordered = true
     startLevel = 2
 
 [languages.en.permalinks]
