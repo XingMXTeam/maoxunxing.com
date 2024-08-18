@@ -1,7 +1,7 @@
 ---
 title: "React日记 #2期：Concurrent Mode并发模式"
 description: "并发模式的历史、解决的问题是什么？"
-date: 2024-07-28
+date: 2024-07-30
 tags:
   - React日记
 images:
