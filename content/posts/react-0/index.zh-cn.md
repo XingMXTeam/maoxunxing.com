@@ -1,9 +1,14 @@
 ---
-title: "【总结篇】React核心技术总结和版本18最新特性介绍"
-date: 2021-12-09T14:43:31+08:00
-draft: true
-description: ""
+title: "React日记 #0期：React解决什么问题"
+description: "Why React ?"
+date: 2024-07-15
+tags:
+  - React日记
+images:
+  - react-1/a.png
 ---
+
+{{< table_of_contents >}}
 
 ## 设计理念
 
@@ -36,27 +41,22 @@ React 架构是包含三个部分：
 
 我们上面设计原理讲了 React 引入了 Fiber 架构，我们将 jsx 转为 dom 节点渲染时，如果 jsx 节点非常多，这个过程会非常长（导致卡顿），所以需要利用 fiber 架构，拆分渲染任务。 Fiber 架构其实就是一颗树，每个节点作为一个单独的工作单元。
 
-## react 18 新特性
+## 框架设计
 
-### Suspense
+功能集:  
 
-request library： Relay
+- 约定式路由
+- API路由
+- SSR+SSG
+- 通过编译时的临时文件扩展框架能力
+- 插件和扩展机制
 
-### concurrent rendering
+Remix: loader + action的数据加载机制  ; Fresh: OJS + deno + 真bundless
 
-<!-- 1 默认能批量更新；
-2 新API:
-  useTransition and startTransition 优先级控制；
-  useDeferredValue 渲染旧数据
-  <Suspense> 处理loading -->
+- 基于路由的声明式数据获取: 除了useEffect, swr, react-query等社区方案，如果要追求极致的请求速度，只有运行时库不够，还需要和框架结合（路由和编译态结合），才能尽快发起，并行执行（还有缓存）。
 
-### Diff 算法
-
-只比较同级别
-
-### 参考资料
-
-https://react.iamkasong.com/
-https://juejin.cn/post/7016512949330116645
-https://github.com/zh-lx/mini-react
-https://preactjs.com/
+Remix: export loader方法  
+Umi: export  clientLoader  
+Qwik: export onGet方法  
+Fresh： export 包含Get方法的handler对象  
+Solid Start: export routeData  
