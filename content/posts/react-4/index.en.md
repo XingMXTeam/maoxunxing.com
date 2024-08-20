@@ -12,6 +12,16 @@ images:
 
 ## Initial design intent
 
+Enhancing the performance and developer experience of React applications:
+
+- **Reducing client-side JavaScript load:** RSC allows developers to execute part of the logic on the server side, reducing the amount of JavaScript that needs to be sent to the client, thus improving application load performance.
+- **More efficient data fetching:** RSC enables components to fetch data and render on the server side directly.
+- **Optimizing SEO and initial load performance:** HTML pages can be returned to the client upon the first load.
+- **Improving developer experience:** Developers can use both client components and server components within the same project.
+- **Better utilization of server resources:** RSC allows better use of server computing resources, thereby reducing the load on client devices. This is particularly important for users on mobile devices or low-performance devices.
+
+Features：
+
 - Refresh senselessly and without refreshing the state of other blocks
 - Hijack a tag click, simulate page refresh by pushState, and replace the refreshed content by means of RSC component. Can keep the state of other blocks and replace the refresh content senselessly.
 
