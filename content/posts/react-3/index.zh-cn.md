@@ -14,9 +14,9 @@ images:
 
 v0.4: 推出React.renderComponentToString API开始支持SSR  
 v0.12: 推出React.renderToString代替原有API  
-2015年 v0.14: 拆分出 react-dom 包，更新API调用方式为 ReactDOMServer.renderToString  /renderToStaticMarkup
-2016年 v16: 推出ReactDomServer.renderToNodeStream API支持流式渲染  / 推出renderToStaticNodeStream
-2020年 推出RSC ( React Server Component )
+2015年 v0.14: 拆分出 react-dom 包，更新API调用方式为 ReactDOMServer.renderToString  /renderToStaticMarkup  
+2016年 v16: 推出ReactDomServer.renderToNodeStream API支持流式渲染  / 推出renderToStaticNodeStream  
+2020年 推出RSC ( React Server Component )  
 2022年 v18: 推出renderToReadableStream, renderToPipeableStream; 实现全新的服务端渲染器  
 
 ## 设计初衷
