@@ -37,6 +37,7 @@ export default SuspenseWithLazyLoading;
 - Suspense可以以声明式的方式解决类似问题，**代码更简单**， 而且 **不会触发额外的刷新**。
 - Suspense当请求足够快的时候， 可以略过 `loading` 状态的展示
 - Suspense支持嵌套使用
+- Suspense相当于是React组件的try...catch...
 
 ## 版本
 
