@@ -1,6 +1,6 @@
 ---
-title: "JavaScript日记 #1期：sort vs toSorted vs localCompare "
-description: ""
+title: "JavaScript日记 #1期：js中容易搞混的比较函数"
+description: "sort vs toSorted vs localCompare"
 date: 2024-09-08
 tags:
   - JavaScript日记
@@ -31,7 +31,7 @@ a.toSorted()
 console.log(a)
 ```
 
-### localCompare
+## localCompare
 
 主要对比字符串
 
