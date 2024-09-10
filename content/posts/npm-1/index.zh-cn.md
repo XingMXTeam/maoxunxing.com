@@ -5,7 +5,7 @@ date: 2024-09-10
 tags:
   - NPM日记
 images:
-  - npm-1/a.png
+  - npm-1/npm.webp
 ---
 
 {{< table_of_contents >}}
