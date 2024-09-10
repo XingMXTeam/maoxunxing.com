@@ -31,3 +31,7 @@ module.exports = {
   },
 };
 ```
+
+## 如何判断包是否被externals了？
+
+一般在umd的头部， 发现`root['packageName']` 那么这个包就是被externals掉了
