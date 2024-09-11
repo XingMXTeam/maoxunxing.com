@@ -32,13 +32,13 @@
     <!--    <link rel="preconnect dns-prefetch" href="//fonts.googleapis.com" />-->
     <!--    <link rel="preconnect dns-prefetch" href="//use.fontawesome.com" />-->
     <!--    <link rel="preconnect dns-prefetch" href="//cdn.jsdelivr.net" crossorigin />-->
-       <link rel="preconnect dns-prefetch" href="//cdnjs.cloudflare.com" crossorigin />
-    <link
+       <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin />
+    <!-- <link
       rel="preconnect dns-prefetch"
       href="//www.google-analytics.com"
       crossorigin
-    />
-    <link rel="preconnect dns-prefetch" href="//www.gstatic.com" crossorigin />
+    /> -->
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin />
     <!-- <link
       rel="preconnect dns-prefetch"
       href="//D7NQ3RODEC-dsn.algolia.net"
@@ -202,7 +202,8 @@
 
     {{ hugo.Generator }}
   </head>
-
+  {{ partial "google-analytics.html" . }}
+  
   {{ $csClass := "colorscheme-light" }}
   {{ if eq .Site.Params.colorscheme "dark" }}
     {{ $csClass = "colorscheme-dark" }}
@@ -240,8 +241,6 @@
         integrity="{{ $script.Data.Integrity }}"
       ></script>
     {{ end }}
-
-    {{ partial "google-analytics.html" . }}
 
     <!-- {{ partial "perfomance.html" . }} -->
     {{ partial "serviceworker.html" . }}

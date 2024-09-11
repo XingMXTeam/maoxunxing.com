@@ -1,16 +1,11 @@
 {{ if not .Site.IsServer }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4H5WZ7BDY8"></script>
 <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('require', 'outboundLinkTracker');
-
-  ga('send', 'pageview');
+  gtag('config', 'G-4H5WZ7BDY8');
 </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/analytics.js/2.9.1/analytics.min.js" async></script> -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"
-    async
-  ></script>
 {{ end }}
