@@ -56,7 +56,16 @@ tsconfig.json 需要修改为：
 }
 ```
 
+tsconfig修改后，最好重启 TypeScript 服务器：
+
+在 VSCode 中：
+
+打开命令面板（Ctrl + Shift + P 或 Cmd + Shift + P）。
+输入 TypeScript: Restart TS Server，并按下回车。
+
 ## typesVersion
+
+根据不同的ts版本使用类型定义
 
 ```json
 {
