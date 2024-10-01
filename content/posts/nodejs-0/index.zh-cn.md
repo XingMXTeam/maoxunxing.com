@@ -10,7 +10,7 @@ tags:
   - P2P
 description: "什么是流？这篇文章详细介绍了Nodejs的流技术，带你从入门到进阶。并且了解网络、RPC、WebSocket等高阶技术"
 images:
-  - nodejs-network-stream/node-js.jpeg
+  - nodejs-1/node-js.jpeg
 ---
 ## 什么是流
 
