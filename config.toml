@@ -64,7 +64,7 @@ twitter = "maoxunxing"
     info = "By day, a simple software engineer. By night, also a software engineer."
     description = "articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"
     keywords = "blog,blogger,developer,indie hacker,毛毛星,felix mao, maoxunxing,front-end,html,css,javascript,nodejs,creator"
-    avatarurl = "images/avatar.jpg"
+    avatarurl = "images/avatar.avif"
 
     favicon_32 = "/images/favicon/favicon-32x32.png"
     favicon_16 = "/images/favicon/favicon-16x16.png"

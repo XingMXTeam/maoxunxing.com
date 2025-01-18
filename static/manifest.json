@@ -3,31 +3,31 @@
   "short_name": "maoxunxing",
   "icons": [
     {
-      "src": "/images/avatar.jpg",
+      "src": "/images/avatar.avif",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/avatar.jpg",
+      "src": "/images/avatar.avif",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/avatar.jpg",
+      "src": "/images/avatar.avif",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/avatar.jpg",
+      "src": "/images/avatar.avif",
       "sizes": "196x196",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/avatar.jpg",
+      "src": "/images/avatar.avif",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

@@ -11,7 +11,7 @@ const BASE_CACHE_FILES = [
   "https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js",
   "/css/font.css",
   "/css/main.css",
-  "/images/avatar.jpg",
+  "/images/avatar.avif",
 ];
 
 const OFFLINE_CACHE_FILES = [
@@ -23,7 +23,7 @@ const OFFLINE_CACHE_FILES = [
   "https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js",
   "/css/font.css",
   "/css/main.css",
-  "/images/avatar.jpg",
+  "/images/avatar.avif",
 ];
 
 const NOT_FOUND_CACHE_FILES = ["/en/404.html"];
