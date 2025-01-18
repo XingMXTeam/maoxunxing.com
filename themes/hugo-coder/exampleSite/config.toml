@@ -20,7 +20,7 @@ disqusShortname = "yourdiscussshortname"
     description = "John Doe's personal website"
     keywords = "blog,developer,personal"
     info = "Full Stack DevOps and Magician"
-    avatarurl = "images/avatar.jpg"
+    avatarurl = "images/avatar.avif"
     footercontent = "Enter a text here."
 
     dateformat = "January 2, 2006"
@@ -46,7 +46,7 @@ disqusShortname = "yourdiscussshortname"
 
     # Custom CSS
     custom_css = []
-    
+
     # Custom JS
     custom_js = []
 
