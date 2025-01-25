@@ -10,3 +10,5 @@ Meet Felix Mao
 A front-end developer based in Hangzhou, China, currently working at Alibaba Group. He graduated from NanChang University with a Bachelor of Science degree in Computer Science. 
 
 If you want to stay updated on his latest work and projects, be sure to follow him on Twitter[@maoxunxing](https://twitter.com/maoxunxing) and [GitHub](https://github.com/XingMXTeam) or contact him via email at [xunxing1989@gmail.com](mailto:xunxing1989@gmail.com).
+
+If you like my content, please subsribe my newsletter on substack：[Newsletter](https://maodi.substack.com/)
