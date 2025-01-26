@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #10期：海康威视2022财报浅析"
+title: "投资 #10期：海康威视2022财报浅析"
 date: 2023-10-23
 tags:
-  - 投资日记 
+  - 投资 
 description: "海康威视2022财报浅析"
 images:
   - weekly3/img1.jpeg

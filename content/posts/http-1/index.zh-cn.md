@@ -1,9 +1,9 @@
 ---
-title: "HTTP协议日记 #1期：html标签属性实现页面性能优化"
+title: "HTTP协议 #1期：html标签属性实现页面性能优化"
 description: "dns-prefetch vs preload vs preconnect vs prefetch vs Early Hints 103"
 date: 2024-09-10
 tags:
-  - HTTP协议日记
+  - HTTP协议
 images:
   - http-1/a.jpg
 ---

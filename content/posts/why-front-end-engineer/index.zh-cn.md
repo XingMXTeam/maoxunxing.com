@@ -1,9 +1,9 @@
 ---
-title: "职业日记 #2期：为什么需要前端工程师"
+title: "职业 #2期：为什么需要前端工程师"
 date: 2023-05-13
 description: "前端工程师的价值"
 tags:
-  - 职业日记
+  - 职业
 images:
   - why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---

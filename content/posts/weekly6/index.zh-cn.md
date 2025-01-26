@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #6期：宏观经济的7大模型"
+title: "投资 #6期：宏观经济的7大模型"
 date: 2023-08-28
 tags:
-  - 投资日记 
+  - 投资 
 description: "宏观经济的7大模型"
 images:
   - weekly6/img1.jpeg
@@ -10,7 +10,7 @@ images:
 
 
 
-⚡️ Hi， 我是毛毛星，欢迎打开新一期的「毛毛星的投资日记 」，为您带来编程资讯、好书阅读和投资分享。
+⚡️ Hi， 我是毛毛星，欢迎打开新一期的「毛毛星的投资 」，为您带来编程资讯、好书阅读和投资分享。
 
 首先回答上一期的问题：英语交流中，为什么你听不懂别人在说什么？我觉得有两个原因：
 
@@ -215,7 +215,7 @@ Everything Connected.
 
 ## 小结
 
-如果你喜欢「毛毛星的投资日记 」，请转发给你的朋友，告诉他们到[这里订阅](http://mp.weixin.qq.com/s?__biz=MjM5Nzk2Mzg5MQ==&mid=2247484135&idx=1&sn=8fc5c2e0440c4a55676517acc3620275&chksm=a6d0b3fb91a73aedd612bd66d9313302f9083b3e564d2be961049c2c9d5220f5e23c6bbb872c&scene=21#wechat_redirect)。这是对我最大的帮助，谢谢你。
+如果你喜欢「毛毛星的投资 」，请转发给你的朋友，告诉他们到[这里订阅](http://mp.weixin.qq.com/s?__biz=MjM5Nzk2Mzg5MQ==&mid=2247484135&idx=1&sn=8fc5c2e0440c4a55676517acc3620275&chksm=a6d0b3fb91a73aedd612bd66d9313302f9083b3e564d2be961049c2c9d5220f5e23c6bbb872c&scene=21#wechat_redirect)。这是对我最大的帮助，谢谢你。
 
 
 本期的问题是：

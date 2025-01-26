@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #5期：揭秘国内资产配置"
+title: "投资 #5期：揭秘国内资产配置"
 date: 2023-08-18
 tags:
-  - 投资日记 
+  - 投资 
 description: "揭秘国内资产配置"
 images:
   - weekly5/img1.jpeg

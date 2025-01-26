@@ -1,8 +1,8 @@
 ---
-title: "算法日记 #6期：Array Part 2 - Minimum number of jumps to reach end"
+title: "算法 #6期：Array Part 2 - Minimum number of jumps to reach end"
 date: 2022-04-16T22:29:56+08:00
 tags:
-  - 算法日记
+  - 算法
   - Array
 description: "数组移动"
 images:

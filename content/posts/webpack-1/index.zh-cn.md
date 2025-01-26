@@ -1,9 +1,9 @@
 ---
-title: "Webpack日记 #1期：Externals "
+title: "Webpack #1期：Externals "
 description: ""
 date: 2024-09-08
 tags:
-  - Webpack日记
+  - Webpack
 images:
   - webpack-1/a.png
 ---

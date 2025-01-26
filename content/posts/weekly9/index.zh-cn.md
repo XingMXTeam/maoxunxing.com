@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #9期：茅台投资分析（2022财报）"
+title: "投资 #9期：茅台投资分析（2022财报）"
 date: 2023-10-22
 tags:
-  - 投资日记 
+  - 投资 
 description: "认知的本质"
 images:
   - weekly3/img1.jpeg

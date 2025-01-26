@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #3期：手把手教你读财报"
+title: "投资 #3期：手把手教你读财报"
 date: 2023-08-04
 tags:
-  - 投资日记 
+  - 投资 
 description: "手把手教你读财报"
 images:
   - weekly3/img1.jpeg

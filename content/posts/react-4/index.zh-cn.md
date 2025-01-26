@@ -1,9 +1,9 @@
 ---
-title: "React日记 #4期：React Server Component"
+title: "React #4期：React Server Component"
 description: "React Server Component是什么？"
 date: 2024-08-18
 tags:
-  - React日记
+  - React
 images:
   - react-1/a.png
 ---

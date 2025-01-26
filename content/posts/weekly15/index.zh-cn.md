@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #15期：如何开始创建产品"
+title: "投资 #15期：如何开始创建产品"
 date: 2023-12-09
 tags:
-  - 投资日记 
+  - 投资 
 description: "如何开始创建产品"
 images:
   - weekly15/bbb.png

@@ -1,9 +1,9 @@
 ---
-title: "React日记 #3期：SSR (Streaming Server-Side Reandering)"
+title: "React #3期：SSR (Streaming Server-Side Reandering)"
 description: "React SSR是什么？"
 date: 2024-08-03
 tags:
-  - React日记
+  - React
 images:
   - react-1/a.png
 ---

@@ -1,8 +1,8 @@
 ---
-title: "创业日记 #1期：创业工具链"
+title: "创业 #1期：创业工具链"
 date: 2024-10-03
 tags:
-  - 创业日记
+  - 创业
 description: "Indix Hacker的个人工具箱"
 images:
   - tool-box/a.jpg

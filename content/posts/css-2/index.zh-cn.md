@@ -1,9 +1,9 @@
 ---
-title: "CSS日记 #2期：网格布局实现响应式商品卡片"
+title: "CSS #2期：网格布局实现响应式商品卡片"
 description: "grid, grid-template-columns, grid-template-rows等属性的使用"
 date: 2024-09-13
 tags:
-  - CSS日记
+  - CSS
 images:
   - css-2/a.png
 ---

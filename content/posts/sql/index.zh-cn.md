@@ -1,8 +1,8 @@
 ---
-title: "Sql日记 #1期： sql速查表 "
+title: "Sql #1期： sql速查表 "
 date: 2022-04-03T10:29:35+08:00
 tags:
-  - Sql日记
+  - Sql
 images:
   - sql/a.jpg
 ---

@@ -1,9 +1,9 @@
 ---
-title: "JS架构日记 #1期：如何设计导航"
+title: "JS架构 #1期：如何设计导航"
 description: ""
 date: 2024-09-18
 tags:
-  - JS架构日记
+  - JS架构
 images:
   - jiagou-1/a.webp
 ---

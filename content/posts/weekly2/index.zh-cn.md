@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #2期：玩转财报"
+title: "投资 #2期：玩转财报"
 date: 2023-07-31 
 tags:
-  - 投资日记 
+  - 投资 
 description: "股玩转财报"
 images:
   - weekly2/img1.jpg

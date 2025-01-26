@@ -1,9 +1,9 @@
 ---
-title: "React日记 #0期：React解决什么问题"
+title: "React #0期：React解决什么问题"
 description: "Why React ?"
 date: 2024-07-15
 tags:
-  - React日记
+  - React
 images:
   - react-1/a.png
 ---

@@ -1,8 +1,8 @@
 ---
-title: "投资日记 #1期：芒格投资哲学"
+title: "投资 #1期：芒格投资哲学"
 date: 2023-07-22
 tags:
-  - 投资日记 
+  - 投资 
 description: "芒格投资哲学"
 images:
   - weekly1/img1.jpg

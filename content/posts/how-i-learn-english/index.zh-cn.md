@@ -1,8 +1,8 @@
 ---
-title: "英语日记 #1期：AI时代，三大英语学习工具"
+title: "英语 #1期：AI时代，三大英语学习工具"
 date: 2023-07-08T11:36:43+08:00
 tags:
-- 英语日记
+- 英语
 description: "人生应该是有趣而好玩的，包括英语学习。AI大模型让学习英语变得有趣。"
 images:
 - how-i-learn-english/img_1.jpg

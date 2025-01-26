@@ -1,9 +1,9 @@
 ---
-title: "CSS日记 #3期：更平滑的阴影"
+title: "CSS #3期：更平滑的阴影"
 description: "box-shadow分层抬升"
 date: 2024-09-14
 tags:
-  - CSS日记
+  - CSS
 images:
   - css-2/a.png
 ---
