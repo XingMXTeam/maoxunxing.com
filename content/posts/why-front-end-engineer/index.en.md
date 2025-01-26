@@ -1,9 +1,9 @@
 ---
-title: "Career Diary #2: Why You Need A Front-End Engineer"
+title: "Career  #2: Why You Need A Front-End Engineer"
 date: 2023-05-13
 description: "The value of front-end engineers"
 tags:
-  - Career Diary
+  - Career 
 images:
   - why-front-end-engineer/simon-abrams-k_T9Zj3SE8k-unsplash.jpg
 ---

@@ -1,8 +1,8 @@
 ---
-title: "Algorithm Diary #6: Array Part 2 - Minimum number of jumps to reach end"
+title: "Algorithm  #6: Array Part 2 - Minimum number of jumps to reach end"
 date: 2022-04-16T22:29:56+08:00
 tags:
-  - Algorithm Diary
+  - Algorithm 
   - Array
 description: "Arrays move"
 images:

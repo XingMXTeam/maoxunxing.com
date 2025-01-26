@@ -1,8 +1,8 @@
 ---
-title: "Algorithm Diary #2: The Double 11 Roundup Problem"
+title: "Algorithm  #2: The Double 11 Roundup Problem"
 date: 2023-06-23T11:26:08+08:00
 tags:
-- Algorithm Diary
+- Algorithm 
 description: "Solving dynamic planning from state tables is easy, but not all dynamic planning problems can be solved with state tables"
 images:
 - dynamic-buy-11/img.png

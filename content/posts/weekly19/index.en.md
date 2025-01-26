@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #19: Insights from Reading 'Puppy Money'"
+title: "Investment  #19: Insights from Reading 'Puppy Money'"
 date: 2023-12-31
 tags:
-  - Investment Diary
+  - Investment 
 description: "Understanding Money, Mastering Money"
 images:
   - weekly19/aaa.png
@@ -14,7 +14,7 @@ I recently read Puppy Money and realised that a lot of the principles in it are 
 
 ![](aaa.png)
 
-The book Puppy Money Money mentions a dream album that allows you to establish your mission or dream, not unlike the book The Seven Habits of Highly Effective People which mentions that one of the key habits for personal success is to start with the end in mind, and that a success diary is like the **Internal Scorecard** that Munger mentions, to continually motivate yourself to move forward, and to establish your loves and strengths. As well as the book's references to the story of the goose laying the golden egg, the active income and investment fund concepts are again the same as those in The Winning Way of Individual Investing.
+The book Puppy Money Money mentions a dream album that allows you to establish your mission or dream, not unlike the book The Seven Habits of Highly Effective People which mentions that one of the key habits for personal success is to start with the end in mind, and that a success  is like the **Internal Scorecard** that Munger mentions, to continually motivate yourself to move forward, and to establish your loves and strengths. As well as the book's references to the story of the goose laying the golden egg, the active income and investment fund concepts are again the same as those in The Winning Way of Individual Investing.
 
 Of course, the book also offers some new ideas that have inspired or touched me more.
 
@@ -28,13 +28,13 @@ If your dream is to make more friends and talk to interesting people, you have m
 
 That's what drives me to want to work hard to make money.
 
-## What Investment Diary Solves
+## What Investment  Solves
 
-A success diary records your success story and why you are successful.
+A success  records your success story and why you are successful.
 
 1. In the future, you can write your story and connect with others. When you keep a success journal, you will think more deeply about yourself, the world, and the laws of success, and will learn more and more about yourself and your desires, which will make you more capable of understanding others as well.  
-2. Without a success diary, you won't think about where you fit in to earn money. Do what you love. Most people focus on what they don't like instead of visualising what they wish for.  
-3. Overcome fear: Just look through your success diary and you will find evidence from past successes that you are capable of accomplishing anything in the future as well. It's much better to be overconfident than underconfident, and the key to whether you can make money is how confident you are, not how smart you are, because if you don't believe you can do it then you won't do it and you won't get anything. (Of course mentors + practice + thorough preparation are important too).  
+2. Without a success , you won't think about where you fit in to earn money. Do what you love. Most people focus on what they don't like instead of visualising what they wish for.  
+3. Overcome fear: Just look through your success  and you will find evidence from past successes that you are capable of accomplishing anything in the future as well. It's much better to be overconfident than underconfident, and the key to whether you can make money is how confident you are, not how smart you are, because if you don't believe you can do it then you won't do it and you won't get anything. (Of course mentors + practice + thorough preparation are important too).  
 
 
 So write at least 5 entries every day and keep envisioning your future.
@@ -45,7 +45,7 @@ So write at least 5 entries every day and keep envisioning your future.
 1. Builds longing: it's essential to envision yourself with these things already in place so that your little wish becomes a strong longing. Most importantly, it is because of this longing that you will be able to overcome difficulties and not back down. You will consider things that you previously thought did not matter, endeavour to learn something new and think about many things.
 
 2. Do not retreat:
-  - Only a few people can follow through on their plans with determination when real difficulties arise. For example, keeping a success diary, your own investment strategy. Those who are very successful have the ability to excel in their most difficult times.
+  - Only a few people can follow through on their plans with determination when real difficulties arise. For example, keeping a success , your own investment strategy. Those who are very successful have the ability to excel in their most difficult times.
   - Do whatever you think is right. There will be all sorts of people who will make fun of you, but there will also be more people who will recognise you.
   - The best things in life are when you do what you would otherwise be afraid to do." Trying" is an excuse to find a way out before you even do it. Trying is also an excuse, as if trying will lead to success. You don't need that excuse when you actually put in all the effort. Luck is simply the result of adequate preparation plus hard work. Not everyone is willing to make the necessary effort because they don't want to pay the price.
   - You can't give up on your ambitions because of anyone. Crazy ideas are easier to achieve than ordinary goals because it means you have to put in much more effort than others. Actually putting it into practice is much more useful than pure thinking. Put more focus on what you can do rather than why I can't do it well. More on finding solutions than excuses.

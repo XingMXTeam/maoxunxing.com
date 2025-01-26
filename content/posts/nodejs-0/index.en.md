@@ -1,8 +1,8 @@
 ---
-title: "NodeJS Diary #1: Understanding Stream in Node.js"
+title: "NodeJS  #1: Understanding Stream in Node.js"
 date: 2021-10-19T14:28:57+08:00
 tags:
-  - NodeJS Diary
+  - NodeJS 
   - RPC
   - WebSocket
   - Network
@@ -675,7 +675,7 @@ node websocket-server.js
 
 ### 5 p2p
 
-A peer-to-peer (P2P) service is a decentralized platform where two people interact directly with each other without a third party intermediary.[webrtc.js](./webrtc.js)
+A peer-to-peer (P2P) service is a decentralized platform where two people interact directly with each other without a third party interme.[webrtc.js](./webrtc.js)
 
 ```shell
 tnpm run signalhub

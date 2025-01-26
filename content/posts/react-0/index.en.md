@@ -1,9 +1,9 @@
 ---
-title: "React Diary #0: Why React"
+title: "React  #0: Why React"
 description: "why react"
 date: 2024-07-15
 tags:
-  - React Diary
+  - React 
 images:
   - react-1/a.png
 ---

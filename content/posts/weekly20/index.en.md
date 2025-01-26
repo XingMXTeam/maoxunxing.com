@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #20: Four Basic Principles of Security Selection"
+title: "Investment  #20: Four Basic Principles of Security Selection"
 date: 2024-02-03
 tags:
-  - Investment Diary
+  - Investment 
 description: "What is the basis when you securities selection? Why do you want to buy this company's stock?"
 images:
   - weekly5/img1.jpeg

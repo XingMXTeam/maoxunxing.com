@@ -1,9 +1,9 @@
 ---
-title: "React Diary #1: Suspense"
+title: "React  #1: Suspense"
 description: "how to write prompt"
 date: 2024-07-07
 tags:
-  - React Diary
+  - React 
 images:
   - react-1/a.png
 ---

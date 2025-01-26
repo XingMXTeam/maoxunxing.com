@@ -1,8 +1,8 @@
 ---
-title: "English Diary #1: Top 3 English Learning Tools in the Age of AI"
+title: "English  #1: Top 3 English Learning Tools in the Age of AI"
 date: 2023-07-08T11:36:43+08:00
 tags:
-- English Diary
+- English 
 description: "Life should be fun and interesting, including learning English.AI big models make learning English fun."
 images:
 - how-i-learn-english/img_1.jpg

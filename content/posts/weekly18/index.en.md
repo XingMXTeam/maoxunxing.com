@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #18: How to Choose Funds"
+title: "Investment  #18: How to Choose Funds"
 date: 2023-12-16
 tags:
-  - Investment Diary
+  - Investment 
 description: "How to choose a fund"
 images:
   - weekly11/aaa.png

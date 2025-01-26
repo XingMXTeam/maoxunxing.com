@@ -1,9 +1,9 @@
 ---
-title: "Tools Diary #1: How to register a U.S. Apple ID"
+title: "Tools  #1: How to register a U.S. Apple ID"
 date: 2023-05-27
 description: "Share an article on how to sign up for an Apple ID in the US. Hands-on works"
 tags:
-  - Tools Diary
+  - Tools 
 images:
   - appleid-us-register/apple.jpg
 ---

@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #21: What are options?"
+title: "Investment  #21: What are options?"
 date: 2024-02-24
 tags:
-  - Investment Diary
+  - Investment 
 description: "Options are not futures, we buy houses and cars will have insurance, options are the insurance you buy stocks, options are also a leveraging tool for you to get high returns."
 images:
   - weekly21/aaa.png

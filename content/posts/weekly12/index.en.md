@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #12: Investing, there are more potholes than you think"
+title: "Investment  #12: Investing, there are more potholes than you think"
 date: 2023-11-05
 tags:
-  - Investment Diary
+  - Investment 
 description: "Here are some of my summaries"
 images:
   - weekly11/aaa.png

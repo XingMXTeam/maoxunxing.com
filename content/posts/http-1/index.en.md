@@ -1,10 +1,10 @@
 ---
-title: "React Diary #4: React Server Component"
+title: "React  #4: React Server Component"
 description: "what is React Server Component ?"
 date: 2024-08-18
 draft: true
 tags:
-  - React Diary
+  - React 
 images:
   - react-1/a.png
 ---

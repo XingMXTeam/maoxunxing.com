@@ -1,9 +1,9 @@
 ---
-title: "React Diary #2: Concurrent Mode"
+title: "React  #2: Concurrent Mode"
 description: "what is concurrent mode ?"
 date: 2024-07-30
 tags:
-  - React Diary
+  - React 
 images:
   - react-1/a.png
 ---

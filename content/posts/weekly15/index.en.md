@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #15: How to Start Creating a Product"
+title: "Investment  #15: How to Start Creating a Product"
 date: 2023-12-09
 tags:
-  - Investment Diary
+  - Investment 
 description: "Here are some tools and suggestions"
 images:
   - weekly15/bbb.png

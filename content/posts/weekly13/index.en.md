@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #13: Taking an investor's view of the business you work for"
+title: "Investment  #13: Taking an investor's view of the business you work for"
 date: 2023-11-13
 tags:
-  - Investment Diary
+  - Investment 
 description: "You'll find something different."
 images:
   - weekly11/aaa.png

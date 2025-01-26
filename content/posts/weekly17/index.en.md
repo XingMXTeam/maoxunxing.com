@@ -1,8 +1,8 @@
 ---
-title: "Investment Diary #17: GPT4 Understanding"
+title: "Investment  #17: GPT4 Understanding"
 date: 2023-12-10
 tags:
-  - Investment Diary
+  - Investment 
 description: "GPT4 Understanding"
 images:
   - weekly6/cover.jpg

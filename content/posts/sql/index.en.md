@@ -1,9 +1,9 @@
 ---
-title: "Sql Diary #1: sql quick reference table"
+title: "Sql  #1: sql quick reference table"
 description: "sql quick reference table"
 date: 2022-04-03T10:29:35+08:00
 tags:
-  - Sql Diary
+  - Sql 
 images:
   - sql/a.jpg
 ---
