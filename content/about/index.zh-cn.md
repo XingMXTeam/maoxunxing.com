@@ -9,4 +9,4 @@ date: 2021-06-15T22:49:06+08:00
 
 如果您想关注他的最新工作和项目，可以通过 [X](https://twitter.com/maoxunxing) 和 [GitHub](https://github.com/XingMXTeam) 上关注他，或通过电子邮件 xunxing1989@gmail.com 与他联系。
 
-如果喜欢我的内容，可以关注我的周刊：[Newsletter](https://maodi.substack.com/)
+如果喜欢他的内容，可以订阅他的博客或者关注他最新的周刊：[Newsletter](https://maodi.substack.com/)
