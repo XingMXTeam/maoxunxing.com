@@ -3,7 +3,7 @@ title: "React #1期：Suspense"
 description: "Why Suspense ?"
 date: 2024-07-28
 tags:
-  - React日记
+  - React
 images:
   - react-1/a.png
 ---

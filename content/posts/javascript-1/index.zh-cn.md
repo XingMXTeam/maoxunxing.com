@@ -1,9 +1,9 @@
 ---
-title: "JavaScript #1期：js中容易搞混的比较函数"
+title: "JS #1期：js中容易搞混的比较函数"
 description: "sort vs toSorted vs localCompare"
 date: 2024-09-08
 tags:
-  - JavaScript
+  - JS
 images:
   - javascript-1/a.webp
 ---

@@ -2,10 +2,7 @@
 title: "Algorithm  #7: Graphs Part 1 - Detect Cycle in an Undirected Graph"
 date: 2021-08-24
 tags:
-  - Algorithm 
-  - Tree
-  - Interview
-  - Disjoint
+  - Algorithm
 description: "1 graph construction and traversal 2 disjoint algorithm"
 images:
   - detect-cycle-in-an-undirected-graph/graph.png

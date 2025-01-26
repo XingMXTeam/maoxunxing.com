@@ -4,8 +4,6 @@ date: 2022-04-16T23:59:19+08:00
 description: "双指针用法"
 tags:
   - 算法
-  - String
-  - Double Point
 images:
   - substring-longest/test.png
 ---

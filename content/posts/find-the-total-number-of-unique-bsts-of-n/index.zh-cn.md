@@ -3,10 +3,6 @@ title: "算法 #8期：树系列 - 给出N，求唯一BST的总数"
 date: 2021-08-16
 tags:
   - 算法
-  - 树
-  - 面试
-  - 动态规划
-  - 递归树
 description: "1 递归树 2 DP解法"
 images:
   - find-the-total-number-of-unique-bsts-of-n/test.png

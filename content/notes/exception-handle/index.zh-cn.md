@@ -1,10 +1,8 @@
 ---
-title: "前端异常处理"
+title: "JS #1: 前端异常处理"
 date: 2021-08-24
 tags:
-  - front-end
-  - programming
-  - exception-handle
+  - JS
 description: ""
 images:
   - exception-handle/eception-handle.png

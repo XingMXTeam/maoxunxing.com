@@ -2,10 +2,7 @@
 title: "Array Part 1 - 长度为k的子数组的最大值"
 date: 2021-08-26T15:16:39+08:00
 tags:
-  - Array
-  - Tree
-  - AVL
-  - Slide Window
+  - 算法
 description: "滑动窗口的用法，AVL树的用法"
 images:
   - maximum-of-all-subarrays-of-size-k/test.png

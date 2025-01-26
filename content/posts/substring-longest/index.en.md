@@ -3,9 +3,7 @@ title: "Algorithm  #5: String Part 1 - Longest Palindromic Substring"
 date: 2022-04-16T23:59:19+08:00
 description: "Double Pointer Usage"
 tags:
-  - Algorithm 
-  - String
-  - Double Point
+  - Algorithm
 images:
   - substring-longest/test.png
 ---

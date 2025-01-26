@@ -2,8 +2,7 @@
 title: "Algorithm  #6: Array Part 2 - Minimum number of jumps to reach end"
 date: 2022-04-16T22:29:56+08:00
 tags:
-  - Algorithm 
-  - Array
+  - Algorithm
 description: "Arrays move"
 images:
   - mininumber-to-end/test.png

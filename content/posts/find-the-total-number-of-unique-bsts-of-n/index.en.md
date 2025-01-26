@@ -2,11 +2,7 @@
 title: "Algorithm  #8: Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
 date: 2021-08-16
 tags:
-  - Algorithm 
-  - Tree
-  - Interview
-  - DP
-  - Recursive Tree
+  - Algorithm
 description: "1 Recursive tree 2 DP solution method"
 images:
   - find-the-total-number-of-unique-bsts-of-n/test.png

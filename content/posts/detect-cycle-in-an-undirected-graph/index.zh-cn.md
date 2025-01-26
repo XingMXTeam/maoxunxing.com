@@ -3,9 +3,6 @@ title: "算法 #7期：图系列 - 检测无定向图中的环"
 date: 2021-08-24
 tags:
   - 算法
-  - 树
-  - 面试
-  - Disjoint
 description: "1 图的构造和遍历 2 disjoint 算法"
 images:
   - detect-cycle-in-an-undirected-graph/graph.png

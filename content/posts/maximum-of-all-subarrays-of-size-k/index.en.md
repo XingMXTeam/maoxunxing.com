@@ -2,10 +2,7 @@
 title: "Array Part 1 - The maximum value of a subarray of length k"
 date: 2021-08-26T15:16:39+08:00
 tags:
-  - Array
-  - Tree
-  - AVL
-  - Slide Window
+  - Algorithm
 description: "Usage of sliding window, usage of AVL tree"
 images:
   - maximum-of-all-subarrays-of-size-k/test.png
