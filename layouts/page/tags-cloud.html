@@ -21,7 +21,7 @@
         
         {{ range $name, $items := . }}
           {{ $fontSize := math.Round (mul (div (float $items.Count) $maxCount) 2.5) }}
-          {{ $fontSize := add $fontSize 0.9 }}
+          {{ $fontSize := add $fontSize 0.3 }}
           <a href="{{ $items.Page.RelPermalink }}" 
              class="tag-item"
              style="font-size: {{ $fontSize }}em;">
@@ -84,6 +84,18 @@
       color: #495057;
       font-size: 2em;
       margin: 0;
+    }
+
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+      .tag-item {
+        font-size: 0.9em; /* 调整移动端标签字体大小 */
+        padding: 6px 12px; /* 调整内边距 */
+      }
+
+      .panel-title {
+        font-size: 1.5em; /* 调整移动端标题字体大小 */
+      }
     }
   </style>
 {{ end }}
