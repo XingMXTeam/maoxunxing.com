@@ -24,12 +24,16 @@ buildFuture = true
     weight = 2
     icon="1"
     languageName = "CN" # Name shown in the main menu
-    title = "毛毛星 - 初创企业、软件工程、管理"
+    title = "毛毛星 - 技术创新与投资复盘分享"
+    description = "毛毛星(maoxunxing)的个人博客，分享前端开发、AI 应用、加密货币和指数基金投资的深度思考与实践经验"
+    keywords = "毛毛星,maoxunxing,毛毛星博客,前端开发,AI应用,技术博客,加密货币,指数基金,BTC,VGT,VOO,技术创新,投资心得,felix mao"
 
   [languages.en]
     languageName = "EN" # Name shown in the main menu
     weight = 1
-    title = "Felix Mao - Startups, Software Engineering, Management"
+    title = "Felix Mao (maoxunxing) - Tech Innovation & Investment Insights"
+    description = "Felix Mao (maoxunxing)'s blog, sharing deep insights on Frontend Development, AI Applications, Cryptocurrency and Index Fund Investment experiences"
+    keywords = "maoxunxing,felix mao,tech blog,frontend development,AI applications,cryptocurrency,index funds,BTC,VGT,VOO,tech innovation,investment insights"
 
 [markup]
   [markup.highlight]
@@ -60,10 +64,10 @@ about = "/:filename/"
 twitter = "maoxunxing"
 
 [params]
-    author = "Felix Mao"
-    info = "By day, a simple software engineer. By night, also a software engineer."
-    description = "articles about Front-End development and engineering technology including html, css, javascript, nodejs, c, algorithms, software architecture"
-    keywords = "blog,blogger,developer,indie hacker,毛毛星,felix mao, maoxunxing,front-end,html,css,javascript,nodejs,creator"
+    author = "Felix Mao (毛毛星)"
+    info = "Tech Explorer & Investment Enthusiast | 技术探索者 & 投资爱好者"
+    description = "maoxunxing (毛毛星) sharing insights on Frontend Development, AI Applications, and Investment strategies in BTC, VGT & VOO"
+    keywords = "maoxunxing,毛毛星,felix mao,frontend,AI,cryptocurrency,index funds,tech blog,investment blog,BTC,VGT,VOO"
     avatarurl = "images/avatar.avif"
 
     favicon_32 = "/images/favicon/favicon-32x32.png"
@@ -99,6 +103,17 @@ resampleFilter = "Lanczos"
      icon = "fab fa-twitter fa-2x"
      weight = 2
      url = "https://twitter.com/maoxunxing/"
+ [[params.social]]
+     name = "YouTube"
+     icon = "fab fa-youtube fa-2x"
+     weight = 3
+     url = "https://www.youtube.com/@maodi_dev"
+ [[params.social]]
+     name = "Substack"
+     clazz = "substack"
+     link = "/images/substack.svg"  # 使用 SVG 图标的路径
+     weight = 4
+     url = "https://maodi.substack.com/"
  #[[params.social]]
  #   name = "Zhihu"
  #   icon = "fab fa-zhihu fa-2x"
@@ -110,11 +125,11 @@ resampleFilter = "Lanczos"
  #   weight = 4
  #   clazz = "douban"
 #   url = "https://www.douban.com/people/maoxingxing/"
- #[[params.social]]
- #   name = "Rss"
- #   icon = "fa fa-rss fa-2x"
- #   weight = 5
-#   url = "https://maoxunxing.com/index.xml"
+ [[params.social]]
+   name = "Rss"
+   icon = "fa fa-rss fa-2x"
+   weight = 5
+   url = "https://maoxunxing.com/index.xml"
 
 [[languages.en.menu.main]]
     name = "Blog"

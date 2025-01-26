@@ -2,13 +2,35 @@
 other = "Felix Mao"
 
 [homeTitle]
-other = "Hi there 👏"
+other = "Hi, I'm Felix Mao 👋"
 
-[homeSubTitle1]
-other = "I'm Felix Mao, Focus on CREATE Tech & Finance Content. A Reading enthusiast, crypto, index investing believer, currently invest on BTC, VGT & VOO. I am a Front-end Programmer worked at a Big Company, either"
+[homeIntroHi]
+other = "About Me"
 
-[homeSubTitle2]
-other = "Thank you for stopping by, and I hope you enjoy exploring my content!"
+[homeIntroTags]
+other = """
+<span class="tag">💻 Frontend Engineer</span>
+<span class="tag">✍️ Tech Writer</span>
+<span class="tag">📊 Finance Writer</span>
+<span class="tag">📚 Deep Reader</span>
+"""
+
+[homeIntroFocus]
+other = """
+<div class="focus-area">
+  Exploring and sharing insights in two areas:
+  <br />
+  <div>💡 Tech: AI & Frontend Innovation</div>
+  <div>📈 Investment: BTC, VGT & VOO Journey</div>
+</div>
+<br />
+<div class="focus-promise">
+  Weekly updates with fresh perspectives on tech and investment ⚡️ Let's grow together ✨
+</div>
+"""
+
+[homeOutro]
+other = "Hope you find some inspiration here ✨"
 
 [homeCat0]
 other = "Latest Writing"
@@ -17,28 +39,28 @@ other = "Latest Writing"
 other = "Articles about Algorithm"
 
 [homeCat1Article1]
-other = "Tree Part 1 - Detect Cycle in an Undirected Graph"
+other = "Tree Series - Detect Cycle in an Undirected Graph"
 
 [homeCat1Article2]
-other = "Tree Part 2 - Given N, Find The Total Number of Unique BSTs"
+other = "Tree Series - Given N, Find The Total Number of Unique BSTs"
 
 [homeCat2]
 other = "Articles about Career"
 
 [homeCat2Article1]
-other = "Why You Need A Front-End Engineer"
+other = "Why You Need A Frontend Engineer"
 
 [homeCat2Article2]
 other = "How To Be Different And Successful As An Engineer"
 
 [homeCat2Article3]
-other = "How to Learn Part 2 - Solving Problem"
+other = "How to Learn Series - Problem Solving"
 
 [homeCat2Article4]
-other = "Evaluation Criteria Part 1 - Competency Model"
+other = "Evaluation Criteria Series - Influence"
 
 [homeCat2Article5]
-other = "Evaluation Criteria Part 2 - Influence"
+other = "Evaluation Criteria Series - Measuring Capability"
 
 [homeCat3]
 other = "Articles about Software Development"
@@ -47,7 +69,7 @@ other = "Articles about Software Development"
 other = "How Web Works"
 
 [homeCat3Article2]
-other = "The Nature of Computers"
+other = "Computer Fundamentals"
 
 [shareOn]
 other = "Share on"
@@ -59,9 +81,7 @@ other = "Subscribe Now!"
 other = "Be the first to know when I post cool stuff"
 
 [subscribe2]
-other = "Subscribe to get my latest posts (I won't spam you. Unsubscribe at any time.)."
-
-
+other = "Subscribe to get my latest articles. No spam, unsubscribe anytime."
 
 [emailAddress]
 other = "Email Address"

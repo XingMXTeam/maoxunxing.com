@@ -2,10 +2,10 @@
 other = "毛毛星"
 
 [homeTitle]
-other = "你好 👏"
+other = "Hi, 我是毛毛星 👋"
 
-[homeSubTitle1]
-other = "我是毛毛星，专注于创作 技术和财经 相关内容。我喜欢看书阅读，是一名深度阅读爱好者，同时也是加密货币、指数投资爱好者，目前投资 BTC & VGT & VOO。当前是一名互联网行业前端程序员。"
+[homeIntroHi]
+other = "关于我"
 
 [homeSubTitle2]
 other = "谢谢你的光临，希望你喜欢我的内容!"
@@ -59,3 +59,29 @@ other = "订阅电子邮件，以获得我的最新文章。我不会向您发�
 
 [emailAddress]
 other = "邮箱地址"
+
+[homeOutro]
+other = "希望你能在这里找到一些灵感 ✨"
+
+
+[homeIntroTags]
+other = """
+<span class="tag">💻 前端工程师</span>
+<span class="tag">✍️ 技术创作者</span>
+<span class="tag">📊 投资爱好者</span>
+<span class="tag">📚 深度阅读者</span>
+"""
+
+[homeIntroFocus]
+other = """
+<div class="focus-area">
+  专注分享两个领域的探索：
+  <br />
+  <div>💡 技术视角：AI 与前端的创新实践</div>
+  <div>📈 投资心得：BTC、VGT、VOO 的投资复盘</div>
+</div>
+<br />
+<div class="focus-promise">
+  每周更新，用简单的视角解读技术与投资，一起探索成长 ⚡️ 
+</div>
+"""
