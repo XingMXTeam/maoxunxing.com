@@ -121,8 +121,8 @@ resampleFilter = "Lanczos"
     url = "/posts/"
     weight = 1
 [[languages.en.menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    name = "Tags Cloud"
+    url = "/tags-cloud/"
     weight = 2
 [[languages.en.menu.main]]
     name = "Book Reports"
@@ -142,8 +142,8 @@ resampleFilter = "Lanczos"
   url = "/posts/"
   weight = 1
 [[languages.zh-CN.menu.main]]
-  name = "项目"
-  url = "/projects/"
+  name = "标签云"
+  url = "/tags-cloud/"
   weight = 2
 [[languages.zh-CN.menu.main]]
   name = "读书报告"
