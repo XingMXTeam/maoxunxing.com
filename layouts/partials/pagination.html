@@ -1,0 +1,61 @@
+<div class="pagination">
+  {{ if .Paginator.HasPrev }}
+  <a class="pagination-item" href="{{ .Paginator.Prev.URL }}">
+    <i class="fas fa-angle-left"></i>
+  </a>
+  {{ end }}
+
+  {{ range .Paginator.Pagers }}
+    {{ if eq . $.Paginator }}
+    <span class="pagination-item pagination-current">{{ .PageNumber }}</span>
+    {{ else }}
+    <a class="pagination-item" href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+  {{ end }}
+
+  {{ if .Paginator.HasNext }}
+  <a class="pagination-item" href="{{ .Paginator.Next.URL }}">
+    <i class="fas fa-angle-right"></i>
+  </a>
+  {{ end }}
+</div>
+
+<style>
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.pagination-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #666;
+  min-width: 30px;
+  height: 30px;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.pagination-item:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.pagination-current {
+  background-color: #f0f0f0;
+  color: #333;
+  border-color: #ddd;
+}
+
+.pagination i {
+  font-size: 12px;
+}
+</style> 

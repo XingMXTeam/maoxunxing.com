@@ -1,0 +1,6 @@
+<li>
+  <span class="date">
+    {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+  </span>
+  <a class="title" href="{{ .Permalink }}">{{ .Title }}</a>
+</li> 

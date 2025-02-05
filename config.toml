@@ -19,6 +19,8 @@ enableRobotsTXT = true
 
 buildFuture = true
 
+paginatePath = "page"    # 分页路径
+
 [languages]
   [languages.zh-CN]
     weight = 2
@@ -87,6 +89,10 @@ twitter = "maoxunxing"
 
     #talkyardServerUrl = "https://comments-for-mtlynch-io.talkyard.net"
     #talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
+
+    # 添加 notes 部分的特定分页设置
+    [params.notes]
+        paginate = 100
 
 [imaging]
 quality = 90
