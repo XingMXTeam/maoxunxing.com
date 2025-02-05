@@ -1,11 +1,17 @@
 ---
-title: "MIT OpenCourseWare"
+title: "MIT OpenCourseWare"
 date: 2019-11-25
+tags:
+  - Education
+  - Online Learning
+  - Self Study
+  - Learning Resources
+  - Productivity
 ---
 
 MIT OpenCourseWare——MIT提供的网上免费课程。
-EHow.com——关于“怎样做”的各种文章。
-FreeEd.net——“网上免费教育”
+EHow.com——关于"怎样做"的各种文章。
+FreeEd.net——"网上免费教育"
 Portal to Free Online Courses——很多名牌大学在线课程的入口
 
 高效率网址

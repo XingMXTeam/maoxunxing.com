@@ -1,6 +1,11 @@
 ---
 title: "存在感"
 date: 2019-11-25
+tags:
+  - Self Awareness
+  - Personal Growth
+  - Self Improvement
+  - Mindset
 ---
 
 正确的面对自己的缺点，让它成为自己的正能量

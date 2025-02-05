@@ -1,6 +1,11 @@
 ---
 title: "记忆"
 date: 2019-11-25
+tags:
+  - Memory
+  - Learning
+  - Understanding
+  - Knowledge
 ---
 
 你创造的联系越多，它们就会记得越牢、理解得越好。

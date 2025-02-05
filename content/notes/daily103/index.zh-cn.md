@@ -1,6 +1,11 @@
 ---
 title: "目标"
 date: 2019-11-25
+tags:
+  - Goals
+  - Success
+  - Motivation
+  - Personal Growth
 ---
 
 所有成功人士都有目标。

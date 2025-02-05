@@ -1,6 +1,11 @@
 ---
 title: "游泳"
 date: 2019-11-25
+tags:
+  - Swimming
+  - Sports
+  - Exercise
+  - Tips
 ---
 1 翻手，滑水要慢。滑到指定位置收手收上肢
 2 手遮住耳朵就行 

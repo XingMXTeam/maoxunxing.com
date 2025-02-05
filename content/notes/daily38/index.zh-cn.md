@@ -1,6 +1,11 @@
 ---
 title: "人工智能"
 date: 2019-11-25
+tags:
+  - AI
+  - Technology
+  - Innovation
+  - Machine Learning
 ---
 
 统计+数据 不是真正的智能

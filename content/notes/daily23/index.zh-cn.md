@@ -1,6 +1,11 @@
 ---
 title: "think"
 date: 2019-11-25
+tags:
+  - Thoughts
+  - Personal Growth
+  - Responsibility
+  - Mindset
 ---
 
 责任感很强 所以才依赖

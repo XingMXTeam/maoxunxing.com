@@ -1,6 +1,11 @@
 ---
 title: "体会一个人的感受"
 date: 2019-11-25
+tags:
+  - Empathy
+  - Psychology
+  - Relationships
+  - Understanding Others
 ---
 
 体会一个人的感受。到底是喜欢什么样的。

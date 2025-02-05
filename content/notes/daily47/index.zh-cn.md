@@ -1,6 +1,12 @@
 ---
 title: "艺术让我们学会观察"
 date: 2019-11-25
+tags:
+  - Art
+  - Observation
+  - Personal Growth
+  - Learning
+  - Self Improvement
 ---
 
 艺术让我们学会观察。观察能找到成功之门

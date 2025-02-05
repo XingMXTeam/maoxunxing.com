@@ -1,6 +1,11 @@
 ---
-title: "成长型思维"
+title: "成长品牌=流量"
 date: 2019-11-25
+tags:
+  - Marketing
+  - Brand Building
+  - Growth
+  - Business Strategy
 ---
 
 心底的自信和骄傲是重要 接受批评

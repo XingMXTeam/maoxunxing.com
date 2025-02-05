@@ -1,6 +1,11 @@
 ---
 title: "Redux----Regular的Redux实现整理"
 date: 2019-11-25
+tags:
+  - Redux
+  - JavaScript
+  - State Management
+  - Frontend
 ---
 
 ### Regular的Redux实现整理

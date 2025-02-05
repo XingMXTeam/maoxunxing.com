@@ -1,6 +1,12 @@
 ---
 title: "面试题"
 date: 2019-11-25
+tags:
+  - Frontend Development
+  - Interview Questions
+  - Web Security
+  - Performance Optimization
+  - Technical Interview
 ---
 
 问了各种编码，以及BOM头优缺点适用性）和某道算法题 -_- 

@@ -1,6 +1,11 @@
 ---
 title: "响应式编程"
 date: 2019-11-25
+tags:
+  - Programming
+  - Reactive Programming
+  - JavaScript
+  - Architecture
 ---
 
 # 什么是响应式编程

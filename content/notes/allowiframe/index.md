@@ -1,6 +1,11 @@
 ---
 title: "Pages are allowed to be embedded as iframes"
 date: 2022-03-27T14:48:25+08:00
+tags:
+  - Security
+  - Web Development
+  - CSP
+  - iframe
 ---
 
 ```shell

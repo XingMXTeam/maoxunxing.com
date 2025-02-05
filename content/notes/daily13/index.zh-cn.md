@@ -1,6 +1,11 @@
 ---
 title: "7个成功的习惯"
 date: 2019-11-25
+tags:
+  - Success
+  - Personal Development
+  - Habits
+  - Self Improvement
 ---
 
 1. 你是自己的CEO 从不责怪其他人。 如果你觉得自己没做好 是因为其他人的原因，那就打错特错了。CEO没法责怪其他人，因为他是Boss。

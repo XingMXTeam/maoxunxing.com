@@ -1,6 +1,11 @@
 ---
 title: "react-lazyload代码阅读总结"
 date: 2019-11-25
+tags:
+  - React
+  - JavaScript
+  - Performance
+  - Code Analysis
 ---
 
 函数节流：

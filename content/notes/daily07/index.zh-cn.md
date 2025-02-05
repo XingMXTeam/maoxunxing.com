@@ -1,6 +1,11 @@
 ---
 title: "面试原则"
 date: 2019-09-08
+tags:
+  - Career
+  - Interview
+  - Tips
+  - Professional Development
 ---
 
 面试原则：

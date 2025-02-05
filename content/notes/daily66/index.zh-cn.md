@@ -1,6 +1,11 @@
 ---
 title: "社交媒体时代"
 date: 2019-11-25
+tags:
+  - Social Media
+  - Marketing
+  - Business Strategy
+  - Communication
 ---
 
 产品的文案：要具有传播性或者话题性

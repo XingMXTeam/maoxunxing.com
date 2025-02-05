@@ -1,6 +1,11 @@
 ---
 title: "关于前端方向的问题"
 date: 2019-11-25
+tags:
+  - Frontend
+  - Career
+  - Technology
+  - Development
 ---
 目前前端有 全栈和大前端 的划分，
 

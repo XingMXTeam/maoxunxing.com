@@ -1,6 +1,11 @@
 ---
 title: "leetcode刷题"
 date: 2019-11-25
+tags:
+  - Programming
+  - Algorithm
+  - Interview
+  - Career Development
 ---
 我周围拿了offer的都是刷了3遍左右的。感觉头条和阿里的同学实力普遍不错很有机会
 

@@ -1,6 +1,11 @@
 ---
 title: "nodeparty笔记"
 date: 2019-11-25
+tags:
+  - Node.js
+  - Development
+  - Technical Notes
+  - Programming
 ---
 
 fixtures是连调数据

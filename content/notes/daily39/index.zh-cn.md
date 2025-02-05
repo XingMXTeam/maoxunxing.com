@@ -1,6 +1,12 @@
 ---
 title: "书单"
 date: 2019-11-25
+tags:
+  - Books
+  - Investment
+  - Philosophy
+  - Political Economy
+  - Reading List
 ---
 
 聪明的投资者
@@ -53,7 +59,7 @@ date: 2019-11-25
 
 18．《无产阶级革命与叛徒考茨基》;
 
-19．《共产主义运动中的“左派”幼稚病》;
+19．《共产主义运动中的"左派"幼稚病》;
 
 20．《论马克思恩格斯及马克思主义》;
 
