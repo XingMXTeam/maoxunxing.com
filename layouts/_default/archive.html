@@ -1,0 +1,115 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+
+{{ define "content" }}
+<section class="container list">
+  <h1 class="title">{{ .Title }}</h1>
+
+  {{ $pages := where .Site.RegularPages "Section" "in" (slice "posts" "notes" "book-reports") }}
+  {{ $pages = where $pages "Lang" .Page.Lang }}
+  {{ $pages = where $pages ".Date" "ne" nil }}
+  
+  {{ if gt (len $pages) 0 }}
+    {{ range $pages.GroupByDate "2006" }}
+    {{ if ne .Key "0001" }}
+    <div class="archive-year">
+      <h2 class="archive-year-header">{{ .Key }}</h2>
+      <ul class="archive-list">
+        {{ range .Pages.ByDate.Reverse }}
+        <li class="archive-item">
+          <span class="archive-date">{{ .Date.Format "01-02" }}</span>
+          <a class="archive-title" href="{{ .Permalink }}">{{ .Title }}</a>
+          {{ with .Params.tags }}
+          <div class="archive-tags">
+            {{ range . }}
+            <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+  {{ else }}
+    <p>No content found.</p>
+  {{ end }}
+</section>
+
+<style>
+.archive-year {
+  margin-bottom: 2rem;
+}
+
+.archive-year-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--content);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.archive-list {
+  list-style: none;
+  padding: 0;
+}
+
+.archive-item {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.archive-date {
+  color: var(--content-dim);
+  font-size: 0.9rem;
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.archive-title {
+  text-decoration: none;
+  color: var(--content);
+  margin-right: 1rem;
+}
+
+.archive-title:hover {
+  text-decoration: underline;
+}
+
+.archive-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background: var(--background-alt);
+  color: var(--content-dim);
+  text-decoration: none;
+}
+
+.tag:hover {
+  background: var(--border-color);
+  color: var(--content);
+}
+
+@media (max-width: 684px) {
+  .archive-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .archive-tags {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-left: 5rem;
+  }
+}
+</style>
+{{ end }} 
