@@ -39,45 +39,64 @@
 </section>
 
 <style>
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list ul li {
+  margin: 0;
+}
+
 .archive-year {
   margin-bottom: 2rem;
 }
 
 .archive-year-header {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin: 1.5rem 0 1rem;
   color: var(--content);
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .archive-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .archive-item {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  padding: 0.4rem 0;
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
+  border-bottom: 1px dashed var(--border-color);
+  border-bottom-color: rgba(var(--border-color-rgb), 0.3);
+}
+
+.archive-item:last-child {
+  border-bottom: none;
 }
 
 .archive-date {
   color: var(--content-dim);
   font-size: 0.9rem;
-  width: 4rem;
-  margin-right: 1rem;
+  min-width: 5rem;
+  font-family: monospace;
 }
 
 .archive-title {
   text-decoration: none;
   color: var(--content);
-  margin-right: 1rem;
+  font-weight: 500;
+  flex: 1;
+  margin: 0 1rem;
 }
 
 .archive-title:hover {
-  text-decoration: underline;
+  color: var(--primary);
 }
 
 .archive-tags {
@@ -87,28 +106,70 @@
 }
 
 .tag {
-  font-size: 0.8rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
   background: var(--background-alt);
   color: var(--content-dim);
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .tag:hover {
-  background: var(--border-color);
-  color: var(--content);
+  background: var(--primary);
+  color: var(--background);
 }
 
 @media (max-width: 684px) {
-  .archive-item {
+  .archive-year {
     margin-bottom: 1.5rem;
+  }
+
+  .archive-year-header {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.6rem;
+  }
+
+  .archive-item {
+    padding: 0.25rem 0;
+    margin-bottom: 0;
+    flex-wrap: nowrap;
+  }
+  
+  .archive-date {
+    min-width: 3.8rem;
+    font-size: 0.85rem;
+  }
+
+  .archive-title {
+    margin: 0 0 0 0.3rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .archive-tags {
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-left: 5rem;
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .archive-year {
+    margin-bottom: 1rem;
+  }
+
+  .archive-year-header {
+    font-size: 1.3rem;
+    margin: 0.8rem 0 0.4rem;
+  }
+
+  .archive-date {
+    min-width: 3.5rem;
+  }
+
+  .archive-item {
+    padding: 0.2rem 0;
   }
 }
 </style>
