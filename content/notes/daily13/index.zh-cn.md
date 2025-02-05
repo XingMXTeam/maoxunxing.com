@@ -11,3 +11,10 @@ date: 2019-11-25
 6. The last 10% is the hardest. Finish it   一般人都无法完成项目，中途放弃了。所以一定要记得你要做那个10%的人。
 7. Know why you want it  没有人逼你 所有的都是你内部驱动自己去做事
 8. Continuously learn  学习新语言 新框架 新的设计方法 投资方法 以及开始自己的事业  
+
+--
+
+英语
+拉伸锻炼
+coding
+创业
