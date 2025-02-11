@@ -1,7 +1,6 @@
 ---
-title: "现代化React开发最佳实践"
+title: "[WIP] 现代化React开发最佳实践"
 date: 2021-12-02T15:00:46+08:00
-draft: true
 ---
 
 ## hooks 还是 class?
@@ -28,14 +27,16 @@ Hooks 状态不共享，不持久，数据是多份
 
 方案 1: [umi/hox](https://github.com/umijs/hox)  
 优点：
-1 持久化，数据全局共享  
-2 支持订阅更新和不订阅更新  
-缺点：
-1 持久化和非持久的界限： createModel?
-2 缺少 devtools？无法查看变化的状态
-3 可否在 model 里面写副作用？
 
-方案 2: Redux
-方案 3: Dva
-方案 4: mobx
-方案 5: immer
+1 持久化，数据全局共享    
+2 支持订阅更新和不订阅更新    
+
+缺点：
+1 持久化和非持久的界限： createModel?  
+2 缺少 devtools？无法查看变化的状态  
+3 可否在 model 里面写副作用？  
+
+方案 2: Redux  
+方案 3: Dva  
+方案 4: mobx  
+方案 5: immer  

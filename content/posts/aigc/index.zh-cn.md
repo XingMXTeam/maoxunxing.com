@@ -1,7 +1,7 @@
 ---
-title: "AIGC 绘图/图片创作，还能这么玩！"
+title: "[WIP] AIGC 绘图/图片创作"
 date: 2023-03-25
-description: "以下是我积累的基本CSS编写原则，希望对你有帮助"
+description: ""
 draft: true
 tags:
   - AI
@@ -103,4 +103,3 @@ https://promptomania.com/
 
 https://www.reddit.com/r/StableDiffusion/
 
-转载请注明出处。

@@ -1,7 +1,6 @@
 ---
-title: "如何写单测"
+title: "[WIP] 如何写单测"
 date: 2021-08-27T10:20:36+08:00
-draft: true
 description: ""
 images:
   - unit-test/unit-test.jpeg
@@ -88,3 +87,17 @@ spawn-wrapper 注入子进程
 ```
 
 nyc，ts-node 只在顶层安装
+
+## npm包
+
+- whatwg-fetch
+- msw
+  - setupServer
+- msw/node
+- @testing-library/react
+  - render
+  - fireEvent
+  - waitFor
+  - screen
+- @testing-library/jest-dom/extend-expect
+

@@ -1,14 +1,17 @@
 ---
-title: "CSS编写原则"
+title: "[WIP] CSS编写准则"
 date: 2021-12-23T20:03:38+08:00
-description: "以下是我积累的基本CSS编写原则，希望对你有帮助"
-draft: true
+description: ""
 tags:
   - 技术课系列
   - CSS
 images:
   - css-i-learned/test.jpg
 ---
+
+> [原文点这](https://w3cplus.medium.com/%E9%98%B2%E5%BE%A1%E5%BC%8F-css-%E7%B2%BE%E8%AE%B2-2d45a58dcbf1) 
+
+非常好的一篇文章，网络备份下，并且后续添加一些自己的准则经验
 
 ### 布局
 
@@ -156,3 +159,6 @@ gap: 4px;
 - uc: 8px
 - chrome(pc): 12px
 - safari,firefox,chrome: 1px
+
+
+

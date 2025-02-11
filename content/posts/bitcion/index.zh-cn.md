@@ -1,7 +1,6 @@
 ---
-title: "我对数字货币的理解"
+title: "[WIP] 数字货币的理解"
 date: 2021-09-09
-draft: true
 tags:
   - bitcion
   - NFT

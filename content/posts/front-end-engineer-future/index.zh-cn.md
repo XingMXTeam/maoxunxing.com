@@ -1,7 +1,6 @@
 ---
-title: "前端工程师的成长模型指标"
+title: "[WIP] 前端工程师技能树"
 date: 2021-08-24
-draft: true
 tags:
   - career
   - front-end
@@ -10,8 +9,6 @@ images:
   - images:
   - exception-handle/eception-handle.png/front-end-future.png
 ---
-
-上一篇谈及前端工程师的学习和成长之道。这一篇主要谈前端工程师的成长模型指标。
 
 ## 基础知识
 

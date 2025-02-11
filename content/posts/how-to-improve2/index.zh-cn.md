@@ -1,8 +1,7 @@
 ---
-title: "怎么学系列 - 方法论"
+title: "[WIP] 方法论"
 date: 2021-08-27T10:20:36+08:00
 description: "每个人都有不同的学习方法，怎么学是一门学问"
-draft: true
 tags:
   - 成长
 images:
@@ -57,10 +56,3 @@ images:
 
 更多：《认知天性：让学习变得轻而易举的心理学规律》
 
-### 其他文章
-
-[学什么系列 - 成长模型](../how-to-improve)  
-[怎么学系列 - 方法论](../how-to-improve2)  
-[评价标准系列 - 衡量能力](../how-to-improve3)  
-[怎么学系列 - 解决问题](../how-to-improve4)  
-[评价标准系列 - 影响力](../how-to-improve5)

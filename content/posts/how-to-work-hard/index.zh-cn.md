@@ -1,7 +1,6 @@
 ---
 title: "[翻译]论如何努力工作"
 date: 2021-08-20
-draft: true
 tags:
   - 成长
   - 翻译

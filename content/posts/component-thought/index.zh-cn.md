@@ -1,7 +1,6 @@
 ---
-title: "我对组件的思考"
+title: "[WIP] 前端组件的思考"
 date: 2021-09-10
-draft: true
 tags:
   - component
   - front-end

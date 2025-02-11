@@ -1,7 +1,6 @@
 ---
-title: "E-Commerce Concept"
+title: "[WIP] 电商相关概念"
 date: 2021-10-27T11:58:30+08:00
-draft: true
 ---
 
 ## Takerate

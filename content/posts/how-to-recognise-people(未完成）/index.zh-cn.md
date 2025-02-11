@@ -1,7 +1,6 @@
 ---
-title: "如何识人"
+title: "[WIP] 如何识人"
 date: 2021-09-08
-draft: true
 tags:
   - people
 description: "如何识人"

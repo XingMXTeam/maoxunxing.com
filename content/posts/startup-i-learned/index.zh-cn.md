@@ -1,7 +1,6 @@
 ---
-title: "Startup I Learned"
+title: "[WIP] Startup I Learned"
 date: 2022-04-12T18:08:06+08:00
-draft: true
 ---
 
 ## 产品设计

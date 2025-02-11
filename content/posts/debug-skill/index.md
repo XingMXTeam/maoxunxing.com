@@ -1,10 +1,9 @@
 ---
-title: "前端调试技巧"
+title: "[WIP] 前端调试技巧"
 date: 2021-09-22
-draft: true
 tags:
   - debug
-description: "debug"
+description: ""
 images:
   - debug-skill/debug-skill.jpeg
 ---

@@ -1,29 +1,43 @@
 ---
-title: "Edge Cache"
+title: "[WIP] Edge Cache边缘缓存"
 date: 2021-08-24
-draft: true
 tags:
   - front-end
   - programming
   - edge-cache
-description: "This topic is about how to use edge cache to promote the app or website's performance."
+description: ""
 images:
   - edge-cache/edge-cache.png
 ---
 
-## Situation
+# Edge Cache (边缘缓存)
 
-- what is edge cache
-- what problem it solves?
-  - the first visit webpage cannot make advantage of cache, like pwa, connection reuse.The client side cache can also not be used when first visit.
-- what is the edge cache node position of request link
-- what the difference with ssr、csr/cdn
-  - ssr
-    - long server time make the page white time long
-  - csr/cdn
-    - cache all html to the cdn. because every user have different page view, it is not realibility. so we often cache static html to the cdn and use **csr** to request data
-    - this solution solves the white page problem, but the meaningful content is showed later than ssr
-  - esr(Edge server render)
-    - csr/cdn is serial handle way: request html, then download js and css...response first cached bytes, meanwhile cdn to load dynamic content， it is parallel and we can reuse connection between cdn and server side
-    - edge server handle request like service worker
-    - faster 200ms than no esr
+## 什么是边缘缓存？
+边缘缓存是一种将内容缓存在靠近用户的网络边缘节点上的技术。通过将数据存储在离用户更近的地方，边缘缓存能够显著减少延迟并提高页面加载速度。
+
+## 它解决了什么问题？
+- **首次访问网页无法利用缓存**：例如，在PWA（渐进式Web应用）中，首次访问时无法利用客户端缓存或连接复用。
+- **客户端缓存不可用**：当用户首次访问某个网站时，客户端缓存尚未建立，因此无法加速页面加载。
+
+## 边缘缓存节点在请求链中的位置
+边缘缓存节点通常位于用户和源服务器之间的CDN（内容分发网络）中。它充当一个中间层，负责缓存和提供静态或动态内容，从而减少源服务器的负载并加快响应速度。
+
+## 边缘缓存与SSR、CSR/CDN的区别
+
+### SSR（服务端渲染）
+- **问题**：由于服务端渲染需要较长的处理时间，页面的白屏时间会变长。
+- **特点**：所有HTML内容由服务器生成，适合SEO优化，但首次加载速度较慢。
+
+### CSR/CDN（客户端渲染/内容分发网络）
+- **问题**：虽然可以通过CDN缓存所有HTML，但由于每个用户的页面视图可能不同，直接缓存整个HTML并不现实。
+- **解决方案**：
+  - 将静态HTML缓存到CDN，并使用CSR（客户端渲染）来请求动态数据。
+  - 这种方法解决了白屏问题，但有意义的内容显示时间比SSR更晚。
+- **特点**：适合个性化内容较多的场景，但首次加载体验不如SSR。
+
+### ESR（边缘服务器渲染）
+- **优势**：
+  - CSR/CDN是串行处理方式：先请求HTML，然后下载JS和CSS等资源。而ESR采用并行处理方式：CDN返回缓存的首字节，同时加载动态内容。
+  - 边缘服务器像Service Worker一样处理请求，支持连接复用。
+  - 相比无ESR的方案，页面加载速度可提升约200ms。
+- **特点**：结合了SSR和CSR的优点，既减少了白屏时间，又支持动态内容的快速加载。

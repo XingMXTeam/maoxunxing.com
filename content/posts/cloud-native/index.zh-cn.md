@@ -1,7 +1,6 @@
 ---
-title: "我对云原生的理解"
+title: "[WIP] 云原生的理解"
 date: 2021-09-04
-draft: true
 tags:
   - cloud native
 description: "云原生, cloud-native"
