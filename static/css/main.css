@@ -774,3 +774,16 @@ h4:hover .hanchor {
     width: 24px;  /* 根据需要调整宽度 */
     height: 24px; /* 根据需要调整高度 */
 } 
+
+.quote {
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.quote p {
+  margin: 0;
+  padding: 0;
+}
