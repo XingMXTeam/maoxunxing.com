@@ -5,15 +5,21 @@ tags:
   - NodeJS
 ---
 
-1 如何调试：
+# 调试 Node.js 程序
 
-第一步：启动 inspector
+---
+
+## **1. 调试步骤**
+
+### **第一步：启动 Inspector**
+
+使用 `nodemon` 启动调试模式：
 
 ```shell
 nodemon --inspect-brk xx.js
 ```
 
-运行结果：
+运行结果示例：
 
 ```shell
 [nodemon] starting `node --inspect-brk /Users/maoxunxing/alibaba/vite-comp/bin/index.js`
@@ -22,14 +28,20 @@ For help, see: https://nodejs.org/en/docs/inspector
 Debugger attached.
 ```
 
-第二步： chrome 开启监听 client
+### **第二步：在 Chrome 中开启监听**
 
-```shell
-chrome://inspect/#devices
+1. 打开 Chrome 浏览器并访问以下地址：
+   ```shell
+   chrome://inspect/#devices
+   ```
+2. 配置调试地址为 `127.0.0.1:9229`。
+3. 点击 **Inspect** 按钮，进入调试界面。
+
+---
+
+## **2. 更多进阶内容**
+
+参考官方文档以了解更多调试技巧和配置方法：
+
+- [Node.js 官方调试指南](https://nodejs.org/en/docs/guides/debugging-getting-started/)
 ```
-
-配置 127.0.0.1:9229，然后点击 inspect
-
-2 更多进阶
-
-https://nodejs.org/en/docs/guides/debugging-getting-started/
