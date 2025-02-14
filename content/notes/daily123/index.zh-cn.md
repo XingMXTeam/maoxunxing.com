@@ -1,5 +1,5 @@
 ---
-title: "python"
+title: "python笔记"
 date: 2019-11-25
 ---
 Python是比较热的语言，个人兴趣参考官方文档：<https://docs.python.org/2/tutorial/index.html>
