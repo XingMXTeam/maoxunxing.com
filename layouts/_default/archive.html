@@ -20,13 +20,6 @@
         <li class="archive-item">
           <span class="archive-date">{{ .Date.Format "01-02" }}</span>
           <a class="archive-title" href="{{ .Permalink }}">{{ .Title }}</a>
-          {{ with .Params.tags }}
-          <div class="archive-tags">
-            {{ range . }}
-            <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-            {{ end }}
-          </div>
-          {{ end }}
         </li>
         {{ end }}
       </ul>
