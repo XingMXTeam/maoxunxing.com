@@ -1,5 +1,5 @@
 ---
-title: "Redux----Regular的Redux实现整理"
+title: "Regular的Redux实现整理"
 date: 2019-11-25
 tags:
   - Redux
