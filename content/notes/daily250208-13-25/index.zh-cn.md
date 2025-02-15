@@ -1,6 +1,10 @@
 ---
 title: "python入门笔记"
 date: 2019-11-25
+tags:
+  - Python
+  - 编程语言
+  - 教程
 ---
 
 #python #编程语言
