@@ -1,6 +1,10 @@
 ---
 title: "Hooks don't work with yarn link"
 date: 2021-11-29T12:06:58+08:00
+tags:
+  - React
+  - npm
+  - 调试
 ---
 
 # 使用 `npm link` 时的常见问题与解决方案

@@ -1,6 +1,10 @@
 ---
 title: "Decode Url Safe"
 date: 2021-12-10T10:12:21+08:00
+tags:
+  - JavaScript
+  - 错误处理
+  - 编码
 ---
 
 # `decodeURIComponent` 可能抛出错误的解决方案

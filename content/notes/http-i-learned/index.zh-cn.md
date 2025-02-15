@@ -1,6 +1,10 @@
 ---
 title: "http参数是数组"
 date: 2021-12-22T20:10:28+08:00
+tags:
+  - HTTP
+  - AJAX
+  - JavaScript
 ---
 
 # 请求参数可以是数组吗？

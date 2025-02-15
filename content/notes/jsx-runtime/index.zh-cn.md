@@ -1,6 +1,10 @@
 ---
 title: "Jsx Runtime报错"
 date: 2022-01-24T13:15:59+08:00
+tags:
+  - React
+  - TypeScript
+  - 错误处理
 ---
 
 # 错误信息与解决方案
