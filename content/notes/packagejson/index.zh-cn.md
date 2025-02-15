@@ -1,6 +1,10 @@
 ---
 title: "package.json的files"
 date: 2021-12-10T10:12:21+08:00
+tags:
+  - npm
+  - NodeJS
+  - JavaScript
 ---
 
 # `package.json` 的 `files` 字段：控制 npm 打包内容

@@ -1,6 +1,10 @@
 ---
 title: "Typescript类型报错"
 date: 2021-12-22T18:06:49+08:00
+tags:
+  - TypeScript
+  - Debugging
+  - JavaScript
 ---
 
 # TypeScript 报错解决方案

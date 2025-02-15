@@ -1,6 +1,10 @@
 ---
 title: "Tailwind编译报错"
 date: 2022-03-28T17:14:19+08:00
+tags:
+  - Tailwind
+  - CSS
+  - Debugging
 ---
 
 # PostCSS 和 Tailwind CSS 错误解决方案

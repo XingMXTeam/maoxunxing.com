@@ -1,6 +1,10 @@
 ---
 title: "Webpack Federation"
 date: 2021-11-19T14:04:15+08:00
+tags:
+  - Webpack
+  - Micro Frontend
+  - JavaScript
 ---
 
 # 模块联邦（Module Federation）简介
