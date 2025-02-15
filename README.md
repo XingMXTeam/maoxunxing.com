@@ -116,3 +116,8 @@ ffmpeg \
   -vf "format=yuv420p" \
   output.mp4
 ```
+
+## 生成默认封面
+
+`npm run cover vue` 封面默认大小`1200*300` 封面采用统一风格
+

@@ -65,122 +65,111 @@ async function fetchWithRetry(url, options, maxRetries = 6) {
     throw lastError;
 }
 
-async function getRandomIllustration() {
+async function searchIllustration(page, mdFilePath) {
+    const keyword = process.argv[2] || 'react';
+    console.log(`keyword`, keyword)
+    // 构建API URL
+    const apiUrl = `https://undraw.co/_next/data/QEhEuZcohYSR0YIqIdBj4/search/${keyword}.json?term=${keyword}`;
+    
+    // 设置请求头
+    const headers = {
+        'accept': '*/*',
+        'accept-language': 'zh-CN,zh;q=0.9',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'x-nextjs-data': '1'
+    };
+
+    // 使用 page.evaluate 发送请求
+
+    const response = await page.evaluate(async (url, headers) => {
+        const resp = await fetch(url, { headers });
+        return resp.json();
+    }, apiUrl, headers);
+
+    
+    if (response && response.pageProps?.initialResults && response.pageProps?.initialResults.length > 0) {
+        // 随机选择一个结果
+        // const randomIndex = Math.floor(Math.random() * response.pageProps.initialResults.length);
+        console.log(`response`, JSON.stringify(response.pageProps.initialResults[0]))
+        return response.pageProps.initialResults[0].media;
+    }
+    return null;
+}
+
+async function getSvgContentFromMedia(page, media) {
+    // 直接从 media URL 获取 SVG
+    const result = await page.evaluate(async (url) => {
+        try {
+            const response = await fetch(url, {
+                headers: {
+                    'Accept': 'image/svg+xml,*/*',
+                    'Referer': 'https://undraw.co/illustrations'
+                }
+            });
+            
+            if (!response.ok) {
+                return {
+                    success: false,
+                    error: `HTTP error! status: ${response.status}`,
+                    responseText: await response.text()
+                };
+            }
+            
+            const text = await response.text();
+            return {
+                success: true,
+                content: text
+            };
+        } catch (error) {
+            return {
+                success: false,
+                error: error.message,
+                stack: error.stack
+            };
+        }
+    }, media);
+
+    if (!result.success) {
+        console.error('获取SVG失败:', result.error);
+        if (result.responseText) {
+            console.error('响应内容:', result.responseText);
+        }
+        if (result.stack) {
+            console.error('错误堆栈:', result.stack);
+        }
+        throw new Error('获取SVG失败: ' + result.error);
+    }
+
+    const svgContent = result.content;
+
+    // 验证SVG内容
+    if (!svgContent || !svgContent.includes('<svg') || !svgContent.includes('</svg>')) {
+        console.error('无效的SVG内容:', svgContent.substring(0, 200) + '...');
+        throw new Error('获取的内容不是有效的SVG');
+    }
+    return svgContent
+}
+
+async function getRandomIllustration(mdFilePath) {
     const browser = await puppeteer.launch({
         headless: "new",
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     try {
         const page = await browser.newPage();
-
         console.log('正在访问 unDraw 网站...');
         await page.goto('https://undraw.co/illustrations', {
             waitUntil: 'networkidle0',
             timeout: 60000
         });
 
-        // 随机点击 Next 按钮 1-10 次
-        const clickCount = Math.floor(Math.random() * 10) + 1;
-        for (let i = 0; i < clickCount; i++) {
-            console.log(`点击 Next 按钮 (${i + 1}/${clickCount})...`);
-            await page.waitForSelector('a.btn');
-            // 确保找到的按钮文本是 "Next"
-            const nextButton = await page.$('a.btn');
-            const buttonText = await page.evaluate(el => el.textContent.trim(), nextButton);
-            if (!buttonText.includes('Next')) {
-                console.log('未找到 Next 按钮，跳过点击');
-                break;
-            }
-            await nextButton.click();
-            // 使用 Promise 包装的 setTimeout 来等待
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
-
-        // 从 __NEXT_DATA__ 脚本中获取数据
-        const illustrations = await page.evaluate(() => {
-            const nextData = document.getElementById('__NEXT_DATA__');
-            if (!nextData) return null;
-            
-            try {
-                const data = JSON.parse(nextData.textContent);
-                return data.props.pageProps.illustrations;
-            } catch (e) {
-                return null;
-            }
-        });
-
-        if (!illustrations || illustrations.length === 0) {
-            throw new Error('未找到任何插图数据');
-        }
-
-        console.log(`找到 ${illustrations.length} 个插图`);
+        const media = await searchIllustration(page, mdFilePath)
+        const svgContent = await getSvgContentFromMedia(page, media)
         
-        // 随机选择一个插图
-        const randomIllustration = illustrations[Math.floor(Math.random() * illustrations.length)];
-        
-        if (!randomIllustration.media) {
-            throw new Error('选中的插图没有media URL');
-        }
-
-        console.log(`获取插图: ${randomIllustration.title} (URL: ${randomIllustration.media})`);
-
-        // 直接从 media URL 获取 SVG
-        const result = await page.evaluate(async (url) => {
-            try {
-                const response = await fetch(url, {
-                    headers: {
-                        'Accept': 'image/svg+xml,*/*',
-                        'Referer': 'https://undraw.co/illustrations'
-                    }
-                });
-                
-                if (!response.ok) {
-                    return {
-                        success: false,
-                        error: `HTTP error! status: ${response.status}`,
-                        responseText: await response.text()
-                    };
-                }
-                
-                const text = await response.text();
-                return {
-                    success: true,
-                    content: text
-                };
-            } catch (error) {
-                return {
-                    success: false,
-                    error: error.message,
-                    stack: error.stack
-                };
-            }
-        }, randomIllustration.media);
-
-        if (!result.success) {
-            console.error('获取SVG失败:', result.error);
-            if (result.responseText) {
-                console.error('响应内容:', result.responseText);
-            }
-            if (result.stack) {
-                console.error('错误堆栈:', result.stack);
-            }
-            throw new Error('获取SVG失败: ' + result.error);
-        }
-
-        const svgContent = result.content;
-
-        // 验证SVG内容
-        if (!svgContent || !svgContent.includes('<svg') || !svgContent.includes('</svg>')) {
-            console.error('无效的SVG内容:', svgContent.substring(0, 200) + '...');
-            throw new Error('获取的内容不是有效的SVG');
-        }
-
-        // 替换颜色
-        const modifiedSvg = svgContent.replace(/fill="[^"]*"/g, `fill="#${COLOR}"`);
-        const modifiedSvgBuffer = Buffer.from(modifiedSvg, 'utf-8');
-
-        console.log('成功获取并验证SVG内容');
-        return modifiedSvgBuffer;
+        // 直接返回原始SVG内容，不做任何修改
+        return Buffer.from(svgContent, 'utf-8');
     } catch (error) {
         console.error('获取unDraw插图失败:', error);
         throw error;
@@ -190,61 +179,35 @@ async function getRandomIllustration() {
 }
 
 async function generateCover(mdFilePath, outputPath) {
-    // 读取markdown文件并解析frontmatter
-    const fileContent = fs.readFileSync(mdFilePath, 'utf8');
-    const { data: frontmatter } = matter(fileContent);
-    const title = frontmatter.title || 'Untitled';
-
     // 创建画布
     const canvas = createCanvas(1200, 630);
     const ctx = canvas.getContext('2d');
 
     // 设置背景色为浅灰色
-    ctx.fillStyle = '#f5f5f5';  // 修改为浅灰色背景
+    ctx.fillStyle = '#f5f5f5';
     ctx.fillRect(0, 0, 1200, 630);
 
-    // 获取随机SVG并转换为PNG
-    const svgBuffer = await getRandomIllustration();
+    // 获取SVG
+    const svgBuffer = await getRandomIllustration(mdFilePath);
     
-    // 使用 sharp 将 SVG 转换为 PNG，添加白色背景
-    const pngBuffer = await sharp(svgBuffer, { density: 300 })
-        .resize(800, 400, {
-            fit: 'contain',
-            background: { r: 245, g: 245, b: 245, alpha: 1 }  // 确保图片背景与画布背景色一致
-        })
-        .png()
-        .toBuffer();
-
-    // 将PNG写入临时文件
-    const tempPngPath = path.join(__dirname, 'temp.png');
-    fs.writeFileSync(tempPngPath, pngBuffer);
-
-    // 使用loadImage加载图片
-    const img = await loadImage(tempPngPath);
+    // 直接加载原始SVG
+    const img = await loadImage('data:image/svg+xml;base64,' + svgBuffer.toString('base64'));
     
-    // 将图片绘制在画布上部
-    const imgX = (1200 - img.width) / 2;
-    const imgY = 50;
-    ctx.drawImage(img, imgX, imgY);
-
-    // 删除临时文件
-    fs.unlinkSync(tempPngPath);
-
-    // 配置文字样式
-    ctx.fillStyle = '#333333';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
+    console.log('Original image dimensions:', img.width, 'x', img.height);
     
-    let fontSize = 36;
-    ctx.font = `${fontSize}px "PingFang SC", "Microsoft YaHei", sans-serif`;
+    // 保持原始比例进行缩放
+    const maxWidth = 800;
+    const maxHeight = 400;
+    const scale = Math.min(maxWidth / img.width, maxHeight / img.height);
+    const scaledWidth = Math.round(img.width * scale);
+    const scaledHeight = Math.round(img.height * scale);
     
-    while (ctx.measureText(title).width > 600 && fontSize > 20) {
-        fontSize -= 2;
-        ctx.font = `${fontSize}px "PingFang SC", "Microsoft YaHei", sans-serif`;
-    }
-
-    // 绘制标题
-    ctx.fillText(title, 600, 520);
+    // 居中绘制
+    const imgX = Math.round((1200 - scaledWidth) / 2);
+    const imgY = Math.round((630 - scaledHeight) / 2);
+    
+    // 绘制图片
+    ctx.drawImage(img, imgX, imgY, scaledWidth, scaledHeight);
 
     // 保存最终图像
     const buffer = canvas.toBuffer('image/png');
