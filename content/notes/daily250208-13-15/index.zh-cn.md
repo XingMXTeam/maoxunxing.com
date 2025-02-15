@@ -1,6 +1,10 @@
 ---
 title: "沟通的技巧"
 date: 2019-11-25
+tags:
+  - Communication
+  - Soft Skills
+  - Personal Development
 ---
 
 # 逻辑思维与沟通技巧

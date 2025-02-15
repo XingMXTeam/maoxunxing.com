@@ -1,6 +1,10 @@
 ---
 title: "思维方式与成长模型"
 date: 2019-11-25
+tags:
+  - Personal Growth
+  - Critical Thinking
+  - Mental Models
 ---
 
 # 思维方式与成长模型

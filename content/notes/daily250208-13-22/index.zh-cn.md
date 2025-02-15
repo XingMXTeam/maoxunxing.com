@@ -1,6 +1,10 @@
 ---
 title: "商业概念"
 date: 2019-11-25
+tags:
+  - Business
+  - Marketing
+  - Analytics
 ---
 
 ## 概念

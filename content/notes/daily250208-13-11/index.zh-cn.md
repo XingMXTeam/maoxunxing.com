@@ -1,6 +1,10 @@
 ---
 title: "Git"
 date: 2019-11-25
+tags:
+  - Git
+  - Version Control
+  - Development Tools
 ---
 
 # Git 常用技巧与案例

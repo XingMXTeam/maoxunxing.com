@@ -1,6 +1,10 @@
 ---
 title: "软技能模型"
 date: 2019-11-25
+tags:
+  - Soft Skills
+  - Communication
+  - Personal Development
 ---
 
 # 个人发展与核心能力模型

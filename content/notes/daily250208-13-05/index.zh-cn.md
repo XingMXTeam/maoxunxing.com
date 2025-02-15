@@ -1,6 +1,10 @@
 ---
 title: "计算机的证书"
 date: 2019-11-25
+tags:
+  - Certification
+  - Programming
+  - Career Development
 ---
 
 # 技术认证与职业发展

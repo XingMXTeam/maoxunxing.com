@@ -1,6 +1,10 @@
 ---
 title: "第一次AI写作"
 date: 2019-11-25
+tags:
+  - AI
+  - Writing
+  - Creative Writing
 ---
 
 去AI味的工具： https://docsbot.ai/tools/writing/ai-text-humanizer

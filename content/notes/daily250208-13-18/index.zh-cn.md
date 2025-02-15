@@ -1,6 +1,10 @@
 ---
 title: "职业发展与核心能力模型"
 date: 2019-11-25
+tags:
+  - Career Development
+  - Professional Skills
+  - Leadership
 ---
 
 # 职业发展与核心能力模型

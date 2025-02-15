@@ -1,6 +1,10 @@
 ---
 title: "人才能力模型"
 date: 2019-11-25
+tags:
+  - Career Development
+  - Skills Assessment
+  - Professional Growth
 ---
 
 ##  大图

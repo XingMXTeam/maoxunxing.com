@@ -1,6 +1,10 @@
 ---
 title: "写作模版"
 date: 2019-11-25
+tags:
+  - Writing
+  - Templates
+  - Documentation
 ---
 
 期权定价模型：black-scholes模型
