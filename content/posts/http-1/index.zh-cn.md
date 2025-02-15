@@ -1,5 +1,5 @@
 ---
-title: "HTTP协议 #1期：html标签属性实现页面性能优化"
+title: "html标签属性实现页面性能优化"
 description: "dns-prefetch vs preload vs preconnect vs prefetch vs Early Hints 103"
 date: 2024-09-10
 tags:

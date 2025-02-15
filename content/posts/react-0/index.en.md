@@ -1,5 +1,5 @@
 ---
-title: "React  #0: Why React"
+title: "Why React"
 description: "why react"
 date: 2024-07-15
 tags:

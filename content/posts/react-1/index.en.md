@@ -1,5 +1,5 @@
 ---
-title: "React  #1: Suspense"
+title: "Suspense"
 description: "how to write prompt"
 date: 2024-07-07
 tags:

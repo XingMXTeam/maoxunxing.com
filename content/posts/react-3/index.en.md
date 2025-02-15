@@ -1,5 +1,5 @@
 ---
-title: "React  #2: SSR (Streaming Server-Side Reandering)"
+title: "SSR (Streaming Server-Side Reandering)"
 description: "what is Streaming Server-Side Reandering ?"
 date: 2024-08-03
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "NodeJS #3期：Node Stream Complete Guide Notes"
+title: "Node Stream Complete Guide Notes"
 description: ""
 date: 2025-02-04
 tags:

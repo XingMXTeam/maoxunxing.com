@@ -1,5 +1,5 @@
 ---
-title: "NPM #2期：多入口组件库指定ts类型定义"
+title: "多入口组件库指定ts类型定义"
 description: "package.json的exports和typesVersion使用方法"
 date: 2024-09-12
 tags:

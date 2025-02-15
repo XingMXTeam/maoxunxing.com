@@ -1,5 +1,5 @@
 ---
-title: "Career  #2: Why You Need A Front-End Engineer"
+title: "Why You Need A Front-End Engineer"
 date: 2023-05-13
 draft: true
 description: "The value of front-end engineers"

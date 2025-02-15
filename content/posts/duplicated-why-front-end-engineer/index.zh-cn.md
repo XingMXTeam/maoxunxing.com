@@ -1,5 +1,5 @@
 ---
-title: "职业 #2期：为什么需要前端工程师"
+title: "为什么需要前端工程师"
 date: 2023-05-13
 draft: true
 description: "前端工程师的价值"

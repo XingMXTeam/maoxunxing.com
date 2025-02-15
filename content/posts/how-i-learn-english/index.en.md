@@ -1,5 +1,5 @@
 ---
-title: "English  #1: Top 3 English Learning Tools in the Age of AI"
+title: "Top 3 English Learning Tools in the Age of AI"
 date: 2023-07-08T11:36:43+08:00
 tags:
 - English 

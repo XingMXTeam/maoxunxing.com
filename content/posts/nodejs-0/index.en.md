@@ -1,5 +1,5 @@
 ---
-title: "NodeJS  #1: Understanding Stream in Node.js"
+title: "Understanding Stream in Node.js"
 date: 2021-10-19T14:28:57+08:00
 tags:
   - NodeJS

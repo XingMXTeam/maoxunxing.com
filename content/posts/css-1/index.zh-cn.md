@@ -1,5 +1,5 @@
 ---
-title: "CSS #1期：实现播放暂停效果"
+title: "实现播放暂停效果"
 description: "animation，animation-play-state，:checked，transform的使用"
 date: 2024-09-10
 tags:

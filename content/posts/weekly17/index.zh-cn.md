@@ -1,5 +1,5 @@
 ---
-title: "投资 #17期：GPT4的理解"
+title: "GPT4的理解"
 date: 2023-12-10
 tags:
   - 投资 

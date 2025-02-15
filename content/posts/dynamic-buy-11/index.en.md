@@ -1,5 +1,5 @@
 ---
-title: "Algorithm  #2: The Double 11 Roundup Problem"
+title: "The Double 11 Roundup Problem"
 date: 2023-06-23T11:26:08+08:00
 tags:
 - Algorithm 

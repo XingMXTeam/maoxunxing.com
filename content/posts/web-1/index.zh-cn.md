@@ -1,5 +1,5 @@
 ---
-title: "Web #1期：实现自动曝光功能"
+title: "实现自动曝光功能"
 description: "MutationObserver 和 IntersectionObserver的使用"
 date: 2024-09-10
 tags:

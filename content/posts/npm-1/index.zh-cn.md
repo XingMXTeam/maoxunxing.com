@@ -1,5 +1,5 @@
 ---
-title: "NPM #1期：pnpm vs npm"
+title: "pnpm vs npm"
 description: "什么是幽灵依赖问题"
 date: 2024-09-10
 tags:

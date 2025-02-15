@@ -1,5 +1,5 @@
 ---
-title: "投资 #23期：《The Anthology of Balaji》技术哲学"
+title: "《The Anthology of Balaji》技术哲学"
 date: 2024-04-06
 tags:
   - 投资 

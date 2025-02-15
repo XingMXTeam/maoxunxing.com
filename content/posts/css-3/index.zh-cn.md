@@ -1,5 +1,5 @@
 ---
-title: "CSS #3期：更平滑的阴影"
+title: "更平滑的阴影"
 description: "box-shadow分层抬升"
 date: 2024-09-14
 tags:

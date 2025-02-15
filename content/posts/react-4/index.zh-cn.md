@@ -1,5 +1,5 @@
 ---
-title: "React #4期：React Server Component"
+title: "React Server Component"
 description: "React Server Component是什么？"
 date: 2024-08-18
 tags:

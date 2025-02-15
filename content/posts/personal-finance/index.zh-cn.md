@@ -1,5 +1,5 @@
 ---
-title: "财务 #1期：被动收入"
+title: "被动收入"
 description: ""
 date: 2025-02-04
 tags:

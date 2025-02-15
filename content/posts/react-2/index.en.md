@@ -1,5 +1,5 @@
 ---
-title: "React  #2: Concurrent Mode"
+title: "Concurrent Mode"
 description: "what is concurrent mode ?"
 date: 2024-07-30
 tags:

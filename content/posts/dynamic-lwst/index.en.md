@@ -1,5 +1,5 @@
 ---
-title: "Algorithm  #1: Spelling correction for search engines"
+title: "Spelling correction for search engines"
 date: 2023-06-23T20:46:15+08:00
 tags:
 - Algorithm 

@@ -1,5 +1,5 @@
 ---
-title: "React #1期：Suspense"
+title: "Suspense"
 description: "Why Suspense ?"
 date: 2024-07-28
 tags:

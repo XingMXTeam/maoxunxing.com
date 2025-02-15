@@ -1,5 +1,5 @@
 ---
-title: "Algorithm  #7: Graphs Part 1 - Detect Cycle in an Undirected Graph"
+title: "Graphs Part 1 - Detect Cycle in an Undirected Graph"
 date: 2021-08-24
 tags:
   - Algorithm

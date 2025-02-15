@@ -1,5 +1,5 @@
 ---
-title: "LLM  #1: How To Write Prompt ?"
+title: "How To Write Prompt ?"
 description: "how to write prompt"
 date: 2024-07-07
 images:

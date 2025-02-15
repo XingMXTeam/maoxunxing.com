@@ -1,5 +1,5 @@
 ---
-title: "Career Dairy #1: How To Be Different And Successful As An Engineer"
+title: "How To Be Different And Successful As An Engineer"
 date: 2021-10-06T11:20:33+08:00
 description: "How to become better from a technical person's point of view"
 tags:

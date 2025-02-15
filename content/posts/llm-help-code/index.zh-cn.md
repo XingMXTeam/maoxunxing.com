@@ -1,5 +1,5 @@
 ---
-title: "LLM #1期：如何写好提示词？"
+title: "如何写好提示词？"
 description: "如何写好提示词"
 date: 2024-07-07
 images:

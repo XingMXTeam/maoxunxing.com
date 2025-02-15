@@ -1,5 +1,5 @@
 ---
-title: "React #3期：SSR (Streaming Server-Side Reandering)"
+title: "SSR (Streaming Server-Side Reandering)"
 description: "React SSR是什么？"
 date: 2024-08-03
 tags:

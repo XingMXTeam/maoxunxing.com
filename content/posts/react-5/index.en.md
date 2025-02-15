@@ -1,5 +1,5 @@
 ---
-title: "React #5期：Why React Hooks"
+title: "Why React Hooks"
 description: ""
 date: 2019-12-05 11:53
 tags:

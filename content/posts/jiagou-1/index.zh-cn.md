@@ -1,5 +1,5 @@
 ---
-title: "前端架构 #1期：如何设计导航"
+title: "如何设计导航"
 description: ""
 date: 2024-09-18
 tags:

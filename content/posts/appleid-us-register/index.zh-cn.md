@@ -1,5 +1,5 @@
 ---
-title: "工具 #1期：如何注册美区 Apple ID"
+title: "如何注册美区 Apple ID"
 date: 2023-05-27
 description: "分享一篇如何注册美区 Apple ID的文章，实操可行。"
 tags:

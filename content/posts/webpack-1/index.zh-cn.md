@@ -1,5 +1,5 @@
 ---
-title: "Webpack #1期：Externals "
+title: "Webpack Externals "
 description: ""
 date: 2024-09-08
 tags:

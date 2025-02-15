@@ -1,5 +1,5 @@
 ---
-title: "React #0期：React解决什么问题"
+title: "React解决什么问题"
 description: "Why React ?"
 date: 2024-07-15
 tags:
