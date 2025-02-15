@@ -1,6 +1,10 @@
 ---
 title: "Hash表"
 date: 2019-11-25
+tags:
+  - Data Structures
+  - Algorithms
+  - Programming
 ---
 
 # 字典与哈希表的实现

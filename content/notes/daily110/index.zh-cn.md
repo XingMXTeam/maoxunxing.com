@@ -1,6 +1,10 @@
 ---
 title: "解谜计算机科学读后感"
 date: 2019-11-25
+tags:
+  - Computer Science
+  - Learning
+  - Book Review
 ---
 
 # 建立信心与理解计算的本质

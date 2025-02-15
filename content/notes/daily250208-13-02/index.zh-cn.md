@@ -1,6 +1,10 @@
 ---
 title: "英语学习"
 date: 2019-11-25
+tags:
+  - English
+  - Language Learning
+  - Education
 ---
 # 英语学习方法与实践
 

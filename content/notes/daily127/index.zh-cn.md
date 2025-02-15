@@ -1,6 +1,10 @@
 ---
 title: "immutable"
 date: 2019-11-25
+tags:
+  - JavaScript
+  - Data Structures
+  - Programming
 ---
 
 # Immutable 数据结构实现原理与实践

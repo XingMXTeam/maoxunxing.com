@@ -1,6 +1,10 @@
 ---
 title: "python笔记"
 date: 2019-11-25
+tags:
+  - Python
+  - Programming
+  - Learning
 ---
 Python是比较热的语言，个人兴趣参考官方文档：<https://docs.python.org/2/tutorial/index.html>
 边看边翻译了一下（后面会持续更新），有兴趣的可以看看。
@@ -1216,7 +1220,7 @@ def fib2(n):  # 定义函数fib2
 ```
 >>> fib = fibo.fib
 >>> fib(500)
-1 1 2 3 5 8 13 21 34 55 89 144 233 377
+1 1 2 3 5 8 13 21 34 55 89
 ```
 
 ### 执行模块脚本
@@ -1627,7 +1631,7 @@ open（）打开文件：open(filename, mode)
 <open file 'workfile', mode 'w' at 80a0960
 ```
 
-‘b’标识二进制形式，跨平台
+'b'标识二进制形式，跨平台
 
 #### 文件对象的方法
 
@@ -1796,179 +1800,4 @@ except:
 
 try...except...else..else后面的代码一定会执行
 
-```
-for arg in sys.argv[1:]:
-    try:
-        f = open(arg, 'r')
-    except IOError:
-        print 'cannot open', arg
-    else:
-        print arg, 'has', len(f.readlines()), 'lines'
-        f.close()
-```
-
-抛出异常：
-
-```
->>> try:
-...    raise Exception('spam', 'eggs')
-... except Exception as inst:
-...    print type(inst)    # 异常实例
-...    print inst.args      # arguments 存储在.args中
-...    print inst          # __str__方法使得能直接打印参数而不需要引用它。
-...    x, y = inst.args
-...    print 'x =', x
-...    print 'y =', y
-...
-<type 'exceptions.Exception'>
-('spam', 'eggs')
-('spam', 'eggs')
-x = spam
-```
-
-函数内部的异常也能捕获：
-
-```
->>> def this_fails():
-...    x = 1/0
-...
->>> try:
-...    this_fails()
-... except ZeroDivisionError as detail:
-...    print 'Handling run-time error:', detail
-...
-Handling run-time error: integer division or modulo by zero
-```
-
-#### 抛出异常
-
-```
->>> raise NameError('HiThere')
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: HiThere
-```
-
-不处理异常，直接将异常抛出：
-
-```
->>> try:
-...    raise NameError('HiThere')
-... except NameError:
-...    print 'An exception flew by!'
-...    raise
-...
-An exception flew by!
-Traceback (most recent call last):
-  File "<stdin>", line 2, in <module>
-NameError: HiThere
-```
-
-#### 自定义异常
-
-```
->>> class MyError(Exception):
-...    def __init__(self, value):
-...        self.value = value
-...    def __str__(self):
-...        return repr(self.value)
-...
->>> try:
-...    raise MyError(2*2)
-... except MyError as e:
-...    print 'My exception occurred, value:', e.value
-...
-My exception occurred, value: 4
->>> raise MyError('oops!')
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-__main__.MyError: 'oops!'
-```
-
-重写了__init__方法，并且定义了一个value属性。
-一般定义异常的方式是这样的：
-
-```
-class Error(Exception):
-    """Base class for exceptions in this module."""
-    pass
-
-class InputError(Error):
-    """Exception raised for errors in the input.
-
-    Attributes:
-        expr -- input expression in which the error occurred
-        msg  -- explanation of the error
-    """
-
-    def __init__(self, expr, msg):
-        self.expr = expr
-        self.msg = msg
-
-class TransitionError(Error):
-    """Raised when an operation attempts a state transition that's not
-    allowed.
-
-    Attributes:
-        prev -- state at beginning of transition
-        next -- attempted new state
-        msg  -- explanation of why the specific transition is not allowed
-    """
-
-    def __init__(self, prev, next, msg):
-        self.prev = prev
-        self.next = next
-        self.msg = msg
-```
-
-#### 清理工作
-
-```
->>> try:
-...    raise KeyboardInterrupt
-... finally:
-...    print 'Goodbye, world!'
-...
-Goodbye, world!
-KeyboardInterrupt
-Traceback (most recent call last):
-  File "<stdin>", line 2, in <module>
-```
-
-finally总是会被执行，而且如果异常没有被处理的话，在finally里面的代码执行完后会被重新抛出。
-一个更复杂点的例子：
-
-```
->>> def divide(x, y):
-...    try:
-...        result = x / y
-...    except ZeroDivisionError:
-...        print "division by zero!"
-...    else:
-...        print "result is", result
-...    finally:
-...        print "executing finally clause"
-...
->>> divide(2, 1)
-result is 2
-executing finally clause
->>> divide(2, 0)
-division by zero!
-executing finally clause
->>> divide("2", "1")
-executing finally clause
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 3, in divide
-TypeError: unsupported operand type(s) for /: 'str' and 'str'
-```
-
-#### 预清理
-
-一定要带上with保证文件资源被释放
-
-```
-with open("myfile.txt") as f:
-    for line in f:
-        print line,
 ```

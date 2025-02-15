@@ -1,6 +1,10 @@
 ---
 title: "http2"
 date: 2019-11-25
+tags:
+  - HTTP
+  - Web Development
+  - Networking
 ---
 
 # HTTP/2 协议详解

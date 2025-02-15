@@ -1,6 +1,10 @@
 ---
 title: "出行小贴士"
 date: 2019-11-25
+tags:
+  - Travel
+  - Tips
+  - Life Hacks
 ---
 
 # 出行小贴士

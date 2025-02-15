@@ -1,6 +1,10 @@
 ---
 title: "python类和标准库"
 date: 2019-11-25
+tags:
+  - Python
+  - OOP
+  - Programming
 ---
 ### Python类
 
@@ -18,7 +22,7 @@ class MyClass:
 #### 引用类的属性和方法
 
 MyClass.i和 MyClass.f
-MyClass.__doc_ => “A simple example class”
+MyClass.__doc_ => "A simple example class"
 
 #### 定义init方法，设置默认属性
 

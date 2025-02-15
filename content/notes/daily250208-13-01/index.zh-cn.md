@@ -1,6 +1,10 @@
 ---
 title: "自学指南"
 date: 2019-11-25
+tags:
+  - Learning
+  - Education
+  - Self Study
 ---
 
 # 学习资源与推荐链接

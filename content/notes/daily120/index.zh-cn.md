@@ -1,6 +1,10 @@
 ---
 title: "redux实现"
 date: 2019-11-25
+tags:
+  - Redux
+  - JavaScript
+  - State Management
 ---
 
 # Redux 核心实现与中间件机制

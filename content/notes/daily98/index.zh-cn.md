@@ -1,6 +1,10 @@
 ---
 title: "感悟"
 date: 2019-11-25
+tags:
+  - Life Lessons
+  - Relationships
+  - Personal Growth
 ---
 
 1. 没有一见钟情的爱情，只有细水流深的亲情

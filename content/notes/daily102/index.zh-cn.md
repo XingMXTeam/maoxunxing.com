@@ -1,6 +1,10 @@
 ---
 title: "商业策略的两个阶段"
 date: 2019-11-25
+tags:
+  - Business Strategy
+  - Marketing
+  - Growth
 ---
 
 # 商业策略的两个阶段

@@ -1,6 +1,10 @@
 ---
 title: "读王垠博客后有感"
 date: 2019-11-25
+tags:
+  - Computer Science
+  - Programming
+  - Reflection
 ---
 
 # 数学与计算机科学的关系：重新审视基础与工具

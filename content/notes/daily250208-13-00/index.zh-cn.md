@@ -1,6 +1,10 @@
 ---
 title: "博客的常用网址备份"
 date: 2019-11-25
+tags:
+  - Tools
+  - Web Development
+  - Resources
 ---
 
 # 常用控制台与工具链接
