@@ -79,6 +79,23 @@ async function getRandomIllustration() {
             timeout: 60000
         });
 
+        // 随机点击 Next 按钮 1-10 次
+        const clickCount = Math.floor(Math.random() * 10) + 1;
+        for (let i = 0; i < clickCount; i++) {
+            console.log(`点击 Next 按钮 (${i + 1}/${clickCount})...`);
+            await page.waitForSelector('a.btn');
+            // 确保找到的按钮文本是 "Next"
+            const nextButton = await page.$('a.btn');
+            const buttonText = await page.evaluate(el => el.textContent.trim(), nextButton);
+            if (!buttonText.includes('Next')) {
+                console.log('未找到 Next 按钮，跳过点击');
+                break;
+            }
+            await nextButton.click();
+            // 使用 Promise 包装的 setTimeout 来等待
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+
         // 从 __NEXT_DATA__ 脚本中获取数据
         const illustrations = await page.evaluate(() => {
             const nextData = document.getElementById('__NEXT_DATA__');
@@ -182,20 +199,20 @@ async function generateCover(mdFilePath, outputPath) {
     const canvas = createCanvas(1200, 630);
     const ctx = canvas.getContext('2d');
 
-    // 设置背景色
-    ctx.fillStyle = '#ffffff';
+    // 设置背景色为浅灰色
+    ctx.fillStyle = '#f5f5f5';  // 修改为浅灰色背景
     ctx.fillRect(0, 0, 1200, 630);
 
     // 获取随机SVG并转换为PNG
     const svgBuffer = await getRandomIllustration();
     
-    // 使用 sharp 将 SVG 转换为 PNG
-    const pngBuffer = await sharp(svgBuffer, { density: 300 })  // 增加 density 以提高质量
+    // 使用 sharp 将 SVG 转换为 PNG，添加白色背景
+    const pngBuffer = await sharp(svgBuffer, { density: 300 })
         .resize(800, 400, {
             fit: 'contain',
-            background: { r: 255, g: 255, b: 255, alpha: 0 }
+            background: { r: 245, g: 245, b: 245, alpha: 1 }  // 确保图片背景与画布背景色一致
         })
-        .png()  // 明确指定输出格式
+        .png()
         .toBuffer();
 
     // 将PNG写入临时文件
@@ -212,14 +229,6 @@ async function generateCover(mdFilePath, outputPath) {
 
     // 删除临时文件
     fs.unlinkSync(tempPngPath);
-
-    // 添加装饰线
-    ctx.strokeStyle = '#e0e0e0';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(200, 480);
-    ctx.lineTo(1000, 480);
-    ctx.stroke();
 
     // 配置文字样式
     ctx.fillStyle = '#333333';
@@ -244,13 +253,21 @@ async function generateCover(mdFilePath, outputPath) {
     console.log(`封面图片已保存至 ${outputPath}`);
 }
 
-// 确保输出目录存在
-const outputDir = path.join(__dirname, '../output');
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
+// 在文件末尾添加
+module.exports = {
+    generateCover
+};
 
-generateCover(
-    path.join(__dirname, '../content/posts/weekly6/index.zh-cn.md'),
-    path.join(outputDir, 'cover.png')
-).catch(console.error);
+// 如果直接运行此文件，则生成示例封面
+if (require.main === module) {
+    // 确保输出目录存在
+    const outputDir = path.join(__dirname, '../output');
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    generateCover(
+        path.join(__dirname, '../content/posts/weekly6/index.zh-cn.md'),
+        path.join(outputDir, 'cover.png')
+    ).catch(console.error);
+}
