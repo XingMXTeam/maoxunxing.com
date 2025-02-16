@@ -7,16 +7,12 @@ tags:
   - Debugging
   - Error Handling
 ---
-
-# 错误信息分析与解决方案
-
 在使用 `graceful-fs` 模块时，可能会遇到以下错误：
-
----
 
 ## 错误描述
 
 ### 错误 1
+
 ```
 error in ../dida-chc-app/node_modules/graceful-fs/graceful-fs.js
 
@@ -24,6 +20,7 @@ Module not found: Error: Can't resolve 'fs' in '/Users/maoxunxing/arise/dida-chc
 ```
 
 ### 错误 2
+
 ```
 error in ../dida-chc-app/node_modules/graceful-fs/legacy-streams.js
 
@@ -31,6 +28,7 @@ Module not found: Error: Can't resolve 'stream' in '/Users/maoxunxing/arise/dida
 ```
 
 ### 错误提示
+
 ```
 BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.
 This is no longer the case. Verify if you need this module and configure a polyfill for it.
@@ -58,6 +56,7 @@ This is no longer the case. Verify if you need this module and configure a polyf
 ## 解决方案
 
 ### 方法 1：检查依赖并移除不必要的模块
+
 - **步骤**：
   1. 检查项目的 `package.json` 文件，确认是否直接或间接引入了 `graceful-fs`。
   2. 如果该模块仅用于 Node.js 环境，而你的项目是浏览器应用，则需要移除相关依赖。
@@ -68,6 +67,7 @@ This is no longer the case. Verify if you need this module and configure a polyf
   4. 如果发现某些依赖项错误地引入了 `graceful-fs`，可以尝试升级或替换这些依赖。
 
 ### 方法 2：为 Webpack 添加 polyfill
+
 - **步骤**：
   1. 安装必要的 polyfill 包：
      ```bash
@@ -93,6 +93,7 @@ This is no longer the case. Verify if you need this module and configure a polyf
      ```
 
 ### 方法 3：使用 `browser` 字段排除 Node.js 模块
+
 - **步骤**：
   1. 在项目的 `package.json` 中添加 `browser` 字段，明确排除不适用于浏览器的模块：
      ```json
@@ -106,6 +107,7 @@ This is no longer the case. Verify if you need this module and configure a polyf
   2. 这样可以告诉打包工具忽略这些模块，避免报错。
 
 ### 方法 4：升级依赖版本
+
 - **步骤**：
   1. 检查 `graceful-fs` 的版本是否过旧。如果是，请升级到最新版本：
      ```bash
@@ -118,6 +120,7 @@ This is no longer the case. Verify if you need this module and configure a polyf
 ## 补充说明
 
 ### 为什么会出现这种问题？
+
 - **历史背景**：
   - 在 Webpack 4 及更早版本中，默认会为 Node.js 核心模块提供 polyfill，因此即使在浏览器环境中使用这些模块也不会报错。
   - Webpack 5 移除了这一默认行为，目的是减少不必要的体积膨胀，并鼓励开发者显式处理环境差异。
@@ -131,3 +134,5 @@ This is no longer the case. Verify if you need this module and configure a polyf
 ## 总结
 
 通过以上方法，你可以有效解决 `graceful-fs` 模块引发的 `Module not found` 错误。建议优先检查依赖树，移除不必要的模块；如果必须使用这些模块，则通过 Webpack 配置或 polyfill 提供支持。
+
+

@@ -1,21 +1,22 @@
 ---
-title: "mobx"
+title: "MobX状态管理指南"
 date: 2019-11-25
----
-
-# MobX 状态管理指南
-
 ---
 
 ## 目录
 
-1. [MobX 版本](#mobx-版本)
-2. [设计哲学](#设计哲学)
-3. [核心概念](#核心概念)
-   - [可观察的状态（@observable）](#可观察的状态observable)
-   - [计算值（@computed）](#计算值computed)
-   - [反应（@observer 和 autorun）](#反应observer-和-autorun)
-4. [代码示例](#代码示例)
+- [目录](#目录)
+- [MobX 版本](#mobx-版本)
+- [设计哲学](#设计哲学)
+- [核心概念](#核心概念)
+  - [可观察的状态（@observable）](#可观察的状态observable)
+  - [计算值（@computed）](#计算值computed)
+  - [反应（@observer 和 autorun）](#反应observer-和-autorun)
+- [代码示例](#代码示例)
+  - [示例代码](#示例代码)
+  - [运行逻辑](#运行逻辑)
+- [自定义反应：`autorun`](#自定义反应autorun)
+  - [特点](#特点)
 
 ---
 

@@ -7,13 +7,12 @@ tags:
   - 错误处理
 ---
 
-# 错误信息与解决方案
-
----
+错误信息与解决方案
 
 ## **1. 错误信息**
 
 ### **错误描述**
+
 在启动开发服务器时遇到以下错误：
 
 ```shell
@@ -31,9 +30,11 @@ node_modules/_@alife_ae-data-util@0.0.7-beta.1642998062985@@alife/ae-data-util/l
 ## **2. 解决方案**
 
 ### **修改 `tsconfig.json` 文件**
+
 将 `tsconfig.json` 中的 `jsx` 配置从 `"react-jsx"` 修改为 `"react"`。
 
 #### **修改后的配置**
+
 ```json
 {
   "compilerOptions": {

@@ -1,14 +1,10 @@
 ---
-title: "Git"
+title: "Git 常用技巧与案例"
 date: 2019-11-25
 tags:
   - Git
   - Version Control
   - Development Tools
----
-
-# Git 常用技巧与案例
-
 ---
 
 ## **1. 提交时自动去掉 pre-commit 钩子**
@@ -43,9 +39,11 @@ tags:
 ## **4. Cherry Pick**
 
 ### **功能**
+
 - 将另一个分支的一系列变更应用到当前分支。
 
 ### **常用命令**
+
 - 应用单个提交：
   ```bash
   git cherry-pick <hasha>
@@ -70,9 +68,11 @@ tags:
 ## **6. 案例：快速止血发布版本问题**
 
 ### **场景**
+
 - 当发布的版本（某个 tag）有问题时，如何快速修复？
 
 ### **解决方案**
+
 - 将 tag 指向一个好的版本。
 - 示例参考：[Alibaba Fusion Next Issue #4740](https://github.com/alibaba-fusion/next/issues/4740)
 
@@ -88,4 +88,3 @@ tags:
   - 该命令会将所有提交记录的作者信息统一修改为指定值。
 
 ---
-

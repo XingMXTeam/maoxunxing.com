@@ -7,19 +7,16 @@ tags:
   - 调试
 ---
 
-
-# React 错误：Maximum Update Depth Exceeded
-
----
-
 ## **1. 错误描述**
 
 ### **错误信息**
+
 ```
 Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
 ```
 
 ### **问题原因**
+
 - 一个 React 组件内嵌了其他 React 组件。
 - 其他组件在 `useEffect` 中调用了 `setState` 或 `field.setValue` 等更新状态的操作。
 - 导致其他组件进入循环更新状态。
@@ -29,6 +26,7 @@ Maximum update depth exceeded. This can happen when a component repeatedly calls
 ## **2. 解决办法**
 
 ### **解决方案**
+
 将嵌套的其他组件移出到单独的文件中定义，避免因嵌套导致的状态更新冲突。
 
 ---
@@ -36,6 +34,7 @@ Maximum update depth exceeded. This can happen when a component repeatedly calls
 ## **3. 示例说明**
 
 ### **问题场景**
+
 ```jsx
 function ParentComponent() {
   return (
@@ -57,9 +56,11 @@ function ChildComponent() {
 ```
 
 ### **解决后代码**
+
 将 `ChildComponent` 移动到单独的文件中定义：
 
 **ChildComponent.js**
+
 ```jsx
 import React, { useState, useEffect } from 'react';
 
@@ -77,6 +78,7 @@ export default ChildComponent;
 ```
 
 **ParentComponent.js**
+
 ```jsx
 import React from 'react';
 import ChildComponent from './ChildComponent';

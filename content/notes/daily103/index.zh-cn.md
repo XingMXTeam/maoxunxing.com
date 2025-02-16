@@ -1,15 +1,11 @@
 ---
-title: "目标"
+title: "成功的关键：目标与专注"
 date: 2019-11-25
 tags:
   - Goals
   - Success
   - Motivation
   - Personal Growth
----
-
-# 成功的关键：目标与专注
-
 ---
 
 ## **1. 目标的重要性**

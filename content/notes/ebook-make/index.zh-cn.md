@@ -7,17 +7,14 @@ tags:
   - 教程
 ---
 
-# 使用 Pandoc 导出 Markdown 文件并用 Sigil 制作电子书封面和作者信息
-
 本文将介绍如何使用 **Pandoc** 导出 Markdown 文件，并通过 **Sigil** 制作电子书的封面和作者信息。以下是详细步骤：
-
----
 
 ## 1. 使用 Pandoc 导出 Markdown 文件
 
 在制作电子书之前，首先需要准备好内容文件。推荐使用 **Pandoc** 将文档转换为 Markdown 格式。
 
 ### 常用命令示例
+
 ```bash
 pandoc input.docx -o output.md
 ```
@@ -32,7 +29,9 @@ pandoc input.docx -o output.md
 ## 2. 使用 Sigil 制作封面和作者信息
 
 ### 2.1 设置 Sigil 的语言为中文
+
 为了更方便操作，可以将 Sigil 的界面语言设置为中文：
+
 1. 打开 Sigil。
 2. 点击菜单栏中的「偏好设置」。
 3. 在语言选项中选择「中文」，然后重启 Sigil。
@@ -42,8 +41,9 @@ pandoc input.docx -o output.md
 ---
 
 ### 2.2 编辑元数据（作者、标题等信息）
+
 1. 点击菜单栏上的「工具」，选择「元数据编辑器」。
-   
+
    ![打开元数据编辑器](https://pic1.zhimg.com/80/v2-32d42d713ae5dff16ca6c61dab9c6d10_1440w.webp)
 
 2. 在元数据编辑器界面中，点击右侧的「添加元数据」按钮，填写以下信息：
@@ -60,9 +60,10 @@ pandoc input.docx -o output.md
 ---
 
 ### 2.3 添加封面图片
+
 1. 在左侧的文件浏览器中，选择「Image」文件夹。
 2. 点击左上角的绿色「+」号，导入你准备好的封面图片。
-   
+
    ![添加封面图片](https://pic3.zhimg.com/80/v2-28ce5e5101665ddadfe3371d64061a82_1440w.webp)
 
 3. 点击菜单栏中的「工具」，选择「添加封面」。
@@ -71,11 +72,13 @@ pandoc input.docx -o output.md
 ---
 
 ### 2.4 预览封面效果
+
 完成上述步骤后，可以在右侧的预览界面查看封面效果。
 
 ![封面预览](https://pic4.zhimg.com/80/v2-7e8ccc8f040e88d0b38bf01d02e08fff_1440w.webp)
 
 如果你暂时没有设计封面，可以使用以下在线工具快速生成：
+
 - [O'RAY 风格封面生成器](https://orly.nanmu.me/)
 
 ---
@@ -90,6 +93,7 @@ pandoc input.docx -o output.md
 ## 总结
 
 通过以上步骤，你可以轻松地使用 **Pandoc** 和 **Sigil** 制作一本包含封面和作者信息的电子书。以下是关键点回顾：
+
 - 使用 Pandoc 将文档转换为 Markdown 格式。
 - 在 Sigil 中设置元数据（标题、作者等）。
 - 添加封面图片并预览效果。

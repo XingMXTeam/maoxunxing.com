@@ -3,10 +3,6 @@ title: "Can‘t verify the user is human. Please try again."
 date: 2025-02-10
 ---
 
-# Cloudflare CAPTCHA 问题：无法验证用户为人类
-
----
-
 ## **1. 问题描述**
 
 在使用 Cloudflare CAPTCHA 时，可能会遇到以下提示：
@@ -22,10 +18,12 @@ Can't verify the user is human. Please try again.
 ## **2. 解决办法**
 
 ### **2.1 重置浏览器设置**
+
 - 尝试重置浏览器的设置，以解决可能由浏览器配置或缓存引起的问题。
 - 具体操作步骤因浏览器而异，通常可以在浏览器的设置菜单中找到“恢复默认设置”或“清除缓存和 Cookie”的选项。
 
 ### **2.2 示例图片**
+
 以下是重置浏览器设置的参考图片：
 ![重置浏览器设置](image.png)
 

@@ -5,10 +5,6 @@ tags:
   - NodeJS
 ---
 
-# 调试 Node.js 程序
-
----
-
 ## **1. 调试步骤**
 
 ### **第一步：启动 Inspector**
@@ -44,4 +40,5 @@ Debugger attached.
 参考官方文档以了解更多调试技巧和配置方法：
 
 - [Node.js 官方调试指南](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+
 ```

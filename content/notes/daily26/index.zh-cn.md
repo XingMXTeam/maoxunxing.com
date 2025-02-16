@@ -1,15 +1,11 @@
 ---
-title: "市场经济的基石就是这句话"
+title: "市场经济的基石"
 date: 2019-11-25
 tags:
   - Economics
   - Market Economy
   - Business
   - Principles
----
-
-# 市场经济的基石
-
 ---
 
 ## **核心观点**

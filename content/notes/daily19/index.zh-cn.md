@@ -1,14 +1,11 @@
 ---
-title: "Vuex"
+title: "Vuex 核心概念与工作原理"
 date: 2019-11-25
 tags:
   - Vue.js
   - JavaScript
   - State Management
   - Frontend Development
----
-# Vuex 核心概念与工作原理
-
 ---
 
 ## 1. 创建 Vuex Store 实例
@@ -48,7 +45,3 @@ tags:
 ### 总结
 
 Vuex 的核心是通过 `new Vuex.Store` 创建一个全局的状态管理实例，并将其实例注入到 Vue 根实例中。这样，所有组件都可以通过 `this.$store` 访问和操作全局状态、提交 mutations、触发 actions 或使用 getters。这种设计使得状态管理更加集中化和可维护。
-
-
-
-

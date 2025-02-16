@@ -2,11 +2,8 @@
 title: "Steps妙用"
 date: 2019-11-25
 ---
-# CSS3 中 `steps()` 的妙用
 
 `steps()` 是 CSS3 中的一个强大功能，用于实现帧动画效果。它通过将动画分割为多个离散的步骤，从而模拟逐帧动画的效果。
-
----
 
 ## 语法
 
@@ -32,15 +29,19 @@ animation-timing-function: steps(<number_of_steps>, <direction>);
 ## 使用场景
 
 ### 1. 帧动画效果
+
 `steps()` 最常见的用途是实现逐帧动画。例如，通过一张雪碧图（Sprite Sheet），可以轻松实现帧动画。
 
 #### 示例代码
+
 HTML:
+
 ```html
 <div class="frame-animation"></div>
 ```
 
 CSS:
+
 ```css
 .frame-animation {
   width: 100px;
@@ -60,21 +61,26 @@ CSS:
 ```
 
 #### 效果
+
 - 动画会在 1 秒内完成 4 帧的变化，每一帧停留 0.25 秒。
 - 雪碧图的每一帧会依次显示，形成连续的动画效果。
 
 ---
 
 ### 2. 打字机效果
+
 `steps()` 还可以用来实现打字机效果，逐字显示文本。
 
 #### 示例代码
+
 HTML:
+
 ```html
 <div class="typewriter">Hello, World!</div>
 ```
 
 CSS:
+
 ```css
 .typewriter {
   width: 0;
@@ -104,6 +110,7 @@ CSS:
 ```
 
 #### 效果
+
 - 文本会逐字显示，仿佛打字机在输入内容。
 - 光标会以固定的频率闪烁，增强视觉效果。
 

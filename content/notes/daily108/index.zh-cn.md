@@ -8,8 +8,6 @@ tags:
   - Architecture
 ---
 
-# 什么是响应式编程
-
 不用响应式编程：
 
 ```javascript

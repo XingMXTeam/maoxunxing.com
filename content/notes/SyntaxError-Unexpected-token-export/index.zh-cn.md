@@ -3,10 +3,6 @@ title: "SyntaxError Unexpected Token Export"
 date: 2021-12-01T14:53:11+08:00
 ---
 
-# SyntaxError: Unexpected Token Export
-
----
-
 ## **1. 错误描述**
 
 - **错误信息**：
@@ -28,6 +24,7 @@ date: 2021-12-01T14:53:11+08:00
 ## **3. 解决方案**
 
 ### **方法 1：检查文件扩展名**
+
 - 确保使用 ES6 模块的文件扩展名为 `.mjs` 或在 `package.json` 中明确指定模块类型：
   ```json
   {
@@ -36,6 +33,7 @@ date: 2021-12-01T14:53:11+08:00
   ```
 
 ### **方法 2：修改导出语法**
+
 - 如果运行环境不支持 ES6 模块，可以将 `export` 替换为 CommonJS 的 `module.exports`：
   ```javascript
   // ES6 模块
@@ -46,6 +44,7 @@ date: 2021-12-01T14:53:11+08:00
   ```
 
 ### **方法 3：配置 Babel**
+
 - 如果需要兼容旧版 JavaScript，可以通过 Babel 转译代码：
   1. 安装 Babel 相关依赖：
      ```shell
@@ -59,6 +58,7 @@ date: 2021-12-01T14:53:11+08:00
      ```
 
 ### **方法 4：检查构建工具配置**
+
 - 如果使用 Webpack、Rollup 等构建工具，确保正确配置了模块解析规则。例如，在 Webpack 中添加以下配置：
   ```javascript
   module.exports = {
@@ -98,4 +98,5 @@ date: 2021-12-01T14:53:11+08:00
 - [Node.js Modules Documentation](https://nodejs.org/api/esm.html)
 - [Babel Official Documentation](https://babeljs.io/docs/en/)
 - [Webpack Configuration Guide](https://webpack.js.org/configuration/)
+
 ```

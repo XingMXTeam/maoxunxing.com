@@ -1,14 +1,10 @@
 ---
-title: "readme"
+title: "快速查看 README 和安装 npm 包"
 date: 2021-12-01T14:53:11+08:00
 tags:
   - npm
   - CLI
   - Documentation
----
-
-# 快速查看 README 和安装 npm 包
-
 ---
 
 ## **1. 快速查看 README**

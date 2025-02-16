@@ -2,15 +2,10 @@
 title: "产品评价与设计资源"
 date: 2019-11-25
 ---
- 
-
-# 产品评价与设计资源
-
----
-
 ## **1. 如何评价产品**
 
 ### **核心维度**
+
 - **价值性**：
   - 解决实际问题。
   - 提升用户体验。
@@ -21,6 +16,7 @@ date: 2019-11-25
   - 视觉设计。
 
 ### **工作流程建议**
+
 - 先从产品业务理清楚目前的工作流程，才能看技术上有什么产出。
   - 示例：从业务模型到分层架构。
 
@@ -36,6 +32,7 @@ date: 2019-11-25
 ## **3. 设计灵感与工具**
 
 ### **设计文章与指南**
+
 - **Hero Section 设计**：
   - [如何创建一个优秀的网站 Hero Section](https://medium.muz.li/how-to-create-a-great-website-hero-section-f22ec2f6e86a)
 - **色彩规则**：
@@ -48,6 +45,7 @@ date: 2019-11-25
   - [行长度对可读性的影响](https://baymard.com/blog/line-length-readability)
 
 ### **设计工具**
+
 - **JS.Design**：
   - 好用的设计工具，推荐尝试。
 - **Clueify**：
@@ -56,6 +54,7 @@ date: 2019-11-25
   - 快速生成设计稿的工具。
 
 ### **画图工具**
+
 - [OmniGraffle](https://www.omnigroup.com/)  
   - 强大的画图工具，适合流程图和原型设计。
 - [Canva](https://www.canva.com/)  

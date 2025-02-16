@@ -6,9 +6,6 @@ tags:
   - Language Learning
   - Education
 ---
-# 英语学习方法与实践
-
----
 
 ## **1. 方法论**
 

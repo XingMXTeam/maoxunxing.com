@@ -1,5 +1,5 @@
 ---
-title: "redux实现"
+title: "redRedux 核心实现与中间件机制"
 date: 2019-11-25
 tags:
   - Redux
@@ -7,11 +7,7 @@ tags:
   - State Management
 ---
 
-# Redux 核心实现与中间件机制
-
 以下是 Redux 的核心实现以及中间件机制的代码整理，包含应用层、Reducer、`createStore` 和 `applyMiddleware` 的详细说明。
-
----
 
 ## 1. 应用层代码
 
@@ -131,14 +127,17 @@ function logger(next) {
 ## 6. 工作流程总结
 
 ### 1. 创建 Store
+
 - 使用 `createStore` 创建 Store，传入 Reducer 和初始状态。
 - Store 提供了 `getState`、`subscribe` 和 `dispatch` 方法。
 
 ### 2. 增强 Store
+
 - 使用 `applyMiddleware` 对 `createStore` 进行增强，添加中间件支持。
 - 中间件通过 `reduceRight` 组合，形成一个新的 `dispatch` 方法。
 
 ### 3. 状态更新流程
+
 1. 调用 `store.dispatch(action)`。
 2. 中间件依次执行，处理 Action。
 3. 最终调用 Reducer 更新状态。
@@ -149,14 +148,18 @@ function logger(next) {
 ## 7. 关键点补充
 
 ### 1. 中间件的作用
+
 中间件可以：
+
 - 在 `dispatch` 前后插入日志记录、错误捕获等逻辑。
 - 支持异步操作（如 Redux Thunk 或 Redux Saga）。
 
 ### 2. `reduceRight` 的作用
+
 - `reduceRight` 从右到左依次组合中间件，确保中间件的执行顺序是从外到内。
 
 ### 3. `Object.assign` 的替代写法
+
 在现代 JavaScript 中，可以使用对象展开运算符替代 `Object.assign`：
 
 ```javascript
@@ -171,6 +174,7 @@ return {
 ## 8. 总结
 
 以上代码展示了 Redux 的核心实现和中间件机制，包括：
+
 1. **`createStore`**：管理状态的核心方法。
 2. **`applyMiddleware`**：通过中间件增强 `dispatch` 功能。
 3. **Reducer**：纯函数，用于计算新状态。
