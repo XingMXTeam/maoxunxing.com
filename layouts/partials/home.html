@@ -8,7 +8,7 @@
       
       <!-- 金庸名句 -->
       <div class="quote">
-        <p>金庸：孤峰渡云观神弈，不若舍躯自入局</p>
+        <p>孤峰渡云观神弈，不若舍躯自入局</p>
       </div>
       
       <!-- 关键词标签 -->
@@ -29,8 +29,6 @@
         </p>
       </div>
     </div>
-
-    {{ partial "mailing-list-home.html" . }}
     
     <div class="lists">
       <h2>{{ i18n "homeCat0" }}</h2>
@@ -46,60 +44,6 @@
           </li>
         {{ end }}
       </ul>
-      <!-- <div>
-        <h2>Most Popular Articles</h2>
-
-        <ul>
-          <li><a href="/">None</a></li>
-        </ul>
-      </div> -->
-      <div>
-        <h2>{{ i18n "homeCat1" }}</h2>
-        <ul>
-          <li>
-            <a
-              href="/{{ .Site.Language.Lang }}/detect-cycle-in-an-undirected-graph/"
-              >{{ T "homeCat1Article1" }}</a
-            >
-          </li>
-          <li>
-            <a
-              href="/{{ .Site.Language.Lang }}/find-the-total-number-of-unique-bsts-of-n/"
-              >{{ T "homeCat1Article2" }}</a
-            >
-          </li>
-          <!--  <li><a href="/human-code-reviews-1/">How to Do Code Reviews Like a Human</a></li>
-          <li><a href="/good-developers-bad-tests/">Why Good Developers Write Bad Unit Tests</a></li>
-          <li><a href="/painless-web-app-testing/">End-to-End Testing Web Apps: The Painless Way</a></li> -->
-        </ul>
-      </div>
-
-      <div>
-        <h2>{{ i18n "homeCat2" }}</h2>
-        <ul>
-          <!-- <li>
-            <a href="/{{ .Site.Language.Lang }}/why-front-end-engineer/"
-              >{{ T "homeCat2Article1" }}</a
-            >
-          </li> -->
-          <li>
-            <a href="/{{ .Site.Language.Lang }}/how-to-be-different/"
-              >{{ T "homeCat2Article2" }}</a
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- <div>
-        <h2>{{ i18n "homeCat2" }}</h2>
-        <ul>
-          <li><a href="/{{ .Site.Language.Lang }}/how-to-improve/">{{ T "homeCat2Article1" }}</a></li>
-          <li><a href="/{{ .Site.Language.Lang }}/how-to-improve2/">{{ T "homeCat2Article2" }}</a></li>
-          <li><a href="/{{ .Site.Language.Lang }}/how-to-improve4/">{{ T "homeCat2Article3" }}</a></li>
-          <li><a href="/{{ .Site.Language.Lang }}/how-to-improve5/">{{ T "homeCat2Article4" }}</a></li>
-          <li><a href="/{{ .Site.Language.Lang }}/how-to-improve3/">{{ T "homeCat2Article5" }}</a></li>
-        </ul>
-      </div> -->
-      <div></div>
     </div>
   </div>
 </section>
