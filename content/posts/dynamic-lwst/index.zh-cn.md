@@ -2,80 +2,175 @@
 title: "搜索引擎的拼写纠错功能-莱文斯坦距离"
 date: 2023-06-23T20:46:15+08:00
 tags:
-- 算法
+    - 算法
 description: "拼写纠错功能一直没发现，原来是通过莱文斯坦距离计算的！"
 images:
-- dynamic-lwst/nerdgirl.png
+    - dynamic-lwst/nerdgirl.png
 ---
-## 案例
 
-给定两个字符串，如何量化他们的相似度。 这里引出了“编辑距离”这个概念，就是将一个字符串转为另一个字符串，需要的最小的编辑操作次数。编辑次数
-越少，则相似度越高。 比如我们有两个字符串： mitcmu 和 mtacnu. 他们的编辑距离是多少？
+## 问题描述
 
-## 分析
+在自然语言处理、文本匹配等领域，我们经常需要量化两个字符串的相似度。一个常用的指标是 **编辑距离**（Edit Distance），它表示将一个字符串转换为另一个字符串所需的最小编辑操作次数。编辑操作包括：
+- **插入**：在字符串中插入一个字符。
+- **删除**：从字符串中删除一个字符。
+- **替换**：将字符串中的某个字符替换为另一个字符。
 
-一种方式还是列出所有的可能，通过回溯算法实现：
-如果a[i]和a[j]匹配，则递归考察a[i+1]和b[j+1]  
-如果a[i]和b[j]不匹配，则有多个处理方式  
-1、删除a[i]，递归考察a[i]和b[j+1],或者 删除b[j]，递归考察a[i+1]和b[j]  
-2、添加：在a[i]前面添加一个与b[j]相同的字符，然后递归考虑a[i]和b[j+1]；或者在b[j]前面添加一个与a[i]相等的字符，然后递归考察a[i+1]和b[j]  
-3、替换：将a[i]替换成b[j]，或者将b[j]替换成a[i]，然后递归考察a[i+1]和b[j+1]  
+编辑距离越小，说明两个字符串越相似。
 
-这种方式是采用回溯算法，时间复杂度较高。我们对f(i,j,edit_dist)画出递归树，发现出现重复子节点，说明可以优化。
-怎么优化，对于(i,j)相同的节点，我们只需要保留edit_dist更小的节点继续递归，其他节点可以舍弃。因此状态就从(i,j,edit_dist)变成了(i,j,min_edit_dist)。
-min_edit_dist也就是我们的最小编辑操作次数，也就是a[0,i-1]转换为b[0,j-1]字符串的最小编辑次数。另外，通过递归树，我们发现，状态(i,j)可以从(i-1,j)、
-(i, j - 1), (i-1, j-1)任意一个状态中转移过来。 
+---
 
-{{< img src="img.png" alt="bg" maxWidth="960px" align="center" caption="递归树" >}}
+### 示例
+给定两个字符串 `mitcmu` 和 `mtacnu`，它们的编辑距离是多少？
 
-+ 如果S的第i个字符等于T的第j个字符，则不需要进行任何操作，因此minDist[i][j] = minDist[i-1][j-1]。
-+ 如果S的第i个字符不等于T的第j个字符，则可以进行以下三种操作之一：
-  + 插入（Insertion）：在S的第i个字符后插入T的第j个字符，这样S的前i个字符与T的前j+1个字符相等，因此minDist[i][j] = minDist[i][j-1] + 1。
-  + 删除（Deletion）：删除S的第i个字符，这样S的前i-1个字符与T的前j个字符相等，因此minDist[i][j] = minDist[i-1][j] + 1。
-  + 替换（Substitution）：将S的第i个字符替换为T的第j个字符，这样S的前i个字符与T的前j个字符相等，因此minDist[i][j] = minDist[i-1][j-1] + 1。
+---
 
-写出状态转移方程就是：  
+## 解决思路
 
-如果a[i-1] != b[j-1], 则minDist[i,j] = Min(minDist(i-1,j)+1, minDist(i,j-1)+1, minDist(i-1,j-1)+1)  
-如果a[i-1] == b[j-1], 则minDist[i,j] = minDist(i-1,j-1)
+### 回溯算法
+一种直观的解决方法是通过回溯算法，枚举所有可能的操作序列，找到最小的编辑距离。具体步骤如下：
+1. 如果 `a[i] == b[j]`，则无需操作，递归考察 `a[i+1]` 和 `b[j+1]`。
+2. 如果 `a[i] != b[j]`，可以进行以下操作之一：
+   - **删除**：删除 `a[i]` 或 `b[j]`，然后递归考察剩余部分。
+   - **插入**：在 `a[i]` 前插入与 `b[j]` 相同的字符，或在 `b[j]` 前插入与 `a[i]` 相同的字符。
+   - **替换**：将 `a[i]` 替换为 `b[j]` 或将 `b[j]` 替换为 `a[i]`。
 
-翻译成代码就是：
+这种方法的时间复杂度较高，因为会重复计算相同的子问题。
+
+---
+
+### 动态规划优化
+为了避免重复计算，我们可以使用动态规划来优化回溯算法。定义状态 `minDist[i][j]` 表示将字符串 `a[0...i-1]` 转换为字符串 `b[0...j-1]` 所需的最小编辑距离。
+
+#### 状态转移方程
+1. 如果 `a[i-1] == b[j-1]`，则无需操作：
+   \[
+   minDist[i][j] = minDist[i-1][j-1]
+   \]
+2. 如果 `a[i-1] != b[j-1]`，可以选择以下三种操作之一：
+   - **插入**：`minDist[i][j] = minDist[i][j-1] + 1`
+   - **删除**：`minDist[i][j] = minDist[i-1][j] + 1`
+   - **替换**：`minDist[i][j] = minDist[i-1][j-1] + 1`
+
+综合上述两种情况，状态转移方程为：
+\[
+minDist[i][j] =
+\begin{cases} 
+minDist[i-1][j-1], & \text{if } a[i-1] == b[j-1] \\
+\min(minDist[i-1][j]+1, minDist[i][j-1]+1, minDist[i-1][j-1]+1), & \text{if } a[i-1] \neq b[j-1]
+\end{cases}
+\]
+
+---
+
+### 初始条件
+1. 将空字符串转换为目标字符串时，编辑距离等于目标字符串的长度：
+   \[
+   minDist[i][0] = i \quad (i = 0, 1, ..., n)
+   \]
+   \[
+   minDist[0][j] = j \quad (j = 0, 1, ..., m)
+   \]
+
+---
+
+## 实现代码
+
+以下是基于动态规划的 JavaScript 实现：
 
 ```js
+/**
+ * 计算两个字符串的编辑距离
+ * @param {string} a 字符串A
+ * @param {number} n 字符串A的长度
+ * @param {string} b 字符串B
+ * @param {number} m 字符串B的长度
+ * @returns {number} 最小编辑距离
+ */
 function lwstDP(a, n, b, m) {
+    // 初始化二维数组 minDist
     const minDist = new Array(n + 1);
     for (let i = 0; i < n + 1; i++) {
         minDist[i] = new Array(m + 1);
-        minDist[i][0] = i;
+        minDist[i][0] = i; // 将空字符串转换为a[0...i-1]的编辑距离
     }
-
     for (let j = 0; j < m + 1; j++) {
-        minDist[0][j] = j;
+        minDist[0][j] = j; // 将空字符串转换为b[0...j-1]的编辑距离
     }
 
+    // 动态规划填表
     for (let i = 1; i < n + 1; i++) {
         for (let j = 1; j < m + 1; j++) {
             if (a[i - 1] === b[j - 1]) {
+                // 字符相等，无需操作
                 minDist[i][j] = minOfThree(
-                    minDist[i - 1][j] + 1,
-                    minDist[i][j - 1] + 1,
-                    minDist[i - 1][j - 1]
+                    minDist[i - 1][j] + 1, // 删除
+                    minDist[i][j - 1] + 1, // 插入
+                    minDist[i - 1][j - 1]  // 不操作
                 );
             } else {
+                // 字符不等，取最小操作
                 minDist[i][j] = minOfThree(
-                    minDist[i - 1][j] + 1,
-                    minDist[i][j - 1] + 1,
-                    minDist[i - 1][j - 1] + 1
+                    minDist[i - 1][j] + 1, // 删除
+                    minDist[i][j - 1] + 1, // 插入
+                    minDist[i - 1][j - 1] + 1 // 替换
                 );
             }
         }
     }
 
-    return minDist[n][m];
+    return minDist[n][m]; // 返回最终结果
 }
 
+/**
+ * 辅助函数：返回三个数中的最小值
+ * @param {number} n1 第一个数
+ * @param {number} n2 第二个数
+ * @param {number} n3 第三个数
+ * @returns {number} 最小值
+ */
 function minOfThree(n1, n2, n3) {
     return Math.min(n1, Math.min(n2, n3));
 }
-
 ```
+
+---
+
+## 示例运行
+
+### 输入
+```js
+const a = "mitcmu";
+const b = "mtacnu";
+const n = a.length;
+const m = b.length;
+
+console.log(lwstDP(a, n, b, m)); // 输出：3
+```
+
+### 输出
+```
+3
+```
+
+### 解释
+将 `mitcmu` 转换为 `mtacnu` 的最小编辑距离为 3，可以通过以下操作实现：
+1. 替换 `i` 为 `t`。
+2. 替换 `c` 为 `a`。
+3. 替换 `m` 为 `n`。
+
+---
+
+## 复杂度分析
+
+1. **时间复杂度**：
+   - 动态规划表的大小为 `(n+1) x (m+1)`，每个状态的计算时间为 O(1)。
+   - 总时间复杂度为 O(n * m)，其中 `n` 和 `m` 分别为两个字符串的长度。
+
+2. **空间复杂度**：
+   - 使用了一个二维数组 `minDist`，空间复杂度为 O(n * m)。
+
+---
+
+## 总结
+
+通过动态规划的方法，我们将原本指数级复杂度的问题优化为多项式复杂度，大大提高了计算效率。编辑距离问题不仅适用于字符串相似度计算，还可以应用于拼写检查、DNA序列比对等领域。
