@@ -43,9 +43,8 @@ blockquote {
     rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
   position: sticky;
   background: #fafafa; */
-  /* top: 0;
+  /* top: 0; */
   height: 7rem;
-  z-index: 99; */
 }
 
 @media (min-width: 1025px) {
