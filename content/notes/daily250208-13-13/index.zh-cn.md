@@ -5,7 +5,6 @@ date: 2019-11-25
 
 ## 目录
 
-- [目录](#目录)
 - [Terminal 翻页快捷键](#terminal-翻页快捷键)
 - [Linux 命令行帮助工具](#linux-命令行帮助工具)
   - [TLDR Pages](#tldr-pages)

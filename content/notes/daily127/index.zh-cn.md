@@ -9,7 +9,6 @@ tags:
 
 ## 目录
 
-- [目录](#目录)
 - [Immutable 的核心概念](#immutable-的核心概念)
   - [什么是 Immutable？](#什么是-immutable)
   - [常见的 Immutable 数据结构](#常见的-immutable-数据结构)
