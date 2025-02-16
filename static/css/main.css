@@ -44,7 +44,7 @@ blockquote {
   position: sticky;
   background: #fafafa; */
   /* top: 0; */
-  height: 7rem;
+  /* height: 7rem; */
 }
 
 @media (min-width: 1025px) {
