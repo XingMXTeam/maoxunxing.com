@@ -1,5 +1,5 @@
 ---
-title: "Typescript类型报错"
+title: "Typescript类型实践"
 date: 2021-12-22T18:06:49+08:00
 tags:
   - TypeScript
@@ -57,3 +57,20 @@ declare module "js-cookie" {
 - [Could not find a declaration file for module 'module-name'](https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam)
 
 ---
+
+## declare const window: any; 文件内部声明window
+
+## 全局变量声明
+
+本地创建一个文件`declaration.d.ts` 或者 `global.d.ts`
+
+```ts
+declare module '*.scss' {
+
+}
+
+interface Window {
+
+}
+
+```

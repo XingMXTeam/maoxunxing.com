@@ -1,135 +1,186 @@
 ---
-title: "Webpack Externals"
+title: "Webpack 树摇（Tree-shaking）与优化配置详解"
 description: ""
-date: 2024-09-08
+date: 2025-02-06
 tags:
   - Webpack
 images:
   - webpack-1/a.png
 ---
 
-本文档详细介绍了如何通过 Webpack 的 `externals` 配置加载外部依赖，并提供了判断包是否被 `externals` 的方法。适合需要优化打包体积或动态加载外部资源的开发者。
-
----
-
 ## 目录
-
-1. [Externals 简介](#externals-简介)
-2. [Externals 配置示例](#externals-配置示例)
-   - [配置方式](#配置方式)
-   - [副作用](#副作用)
-3. [如何判断包是否被 externals](#如何判断包是否被-externals)
-4. [总结与扩展](#总结与扩展)
-
----
-
-## Externals 简介
-
-Webpack 的 `externals` 配置允许将某些模块从打包中排除，并通过外部脚本（如 CDN）加载。这种方式可以显著减少打包体积，同时支持按需加载外部依赖。
-
-> **适用场景**：
-> - 使用第三方库时，避免将其打包到最终文件中。
-> - 动态加载外部资源以优化首页加载速度。
+1. [usedExports](#usedexports)
+2. [ /*#__PURE__*/ 注释](#pure-注释)
+3. [TerserWebpackPlugin](#terserwebpackplugin)
+4. [UglifyJsWebpackPlugin](#uglifyjswebpackplugin)
+5. [mainFields 配置](#mainfields-配置)
+6. [Webpack 支持 mjs 文件](#webpack-支持-mjs-文件)
+7. [构建类型与模块系统](#构建类型与模块系统)
+8. [Tree-shaking 详解](#tree-shaking-详解)
+   - [静态结构](#静态结构)
+   - [无条件执行](#无条件执行)
+   - [无副作用导入](#无副作用导入)
+9. [sideEffects 配置](#sideeffects-配置)
+10. [output 配置](#output-配置)
+11. [常见错误](#常见错误)
 
 ---
 
-## Externals 配置示例
+## usedExports
 
-### 配置方式
+`usedExports` 是 Webpack 中用于标记未使用代码的配置项。它是 Tree-shaking 的基础，仅针对 ES 模块规范（ESM）。早期由 Rollup 引入。
 
-以下是一个典型的 `externals` 配置示例：
+```javascript
+optimization: {
+  usedExports: true, // 标记哪些代码没有被使用
+},
+```
+![alt text](image.png)
 
-```js
-module.exports = {
-  // ...
-  externalsType: 'script', // 声明外部资源的加载方式为 <script>
-  externals: {
-    lodash: [
-      'https://cdn.jsdelivr.net/npm/lodash@4.17.19/lodash.min.js', // 外部脚本 URL
-      '_', // 全局变量名
-    ],
-  },
-};
+---
+
+## `/*#__PURE__*/` 注释
+
+`/*#__PURE__*/` 是一种显式声明，用于告诉工具某些函数调用没有副作用。在某些场景下，比如变量赋值，可能会导致一些副作用。
+
+### 什么是副作用？
+1. 函数参数被修改。
+2. 调用有副作用的函数：如发起请求、控制台打印、读写文件等。
+3. 数据库修改或网络状态改变。
+4. 抛出异常。
+5. 修改全局变量、静态变量或类成员变量。
+
+#### 示例代码
+
+```javascript
+// maths.js
+export function square(x) {
+	return x.a; // 引用了 x.a，有副作用
+}
+/*#__PURE__*/square({ a: 123 });
+
+export function cube(x) {
+	return x * x * x;
+}
+
+// main.js
+import { cube } from './maths.js';
+console.log(cube(5));
 ```
 
-#### 参数说明：
-- **`externalsType`**：指定外部资源的加载类型，这里使用 `'script'` 表示通过 `<script>` 标签加载。
-- **`externals`**：
-  - 第一个参数是外部脚本的 URL。
-  - 第二个参数是全局变量名（如 `_`），用于在代码中引用该库。
+---
+
+## TerserWebpackPlugin
+
+[TerserWebpackPlugin](https://github.com/webpack-contrib/terser-webpack-plugin) 是一个用于压缩和分析无效代码的插件。它会结合 `usedExports` 删除未使用的代码。
 
 ---
 
-### 副作用
+## UglifyJsWebpackPlugin
 
-当某个包被声明为 `externals` 后，Webpack 会将其动态加载逻辑重写为异步加载的方式。例如：
+[UglifyJsWebpackPlugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin) 是另一个压缩代码的插件，但其封装了一个立即执行函数，可能引用外部变量，从而导致 Tree-shaking 失效。
 
-```js
-import _ from 'lodash';
+#### 开发 JS 库时的建议
+- 使用 Rollup 打包，支持 ES6 模块导出和程序流分析（判断哪些代码有副作用）。
+- 尽量将组件打包成单独的目录，方便他人引用。
+- 或者开发插件实现按需加载。
+
+---
+
+## mainFields 配置
+
+`mainFields` 用于控制解析入口文件的优先级。
+
+```json
+{
+	resolve: { 
+		mainFields: ['browser', 'module', 'main'], // 可以调整字段的优先级 
+	},
+}
 ```
 
-会被重写为：
+#### 插件推荐
+- `NormalModuleReplacementPlugin`: 替换资源。
 
-```js
-import('./lodash.js').then(res => {
-  const _ = res.default || res;
-  // 使用 lodash
-});
+---
+
+## Webpack 支持 mjs 文件
+
+为了让 Webpack 支持 `.mjs` 文件，可以进行以下配置：
+1. 确保 Webpack 版本为 4 或更高。
+2. 在 `resolve.extensions` 中添加 `.mjs`。
+3. 设置 `type: "module"`。
+
+---
+
+## 构建类型与模块系统
+
+Webpack 支持多种模块系统，统称为 UMD（Universal Module Definition）：
+- **var/window**: 全局变量方式。
+- **AMD/CommonJS/CommonJS2/root**: 不同模块化标准。
+  - **CommonJS2** 和 **CommonJS** 的区别在于 `module.exports` 和 `exports`。
+
+---
+
+## Tree-shaking 详解
+
+Tree-shaking 是一种通过静态分析移除未使用代码的优化技术。生产环境默认启用，但在某些情况下需要额外配置才能达到最佳效果。
+
+### 静态结构
+
+ES6 模块的 `import` 和 `export` 语法在代码加载之前就已经确定。所有导入和导出的模块依赖关系在代码解析阶段就可以完全明确下来，这与 CommonJS 模块系统不同，后者可以包含动态依赖（例如，`require` 可以在函数内部调用）。
+
+### 无条件执行
+
+在 ES6 模块中，`import` 和 `export` 语句必须在模块的顶层作用域中。因此，导入的模块在模块初始化时就会被解析，而不是在代码运行过程中。这意味着模块的加载顺序和依赖关系是固定的。
+
+### 无副作用导入
+
+ES6 模块默认不允许根据运行时条件动态导入模块。这种限制排除了许多复杂的情况，使得工具可以更轻松地进行代码分析。
+
+---
+
+## sideEffects 配置
+
+`sideEffects` 是 `package.json` 中的一个字段，用于声明模块是否有副作用。
+
+- 如果配置为 `false`，则表示该模块没有副作用，Webpack 会更激进地移除未使用的代码。
+- 如果未配置或配置不当，可能会影响 Tree-shaking 的效果。
+
+#### 示例
+
+```json
+{
+  "sideEffects": false
+}
 ```
 
-> **补充说明**：
-> - 这种方式确保外部依赖只在需要时加载，避免阻塞首页渲染。
-> - 需要注意的是，动态加载可能会增加首次使用的延迟，因此需要权衡性能影响。
+#### 注意事项
+- SSR 场景中，动态搭建场无法配置 `sideEffects: false`，因为这样可能导致部分代码丢失。
 
 ---
 
-## 如何判断包是否被 externals
+## output 配置
 
-在 UMD 格式的打包文件中，可以通过以下特征判断某个包是否被 `externals`：
+`output` 用于指定输出目录和文件名。
 
-1. **检查全局变量**：
-   如果在 UMD 文件头部发现类似以下代码：
-   ```js
-   root['packageName']
-   ```
-   则表明该包已被 `externals`。
-
-2. **示例分析**：
-   假设我们 externals 了 `lodash`，打包后的代码可能包含如下片段：
-   ```js
-   (function(root, factory) {
-     if (typeof define === 'function' && define.amd) {
-       define([], factory);
-     } else if (typeof exports === 'object') {
-       module.exports = factory();
-     } else {
-       root['_'] = factory(); // 将 lodash 挂载到全局变量 _
-     }
-   })(this, function() {
-     return _; // 引用外部加载的 lodash
-   });
-   ```
-
-> **补充说明**：
-> - 通过全局变量名（如 `_`）可以快速定位外部依赖的加载方式。
-> - 在调试时，可以通过浏览器控制台检查全局对象（如 `window._`）是否存在，验证外部依赖是否正确加载。
+```javascript
+output: {
+  path: __dirname + '/dist',
+  filename: 'bundle.js',
+},
+```
 
 ---
 
-## 总结与扩展
+## 常见错误
 
-### 总结
-- **核心功能**：
-  - `externals` 可以将外部依赖从打包文件中移除，通过 CDN 或其他方式加载。
-  - 支持动态加载，优化首页加载性能。
-- **注意事项**：
-  - 确保外部依赖的 URL 可靠且稳定。
-  - 动态加载可能导致首次使用的延迟，需根据实际需求权衡。
+#### 错误信息
+```
+ERR! The 'compilation' argument must be an instance of Compilation 348 TypeError: The 'compilation' argument must be an instance of Compilation
+```
 
-### 扩展建议
-1. **多环境适配**：
-   - 在开发环境中保留本地依赖，仅在生产环境中启用 `externals`。
-2. **兼容性处理**：
-   - 对于不支持动态加载的浏览器，提供降级方案（如同步加载脚本）。
-3. **性能监控**：
-   - 使用工具（如 Lighthouse）监控外部依赖的加载性能，及时调整 CDN 或加载策略。
+#### 解决方案
+- Webpack 版本不兼容，建议降级到 Webpack 4。
+
+---
