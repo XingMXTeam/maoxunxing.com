@@ -1,5 +1,5 @@
 ---
-title: "在普通页面中使用 Vite 的解决方案"
+title: "代理实现 Vite 的解决方案"
 description: ""
 date: 2025-02-06
 tags:
