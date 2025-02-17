@@ -31,6 +31,7 @@ images:
 16. [多次调用方法导致 UI 重复渲染](#多次调用方法导致-ui-重复渲染)
 17. [React 源码学习资源](#react-源码学习资源)
 18. [React 任务调度与队列](#react-任务调度与队列)
+19. [错误捕获](#错误捕获)
 
 ---
 
@@ -231,6 +232,7 @@ export const MyDndProvider = DragDropContext(HTML5Backend)(({ children }) => {
 
 ### 案例描述
 多次调用同一方法导致 UI 出现多个相同内容。
+![alt text](image.png)
 
 ### 解决方案
 检查方法调用逻辑，确保方法只被调用一次。
@@ -247,3 +249,10 @@ export const MyDndProvider = DragDropContext(HTML5Backend)(({ children }) => {
 ## React 任务调度与队列
 
 React 18 引入了新的任务调度机制，支持并发渲染和优先级管理。
+
+## 错误捕获
+
+```text
+error-boundary实现组件级别的错误捕获
+```
+
