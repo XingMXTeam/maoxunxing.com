@@ -1,5 +1,5 @@
 ---
-title: "个人成长与创业思考"
+title: "创业思考"
 date: 2019-11-25
 ---
 
@@ -61,6 +61,7 @@ date: 2019-11-25
 - **AI Agent**：
   - 示例：[aiagent.me](http://aiagent.me)、[askme.com](http://askme.com)  
     - 内嵌到公众号的小部件，借助 AI 大模型能力，为用户提供个性化问答服务。
+    - 是否可以通过创业大佬的思路，设计一个 AI Agent，用于过滤想法以及任务拆解？通过 AI 提升创业效率和创新能力。
 - **AI Music 助理**：
   - 训练 AI 推荐符合个人喜好的音乐。
 - **AI Book Reader**：
