@@ -5,9 +5,6 @@ tags:
   - career
   - front-end
 description: "细化前端工程师的成长模型指标，逐步提高个人专业技能"
-images:
-  - images:
-  - exception-handle/eception-handle.png/front-end-future.png
 ---
 
 本文从基础到高阶，再到资深/专家级技能，系统性地整理了前端工程师所需掌握的核心能力。内容涵盖工具、语言、框架、架构设计以及软技能等多个维度，帮助开发者明确学习路径和职业发展方向。
