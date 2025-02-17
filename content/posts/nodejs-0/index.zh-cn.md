@@ -746,3 +746,5 @@ Readable.prototype.pipe = function (writable, options) {
   return writable;
 };
 ```
+
+## 流被消费以后则无法再次消费，需要用clone()方法先克隆后再处理。比如serviceworker里面的response。
