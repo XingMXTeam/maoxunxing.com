@@ -1,6 +1,8 @@
 ---
 title: "[WIP] Startup I Learned"
 date: 2022-04-12T18:08:06+08:00
+images:
+  - startup-i-learned/image.png
 ---
 
 ## 目录
