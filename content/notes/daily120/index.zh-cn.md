@@ -1,5 +1,5 @@
 ---
-title: "redRedux 核心实现与中间件机制"
+title: "Redux 核心实现与中间件机制"
 date: 2019-11-25
 tags:
   - Redux
