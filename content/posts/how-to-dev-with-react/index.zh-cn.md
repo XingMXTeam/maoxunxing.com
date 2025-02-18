@@ -224,6 +224,91 @@ const Counter = () => {
 export default Counter;
 ```
 
+
+#### zustand vs valtio
+
+valtio获取值的时候可以直接抛Promise。
+
+```js
+const state = proxy({ post: fetch(url).then((res) => res.json()) })
+
+function Post() {
+  const snap = useSnapshot(state); 
+  // 相当于当post.title不存在的时候，直接抛了一个Promise
+  // 不需要额外处理加载状态和错误处理逻辑（Suspense组件处理了）
+  return <div>{snap.post.title}</div> 
+}
+
+function App() {
+  return (
+    <Suspense fallback={<span>waiting...</span>}>
+      <Post />
+    </Suspense>
+  )
+}
+```
+
+zustand则不能
+```js
+// 1、创建store
+import create from 'zustand';
+
+const postStore = create((set) => ({
+  post: null,
+  getPost: async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    set({ post: data });
+  },
+}));
+
+// 2、使用store
+import { useStore } from './postStore';
+
+function Post() {
+  const post = useStore((state) => state.post);
+  const getPost = useStore((state) => state.getPost);
+
+  // 这里需要自己处理Promise 
+  if (!post) {
+    getPost(url); // 直接调用获取数据的方法
+    throw getPost(url); // 直接抛出 Promise
+  }
+
+  return <div>{post.title}</div>;
+}
+```
+可以借助swr改进：[复杂例子](https://gist.github.com/samselikoff/ac8076c6c224786da23c9297567585cf), [SWR改进](https://codesandbox.io/s/react-suspense-swr-zustand-uyj1ub?file=/src/store.ts:0-582)
+
+```js
+import useSWR from "swr";
+import create from "zustand";
+
+// fetch data from `jsonplaceholder` API
+const fetcher = (
+  type: "user" | "post" | "photo",
+  id: string,
+  delay: number
+) => {
+  const url = `https://jsonplaceholder.typicode.com/${type}s/${id}?_delay=${delay}`;
+
+  return fetch(url).then((res) => res.json());
+};
+
+export const useStore = create((set) => ({
+  userInfo: null,
+  useFetch: (key) =>
+    useSWR(key, fetcher, {
+      suspense: true,
+      // 如果需要数据保存，则可以在 onSucces 里把数据 set 下来
+      onSuccess: (data) => {
+        set({ userInfo: data });
+      }
+    })
+}));
+```
+
+
 ---
 
 ## 总结
