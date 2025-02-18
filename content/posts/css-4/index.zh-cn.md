@@ -236,3 +236,9 @@ const settings = {
 </Slider>;
 ```
 **案例**: 如何实现上下滚动的轮播组件。
+
+## css压缩
+https://forgemia.inra.fr/lisc/geopat/-/tree/master/web_application/node_modules/csso
+
+csso webpack plugin Selector can't has classes from different scopes
+有一些className没有被归到scopes里面。

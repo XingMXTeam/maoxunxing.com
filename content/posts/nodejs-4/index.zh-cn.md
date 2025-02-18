@@ -154,6 +154,13 @@ byteBuffer.put(encoder.write(timestamp).get());
 ![alt text](image-7.png)
 ![alt text](image-8.png)
 
+## 调试
+1. 当真实活动无法替换为新组件，本地调试时先写死组件入口
+2. 查看pc页面是否异常，手机端可以ua以pc方式打开
+3. 服务端调用service方法时，没有走到下一步自己的代码。 可以通过单步调试会进入报错位置
+4. 通过浏览器预览这种方式，查看格式化的内容：
+![alt text](image-9.png)
+
 ---
 
 ## 灰度放量

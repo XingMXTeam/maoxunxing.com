@@ -19,6 +19,8 @@ date: 2021-12-01T14:53:11+08:00
   - 使用了 `export` 语法，但运行环境或构建工具未正确支持 ES6 模块。
   - 文件扩展名可能未正确设置（如 `.js` 文件被解析为 CommonJS 而非 ES Module）。
 
+> commonjs 一般是用module.exports; es module是用export default
+
 ---
 
 ## **3. 解决方案**
