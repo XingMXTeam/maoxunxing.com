@@ -172,6 +172,8 @@ lerna add @hospital-sdk/doctor --scope=integration
 - **启动服务**：如本地开发服务器。
 - **插件机制**：插件可以动态更新配置项或执行 IO 操作。
 
+> 内部有Context对象管理插件的运行，会依次运行注册的插件。其中WebpackService是Context的一个实例。
+
 #### 插件加载
 `build.json` 中配置的插件名会被 Node 加载：
 
@@ -187,7 +189,15 @@ fn = fn.default || fn || (() => void);
 运行时的核心是微应用容器，是一个技术容器，主要包括以下内容：
 - **主应用与子应用通信**：通过消息总线共享实例。
 - **生命周期管理**：通过 `namespace` 的 `flow` 对象管理。
-- **路由管理**：使用 `react-router` 的核心代码。
+- **路由管理**：使用 `react-router` 的核心代码, 只有一个history对象。
+
+> ice的runtimemodule插件逻辑（实例化了两个运行时对象）
+> message对象共享实例，每个微应用都会创建一个message实例
+> 入口文件会自动包裹生命周期函数
+> 运行时会加载运行时插件，并且渲染运行时容器
+> 解决运行时polyfill问题： import 'core-js/stable';  import 'regenerator-runtime/runtime';
+> @ice/stark-module管理微应用渲染
+> @ice/stark-data 管理数据
 
 #### 示例调度函数
 以下是一个简单的调度函数实现：
@@ -219,6 +229,14 @@ export function schedule(cb: (...args: any[]) => any) {
 - **chalk**：终端美化工具。
 - **chokidar**：监听文件变化。
 - **object-hash**：生成对象的哈希值。
+- **code-red**： 轻量级的 JavaScript AST（抽象语法树）操作工具。
+- **periscopic**：作用域分析工具。
+- **estree-walker**：遍历和操作 ESTree 格式的 AST。
+- **@types/estree**：ESTree 的 TypeScript 类型定义。
+- **acorn**：轻量级的 JavaScript 解析器。
+- **cheerio**：服务器端的 jQuery 实现。
+- **mkdirp**：递归创建目录。
+- **debug**：轻量级调试工具。
 
 ---
 

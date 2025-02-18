@@ -37,4 +37,7 @@ npm install -g npmi
   - 是一个简化的 npm 安装工具，提升安装效率。
   - 安装后可以直接使用 `npmi <package-name>` 来安装依赖包。
 
+- **`npm version patch`**
+  -  自动更新一个新的补丁版本  
+
 ---
