@@ -36,28 +36,6 @@ date: 2025-02-06
 
 ---
 
-## 复杂表单的实现
-
-复杂表单可以通过以下方式实现：
-- 使用嵌套的 `FormItem`，确保每个子项的 `name` 属性唯一。
-- 示例代码：
-  ```jsx
-  <FormItem label="Bank Account：">
-    <Row gutter="4">
-      <Col>
-        <FormItem name="A" required requiredTrigger="onBlur">
-          <Input />
-        </FormItem>
-      </Col>
-    </Row>
-  </FormItem>
-  ```
-- 注意事项：
-  - `{...this.detailField.init('xxx')}` 和 `name='xxx'` 是等价的。
-  - 自定义表单组件需要实现 `onChange` 和 `value` 属性。
-
----
-
 ## Fusion Balloon 的层级变化
 
 ### 问题描述
@@ -90,7 +68,7 @@ date: 2025-02-06
   - 解决方法：
     ```js
     this.field.remove(this.field.getNames());
-    ```
+- 自定义表单组件需要实现 `onChange` 和 `value` 属性。    ```
 
 ---
 
