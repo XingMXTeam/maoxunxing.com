@@ -1,5 +1,5 @@
 ---
-title: "[WIP] 前端常用报表制作"
+title: "[WIP] 前端性能报表"
 description: ""
 date: 2025-02-15
 ---
