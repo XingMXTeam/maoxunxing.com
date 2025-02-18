@@ -174,6 +174,13 @@ GROUP BY
   a;
 ```
 
+```sql
+SUM(CASE
+WHEN gpp.type = 'module' AND json_length(gpp.extra, '$.results') THEN json_length(gpp.extra, '$.results')
+ELSE 1
+END) as num
+```
+
 #### 过滤分组统计结果集
 ```sql
 SELECT 
@@ -325,4 +332,42 @@ FROM
 SELECT * 
 FROM xx 
 WHERE ds = MAX_PT('xx');
+```
+
+### 数据库迁移
+
+```sql
+SELECT WM_CONCAT(sql || '\n') AS sql_script
+FROM (
+  SELECT 
+    CONCAT(
+      'INSERT INTO a (id, gmt_create, gmt_modified) VALUES (',
+      yuyan_id, ', SYSDATE, SYSDATE); '
+    ) ||
+    CONCAT(
+      'INSERT INTO a_ext (id, repo_url, repo_project_id) VALUES (',
+      yuyan_id, ', ''', repo_url, ''', ', orig_id, '); '
+    ) ||
+    CONCAT(
+      'INSERT INTO b_platform_binding (id, yuyan_id, deploy_pla) VALUES (',
+      yuyan_id, ', ', yuyan_id, ', ''deploy_pla_value'');'
+    ) AS sql
+  FROM (
+    SELECT
+      (1231313 + rnk) AS yuyan_id,
+      pkg.id AS orig_id,
+      pkg.name AS name,
+      pkg.description AS description,
+      'http://example.com/' || pkg.id AS repo_url -- 假设 repo_url 的值是这样生成的
+    FROM (
+      SELECT
+        pkg.*, 
+        ROW_NUMBER() OVER (PARTITION BY pkg.dt ORDER BY pkg.gmt_create) AS rnk
+      FROM xxxx
+      WHERE pkg.dt = MAX_PT('afxadm.bmw_pkg')
+        AND pkg.is_delete = '0'
+        AND pkg.name NOT LIKE '@alipay/%'
+    ) pkg
+  ) app
+) lines;
 ```
