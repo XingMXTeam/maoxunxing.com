@@ -256,3 +256,5 @@ React 18 引入了新的任务调度机制，支持并发渲染和优先级管�
 error-boundary实现组件级别的错误捕获
 ```
 
+## 离屏优化
+https://react.dev/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022#offscreen
