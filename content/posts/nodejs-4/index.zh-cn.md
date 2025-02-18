@@ -190,3 +190,13 @@ byteBuffer.put(encoder.write(timestamp).get());
 
 1. **弹窗刷新**: 如果登录超时，可直接弹出登录窗口，点击刷新即可。
 2. **表单场景处理**: 如果有未提交的表单，建议新开页面或使用 iframe 登录，避免数据丢失。
+
+## 错误处理级别
+1  LEVEL 1: 不处理。 自行在issues中找答案
+2 LEVEL 2: FAQ。
+3 LEVEL 3: Error Code 。类型和来源进行区分。 便于分享、搜索。
+4 LEVEL 4: 框架集成。 规范化、工程化错误代码。 自动定位错误类型，并且给出答案。
+5 LEVEL 5: Doctor。 CI/CD 静态分析。
+
+## 学习
+antfu的小库（1000行以内）： ni
