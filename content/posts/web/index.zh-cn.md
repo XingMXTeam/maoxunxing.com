@@ -45,3 +45,15 @@ W3C 提供了全面的测试资源，帮助开发者验证其应用是否符合 
   访问 [Web 平台测试结果](https://wpt.fyi/results/?label=experimental&label=master&aligned) 查看最新的测试结果和兼容性报告。
 
 > **补充说明**：测试是确保 Web 应用质量的重要步骤，建议在开发过程中使用自动化测试工具，并定期检查浏览器兼容性。
+
+## HTTP
+
+https://datatracker.ietf.org/doc/html/rfc7231#page-70
+
+## CSS
+https://www.w3.org/People/xiaoqian/talks/bytedance-2021/Overview.html
+https://2024.stateofcss.com/en-US/
+https://www.w3.org/Style/CSS/read
+https://www.w3.org/TR/css-2020/
+https://www.w3.org/Style/CSS/
+https://linxz.github.io/blog/defensive-css
