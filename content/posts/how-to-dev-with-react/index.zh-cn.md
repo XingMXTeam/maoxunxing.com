@@ -151,6 +151,20 @@ zustand 和 valtio 是新一代的状态管理工具，解决了上述问题，�
 
 ###### 什么是 Stale Props？
 Stale Props 指的是在异步操作完成之前，组件重新渲染导致使用了过时的 Props。这可能导致获取到错误的数据。
+```js
+const ExampleComponent = ({ id }) => {
+  const [data, setData] = useState(null)
+  useEffect(() => {
+	  fetchData(id)
+  }, [id])		
+  const fetchData = id => {
+	  const response = await fetch(`https://api.example.com/${id}`)
+	  setData(response.json())
+  }
+  return <>{data ? <div>{data.description}</div> : <div>Loading</div></>
+}
+```
+在异步拉取数据完成之前，如果id再次变化，就会出现`Stale Props` 的问题，使用了过期的id获取了不正确的数据。
 
 ###### 什么是 Zombie Children？
 Zombie Children 指的是在异步操作期间，父组件已经卸载或更新，但之前的子组件仍然存在于 DOM 中。
@@ -170,6 +184,55 @@ const ExampleComponent = ({ id }) => {
 };
 ```
 如果 `id` 在异步请求完成前发生变化，就可能出现 Stale Props 问题；如果组件被卸载，可能还会导致 Zombie Children 问题。
+###### 解决react concurrency问题。 
+
+这个问题是说React在并发模式下可能导致渲染过程中发生突变导致的撕裂，更新被中断或者中途改变，使组件UI显示不一致或者报错。并发模式下，React可能将渲染工作分成多个时间片，并在每个时间片中执行一部分渲染工作。
+
+
+```js
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    // 在渲染函数中直接修改状态
+    setCount(count + 1);
+    console.log(count); // 这里的 count 可能不是最新的值
+  };
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+
+```js
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    // 使用函数式更新来确保获取最新的 count 值
+    setCount(prevCount => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
 
 ###### zustand 如何解决？
 zustand 使用了 **Immer** 库来保证状态的不可变性，确保每次状态更新都基于最新的状态副本。这样可以避免因使用过时数据而导致的问题。
@@ -200,6 +263,68 @@ const ExampleComponent = ({ id }) => {
 ```
 
 通过这种方式，zustand 确保了状态的最新性，避免了 Stale Props 和 Zombie Children 问题。
+
+#### 教程
+1、不可变状态的合并： 
+ 1.1、set方法会自动合并
+ 
+```js
+// 正确
+set((state) => ({ count: state.count + 1 }))
+// 通过第二个参数，禁止state合并
+set((state) => ({ count: state.count + 1 }, true))
+// 通过第三个参数，提供状态变更的原因，devtools使用到
+set((state) => ({ count: state.count + 1 }, false, '增加count'))
+// ...state可以省略，
+set((state) => ({ ...state, count: state.count + 1 })) 
+```
+ 1.2、如果是嵌套对象，需要手动合并。[更多](https://github.com/pmndrs/zustand/blob/main/docs/guides/updating-state.md#deeply-nested-object)
+```js
+import { create } from 'zustand'
+
+const useCountStore = create((set) => ({
+  nested: { count: 0 },
+  inc: () =>
+    set((state) => ({
+      nested: { ...state.nested, count: state.nested.count + 1 },
+    })),
+}))
+```
+2、selector的用法：
+selector类似Redux的selector或者MobX的computed属性，比如我们有一个store
+```js
+import create from 'zustand';
+
+const useStore = create((set) => ({
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+  decrement: () => set((state) => ({ count: state.count - 1 })),
+}));
+
+export default useStore;
+```
+这里我们通过useStore访问store，并且传递进去两个selector， 他们通过获取部分状态派生出新的值，而不用访问整个状态树。
+
+也就是说如果我们要复用state.count * 2 的逻辑，可以写两个函数，函数因为是纯函数可以单独测试。
+```js
+import useStore from './useStore';
+
+const Counter = () => {
+  const count = useStore((state) => state.count);
+  const doubleCount = useStore((state) => state.count * 2);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <p>Double Count: {doubleCount}</p>
+    </div>
+  );
+};
+
+export default Counter;
+```
+
+
 
 ---
 
