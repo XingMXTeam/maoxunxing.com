@@ -102,7 +102,7 @@ workbox.precaching.precacheAndRoute([
 
 ### 校验是否是当前场域
 前置matcher的url才会进入serviceworker的workbox插件逻辑，同时在判断是否要使用缓存时也要判断场域是否命中。
-不仅是判断url，还要判断cookie，因为如果url匹配了，但是因为cookie的原因实际服务端会302跳转的，如果用了缓存直接就跳转了。
+不仅是判断url，还要判断cookie，因为如果url匹配了，但是因为cookie(是特殊用户）的原因，实际服务端会302跳转的，用缓存没必要。
 
 ### 版本回退
 当 Service Worker 版本回退时，如何处理缓存清空的问题？
