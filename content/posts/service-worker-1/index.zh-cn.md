@@ -92,6 +92,10 @@ workbox.precaching.precacheAndRoute([
 ### Service Worker 更新机制
 更新了 `importScript` 调用的 JS 资源后，不会立即生效。需要手动点击 `skipWaiting` 或关闭标签页重新打开以激活新的 Service Worker。
 
+### 激活机制
+第一次sw安装，第二次会激活走service-worker但是不走会走缓存（现象是network面板显示from serviceworker，但是没有命中缓存），第三次才会命中缓存。
+**不同的域名servicewworker都会走这个流程**
+
 ---
 
 ## 边界 Case
