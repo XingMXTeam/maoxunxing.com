@@ -96,6 +96,36 @@ workbox.precaching.precacheAndRoute([
 第一次sw安装，第二次会激活走service-worker但是不走会走缓存（现象是network面板显示from serviceworker，但是没有命中缓存），第三次才会命中缓存。
 **service的sw.js是注册在根目录的，比如xx.baidu.com, yy.baidu.com, 不同的域名servicewworker都会走这个安装激活流程**
 
+### from service worker
+当浏览器的network显示`from service worker`，有三种可能： 1 请求被serviceworker拦截 2 响应由serviceworker处理
+
+### 复制缓存里的数据
+```js
+caches.open('pc-home-html-cache-v1').then(async cache => {
+    const responses = await cache.matchAll();
+    const allContent = [];
+
+    for (const response of responses) {
+        const bodyText = await response.text();
+        allContent.push(`URL: ${response.url}\nContent:\n${bodyText}`);
+    }
+
+    const combinedContent = allContent.join('\n\n---\n\n');
+
+    // 创建一个 Blob 对象
+    const blob = new Blob([combinedContent], { type: 'text/plain' });
+
+    // 创建一个下载链接
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'cache-content.txt'; // 文件名
+    a.click();
+
+    // 释放对象 URL
+    URL.revokeObjectURL(url);
+});
+```
 ---
 
 ## 边界 Case

@@ -11,5 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed Twitter card image not displaying correctly by:
   - Added proper URL construction for multi-language support using `$.Site.BaseURL` and `$.Site.LanguagePrefix`
   - Fixed image path handling for `images` and `hero_image` parameters in `layouts/partials/twitter-card.html`
+- 修复了 twitter-card.html 中图片 URL 拼接的问题，确保语言前缀路径格式正确
 
 ## [1.0.0] - Initial Release 
