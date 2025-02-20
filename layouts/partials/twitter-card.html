@@ -2,7 +2,11 @@
   <meta name="twitter:card" content="summary_large_image" />
   {{- with $.Params.images -}}
     {{- $image := index . 0 -}}
-    <meta name="twitter:image" content="{{ $.Site.BaseURL }}{{ $image }}">
+    <meta name="twitter:image" content="{{ $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}{{ $image }}">
+  {{- else -}}
+    {{- with $.Params.hero_image -}}
+      <meta name="twitter:image" content="{{ $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}{{ . }}">
+    {{- end -}}
   {{- end -}}
 {{ end }}
 {{ with .Site.Social.twitter }}
