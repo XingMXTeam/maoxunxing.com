@@ -1,19 +1,19 @@
 .content {
   flex: 1;
   display: flex;
-  margin-top: 1.6rem;
+  margin-top: 0.5rem;
   margin-bottom: 3.2rem;
   article {
     header {
-      margin-top: 6.4rem;
-      margin-bottom: 3.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
       h1 {
         font-size: 4.2rem;
         line-height: 4.6rem;
         margin: 0;
         @media only screen and (max-width : 768px) {
-          font-size: 4.0rem;
-          line-height: 4.4rem;
+          font-size: 2.8rem;
+          line-height: 3rem;
         }
       }
     }
