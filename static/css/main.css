@@ -1,6 +1,6 @@
 body {
-  font-size: 1.9em;
-  line-height: 1.65em;
+  /* font-size: 1.9em;
+  line-height: 1.65em; */
   margin: 0;
   -webkit-font-smoothing: antialiased;
   color: #515151;
@@ -685,27 +685,6 @@ h4:hover .hanchor {
 
 
 /* 首页样式 */
-.intro-container {
-  /* max-width: 700px; */
-  margin: 1.5rem auto;
-}
-
-.greeting {
-  /* font-size: 2.2rem; */
-  margin-bottom: 1.2rem;
-  animation: gentleWave 3s infinite;
-}
-
-.profile-card {
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-.intro-line {
-  /* font-size: 1.4rem; */
-  margin-bottom: 1.2rem;
-}
-
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -713,79 +692,11 @@ h4:hover .hanchor {
   margin: 1.2rem 0;
 }
 
-.tag {
-  padding: 0.4rem 0;
-  /* font-size: 1.2rem; */
-  transition: transform 0.2s;
-  margin-right: 1rem;
-}
-
-.tag:hover {
-  transform: translateY(-1px);
-}
-
-.investment-info {
-  margin: 1.2rem 0;
-  /* font-size: 1.2rem; */
-}
-
-.invest-item {
-  margin: 0.4rem 0;
-  display: inline-block;
-  margin-right: 2rem;
-}
-
-.invest-highlight {
-  margin-left: 0.3rem;
-}
-
-.outro-line {
-  margin-top: 1.2rem;
-  /* font-size: 1.2rem; */
-}
-
-@keyframes gentleWave {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(5deg); }
-  20% { transform: rotate(-3deg); }
-  30% { transform: rotate(5deg); }
-  40% { transform: rotate(-2deg); }
-  50% { transform: rotate(3deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.focus-area {
-  margin: 1.2rem 0;
-}
-
-.focus-detail {
-  margin: 0.8rem 0;
-  display: flex;
-  gap: 2rem;
-}
-
-.focus-detail span {
-  white-space: nowrap;
-}
-
 .substack {
     width: 24px;  /* 根据需要调整宽度 */
     height: 24px; /* 根据需要调整高度 */
 } 
 
-.quote {
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: #666;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-.quote p {
-  margin: 0;
-  padding: 0;
-}
 
 .subscribe-container,
 #mc_embed_signup {
