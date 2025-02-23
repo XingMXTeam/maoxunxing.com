@@ -1,8 +1,6 @@
 ---
-title: "LLM 能否通过软件工程赚取 100 万美元 ？"
+title: "LLM通过软件工程赚取 100 万美元 ？"
 date: 2025-02-19
-images:
-  - ai-daily/a.jpg
 ---
 
 
