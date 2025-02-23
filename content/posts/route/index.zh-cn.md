@@ -2,6 +2,8 @@
 title: "页面路由与服务器路由一致性指南"
 description: ""
 date: 2025-02-15
+images:
+  - route/cover.png
 ---
 
 ## 目录

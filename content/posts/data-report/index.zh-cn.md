@@ -2,6 +2,8 @@
 title: "[WIP] 前端性能报表"
 description: ""
 date: 2025-02-15
+images:
+  - data-report/image.png
 ---
 
 ## ServiceWorker缓存命中率统计【折线图】
@@ -65,3 +67,35 @@ FROM extracted_data
 GROUP BY Time
 ORDER BY Time 
 ```
+
+A minimalist cartoon illustration showing a simple dashboard scene in landscape format. Two cute stick figure characters with big expressive eyes stand beside a large simplified graph display. The graph shows basic line charts representing web performance metrics.
+
+Style elements:
+- Bold black outlines around all elements
+- Flat colors using only 3 colors: light blue, soft grey, and black
+- White/light grey background
+- Simple geometric shapes throughout
+
+Main elements:
+- A large simplified monitor/screen showing basic line charts
+- Two stick figure characters with round heads and simple facial features
+- One character points excitedly at the rising trend line
+- Small speech bubble with "Cache hit rate ↑" text
+- Simple geometric shapes representing data points and axes
+
+Character details:
+- Round heads with minimal facial features (dots for eyes, simple curved line for smile)
+- Stick-like arms and legs
+- One character wearing glasses made from simple circles
+- Excited poses with raised arms
+
+Composition:
+- Horizontal layout with screen taking up 60% of width
+- Characters positioned on either side of the screen
+- Clean, uncluttered arrangement with plenty of white space
+
+Technical specifications:
+- No gradients or shadows
+- Thick, consistent line weights
+- Maximum 3 colors plus black outlines
+- Landscape orientation (16:9 ratio)

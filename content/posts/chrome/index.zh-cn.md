@@ -2,6 +2,8 @@
 title: "Chrome DevTools 新能力解析"
 description: ""
 date: 2025-02-15
+images:
+  - chrome/cover.png
 ---
 
 ## 目录

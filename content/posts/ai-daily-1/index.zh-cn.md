@@ -1,6 +1,8 @@
 ---
 title: "微软接连放大招"
 date: 2025-02-20
+images:
+  - ai-daily-1/image2.png
 ---
 
 微软接连放大招：Xbox推出Muse模型革新游戏创作，Azure AI Foundry Labs加速研究落地，Majorana 1量子芯片更让百万量子比特计算成为可能。另外一个值得关注的是：Arc Institute和NVIDIA的Evo 2生物模型则开启基因组设计新纪元。

@@ -2,6 +2,8 @@
 title: "爬虫分类与技术指南"
 description: ""
 date: 2025-02-15
+images:
+  - robots/cover.png
 ---
 
 # 爬虫分类与技术指南
@@ -92,3 +94,27 @@ Disallow: /private/
 ## 总结
 
 爬虫技术是一把双刃剑，合理使用可以为用户提供便利，但滥用则可能对目标网站造成损害。在实际开发中，应遵循相关法律法规和道德规范，尊重目标网站的 `robots.txt` 文件，并尽量减少对服务器的压力。同时，为了保护自身安全，建议采用代理或 VPN 等手段隐藏真实身份。
+
+A minimalist cartoon illustration showing two contrasting web crawlers in landscape format. On the left, a "good" crawler represented by a friendly robot with round shapes and a smile, carefully collecting web pages with a "Google" or "Baidu" logo. On the right, a mischievous-looking "bad" crawler robot with slightly angular shapes, aggressively grabbing data.
+
+Style specifications:
+- Thick black outlines for all elements
+- Flat colors only, no gradients or shading
+- Limited color palette: light blue for good robot, red for bad robot, light grey background
+- Simple geometric shapes with rounded corners
+- Stick-like arms and legs for the robots
+- Big expressive eyes: friendly circles for good robot, narrow angles for bad robot
+
+Composition elements:
+- Two robots arranged horizontally
+- Simple speech bubble above good robot saying "robots.txt ✓"
+- Speech bubble above bad robot saying "robots.txt ✗"
+- Minimal web page icons floating around both robots
+- Plain light grey background
+
+Technical requirements:
+- Landscape orientation (16:9 ratio)
+- Clean, bold black outlines (3px thickness)
+- All text easily readable at different sizes
+- Geometric shapes only
+- No complex details or textures

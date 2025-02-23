@@ -2,6 +2,8 @@
 title: "JSONPath 实现字段裁剪和提取"
 description: ""
 date: 2025-02-15
+images:
+  - json-path/cover.png
 ---
 
 在处理 JSON 数据时，使用 JSONPath 可以方便地实现字段裁剪和提取。以下是如何根据你的 JSON 数据结构，使用 JSONPath 实现字段裁剪的详细说明。
