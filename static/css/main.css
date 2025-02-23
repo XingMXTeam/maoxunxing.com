@@ -794,3 +794,12 @@ h4:hover .hanchor {
     }
   }
 }
+
+/*标签样式*/
+.post-meta .date,
+.post-meta .tags  {
+ display: inline;
+}
+.post-meta .tags {
+  margin-left: 1.5rem;
+}
