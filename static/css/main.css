@@ -22,7 +22,6 @@ blockquote {
 
 .colorscheme-dark .navigation {
   background: #212121;
-  border-bottom: 1px solid rgb(52, 58, 70);
 }
 .colorscheme-dark .dark-mode-icon {
   display: inline;
@@ -35,22 +34,6 @@ blockquote {
 }
 .light-mode-icon {
   display: inline;
-}
-
-.navigation {
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0);
-  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
-    rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
-  position: sticky;
-  background: #fafafa; */
-  /* top: 0; */
-  /* height: 7rem; */
-}
-
-@media (min-width: 1025px) {
-  .navigation-list {
-    /* margin-right: 200px; */
-  }
 }
 
 .navigation-author {
@@ -639,7 +622,7 @@ h4:hover .hanchor {
 .nav-search-box {
   position: fixed;
   right: 1rem;
-  top: 16px;
+  top: 12px;
   z-index: 100;
 }
 
@@ -647,6 +630,10 @@ h4:hover .hanchor {
   border: none;
   background: none;
   cursor: pointer;
+}
+
+.colorscheme-dark .aa-DetachedSearchButtonIcon {
+  color: #ffffff;
 }
 
 .aa-DetachedSearchButtonIcon {
