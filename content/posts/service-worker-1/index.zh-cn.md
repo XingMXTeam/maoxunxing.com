@@ -126,6 +126,18 @@ caches.open('pc-home-html-cache-v1').then(async cache => {
     URL.revokeObjectURL(url);
 });
 ```
+
+### LCP数据排除302
+`navigation.redirectCount`无法统计跨域请求的重定向次数，只能通过：
+```js
+let timing = performance.getEntriesByType('navigation')[0]
+// fetchStart统计前置302的事件。如果走到了serviceworker的缓存，这一次的fetchStart时间会被吃掉
+```
+看浏览器请求的`duration`可以大致知道一个302中转请求`fetchStart`耗时：
+![alt text](image-1.png)
+
+服务端可以统计到302重定向次数或者通过无头浏览器，没有跨域限制。
+
 ---
 
 ## 边界 Case
