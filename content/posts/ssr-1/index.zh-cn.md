@@ -50,6 +50,7 @@ description: ""
 ### 1. FaaS 的定义
 - **FaaS（函数即服务）** 是一种无状态、事件驱动的计算服务。
 - 函数独立部署，自动扩容，按需运行。
+- Faas一般只有内部rpc接口比如hsf，无法对外提供http，所以一般上层都需要网关转发
 
 ### 2. Serverless 的定义
 - **Serverless** 是一种无需管理服务器的架构模式。
@@ -122,5 +123,26 @@ description: ""
 **特点：**
 - 对 QPS（每秒查询率）有一定损耗。
 - 提升用户体验，减少等待时间。
+
+## 源站架构
+
+1. 通用网关：处理代理转发，分站点代理转发
+2. 渲染网关侧有非业务容灾，比如页面请求失败兜底/404
+3. 数据网关
+4. 一般faas层有业务限流接口容灾（单机限流）包括应用层的容灾，比如多语言容灾fallbackCache
+
+## vm模版编译
+vm模版是通过React语法实现，单独的vm执行编译一下，提前开发阶段发现问题，避免代码穿透。
+```js
+ReactServer.renderToStaticMarkup(
+  <DocumentContext.Provider value={context}>
+    <DocumentElement />
+  </DocumentContext.Provider>
+);
+```
+
+## 页面路由
+
+比如aa.com/a/p/1.html -> aa.pc.a-p 作为配置的唯一key。 通过`path-to-regexp` 这个包实现pathName和url匹配
 
 ---
