@@ -1,0 +1,121 @@
+{
+    "root": {
+        "data": {
+            "id": "cior5ed4qg00",
+            "created": 1647785330045,
+            "text": "规模化"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "ciorm99ba5c0",
+                    "created": 1647786651121,
+                    "text": "物料生态"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "ciormwgxcrc0",
+                            "created": 1647786701648,
+                            "text": "Situation"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciorpitwcyo0",
+                                    "created": 1647786907049,
+                                    "text": "研发低效"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciosym0catk0",
+                                    "created": 1647790440357,
+                                    "text": "精品化程度低，少"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cipjrq2l26w0",
+                                            "created": 1647866070618,
+                                            "text": "外包同学基本都是复制，黏贴，引起性能问题，bug反复"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciormzakpk00",
+                            "created": 1647786707794,
+                            "text": "Task",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cioswwd2tp40",
+                                    "created": 1647790306166,
+                                    "text": "规范中后台物料和运营机制"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciorqanr9wg0",
+                                    "created": 1647786967628,
+                                    "text": "丰富物料生态，场景化沉淀",
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "ciorn09hayo0",
+                            "created": 1647786709904,
+                            "text": "Action",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ciosj5b12ps0",
+                                    "created": 1647789228535,
+                                    "text": "GMP物料平台共建物料",
+                                    "progress": 8
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "ciosyw14sbs0",
+                                    "created": 1647790462172,
+                                    "text": "共创规范和运营机制",
+                                    "progress": 8
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cipk1bdmx940",
+                                    "created": 1647866822276,
+                                    "text": "VSCode插件",
+                                    "progress": 8
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-red",
+    "version": "1.4.43"
+}

@@ -1,0 +1,654 @@
+{
+    "root": {
+        "data": {
+            "id": "cjeukmbcwrc0",
+            "created": 1650435545018,
+            "text": "搭建1-vm"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cjeu9hi52ns0",
+                    "created": 1650434672538,
+                    "text": "renderSdk: 渲染服务 比如蚂蚁的render 集团air2.0\n主要是渲染模版（后端模版托管到前端）",
+                    "layout_right_offset": {
+                        "x": -196,
+                        "y": 589
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjeuj1xk8v40",
+                            "created": 1650435422284,
+                            "text": "设计原理",
+                            "layout_right_offset": {
+                                "x": 54,
+                                "y": -200
+                            }
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjeuqu0ootc0",
+                                    "created": 1650436031972,
+                                    "text": "网关：java应用",
+                                    "layout_right_offset": {
+                                        "x": 82,
+                                        "y": -370
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjeuuee0bbk0",
+                                            "created": 1650436311405,
+                                            "text": "渲染网关",
+                                            "layout_right_offset": {
+                                                "x": 35,
+                                                "y": -2
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjeuvcavm7c0",
+                                                    "created": 1650436385227,
+                                                    "text": "从url获取多语言"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjeuuic7mq00",
+                                            "created": 1650436320004,
+                                            "text": "数据网关（fass应用）",
+                                            "layout_right_offset": {
+                                                "x": 30,
+                                                "y": 9
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjeuvfpaqso0",
+                                                    "created": 1650436392629,
+                                                    "text": "获得url抹去url多语言，塞到上下文中"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjeur1gk96w0",
+                                    "created": 1650436048169,
+                                    "text": "node fass网关",
+                                    "layout_right_offset": {
+                                        "x": 120,
+                                        "y": 105
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjevij5zusg0",
+                                            "created": 1650438202545,
+                                            "text": "异常处理：404（容灾？）",
+                                            "layout_right_offset": {
+                                                "x": 78,
+                                                "y": 42
+                                            }
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjevtdvlixs0",
+                                            "created": 1650439053038,
+                                            "text": "只接收hsf",
+                                            "layout_right_offset": {
+                                                "x": 80,
+                                                "y": -66
+                                            }
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjex38t7tu00",
+                                            "created": 1650442646762,
+                                            "text": "根据路由表（本地会有缓存）找到模版和配置（这里是通过url的参数e_id 作为灰度能力）",
+                                            "layout_right_offset": {
+                                                "x": 19,
+                                                "y": 0
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjex7hl0yqo0",
+                                                    "created": 1650442979314,
+                                                    "text": "domain:path/filename"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjexd3lr4rk0",
+                                                    "created": 1650443419068,
+                                                    "text": "如果命中灰度规则则走灰度模版"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjexeudgow00",
+                                                    "created": 1650443555704,
+                                                    "text": "读取到配置后"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjexf11vfag0",
+                                                            "created": 1650443570241,
+                                                            "text": "能找到模版（带md5可本地缓存/redis缓存)"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cjexf9s8myo0",
+                                                                    "created": 1650443589249,
+                                                                    "text": "redis找"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cjexfhwqqsg0",
+                                                                            "created": 1650443606936,
+                                                                            "text": "文件系统找"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjf27qo3sfc0",
+                                            "created": 1650457104641,
+                                            "text": "站点配置（也是有缓存）"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjf28tquemw0",
+                                            "created": 1650457189701,
+                                            "text": "支持灰度/回滚/本地预览（模版内容 render-sdk实现）"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjewjnsht680",
+                                    "created": 1650441112086,
+                                    "text": "render-sdk",
+                                    "layout_right_offset": {
+                                        "x": 4,
+                                        "y": 32
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjewjqcrcko0",
+                                            "created": 1650441117665,
+                                            "text": "react模版",
+                                            "layout_right_offset": {
+                                                "x": 264,
+                                                "y": 125
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjext608vmg0",
+                                                    "created": 1650444678125,
+                                                    "text": "typescript: transpileModule"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjexzxuhsnk0",
+                                                    "created": 1650445208912,
+                                                    "text": "vm runInContext",
+                                                    "layout_right_offset": {
+                                                        "x": 2,
+                                                        "y": 2
+                                                    }
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjey2i6sgaw0",
+                                                    "created": 1650445409919,
+                                                    "text": "react-dom/server"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjeyd5ojlxc0",
+                                                    "created": 1650446244700,
+                                                    "text": "依赖render-sdk 然后 直接通过react的方式写一个大组件（可以包含html link body等标签 ） 模版完全前端定制"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjeydvflgyg0",
+                                                            "created": 1650446300756,
+                                                            "text": "依赖react: useContext"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjez8cvy9i00",
+                                                    "created": 1650448689675,
+                                                    "text": " "
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjewjuvz0o00",
+                                            "created": 1650441127534,
+                                            "text": "xtemplate模版（不用）",
+                                            "layout_right_offset": {
+                                                "x": 384,
+                                                "y": 170
+                                            }
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjexgwr5tbc0",
+                                            "created": 1650443717614,
+                                            "text": "本地环境可以使用这个包和线上体验保证一致。可以把模版渲染出来，当然也可以通过接口的方式渲染？",
+                                            "layout_right_offset": {
+                                                "x": -22,
+                                                "y": -231
+                                            }
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjewzp65mhk0",
+                                    "created": 1650442368916,
+                                    "text": "功能",
+                                    "layout_right_offset": {
+                                        "x": 104,
+                                        "y": -694
+                                    },
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjeul1vejk80",
+                                            "created": 1650435578882,
+                                            "text": "灰度",
+                                            "layout_right_offset": {
+                                                "x": 10,
+                                                "y": -197
+                                            }
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjeul3ilc0w0",
+                                                    "created": 1650435582461,
+                                                    "text": "cdn的cookie中用户id分桶"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjf1c3ghmaw0",
+                                                    "created": 1650454624825,
+                                                    "text": "分国家和分用户灰度"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjeulvh6qs80",
+                                            "created": 1650435643325,
+                                            "text": "缓存逻辑"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjeum6r56j40",
+                                                    "created": 1650435667872,
+                                                    "text": "用户id_url组成缓存key",
+                                                    "layout_right_offset": {
+                                                        "x": 192,
+                                                        "y": -127
+                                                    }
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjeumbp62ow0",
+                                                            "created": 1650435678637,
+                                                            "text": "过期则回源到java网关（源站转发到渲染应用 fass技术体系只支持hsf"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjewzwbkynk0",
+                                    "created": 1650442384481,
+                                    "text": "平台"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjex02cwmwg0",
+                                            "created": 1650442397622,
+                                            "text": "页面域名、路径设置"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjex6aomhlk0",
+                                                    "created": 1650442885930,
+                                                    "text": "配置中心"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjex0cs5smo0",
+                                            "created": 1650442420312,
+                                            "text": "模版推送"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjex6864sg80",
+                                                    "created": 1650442880458,
+                                                    "text": "文件系统"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjex0f8272w0",
+                                            "created": 1650442425627,
+                                            "text": "发布&灰度"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cjeuj5xxt1k0",
+                            "created": 1650435431014,
+                            "text": "设计方案",
+                            "layout_right_offset": {
+                                "x": 21,
+                                "y": 48
+                            },
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjeua07edw80",
+                                    "created": 1650434713248,
+                                    "text": "render-sdk",
+                                    "layout_right_offset": {
+                                        "x": 3,
+                                        "y": 175
+                                    }
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjeuchio0m80",
+                                            "created": 1650434907662,
+                                            "text": "属性"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjeucj91gls0",
+                                                    "created": 1650434911434,
+                                                    "text": "renderClass"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjeucm004kg0",
+                                            "created": 1650434917418,
+                                            "text": "mock"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjeucn4zzc80",
+                                            "created": 1650434919897,
+                                            "text": "render"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjeucrjoi540",
+                                            "created": 1650434929492,
+                                            "text": "addService"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjeye63gx280",
+                                            "created": 1650446323967,
+                                            "text": "接口"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cjeye7sspwg0",
+                                                    "created": 1650446327675,
+                                                    "text": "DocumentContext"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjeyfsr2nb40",
+                                                            "created": 1650446451648,
+                                                            "text": "react的上下文"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjeyeanefrc0",
+                                                    "created": 1650446333879,
+                                                    "text": "Block"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjez8gz05u80",
+                                                            "created": 1650448698566,
+                                                            "text": "对接区块系统"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cjf1hrr7kw80",
+                                                                    "created": 1650455069537,
+                                                                    "text": "部署到cdn"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cjf1hy2wajs0",
+                                                                            "created": 1650455083304,
+                                                                            "text": "路径带时间/版本/语言： domain/path/lang/version"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cjf1hv2fo680",
+                                                                    "created": 1650455076746,
+                                                                    "text": "对接配置中心"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cjez8m22hsw0",
+                                                            "created": 1650448709636,
+                                                            "text": "头尾部导航"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cjf0xj0h9pc0",
+                                                            "created": 1650453483224,
+                                                            "text": "lru-cache"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cjf0y8ydxlc0",
+                                                                    "created": 1650453539693,
+                                                                    "text": "缓存区块的内容"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cjf1kt9ffo80",
+                                                            "created": 1650455307908,
+                                                            "text": "灰度： 桶+部署单元白名单：划分单元/比例"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjeyecmctbs0",
+                                                    "created": 1650446338170,
+                                                    "text": "InlineScript"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjeyegonjq80",
+                                                    "created": 1650446347016,
+                                                    "text": "IncludeAssets"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cjf24t4df600",
+                                                    "created": 1650456874885,
+                                                    "text": "多语言"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cjf24uonewo0",
+                                                            "created": 1650456878288,
+                                                            "text": "版本缓存+内容缓存（都是lru)"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjev7m5eyaw0",
+                                    "created": 1650437347034,
+                                    "text": "fass",
+                                    "layout_right_offset": {
+                                        "x": -48,
+                                        "y": 114
+                                    }
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
