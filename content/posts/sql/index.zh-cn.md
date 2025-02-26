@@ -371,3 +371,12 @@ FROM (
   ) app
 ) lines;
 ```
+
+### CASE WHEN 表达式
+
+CASE WHEN 表达式通常用于对数据进行分类或标记。在聚合函数（如 COUNT、SUM 等）中，它非常有用。
+
+```sql
+SELECT COUNT(CASE WHEN p2 = 'cache_hit' THEN 1 END) AS hit_count
+FROM your_table;
+```

@@ -120,22 +120,11 @@ resampleFilter = "Lanczos"
      link = "/images/substack.svg"  # 使用 SVG 图标的路径
      weight = 4
      url = "https://maodi.substack.com/"
- #[[params.social]]
- #   name = "Zhihu"
- #   icon = "fab fa-zhihu fa-2x"
- #   weight = 3
-#   url = "https://www.zhihu.com/people/feng-zi-63-44"
- #[[params.social]]
- #   name = "Douban"
- #   link = "https://i.ibb.co/PxptbT0/image.png"
- #   weight = 4
- #   clazz = "douban"
-#   url = "https://www.douban.com/people/maoxingxing/"
  [[params.social]]
    name = "Rss"
    icon = "fa fa-rss fa-2x"
    weight = 5
-   url = "https://maoxunxing.com/index.xml"
+   url = "https://maoxunxing.com/zh-cn/index.xml"
 
 [[languages.en.menu.main]]
     name = "Blog"

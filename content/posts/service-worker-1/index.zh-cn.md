@@ -48,6 +48,65 @@ workbox.precaching.precacheAndRoute([
 ### RuntimeCache
 在 Service Worker 的 `install` 完成后，`activated` 和 `fetch` 阶段进行的操作。可以根据不同资源制定缓存策略。
 
+### serviceworker什么时候更新sw.js
+
+根据[官方文档](https://developer.chrome.com/docs/workbox/remove-buggy-service-workers)的说法：浏览器会对比sw.js的内容，如果有差异会更新sw.js
+![alt text](sw.jpg)
+
+### serviceworker有两个部分
+1个是页面，称之为client 2个是serviceworker容器 这两者通过`message`通道通信
+
+容器发送消息代码：
+```js
+class SwMessage {
+  // Service Worker 发送消息到页面
+  async postMessageFromSW(options: { type: MESSAGE_TYPE; data?: any }, clientId?: string) {
+    try {
+      const clients = (self as unknown as ServiceWorkerGlobalScope).clients;
+      if (!clients) {
+        return;
+      }
+
+      let channelClient;
+      // 只更新当前
+      if (clientId) {
+        channelClient = await clients.get(clientId);
+        if (!channelClient) {
+          console.error(`[SW] channelClient is null, clientId: `, clientId);
+          sendEventLog({
+            p1: '',
+            p2: 'channelClient is null',
+          });
+        }
+        channelClient?.postMessage({
+          ...options,
+        });
+        return;
+      }
+      // 广播
+      const allClients = await clients.matchAll();
+      if (!allClients.length) {
+        return;
+      }
+      allClients.forEach((client) => {
+        if (!client) return;
+        client.postMessage({
+          ...options,
+        });
+      });
+    } catch (error: any) {
+      sendEventLog({
+        p1: '',
+        p2: error.message,
+      });
+    }
+  }
+}
+
+```
+
+发送消息的时候要用`event.resultingClientId`而不是`event.clientId`，因为页面可能刷新Navigation，导致无法找到client
+
 ---
 
 ## 缓存策略
@@ -150,7 +209,9 @@ let timing = performance.getEntriesByType('navigation')[0]
 当 Service Worker 版本回退时，如何处理缓存清空的问题？
 
 ### Service Worker 开关关闭
-html下发全局配置，然后根据这个配置去控制是否激活serviceworker。
+方案1: html下发全局配置，然后根据这个配置去控制是否激活serviceworker。
+方案2: 通过a.com/sw.js 这个入口js去控制serviceworker的注册和安装，这样的好处是可以避免安装错误的serviceworker导致页面白调
+
 
 ### 切换语言或账号
 - **切换语言：** 域名会变化，缓存自动更新。
@@ -205,5 +266,7 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 ## 真实存储数据的位置
 
 ![alt text](image.png)
+
+## 
 
 ---
