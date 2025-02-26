@@ -3,7 +3,6 @@ title = "maoxunxing"
 theme = "hugo-coder"
 languagecode = "zh-cn"
 defaultcontentlanguage = "zh-cn"
-defaultContentLanguageInSubdir = "true"
 
 paginate = 10
 canonifyurls = false
