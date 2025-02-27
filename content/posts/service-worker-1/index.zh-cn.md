@@ -256,7 +256,7 @@ serverworker激活后不会立即拦截请求，需要`clients.claim()`才会开
 
 **错误信息：**
 ```js
-sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://assets.alicdn.com/g/ae-fe/service-worker-ui/0.0.62/pc.js' failed to load.
+sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'xxx/0.0.62/pc.js' failed to load.
     at init (sw.js?version=0.0.62:6:20)
     at sw.js?version=0.0.62:10:1
 ```
@@ -269,6 +269,15 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 ## 真实存储数据的位置
 
 ![alt text](image.png)
+
+## 数据监控
+
+我们在分析LCP效果的时候，需要把pv（不包含302）->sw拦截(要去掉302）->命中缓存的漏斗做出来。 观察数据的变化，注意样本量，如果样本量较少（因为pv访问少）可能缓存命中率会低，这个无关紧要。
+
+通过给日志加一个全局染色标，来判断是否命中缓存。怎么加？根据当前html页面是否是缓存的页面，是缓存进去的话，sw进程会在html文件加标记位。
+
+观察业务指标：
+比如接口调用量同比对比，页面访问量同比对比，核心模块渲染量同比对比
 
 ---
 
