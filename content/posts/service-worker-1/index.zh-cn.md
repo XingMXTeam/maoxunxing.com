@@ -197,6 +197,9 @@ let timing = performance.getEntriesByType('navigation')[0]
 
 服务端可以统计到302重定向次数或者通过无头浏览器，没有跨域限制。
 
+### clients.claim()
+serverworker激活后不会立即拦截请求，需要`clients.claim()`才会开始接管请求，但是如果只缓存html，一般需要立即接管。除非是有其他异步资源请求。
+
 ---
 
 ## 边界 Case
@@ -267,6 +270,8 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 
 ![alt text](image.png)
 
-## 
-
 ---
+
+## 更多资料
+
+`https://web.dev/articles/service-worker-lifecycle`
