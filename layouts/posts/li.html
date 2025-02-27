@@ -25,7 +25,7 @@
       </text>
     </svg>
     {{ else }}
-      <img src="/{{ $image }}" />
+      <img src="{{ .Site.BaseURL }}{{ $image }}" />
     {{ end }}
   </a>
   <div>
