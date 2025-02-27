@@ -279,6 +279,8 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 观察业务指标：
 比如接口调用量同比对比，页面访问量同比对比，核心模块渲染量同比对比
 
+趋势不明显的话，可以按周维度或者月维度。
+
 ---
 
 ## 更多资料
