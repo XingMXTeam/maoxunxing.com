@@ -99,3 +99,9 @@ node调用hsf， 入参是一个对象。 对象的字段不能是枚举，和Li
 技术：
 枚举改为string
 自定义对象改为List`<<Map, String>>`类型
+
+## RPC接口缓存
+
+hsf是如何根据参数缓存的？
+
+key: id(xxx)_method(get/post)_uid(唯一id) , 底层是一个`Map<string, Promise<any>>`

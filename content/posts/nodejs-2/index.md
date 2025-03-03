@@ -46,3 +46,10 @@ Nginx Access log admin/cai/logs/cronolog/2021/.log
 ## 工具
 
 nodemon : watch file change
+
+## faas 运维
+### ls
+`ls -lt` 查看所有内容
+
+### turf ps
+查看机器上启动的所有worker

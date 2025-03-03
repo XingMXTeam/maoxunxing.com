@@ -15,3 +15,7 @@ chrome://net-export/
 ## 查看日志
 
 [netlog-viewer](https://netlog-viewer.appspot.com/#import)
+
+
+## 本地调试跨域
+localhost 需要代理到指定域名，避免本地跨域

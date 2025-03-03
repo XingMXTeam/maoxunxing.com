@@ -127,9 +127,18 @@ tags:
   - [Critical CSS with Next.js](https://focusreactive.com/critical-css-with-nextjs/)
   - [Web.dev 文章：Extract Critical CSS](https://web.dev/articles/extract-critical-css?hl=zh-cn)
 
----
-
-## 参考资料
+### 参考资料
 
 - [W3C 性能计时入门](https://w3c.github.io/perf-timing-primer/?spm=ata.21736010.0.0.735649fepnL0uD)
 - [Web.dev 提取关键 CSS](https://web.dev/articles/extract-critical-css?hl=zh-cn)
+
+##  CSR 和 SSR 架构
+
+csr架构： 采用动静分离，静态部分缓存，动态部分通过csr请求。
+
+csr请求有两种形式一个是二段请求，先请求页面结构框架（也就是html），然后组件里面请求具体的数据。 
+这个典型应用是商家工作台。 采用的是这种架构。
+
+详情页面根据商品id走内存缓存，所以接口非常快。但是首页无法做到，因为首页的结构是跟着运营平台变化的。
+
+ssr架构： html走serviceworker缓存，但是页面结构和商品和运营数据会刷新。

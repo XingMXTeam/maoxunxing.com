@@ -1,12 +1,11 @@
 ---
-title: "如何写一个装饰器"
+title: "ES6 知识"
 date: 2021-10-21T19:17:54+08:00
 tags:
   - ES6
-description: "装饰器看着高大上，其实是一个很简单的东西"
 ---
 
-## **1. 本质**
+## 如何写一个装饰器
 
 装饰器本质上是一个高阶组件（Higher-Order Component, HOC），其参数是一个函数，并返回一个新的函数。结合 Babel 插件进行编译。
 
@@ -55,10 +54,7 @@ export const DecoratorDemo = (props) => (WrappedComponent) => {
 
 ---
 
-## **4. 注意事项**
+## import 
 
-- 在使用装饰器时，建议充分理解其工作原理，避免因运行时行为与预期不符而导致问题。
-- 如果项目中需要频繁使用装饰器，可以考虑通过 Babel 插件（如 `@babel/plugin-proposal-decorators`）来支持装饰器语法。
-- 确保团队成员对装饰器的使用有一致的理解，以减少潜在的开发和维护成本。
-
----
+`import * as path from 'path';` 和 `import path from 'path';` 
+是两种不同方式导入模块的语法。前者是导出所有的内容。 后者是导出default，因为`path`没有default，所以会报错。

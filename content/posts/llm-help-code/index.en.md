@@ -2,6 +2,8 @@
 title: "How To Write Prompt ?"
 description: "how to write prompt"
 date: 2024-07-07
+tags:
+  - AI
 images:
   - llm-help-code/a.jpg
 ---
