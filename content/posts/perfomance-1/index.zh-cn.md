@@ -142,3 +142,20 @@ csr请求有两种形式一个是二段请求，先请求页面结构框架（�
 详情页面根据商品id走内存缓存，所以接口非常快。但是首页无法做到，因为首页的结构是跟着运营平台变化的。
 
 ssr架构： html走serviceworker缓存，但是页面结构和商品和运营数据会刷新。
+
+## Performance如何获取资源加载时长
+
+performance.getEntriesByType("resource") 返回的是一个 PerformanceResourceTiming 对象的数组。 每个对象包含关于单个资源加载的详细信息。 
+
+- name: 资源的 URL。
+- startTime: 资源请求的开始时间（相对于 navigationStart）。
+- **responseEnd**: 浏览器收到资源响应的结束时间（所有数据下载完成）。 这通常是你需要的结束时间。
+- duration: 资源加载的总时长 (等于 responseEnd - startTime)。
+- fetchStart: 浏览器开始获取资源的时间（在 DNS 查询之前）。
+- domainLookupStart: DNS 查询开始的时间。
+- domainLookupEnd: DNS 查询结束的时间。
+- connectStart: TCP 连接开始的时间。
+- connectEnd: TCP 连接完成的时间。
+- requestStart: 浏览器发起请求的时间。
+- responseStart: 浏览器接收到第一个字节的时间。
+- secureConnectionStart: 如果是 HTTPS 连接，TLS 握手开始的时间。

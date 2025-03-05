@@ -1,6 +1,8 @@
 ---
 title: "Firefox 调试 Service Worker (sw.js) 的方法与注意事项"
 date: 2025-02-24
+tags:
+  - Service Worker
 ---
 
 ## 目录

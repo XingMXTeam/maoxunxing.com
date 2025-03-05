@@ -2,6 +2,8 @@
 title: "Service Worker 实践指南"
 description: ""
 date: 2025-02-06
+tags:
+  - Service Worker
 ---
 
 ## 目录
