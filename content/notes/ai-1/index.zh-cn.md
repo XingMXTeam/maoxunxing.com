@@ -7,18 +7,18 @@ tags:
 
 最近在 Youtube 上很火的一个视频<how i use llm>，作者是Andrej Karpathy，他是一位大神，摘录一下ChatGPT对他的介绍：
 
-> Andrej Karpathy（安德烈·卡帕斯）是一位斯洛伐克裔加拿大计算机科学家，专长于人工智能、深度学习和计算机视觉领域。他于1986年10月23日出生在捷克斯洛伐克布拉提斯拉瓦，15岁时随家人移居加拿大多伦多。他在多伦多大学获得计算机科学和物理学学士学位，在英属哥伦比亚大学取得硕士学位，随后在斯坦福大学师从李飞飞教授，专攻计算机视觉与自然语言处理交叉领域，并于2015年获得博士学位。 citeturn0search6
-
-> 职业生涯中，Karpathy曾是OpenAI的创始成员之一，专注于深度学习和计算机视觉研究。2017年，他加入特斯拉，担任人工智能和自动驾驶视觉总监，领导Autopilot计算机视觉团队，直接向埃隆·马斯克汇报。2022年7月，他离开特斯拉，并于2023年2月宣布重返OpenAI。 citeturn0search10
-
-> 此外，Karpathy还积极从事教育工作，曾在斯坦福大学开设并主讲深度学习课程CS231n：卷积神经网络与视觉识别，深受学生欢迎。他也在个人YouTube频道上分享关于人工智能和深度学习的教育内容，致力于推动人工智能领域的发展和普及。 citeturn0search10 
+> Andrej Karpathy（安德烈·卡帕斯）是一位斯洛伐克裔加拿大计算机科学家，专长于人工智能、深度学习和计算机视觉领域。他于1986年10月23日出生在捷克斯洛伐克布拉提斯拉瓦，15岁时随家人移居加拿大多伦多。他在多伦多大学获得计算机科学和物理学学士学位，在英属哥伦比亚大学取得硕士学位，随后在斯坦福大学师从李飞飞教授，专攻计算机视觉与自然语言处理交叉领域，并于2015年获得博士学位。
+> 职业生涯中，Karpathy曾是OpenAI的创始成员之一，专注于深度学习和计算机视觉研究。2017年，他加入特斯拉，担任人工智能和自动驾驶视觉总监，领导Autopilot计算机视觉团队，直接向埃隆·马斯克汇报。2022年7月，他离开特斯拉，并于2023年2月宣布重返OpenAI。
+> 此外，Karpathy还积极从事教育工作，曾在斯坦福大学开设并主讲深度学习课程CS231n：卷积神经网络与视觉识别，深受学生欢迎。他也在个人YouTube频道上分享关于人工智能和深度学习的教育内容，致力于推动人工智能领域的发展和普及。
 
 这里是他的演示文稿：
 {{< img src="image.png" alt="LLM APP" maxWidth="350px" align="right" >}}
 {{< img src="image-1.png" alt="what is llm" maxWidth="350px" align="right" >}}
 
+
 原视频地址：
 {{< video src="https://www.youtube.com/watch?v=EWvNQjAaOHw" caption="How I Use LLM" max-width="960px">}}
+
 
 2个多小时的视频学习，我记录了一些笔记： 
 
@@ -46,38 +46,38 @@ post-training: much much cheaper finetuning with SFT, RLHF, RL on Conversations
 
 Knowledge Based Query 基于网络的很普遍的知识，不保证一定正确
 
-1、尽量简短的对话，如果是新话题建议新开聊天。因为`tokens`很贵，而且话题越长越容易出现错误
+1、尽量简短的对话，如果是新话题建议新开聊天。因为`tokens`很贵，而且话题越长越容易出现错误  
 2、选择不同的模型去处理不同的任务，比如Creation、Traveling这种，同时和不同的模型对话，看结果有何不同
 
 
 ## 模型的差异
 
-1、思维模型 vs 通用模型： 思维模型擅长编程和数学，一般会比较耗时<think>，普通的常识性知识，没必要用这种模型
+1、思维模型 vs 通用模型： 思维模型擅长编程和数学，一般会比较耗时<think>，普通的常识性知识，没必要用这种模型  
 2、sonnet 3.5 不是思维模型
 
 ## Tool Use
 
-1、网络搜索：搜索《白蓮花大飯店》最新季出来的时间，brave隐私浏览器； what are the bigheadline news today ?
-2、DeepSearch：thinking + 网络搜索
-3、pdf 文档阅读：丢一个文档给llm让他总结
-4、书籍阅读：《the wealth of nations》，把章节贴给llm， 然后让它总结一下和问一些问题，特别是那些不熟悉的领域
-5、电脑程序：LLM 针对那些无法通过大脑计算回答的问题，会通过借助外部工具，不同llm有不同的外部工具
-   - 比如一个复杂的乘法，ChatGPT会通过python解释器得到结果，然后返回结果
-6、数据分析：ChatGPT功能
-   - 比如研究 OpenAl 在一段时间内的估值（使用搜索工具），然后创建一个表格，输入每一年的估值。
-   - Now plot this. Use log scale for y axis 制作一张图
-   - dive deep: data analaysis with chatgpt
-7、Artifacts： Claude模型的功能 claudiartifacts.com
-   - Flashcards on Adam Smith's Life and Economic Theories ，然后从维基百科复制Adam Smith的内容
-   - Now use Artifacts feature to write a flashcards app to test me on these. 会生成一个APP
-8、思维导图： 比较喜欢可视化的东西，对书的章节、代码等，通过这种方式能好的理解和memory
-   - We are reading The Wealth of Nations by Adam Smith, I am attaching Chapter 3 of Book 1. Please create a conceptual diagram of this chapter.
-9、Cursor Composer: vibe programming
-   - setup a new React14 starter project
-   - when either x or o win, i want confetti or something  制作一个撒花🎉的效果
-   - cmd + k: 内嵌聊天
-   - cmd + i：composer
-   - cmd + l: chat
+1、网络搜索：搜索《白蓮花大飯店》最新季出来的时间，brave隐私浏览器； what are the bigheadline news today ?  
+2、DeepSearch：thinking + 网络搜索  
+3、pdf 文档阅读：丢一个文档给llm让他总结  
+4、书籍阅读：《the wealth of nations》，把章节贴给llm， 然后让它总结一下和问一些问题，特别是那些不熟悉的领域  
+5、电脑程序：LLM 针对那些无法通过大脑计算回答的问题，会通过借助外部工具，不同llm有不同的外部工具  
+   - 比如一个复杂的乘法，ChatGPT会通过python解释器得到结果，然后返回结果  
+6、数据分析：ChatGPT功能  
+   - 比如研究 OpenAl 在一段时间内的估值（使用搜索工具），然后创建一个表格，输入每一年的估值。  
+   - Now plot this. Use log scale for y axis 制作一张图  
+   - dive deep: data analaysis with chatgpt  
+7、Artifacts： Claude模型的功能 claudiartifacts.com  
+   - Flashcards on Adam Smith's Life and Economic Theories ，然后从维基百科复制Adam Smith的内容  
+   - Now use Artifacts feature to write a flashcards app to test me on these. 会生成一个APP  
+8、思维导图： 比较喜欢可视化的东西，对书的章节、代码等，通过这种方式能好的理解和memory  
+   - We are reading The Wealth of Nations by Adam Smith, I am attaching Chapter 3 of Book 1. Please create a conceptual diagram of this chapter.  
+9、Cursor Composer: vibe programming  
+   - setup a new React14 starter project  
+   - when either x or o win, i want confetti or something  制作一个撒花🎉的效果  
+   - cmd + k: 内嵌聊天  
+   - cmd + i：composer  
+   - cmd + l: chat  
 
 ## modalities 模式: 日常对话通过语音快速输入，60%场景
 
