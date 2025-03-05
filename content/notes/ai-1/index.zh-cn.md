@@ -57,22 +57,22 @@ Knowledge Based Query 基于网络的很普遍的知识，不保证一定正确
 
 ## Tool Use
 
-1、网络搜索：搜索《白蓮花大飯店》最新季出来的时间，brave隐私浏览器； what are the bigheadline news today ?  
-2、DeepSearch：thinking + 网络搜索  
-3、pdf 文档阅读：丢一个文档给llm让他总结  
-4、书籍阅读：《the wealth of nations》，把章节贴给llm， 然后让它总结一下和问一些问题，特别是那些不熟悉的领域  
-5、电脑程序：LLM 针对那些无法通过大脑计算回答的问题，会通过借助外部工具，不同llm有不同的外部工具  
+1. 网络搜索：搜索《白蓮花大飯店》最新季出来的时间，brave隐私浏览器； what are the bigheadline news today ?  
+2. DeepSearch：thinking + 网络搜索  
+3. pdf 文档阅读：丢一个文档给llm让他总结  
+4. 书籍阅读：《the wealth of nations》，把章节贴给llm， 然后让它总结一下和问一些问题，特别是那些不熟悉的领域  
+5. 电脑程序：LLM 针对那些无法通过大脑计算回答的问题，会通过借助外部工具，不同llm有不同的外部工具  
    - 比如一个复杂的乘法，ChatGPT会通过python解释器得到结果，然后返回结果  
-6、数据分析：ChatGPT功能  
+6. 数据分析：ChatGPT功能  
    - 比如研究 OpenAl 在一段时间内的估值（使用搜索工具），然后创建一个表格，输入每一年的估值。  
    - Now plot this. Use log scale for y axis 制作一张图  
    - dive deep: data analaysis with chatgpt  
-7、Artifacts： Claude模型的功能 claudiartifacts.com  
+7. Artifacts： Claude模型的功能 claudiartifacts.com  
    - Flashcards on Adam Smith's Life and Economic Theories ，然后从维基百科复制Adam Smith的内容  
    - Now use Artifacts feature to write a flashcards app to test me on these. 会生成一个APP  
-8、思维导图： 比较喜欢可视化的东西，对书的章节、代码等，通过这种方式能好的理解和memory  
+8. 思维导图： 比较喜欢可视化的东西，对书的章节、代码等，通过这种方式能好的理解和memory  
    - We are reading The Wealth of Nations by Adam Smith, I am attaching Chapter 3 of Book 1. Please create a conceptual diagram of this chapter.  
-9、Cursor Composer: vibe programming  
+9. Cursor Composer: vibe programming  
    - setup a new React14 starter project  
    - when either x or o win, i want confetti or something  制作一个撒花🎉的效果  
    - cmd + k: 内嵌聊天  
