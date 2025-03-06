@@ -159,3 +159,11 @@ performance.getEntriesByType("resource") 返回的是一个 PerformanceResourceT
 - requestStart: 浏览器发起请求的时间。
 - responseStart: 浏览器接收到第一个字节的时间。
 - secureConnectionStart: 如果是 HTTPS 连接，TLS 握手开始的时间。
+
+## 获取不同指标数据
+
+```js
+import { onLCP, onINP, onCLS, CLSMetric } from "web-vitals/attribution";
+Math.random() < 10 / 100 // 采样率10%
+```
+
