@@ -6,9 +6,21 @@ tags:
   - OOP
   - Programming
 ---
-### Python类
 
-#### 定义类
+## 目录
+1. [Python类](#Python类)
+   - [定义类](#定义类)
+   - [引用类的属性和方法](#引用类的属性和方法)
+   - [定义init方法，设置默认属性](#定义init方法，设置默认属性)
+   - [类共享变量和实例变量](#类共享变量和实例变量)
+   - [注意引用变量避免被所有实例共享](#注意引用变量避免被所有实例共享)
+   - [函数的定义可以在类外部](#函数的定义可以在类外部)
+   - [通过self引用函数](#通过self引用函数)
+   - [继承](#继承)9
+
+## Python类
+
+### 定义类
 
 ```
 class MyClass:
@@ -19,12 +31,12 @@ class MyClass:
         return 'hello world'
 ```
 
-#### 引用类的属性和方法
+### 引用类的属性和方法
 
 MyClass.i和 MyClass.f
 MyClass.__doc_ => "A simple example class"
 
-#### 定义init方法，设置默认属性
+### 定义init方法，设置默认属性
 
 ```
 def __init__(self):
@@ -44,7 +56,7 @@ def __init__(self):
 (3.0, -4.5)
 ```
 
-#### 类共享变量和实例变量
+### 类共享变量和实例变量
 
 ```
 class Dog:
@@ -167,7 +179,7 @@ class DerivedClassName(moduleName.BaseClassName):
 obj.__class__ 是int或者继承自int类 返回true)
 issubclass(bool, int)： 判断bool是否是int的子类
 
-#### 多继承
+### 多继承
 
 ```
 class DerivedClassName(Base1, Base2, Base3):
@@ -178,7 +190,7 @@ class DerivedClassName(Base1, Base2, Base3):
     <statement-N>
 ```
 
-#### 私有变量和类内引用
+### 私有变量和类内引用
 
 私有变量一般是以_下划线开头
 内部调用方法__双下划线开头：
