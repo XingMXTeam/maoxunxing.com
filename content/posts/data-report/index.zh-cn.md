@@ -68,34 +68,64 @@ GROUP BY Time
 ORDER BY Time 
 ```
 
-A minimalist cartoon illustration showing a simple dashboard scene in landscape format. Two cute stick figure characters with big expressive eyes stand beside a large simplified graph display. The graph shows basic line charts representing web performance metrics.
+## 长尾比较多的柱状图
 
-Style elements:
-- Bold black outlines around all elements
-- Flat colors using only 3 colors: light blue, soft grey, and black
-- White/light grey background
-- Simple geometric shapes throughout
+```sql
+WITH binned_data AS (
+  SELECT 
+    Floor((try_cast(p5 AS double) - try_cast(p4 AS double)) / 1000 / 60) AS value
+  FROM 
+    "xxx"
+  WHERE 
+    try_cast(p5 AS double) IS NOT NULL
+    AND try_cast(p4 AS double) IS NOT NULL
+    AND (try_cast(p5 AS double) - try_cast(p4 AS double)) >= 0
+),
+binned_values AS (
+  SELECT
+    CASE
+      WHEN value >= 0 AND value < 240 THEN '0-239'
+      WHEN value >= 240 AND value < 480 THEN '240-479'
+      WHEN value >= 480 AND value < 720 THEN '480-719'
+      WHEN value >= 720 AND value < 960 THEN '720-959'
+      WHEN value >= 960 AND value < 1200 THEN '960-1199'
+      WHEN value >= 1200 AND value < 1440 THEN '1200-1439'
+      WHEN value >= 1440 AND value < 1680 THEN '1440-1679'
+      WHEN value >= 1680 AND value < 1920 THEN '1680-1919'
+      WHEN value >= 1920 AND value < 2160 THEN '1920-2159'
+      WHEN value >= 2160 AND value < 2400 THEN '2160-2399'
+      ELSE '2400+'
+    END AS bin,
+    CASE
+      WHEN value >= 0 AND value < 240 THEN 0
+      WHEN value >= 240 AND value < 480 THEN 240
+      WHEN value >= 480 AND value < 720 THEN 480
+      WHEN value >= 720 AND value < 960 THEN 720
+      WHEN value >= 960 AND value < 1200 THEN 960
+      WHEN value >= 1200 AND value < 1440 THEN 1200
+      WHEN value >= 1440 AND value < 1680 THEN 1440
+      WHEN value >= 1680 AND value < 1920 THEN 1680
+      WHEN value >= 1920 AND value < 2160 THEN 1920
+      WHEN value >= 2160 AND value < 2400 THEN 2160
+      ELSE 2400
+    END AS bin_start
+  FROM 
+    binned_data
+)
+SELECT 
+  bin,
+  COUNT(*) AS num
+FROM 
+  binned_values
+GROUP BY 
+  bin, bin_start
+ORDER BY 
+  bin_start;
+```
 
-Main elements:
-- A large simplified monitor/screen showing basic line charts
-- Two stick figure characters with round heads and simple facial features
-- One character points excitedly at the rising trend line
-- Small speech bubble with "Cache hit rate ↑" text
-- Simple geometric shapes representing data points and axes
+## 分布比较均匀的柱状图
 
-Character details:
-- Round heads with minimal facial features (dots for eyes, simple curved line for smile)
-- Stick-like arms and legs
-- One character wearing glasses made from simple circles
-- Excited poses with raised arms
-
-Composition:
-- Horizontal layout with screen taking up 60% of width
-- Characters positioned on either side of the screen
-- Clean, uncluttered arrangement with plenty of white space
-
-Technical specifications:
-- No gradients or shadows
-- Thick, consistent line weights
-- Maximum 3 colors plus black outlines
-- Landscape orientation (16:9 ratio)
+lcp分布：
+```sql
+select round(try_cast(c1 as double)/100, 0)*100 as val, count(*) as num where try_cast(c1 as double) > 0 and try_cast(c1 as double) < 15000 group by val order by val 
+```
