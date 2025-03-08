@@ -7,6 +7,11 @@
         "source": "/feed.xml",
         "destination": "/posts/index.xml",
         "type": 301
+      },
+      {
+        "source": "/en{,/**}",
+        "destination": "/",
+        "type": 301
       }
     ],
     "headers": [
