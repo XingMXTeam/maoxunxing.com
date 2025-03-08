@@ -2,6 +2,8 @@
 title: "证书失效导致图片打不开的解决方案"
 description: ""
 date: 2025-02-15
+tags:
+  - HTTP
 ---
 
 ## 目录

@@ -1,9 +1,8 @@
 ---
-title: "[WIP] 前端组件的思考"
+title: "前端组件的思考"
 date: 2021-09-10
 tags:
-  - component
-  - front-end
+  - Web开发
 description: "前端组件、效率工程"
 images:
   - component-thought/web-components.png

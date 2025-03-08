@@ -3,9 +3,7 @@ title: "Edge Cache"
 date: 2021-08-24
 draft: true
 tags:
-  - front-end
-  - programming
-  - edge-cache
+  - Web开发
 description: "This topic is about how to use edge cache to promote the app or website's performance."
 images:
   - edge-cache/edge-cache.png

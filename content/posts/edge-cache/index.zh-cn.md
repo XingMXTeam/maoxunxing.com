@@ -1,10 +1,8 @@
 ---
-title: "[WIP] Edge Cache边缘缓存"
+title: "Edge Cache边缘缓存"
 date: 2021-08-24
 tags:
-  - front-end
-  - programming
-  - edge-cache
+  - Web开发
 description: ""
 images:
   - edge-cache/edge-cache.png

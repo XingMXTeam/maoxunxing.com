@@ -2,7 +2,7 @@
 title: "开源的价值"
 date: 2021-08-27T10:20:36+08:00
 tags:
-  - open-source
+  - 计算机
 description: "开源的重要意义"
 images:
   - open-source-value/open-source-value.webp

@@ -1,6 +1,8 @@
 ---
 title: "AVIF图片类型检测与User-Agent判断指南"
 date: 2024-09-13
+tags:
+  - Web开发
 ---
 
 ## 目录

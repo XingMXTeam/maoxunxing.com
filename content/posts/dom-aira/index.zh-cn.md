@@ -1,8 +1,8 @@
 ---
-title: "[WIP] A11Y - 无障碍编程"
+title: "A11Y - 无障碍编程"
 date: 2022-04-02T10:31:39+08:00
 tags:
-  - A11Y
+  - Web开发
 description: ""
 images:
   - aria/a.png

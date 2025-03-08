@@ -1,8 +1,8 @@
 ---
-title: "[WIP] 计算机本质的理解"
+title: "计算机本质的理解"
 date: 2021-08-24
 tags:
-  - 操作系统
+  - 计算机
 description: "计算机本质是什么？"
 images:
   - code-computer/code-computer.jpeg

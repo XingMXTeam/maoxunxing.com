@@ -1,8 +1,8 @@
 ---
-title: "[WIP] 云原生的理解"
+title: "云原生的理解"
 date: 2021-09-04
 tags:
-  - cloud native
+  - Web开发
 description: "云原生, cloud-native"
 images:
   - cloud-native/cloud-native.jpeg

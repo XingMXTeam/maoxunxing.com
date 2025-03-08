@@ -1,8 +1,8 @@
 ---
-title: "[WIP] 如何定义问题"
+title: "如何定义问题"
 date: 2021-09-08
 tags:
-  - 需求分析
+  - 职场
 description: "能定义多大的问题，就能做出多大的事业。"
 images:
   - how-to-define-question/define-question.jpeg

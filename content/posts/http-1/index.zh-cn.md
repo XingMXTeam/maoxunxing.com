@@ -3,7 +3,8 @@ title: "资源优化与加载策略"
 description: "dns-prefetch vs preload vs preconnect vs prefetch vs Early Hints 103"
 date: 2024-09-10
 tags:
-  - HTTP协议
+  - 性能优化
+  - Web开发
 images:
   - http-1/a.jpg
 ---

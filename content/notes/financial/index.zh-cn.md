@@ -3,6 +3,7 @@ title: "会计与财务概论笔记"
 date: 2019-11-25
 tags:
   - 会计
+  - 投资
 ---
 
 ![alt text](image.png)

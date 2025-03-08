@@ -3,7 +3,7 @@ title: "实现自动曝光功能"
 description: "MutationObserver 和 IntersectionObserver的使用"
 date: 2024-09-10
 tags:
-  - Web
+  - Web开发
 images:
   - web-1/a.jpeg
 ---

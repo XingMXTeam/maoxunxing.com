@@ -1,9 +1,11 @@
 ---
-title: "[WIP] 前端性能报表"
+title: "前端性能报表"
 description: ""
 date: 2025-02-15
 images:
   - data-report/image.png
+tags:
+  - Web开发
 ---
 
 ## ServiceWorker缓存命中率统计【折线图】

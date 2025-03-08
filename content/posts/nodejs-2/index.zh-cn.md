@@ -1,9 +1,8 @@
 ---
-title: "[WIP] nodejs你需要知道的"
+title: "nodejs你需要知道的"
 date: 2021-08-27T10:20:36+08:00
 tags:
   - nodejs
-  - programming
 description: ""
 images:
   - node-js/node-js.jpeg

@@ -2,7 +2,8 @@
 title: "前端性能优化指南"
 date: 2025-02-06
 tags:
-  - performance
+  - 性能优化
+  - Web开发
 ---
 
 ## 目录

@@ -2,7 +2,7 @@
 title: "<How I Use LLM> 总结笔记"
 date: 2025-03-04
 tags:
-  - 人工智能
+  - AI
 ---
 
 最近在 Youtube 上很火的一个视频<how i use llm>，作者是Andrej Karpathy，他是一位大神，摘录一下ChatGPT对他的介绍：

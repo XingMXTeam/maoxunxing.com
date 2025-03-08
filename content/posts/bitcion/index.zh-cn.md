@@ -1,10 +1,8 @@
 ---
-title: "[WIP] 数字货币的理解"
+title: "数字货币的理解"
 date: 2021-09-09
 tags:
-  - bitcion
-  - NFT
-  - 元宇宙
+  - 投资
 description: ""
 images:
   - bitcion/biticon.jpeg

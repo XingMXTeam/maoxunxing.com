@@ -3,6 +3,8 @@ title: "LLM通过软件工程赚取 100 万美元 ？"
 date: 2025-02-19
 images:
   - ai-daily/image.png
+tags:
+  - AI
 ---
 
 

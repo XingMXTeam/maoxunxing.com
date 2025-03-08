@@ -3,7 +3,7 @@ title: "如何设计导航"
 description: ""
 date: 2024-09-18
 tags:
-  - 前端架构
+  - Web开发
 images:
   - jiagou-1/a.webp
 ---

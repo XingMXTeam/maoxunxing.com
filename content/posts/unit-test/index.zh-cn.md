@@ -1,9 +1,12 @@
 ---
-title: "[WIP] 如何写单测"
+title: "如何写单测"
 date: 2021-08-27T10:20:36+08:00
 description: ""
 images:
   - unit-test/unit-test.jpeg
+tags:
+  - React
+  - Web开发
 ---
 
 本文档详细介绍了如何在 TypeScript 项目中配置单元测试工具（如 Mocha）和代码覆盖率工具（如 NYC），并提供了相关依赖库的使用说明。适合需要快速搭建测试环境的开发者。

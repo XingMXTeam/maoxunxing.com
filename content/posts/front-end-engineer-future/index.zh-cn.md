@@ -1,9 +1,8 @@
 ---
-title: "[WIP] 前端工程师技能树"
+title: "前端工程师技能树"
 date: 2021-08-24
 tags:
-  - career
-  - front-end
+  - Web开发
 description: "细化前端工程师的成长模型指标，逐步提高个人专业技能"
 ---
 

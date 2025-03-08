@@ -1,6 +1,9 @@
 ---
 title: "Cookie 技术详解与问题分析"
 date: 2025-02-06
+tags:
+  - cookie
+  - Web开发
 ---
 
 ## 目录

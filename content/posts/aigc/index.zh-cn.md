@@ -1,11 +1,9 @@
 ---
-title: "[WIP] AIGC 绘图/图片创作"
+title: "AIGC 绘图/图片创作"
 date: 2023-03-25
 description: ""
-draft: true
 tags:
   - AI
-  - Stable Diffision
 ---
 
 ## 一、安装篇

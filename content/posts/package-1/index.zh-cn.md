@@ -3,7 +3,7 @@ title: "package.json包管理与配置详解"
 description: "package.json的exports和typesVersion使用方法"
 date: 2025-02-06
 tags:
-  - Package.json
+  - npm
 ---
 
 ## 目录

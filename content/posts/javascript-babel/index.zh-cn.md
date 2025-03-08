@@ -2,8 +2,7 @@
 title: "Babel 配置与使用指南"
 date: 2021-08-24
 tags:
-  - front-end
-  - programming
+  - Web开发
 description: ""
 ---
 

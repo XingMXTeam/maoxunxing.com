@@ -3,7 +3,8 @@ title: "JavaScript 技术知识点整理"
 description: "sort vs toSorted vs localCompare"
 date: 2024-09-08
 tags:
-  - JS
+  - JavaScript
+  - Web开发
 images:
   - javascript-1/a.webp
 ---
@@ -249,3 +250,7 @@ var a = new Set();
 a.add(2);
 var aArr = [...a]; // [2]
 ```
+
+## TC39
+
+[TC39](https://github.com/tc39)

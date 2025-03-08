@@ -1,9 +1,8 @@
 ---
-title: "[WIP] AB 实验原理与实践"
+title: "AB 实验原理与实践"
 date: 2021-09-09
 tags:
-  - A/B Test
-  - User Growth
+  - Web开发
 description: ""
 images:
   - ab-test/ab.png

@@ -1,10 +1,10 @@
 ---
-title: "[WIP] CSS编写准则"
+title: "CSS编写准则"
 date: 2021-12-23T20:03:38+08:00
 description: ""
 tags:
-  - 技术课系列
   - CSS
+  - Web开发
 images:
   - css-i-learned/test.jpg
 ---

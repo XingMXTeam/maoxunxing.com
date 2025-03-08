@@ -3,7 +3,8 @@ title: "容易搞混的比较函数"
 description: "sort vs toSorted vs localCompare"
 date: 2024-09-08
 tags:
-  - JS
+  - JavaScript
+  - Web开发
 images:
   - javascript-1/a.webp
 ---

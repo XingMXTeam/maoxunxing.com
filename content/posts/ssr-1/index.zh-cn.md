@@ -1,9 +1,8 @@
 ---
-title: "[WIP] SSR 实践指南"
+title: "SSR 实践指南"
 date: 2021-08-24
 tags:
-  - front-end
-  - programming
+  - Web开发
 description: ""
 ---
 

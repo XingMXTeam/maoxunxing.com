@@ -3,7 +3,7 @@ title: "被动收入"
 description: ""
 date: 2025-02-04
 tags:
-  - 财务
+  - 投资
 images:
   - personal-finance/image.png
 ---
