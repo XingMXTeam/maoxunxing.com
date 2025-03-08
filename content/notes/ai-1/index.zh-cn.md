@@ -17,7 +17,7 @@ tags:
 
 
 原视频地址：
-{{< video src="https://www.youtube.com/watch?v=EWvNQjAaOHw" caption="How I Use LLM" max-width="960px">}}
+{{< video src="https://youtu.be/EWvNQjAaOHw" caption="How I Use LLM" max-width="960px">}}
 
 
 2个多小时的视频学习，我记录了一些笔记： 
