@@ -3,8 +3,6 @@ title: "package.json的files"
 date: 2021-12-10T10:12:21+08:00
 tags:
   - npm
-  - NodeJS
-  - JavaScript
 ---
 
 在 `package.json` 中，`files` 字段用于指定哪些文件或目录会被包含在 npm 打包发布的内容中。通过明确列出需要包含的文件，开发者可以更精确地控制发布的包内容，避免不必要的文件被包含。
@@ -116,8 +114,8 @@ tags:
 }
 ```
 
----
+## 删除node_modules
 
-## 总结
-
-通过合理使用 `files` 字段，开发者可以精确控制 npm 包的发布内容，确保只包含必要的文件，同时避免敏感或无关文件被意外发布。结合 `.npmignore` 和 `npm pack` 调试工具，可以进一步优化打包流程。
+```shell
+find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+```

@@ -3,8 +3,6 @@ title: "Decode Url Safe"
 date: 2021-12-10T10:12:21+08:00
 tags:
   - JavaScript
-  - 错误处理
-  - 编码
 ---
 在 JavaScript 中，`decodeURIComponent` 是一个用于解码 URI 组件的函数。然而，如果传入的字符串包含无效的编码字符（例如未正确闭合的百分号 `%`），它会抛出 `URIError` 异常。
 

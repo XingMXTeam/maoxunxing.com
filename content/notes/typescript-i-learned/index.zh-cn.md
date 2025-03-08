@@ -3,8 +3,6 @@ title: "Typescript类型实践"
 date: 2021-12-22T18:06:49+08:00
 tags:
   - TypeScript
-  - Debugging
-  - JavaScript
 ---
 
 ## **1. 报错：元素隐式具有 "any" 类型**

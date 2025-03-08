@@ -1,6 +1,8 @@
 ---
 title: "Export Get Undefined"
 date: 2021-11-25T15:05:52+08:00
+tags:
+  - JavaScript
 ---
 
 在 TypeScript 或 JavaScript 项目中，模块之间的依赖关系需要特别注意。如果存在 **循环引用**（Circular Dependency），可能会导致某些模块的导出值为 `undefined`。

@@ -2,9 +2,7 @@
 title: "下载文件如何规避跨域问题"
 date: 2021-12-01T14:53:11+08:00
 tags:
-  - 跨域
-  - JavaScript
-  - 浏览器
+  - HTTP
 ---
 
 ## **1. 问题描述**
@@ -37,11 +35,5 @@ tags:
   const downloadLink = `https://example.com/download?fileId=123`;
   window.open(downloadLink);
   ```
-
----
-
-## **3. 总结**
-
-通过将下载功能改为 HTTP GET 请求并使用 `window.open`，可以有效解决跨域问题，同时简化前端实现逻辑。确保后端接口的兼容性和安全性是关键。
 
 ---

@@ -2,9 +2,7 @@
 title: "美国西部时间与北京时间的时差"
 date: 2021-11-11T19:29:05+08:00
 tags:
-  - Time
-  - Internationalization
-  - Programming
+  - 时区
 ---
 
 ## **1. 基本时差**

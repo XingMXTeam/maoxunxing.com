@@ -1,6 +1,8 @@
 ---
 title: "SyntaxError Unexpected Token Export"
 date: 2021-12-01T14:53:11+08:00
+tags:
+  - ES6
 ---
 
 ## **1. 错误描述**

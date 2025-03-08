@@ -2,7 +2,7 @@
 title: "前端异常处理"
 date: 2021-08-24
 tags:
-  - JS
+  - JavaScript
 description: ""
 images:
   - exception-handle/eception-handle.png

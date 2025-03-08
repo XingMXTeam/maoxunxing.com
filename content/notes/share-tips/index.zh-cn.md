@@ -2,9 +2,7 @@
 title: "技术人员分享的经验总结"
 date: 2022-03-27T18:15:02+08:00
 tags:
-  - Presentation
-  - Communication
-  - Best Practices
+  - 技术分享
 ---
 
 ## **1. 分享时的关键经验**
