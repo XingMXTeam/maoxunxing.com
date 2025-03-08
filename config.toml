@@ -170,7 +170,3 @@ resampleFilter = "Lanczos"
   name = "关于"
   url = "/about/"
   weight = 5
-[[languages.zh-CN.menu.main]]
-    name = "归档"
-    url = "/archive/"
-    weight = 6
