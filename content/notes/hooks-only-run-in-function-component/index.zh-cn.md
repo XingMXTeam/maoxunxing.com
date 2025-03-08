@@ -2,9 +2,7 @@
 title: "Hooks don't work with yarn link"
 date: 2021-11-29T12:06:58+08:00
 tags:
-  - React
   - npm
-  - 调试
 ---
 
 ## **1. `npm link` 的基本用法**
@@ -83,31 +81,3 @@ tags:
     npm link react
     npm link react-dom
     ```
-
----
-
-## **3. 注意事项**
-
-1. **清理缓存**：
-   - 如果问题仍然存在，可以尝试清理 `npm` 缓存并重新安装依赖：
-     ```shell
-     npm cache clean --force
-     rm -rf node_modules package-lock.json
-     npm install
-     ```
-
-2. **验证修复**：
-   - 重新启动项目，检查是否解决了 `Hooks Only Run in Function Component` 的问题。
-
-3. **Node.js 版本管理**：
-   - 推荐使用 `nvm` 来管理 Node.js 版本，确保开发环境的一致性。
-
----
-
-## **4. 参考资料**
-
-- [npm link 官方文档](https://docs.npmjs.com/cli/v8/commands/npm-link)
-- [React 官方文档：Hooks 规则](https://reactjs.org/docs/hooks-rules.html)
-- [nvm 官方文档](https://github.com/nvm-sh/nvm)
-
-```

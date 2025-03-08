@@ -2,49 +2,63 @@
 title: "<How I Use LLM> 总结笔记"
 date: 2025-03-04
 tags:
-  - AI
+  - 人工智能
 ---
 
 最近在 Youtube 上很火的一个视频<how i use llm>，作者是Andrej Karpathy，他是一位大神，摘录一下ChatGPT对他的介绍：
 
 > Andrej Karpathy（安德烈·卡帕斯）是一位斯洛伐克裔加拿大计算机科学家，专长于人工智能、深度学习和计算机视觉领域。他于1986年10月23日出生在捷克斯洛伐克布拉提斯拉瓦，15岁时随家人移居加拿大多伦多。他在多伦多大学获得计算机科学和物理学学士学位，在英属哥伦比亚大学取得硕士学位，随后在斯坦福大学师从李飞飞教授，专攻计算机视觉与自然语言处理交叉领域，并于2015年获得博士学位。
+
 > 职业生涯中，Karpathy曾是OpenAI的创始成员之一，专注于深度学习和计算机视觉研究。2017年，他加入特斯拉，担任人工智能和自动驾驶视觉总监，领导Autopilot计算机视觉团队，直接向埃隆·马斯克汇报。2022年7月，他离开特斯拉，并于2023年2月宣布重返OpenAI。
+
 > 此外，Karpathy还积极从事教育工作，曾在斯坦福大学开设并主讲深度学习课程CS231n：卷积神经网络与视觉识别，深受学生欢迎。他也在个人YouTube频道上分享关于人工智能和深度学习的教育内容，致力于推动人工智能领域的发展和普及。
 
-这里是他的演示文稿：
-{{< img src="image.png" alt="LLM APP" maxWidth="350px" align="right" >}}
-{{< img src="image-1.png" alt="what is llm" maxWidth="350px" align="right" >}}
+2个多小时的时长，介绍了如何使用LLM，以下是他用的草图:
+{{< img src="image-1.png" alt="what is llm" align="center" >}}
 
 
 原视频地址：
-{{< video src="https://youtu.be/EWvNQjAaOHw" caption="How I Use LLM" max-width="960px">}}
+{{< video src="https://youtu.be/EWvNQjAaOHw" caption="How I Use LLM">}}
 
 
 2个多小时的视频学习，我记录了一些笔记： 
 
-## Best LLM and AI chatbots
+## 如何选择合适的模型，各大模型APP和对比
 
-[leaderboard1](https://lmarena.ai/?leaderboard) : Chatbot Arena LLM Leaderboard: Community-driven Evaluation for Best LLM and AI chatbots
+{{< img src="image.png" alt="LLM APP" maxWidth="350px" align="center" >}}
 
-[leaderboard2](http://scale.com/leaderboard)
+大模型竞技场和比较的两个常用网站
+- [leaderboard1](https://lmarena.ai/?leaderboard) : Chatbot Arena LLM Leaderboard: Community-driven Evaluation for Best LLM and AI chatbots
+
+- [leaderboard2](http://scale.com/leaderboard)
 
 ## ChatGPT 本质
 
 Large Language Model (LLM) ~ 1TB lossy, probabilistic "zip file of the internet" (parameters store world knowledge, though usually out of date by few months)
+
+大规模语言模型（LLM）~ 1TB有损、概率性的“互联网压缩文件”（参数存储了世界知识，但通常会滞后几个月）。
 
 "Hi I am Chat6PT.
 I am a 1 terabyte zip file.
 My knowledge comes from the internet, which I read 6 months ago and remember only vaguely.
 My winning personality was programmed, by example, by human labelers at OpenAI:)"
 
+"你好，我是 ChatGPT。我是一个 1TB 的压缩文件。我的知识来源于互联网上的信息，这些信息是我 6 个月前阅读并只模糊记住的。我的迷人个性是由 OpenAI 的人类标注者通过Label标注编程的 :)"
+
 pre-training: -$10M, 3 months of training on internet documents
 post-training: much much cheaper finetuning with SFT, RLHF, RL on Conversations
 
+
+预训练：耗资 1000 万美元，使用互联网上的文档进行 3 个月的训练
+
+后训练：更便宜得多的微调，包括 SFT（监督微调）、RLHF（基于人类反馈的强化学习）以及对话强化学习
+
+查看token的工具: 
 [tiktokenizer](http://tiktokenizer.vercel.app/) 
 
 ## ChatGPT 的用法
 
-Knowledge Based Query 基于网络的很普遍的知识，不保证一定正确
+ChatGPT本质上是Knowledge Based Query， 基于网络的很普遍的知识，不保证一定正确：
 
 1、尽量简短的对话，如果是新话题建议新开聊天。因为`tokens`很贵，而且话题越长越容易出现错误  
 2、选择不同的模型去处理不同的任务，比如Creation、Traveling这种，同时和不同的模型对话，看结果有何不同
@@ -57,7 +71,9 @@ Knowledge Based Query 基于网络的很普遍的知识，不保证一定正确
 
 ## Tool Use
 
-1. 网络搜索：搜索《白蓮花大飯店》最新季出来的时间，brave隐私浏览器； what are the bigheadline news today ?  
+1. 网络搜索：搜索《白蓮花大飯店》最新季出来的时间
+   -  what are the bigheadline news today ?  
+   - 有用信息： 一个好用的隐私浏览器 brave隐私浏览器
 2. DeepSearch：thinking + 网络搜索  
 3. pdf 文档阅读：丢一个文档给llm让他总结  
 4. 书籍阅读：《the wealth of nations》，把章节贴给llm， 然后让它总结一下和问一些问题，特别是那些不熟悉的领域  
@@ -79,8 +95,9 @@ Knowledge Based Query 基于网络的很普遍的知识，不保证一定正确
    - cmd + i：composer  
    - cmd + l: chat  
 
-## modalities 模式: 日常对话通过语音快速输入，60%场景
+## modalities 模式
 
+日常对话通过语音快速输入，60%场景  
 语音转换为文本的方式沟通：
 
 - 语音输入： superwhisper, wisperflow, macwisper
@@ -100,7 +117,7 @@ ChatGPT的语音模式经常会拒绝，比如模仿狐狸的音调，但是Grok
 
 - http://notebooklm.google.com/: 丢一些资源给他，自动生成音频。并且可打断和交互问问题。
   - 适合不适合阅读的场景比如途中开车，可以听一些自己感兴趣的领域。
-  - https://open.spotify.com/show/3K4LRyMCP44kBbiOziwJjb: histories of mysteries podcast 一些生成的音频上传到spotify
+- https://open.spotify.com/show/3K4LRyMCP44kBbiOziwJjb: histories of mysteries podcast 一些生成的音频上传到spotify
 
 ## 图片
 see, ocr, ask about
@@ -143,10 +160,3 @@ chatgpt翻译比一般的翻译更好，比如https://papago.naver.com/ 。
 这里还有一个方案，就是用谷歌智能眼镜对文字ocr，然后丢给chatgpt
 
 ![alt text](image-5.png)
-
-
-
-
-
-
-

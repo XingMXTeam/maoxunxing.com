@@ -3,7 +3,7 @@
 {{ $maxWidth := .Get "max-width" }}
 
 <figure class="video" {{- if $maxWidth }} style="max-width: {{ $maxWidth }}" {{ end -}}>
-  <div class="video-inner" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <div class="video-inner" style="width: 100%;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
     {{- if hasPrefix $src "https://youtu.be/" -}}
     {{ $videoID := index (last 1 (split $src "/")) 0 }}
     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"

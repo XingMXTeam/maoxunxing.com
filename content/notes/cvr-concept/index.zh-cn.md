@@ -2,11 +2,7 @@
 title: "广告投放相关概念与策略"
 date: 2022-07-15T17:39:23+08:00
 tags:
-  - Marketing
-  - Analytics
-  - CVR
-  - Growth
-  - Advertising
+  - 市场策略
 ---
 
 ## 1. CVR 截断

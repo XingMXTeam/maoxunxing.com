@@ -2,9 +2,7 @@
 title: "《日剧-求婚大作战》观后感"
 date: 2019-12-15
 tags:
-  - Life
-  - Motivation
-  - Personal Growth
+  - 电影观后感
 ---
 
 ## 核心感悟
