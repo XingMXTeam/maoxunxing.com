@@ -883,6 +883,7 @@ html {
   line-height: 1.4;
   position: relative; /* 为活动指示器定位 */
   padding-left: 0.8rem;
+  border-left:  2px solid transparent;
 }
 
 /* 目录链接的过渡效果 */
