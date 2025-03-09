@@ -224,5 +224,38 @@
     
     {{ partial "mathjax.html" . }}
     </script>
+
+      <!-- 在其他脚本之前添加 -->
+      <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
+      <script src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // 初始化 Gumshoe
+          var spy = new Gumshoe('#TableOfContents a', {
+            navClass: 'active', // 高亮类名
+            contentClass: 'content-active',
+            offset: 70, // 偏移量
+            reflow: true, // 自动处理动态内容
+            nested: true, // 支持嵌套菜单
+            events: true, // 启用事件
+          });
+
+          // 初始化 Headroom
+          var header = document.querySelector("header");
+          var toc = document.querySelector(".toc-wrapper");
+          var headroom = new Headroom(header, {
+            offset: 100,
+            tolerance: 5,
+            onPin: function() {
+              if(toc) toc.style.top = "150px";
+            },
+            onUnpin: function() {
+              if(toc) toc.style.top = "0px";
+            }
+          });
+          headroom.init();
+        });
+      </script>
   </body>
 </html>

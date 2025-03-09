@@ -1,0 +1,24 @@
+{{ if or .TableOfContents .Params.custom_toc }}
+<div class="toc-wrapper">
+  <nav class="toc" id="toc">
+    {{ if .Params.custom_toc }}
+      <nav id="TableOfContents">
+        <ul>
+          {{ range .Params.custom_toc }}
+            <li>
+              <a href="#{{ .title | anchorize }}">{{ .title }}</a>
+              {{ if .children }}
+                <ul>
+                  {{ range .children }}
+                    <li><a href="#{{ .title | anchorize }}">{{ .title }}</a></li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+  </nav>
+</div>
+{{ end }} 
