@@ -1,25 +1,24 @@
 ---
-title: "搞定数据结构"
+title: "数据结构特点分析"
 date: 2025-03-03
 tags:
   - 数据结构
+custom_toc:
+  - title: "概述"
+  - title: "数组"
+  - title: "链表"
+  - title: "栈"
+  - title: "队列"
+  - title: "散列表"
+  - title: "二叉树"
+  - title: "红黑树"
+  - title: "堆"
+  - title: "跳表"
+  - title: "图"
+  - title: "Trie树"
 ---
 
-## 目录
-
-1. [数据结构概述](#数据结构)
-2. [数组](#数组)
-3. [链表](#链表)
-4. [栈](#栈)
-5. [队列](#队列)
-6. [散列表](#散列表)
-7. [二叉树](#二叉树)
-8. [红黑树](#红黑树)
-9. [堆](#堆)
-9. [跳表](#跳表)
-10.[Trie树](#Trie树)
-
-## 数据结构概述
+## 概述
 基础的数据结构有： 数据、链表、栈、队列、树、图。
 
 可以归为两类： 线性表（数组、队列、栈、链表）+ 非线性表（树、图）。
@@ -578,7 +577,7 @@ n/2+1到n都是叶子结点
 
 能快速插入、删除、查找，它的平均时间复杂度O(logn)，当然最差也是O(logn)（退化为普通链表）。它的算法图解： 
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_jpg/ACYhlU6xy8Mv9GSZGq8La9zK4kswiaAjtKcLXqmsM1FT7TagsW11VE7dIb64xJeQD0CuTUiaUfFsKAtmJchQJibbw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1)
+![alt text](image.png)
 
 想到快速查找、删除、插入，很快能想到的是红黑树和哈希表。那么跳表的优势是什么？跳表能**保证有序性，所以范围查找更具备优势**。红黑树实现起来更复杂。
 
