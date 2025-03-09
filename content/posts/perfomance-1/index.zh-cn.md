@@ -185,3 +185,272 @@ import { onLCP, onINP, onCLS, CLSMetric } from "web-vitals/attribution";
 Math.random() < 10 / 100 // 采样率10%
 ```
 
+---
+
+
+## **1. Prefetch**
+
+**用途**：  
+`prefetch` 用于在浏览器空闲时间加载资源，对当前页面性能影响较小，适用于提前获取下一页面的资源并存入浏览器缓存。
+
+**特点**：
+- 默认情况下，`prefetch` 请求不带 Cookie。
+- 可通过 `credentials` 属性让请求带上 Cookie。
+
+**示例代码**：
+```html
+<link rel="prefetch" href="next-page.js" as="script" credentials="include">
+```
+
+**动态设置缓存时间**：
+可以通过服务端动态设置资源的缓存时间，以控制资源的有效期。
+```js
+app.get('/next-page', (req, res) => {
+  const header = req.headers['purpose'] || req.headers['sec-purpose'];
+  if (header === 'prefetch') {
+    res.set('Cache-Control', 'max-age=10'); // 设置缓存时间为 10 秒
+  }
+  res.send('next page content');
+});
+```
+
+**扩展**：  
+还可以结合 Service Worker 控制资源的加载和缓存策略。
+
+---
+
+## **2. Preload**
+
+**用途**：  
+`preload` 用于立即加载关键资源（如字体、CSS、JS、图像等），无需等待 DOM 树解析完成。当某个资源是页面加载的关键部分但无法通过正常加载顺序立即获得时，可以使用 `preload`。
+
+**特点**：
+- 资源加载是同步的，确保关键资源优先加载。
+
+**示例代码**：
+```html
+<link rel="preload" href="styles.css" as="style">
+```
+
+---
+
+## **3. Preconnect**
+
+**用途**：  
+`preconnect` 提前建立到外部资源服务器的网络连接，包括 DNS 解析、TCP 握手和 TLS 协商。如果仅需要提前解析域名，可以使用 `dns-prefetch`。
+
+**适用场景**：
+- 访问第三方资源（如字体库、CDN 资源）时，减少请求外部资源时的延迟。
+
+**示例代码**：
+```html
+<link rel="preconnect" href="https://example.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+```
+
+**服务端动态设置**：
+可以在服务端通过响应头动态设置 `preconnect`。
+```js
+app.get('/', (req, res) => {
+  res.set('Link', [
+    '<https://example.com>; rel=preconnect',
+    '<https://fonts.googleapis.com>; rel=preconnect'
+  ]);
+  res.flushHeaders(); // 立即发送
+  const rs = fs.createReadStream('content');
+  rs.pipe(res);
+});
+```
+
+---
+
+## **4. 启发：SSR 场景下的资源优化**
+
+在 SSR（服务端渲染）场景下，可以先返回静态部分内容（包含资源加载提示），然后再处理耗时的核心 HTML 生成逻辑。
+
+**问题背景**：  
+如果服务器响应较慢，浏览器会等到整个响应完成后才开始加载资源。为解决这一问题，可以结合 `Early Hints 103` 或分块传输（Chunked Transfer Encoding）来优化。
+
+**示例代码**：
+```js
+http.createServer((req, res) => {
+  res.writeHead(200, {
+    'Content-Type': 'text/html',
+    'Transfer-Encoding': 'chunked'
+  });
+
+  // 先返回静态部分
+  setTimeout(async () => {
+    const firstScreenData = await getFirstData();
+    res.write(`<link rel="preload" href="${firstScreenData.src}" as="image">`);
+  }, 1000);
+
+  // 再返回复杂计算部分
+  // TODO: 处理核心 HTML 生成逻辑
+});
+```
+
+---
+
+## **5. Early Hints 103**
+
+**用途**：  
+`Early Hints 103` 是一种 HTTP 响应状态码，适用于服务器响应时间较长、想要最大程度优化用户感知加载速度的场景。
+
+**特点**：
+- 在主响应之前，提前告知浏览器需要预加载的资源。
+- 减少关键资源的加载延迟。
+
+**示例代码**：
+```js
+app.get('/', (req, res) => {
+  res.status(103).set({
+    Link: [
+      '</styles/main.css>; rel=preload; as=style',
+      '</images/a.jpg>; rel=preload; as=image'
+    ].join(',')
+  }).end();
+
+  // 再返回真实的内容
+  const rs = fs.createReadStream('content');
+  res.set('Content-Type', 'text/html');
+  rs.pipe(res);
+});
+```
+
+---
+
+
+## ServiceWorker缓存命中率统计【折线图】
+> 或者可以直接根据pv - uv / pv 代表二次访问的命中率
+
+```sql
+(*)| SELECT
+  date_format(__time__, '%m-%d %H:00:00') AS Time,
+  COUNT(
+    CASE
+      WHEN p2 = 'cache_hit' THEN 1
+    END
+  ) * 100.0 / COUNT(*) as hit_rate,
+  COUNT(*) as total_requests,
+  COUNT(
+    CASE
+      WHEN p2 = 'cache_hit' THEN 1
+    END
+  ) as hit_count,
+  COUNT(
+    CASE
+      WHEN p2 = 'cache_miss' THEN 1
+    END
+  ) as miss_count
+FROM  "ods_aes_records"
+WHERE
+  p1 = 'pc_home_cache_stats'
+group by
+  Time
+order by
+  Time
+```
+
+## 性能分位统计
+
+```sql
+((content: 'entry_f'))| WITH extracted_data AS (
+  SELECT 
+    date_format(worker.__time__, '%m-%d %H:00:00') AS Time,
+    regexp_extract(worker.content, '\[([^ ]+)', 1) AS trace,
+    try_cast(
+      regexp_extract(worker.content, 'entry_f (\d+)', 1) AS double
+    ) AS duration_value,
+    replace(gateway.rt, 'ms', '') AS RT
+  FROM "b-worker-log" as worker
+  LEFT JOIN "a-log" as gateway
+  on regexp_extract(worker.content, '\[([^ ]+)', 1) =  gateway.trace
+  where gateway.fn = 'xx'
+)
+SELECT
+  Time,
+  round(avg(duration_value), 2) as fAverage,
+  round(approx_percentile(duration_value, 0.75), 2) as fP75,
+  round(approx_percentile(duration_value, 0.90), 2) as fP90,
+  round(approx_percentile(duration_value, 0.95), 2) as fP95,
+  round(avg(try_cast(rt  as double)),2) as gAverage, 
+  round(approx_percentile(try_cast(rt  as double), 0.75), 2) as gP75,  
+  round(approx_percentile(try_cast(rt  as double), 0.90), 2) as gP90, 
+  round(approx_percentile(try_cast(rt  as double), 0.95), 2) as gP95
+FROM extracted_data
+GROUP BY Time
+ORDER BY Time 
+```
+
+## 长尾比较多的柱状图
+
+```sql
+WITH binned_data AS (
+  SELECT 
+    Floor((try_cast(p5 AS double) - try_cast(p4 AS double)) / 1000 / 60) AS value
+  FROM 
+    "xxx"
+  WHERE 
+    try_cast(p5 AS double) IS NOT NULL
+    AND try_cast(p4 AS double) IS NOT NULL
+    AND (try_cast(p5 AS double) - try_cast(p4 AS double)) >= 0
+),
+binned_values AS (
+  SELECT
+    CASE
+      WHEN value >= 0 AND value < 240 THEN '0-239'
+      WHEN value >= 240 AND value < 480 THEN '240-479'
+      WHEN value >= 480 AND value < 720 THEN '480-719'
+      WHEN value >= 720 AND value < 960 THEN '720-959'
+      WHEN value >= 960 AND value < 1200 THEN '960-1199'
+      WHEN value >= 1200 AND value < 1440 THEN '1200-1439'
+      WHEN value >= 1440 AND value < 1680 THEN '1440-1679'
+      WHEN value >= 1680 AND value < 1920 THEN '1680-1919'
+      WHEN value >= 1920 AND value < 2160 THEN '1920-2159'
+      WHEN value >= 2160 AND value < 2400 THEN '2160-2399'
+      ELSE '2400+'
+    END AS bin,
+    CASE
+      WHEN value >= 0 AND value < 240 THEN 0
+      WHEN value >= 240 AND value < 480 THEN 240
+      WHEN value >= 480 AND value < 720 THEN 480
+      WHEN value >= 720 AND value < 960 THEN 720
+      WHEN value >= 960 AND value < 1200 THEN 960
+      WHEN value >= 1200 AND value < 1440 THEN 1200
+      WHEN value >= 1440 AND value < 1680 THEN 1440
+      WHEN value >= 1680 AND value < 1920 THEN 1680
+      WHEN value >= 1920 AND value < 2160 THEN 1920
+      WHEN value >= 2160 AND value < 2400 THEN 2160
+      ELSE 2400
+    END AS bin_start
+  FROM 
+    binned_data
+)
+SELECT 
+  bin,
+  COUNT(*) AS num
+FROM 
+  binned_values
+GROUP BY 
+  bin, bin_start
+ORDER BY 
+  bin_start;
+```
+
+## 分布比较均匀的柱状图
+
+lcp分布：
+```sql
+SELECT round(try_cast(c1 AS DOUBLE)/100, 0)*100 AS val,
+       count(*) AS num
+WHERE try_cast(c1 AS DOUBLE) > 0
+  AND try_cast(c1 AS DOUBLE) < 15000
+GROUP BY val
+ORDER BY val aselect round(try_cast(c1 AS DOUBLE)/100, 0)*100 AS val,
+                     count(*) AS num
+WHERE try_cast(c1 AS DOUBLE) > 0
+  AND try_cast(c1 AS DOUBLE) < 15000
+GROUP BY val
+ORDER BY val
+```

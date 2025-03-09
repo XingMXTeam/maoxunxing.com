@@ -1,10 +1,103 @@
 ---
-title: "HTTP协议"
+title: "HTTPS网络协议、证书问题"
 date: 2021-12-22T20:10:28+08:00
 tags:
   - HTTP
 ---
 
+在前端开发中，当我们需要发送表单数据时，通常会使用 `FormData` 对象来构造请求参数。然而，`FormData` 与普通的 JavaScript 对象不同，它是一种键值对结构，无法直接通过 ES6 解构语法提取其内容。这给开发者在处理 `FormData` 数据时带来了一定的复杂性。
+
+---
+
+## FormData 的特点
+
+- **键值对结构**：`FormData` 内部存储的是键值对，类似于 URL 查询参数。
+- **不可直接解构**：`FormData` 不支持直接使用 ES6 解构语法（如 `{ key } = formData`）。
+- **动态添加和删除**：可以通过 `append` 和 `delete` 方法动态操作数据。
+- **适用于文件上传**：`FormData` 支持二进制数据（如文件），非常适合用于文件上传场景。
+
+---
+
+## 处理 FormData 的方法
+
+### 遍历 FormData
+
+如果需要获取 `FormData` 中的所有键值对，可以使用 `FormData` 提供的迭代器方法（如 `entries`、`keys`、`values`）进行遍历。
+
+#### 示例代码
+```javascript
+const formData = new FormData();
+formData.append('name', 'Alice');
+formData.append('age', '25');
+
+for (let [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
+```
+
+### 转换为普通对象
+
+在某些场景下，可能需要将 `FormData` 转换为普通对象以便进一步处理。可以通过遍历 `FormData` 并手动构造一个对象来实现。
+
+#### 示例代码
+```javascript
+const formData = new FormData();
+formData.append('name', 'Alice');
+formData.append('age', '25');
+
+const formDataToObject = (formData) => {
+  const obj = {};
+  for (let [key, value] of formData.entries()) {
+    obj[key] = value;
+  }
+  return obj;
+};
+
+console.log(formDataToObject(formData));
+// 输出: { name: 'Alice', age: '25' }
+```
+
+---
+
+## 代码示例
+
+以下是一个完整的示例，展示如何处理 `FormData` 类型的请求入参：
+
+```javascript
+// 构造 FormData
+const formData = new FormData();
+formData.append('username', 'JohnDoe');
+formData.append('email', 'john.doe@example.com');
+formData.append('avatar', fileInput.files[0]); // 假设有一个文件输入
+
+// 遍历 FormData
+console.log('遍历 FormData:');
+for (let [key, value] of formData.entries()) {
+  console.log(`${key}:`, value);
+}
+
+// 转换为普通对象
+const formDataToObject = (formData) => {
+  const obj = {};
+  for (let [key, value] of formData.entries()) {
+    obj[key] = value;
+  }
+  return obj;
+};
+
+console.log('转换为普通对象:', formDataToObject(formData));
+
+// 发送请求
+fetch('/api/submit', {
+  method: 'POST',
+  body: formData,
+})
+  .then((response) => response.json())
+  .then((data) => console.log('服务器响应:', data))
+  .catch((error) => console.error('请求失败:', error));
+```
+
+---
 ## 请求参数可以是数组吗？
 
 ### **1. 答案**
@@ -170,3 +263,105 @@ iframe里面的http图片会有影响吗
 ### js
 
 https访问http 会block
+
+---
+
+
+## 问题描述
+
+在访问网站时，发现某些图片无法加载，控制台报错提示与证书相关的问题。例如：
+- `NET::ERR_CERT_DATE_INVALID`（证书已过期）
+- `NET::ERR_CERT_AUTHORITY_INVALID`（证书不受信任）
+
+这通常是由于SSL/TLS证书失效或配置错误导致的。
+
+---
+
+## 原因分析
+
+1. **证书过期**  
+   SSL/TLS证书有固定的有效期（通常为1年或更短），如果未及时续期，会导致证书失效。
+
+2. **证书配置错误**  
+   服务器可能未正确安装或配置证书，例如证书链不完整。
+
+3. **浏览器不信任**  
+   使用了自签名证书或不受信任的CA（证书颁发机构）签发的证书。
+
+4. **时间同步问题**  
+   如果服务器或客户端的时间设置不正确，可能导致证书被误判为无效。
+
+---
+
+## 解决方案
+
+### 检查SSL/TLS证书
+
+1. **在线工具检测**  
+   使用在线工具（如[SSL Labs](https://www.ssllabs.com/ssltest/)）检查证书的有效性、过期时间及配置是否正确。
+
+2. **浏览器开发者工具**  
+   打开浏览器的开发者工具（F12），查看网络请求中的错误信息，确认是否与证书相关。
+
+### 更新或续期证书
+
+1. **续期证书**  
+   如果证书已过期，联系证书颁发机构（CA）进行续期。常见CA包括：
+   - Let's Encrypt（免费）
+   - DigiCert
+   - GlobalSign
+
+2. **重新安装证书**  
+   确保证书链完整，并正确安装到服务器上。以下是一些常见服务器的证书安装指南：
+   - **Nginx**  
+     ```nginx
+     server {
+         listen 443 ssl;
+         ssl_certificate /path/to/fullchain.pem;
+         ssl_certificate_key /path/to/privkey.pem;
+     }
+     ```
+   - **Apache**  
+     ```apache
+     <VirtualHost *:443>
+         SSLEngine on
+         SSLCertificateFile /path/to/cert.pem
+         SSLCertificateKeyFile /path/to/key.pem
+         SSLCertificateChainFile /path/to/chain.pem
+     </VirtualHost>
+     ```
+
+### 临时解决方案：使用HTTP
+
+如果无法立即修复证书问题，可以暂时将图片资源切换为HTTP协议（非加密）。但请注意，这种方式会降低安全性，仅适用于紧急情况。
+
+示例：
+```html
+<img src="http://example.com/image.jpg" alt="Example Image">
+```
+
+### 确保浏览器信任证书
+
+1. **使用受信任的CA**  
+   确保证书由受信任的CA签发。避免使用自签名证书。
+
+2. **手动添加信任（仅限内部环境）**  
+   在开发或测试环境中，可以将自签名证书添加到浏览器的信任列表中。
+
+---
+
+## 预防措施
+
+1. **设置自动续期**  
+   使用Let's Encrypt等支持自动续期的工具（如Certbot），避免证书过期问题。
+
+2. **监控证书有效期**  
+   定期检查证书的有效期，设置提醒以防止忘记续期。
+
+3. **定期测试**  
+   定期使用SSL检测工具检查证书配置是否正确。
+
+4. **使用CDN服务**  
+   将静态资源托管到CDN（如阿里云OSS、Cloudflare），利用CDN提供的HTTPS支持。
+
+---

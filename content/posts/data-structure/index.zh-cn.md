@@ -1,5 +1,5 @@
 ---
-title: "数据结构实战总结"
+title: "我的数据结构实战刷题"
 date: 2025-03-03
 ---
 
@@ -2215,3 +2215,1576 @@ console.log(getNumberOfBSTs(4)); // 输出: 14
 3. **动态规划**：
    - 时间复杂度：O(n^2)，双层循环。
    - 空间复杂度：O(n)，用于存储 DP 表。
+
+---
+
+搜索引擎的拼写纠错功能-莱文斯坦距离
+
+## 问题描述
+
+在自然语言处理、文本匹配等领域，我们经常需要量化两个字符串的相似度。一个常用的指标是 **编辑距离**（Edit Distance），它表示将一个字符串转换为另一个字符串所需的最小编辑操作次数。编辑操作包括：
+- **插入**：在字符串中插入一个字符。
+- **删除**：从字符串中删除一个字符。
+- **替换**：将字符串中的某个字符替换为另一个字符。
+
+编辑距离越小，说明两个字符串越相似。
+
+---
+
+### 示例
+给定两个字符串 `mitcmu` 和 `mtacnu`，它们的编辑距离是多少？
+
+---
+
+## 解决思路
+
+### 回溯算法
+一种直观的解决方法是通过回溯算法，枚举所有可能的操作序列，找到最小的编辑距离。具体步骤如下：
+1. 如果 `a[i] == b[j]`，则无需操作，递归考察 `a[i+1]` 和 `b[j+1]`。
+2. 如果 `a[i] != b[j]`，可以进行以下操作之一：
+   - **删除**：删除 `a[i]` 或 `b[j]`，然后递归考察剩余部分。
+   - **插入**：在 `a[i]` 前插入与 `b[j]` 相同的字符，或在 `b[j]` 前插入与 `a[i]` 相同的字符。
+   - **替换**：将 `a[i]` 替换为 `b[j]` 或将 `b[j]` 替换为 `a[i]`。
+
+这种方法的时间复杂度较高，因为会重复计算相同的子问题。
+
+---
+
+### 动态规划优化
+为了避免重复计算，我们可以使用动态规划来优化回溯算法。定义状态 `minDist[i][j]` 表示将字符串 `a[0...i-1]` 转换为字符串 `b[0...j-1]` 所需的最小编辑距离。
+
+#### 状态转移方程
+1. 如果 `a[i-1] == b[j-1]`，则无需操作：
+   \[
+   minDist[i][j] = minDist[i-1][j-1]
+   \]
+2. 如果 `a[i-1] != b[j-1]`，可以选择以下三种操作之一：
+   - **插入**：`minDist[i][j] = minDist[i][j-1] + 1`
+   - **删除**：`minDist[i][j] = minDist[i-1][j] + 1`
+   - **替换**：`minDist[i][j] = minDist[i-1][j-1] + 1`
+
+综合上述两种情况，状态转移方程为：
+\[
+minDist[i][j] =
+\begin{cases} 
+minDist[i-1][j-1], & \text{if } a[i-1] == b[j-1] \\
+\min(minDist[i-1][j]+1, minDist[i][j-1]+1, minDist[i-1][j-1]+1), & \text{if } a[i-1] \neq b[j-1]
+\end{cases}
+\]
+
+---
+
+### 初始条件
+1. 将空字符串转换为目标字符串时，编辑距离等于目标字符串的长度：
+   \[
+   minDist[i][0] = i \quad (i = 0, 1, ..., n)
+   \]
+   \[
+   minDist[0][j] = j \quad (j = 0, 1, ..., m)
+   \]
+
+---
+
+## 实现代码
+
+以下是基于动态规划的 JavaScript 实现：
+
+```js
+/**
+ * 计算两个字符串的编辑距离
+ * @param {string} a 字符串A
+ * @param {number} n 字符串A的长度
+ * @param {string} b 字符串B
+ * @param {number} m 字符串B的长度
+ * @returns {number} 最小编辑距离
+ */
+function lwstDP(a, n, b, m) {
+    // 初始化二维数组 minDist
+    const minDist = new Array(n + 1);
+    for (let i = 0; i < n + 1; i++) {
+        minDist[i] = new Array(m + 1);
+        minDist[i][0] = i; // 将空字符串转换为a[0...i-1]的编辑距离
+    }
+    for (let j = 0; j < m + 1; j++) {
+        minDist[0][j] = j; // 将空字符串转换为b[0...j-1]的编辑距离
+    }
+
+    // 动态规划填表
+    for (let i = 1; i < n + 1; i++) {
+        for (let j = 1; j < m + 1; j++) {
+            if (a[i - 1] === b[j - 1]) {
+                // 字符相等，无需操作
+                minDist[i][j] = minOfThree(
+                    minDist[i - 1][j] + 1, // 删除
+                    minDist[i][j - 1] + 1, // 插入
+                    minDist[i - 1][j - 1]  // 不操作
+                );
+            } else {
+                // 字符不等，取最小操作
+                minDist[i][j] = minOfThree(
+                    minDist[i - 1][j] + 1, // 删除
+                    minDist[i][j - 1] + 1, // 插入
+                    minDist[i - 1][j - 1] + 1 // 替换
+                );
+            }
+        }
+    }
+
+    return minDist[n][m]; // 返回最终结果
+}
+
+/**
+ * 辅助函数：返回三个数中的最小值
+ * @param {number} n1 第一个数
+ * @param {number} n2 第二个数
+ * @param {number} n3 第三个数
+ * @returns {number} 最小值
+ */
+function minOfThree(n1, n2, n3) {
+    return Math.min(n1, Math.min(n2, n3));
+}
+```
+
+---
+
+## 示例运行
+
+### 输入
+```js
+const a = "mitcmu";
+const b = "mtacnu";
+const n = a.length;
+const m = b.length;
+
+console.log(lwstDP(a, n, b, m)); // 输出：3
+```
+
+### 输出
+```
+3
+```
+
+### 解释
+将 `mitcmu` 转换为 `mtacnu` 的最小编辑距离为 3，可以通过以下操作实现：
+1. 替换 `i` 为 `t`。
+2. 替换 `c` 为 `a`。
+3. 替换 `m` 为 `n`。
+
+---
+
+## 复杂度分析
+
+1. **时间复杂度**：
+   - 动态规划表的大小为 `(n+1) x (m+1)`，每个状态的计算时间为 O(1)。
+   - 总时间复杂度为 O(n * m)，其中 `n` 和 `m` 分别为两个字符串的长度。
+
+2. **空间复杂度**：
+   - 使用了一个二维数组 `minDist`，空间复杂度为 O(n * m)。
+
+---
+
+双11凑单问题 - 动态规划的使用
+
+## 问题描述
+
+假设我们有一个购物车，里面有 `n` 件商品（价格已知）。我们需要从这 `n` 件商品中挑选出一些商品，使得它们的总价刚好满足满减要求的价格。例如，满减要求是 **10元**。
+
+简化后的例子：
+- 商品价格数组为 `[2, 2, 4, 6, 3]`
+- 满减要求为 **10元**
+
+目标是从这些商品中选出一些，使得它们的总价尽可能接近满减要求（即 **10元**），但不超过 **3倍满减金额**（即 **30元**）。
+
+---
+
+## 解决思路
+
+这个问题可以类比于经典的 **背包问题**，即在给定的最大重量限制下，选择物品以最大化总价值。这里的“最大重量”对应于满减金额的上限（如 **30元**），而“物品的价值”对应于商品的价格。
+
+### 常规解法：回溯思想
+最直接的解法是通过列出所有可能的商品组合，然后找到满足条件的组合。然而，这种方法的时间复杂度是指数级的（O(2^n)），当商品数量较多时，计算效率会非常低。
+
+### 优化解法：动态规划
+我们可以借鉴背包问题的动态规划思想，避免状态的指数级增长。具体来说：
+1. 使用一个二维状态表 `states` 来记录每一步的状态。
+2. 每个状态 `states[i][j]` 表示前 `i` 件商品能否凑出总价为 `j` 的组合。
+3. 通过状态转移方程，逐步推导出最终结果。
+
+---
+
+## 动态规划算法详解
+
+### 状态定义
+- `states[i][j]`：表示前 `i` 件商品是否能凑出总价为 `j` 的组合。
+- 初始状态：`states[0][0] = true`（不选任何商品时，总价为 0 是可行的）。
+- 如果第 `i` 件商品的价格 `items[i]` 小于等于当前总价 `j`，则可以通过选择或不选择该商品来更新状态。
+
+### 状态转移方程
+1. **不选择第 `i` 件商品**：
+   - 如果 `states[i-1][j] = true`，则 `states[i][j] = true`。
+2. **选择第 `i` 件商品**：
+   - 如果 `states[i-1][j-items[i]] = true`，则 `states[i][j] = true`。
+
+### 边界条件
+- 总价不能超过 **3倍满减金额**（即 `3 * w`）。
+- 如果找不到满足条件的组合，则返回空结果。
+
+---
+
+## 实现代码
+
+以下是基于上述思路的 JavaScript 实现：
+
+```js
+/**
+ * 双11凑单问题
+ * @param {number[]} items 商品价格数组
+ * @param {number} n 商品个数
+ * @param {number} w 凑单金额
+ */
+function double11advance(items, n, w) {
+    // 初始化状态表
+    let states = new Array(n);
+    for (let i = 0; i < n; i++) {
+        states[i] = new Array(3 * w + 1).fill(false);
+    }
+
+    // 初始状态
+    states[0][0] = true; // 不选第一个商品
+    if (items[0] <= 3 * w) {
+        states[0][items[0]] = true; // 选第一个商品
+    }
+
+    // 动态规划填表
+    for (let i = 1; i < n; i++) {
+        // 不选择第 i 件商品
+        for (let j = 0; j <= 3 * w; j++) {
+            if (states[i - 1][j] === true) {
+                states[i][j] = states[i - 1][j];
+            }
+        }
+
+        // 选择第 i 件商品
+        for (let j = 0; j <= 3 * w - items[i]; j++) {
+            if (states[i - 1][j] === true) {
+                states[i][j + items[i]] = true;
+            }
+        }
+    }
+
+    // 找到最接近满减金额的总价
+    let j;
+    for (j = w; j < 3 * w + 1; j++) {
+        if (states[n - 1][j] === true) {
+            break;
+        }
+    }
+
+    // 如果找不到满足条件的组合
+    if (j === 3 * w + 1) {
+        console.log("无法找到满足条件的商品组合");
+        return;
+    }
+
+    // 回溯找出具体选择了哪些商品
+    for (let i = n - 1; i >= 1; i--) {
+        if (j - items[i] >= 0 && states[i - 1][j - items[i]] === true) {
+            console.log(items[i]); // 打印已选商品
+            j -= items[i];
+        }
+    }
+
+    // 检查是否选择了第 0 件商品
+    if (j !== 0) {
+        console.log(items[0]);
+    }
+}
+```
+
+---
+
+## 示例运行
+
+### 输入
+```js
+const items = [2, 2, 4, 6, 3];
+const n = items.length;
+const w = 10;
+
+double11advance(items, n, w);
+```
+
+### 输出
+```
+6
+4
+```
+
+解释：选择价格为 `6` 和 `4` 的商品，总价为 `10`，刚好满足满减要求。
+
+---
+
+## 复杂度分析
+
+1. **时间复杂度**：
+   - 填表过程需要遍历每个商品和每个可能的总价，时间复杂度为 O(n * 3w)，其中 `n` 是商品数量，`w` 是满减金额。
+2. **空间复杂度**：
+   - 使用了一个二维数组 `states`，空间复杂度为 O(n * 3w)。
+
+---
+
+
+海量数据排序案例：1TB订单数据的排序
+
+
+## 案例背景
+我们有 **1TB 的订单数据**，需要按照金额大小进行排序。然而，机器内存只有 **2GB**，无法一次性加载所有数据到内存中。如何解决这个问题？
+
+---
+
+## 分析与思路
+
+这是一个典型的 **海量数据处理问题**，可以利用 **分治思想** 来解决。分治思想的核心是将一个大问题拆解成多个小问题，分别解决这些小问题后，再将结果合并得到最终答案。
+
+### 归并排序的启示
+归并排序是分治思想的经典应用。它通过以下步骤实现排序：
+1. **分解**：将数组不断分割，直到每个子数组只剩下一个元素（已排序）。
+2. **合并**：将两个有序数组合并成一个更大的有序数组，最终得到完整的排序结果。
+
+以下是归并排序的过程示意图：
+{{< img src="img.png" alt="归并排序的过程" maxWidth="960px" caption="归并排序的过程" >}}
+
+#### 合并的关键逻辑
+假设我们需要合并两个有序数组 `A` 和 `B`：
+1. 申请一个新数组，大小为 `A + B`。
+2. 使用两个游标分别指向 `A` 和 `B` 的起始位置。
+3. 比较两个游标指向的值，将较小的值写入新数组，并移动对应游标。
+4. 当某个数组的游标到达末尾时，将另一个数组的剩余部分直接复制到新数组。
+5. 最终将新数组的内容复制回原数组。
+
+以下是归并排序的代码实现：
+
+```js
+const mergeSort = (data, p, r) => {
+    // 如果只剩一个元素，结束递归
+    if (p >= r) return;
+
+    // 分割点
+    let q = Math.floor((p + r) / 2);
+
+    // 分解
+    mergeSort(data, p, q);
+    mergeSort(data, q + 1, r);
+
+    // 合并
+    merge(data, p, q, r);
+};
+
+const merge = (data, p, q, r) => {
+    const temp = new Array(r - p + 1);
+    let i = p;
+    let j = q + 1;
+    let k = 0;
+
+    // 比较两个数组的元素，按升序写入临时数组
+    while (i <= q && j <= r) {
+        if (data[i] <= data[j]) {
+            temp[k++] = data[i++];
+        } else {
+            temp[k++] = data[j++];
+        }
+    }
+
+    // 将剩余元素写入临时数组
+    let start = i;
+    let end = r;
+    if (j > r) {
+        end = q;
+    } else {
+        start = j;
+    }
+    while (start <= end) {
+        temp[k++] = data[start++];
+    }
+
+    // 将临时数组内容复制回原数组
+    for (let i = 0; i < r - p + 1; i++) {
+        data[p + i] = temp[i];
+    }
+    return data;
+};
+
+export const ms_test_function = () => {
+    const data = [11, 8, 3, 9, 7, 1, 2, 3];
+    mergeSort(data, 0, data.length - 1);
+    return true;
+};
+```
+
+---
+
+## 解决方案：分治思想在海量数据排序中的应用
+
+回到正题，面对 **1TB 订单数据** 和 **2GB 内存限制**，我们可以采用以下步骤解决问题：
+
+---
+
+### **Step 1: 分解大文件**
+由于内存有限，我们需要将大文件逐行读取并根据订单金额拆分成多个小文件。例如，假设订单金额最大为 1 万，我们可以按照金额范围拆分：
+- 0-99 元 → 文件 `partition_0.txt`
+- 100-199 元 → 文件 `partition_1.txt`
+- 200-299 元 → 文件 `partition_2.txt`
+- ...
+
+这样做的好处是便于后续合并时，可以根据文件名顺序快速排序。
+
+以下是拆分文件的代码实现：
+
+```js
+// Step 1: Divide the file into smaller partitions based on order amounts
+function partitionFile(inputFilePath, outputDirPath, callback) {
+    const partitions = {};
+    // Read the input file sequentially
+    const readStream = fs.createReadStream(inputFilePath, { encoding: 'utf8' });
+    readStream.on('data', (chunk) => {
+        const orders = chunk.split('\n');
+        orders.forEach((order) => {
+            // Extract the order amount from the order entry
+            const amount = parseFloat(order.split(',')[1]);
+            // Determine the partition for the order based on its amount
+            const partition = Math.floor(amount / 100);
+            // Create a writable stream for the partition file if it doesn't exist
+            if (!partitions.hasOwnProperty(partition)) {
+                const partitionFilePath = `${outputDirPath}/partition_${partition}.txt`;
+                partitions[partition] = fs.createWriteStream(partitionFilePath, { flags: 'a' });
+            }
+            // Write the order to the appropriate partition file
+            partitions[partition].write(`${order}\n`);
+        });
+    });
+    readStream.on('end', () => {
+        // Close all partition files
+        for (const partition in partitions) {
+            partitions[partition].end();
+        }
+        callback();
+    });
+}
+```
+
+---
+
+### **Step 2: 对小文件排序**
+每个小文件的数据量较小，可以直接加载到内存中进行排序。可以使用高效的排序算法（如归并排序或快速排序），并将排序后的结果写回文件。
+
+以下是排序小文件的代码实现：
+
+```js
+// Step 2: Sort each partition individually
+function sortPartitions(inputDirPath, outputDirPath, callback) {
+    fs.readdir(inputDirPath, (err, files) => {
+        if (err) {
+            throw err;
+        }
+        files.forEach((file) => {
+            const filePath = `${inputDirPath}/${file}`;
+            const sortedFilePath = `${outputDirPath}/sorted_${file}`;
+            // Read the orders from the partition file
+            const orders = fs.readFileSync(filePath, { encoding: 'utf8' }).split('\n');
+            // Sort the orders using an efficient algorithm (e.g., merge sort)
+            const sortedOrders = orders.sort((a, b) => {
+                const amountA = parseFloat(a.split(',')[1]);
+                const amountB = parseFloat(b.split(',')[1]);
+                return amountA - amountB;
+            });
+            // Write the sorted orders to the sorted partition file
+            fs.writeFileSync(sortedFilePath, sortedOrders.join('\n'), { encoding: 'utf8' });
+        });
+        callback();
+    });
+}
+```
+
+---
+
+### **Step 3: 合并小文件**
+将所有排序后的小文件按照文件名顺序进行合并。这一步类似于归并排序的合并过程，每次从各个小文件中取出最小的元素，逐步生成最终的排序结果。
+
+以下是合并小文件的代码实现：
+
+```js
+// Step 3: Merge the sorted partitions
+function mergePartitions(inputDirPath, outputFilePath) {
+    // Step 1: Perform merge sort on an array of numbers
+    function mergeSort(arr) {
+        if (arr.length <= 1) {
+            return arr;
+        }
+        const mid = Math.floor(arr.length / 2);
+        const left = arr.slice(0, mid);
+        const right = arr.slice(mid);
+        return merge(mergeSort(left), mergeSort(right));
+    }
+
+    // Step 2: Merge two sorted arrays
+    function merge(left, right) {
+        let merged = [];
+        let i = 0;
+        let j = 0;
+        while (i < left.length && j < right.length) {
+            // 读取文件标题后面的数字
+            if (parseFloat(left[i].split(',')[1]) <= parseFloat(right[j].split(',')[1])) {
+                merged.push(left[i]);
+                i++;
+            } else {
+                merged.push(right[j]);
+                j++;
+            }
+        }
+        while (i < left.length) {
+            merged.push(left[i]);
+            i++;
+        }
+        while (j < right.length) {
+            merged.push(right[j]);
+            j++;
+        }
+        return merged;
+    }
+
+    const filePointers = [];
+    let mergedOutput = '';
+    fs.readdir(inputDirPath, (err, files) => {
+        if (err) {
+            throw err;
+        }
+        // Open all sorted partition files and initialize file pointers
+        files.forEach((file) => {
+            const filePath = path.join(inputDirPath, file);
+            const fileData = fs.readFileSync(filePath, 'utf8').trim();
+            const partitionData = fileData.split('\n');
+            filePointers.push(partitionData);
+        });
+        // Merge the sorted partitions
+        const sortedOutput = mergeSort(filePointers.flat());
+        // Format the sorted output
+        mergedOutput = sortedOutput.join('\n') + '\n';
+        // Write the merged output to the final sorted file
+        fs.writeFileSync(outputFilePath, mergedOutput, { encoding: 'utf8' });
+    });
+}
+```
+
+---
+
+## 运行结果
+
+以下是整个流程的运行结果：
+1. **输入文件**：原始 1TB 订单数据。
+2. **中间文件**：
+   - `temp/input`：分小文件后的结果，每个小文件存储对应的订单数据。
+   - `temp/output`：小文件内部排序后的结果。
+3. **输出文件**：`sorted_file.txt` 是最终的合并结果，已经按照订单金额排序完成。
+
+运行结果如下图所示：
+{{< img src="img11.png" alt="运行结果" maxWidth="960px" caption="运行结果" >}}
+
+---
+
+K’th Smallest/Largest Element in Unsorted
+
+
+## 问题描述
+
+给定一个数组和一个整数 `k`，其中 `k` 小于数组的长度，我们需要找到数组中第 `k` 小的元素。假设数组中的所有元素都是不同的。
+
+### 示例 1
+输入：
+```text
+arr[] = {7, 10, 4, 3, 20, 15}
+k = 3
+```
+输出：
+```text
+7
+```
+
+### 示例 2
+输入：
+```text
+arr[] = {7, 10, 4, 3, 20, 15}
+k = 4
+```
+输出：
+```text
+10
+```
+
+---
+
+## 解答
+
+### 方法 1：排序法
+通过将数组排序后，直接返回第 `k` 小的元素。
+
+#### 实现代码
+```ts
+function getKthSmallest(arr: number[], k: number): number {
+  const sortedArr = arr.sort((a, b) => a - b); // 升序排序
+  return sortedArr[k - 1]; // 返回第 k 小的元素
+}
+```
+
+#### 时间复杂度
+- 排序的时间复杂度为 **O(n log n)**，其中 `n` 是数组的长度。
+- 空间复杂度为 **O(1)**（如果原地排序）或 **O(n)**（如果创建了新数组）。
+
+---
+
+### 方法 2：堆排序（大顶堆/小顶堆）
+
+可以使用堆来优化查找第 `k` 小元素的过程，避免对整个数组进行排序。
+
+#### 思路
+1. **小顶堆**：
+   - 构建一个小顶堆，依次弹出堆顶元素 `k-1` 次，最后堆顶即为第 `k` 小的元素。
+   - 时间复杂度为 **O(n + k log n)**。
+2. **大顶堆**：
+   - 构建一个大小为 `k` 的大顶堆，遍历数组时维护堆的大小。
+   - 如果当前元素小于堆顶元素，则替换堆顶并调整堆。
+   - 最终堆顶即为第 `k` 小的元素。
+   - 时间复杂度为 **O(n log k)**。
+
+#### 实现代码（大顶堆）
+```ts
+function getKthSmallestUsingHeap(arr: number[], k: number): number {
+  const maxHeap = new MaxHeap();
+
+  for (let i = 0; i < arr.length; i++) {
+    if (maxHeap.size() < k) {
+      maxHeap.insert(arr[i]); // 插入堆中
+    } else if (arr[i] < maxHeap.peek()) {
+      maxHeap.extractMax(); // 移除堆顶
+      maxHeap.insert(arr[i]); // 插入新元素
+    }
+  }
+
+  return maxHeap.peek(); // 堆顶即为第 k 小元素
+}
+
+// 假设 MaxHeap 是一个实现好的大顶堆类
+class MaxHeap {
+  private heap: number[] = [];
+
+  insert(value: number) {
+    this.heap.push(value);
+    this.heapifyUp(this.heap.length - 1);
+  }
+
+  extractMax(): number {
+    const max = this.heap[0];
+    this.heap[0] = this.heap[this.heap.length - 1];
+    this.heap.pop();
+    this.heapifyDown(0);
+    return max;
+  }
+
+  peek(): number {
+    return this.heap[0];
+  }
+
+  size(): number {
+    return this.heap.length;
+  }
+
+  private heapifyUp(index: number) {
+    while (index > 0) {
+      const parentIndex = Math.floor((index - 1) / 2);
+      if (this.heap[parentIndex] >= this.heap[index]) break;
+      [this.heap[parentIndex], this.heap[index]] = [this.heap[index], this.heap[parentIndex]];
+      index = parentIndex;
+    }
+  }
+
+  private heapifyDown(index: number) {
+    while (true) {
+      const leftChildIndex = 2 * index + 1;
+      const rightChildIndex = 2 * index + 2;
+      let largestIndex = index;
+
+      if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] > this.heap[largestIndex]) {
+        largestIndex = leftChildIndex;
+      }
+      if (rightChildIndex < this.heap.length && this.heap[rightChildIndex] > this.heap[largestIndex]) {
+        largestIndex = rightChildIndex;
+      }
+      if (largestIndex === index) break;
+      [this.heap[index], this.heap[largestIndex]] = [this.heap[largestIndex], this.heap[index]];
+      index = largestIndex;
+    }
+  }
+}
+```
+
+#### 时间复杂度
+- **构建堆**：`O(n log k)`。
+- **空间复杂度**：`O(k)`（堆的大小限制为 `k`）。
+
+---
+
+Find the Largest Sum of Contiguous Subarray
+
+
+
+## 问题描述
+
+在一个一维数组中，找到具有最大和的连续子数组，并返回其最大和。
+
+### 示例
+输入：
+```text
+arr = [-2, -3, 4, -1, -2, 1, 5, -3]
+```
+输出：
+```text
+7
+```
+解释：
+最大和的连续子数组为 `[4, -1, -2, 1, 5]`，其和为 `4 + (-1) + (-2) + 1 + 5 = 7`。
+
+---
+
+## 解答
+
+### 方法：Kadane 算法
+
+Kadane 算法是一种高效的动态规划算法，用于解决最大子数组和问题。其核心思想是通过遍历数组，动态维护当前子数组的最大和以及全局最大和。
+
+#### 实现代码
+```ts
+function maxSubArraySum(arr: number[]): number {
+  // 初始化变量
+  const maxint = Math.pow(2, 53); // JavaScript 中的最大安全整数
+  let maxSoFar = -maxint - 1;     // 全局最大和，初始值设为最小值
+  let maxEndingHere = 0;          // 当前子数组的最大和
+
+  // 遍历数组
+  for (let index = 0; index < arr.length; index++) {
+    maxEndingHere = maxEndingHere + arr[index]; // 更新当前子数组和
+
+    // 如果当前子数组和大于全局最大和，则更新全局最大和
+    if (maxSoFar < maxEndingHere) {
+      maxSoFar = maxEndingHere;
+    }
+
+    // 如果当前子数组和小于 0，则重新开始计算子数组
+    if (maxEndingHere < 0) {
+      maxEndingHere = 0;
+    }
+  }
+
+  return maxSoFar; // 返回全局最大和
+}
+
+// 测试用例
+const arr = [-2, -3, 4, -1, -2, 1, 5, -3];
+console.log(maxSubArraySum(arr)); // 输出: 7
+```
+
+---
+
+### 算法解析
+
+1. **初始化**：
+   - `maxSoFar`：记录全局最大和，初始值设为最小值（`-Infinity` 或 `-Math.pow(2, 53) - 1`）。
+   - `maxEndingHere`：记录当前子数组的最大和，初始值为 `0`。
+
+2. **遍历数组**：
+   - 每次将当前元素加入 `maxEndingHere`，表示扩展当前子数组。
+   - 如果 `maxEndingHere` 大于 `maxSoFar`，则更新 `maxSoFar`。
+   - 如果 `maxEndingHere` 小于 `0`，说明当前子数组对后续结果无贡献，重置为 `0`。
+
+3. **返回结果**：
+   - 遍历结束后，`maxSoFar` 即为最大子数组和。
+
+---
+
+### 时间复杂度与空间复杂度
+
+- **时间复杂度**：`O(n)`  
+  - 只需遍历数组一次，效率较高。
+- **空间复杂度**：`O(1)`  
+  - 只使用了常量级额外空间。
+
+---
+
+Longest Palindromic Substring
+
+
+## 问题描述
+
+给定一个字符串，找到其中最长的回文子串。
+
+### 示例
+
+#### 示例 1
+输入：
+```text
+"forgeeksskeegfor"
+```
+输出：
+```text
+"geeksskeeg"
+```
+
+#### 示例 2
+输入：
+```text
+"Geeks"
+```
+输出：
+```text
+"ee"
+```
+
+---
+
+## 解答思路
+
+要找到字符串中的最长回文子串，可以采用**中心扩展法**。具体步骤如下：
+
+1. 遍历字符串的每个字符，将其视为回文中心。
+2. 向左右两侧扩展，检查是否满足回文条件（即左右字符相等）。
+3. 跳过重复字符以处理偶数长度的回文。
+4. 记录当前最长回文子串的起始位置和长度，并在遍历结束后返回结果。
+
+---
+
+## 代码实现
+
+以下是基于 TypeScript 的代码实现：
+
+```ts
+function longestPalindrome(str: string): string {
+  const n = str.length;
+  if (n === 0) return "";
+
+  let maxLength = 1; // 最长回文子串的长度
+  let start = 0;     // 最长回文子串的起始位置
+
+  for (let index = 0; index < n; index++) {
+    let low = index - 1;
+    let high = index + 1;
+
+    // 跳过右侧重复字符
+    while (high < n && str[high] === str[index]) {
+      high++;
+    }
+
+    // 跳过左侧重复字符
+    while (low >= 0 && str[low] === str[index]) {
+      low--;
+    }
+
+    // 中间部分是回文，继续向外扩展
+    while (low >= 0 && high < n && str[low] === str[high]) {
+      low--;
+      high++;
+    }
+
+    // 计算当前回文子串的长度
+    const length = high - low - 1;
+    if (maxLength < length) {
+      maxLength = length;
+      start = low + 1;
+    }
+  }
+
+  // 返回最长回文子串
+  return str.substring(start, start + maxLength);
+}
+```
+
+---
+
+## 复杂度分析
+
+### 时间复杂度
+- **O(n²)**：  
+  - 外层循环遍历整个字符串，时间复杂度为 O(n)。
+  - 内层循环从每个字符为中心向两侧扩展，最坏情况下会扩展到头尾，时间复杂度为 O(n)。
+  - 因此，总时间复杂度为 O(n²)。
+
+### 空间复杂度
+- **O(1)**：  
+  - 只使用了常量级别的额外空间（如 `low`、`high`、`maxLength` 等变量），因此空间复杂度为 O(1)。
+
+---
+
+
+Minimum number of jumps to reach end
+
+
+
+## 问题描述
+
+给定一个整数数组，其中每个元素表示从该位置可以向前跳的最大步数。编写一个函数返回到达数组末尾所需的最小跳跃次数。如果某个元素为 `0`，则无法通过该元素。如果无法到达终点，则返回 `-1`。
+
+### 示例 1
+输入：
+```text
+arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}
+```
+输出：
+```text
+3
+```
+解释：  
+- 第 1 次跳跃：从索引 `0` 跳到索引 `1`（因为 `arr[0] = 1`）。
+- 第 2 次跳跃：从索引 `1` 跳到索引 `4`（因为 `arr[1] = 3`，可以选择跳到索引 `2`、`3` 或 `4`）。
+- 第 3 次跳跃：从索引 `4` 跳到索引 `10`（因为 `arr[4] = 9`，直接跳到终点）。
+
+### 示例 2
+输入：
+```text
+arr[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+```
+输出：
+```text
+10
+```
+解释：每次只能跳一步，因此需要 10 次跳跃才能到达终点。
+
+---
+
+## 解答
+
+### 方法 1：贪心算法（优化版暴力解法）
+
+#### 实现代码
+```ts
+function miniJumpsToEnd(arr) {
+  const n = arr.length;
+
+  // 如果数组长度为 1 或更小，无需跳跃
+  if (n <= 1) return 0;
+
+  // 如果起点为 0 且数组长度大于 1，无法跳跃
+  if (arr[0] == 0) return -1;
+
+  let maxReach = arr[0]; // 当前能够到达的最远索引
+  let step = arr[0];     // 当前剩余的步数
+  let jumps = 1;         // 总跳跃次数
+
+  for (let i = 1; i < n; i++) {
+    // 如果当前索引已经到达或超过终点
+    if (i == n - 1) {
+      return jumps;
+    }
+
+    // 更新能够到达的最远索引
+    maxReach = Math.max(maxReach, i + arr[i]);
+
+    // 消耗一步
+    step--;
+
+    // 如果当前剩余步数为 0，需要进行一次跳跃
+    if (step == 0) {
+      jumps++;
+
+      // 如果当前索引已经超过最大可达范围，说明无法到达终点
+      if (i >= maxReach) {
+        return -1;
+      }
+
+      // 更新剩余步数为新的最大可达范围减去当前索引
+      step = maxReach - i;
+    }
+  }
+
+  return -1; // 如果循环结束仍未返回结果，说明无法到达终点
+}
+```
+
+---
+
+### 算法解析
+
+1. **核心思想**  
+   使用贪心算法动态维护三个变量：
+   - `maxReach`：记录当前能够到达的最远索引。
+   - `step`：记录当前剩余的步数。
+   - `jumps`：记录总的跳跃次数。
+
+2. **流程**
+   - 遍历数组时，更新 `maxReach` 为当前索引加上当前元素值的最大值。
+   - 每次消耗一步（`step--`），当 `step` 为 `0` 时，表示需要进行一次跳跃，并更新剩余步数。
+   - 如果当前索引超过了 `maxReach`，说明无法继续前进，返回 `-1`。
+
+3. **边界条件**
+   - 如果数组长度为 `1`，直接返回 `0`。
+   - 如果起点为 `0` 且数组长度大于 `1`，直接返回 `-1`。
+
+---
+
+### 时间复杂度与空间复杂度
+
+- **时间复杂度**：  
+  只需遍历数组一次，因此时间复杂度为 **O(n)**。
+
+- **空间复杂度**：  
+  只使用了常量级额外空间，因此空间复杂度为 **O(1)**。
+
+---
+
+### 示例运行
+
+#### 示例 1
+输入：
+```text
+arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}
+```
+执行过程：
+- 初始状态：`maxReach = 1`, `step = 1`, `jumps = 1`
+- 遍历到索引 `1`：更新 `maxReach = 4`, 消耗 `step`，进行第 2 次跳跃。
+- 遍历到索引 `4`：更新 `maxReach = 13`, 消耗 `step`，进行第 3 次跳跃。
+- 到达终点，返回 `3`。
+
+输出：
+```text
+3
+```
+
+#### 示例 2
+输入：
+```text
+arr[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+```
+执行过程：
+- 每次只能跳一步，总共需要 10 次跳跃。
+
+输出：
+```text
+10
+```
+
+---
+
+长度为k的子数组的最大值
+
+## 问题描述
+
+给定一个数组和一个整数 **K**，找到每个长度为 **K** 的连续子数组的最大值。
+
+### 示例
+输入：
+```text
+arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6}, K = 3
+```
+输出：
+```text
+3 3 4 5 5 5 6
+```
+解释：
+- 子数组 `[1, 2, 3]` 的最大值是 `3`
+- 子数组 `[2, 3, 1]` 的最大值是 `3`
+- 子数组 `[3, 1, 4]` 的最大值是 `4`
+- 子数组 `[1, 4, 5]` 的最大值是 `5`
+- 子数组 `[4, 5, 2]` 的最大值是 `5`
+- 子数组 `[5, 2, 3]` 的最大值是 `5`
+- 子数组 `[2, 3, 6]` 的最大值是 `6`
+
+---
+
+## 解决方案分析
+
+以下是几种常见的解决方案及其时间复杂度和空间复杂度分析。
+
+---
+
+### 方法 1：暴力解法
+
+#### 实现代码
+```js
+function getMaxK(arr, k) {
+  if (!arr) return;
+  if (arr.length <= k) {
+    return Math.max(...arr);
+  }
+  for (let index = 0; index <= arr.length - k; index++) {
+    let result = Math.max(arr[index], arr[index + 1], arr[index + 2]);
+    console.log(result + " ");
+  }
+}
+```
+
+#### 分析
+- **时间复杂度**：  
+  外层循环遍历 `(n-k)` 次，内层计算最大值需要 `k` 次操作，因此总时间复杂度为 **O(n*k)**。
+- **空间复杂度**：  
+  不需要额外空间，因此空间复杂度为 **O(1)**。
+
+---
+
+### 方法 2：AVL 树
+
+#### 背景知识
+AVL 树是一种高度平衡的二叉搜索树（BST），其左右子树的高度差不超过 1。它支持插入、删除和查找操作的时间复杂度均为 **O(log k)**，非常适合用于动态维护最值。
+
+#### 实现代码
+```ts
+function getMaxK(arr, k) {
+  const res = [];
+  const queue = [];
+  let index = 0;
+
+  // 初始化前 k 个元素
+  for (; index < k; index++) {
+    queue.push(arr[index]);
+  }
+  queue.sort((a, b) => b - a); // 排序以模拟 AVL 树
+  res.push(queue[0]);
+
+  // 滑动窗口处理剩余元素
+  for (; index < arr.length; index++) {
+    const element = arr[index];
+    queue.push(element);
+    queue.sort((a, b) => b - a); // 插入后重新排序
+    res.push(queue[0]);
+    queue.splice(arr[index - k + 1], 1); // 删除滑出窗口的元素
+  }
+
+  return res;
+}
+```
+
+#### 分析
+- **时间复杂度**：  
+  遍历数组需要 `n` 次操作，每次插入或删除元素需要 `log k` 时间，因此总时间复杂度为 **O(n*log k)**。
+- **空间复杂度**：  
+  维护一个大小为 `k` 的队列，因此空间复杂度为 **O(k)**。
+
+#### 构建 AVL 树的关键模板
+1. **节点平衡模板**
+   ```ts
+   const balance = this.getBalance(node);
+   // 左左情况
+   if (balance > 1 && data < node.left.data) {
+     return this.rightRotate(node);
+   }
+   // 右右情况
+   if (balance < -1 && data > node.right.data) {
+     return this.leftRotate(node);
+   }
+   // 左右情况
+   if (balance > 1 && data > node.left.data) {
+     node.left = this.leftRotate(node.left);
+     return this.rightRotate(node);
+   }
+   // 右左情况
+   if (balance < -1 && data < node.right.data) {
+     node.right = this.rightRotate(node.right);
+     return this.leftRotate(node);
+   }
+   ```
+
+2. **左旋模板**
+   ```ts
+   function leftRotate(x) {
+     let y = x.right;
+     let T2 = y.left;
+     y.left = x;
+     x.right = T2;
+     x.height = Math.max(height(x.left), height(x.right)) + 1;
+     y.height = Math.max(height(y.left), height(y.right)) + 1;
+     return y;
+   }
+   ```
+
+3. **右旋模板**
+   ```ts
+   function rightRotate(y) {
+     let x = y.left;
+     let T2 = x.right;
+     x.right = y;
+     y.left = T2;
+     y.height = Math.max(height(y.left), height(y.right)) + 1;
+     x.height = Math.max(height(x.left), height(x.right)) + 1;
+     return x;
+   }
+   ```
+
+---
+
+### 方法 3：双栈法
+
+#### 实现代码
+```ts
+const s1 = []; // 滑动窗口
+const s2 = []; // 临时窗口
+const n = arr.length;
+
+// 初始化
+for (let index = 0; index < k - 1; index++) {
+  insert(s2, arr[index]);
+}
+
+for (let i = 0; i <= n - k; i++) {
+  // 更新窗口
+  if (i - 1 >= 0) update(s1, s2);
+  // 插入新元素
+  insert(s2, arr[i + k - 1]);
+  // 记录最大值
+  res.push(Math.max(s1[s1.length - 1].max, s2[s2.length - 1].max));
+}
+```
+
+#### 分析
+- **时间复杂度**：  
+  每个元素最多被插入和删除一次，因此总时间复杂度为 **O(n)**。
+- **空间复杂度**：  
+  使用两个栈存储最多 `k` 个元素，因此空间复杂度为 **O(k)**。
+
+---
+
+### 方法 4：大顶堆（Max-Heap）
+
+#### 思路
+使用大顶堆动态维护当前窗口中的最大值。大顶堆的特点是可以快速获取最大值，并支持高效的插入和删除操作。
+
+#### 分析
+- **时间复杂度**：  
+  每次插入和删除操作的时间复杂度为 **O(log k)**，总时间复杂度为 **O(n*log k)**。
+- **空间复杂度**：  
+  堆中最多存储 `k` 个元素，因此空间复杂度为 **O(k)**。
+
+---
+
+## 总结
+
+| 方法       | 时间复杂度   | 空间复杂度 | 适用场景                     |
+|------------|--------------|------------|------------------------------|
+| 暴力解法   | O(n*k)       | O(1)       | 数据规模较小                 |
+| AVL 树     | O(n*log k)   | O(k)       | 动态维护最值，数据规模较大   |
+| 双栈法     | O(n)         | O(k)       | 高效且易于实现               |
+| 大顶堆     | O(n*log k)   | O(k)       | 动态维护最值，适合大规模数据 |
+
+根据实际需求选择合适的算法。如果对性能要求较高且数据规模较大，推荐使用 **双栈法** 或 **大顶堆**。
+
+
+---
+
+检测无定向图中的环
+
+
+## 问题定义
+
+给定一个无向图，如何检查图中是否有一个环？
+
+### **用例 1**
+- **输入**:  
+  - `n = 4`（顶点数）  
+  - `e = 4`（边数）  
+  - 边集合：`{ 0-1, 1-2, 2-3, 0-2 }`
+- **输出**: `Yes`（存在环）
+- **示例**:
+  ![示例 1](ex1.png)
+  *图：存在环*
+
+---
+
+### **用例 2**
+- **输入**:  
+  - `n = 4`（顶点数）  
+  - `e = 3`（边数）  
+  - 边集合：`{ 0-1, 1-2, 2-3 }`
+- **输出**: `No`（不存在环）
+- **示例**:
+  ![示例 2](ex2.png)
+  *图：不存在环*
+
+---
+
+## 问题分析
+
+我们都知道：
+> **算法 + 数据结构 = 程序**
+
+因此，我们需要创建一个数据结构来表示无向图。以下是两种常见的数据结构：
+
+1. **邻接表**  
+   如果顶点 `1` 与顶点 `2` 和 `3` 相连，则邻接表表示为：  
+   `{ 1: [2, 3] }`
+
+2. **邻接矩阵**  
+   在 JavaScript 中，可以使用 `Map` 实现。
+
+---
+
+### 算法：如何检测环
+
+#### 方案 1: 并查集（Disjoint Set Union, DSU）
+- **初始化**: 每个顶点都是一个独立的集合。
+- **合并操作**: 遍历所有边，如果两个顶点属于不同集合，则合并它们。
+- **判断环**: 如果两个顶点已经属于同一个集合，则说明存在环。
+
+#### 方案 2: 深度优先搜索（DFS）或广度优先搜索（BFS）
+- **访问标记**: 使用一个布尔数组记录每个节点是否被访问过。
+- **判断环**: 如果当前节点的邻接节点已被访问且不是其父节点，则说明存在环。
+
+---
+
+## 编码实现
+
+以下代码实现了基于邻接表的无向图，并提供了三种检测环的方法：并查集、DFS 和 BFS。
+
+![示例图](graph_demo.png)
+*图：一个无向图示例*
+
+```javascript
+/*
+  Graph using adjacency list. Support operations:
+  1. Traverse by DFS/BFS
+  2. hasCircleByDfs
+  3. hasCircleByBfs
+  4. hasCircleByDss (Disjoint Set)
+*/
+class Graph {
+  constructor() {
+    this.allVertexes = [];
+    this.allEdges = [];
+    this.adList = new Map();
+  }
+
+  // 添加顶点
+  addV(v) {
+    if (!this.adList.has(v)) {
+      this.adList.set(v, []);
+    }
+    this.allVertexes.push(v);
+  }
+
+  // 添加边
+  addE(source, dest) {
+    if (!this.adList.has(source)) {
+      this.addV(source);
+    }
+    if (!this.adList.has(dest)) {
+      this.addV(dest);
+    }
+    this.adList.get(source).push(dest);
+    this.adList.get(dest).push(source);
+    this.allEdges.push({ source, dest });
+  }
+
+  // 删除顶点
+  removeV(v) {
+    for (let adV of this.adList.get(v)) {
+      this.removeE(v, adV);
+    }
+    this.adList.delete(v);
+  }
+
+  // 删除边
+  removeE(source, dest) {
+    this.adList.set(
+      source,
+      this.adList.get(source).filter((v) => v !== dest)
+    );
+    this.adList.set(
+      dest,
+      this.adList.get(dest).filter((v) => v !== source)
+    );
+  }
+
+  // 打印邻接表
+  print() {
+    for (let v of this.adList.keys()) {
+      let cons = "";
+      for (let dest of this.adList.get(v)) {
+        cons += dest + " ";
+      }
+      console.log(v + " -> " + cons);
+    }
+  }
+
+  // 使用并查集检测环
+  hasCircleByDss() {
+    const dss = new DisjointSet();
+    this.allVertexes.forEach((v) => {
+      dss.makeSet(v);
+    });
+    return this.allEdges.some((e) => dss.union(e.source, e.dest));
+  }
+
+  // 使用 BFS 检测环
+  bfs(start) {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    visited[start] = true;
+    while (queue.length) {
+      const curV = queue.shift();
+      result.push(curV);
+      this.adList.get(curV).forEach((dest) => {
+        if (!visited[dest]) {
+          visited[dest] = true;
+          queue.push(dest);
+        }
+      });
+    }
+    return result;
+  }
+
+  hasCircleByBfs() {
+    const parent = {};
+    const visited = {};
+    const queue = [];
+    for (let i = 0; i < this.allVertexes.length; i++) {
+      const node = this.allVertexes[i];
+      if (!visited[node]) {
+        visited[node] = true;
+        queue.push(node);
+        while (queue.length) {
+          const curV = queue.shift();
+          visited[curV] = true;
+          const allAdNodes = this.adList.get(curV);
+          for (let j = 0; j < allAdNodes.length; j++) {
+            const dest = allAdNodes[j];
+            if (!visited[dest]) {
+              visited[dest] = true;
+              parent[dest] = curV;
+              queue.push(dest);
+            } else if (dest !== parent[curV]) {
+              return true;
+            }
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  // 使用 DFS 检测环
+  dfsRecursive(start) {
+    const result = [];
+    const visited = {};
+    const adList = this.adList;
+    (function dfs(v) {
+      if (!v) return null;
+      visited[v] = true;
+      result.push(v);
+      adList.get(v).forEach((dest) => {
+        if (!visited[dest]) {
+          return dfs(dest);
+        }
+      });
+    })(start);
+    return result;
+  }
+
+  dfsIterative(start) {
+    const result = [];
+    const visited = {};
+    const stack = [start];
+    visited[start] = true;
+    while (stack.length) {
+      const curV = stack.pop();
+      result.push(curV);
+      this.adList.get(curV).forEach((dest) => {
+        if (!visited[dest]) {
+          visited[dest] = true;
+          stack.push(dest);
+        }
+      });
+    }
+    return result;
+  }
+
+  hasCircleUtil(node, visited, parent) {
+    visited[node] = true;
+    const adList = this.adList.get(node) || [];
+    for (let i = 0; i < adList.length; i++) {
+      if (adList[i] === parent) continue;
+      if (visited[adList[i]]) return true;
+      const hasCycle = this.hasCircleUtil(adList[i], visited, node);
+      if (hasCycle) return true;
+    }
+    return false;
+  }
+
+  hasCircleByDfs() {
+    const visited = {};
+    const allV = this.allVertexes;
+    for (let i = 0; i < allV.length; i++) {
+      if (visited[allV[i]]) continue;
+      const flag = this.hasCircleUtil(allV[i], visited, null);
+      if (flag) return true;
+    }
+    return false;
+  }
+}
+
+// 并查集实现
+class DisjointSet {
+  constructor() {
+    this.map = new Map();
+  }
+
+  makeSet(data) {
+    this.map.set(data, -1);
+  }
+
+  find(x) {
+    const parent = this.map.get(x);
+    if (parent < 0) {
+      return x;
+    } else {
+      return this.find(this.map.get(x));
+    }
+  }
+
+  union(x, y) {
+    const xparent = this.find(x);
+    const yparent = this.find(y);
+    if (xparent !== yparent) {
+      this.map.set(xparent, this.map.get(xparent) + this.map.get(yparent));
+      this.map.set(yparent, xparent);
+    } else {
+      return true;
+    }
+  }
+
+  console_print() {
+    console.log(JSON.stringify([...this.map.entries()]));
+  }
+}
+
+// 测试代码
+const g = new Graph();
+const vertices = ["A", "B", "C", "D", "E", "F"];
+for (const v of vertices) {
+  g.addV(v);
+}
+g.addE("A", "B");
+g.addE("A", "D");
+g.addE("B", "C");
+g.addE("D", "E");
+g.addE("E", "F");
+g.addE("A", "E"); // 添加环
+g.print();
+console.log("Has Circle (DSS):", g.hasCircleByDss());
+console.log("Has Circle (DFS):", g.hasCircleByDfs());
+console.log("Has Circle (BFS):", g.hasCircleByBfs());
+```
+
+---
+
+## 时间复杂度
+
+| 方法       | 时间复杂度 |
+|------------|------------|
+| BFS/DFS    | O(V + E)   |
+| 并查集     | O(n) → O(log n)（使用路径压缩和按秩合并优化后） |
+
+

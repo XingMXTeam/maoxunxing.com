@@ -1,5 +1,5 @@
 ---
-title: "Chrome DevTools 新能力解析"
+title: "Chrome DevTools 117 新能力解析"
 description: ""
 date: 2025-02-15
 images:
@@ -47,9 +47,6 @@ tags:
 3. 右键点击目标请求，选择 **Override content**。
 4. 在弹出的编辑器中修改内容并保存。
 
-![覆盖HTML/JS/CSS示例](https://example.com/Pasted_image_20230922103828.png)  
-（注：请替换为实际图片链接）
-
 ---
 
 ### 覆盖XHR请求
@@ -67,8 +64,7 @@ tags:
 3. 找到目标XHR请求，右键选择 **Override content**。
 4. 修改返回数据并保存。
 
-![alt text](image.png)
-![alt text](image-1.png)
+{{< img src="image-1.png" alt="Override Content" maxWidth="350px" align="center" caption="Override Content" >}}
 
 ---
 
