@@ -12,7 +12,8 @@ tags:
 这个报错是本地起node服务报的。不是因为端口被占用了，而是因为node版本不对，用的14可以。
 
 webstorm指定node版本：
-![alt text](image.png)
+
+{{< img src="image.png" alt="WebStorm Node Version" caption="WebStorm Node Version" maxWidth="450px" align="center" >}}
 
 
 vscode: launch.json

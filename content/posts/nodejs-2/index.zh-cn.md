@@ -4,8 +4,6 @@ date: 2021-08-27T10:20:36+08:00
 tags:
   - nodejs
 description: ""
-images:
-  - node-js/node-js.jpeg
 ---
 
 ## **服务重启**

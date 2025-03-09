@@ -3,7 +3,7 @@ title: "Node Stream Complete Guide Notes"
 description: ""
 date: 2025-02-04
 tags:
-  - NodeJS
+  - nodejs
 images:
   - nodejs-1/node-js.jpeg
 ---

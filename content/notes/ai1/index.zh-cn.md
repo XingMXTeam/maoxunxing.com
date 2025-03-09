@@ -20,9 +20,6 @@ tags:
 原视频地址：
 {{< video src="https://youtu.be/EWvNQjAaOHw" caption="How I Use LLM">}}
 
-
-2个多小时的视频学习，我记录了一些笔记： 
-
 ## 如何选择合适的模型，各大模型APP和对比
 
 {{< img src="image.png" alt="LLM APP" maxWidth="350px" align="center" >}}
@@ -146,16 +143,18 @@ see, ocr, ask about
 
 ## custom instructions
 
-![alt text](image-2.png)
+{{< img src="image-2.png" alt="ChatGPT instructions" caption="ChatGPT instructions" maxWidth="450px" align="center" >}}
 
 ## custom chatgpt
 
 chatgpt翻译比一般的翻译更好，比如https://papago.naver.com/ 。
 我们可以自定义翻译能力，比如对句子拆分，逐字解释
 
-![alt text](image-3.png) 
+{{< img src="image-3.png" alt="custom ChatGPT " caption="custom ChatGPT" maxWidth="450px" align="center" >}}
 
-对电影的字幕进行解释：![alt text](image-4.png)
+对电影的字幕进行解释:
+
+{{< img src="image-4.png" alt="ChatGPT OCR" caption="ChatGPT OCR" maxWidth="450px" align="center" >}}
 
 这里还有一个方案，就是用谷歌智能眼镜对文字ocr，然后丢给chatgpt
 

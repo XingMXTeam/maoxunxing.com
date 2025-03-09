@@ -3,7 +3,7 @@ title: "应用自动部署和发布"
 description: "pm2如何脚本自动化启动和部署应用"
 date: 2024-09-14
 tags:
-  - NodeJS
+  - nodejs
 images:
   - nodejs-1/node-js.jpeg
 ---

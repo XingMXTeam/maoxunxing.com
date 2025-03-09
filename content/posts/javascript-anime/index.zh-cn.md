@@ -2,6 +2,7 @@
 title: "动画库推荐与使用指南"
 date: 2025-02-06
 tags:
+  - JavaScript
   - Web开发
 ---
 

@@ -365,3 +365,7 @@ https访问http 会block
    将静态资源托管到CDN（如阿里云OSS、Cloudflare），利用CDN提供的HTTPS支持。
 
 ---
+
+## HTTP 标准文档
+
+https://datatracker.ietf.org/doc/html/rfc7231#page-70

@@ -24,8 +24,6 @@ images:
    - [useMemo](#usememo)
 4. [总结](#总结)
 
----
-
 ## React Hooks 的背景
 
 在 React 的早期版本中，我们使用 `createClass` 创建组件，随后在 React v0.13.0 中引入了 `React.Component`。然而，这种方式存在一些问题：
@@ -34,13 +32,13 @@ images:
 
 虽然可以通过 **Class Fields** 和 **箭头函数** 来避免这些问题，但仍然会面临代码重复的问题。例如：
 
-![alt text](image.png)
+{{< img src="image.png" alt="" maxWidth="540px" >}}
+
 
 为了解决这些问题，开发者通常会使用 **高阶组件（HOC）** 或 **Render Props** 模式来复用逻辑。然而，这些方法容易导致“包装地狱”（Wrapper Hell），并且代码可读性较差。
 
 因此，React 团队推出了 **React Hooks**，旨在解决这些问题并提供更简洁、更灵活的开发方式。
 
----
 
 ## React Hooks 的使用
 
@@ -53,14 +51,12 @@ images:
   - `setState` 管理的是整个组件的状态对象，而 `useState` 只管理单个状态。
   - `useState` 的更新函数会完全替换状态，而 `setState` 会合并状态对象。
 
-![alt text](image-2.png)
+{{< img src="image-2.png" alt="" maxWidth="540px" >}}
 
 示例代码：
 ```jsx
 const [repos, setRepos] = useState([]);
 ```
-
----
 
 ### useEffect
 
@@ -72,7 +68,7 @@ const [repos, setRepos] = useState([]);
   - 如果传递空数组 `[]`，则只会在初始渲染时执行。
   - 如果传递依赖项数组，则仅在依赖项变化时执行。
 
-![alt text](image-3.png)
+{{< img src="image-3.png" alt="" maxWidth="540px" >}}
 
 为了避免无限循环，建议合理设置依赖项数组。此外，`useEffect` 提供了清理机制，用于处理如事件监听器或 WebSocket 等资源释放。
 
@@ -85,9 +81,7 @@ useEffect(() => {
 }, []);
 ```
 
-![alt text](image-5.png)
-
----
+{{< img src="image-5.png" alt="" maxWidth="540px" >}}
 
 ### 自定义 Hooks
 
@@ -107,9 +101,7 @@ function useTooltip() {
 const tooltip = useTooltip();
 ```
 
-![alt text](image-8.png)
-
----
+{{< img src="image-8.png" alt="" maxWidth="540px" >}}
 
 ### useReducer
 
@@ -136,9 +128,7 @@ function reducer(state, action) {
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
-![alt text](image-10.png)
-
----
+{{< img src="image-10.png" alt="" maxWidth="540px" >}}
 
 ### useRef
 
@@ -159,9 +149,7 @@ useEffect(() => {
 return <input ref={inputRef} />;
 ```
 
-![alt text](image-17.png)
-
----
+{{< img src="image-17.png" alt="" maxWidth="540px" >}}
 
 ### useContext
 
@@ -185,9 +173,8 @@ function Child() {
 }
 ```
 
-![alt text](image-18.png)
+{{< img src="image-18.png" alt="" maxWidth="540px" >}}
 
----
 
 ## 性能优化
 
@@ -200,8 +187,6 @@ function Child() {
 const MemoizedComponent = React.memo(MyComponent);
 ```
 
----
-
 ### useCallback
 
 `useCallback` 用于缓存回调函数，避免在父组件重新渲染时生成新的函数实例。
@@ -213,8 +198,6 @@ const handleClick = useCallback(() => {
 }, []);
 ```
 
----
-
 ### useMemo
 
 `useMemo` 用于缓存计算结果，避免不必要的重新计算。
@@ -224,12 +207,4 @@ const handleClick = useCallback(() => {
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-![alt text](image-19.png)
-
----
-
-## 总结
-
-React Hooks 的引入极大地简化了 React 开发流程，解决了传统类组件中的诸多痛点。通过 `useState`、`useEffect`、`useReducer` 等核心 Hooks，开发者可以更轻松地管理状态和副作用。同时，自定义 Hooks 提供了强大的逻辑复用能力，而性能优化工具如 `React.memo`、`useCallback` 和 `useMemo` 则进一步提升了应用的性能。
-
-React Hooks 的出现标志着 React 开发进入了一个更加现代化、灵活化的时代。
+{{< img src="image-19.png" alt="" maxWidth="540px" >}}

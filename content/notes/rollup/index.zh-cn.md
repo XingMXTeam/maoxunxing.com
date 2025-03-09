@@ -1,6 +1,8 @@
 ---
 title: "Rollup 配置文件详解"
 date: 2025-02-06
+tags:
+  - Webpack
 ---
 
 Rollup 是一个流行的 JavaScript 模块打包工具，适用于构建现代前端应用和库。本文将通过一个简单的 Rollup 配置文件示例，详细说明其核心配置项及其作用。
