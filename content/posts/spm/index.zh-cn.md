@@ -1,24 +1,17 @@
 ---
-title: "SPM 埋点指南"
+title: "前端埋点指南"
 date: 2024-12-09
 description: ""
 tags:
   - Web开发
   - 埋点
+custom_toc:
+  - title: "SPM 埋点"
+  - title: "自动曝光"
 ---
 
-## 目录
-1. [SPM 简介](#spm-简介)
-2. [SPM 参数说明](#spm-参数说明)
-   - [spm-url](#spm-url)
-   - [spm-cnt](#spm-cnt)
-   - [pageid](#pageid)
-3. [埋点案例](#埋点案例)
-4. [总结](#总结)
 
----
-
-## SPM 简介
+## SPM 埋点
 
 SPM（Super Position Model）是一种用于追踪用户行为和来源的埋点模型，广泛应用于数据分析、流量来源追踪以及用户行为分析。通过 SPM 参数，可以精准识别用户的来源场域、曝光位置信息以及会话或操作的唯一标识。
 
@@ -90,8 +83,88 @@ SPM（Super Position Model）是一种用于追踪用户行为和来源的埋点
 - 具体是哪个推荐位的商品被点击。
 - 用户是否完成了购买操作。
 
+
 ---
 
-## 总结
+## 自动曝光
 
-SPM 埋点模型通过 `spm-url`、`spm-cnt` 和 `pageid` 等参数，能够精准追踪用户的来源场域、曝光位置信息以及操作行为。合理设计埋点方案，可以帮助团队更好地理解用户行为，优化产品体验，并提升转化率。在实际应用中，需根据业务场景灵活调整埋点策略，确保数据的准确性和可用性。
+### MutationObserver
+
+- **用途**：监视 DOM 树的变化。
+- **功能**：
+  - 检测元素的添加、删除、属性变化等。
+- **在我们的代码中**：
+  - 用于检测新的目标元素何时被添加到 DOM 中。
+  - 当新元素被添加时，将其注册到 `IntersectionObserver` 中以监控其曝光状态。
+
+> **补充说明**：`MutationObserver` 是一个强大的工具，可以高效地监听 DOM 的动态变化，而不会对性能造成显著影响。
+
+### IntersectionObserver
+
+- **用途**：监视元素与视口（或指定根元素）的交叉状态。
+- **功能**：
+  - 检测元素是否进入或离开视口。
+- **在我们的代码中**：
+  - 用于检测目标元素何时进入视口（即曝光）。
+  - 当元素进入视口后，触发回调函数并停止对该元素的观察。
+
+> **补充说明**：`IntersectionObserver` 是一种轻量级的方式，能够避免频繁的滚动事件监听，从而提高性能。
+
+
+## 代码实现
+
+以下是一个完整的实现代码，展示了如何结合 `MutationObserver` 和 `IntersectionObserver` 来检测目标元素的曝光状态。
+
+```js
+// Throttle 函数
+function throttle(func, delay) {
+  let lastCall = 0;
+  return function(...args) {
+    const now = new Date().getTime();
+    if (now - lastCall < delay) return;
+    lastCall = now;
+    return func(...args);
+  };
+}
+
+/**
+ * 监听目标元素的曝光状态
+ * @param {string} targetElement - 目标元素的选择器
+ * @param {Function} callback - 曝光时的回调函数
+ */
+function observeElementExposure(targetElement, callback) {
+  // 创建一个带有 throttle 的回调函数
+  const throttledCallback = throttle(callback, 500);
+
+  // 创建一个 IntersectionObserver 实例
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { // 进入可视窗口
+        throttledCallback(entry.target);
+        observer.unobserve(entry.target); // 停止观察已曝光的元素
+      }
+    });
+  });
+
+  // 创建一个 MutationObserver 实例
+  const mutationObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE && node.matches(targetElement)) {
+            observer.observe(node); // 开始观察新增的目标元素
+          }
+        });
+      }
+    });
+  });
+
+  // 开始观察 DOM 变化
+  mutationObserver.observe(document.body, { childList: true, subtree: true });
+}
+
+// 使用示例
+observeElementExposure('.target-div', (element) => {
+  console.log('目标 div 已曝光:', element);
+});
+```
