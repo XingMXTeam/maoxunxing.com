@@ -295,3 +295,46 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 ## 漏斗分析
 
 上下的漏斗不能有重复的部分，否则无法看出问题。优先关注的在漏斗前面。
+
+
+---
+
+
+## 在使用 Firefox 浏览器调试 Service Worker
+
+
+- **问题描述**：Firefox 不会直接显示 `sw.js` 的请求，即使该文件确实被加载。
+- **解决方案**：通过抓包工具可以捕获到 `sw.js` 的请求。此外，Firefox 提供了内置的调试工具，可以方便地对 Service Worker 进行调试。
+
+
+在调试过程中，抓包工具（如 Fiddler、Charles 或浏览器自带的开发者工具）可以帮助我们：
+
+- 确认 `sw.js` 是否被正确加载。
+- 查看请求的详细信息（如 URL、响应头、状态码等）。
+- 分析可能的网络问题或缓存问题。
+
+尽管抓包工具非常有用，但为了更高效地调试 Service Worker，建议结合 Firefox 的内置调试功能。
+
+### 3.1 打开 Service Worker 调试页面
+
+1. 在 Firefox 地址栏中输入以下地址，打开 Service Worker 调试页面：
+   ```
+   about:debugging#/runtime/this-firefox
+   ```
+   - 该页面列出了当前浏览器中所有已注册的 Service Worker。
+
+2. 找到目标 Service Worker，点击右侧的 **检查** 按钮：
+   ![debug](image3.png)
+
+   - 点击后会打开一个独立的调试窗口，用于调试该 Service Worker。
+
+### 3.2 检查并设置断点
+
+1. 在调试窗口中，切换到 **调试器** 面板：
+   ![alt text](image2.png)
+
+2. 在代码中找到需要调试的位置，点击行号设置断点。
+
+3. 刷新页面或触发相关操作，观察断点是否被命中。
+
+4. 使用调试工具提供的功能（如单步执行、查看变量值等）进行深入分析。

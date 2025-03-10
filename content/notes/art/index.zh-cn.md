@@ -1,6 +1,7 @@
 ---
 title: "艺术让我们学会观察"
 date: 2019-11-25
+draft: true
 tags:
   - 日常
 ---

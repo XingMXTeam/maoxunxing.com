@@ -168,3 +168,9 @@ if (optional.isPresent()) {
 
 ---
 
+whistle代理后，请求可能会被代理。导致`推送错误的配置`，系统资源推送错误异常。
+
+---
+
+`w2 use .xxx/.whistle.js --force`  命令的方式修改whistle配置。结合前端工程构建时做一些代理。
+
