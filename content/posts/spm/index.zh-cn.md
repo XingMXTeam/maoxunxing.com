@@ -2,6 +2,9 @@
 title: "SPM 埋点指南"
 date: 2024-12-09
 description: ""
+tags:
+  - Web开发
+  - 埋点
 ---
 
 ## 目录

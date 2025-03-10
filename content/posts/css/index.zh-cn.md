@@ -14,6 +14,10 @@ custom_toc:
   - title: "CSS 案例"
   - title: "CSS 编写准则"
   - title: "CSS 资料"
+  - title: "图标"
+  - title: "SVG 镂空效果"
+  - title: "Step 妙用"
+  - title: "响应式"
 ---
 
 ## CSS 动画：滚动与翻转
@@ -720,4 +724,313 @@ https://www.w3.org/Style/CSS/read
 https://www.w3.org/TR/css-2020/
 https://www.w3.org/Style/CSS/
 https://linxz.github.io/blog/defensive-css
+
+---
+
+## 图标
+
+## 提供出色的图标
+
+当用户访问您的网页时，浏览器会尝试从 HTML 提取图标。图标可能出现在许多地方，包括浏览器标签、最近的应用切换、新的（或最近访问的）标签页面等
+
+比如添加到主屏幕 （its Home screen icon (or the Web Clip icon), and its startup image）
+
+```
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="icon.png">
+
+<!-- reuse same icon for Safari -->
+<link rel="apple-touch-icon" href="ios-icon.png">
+
+<!-- multiple icons for IE -->
+<meta name="msapplication-square310x310logo" content="icon_largetile.png">
+
+```
+
+twitter:
+
+<link rel="icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/web/ltr/icon-default.882fa4ccf6539401.png">
+
+alipress:
+<link rel="shortcut icon" href="/img/logo/favicon.ico">
+
+taobao:
+<link href="//gw.alicdn.com/tps/i2/TB1nmqyFFXXXXcQbFXXE5jB3XXX-114-114.png" rel="apple-touch-icon-precomposed"> 这个是ios7的情况下会加一个gloss effect 不过现在已经不加了
+<link href="//gw.alicdn.com/tps/i2/TB1nmqyFFXXXXcQbFXXE5jB3XXX-114-114.png" rel="Shortcut Icon" type="image/x-icon">
+
+Favicons.ico不推荐
+
+192
+114
+
+## 定义浏览器元素的颜色
+
+### Chrome 和 Opera 的元主题背景色
+
+```
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#4285f4">
+```
+
+地址栏颜色：
+![](index_files/7f233d96-08f1-4665-a852-2594d2d0a2e7.jpg)
+
+## 设置启动图片
+
+### Safari
+
+```
+<link rel="apple-touch-startup-image" href="icon.png">
+```
+
+---
+
+
+## SVG 镂空效果
+
+### 概述
+SVG（可缩放矢量图形）支持通过设置镂空效果实现复杂的视觉设计。通过调整路径或形状的 `fill` 和 `stroke` 属性，可以实现背景镂空的效果，同时保留图形的其他部分。
+
+**特点：**
+- 背景镂空可以通过 `mask` 或 `clip-path` 实现。
+- 图形的颜色可以动态调整，以适应不同的背景色。
+
+### 案例
+| **知识点**         | **案例描述**                                                                 |
+|------------------|--------------------------------------------------------------------------|
+| SVG 可设置镂空      | 例如：箭头的背景色可以配置为透明（镂空），但箭头的颜色会根据背景动态调整，从而保持视觉一致性。 |
+
+**应用场景：**
+- 图标设计中需要与背景融合的场景。
+- 动态主题切换时，图标或图形颜色需要跟随背景变化。
+
+---
+
+## Step 妙用
+
+
+`steps()` 是 CSS3 中的一个强大功能，用于实现帧动画效果。它通过将动画分割为多个离散的步骤，从而模拟逐帧动画的效果。
+
+## 语法
+
+`steps()` 的语法如下：
+
+```css
+animation-timing-function: steps(<number_of_steps>, <direction>);
+```
+
+### 参数说明
+
+1. **`<number_of_steps>`**  
+   - 表示动画被分成的步数（即帧数）。  
+   - 例如：`steps(4)` 表示动画被分为 4 步。
+
+2. **`<direction>`**  
+   - 可选参数，表示每一步的执行方式，主要有以下两种值：
+     - `start`：动画在每一步的开始时立即跳转到下一步。
+     - `end`（默认值）：动画在每一步的结束时跳转到下一步。
+
+
+## 使用场景
+
+### 1. 帧动画效果
+
+`steps()` 最常见的用途是实现逐帧动画。例如，通过一张雪碧图（Sprite Sheet），可以轻松实现帧动画。
+
+#### 示例代码
+
+HTML:
+
+```html
+<div class="frame-animation"></div>
+```
+
+CSS:
+
+```css
+.frame-animation {
+  width: 100px;
+  height: 100px;
+  background: url('sprite.png') 0 0 no-repeat;
+  animation: play 1s steps(4) infinite;
+}
+
+@keyframes play {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -400px 0; /* 假设雪碧图有 4 帧，每帧宽度为 100px */
+  }
+}
+```
+
+#### 效果
+
+- 动画会在 1 秒内完成 4 帧的变化，每一帧停留 0.25 秒。
+- 雪碧图的每一帧会依次显示，形成连续的动画效果。
+
+### 2. 打字机效果
+
+`steps()` 还可以用来实现打字机效果，逐字显示文本。
+
+#### 示例代码
+
+HTML:
+
+```html
+<div class="typewriter">Hello, World!</div>
+```
+
+CSS:
+
+```css
+.typewriter {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  animation: typing 4s steps(14, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14ch; /* 假设文本长度为 14 个字符 */
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+```
+
+#### 效果
+
+- 文本会逐字显示，仿佛打字机在输入内容。
+- 光标会以固定的频率闪烁，增强视觉效果。
+
+## 注意事项
+
+1. **与 `linear` 和 `ease` 的区别**  
+   - `linear` 和 `ease` 是平滑过渡的动画效果，而 `steps()` 是离散的、逐帧的动画效果。
+   - `steps()` 更适合模拟帧动画或需要精确控制时间点的场景。
+
+2. **性能优化**  
+   - 使用 `steps()` 时，尽量减少 DOM 操作和复杂计算，确保动画流畅。
+
+3. **兼容性**  
+   - `steps()` 在现代浏览器中广泛支持，但在老旧浏览器中可能需要降级处理。
+
+---
+
+## 响应式
+
+### 全响应式设计原则
+
+全响应式设计的核心在于：
+- **无需依赖媒体查询**：通过`useResponsive`动态计算屏幕宽度并应用对应样式。
+- **模块化设计**：将页面划分为独立模块，每个模块根据屏幕宽度自适应调整。
+- **高对比度调试**：通过模拟750px宽度（移动端常见分辨率）进行视觉校验，确保设计一致性。
+
+### 分段响应式设计规范
+
+为了满足不同设备的显示需求，我们将屏幕宽度划分为以下区间，并定义了对应的卡片数量和间距规则：
+
+| 屏幕宽度范围        | 卡片数量 | 间距  |
+|---------------------|----------|-------|
+| `>= 1920px`         | 6        | 16px  |
+| `1680px <= width < 1920px` | 6        | 16px  |
+| `< 1680px`          | 5        | 16px  |
+
+对于更细粒度的调整，可通过媒体查询实现分段响应式设计。
+
+
+### 卡片数量与间距规则
+
+根据上述规范，以下是具体实现逻辑：
+
+1. **大屏设备（>=1920px 或 1680px <= width < 1920px）**
+   - 显示6张卡片，每张卡片之间的间距为16px。
+   - 确保整体布局对齐，避免出现多余的空白区域。
+
+2. **中小屏设备（<1680px）**
+   - 显示5张卡片，每张卡片之间的间距同样为16px。
+   - 调整卡片宽度以适配屏幕尺寸，保证内容的可读性和美观性。
+
+### useResponsive 实现方式
+
+通过`useResponsive`工具，我们可以动态获取当前屏幕宽度，并根据预定义规则渲染不同的布局。以下是一个伪代码示例：
+
+```javascript
+import { useResponsive } from 'responsive-utils';
+
+function HomePage() {
+  const { width } = useResponsive();
+
+  // 根据屏幕宽度动态计算卡片数量
+  const cardCount = width >= 1680 ? 6 : 5;
+  const gap = 16; // 卡片间距固定为16px
+
+  return (
+    <div className="card-container" style={{ gap: `${gap}px` }}>
+      {Array.from({ length: cardCount }).map((_, index) => (
+        <Card key={index} />
+      ))}
+    </div>
+  );
+}
+```
+
+### 分段响应式通过媒体查询实现
+
+除了使用`useResponsive`动态计算外，我们也可以通过CSS媒体查询实现分段响应式设计。以下是基于媒体查询的实现方式：
+
+```css
+/* 默认样式 */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 默认显示5张卡片 */
+  gap: 16px; /* 卡片间距 */
+}
+
+/* 大屏设备样式 */
+@media (min-width: 1680px) {
+  .card-container {
+    grid-template-columns: repeat(6, 1fr); /* 显示6张卡片 */
+  }
+}
+
+/* 超大屏设备样式 */
+@media (min-width: 1920px) {
+  .card-container {
+    grid-template-columns: repeat(6, 1fr); /* 继续显示6张卡片 */
+  }
+}
+```
+
+#### 说明：
+1. **默认样式**：适用于中小屏设备（<1680px），显示5张卡片。
+2. **大屏设备样式**：当屏幕宽度达到1680px时，切换为6张卡片布局。
+3. **超大屏设备样式**：当屏幕宽度达到1920px时，保持6张卡片布局。
+
+通过这种方式，可以确保在不同屏幕宽度下，布局能够自动调整，同时兼容不支持JavaScript的环境。
+
+
+## 开发调试建议
+
+1. **使用Chrome开发者工具**
+   - 在Chrome开发者工具中启用响应式模式，将屏幕宽度调整为750px（或其他目标分辨率）。
+   - 对比设计稿与实际效果，确保布局、间距和内容的一致性。
+
+2. **高对比度校验**
+   - 将浏览器屏幕宽度设置为750px时，检查卡片数量是否符合预期（例如，此时应显示5张卡片）。
+   - 确保间距和卡片宽度的比例与设计稿一致。
 

@@ -3,6 +3,7 @@ title: "mobx-react和umi(乌米)替换redux和react-dom-router方案总结"
 date: 2025-02-04
 tags:
   - Web开发
+  - 工程
 images:
   - umi/image.png
 ---

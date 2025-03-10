@@ -3,6 +3,7 @@ title: "MobX状态管理指南"
 date: 2019-11-25
 tags:
   - Mobx
+  - 状态管理
 ---
 
 ## 目录

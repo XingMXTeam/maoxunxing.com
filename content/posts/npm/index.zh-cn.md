@@ -12,6 +12,9 @@ custom_toc:
   - title: "组件库TS类型定义"
   - title: "UNPKG"
   - title: "package.json 字段解析"
+  - title: "files"
+  - title: "删除node_modules"
+  - title: "npm link"
 ---
 
 ## npm vs pnpm
@@ -324,3 +327,222 @@ https://unpkg.com/lodash/
 
 #### 解决方案
 将 `tnpm` 的 `resolutions` 配置改为 npm 的 `overrides` 配置，以确保 `package-lock.json` 文件能够正常生成。
+
+---
+
+## files
+
+
+在 `package.json` 中，`files` 字段用于指定哪些文件或目录会被包含在 npm 打包发布的内容中。通过明确列出需要包含的文件，开发者可以更精确地控制发布的包内容，避免不必要的文件被包含。
+
+## 官方文档链接
+
+更多信息可以参考 [npm 官方文档](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files)。
+
+## 作用与用途
+
+### 主要功能
+
+- **控制打包范围**：
+  - `files` 字段定义了一个文件或目录的白名单，只有列出的文件和目录会被包含在 npm 发布包中。
+  - 其他未列出的文件（除非是默认包含的文件）将被排除。
+
+- **减少包体积**：
+  - 通过仅包含必要的文件，可以有效减少 npm 包的体积，提升下载和安装速度。
+
+- **保护敏感信息**：
+  - 避免意外将测试文件、配置文件或其他非必要内容发布到 npm。
+
+## 默认行为
+
+即使没有定义 `files` 字段，npm 也会默认包含以下文件或目录：
+
+1. `package.json`
+2. `README`（支持多种扩展名，如 `.md`, `.txt` 等）
+3. `CHANGELOG`（支持多种扩展名，如 `.md`, `.txt` 等）
+4. `LICENSE` / `LICENCE`（支持多种扩展名，如 `.md`, `.txt` 等）
+5. `index.js` 或其他入口文件（根据 `main` 字段定义）
+
+此外，`.npmignore` 文件会覆盖 `files` 字段的行为。如果存在 `.npmignore`，它会进一步过滤掉不需要的文件。
+
+## 使用方法
+
+### 基本语法
+
+在 `package.json` 中，`files` 是一个数组，每个元素是一个字符串，表示文件路径或目录路径。例如：
+
+```json
+{
+  "files": [
+    "dist/",
+    "src/",
+    "index.js",
+    "README.md"
+  ]
+}
+```
+
+### 示例解释
+
+- `"dist/"`：包含整个 `dist` 目录及其所有子文件。
+- `"src/"`：包含整个 `src` 目录及其所有子文件。
+- `"index.js"`：仅包含根目录下的 `index.js` 文件。
+- `"README.md"`：仅包含根目录下的 `README.md` 文件。
+
+## 注意事项
+
+1. **优先级规则**：
+   - 如果同时定义了 `.npmignore` 和 `files`，`files` 的优先级更高。
+   - `.gitignore` 文件不会影响 `files` 字段的行为。
+
+2. **排除特定文件**：
+   - 如果需要排除某些文件，可以结合 `.npmignore` 使用。
+   - 例如，在 `.npmignore` 中添加 `*.log` 可以排除所有日志文件。
+
+3. **调试打包内容**：
+   - 使用以下命令查看实际打包的内容：
+     ```bash
+     npm pack
+     ```
+   - 该命令会生成一个 `.tgz` 文件，解压后即可查看最终包含的文件。
+
+## 示例配置
+
+以下是一个完整的 `package.json` 示例，展示了如何使用 `files` 字段：
+
+```json
+{
+  "name": "example-package",
+  "version": "1.0.0",
+  "description": "An example package demonstrating the use of the 'files' field.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}
+```
+
+---
+
+## 删除node_modules
+
+```shell
+find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+```
+
+---
+
+## npm link
+
+
+## **1. `npm link` 的基本用法**
+
+`npm link` 是一种将本地包链接到项目中的便捷方式，常用于开发和调试。然而，在使用过程中可能会遇到一些问题。
+
+### **2. 常见问题及解决方案**
+
+#### **2.1 删除多余的 `node_modules` 包**
+
+- **问题描述**：
+  - 在执行 `npm link` 后，可能会出现找不到链接包的情况。
+  - 这可能是由于 `node_modules` 中存在多余或不完整的依赖包。
+
+- **解决方案**：
+  - 检查 `node_modules` 下的包是否完整。
+  - 如果存在问题，可以尝试删除多余的 `node_modules` 并重新安装依赖：
+    ```shell
+    rm -rf node_modules package-lock.json
+    npm install
+    ```
+
+- **可能原因**：
+  - 不同版本的 `npm` 可能会导致依赖解析的问题。
+
+#### **2.2 Node.js 版本一致性**
+
+- **问题描述**：
+  - 如果在执行 `npm link` 前通过 `nvm use 14` 等命令切换了 Node.js 版本，可能会导致链接的目录结构不一致。
+
+- **解决方案**：
+  - 确保两个链接的项目使用相同的 Node.js 版本。
+  - 可以通过以下命令检查和切换版本：
+    ```shell
+    nvm list
+    nvm use <version>
+    ```
+
+
+#### **2.3 React Hooks 报错问题**
+
+- **问题描述**：
+  - 在使用 `npm link` 时，可能会遇到以下错误：
+    ```
+    Hooks can only be called inside the body of a function component.
+    ```
+  - 原因是项目中存在多个 `react` 实例（即多个版本的 `react` 和 `react-dom`）。
+
+- **解决方案**：
+  - 将依赖的 `react` 和 `react-dom` 移动到 `peerDependencies`，确保子项目不会单独安装 `react`。
+  - 链接父项目的 `react` 和 `react-dom`，具体步骤如下：
+
+    ```shell
+    # 1. 在子项目中移除 react 和 react-dom 的直接依赖
+    npm uninstall react react-dom
+
+    # 2. 在子项目的 package.json 中添加 peerDependencies
+    "peerDependencies": {
+      "react": "^17.0.0",
+      "react-dom": "^17.0.0"
+    }
+
+    # 3. 链接父项目的 react 和 react-dom
+    cd PARENT_PROJECT/node_modules/react
+    npm link
+    cd ../react-dom
+    npm link
+
+    # 4. 在子项目中链接父项目的 react 和 react-dom
+    cd CHILD_PROJECT
+    npm link react
+    npm link react-dom
+    ```
+
+
+## **1. 快速查看 README**
+
+通过命令行快速查看 `README` 文件内容：
+
+```shell
+readme net
+```
+
+## **2. 快速安装 npm 包**
+
+使用 `npmi` 快速安装 npm 包：
+
+```shell
+npm install -g npmi
+```
+
+## **3. 说明**
+
+- **`readme net`**：
+  - 用于快速查看项目的 `README` 文件内容。
+  - 确保相关工具已正确安装并配置。
+
+- **`npmi`**：
+  - 是一个简化的 npm 安装工具，提升安装效率。
+  - 安装后可以直接使用 `npmi <package-name>` 来安装依赖包。
+
+- **`npm version patch`**
+  -  自动更新一个新的补丁版本  

@@ -26,7 +26,10 @@ custom_toc:
   - title: "测试"
   - title: "W3C"
   - title: "排序函数"
-  - title: "UNPKG"
+  - title: "Chrome"
+  - title: "decodeURIComponent"
+  - title: "循环引用"
+  - title: "模块系统"
 ---
 
 ## 数组遍历
@@ -87,6 +90,8 @@ const a = ~~12.12; // 12
    - 使用 `|` 进行按位或赋值。
    - 使用 `&` 校验特定标志位。
 
+---
+
 ## 异常处理
 
 ### 减少缩进的封装
@@ -109,6 +114,87 @@ const tryAndCatch = async (fn) => {
 })();
 ```
 
+
+### 基本语法
+
+```javascript
+try {
+  // 可能抛出异常的代码
+} catch (error) {
+  // 捕获并处理异常
+}
+```
+
+### 主要场景
+
+- **虚拟机（VM）或动态执行的 JS 代码**：
+  - 当需要执行动态生成的代码时，使用 `try {} catch {}` 可以捕获运行时错误。
+  - 示例：
+    ```javascript
+    try {
+      eval("someInvalidCode()"); // 动态执行可能出错的代码
+    } catch (error) {
+      console.error("捕获到异常:", error.message);
+    }
+    ```
+
+### 特点
+
+- **同步代码**：`try {} catch {}` 只能捕获同步代码中的异常。
+- **局限性**：无法捕获异步代码（如 `Promise` 或 `setTimeout`）中的异常。
+
+## 2. Promise 异常处理：`.then().catch()`
+
+### 基本语法
+
+```javascript
+promise
+  .then((result) => {
+    // 成功处理逻辑
+  })
+  .catch((error) => {
+    // 捕获并处理异常
+  });
+```
+
+### 主要场景
+
+- **处理异步代码中的异常**：
+  - `try {} catch {}` 无法捕获异步代码中的异常，而 `.catch()` 是专门用于处理 `Promise` 链中异常的方式。
+  - 示例：
+    ```javascript
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error("异步操作失败"));
+      }, 1000);
+    })
+      .then((result) => {
+        console.log("成功:", result);
+      })
+      .catch((error) => {
+        console.error("捕获到异常:", error.message);
+      });
+    ```
+
+### 特点
+
+- **异步代码支持**：可以捕获 `Promise` 链中的异常。
+- **链式调用**：通过 `.catch()` 统一处理异常，避免重复的错误处理逻辑。
+- **与 `async/await` 结合**：
+  - 在 `async` 函数中，可以通过 `try {} catch {}` 捕获 `await` 表达式中的异常。
+  - 示例：
+    ```javascript
+    async function fetchData() {
+      try {
+        const result = await someAsyncFunction();
+        console.log("成功:", result);
+      } catch (error) {
+        console.error("捕获到异常:", error.message);
+      }
+    }
+    ```
+---
+
 ## Promise
 
 ### 控制权反转（IoC）
@@ -126,6 +212,21 @@ function showModal() {
 // 调用方处理结果
 showModal().then((result) => {
   console.log(result ? "Confirmed" : "Cancelled");
+});
+```
+
+### `Promise.allSettled`
+处理多个异步任务，无论成功或失败都会返回结果：
+```javascript
+Promise.allSettled([
+  Promise.resolve(1),
+  Promise.reject("Error"),
+]).then((results) => {
+  console.log(results);
+  // [
+  //   { status: 'fulfilled', value: 1 },
+  //   { status: 'rejected', reason: 'Error' }
+  // ]
 });
 ```
 
@@ -188,19 +289,135 @@ const arr = [1, 2, 3, 4, 5];
 console.log(_.chunk(arr, 2)); // [[1, 2], [3, 4], [5]]
 ```
 
-### `Promise.allSettled`
-处理多个异步任务，无论成功或失败都会返回结果：
+
+在前端开发中，动态生成 HTML 或其他文本内容是常见的需求。`lodash.template` 提供了一种简单而强大的方式来实现这一目标。通过模板语法，开发者可以在字符串中嵌入变量、逻辑表达式和循环结构，从而生成动态内容。
+
+## 基本用法
+
+`lodash.template` 的基本用法如下：
+
 ```javascript
-Promise.allSettled([
-  Promise.resolve(1),
-  Promise.reject("Error"),
-]).then((results) => {
-  console.log(results);
-  // [
-  //   { status: 'fulfilled', value: 1 },
-  //   { status: 'rejected', reason: 'Error' }
-  // ]
+const _ = require('lodash');
+
+// 定义模板字符串
+const templateString = 'Hello, <%= name %>!';
+
+// 编译模板
+const compiled = _.template(templateString);
+
+// 渲染模板
+const result = compiled({ name: 'World' });
+
+console.log(result); // 输出: Hello, World!
+```
+
+
+## 模板语法
+
+`lodash.template` 支持多种模板语法，包括插值、条件语句和循环语句。
+
+### 插值（Interpolation）
+
+插值用于将变量插入到模板中，默认使用 `<%= %>` 作为分隔符。
+
+#### 示例
+```javascript
+const templateString = 'Welcome, <%= user.name %>!';
+const compiled = _.template(templateString);
+console.log(compiled({ user: { name: 'Alice' } })); // 输出: Welcome, Alice!
+```
+
+
+### 条件语句（Conditionals）
+
+条件语句允许在模板中使用逻辑判断，默认使用 `<% if %>` 和 `<% else %>`。
+
+#### 示例
+```javascript
+const templateString = `
+<% if (isAdmin) { %>
+  <p>Welcome, Admin!</p>
+<% } else { %>
+  <p>Welcome, Guest!</p>
+<% } %>
+`;
+
+const compiled = _.template(templateString);
+console.log(compiled({ isAdmin: true })); // 输出: <p>Welcome, Admin!</p>
+```
+
+### 循环语句（Loops）
+
+循环语句允许在模板中遍历数组或对象，默认使用 `<% _.forEach %>` 或 `<% for %>`。
+
+#### 示例
+```javascript
+const templateString = `
+<ul>
+  <% users.forEach(function(user) { %>
+    <li><%= user.name %></li>
+  <% }); %>
+</ul>
+`;
+
+const compiled = _.template(templateString);
+console.log(compiled({ 
+  users: [{ name: 'Alice' }, { name: 'Bob' }] 
+}));
+// 输出:
+// <ul>
+//   <li>Alice</li>
+//   <li>Bob</li>
+// </ul>
+```
+
+### 自定义分隔符
+
+默认情况下，`lodash.template` 使用 `<% %>` 作为逻辑分隔符，`<%= %>` 作为插值分隔符。如果需要自定义分隔符，可以通过 `_.templateSettings` 配置。
+
+#### 示例
+```javascript
+_.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+
+const templateString = 'Hello, {{ name }}!';
+const compiled = _.template(templateString);
+console.log(compiled({ name: 'World' })); // 输出: Hello, World!
+```
+
+## 代码示例
+
+以下是一个完整的示例，展示如何结合插值、条件语句和循环语句生成动态内容：
+
+```javascript
+const _ = require('lodash');
+
+const templateString = `
+<h1>Welcome to our platform!</h1>
+<% if (isLoggedIn) { %>
+  <p>Hello, <%= user.name %>!</p>
+<% } else { %>
+  <p>Please log in to continue.</p>
+<% } %>
+
+<h2>User List:</h2>
+<ul>
+  <% users.forEach(function(user) { %>
+    <li>{{= user.name }}</li>
+  <% }); %>
+</ul>
+`;
+
+// 自定义分隔符
+_.templateSettings.interpolate = /{{=([\s\S]+?)}}/g;
+
+const compiled = _.template(templateString);
+const result = compiled({
+  isLoggedIn: true,
+  user: { name: 'Alice' },
+  users: [{ name: 'Alice' }, { name: 'Bob' }]
 });
+
+console.log(result);
 ```
 
 ---
@@ -824,3 +1041,445 @@ console.log('10'.localeCompare('2', undefined, { numeric: true }));
      downloadBatch(batch);
    }
    ```
+  
+---
+
+## Chrome
+
+
+## 概述
+
+在最新的Chrome DevTools更新中，新增了一些强大的功能，极大地提升了开发者调试和优化Web应用的能力。本文将详细介绍以下新特性：
+- **覆盖内容（Override Content）**：无需代理即可重写网络请求的返回内容。
+- **禁用Chrome插件的请求**：避免插件干扰开发环境。
+- **控制台打印引用对象的行为**：探讨控制台打印引用对象时的注意事项。
+
+更多详情可参考官方文档：[New in DevTools 117](https://developer.chrome.com/blog/new-in-devtools-117/?utm_source=devtools#network)
+
+## 覆盖内容（Override Content）
+
+### 覆盖HTML、JS、CSS等内容
+
+以前，如果需要修改网络请求的返回内容（如HTML、JS、CSS等），通常需要借助代理工具（如Charles或Fiddler）。现在，Chrome DevTools内置了这一功能，可以直接在浏览器中实现内容覆盖。
+
+**主要特点：**
+- 支持对HTML、JS、CSS等文件的内容进行实时修改。
+- 修改后的内容会立即生效，无需刷新页面。
+- 非常适合调试和快速验证代码更改。
+
+**操作步骤：**
+1. 打开Chrome DevTools（快捷键：`F12` 或 `Ctrl+Shift+I`）。
+2. 切换到 **Network** 面板。
+3. 右键点击目标请求，选择 **Override content**。
+4. 在弹出的编辑器中修改内容并保存。
+
+### 覆盖XHR请求
+
+除了静态资源，还可以覆盖XHR（XMLHttpRequest）请求的返回数据。这对于模拟API响应或测试特定场景非常有用。
+
+**主要特点：**
+- 支持修改XHR请求的返回数据（如JSON格式的API响应）。
+- 可以模拟不同的响应状态码（如200、404、500等）。
+- 方便测试前端对不同API响应的处理逻辑。
+
+**操作步骤：**
+1. 打开Chrome DevTools。
+2. 切换到 **Network** 面板。
+3. 找到目标XHR请求，右键选择 **Override content**。
+4. 修改返回数据并保存。
+
+{{< img src="image-1.png" alt="Override Content" maxWidth="350px" align="center" caption="Override Content" >}}
+
+## 禁用Chrome插件的请求
+
+Chrome插件有时会在后台发起额外的网络请求，这可能会干扰开发环境或导致不必要的性能开销。现在，Chrome DevTools提供了一种简单的方法来禁用这些请求。
+
+
+**操作步骤：**
+1. 打开Chrome DevTools。
+2. 切换到 **Network** 面板。
+3. 点击面板顶部的 **"Block requests from extensions"** 按钮（图标类似于一个插件）。
+4. 此时，所有来自Chrome插件的请求都会被屏蔽。
+
+![alt text](image-2.png)
+
+## 控制台打印引用对象的问题
+
+在Chrome控制台中，如果打印的是一个引用对象（如数组或对象），控制台显示的是该对象的最终状态，而不是打印时的状态。这可能会导致调试时的困惑。
+
+**问题描述：**
+- 当你执行 `console.log(obj)` 时，控制台不会立即记录对象的当前值，而是记录对象的引用。
+- 如果对象的值在后续代码中发生了变化，控制台显示的将是最终的值，而非打印时的值。
+
+**解决方案：**
+- 使用 `JSON.stringify` 将对象序列化为字符串后再打印：
+  ```javascript
+  console.log(JSON.stringify(obj));
+  ```
+- 或者使用 `console.dir` 来查看对象的详细信息：
+  ```javascript
+  console.dir(obj);
+  ```
+
+---
+
+## decodeURIComponent
+
+
+### 示例代码
+
+```js
+decodeURIComponent("%C4%97%");
+
+// VM158:1 Uncaught URIError: URI malformed
+//     at decodeURIComponent (<anonymous>)
+//    at <anonymous>:1:1
+```
+
+### 问题分析
+
+- **原因**：
+  - `%C4%97%` 是一个无效的 URI 编码字符串，因为最后一个 `%` 没有跟随有效的两位十六进制字符。
+  - 当 `decodeURIComponent` 遇到这种格式错误时，会抛出 `URIError: URI malformed` 异常。
+
+- **影响**：
+  - 如果未捕获该异常，程序可能会中断执行，导致不可预期的行为。
+
+## 解决方案
+
+为了避免程序因异常而崩溃，可以使用 `try...catch` 块捕获 `URIError` 并进行处理。
+
+### 示例代码
+
+```ts
+try {
+  decodeURIComponent('%C4%97%');
+} catch (error) {
+  if (error instanceof URIError) {
+    console.error('Invalid URI component:', error.message);
+    // 在这里可以提供默认值或执行其他逻辑
+  } else {
+    throw error; // 如果是其他类型的错误，重新抛出
+  }
+}
+```
+
+## 补充说明
+
+### 1. 捕获特定错误类型
+
+- 使用 `instanceof URIError` 确保只捕获与 URI 解码相关的错误，避免掩盖其他潜在问题。
+
+### 2. 提供默认值
+
+- 如果需要在解码失败时返回一个默认值，可以在 `catch` 块中实现：
+  ```ts
+  function safeDecodeURIComponent(uri: string, defaultValue: string = ''): string {
+    try {
+      return decodeURIComponent(uri);
+    } catch (error) {
+      if (error instanceof URIError) {
+        console.warn(`Failed to decode URI component: ${uri}`);
+        return defaultValue;
+      }
+      throw error; // 重新抛出非 URIError 的错误
+    }
+  }
+
+  // 示例调用
+  const decoded = safeDecodeURIComponent('%C4%97%', 'default-value');
+  console.log(decoded); // 输出: default-value
+  ```
+
+### 3. 验证输入的有效性
+
+- 在调用 `decodeURIComponent` 之前，可以通过正则表达式验证输入是否为有效的 URI 编码字符串：
+  ```ts
+  function isValidURIComponent(uri: string): boolean {
+    try {
+      decodeURIComponent(uri);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  // 示例调用
+  console.log(isValidURIComponent('%C4%97%')); // 输出: false
+  console.log(isValidURIComponent('%C4%97'));  // 输出: true
+  ```
+---
+
+## 循环引用
+
+
+在 TypeScript 或 JavaScript 项目中，模块之间的依赖关系需要特别注意。如果存在 **循环引用**（Circular Dependency），可能会导致某些模块的导出值为 `undefined`。
+
+## 问题描述
+
+### 文件 `a.ts`
+
+```ts
+export const xx = "123";
+```
+
+### 文件 `b.ts`
+
+```ts
+import { xx } from "a";
+console.log(xx); // 输出 undefined
+```
+
+### 现象
+
+- 在 `b.ts` 中，尝试从 `a.ts` 导入 `xx`，但运行时发现 `xx` 的值为 `undefined`。
+- 这种情况通常是由于 **循环引用** 引发的问题。
+
+## 原因分析
+
+### 什么是循环引用？
+
+循环引用指的是两个或多个模块相互导入彼此的内容，形成一个闭环。例如：
+
+- `a.ts` 导入了 `b.ts` 的内容。
+- `b.ts` 又反过来导入了 `a.ts` 的内容。
+
+在这种情况下，模块加载器（如 Node.js 或打包工具）会尝试按需加载模块，但由于循环依赖的存在，可能导致某些模块尚未完全初始化就被访问，从而导致导出值为 `undefined`。
+
+## 示例复现
+
+### 文件 `a.ts`
+
+```ts
+import { yy } from "./b"; // a.ts 导入了 b.ts 的内容
+export const xx = "123";
+console.log("yy in a.ts:", yy);
+```
+
+### 文件 `b.ts`
+
+```ts
+import { xx } from "./a"; // b.ts 导入了 a.ts 的内容
+export const yy = "456";
+console.log("xx in b.ts:", xx); // 输出 undefined
+```
+
+### 运行结果
+
+1. `xx in b.ts: undefined`
+2. `yy in a.ts: 456`
+
+**原因**：
+
+- 当 `b.ts` 尝试从 `a.ts` 导入 `xx` 时，`a.ts` 尚未完成初始化（因为它正在等待 `b.ts` 的内容）。
+- 因此，`xx` 的值在 `b.ts` 中被解析为 `undefined`。
+
+## 解决方案
+
+### 方法 1：避免循环引用
+
+- **最佳实践**：重构代码，避免模块之间的循环依赖。
+- 将公共逻辑提取到第三方模块中，供 `a.ts` 和 `b.ts` 共同使用。
+
+#### 示例重构
+
+创建一个新的文件 `common.ts`：
+
+```ts
+export const xx = "123";
+export const yy = "456";
+```
+
+修改 `a.ts`：
+
+```ts
+import { yy } from "./common";
+console.log("yy in a.ts:", yy);
+```
+
+修改 `b.ts`：
+
+```ts
+import { xx } from "./common";
+console.log("xx in b.ts:", xx);
+```
+
+### 方法 2：延迟访问依赖
+
+如果无法完全避免循环引用，可以通过延迟访问依赖的方式解决问题。例如，在函数调用时再访问依赖，而不是在模块顶层直接访问。
+
+#### 示例调整
+
+修改 `a.ts`：
+
+```ts
+import { getYy } from "./b";
+
+export const xx = "123";
+console.log("yy in a.ts:", getYy());
+```
+
+修改 `b.ts`：
+
+```ts
+import { xx } from "./a";
+
+export function getYy() {
+  return "456";
+}
+console.log("xx in b.ts:", xx);
+```
+
+**效果**：
+
+- `getYy` 是一个函数，只有在调用时才会访问 `b.ts` 的内容，从而避免了初始化顺序问题。
+
+---
+
+## 模块系统
+
+- **错误信息**：
+  ```
+  SyntaxError: Unexpected Token Export
+  ```
+
+## **2. 错误原因**
+
+- **常见原因**：
+  - 模块系统不兼容。
+  - 使用了 `export` 语法，但运行环境或构建工具未正确支持 ES6 模块。
+  - 文件扩展名可能未正确设置（如 `.js` 文件被解析为 CommonJS 而非 ES Module）。
+
+> commonjs 一般是用module.exports; es module是用export default
+
+## **3. 解决方案**
+
+### **方法 1：检查文件扩展名**
+
+- 确保使用 ES6 模块的文件扩展名为 `.mjs` 或在 `package.json` 中明确指定模块类型：
+  ```json
+  {
+    "type": "module"
+  }
+  ```
+
+### **方法 2：修改导出语法**
+
+- 如果运行环境不支持 ES6 模块，可以将 `export` 替换为 CommonJS 的 `module.exports`：
+  ```javascript
+  // ES6 模块
+  export const myFunction = () => { console.log('Hello'); };
+
+  // CommonJS 模块
+  module.exports = { myFunction: () => { console.log('Hello'); } };
+  ```
+
+### **方法 3：配置 Babel**
+
+- 如果需要兼容旧版 JavaScript，可以通过 Babel 转译代码：
+  1. 安装 Babel 相关依赖：
+     ```shell
+     npm install --save-dev @babel/core @babel/preset-env babel-loader
+     ```
+  2. 配置 `.babelrc` 文件：
+     ```json
+     {
+       "presets": ["@babel/preset-env"]
+     }
+     ```
+
+### **方法 4：检查构建工具配置**
+
+- 如果使用 Webpack、Rollup 等构建工具，确保正确配置了模块解析规则。例如，在 Webpack 中添加以下配置：
+  ```javascript
+  module.exports = {
+    mode: 'development',
+    resolve: {
+      extensions: ['.js', '.mjs']
+    },
+    module: {
+      rules: [
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader'
+          }
+        }
+      ]
+    }
+  };
+  ```
+
+---
+
+## typescript
+
+
+## **1. 报错：元素隐式具有 "any" 类型**
+
+### **问题描述**
+
+在以下代码中，出现报错：
+> 元素隐式具有 "any" 类型，因为索引表达式的类型不为 "number"。
+
+```ts
+const GLOBAL_SYMBOL = Symbol.for('xxx');
+
+if (!window[GLOBAL_SYMBOL]) {
+  window[GLOBAL_SYMBOL] = {};
+}
+```
+
+### **解决方案**
+
+在根目录声明 `global.d.ts` 文件，并扩展 `Window` 接口以支持 `Symbol` 类型的索引签名：
+
+```ts
+declare interface Window {
+  [GLOBAL_SYMBOL: symbol]: {};
+}
+```
+
+---
+
+## **2. 报错：Could not find a declaration file for module 'js-cookie'**
+
+### **问题描述**
+
+在使用 `js-cookie` 模块时，出现以下报错：
+> Could not find a declaration file for module 'js-cookie'. '/Users/maoxunxing/alibaba/ae-data-util/node_modules/_js-cookie@3.0.1@js-cookie/index.js' implicitly has an 'any' type.
+
+### **解决方案**
+
+在项目中声明模块类型，解决缺少类型声明的问题：
+
+```ts
+declare module "js-cookie" {
+  export interface CookieAttributes {}
+}
+```
+
+### **参考资料**
+
+- [Could not find a declaration file for module 'module-name'](https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam)
+- [Could not find a declaration file for module 'module-name'](https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam)
+
+---
+
+## declare const window: any; 文件内部声明window
+
+## 全局变量声明
+
+本地创建一个文件`declaration.d.ts` 或者 `global.d.ts`
+
+```ts
+declare module '*.scss' {
+
+}
+
+interface Window {
+
+}
+
+```

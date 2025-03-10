@@ -4,6 +4,7 @@ description: "MutationObserver 和 IntersectionObserver的使用"
 date: 2024-09-10
 tags:
   - Web开发
+  - 埋点
 images:
   - web-1/a.jpeg
 ---

@@ -2,7 +2,7 @@
 title: "Lerna 多包项目中 @types/node 版本冲突导致的 TypeScript 编译报错"
 date: 2025-02-24
 tags:
-  - typescript
+  - 工程
 ---
 
 ## 目录
