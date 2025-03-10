@@ -380,3 +380,11 @@ CASE WHEN 表达式通常用于对数据进行分类或标记。在聚合函数�
 SELECT COUNT(CASE WHEN p2 = 'cache_hit' THEN 1 END) AS hit_count
 FROM your_table;
 ```
+
+## 分析单用户行为
+
+通过这个sql，可以知道用户具体了那些页面。进一步，从这个sql拿到设备id，知道这个用户的其他操作行为。
+
+```text
+type: 'pv' and pid: 'xxxx'
+```

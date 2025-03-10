@@ -291,3 +291,7 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 ## 更多资料
 
 `https://web.dev/articles/service-worker-lifecycle`
+
+## 漏斗分析
+
+上下的漏斗不能有重复的部分，否则无法看出问题。优先关注的在漏斗前面。
