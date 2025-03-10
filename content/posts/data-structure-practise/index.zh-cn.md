@@ -1,5 +1,5 @@
 ---
-title: "数据结构实战刷题"
+title: "数据结构刷题实战"
 date: 2025-03-03
 tags:
   - 数据结构
@@ -41,6 +41,31 @@ class Solution:
 [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 
 ![alt text](image-1.png)
+
+```python
+# 这个题目是偏算法，但是具体实现的时候会考察到对数组的遍历操作
+from typing import List
+
+def productArrayOfSelf(list: List[int]) -> List[int]:
+    # 1,2,3,4 
+    # prefix: 1 1 2 6
+    # suffix: 24  12  4  1
+    n = len(list)
+    prefix_result = [1] * n
+    suffix_result = [1] * n
+    for i in range(n-1):
+        prefix_result[i+1] = list[i] * prefix_result[i]
+
+    for i in reversed(range(1,len(list))):
+        suffix_result[i-1] = list[i] * suffix_result[i]
+
+    result = [1] * n
+    for i in range(n):
+        result[i] = prefix_result[i] * suffix_result[i]
+    return result
+
+productArrayOfSelf([1,2,3,4])
+```
 
 ```python
 from typing import List  
