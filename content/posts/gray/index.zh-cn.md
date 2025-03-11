@@ -10,6 +10,7 @@ custom_toc:
   - title: "Babel"
   - title: "疲劳度设计"
   - title: "umi 方案"
+  - title: "JSONPath 字段裁剪"
 ---
 
 ## 灰度设计
@@ -703,3 +704,44 @@ import getStore from 'getStore';
 const xxxStore = getStore().xxx;
 xxxStore.login();
 ```
+
+---
+
+## JSONPath 字段裁剪
+
+
+### JSON提取
+
+1. 提取 `countDown` 字段。
+2. 提取 `products` 列表中的前 5 个元素。
+3. 提取每个 `product` 的 `id`。
+
+```json
+{
+  "data": "data",
+  "data": {
+    "countDown": "countDown",
+    "products": "products[0:5]",
+    "products": {
+      "id": "id"
+    }
+  }
+}
+```
+
+### 使用 JSONPath 实现字段裁剪
+
+1. **提取 `countDown` 字段：**
+   ```jsonpath
+   $.data.countDown
+   ```
+
+2. **提取 `products` 列表中的前 5 个元素：**
+   ```jsonpath
+   $.data.products[0:5]
+   ```
+
+3. **提取每个 `product` 的 `id`：**
+   ```jsonpath
+   $.data.products[0:5].id
+   ```
