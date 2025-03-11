@@ -5,12 +5,235 @@ tags:
   - 工程
   - Web开发
 custom_toc:
+  - title: "工程基础"
   - title: "灰度设计"
   - title: "Lerna 多包管理案例"
   - title: "Babel"
   - title: "疲劳度设计"
   - title: "umi 方案"
   - title: "JSONPath 字段裁剪"
+  - title: "免登方案"
+  - title: "metaq"
+  - title: "rpc"
+---
+
+## 工程基础
+
+
+## 工程目录拆分
+
+### 背景
+在一个老的工程中进行页面改版升级时，是否选择新建目录隔离新老页面，还是直接在旧页面上改造？
+
+### 专业技术建议
+- **推荐方案**：尽量在旧页面上进行改造，避免多份副本带来的维护性问题。
+- **理由**：
+  - 新建目录可能导致逻辑分散，增加维护成本。
+  - 在旧页面上改造可以复用现有组件和逻辑，减少重复开发。
+
+## 如何从头开始构建一个工程体系
+
+### 初始化项目
+1. 使用 GitHub 初始化项目仓库。
+2. 使用 Lerna 初始化多包结构：
+   ```bash
+   npx lerna init
+   ```
+3. 初始化 TypeScript 配置：
+   ```bash
+   npx tsc --init
+   ```
+
+### 添加缓存支持
+```bash
+npx lerna add-caching
+```
+
+### 创建核心包
+创建一个新的包 `app-core`：
+```bash
+npx create app-core --es-module
+```
+
+### 配置 TypeScript
+在 `package.json` 中添加以下配置：
+```json
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./lib"
+  },
+  "include": [
+    "./src"
+  ]
+}
+```
+
+### 修改构建脚本
+在 `package.json` 中添加以下脚本：
+```json
+"scripts": {
+  "tsc": "tsc",
+  "test": "node ./__tests__/app-core.test.js",
+  "start": "ts-node src/app-core.ts",
+  "publish": "lerna run tsc && lerna publish"
+}
+```
+
+### 运行构建
+使用 Lerna 运行构建命令：
+```bash
+lerna run tsc
+```
+
+### 修改发布路径
+将 `dist` 改为 `lib`：
+```json
+"main": "lib/app-core.js",
+"module": "lib/app-core.module.js",
+"directories": {
+  "lib": "lib",
+  "test": "__tests__"
+},
+"files": [
+  "lib"
+]
+```
+
+## 插件化构建工具（build-scripts）
+
+### 核心概念
+`build-scripts` 是一个基于 Webpack 的插件化工程构建工具，支持快速搭建一套开箱即用的工程方案。
+
+> 一次性启动，会启动三个服务
+
+### 示例插件
+以下是一个忽略 `moment` 本地化的插件示例：
+```js
+const webpack = require('webpack');
+
+module.exports = ({ context, onGetWebpackConfig }) => {
+  onGetWebpackConfig((config) => {
+    config.plugin('ignore').use(webpack.IgnorePlugin, [/^\.\/locale$/, /moment$/]);
+  });
+};
+```
+
+## 资源管理
+
+### 静态资源发布
+静态资源可以发布到以下位置：
+- assets/tnpm/Faas/webapp/小程序/weex
+
+### 本地构建与云端构建
+- **本地构建**：使用代码仓库的目录。
+- **云端构建**：动态构建并发布。
+
+### WebApp 构建
+WebApp 包括 HTML 文件，`assets` 会动态同步到 CDN。
+
+## 稳定性保障
+
+### 流控与降级
+- **流控**：限制流量以保护系统。
+- **降级**：在高负载情况下关闭部分非核心功能。
+
+### 过载保护
+通过限流和降级策略，确保系统在高并发场景下的稳定性。
+
+## Lerna 多包管理
+
+### Link 包
+在多包项目中，可以通过以下命令链接包：
+```bash
+lerna add @hospital-sdk/doctor --scope=integration
+```
+
+## 总论：构建时与运行时
+
+### 构建时
+构建时的核心是 `build-scripts`，它通过 `Context` 对象管理插件的运行。构建时的主要任务包括：
+- **生成产物**：如 JS/CSS 文件 (分端构建)。
+- **启动服务**：如本地开发服务器。
+- **插件机制**：插件可以动态更新配置项或执行 IO 操作。
+
+> 内部有Context对象管理插件的运行，会依次运行注册的插件。其中WebpackService是Context的一个实例。
+
+#### 插件加载
+`build.json` 中配置的插件名会被 Node 加载：
+
+> node可以根据（插件名+默认目录）加载这些插件，加载后会获得fn构造函数
+
+```js
+const pluginPath = require.resolve('webpack', { paths: [this.rootDir] });
+let fn = require(pluginPath);
+fn = fn.default || fn || (() => void);
+```
+
+### 运行时
+运行时的核心是微应用容器，是一个技术容器，主要包括以下内容：
+- **主应用与子应用通信**：通过消息总线共享实例。
+- **生命周期管理**：通过 `namespace` 的 `flow` 对象管理。
+- **路由管理**：使用 `react-router` 的核心代码, 只有一个history对象。
+
+> ice的runtimemodule插件逻辑（实例化了两个运行时对象）
+> message对象共享实例，每个微应用都会创建一个message实例
+> 入口文件会自动包裹生命周期函数
+> 运行时会加载运行时插件，并且渲染运行时容器
+> 解决运行时polyfill问题： import 'core-js/stable';  import 'regenerator-runtime/runtime';
+> @ice/stark-module管理微应用渲染
+> @ice/stark-data 管理数据
+
+#### 示例调度函数
+以下是一个简单的调度函数实现：
+```js
+export function schedule(cb: (...args: any[]) => any) {
+  let _promise: Promise<any> | null = null;
+  return (...args: any[]) => {
+    if (_promise) {
+      return;
+    }
+    _promise = Promise.resolve().then(() => {
+      cb(...args);
+      _promise = null;
+    });
+  };
+}
+```
+
+## 常用 NPM 包
+
+以下是一些常用的 NPM 包及其用途：
+- **fast-blob**：快速处理二进制数据。
+- **es-module-lexer**：ES 模块词法分析器。
+- **esbuild**：高性能的 JavaScript/TypeScript 构建工具。
+- **globby**：文件匹配工具。
+- **fs-extra**：增强版文件系统操作库。
+- **chalk**：终端美化工具。
+- **chokidar**：监听文件变化。
+- **object-hash**：生成对象的哈希值。
+- **code-red**： 轻量级的 JavaScript AST（抽象语法树）操作工具。
+- **periscopic**：作用域分析工具。
+- **estree-walker**：遍历和操作 ESTree 格式的 AST。
+- **@types/estree**：ESTree 的 TypeScript 类型定义。
+- **acorn**：轻量级的 JavaScript 解析器。
+- **cheerio**：服务器端的 jQuery 实现。
+- **mkdirp**：递归创建目录。
+- **debug**：轻量级调试工具。
+
+## 常见问题解决
+
+### OpenSSL 配置问题
+在 Node.js 中遇到以下错误：
+```
+node: --openssl-legacy-provider is not allowed in NODE_OPTIONS
+```
+
+#### 解决方法
+升级 Node.js 到最新版本，或者在环境变量中移除 `NODE_OPTIONS` 的相关配置。
+
+
+
 ---
 
 ## 灰度设计
@@ -745,3 +968,172 @@ xxxStore.login();
    ```jsonpath
    $.data.products[0:5].id
    ```
+
+---
+
+## 免登方案
+
+
+## 问题场景
+
+A 站点内嵌 B 站点，两个站点的域名不同。需要实现 A 站点用户免登录跳转到 B 站点。
+
+## 解决方案
+
+### 方案 1：通过免登接口实现
+
+- **实现方式**  
+  A 站点通过调用 B 站点提供的免登接口，携带必要的参数（如重定向地址、语言等），实现用户的免登录跳转。
+  
+- **关键点**
+  - **重定向参数**：用于跳转回目标页面。
+  - **其他必要参数**：如语言，用于切换 B 站点的语言环境。
+  
+- **限制**
+  - 如果浏览器禁用了第三方 Cookie，则无法将 Cookie 写入 B 站点，导致免登失败。
+
+### 方案 2：通过 Token 实现
+
+- **实现方式**  
+  A 站点请求服务端换取一个临时 Token，然后通过 iframe 访问 B 站点的免登 URL，并将 Token 传递给 B 站点。
+
+- **关键点**
+  - **Token 传递方式**  
+    - 推荐通过请求头传递 Token，避免将敏感信息暴露在 URL 中。
+  - **Token 时效性**  
+    - 设置合理的 Token 有效期，确保安全性。
+  - **来源验证**  
+    - 验证 Token 的来源是否合法，防止伪造请求。
+  - **异常监控**  
+    - 对免登过程中的异常情况进行监控，及时发现问题。
+  - **HTTPS 安全性**  
+    - 确保所有通信都通过 HTTPS 进行，防止中间人攻击。
+
+- **兜底页面**  
+  - B 站点需提供一个统一的免登失败兜底页面，用于处理免登失败的情况。
+
+## 安全性与兜底措施
+
+1. **安全性**
+   - **Token 安全性**  
+     - 使用短时效 Token，减少泄露风险。
+     - 验证 Token 的合法性，确保其由可信服务端签发。
+   - **HTTPS 加密**  
+     - 所有通信必须使用 HTTPS，防止数据被窃取或篡改。
+   - **来源校验**  
+     - 校验请求来源，防止跨站攻击。
+
+2. **兜底措施**
+   - **免登失败页面**  
+     - 提供友好的免登失败页面，引导用户手动登录或其他操作。
+   - **日志记录**  
+     - 记录免登过程中的关键日志，便于排查问题。
+
+---
+
+## metaq
+
+在现代分布式系统中，随着用户量和请求量的增加，服务端可能会面临以下挑战：
+- **高并发请求**：短时间内大量请求涌入，可能导致服务器资源耗尽。
+- **服务稳定性下降**：过多的请求可能导致服务响应变慢或崩溃。
+- **扩展性不足**：传统的同步处理方式难以应对突发流量。
+
+为了解决这些问题，引入消息队列（如 MetaQ）成为一种有效的手段。
+
+## MetaQ 的作用
+
+MetaQ 是一种高性能的消息队列中间件，主要作用包括：
+- **削峰填谷**：通过异步处理请求，平滑高峰期的流量压力。
+- **解耦系统**：将生产者和消费者分离，降低系统间的耦合度。
+- **提高可靠性**：消息队列可以持久化消息，确保数据不丢失。
+- **支持分布式架构**：适用于大规模分布式系统，提升系统的扩展性和容错能力。
+
+## MetaQ 跨单元
+
+可以跨单元监听metaq消息，不可以跨单元发送消息。
+
+---
+
+## rpc
+
+
+## RPC概述
+
+RPC（Remote Procedure Call，远程过程调用）是一种让客户端能够像调用本地方法一样调用远程服务器上的方法的技术。其核心思想是通过网络实现跨进程或跨机器的函数调用。
+
+
+## 注册中心与动态IP管理
+
+在分布式系统中，**注册中心**（如ConfigCenter）用于管理服务的动态IP地址和元信息。它的主要作用包括：
+- **服务注册**：服务启动时向注册中心注册自己的地址。
+- **服务发现**：客户端通过注册中心获取目标服务的地址。
+- **动态管理**：支持服务上下线、负载均衡等功能。
+
+
+## RPC协议规范
+
+RPC协议定义了客户端与服务端之间的通信规范。以下是一个典型的RPC请求格式示例：
+
+```json
+{
+    "serviceName": "xxx",
+    "methodName": "getList"
+}
+```
+
+- `serviceName`：指定要调用的服务名称。
+- `methodName`：指定要调用的方法名称。
+
+该请求经过序列化后会变成一个字符串，通过网络传输到服务端进行反序列化和处理。
+
+
+## 代理模式的本质
+
+RPC的核心机制之一是**代理模式**。代理层位于客户端和服务端之间，负责处理以下任务：
+- **序列化/反序列化**：将请求对象转换为字节流以便传输，并在接收端还原为对象。
+- **网络通信**：负责数据包的发送和接收。
+- **错误处理**：捕获并处理网络异常或服务端错误。
+
+代理机制使得应用程序可以专注于业务逻辑本身，而无需关心底层的复杂性。
+
+
+## 网络通信问题：国内到新加坡的IP路由
+
+在国内访问新加坡的IP时，可能会遇到以下问题：
+- **运营商拦截**：某些运营商可能会拦截特定的HTTPS请求。
+- **DNS解析差异**：通过域名访问时，DNS返回的IP可能与直接`ping`得到的IP不同，导致访问失败。
+
+**建议：**
+- 在内部应用机器之间通信时，建议使用HTTP而非HTTPS，以避免证书卸载等问题。
+
+
+## 泛化调用
+
+泛化调用是一种不依赖具体接口定义的调用方式，适用于动态场景。以下是泛化调用的特点：
+- **灵活性高**：无需提前定义接口，适合动态生成的请求。
+- **兼容性强**：可以在不同语言或框架间实现通用调用。
+
+## HSF泛化参数构造
+
+HSF（High-Speed Service Framework）是阿里巴巴的一种高性能服务框架，支持泛化调用。以下是构造HSF泛化参数的关键步骤：
+
+1. **确定服务名称和方法名称**：明确需要调用的服务和方法。
+2. **构建参数列表**：根据方法签名构造参数。
+3. **序列化请求**：将请求对象序列化为字节流。
+
+**注意事项：**
+- 参数类型需与服务端方法签名一致。
+- 确保序列化方式与服务端兼容。
+
+## 案例
+node调用hsf， 入参是一个对象。 对象的字段不能是枚举，和List<自定义对象>
+
+技术：
+枚举改为string
+自定义对象改为List`<<Map, String>>`类型
+
+## RPC接口缓存
+
+hsf是如何根据参数缓存的？
+
+key: id(xxx)_method(get/post)_uid(唯一id) , 底层是一个`Map<string, Promise<any>>`
