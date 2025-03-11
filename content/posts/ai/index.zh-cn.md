@@ -673,3 +673,6 @@ chatgpt翻译比一般的翻译更好，比如https://papago.naver.com/ 。
 
 - [Bilibili 视频](https://www.bilibili.com/video/BV1Tc411L7UA/?spm_id_from=333.337.search-card.all.click)
 
+### fastrtc
+
+https://fastrtc.org/cookbook/

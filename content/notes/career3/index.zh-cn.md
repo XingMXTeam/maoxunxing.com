@@ -282,3 +282,6 @@ tags:
 
 - **A/B 测试**：Optimizely、Visual Website Optimizer、Unbounce。
 - **视频演示**：[Vimeo 示例](http://vimeo.com/13487300)。
+
+## Google seo
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-cn

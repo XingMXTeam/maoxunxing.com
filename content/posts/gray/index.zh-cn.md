@@ -590,6 +590,7 @@ npm install
 
 ## babel
 
+> 目前最新的编译工具是： https://swc.rs/docs/usage/cli
 
 ## Babel CLI 参数
 

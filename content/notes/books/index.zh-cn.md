@@ -465,6 +465,8 @@ Pake 是一个开源工具，可以将 Web 应用快速打包为桌面客户端�
     ```bash
     tcpdump -i eth0 icmp
     ```
+  - pcap: `editcap` 对抓的包进行裁剪避免包太大， 比如`edit cap -A 开始时间 -B 截止时间 test.pcap test-filtered.pcap`
+  - 然后加载到wireshark
 
 ---
 
@@ -649,3 +651,25 @@ TCP 使用确认机制（ACK）来确保数据包被成功接收。如果发送�
 - 快速重传（Fast Retransmit）：
    - 如果接收方检测到数据包丢失（例如收到乱序的数据包），会连续发送多个重复的 ACK。
    - 当发送方收到 3 个重复的 ACK 时，会立即重传丢失的数据包，而无需等待 RTO 超时。
+
+## 抓包协议
+`(tcp.dstport == 6001 or tcp.srcport == 6001) && tcp.flags==2 && tcp.time_relative>0` 
+
+- 在TCP协议中，标志字段值为2表示这是一个SYN数据包。
+- tcp.time_relative>0: 这一部分条件表示筛选相对时间大于0的数据包。相对时间（relative time）通常是指从捕获开始到当前数据包的时间偏移。这意味着筛选出捕获开始后发生的所有数据包。
+- 通过 sysctl -a 命令来查看系统内核参数。你发现了一项与重试机制相关的参数 net.netfilter.nf_conntrack_tcp_max_retrans，值为 3。
+---
+
+```shell
+set -e
+while true
+nc -z -v -w 1 127.0.0.1 6001 2>&1 | grep Connected > /dev/null
+done
+```
+
+`cat ip_local_port_range` 查看端口范围
+`k8s NodePort --service-node-port-range ` k8s在指定范围内分配端口
+在 Kubernetes (K8s) 集群中，`kube-proxy` 是负责实现网络通信和服务负载均衡的关键组件之一。它确保流量正确地路由到后端的 Pod。
+
+## X11协议
+

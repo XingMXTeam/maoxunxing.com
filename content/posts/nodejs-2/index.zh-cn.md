@@ -59,6 +59,7 @@ cd /home/admin/{appname}/bin/
 - **应用 Access 日志**  
   路径：`admin/{app}/logs/access-123.log`  
   用途：记录应用的访问日志。
+  输出格式：`ip 请求处理时间 - [打出日志时间]`
 
 - **Nginx Access 日志**  
   路径：`admin/cai/logs/cronolog/2021/.log`  

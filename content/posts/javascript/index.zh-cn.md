@@ -1483,3 +1483,8 @@ interface Window {
 }
 
 ```
+
+---
+
+## visibilityChange 和 pagehide 事件
+
