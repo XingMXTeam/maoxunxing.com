@@ -15,6 +15,7 @@ custom_toc:
   - title: "免登方案"
   - title: "metaq"
   - title: "rpc"
+  - title: "mock设计"
 ---
 
 ## 工程基础
@@ -1053,6 +1054,9 @@ MetaQ 是一种高性能的消息队列中间件，主要作用包括：
 
 可以跨单元监听metaq消息，不可以跨单元发送消息。
 
+## 顺序消息
+默认是不保证顺序的。可以业务上做处理，比如状态在前面的无法更新状态在后面的。保证状态不会回退。
+
 ---
 
 ## rpc
@@ -1138,3 +1142,5 @@ node调用hsf， 入参是一个对象。 对象的字段不能是枚举，和Li
 hsf是如何根据参数缓存的？
 
 key: id(xxx)_method(get/post)_uid(唯一id) , 底层是一个`Map<string, Promise<any>>`
+
+---

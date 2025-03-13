@@ -174,3 +174,152 @@ whistle代理后，请求可能会被代理。导致`推送错误的配置`，�
 
 `w2 use .xxx/.whistle.js --force`  命令的方式修改whistle配置。结合前端工程构建时做一些代理。
 
+---
+
+最近在想，人就像机器人，每天阅读很多数据，然后通过大脑计算中心 + 算法，决定哪些数据是重要的。
+智能涌现需要大量的数据，所以必须要大量阅读。训练除了输入还有输出，不断地训练你的输出能力，
+就是在训练你的大脑模型，一开始可以是很混乱，不清晰，但是足够多的语料+输出，最终会有质的变化。
+
+这个质的变化就是所谓的直觉。 
+
+就像杨振宁说的，你需要基于之前的数据建立新的直觉，这个过程就是训练，就是参数调优。
+
+直觉形成最重要的就是实践，实践把很多不清楚的东西都具像化了。做软件产品的很多筛子和漏斗通过实践
+
+---
+
+业务代码如何解耦， 提供两个业务场景
+
+业务场景：如何在文件A里面需要监听message 和 处理message。 但是处理message的逻辑是业务逻辑，代码比较脏，不希望在文件A里面处理。
+如何隔离业务代码呢。。
+
+假设是用`__global_proxy__` 收集信息
+
+方案1: 
+
+一个小技巧是修改`__global_proxy__` 这个对象的`push` 
+
+```js
+  // A文件中定义这个对象
+  if (!window.__global_proxy__) {
+    window.__global_proxy__ = [];
+  }
+  // __global_proxy__.push 是一个数组函数
+```
+
+
+```js
+  // 业务代码中修改push 变成一个新方法
+  window.__global_proxy__ = {
+    push: (event) = > {
+      processQueue()
+    }
+  }
+```
+
+方案2:
+
+```js
+  // A文件 中直接定义一个对象
+  (window as any).__global_proxy__ = {
+    queue: [],
+    handler: null,
+    push: function(event: MessageEvent) {
+      this.handler ? this.handler(event) : this.queue.push(event);
+    },
+    setHandler: function(handler: (event: MessageEvent) => void) {
+      this.handler = handler;
+      // 处理队列中的消息
+      processQueue()
+    }
+  };
+```
+
+业务场景：底层核心代码有一个方法调用，假设是callA()，希望在调用callA()之前，进行业务逻辑处理，
+根据处理结果再调用callA()。业务逻辑处理是异步的。
+
+方案：
+定义一个订阅器：
+
+```js
+import mitt from 'mitt';
+
+type Events = {
+  hydration: any;
+};
+
+export const emitter = mitt<Events>();
+
+// 可选：添加一些辅助方法
+let lastData: any = null;
+
+export const subscribeEvents = {
+  emit: (eventName, data: any) => {
+    lastData = data;
+    emitter.emit(eventName, data);
+  },
+  subscribe: (eventName, callback: (data: any) => void) => {
+    if (lastData !== null) {
+      callback(lastData);
+    }
+    emitter.on(eventName, callback);
+  },
+  unsubscribe: (eventName, callback: (data: any) => void) => {
+    emitter.off(eventName, callback);
+  },
+};
+
+```
+
+定义一个Hook插件：
+
+```js
+import { events } from './subscribe-events';
+
+class HookPlugin {
+  protected context;
+  private cb: (() => void) | null = null;
+
+  constructor({ context }: { context }) {
+    this.context = context;
+  }
+
+  // 生命周期函数：callA调用前会调用这个函数。 
+  // 一般框架里面会保留很多生命周期函数的勾子函数，并且提供插件机制，插件机制里面会有context上下文，可以被修改。
+  containerWillRender = (options: Record<string, unknown>): void  =>   {
+    // 声明一个hookFn
+    this.context.hookFn = (cb: () => void): void => {
+      events.subscribe('test',(data) => {
+        // 做业务逻辑
+        this.cb()
+      });
+    };
+  }
+}
+
+registerPlugin(HookPlugin);
+
+```
+
+```js
+// 包裹callA()
+context.hookFn(() => {
+  callA()
+})
+```
+
+
+---
+
+mock设计
+
+如果进行时间穿越，如果参数带debugTime走的本地，如果是不带走服务端接口拿系统时间。
+
+
+---
+
+技术容器
+前端渲染引擎：通过总线机制流通所有的数据（或者说是上下文），核心的零部件内置，然后通过插件机制扩展。
+构建器
+
+
