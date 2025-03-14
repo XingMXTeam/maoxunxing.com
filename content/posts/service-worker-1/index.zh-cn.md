@@ -200,8 +200,10 @@ let timing = performance.getEntriesByType('navigation')[0]
 
 服务端可以统计到302重定向次数或者通过无头浏览器，没有跨域限制。
 
+一般没有302的话，fetchStart的时间会很短 20ms 左右
+
 ### clients.claim()
-serverworker激活后不会立即拦截请求，需要`clients.claim()`才会开始接管请求，但是如果只缓存html，一般需要立即接管。除非是有其他异步资源请求。
+serverworker激活后不会立即拦截请求，需要`clients.claim()`才会开始接管请求，但是如果只缓存html，一般不需要立即接管。除非是有其他异步资源请求。
 
 ---
 
@@ -338,3 +340,8 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 3. 刷新页面或触发相关操作，观察断点是否被命中。
 
 4. 使用调试工具提供的功能（如单步执行、查看变量值等）进行深入分析。
+
+
+### 关闭service-worker
+
+![alt text](image-3.png)

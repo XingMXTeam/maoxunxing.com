@@ -19,6 +19,7 @@ tags:
 9. [Cookie 设置规则](#cookie-设置规则)
 10. [A 站点内嵌 B 站点的 Cookie 场景](#a-站点内嵌-b-站点的-cookie-场景)
 11. [Cookie 的 Path 与过期时间](#cookie-的-path-与过期时间)
+12. [Cookie 查看](#cookie-查看)
 
 ---
 
@@ -166,3 +167,7 @@ tags:
   - 如果客户端时间被篡改，可能导致 Cookie 过期时间异常。
 
 ---
+
+## Cookie 查看
+
+![alt text](image.png)

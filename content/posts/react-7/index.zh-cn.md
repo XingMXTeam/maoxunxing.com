@@ -1,8 +1,9 @@
 ---
-title: "React 状态管理与组件设计的最佳实践"
+title: "React 状态管理 & 全局共享状态设计"
 date: 2021-12-02T15:00:46+08:00
 tags:
   - React
+  - 状态管理
   - Web开发
 ---
 
@@ -23,6 +24,7 @@ tags:
    - [方案 5: Immer](#方案-5-immer)
    - [方案 6: zustand 和 valtio](#方案-6-zustand-和-valtio)
 5. [总结](#总结)
+6. [全局共享状态设计](#全局共享状态设计)
 
 ---
 
@@ -446,3 +448,33 @@ export const useStore = create((set) => ({
 - **Class 组件**：适合数据模型复杂、扩展性强的场景。
 - **Hooks**：适合组件逻辑简单、需要组合能力的场景。
 - **状态管理工具**：根据项目规模和复杂度选择合适的工具，例如 Redux、MobX、zustand 或 valtio。
+
+---
+
+## 全局共享状态设计
+
+如何设计一个简单的全局共享状态管理器
+
+1、创建模型：
+```js
+const model = getModel("foo");  // 创建或获取已存在的模型
+```
+
+2、创建容器和监听器：
+- 创建一个 Container 存储状态 （ 订阅者共享一个实例）
+- 创建一个隐藏的 Executor 组件来监听状态变化（相当于中介者，数据变化后调用每个订阅组件的setState触发重新渲染）
+
+3、订阅状态：
+- 组件通过 useModel 订阅状态变化
+- 当状态变化时，组件会自动更新
+
+
+[Git Repo](https://github.com/XingMXTeam/reactivity.git)
+
+1、和zustand、Jotai、 mobx-react-lite 实现的区别？
+2、React原生实现Context的区别？需要嵌套包裹组件
+
+新的直觉：
+1、组件里面useModel实际就是订阅；通过中间组件订阅更新；通过container观察者模式通知
+2、`const { data, setData } = useModel('bannerComponent')` 只会订阅你想要的这个组件的数据， `setData` 也只会更新指定组件的数据。
+

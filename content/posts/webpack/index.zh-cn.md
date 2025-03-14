@@ -7,6 +7,7 @@ tags:
 images:
   - webpack/a.png
 custom_toc:
+  - title: "webpack loader"
   - title: "Webpack-Chain 与 Chunk 分包详解"
   - title: "Webpack Externals"
   - title: "Module Federation"
@@ -14,6 +15,16 @@ custom_toc:
   - title: "Rollup"
   - title: "Vite"
   - title: "错误案例"
+---
+
+---
+
+## webpack loader
+
+Webpack 的 loader 是用来**对模块的源代码进行转换**的。在构建过程中，Webpack 会使用 loader 来处理不同类型的文件，比如将 TypeScript 转换为 JavaScript，将 SCSS 转换为 CSS，或者将特定格式的源代码编译成目标代码
+
+
+
 ---
 
 ## Webpack-Chain 与 Chunk 分包详解

@@ -1,5 +1,5 @@
 ---
-title: "Vuex 核心概念与工作原理"
+title: "Vuex 原理 & Vue 响应式设计实现"
 date: 2019-11-25
 tags:
   - Vue
