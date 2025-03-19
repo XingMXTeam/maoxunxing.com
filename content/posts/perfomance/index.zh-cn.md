@@ -499,6 +499,25 @@ GROUP BY val
 ORDER BY val
 ```
 
+## 饼图
+```sql
+SELECT
+         CASE
+                  WHEN try_cast(p5     as DOUBLE) > 0
+                  AND      try_cast(p5 AS DOUBLE) <= 500 THEN '[0,500]'
+                  WHEN try_cast(p5     AS DOUBLE) > 500
+                  AND      try_cast(p5 AS DOUBLE) < 1000 THEN '[500,1000]'
+                  WHEN try_cast(p5     AS DOUBLE) > 1000
+                  AND      try_cast(p5 AS DOUBLE) < 2000 THEN '[1000,2000]'
+                  ELSE '[2000,60000]'
+         END      AS val,
+         count(*) AS num
+WHERE    try_cast(p5 AS DOUBLE) < 60000
+AND      try_cast(p5 AS DOUBLE) > 0
+GROUP BY val
+ORDER BY num
+```
+
 ## 筛选条件
 type: perf/pv/js-error 日志类型: 比如性能/pv/错误
 page_id: 页面url

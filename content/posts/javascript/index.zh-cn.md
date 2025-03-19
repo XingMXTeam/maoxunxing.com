@@ -1488,3 +1488,38 @@ interface Window {
 
 ## visibilityChange 和 pagehide 事件
 
+---
+
+## script标签的加载顺序问题
+
+1、传统脚本会阻断解析（DOM构建）和渲染
+```js
+<script src="a.js"></script> <!-- 阻断直到下载执行完成 -->
+<script src="b.js"></script> <!-- 继续阻断 -->
+```
+
+
+2、async脚本下载过程不阻塞解析（异步下载），下载完成立即执行（此时会阻断解析）
+3、defer
+
+- 异步下载不阻断DOM解析
+- 按文档顺序在DOMContentLoaded前执行
+
+特殊场景：
+```js
+<script defer src="a.js"></script> <!-- 第1个执行 -->
+<script defer src="b.js"></script> <!-- 第2个执行 -->
+```
+
+4、动态注入脚本
+
+动态注入的脚本加载和执行都在html解析完毕后开始
+async=true 不保证执行顺序
+async=false 保证执行顺序,即使c.js后加载完成，也会等待前面动态脚本执行完毕
+
+```js
+const script = document.createElement('script');
+script.async = false; // 强制按插入顺序执行
+script.src = 'c.js';
+document.body.appendChild(script); 
+```
