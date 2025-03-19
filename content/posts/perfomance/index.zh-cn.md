@@ -504,7 +504,6 @@ type: perf/pv/js-error 日志类型: 比如性能/pv/错误
 page_id: 页面url
 pid：页面标记
 dim1/2/3/4 : 一般是区分了业务信息，比如是否缓存
-pid: 页面标记
 p1/2/10: 具体日志信息
 
 ---
@@ -535,8 +534,210 @@ W3C 提供了丰富的性能相关资源，帮助开发者优化网站和应用�
 - 饼图看分布区间的占比
 - refer看流量来源
 
-#### 
+---
+
+## 什么是边缘缓存？
+
+边缘缓存是一种将内容缓存在靠近用户的网络边缘节点上的技术。通过将数据存储在离用户更近的地方，边缘缓存能够显著减少延迟并提高页面加载速度。
+
+- **核心原理**：利用 CDN（内容分发网络）中的边缘节点缓存静态或动态内容，缩短用户与内容之间的物理距离。
+- **优势**：
+  - 减少网络延迟，提升用户体验。
+  - 减轻源服务器的负载，提高系统整体性能。
 
 
+## 它解决了什么问题？
 
+1. **首次访问网页无法利用缓存**  
+   在 PWA（渐进式 Web 应用）等场景中，用户首次访问时无法利用客户端缓存或连接复用，导致页面加载速度较慢。
+
+2. **客户端缓存不可用**  
+   当用户首次访问某个网站时，客户端缓存尚未建立，因此无法加速页面加载。
+
+3. **动态内容的缓存难题**  
+   对于个性化内容较多的场景，直接缓存整个 HTML 并不现实，需要一种既能缓存又能动态生成内容的解决方案。
+
+
+## 边缘缓存节点在请求链中的位置
+
+边缘缓存节点通常位于用户和源服务器之间的 **CDN（内容分发网络）** 中。它充当一个中间层，负责缓存和提供静态或动态内容，从而减少源服务器的负载并加快响应速度。
+
+- **工作流程**：
+  1. 用户发起请求。
+  2. 请求首先到达最近的边缘节点。
+  3. 如果边缘节点有缓存的内容，则直接返回给用户；否则，向源服务器请求内容并缓存。
+
+
+## 边缘缓存与 SSR、CSR/CDN 的区别
+
+### SSR（服务端渲染）
+
+- **问题**：
+  - 由于服务端渲染需要较长的处理时间，页面的白屏时间会变长。
+- **特点**：
+  - 所有 HTML 内容由服务器生成，适合 SEO 优化。
+  - 首次加载速度较慢，但对搜索引擎友好。
+
+
+### CSR/CDN（客户端渲染/内容分发网络）
+
+- **问题**：
+  - 虽然可以通过 CDN 缓存所有 HTML，但由于每个用户的页面视图可能不同，直接缓存整个 HTML 并不现实。
+- **解决方案**：
+  - 将静态 HTML 缓存到 CDN，并使用 CSR（客户端渲染）来请求动态数据。
+  - 这种方法解决了白屏问题，但有意义的内容显示时间比 SSR 更晚。
+- **特点**：
+  - 适合个性化内容较多的场景。
+  - 首次加载体验不如 SSR，但可以灵活支持动态内容。
+
+---
+
+### ESR（边缘服务器渲染）
+
+- **优势**：
+  - **并行处理**：CSR/CDN 是串行处理方式（先请求 HTML，然后下载 JS 和 CSS 等资源），而 ESR 采用并行处理方式：CDN 返回缓存的首字节，同时加载动态内容。
+  - **连接复用**：边缘服务器像 Service Worker 一样处理请求，支持连接复用，进一步减少延迟。
+  - **性能提升**：相比无 ESR 的方案，页面加载速度可提升约 **200ms**。
+- **特点**：
+  - 结合了 SSR 和 CSR 的优点。
+  - 既减少了白屏时间，又支持动态内容的快速加载。
+
+## 总结
+
+| 技术      | 优势                                      | 劣势                                  | 适用场景                     |
+|-----------|-------------------------------------------|---------------------------------------|------------------------------|
+| **SSR**   | SEO 友好，适合静态内容                    | 首次加载速度慢，白屏时间长            | 内容以静态为主，需 SEO 优化   |
+| **CSR/CDN** | 支持动态内容，灵活性高                    | 白屏时间短，但有意义内容显示较晚       | 个性化内容较多的场景         |
+| **ESR**   | 并行处理，减少白屏时间，提升加载速度       | 实现复杂度较高                        | 需要兼顾性能和动态内容的场景 |
+
+边缘缓存（尤其是结合 ESR 的方案）为现代 Web 应用提供了更高效的解决方案，能够在保证性能的同时支持动态内容的快速加载，是未来 Web 性能优化的重要方向。
+
+
+---
+
+## avif
+
+随着Web性能优化的需求不断增加，图片格式的选择变得尤为重要。AVIF（AV1 Image File Format）是一种高效的图片格式，相较于JPEG和PNG，具有更高的压缩率和更小的文件体积。然而，并非所有浏览器都支持AVIF格式，因此需要在前端进行兼容性检测。
+
+同时，在移动端设备上，用户代理（User-Agent，简称UA）的检测是判断设备类型的重要手段。结合UA检测和AVIF支持检测，可以更好地为用户提供优化的图片加载体验。
+
+
+## 什么是AVIF图片格式
+
+AVIF是由AOMedia开发的一种基于AV1视频编码的图片格式，具有以下特点：
+- **高压缩率**：相比JPEG，AVIF可以在相同质量下减少约50%的文件大小。
+- **高质量**：支持透明度（Alpha通道）和HDR（高动态范围）。
+- **广泛支持趋势**：主流浏览器（如Chrome、Firefox）逐渐开始支持AVIF。
+
+## User-Agent检测的作用
+
+User-Agent（UA）是HTTP请求头的一部分，用于标识客户端的设备、操作系统和浏览器信息。通过解析UA，可以：
+1. 判断用户是否使用移动设备（如iPhone、Android）。
+2. 区分不同浏览器（如Chrome、Safari）以提供针对性的优化。
+3. 动态调整图片格式或页面布局。
+
+## 如何检测AVIF图片支持
+
+### 通过`<picture>`标签实现兼容性
+
+HTML5的`<picture>`标签允许根据浏览器的支持情况动态加载不同格式的图片。例如：
+
+```html
+<picture>
+  <source srcset="image.avif" type="image/avif">
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.jpg" alt="Fallback Image">
+</picture>
+```
+
+- 浏览器会按顺序检查`<source>`标签的`type`属性。
+- 如果支持`image/avif`，则加载AVIF图片；否则回退到WebP或JPEG。
+
+### 通过JavaScript检测AVIF支持
+
+可以通过JavaScript动态检测浏览器是否支持AVIF格式：
+
+```javascript
+function isAvifSupported() {
+  return new Promise((resolve) => {
+    const avif = new Image();
+    avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZoAAAAAAAACAAAAABubWl0AAAAAQAAAAEbmWRlcgAAAAAAAAYAAAAgbWVhcwAAAAAAAAABAAAAFGF2MDEAAAAAbG9zcwAAAAAAAAACAAAA';
+    avif.onload = () => resolve(true);
+    avif.onerror = () => resolve(false);
+  });
+}
+
+isAvifSupported().then((supported) => {
+  console.log('AVIF supported:', supported);
+});
+```
+
+- 上述代码通过加载一个Base64编码的AVIF图片来检测支持情况。
+- 如果图片加载成功，则表示浏览器支持AVIF。
+
+## Mobile端User-Agent检测注意事项
+
+### 常见Mobile端UA特征
+
+1. **iOS设备**  
+   - 示例：`Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1`
+   - 特征：包含`iPhone`或`iPad`。
+
+2. **Android设备**  
+   - 示例：`Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.69 Mobile Safari/537.36`
+   - 特征：包含`Android`和`Mobile`。
+
+### 注意事项
+
+1. **避免过度依赖UA**  
+   UA字符串可能被修改或伪装，因此不应完全依赖它进行判断。
+
+2. **结合特性检测**  
+   使用特性检测（如`window.matchMedia`或`navigator.userAgentData`）作为补充手段。
+
+3. **兼容旧版浏览器**  
+   部分旧版浏览器可能不支持现代特性检测方法，需提供回退方案。
+
+## 容错处理
+
+### 检测失效的情况
+
+1. **AVIF检测失败**  
+   如果AVIF检测失败，应确保有其他格式（如WebP或JPEG）作为回退选项。
+
+2. **UA检测错误**  
+   如果UA检测结果不可靠，可以通过屏幕宽度（`window.innerWidth`）或触摸事件（`'ontouchstart' in window`）进一步判断设备类型。
+
+### 示例：综合检测与容错
+
+```javascript
+function detectImageFormatAndDevice() {
+  // 检测AVIF支持
+  isAvifSupported().then((avifSupported) => {
+    if (avifSupported) {
+      console.log('Using AVIF format');
+    } else {
+      console.log('Falling back to WebP or JPEG');
+    }
+  });
+
+  // 检测设备类型
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  if (/iPhone|iPad|iPod/.test(userAgent)) {
+    console.log('Detected iOS device');
+  } else if (/Android/.test(userAgent)) {
+    console.log('Detected Android device');
+  } else {
+    console.log('Detected desktop or unknown device');
+  }
+}
+
+detectImageFormatAndDevice();
+```
+
+---
+
+## h3协议升级
+
+todo
 
