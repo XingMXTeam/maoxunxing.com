@@ -32,6 +32,8 @@
   "devDependencies": {
     "axios": "^1.7.9",
     "node-fetch": "^3.3.2",
+    "prettier": "^3.5.3",
     "puppeteer": "^24.2.1"
-  }
+  },
+  "repository": "https://github.com/XingMXTeam/maoxunxing.com.git"
 }
