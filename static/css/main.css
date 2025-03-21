@@ -71,6 +71,10 @@ blockquote {
   font-weight: 100;
 }
 
+.content {
+  flex-direction: column;
+}
+
 .content article header {
   margin-top: 0.5rem;
 }
