@@ -194,19 +194,19 @@ Encoder 负责理解输入，Decoder 负责生成输出，二者协作完成复�
 无监督学习的模型
 
 NLP 的问题： 没有泛化能力
-Generative pre-training GPT 的名字由来。
-GPT2: zero-shot 通过 prompt 将任务描述直接拼接在输入文本中，引导模型生成符合任务要求的输出
-GPT3: few-shot
-ChatGPT: InstructGPT 指令对齐模型，增加了安全性 。 引入 RLHF(Reinforcement Learning from Human Feedback) 人类反馈强化学习
-SFT 监督微调 -> 用人工标注的高质量问答数据对预训练大模型进行微调，类似于"教师示范教学"
-RM 奖励模型 -> 训练一个能判断回答质量的评分模型（例如用人类对回答的偏好排序数据训练），相当于建立"评分标准"
-PPO 强化学习 -> 让 SFT 模型生成多个回答，用 RM 模型评分作为反馈信号，通过强化学习算法持续优化，类似"学生根据评价不断改进"
-GPT o1: COT(chain of thought) 模型自己生成 chain of thought 不用人去告诉他。 这类就是推理大模型
+Generative pre-training GPT 的名字由来。  
+GPT2: zero-shot 通过 prompt 将任务描述直接拼接在输入文本中，引导模型生成符合任务要求的输出  
+GPT3: few-shot  
+ChatGPT: InstructGPT 指令对齐模型，增加了安全性 。 引入 RLHF(Reinforcement Learning from Human Feedback) 人类反馈强化学习  
+  - SFT 监督微调 -> 用人工标注的高质量问答数据对预训练大模型进行微调，类似于"教师示范教学"
+  - RM 奖励模型 -> 训练一个能判断回答质量的评分模型（例如用人类对回答的偏好排序数据训练），相当于建立"评分标准"
+  - PPO 强化学习 -> 让 SFT 模型生成多个回答，用 RM 模型评分作为反馈信号，通过强化学习算法持续优化，类似"学生根据评价不断改进"
+GPT o1: COT(chain of thought) 模型自己生成 chain of thought 不用人去告诉他。 这类就是推理大模型  
 
 **Scaling law** : 规模越大 效果越好 但有限度。
 **test-time scaling law**: 推理计算量越大 效果越好
 
-DeepSeek R1: 底层是多个模型
+DeepSeek R1: 底层是多个模型  
 
 ## 可行性 + 路线
 

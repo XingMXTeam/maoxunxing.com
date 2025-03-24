@@ -1,23 +1,154 @@
 ---
-title: "中后台开发"
+title: "中后台解决方案"
 date: 2025-02-06
 tags:
   - Web开发
+  - 中后台
 ---
 
-## 目录
-1. [研发效能提升的新思路](#研发效能提升的新思路)
-2. [Fusion 表格下拉列表问题](#fusion-表格下拉列表问题)
-3. [复杂表单的实现](#复杂表单的实现)
-4. [Fusion Balloon 的层级变化](#fusion-balloon-的层级变化)
-5. [FormItem 嵌套与字段管理](#formitem-嵌套与字段管理)
-6. [Field 表单工具的使用与优化](#field-表单工具的使用与优化)
-7. [多页应用状态共享问题](#多页应用状态共享问题)
-8. [B端系统交互简化建议](#b端系统交互简化建议)
+基于ice 3.0 搭建中后台架构
+
+## 通信机制
+
+store通信和事件通信
+
+## 权限控制
+
+`defineAuthConfig` 方法来定义权限
+
+通过`import { useAuth } from 'xiaoer-auth'` 组件，提供权限。 
+而且这个插件默认是不加载的，只有config配置了，才具备这个能力。
+
+声明式的
+
+```js
+// 权限组件封装
+function Auth({ children, authKey }) {
+  const [auth] = useAuth();
+  return auth[authKey] ? children : <NoAuth />;
+}
+
+// 使用示例
+<Auth authKey="canEdit">
+  <EditButton />
+</Auth>
+
+```
+
+或者在当前页面下
+```js
+export default function Home() {
+  return <div>Home</div>
+}
+
+export const pageConfig = definePageConfig(() => ({
+  auth: ['admin'],
+}));
+```
+
+
+
+## 代码规范
+
+通过在package.json配置统一的规范包
+```js
+{
+  prettier: "xiaoer-prettier-spec"
+}
+```
+
+## 插件机制
+
+预设插件支持快速框架层调整
+支持嵌套配置
+运行时插件
+
+
+
+## 路由
+
+支持嵌套路由
+defineConfig支持配置routes: { ignores: "" }
+
+pages/layout.jsx 是全局布局
+pages/list/layout.jsx 是页面布局
+
+`Outlet` 作为子路由插槽
+
+```jsx
+// 父路由组件
+function Dashboard() {
+  return (
+    <div>
+      <h1>公共头部</h1>
+      <Outlet /> {/* 子路由内容在此渲染 */}
+    </div>
+  );
+}
+
+// 路由配置
+<Route path="/dashboard" element={<Dashboard />}>
+  <Route path="messages" element={<Messages />} />
+  <Route path="tasks" element={<Tasks />} />
+</Route>
+```
+
+路由跳转：抹平微应用跳转和路由path跳转
+
+缓存路由组件： `<KeepAliveOutlet>` 或者 用 `React 18 <Activity>`
+
+路由的`basename`指的就是你的文件根目录。比如你所有的js/css都放到abc文件夹，访问/home, 实际需要访问
+/abc/home， 则需要配置`basename: 'abc'`
+
+
+通过路由扩展运行时能力，比如统一为路由组件增加鉴权逻辑（添加高阶组件
+
+```js
+// src/app.ts
+export const modifyRoutes = (routes) => {
+  return routes.map(route => ({
+    ...route,
+    element: route.path !== '/login' ? <AuthWrapper>{route.element}</AuthWrapper> : route.element
+  }));
+};
+```
+
+
+## 请求 
+
+### mock
+
+本地mock文件: 
+- index.js
+- index.css
+
+支持修改response（通过`body-parser`)、mock数据自动生成
+请求api支持mock字段
+
+### 自定义host
+
+支持插件的形式全局定义错误处理（参考axios的实现）
+
+```js
+request.createInst({
+  get1: {
+    url: 'xxx:geta'
+  }
+})
+```
+
+### 预加载
+
+支持页面级/接口级/全局
+
+`definePageConfig` 配置预加载数据
+`defineConfig`
 
 ---
 
-## 研发效能提升的新思路
+## 案例
+
+### 研发效能提升的新思路
 
 传统提升研发效能的方式通常从高效写代码入手，例如自动化、模板化、辅助调试等。然而，**hpaPaaS** 提出了全新的思路：
 - **可视化编排**：通过拖拽和配置快速搭建应用。
@@ -26,9 +157,7 @@ tags:
 
 这种方式更适合中后台系统、简单应用和原型研发。虽然这些应用看似简单，但根据业界数据统计，它们占公司内应用总量的 **60%**。
 
----
-
-## Fusion 表格下拉列表问题
+### Fusion 表格下拉列表问题
 
 ### 问题描述
 - Fusion 表格的下拉列表偶现不展示。
@@ -36,19 +165,11 @@ tags:
   - 移除锁列属性（`lock`）即可解决问题。
   - 或者改用 `Table.StickyLock` 组件替代锁列功能。
 
----
+### Fusion Balloon 的层级变化
 
-## Fusion Balloon 的层级变化
-
-### 问题描述
 - 在 Balloon 中增加 `followTrigger` 属性后，DOM 结构会发生变化。
 - **影响**：原先的 Popup 层级可能会发生变化，导致样式或交互异常。
 
----
-
-## FormItem 嵌套与字段管理
-
-### 特性说明
 - `FormItem` 支持嵌套，只需确保嵌套的 `name` 属性保持一致。
 - 示例代码：
   ```jsx
@@ -63,7 +184,6 @@ tags:
   </FormItem>
   ```
 
-### 字段管理
 - `{...this.detailField.init('xxx')}` 和 `name='xxx'` 是等价的。
 - 使用 `Field.setValues` 时需要注意：
   - 如果数据源是数组，每次操作会默认追加（append）。
@@ -72,15 +192,11 @@ tags:
     this.field.remove(this.field.getNames());
 - 自定义表单组件需要实现 `onChange` 和 `value` 属性。    ```
 
----
+### Field 表单工具的使用与优化
 
-## Field 表单工具的使用与优化
-
-### 功能说明
 - `Field` 表单工具支持手动指定 `valueName`（默认为 `value`）。
 - 数据源为数组时，可以通过 `deleteArrayValue` 方法删除或添加元素。
 
-### 示例代码
 - 抽屉表单中的数据源在重新设置前需要深拷贝，避免抽屉修改内容影响原数据：
   ```js
   formFiled.validate((error, result) => {  
@@ -91,9 +207,7 @@ tags:
   });
   ```
 
----
-
-## 多页应用状态共享问题
+### 多页应用状态共享问题
 
 ### 问题描述
 - **场景**：多页应用中，通过列表页面搜索 ID 定位到卡片，点击卡片进入详情页后返回，无法找到原来的卡片。
@@ -104,32 +218,22 @@ tags:
 2. **服务器存储**：将状态保存在服务器端，通过接口获取。
 3. **本地缓存**：使用浏览器的 `localStorage` 或 `sessionStorage` 存储状态。
 
----
+### B端系统交互简化建议
 
-## B端系统交互简化建议
-
-### 问题描述
 - B端系统交互复杂，可能导致用户体验不佳。
 - 示例：`Table` 组件在表单中的数据由 `dataSource` 字段指定。
 
-### 简化建议
 - 使用更直观的 UI 设计，减少用户操作步骤。
 - 提供默认值或智能推荐，降低用户输入成本。
 - 对于复杂表单，可以通过分步引导或动态加载的方式逐步展示内容。
 
----
-
-## 微模块设计
+### 微模块设计
 
 `/apps/module.aa/bb` 框架会请求这个路径（这个路径是唯一的）获得微模块的资源，然后加载微模块的资源。 
 然后组件然后挂载到指定的DOM容器
 
----
 
-
-## 什么是页面路由和服务器路由
-
-### 页面路由
+### 什么是页面路由和服务器路由
 页面路由是指前端应用中用户访问的路径，通常由前端框架（如React、Vue、Angular）管理。页面路由决定了用户在浏览器地址栏中看到的URL，并控制页面内容的展示。
 
 例如：
@@ -137,16 +241,12 @@ tags:
 - `/about`：显示关于我们页面。
 - `/product/:id`：显示某个具体产品的详情页。
 
-### 服务器路由
 服务器路由是指后端服务器根据请求的URL路径返回相应的资源或数据。服务器路由通常用于处理API请求、静态文件服务等。
 
 例如：
 - `/api/products`：返回商品列表数据。
 - `/static/images/logo.png`：返回静态图片资源。
 
----
-
-## 页面路由与服务器路由的关系
 
 页面路由和服务器路由虽然分别由前端和后端管理，但它们之间存在紧密的联系：
 1. **初始加载**  
@@ -158,9 +258,7 @@ tags:
 3. **SEO优化**  
    对于需要搜索引擎抓取的页面，服务器路由需要能够正确响应页面路由的请求，返回对应的HTML内容。
 
----
-
-## 为什么页面路由与服务器路由需要一致
+为什么页面路由与服务器路由需要一致
 
 1. **避免404错误**  
    如果页面路由与服务器路由不一致，当用户直接访问某个页面路由时，服务器可能无法找到对应的资源，从而返回404错误。
@@ -174,11 +272,8 @@ tags:
 4. **简化开发与维护**  
    路由一致性可以减少前后端沟通成本，避免因路由配置问题导致的开发和调试困难。
 
----
+如何处理页面路由与服务器路由的一致性
 
-## 如何处理页面路由与服务器路由的一致性
-
-### 前端配置
 1. **使用前端路由库**  
    使用现代前端框架的路由库（如React Router、Vue Router）定义页面路由规则。确保路由规则清晰且与业务需求一致。
 
@@ -196,7 +291,7 @@ tags:
    </BrowserRouter>
    ```
 
-### 后端配置
+后端配置
 1. **配置服务器路由规则**  
    确保服务器能够正确响应页面路由的请求。对于单页应用，通常需要将所有未匹配的请求重定向到`index.html`。
 
@@ -225,11 +320,9 @@ tags:
    });
    ```
 
----
+常见问题与解决方案
 
-## 常见问题与解决方案
-
-### 问题1：页面刷新后出现404错误
+问题1：页面刷新后出现404错误
 
 - **原因**  
   服务器未正确配置Fallback路由，导致无法找到对应的静态资源。
@@ -237,7 +330,7 @@ tags:
 - **解决方案**  
   配置服务器将未匹配的请求重定向到`index.html`。
 
-### 问题2：API请求被误认为页面路由
+问题2：API请求被误认为页面路由
 
 - **原因**  
   API路由与页面路由冲突，导致API请求被重定向到`index.html`。
@@ -245,7 +338,7 @@ tags:
 - **解决方案**  
   明确区分API路由和页面路由。例如，API路由以`/api`开头。
 
-### 问题3：SEO优化问题
+问题3：SEO优化问题
 
 - **原因**  
   单页应用的页面路由无法被搜索引擎正确抓取。

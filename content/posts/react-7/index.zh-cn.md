@@ -134,10 +134,34 @@ MobX 提供了一种响应式的状态管理方式，适合中小型项目。
 
 ### 方案 5: Immer
 
-Immer 是一个不可变数据管理库，常用于简化状态更新逻辑。
+Immer 是一个不可变数据管理库，常用于简化状态更新逻辑。**不是一个状态管理方案**
 
 - **优点**：通过简单的 API 实现不可变数据操作，代码更易读。  
 - **缺点**：仅解决状态更新问题，需与其他状态管理工具配合使用。
+
+```js
+import {produce} from "immer"
+
+const nextState = produce(baseState, draft => {
+    draft[1].done = true
+    draft.push({title: "Tweet about it"})
+})
+```
+
+vs
+
+```js
+const nextState = baseState.slice() // shallow clone the array
+nextState[1] = {
+    // replace element 1...
+    ...nextState[1], // with a shallow clone of element 1
+    done: true // ...combined with the desired update
+}
+// since nextState was freshly cloned, using push is safe here,
+// but doing the same thing at any arbitrary time in the future would
+// violate the immutability principles and introduce a bug!
+nextState.push({title: "Tweet about it"})
+```
 
 ---
 

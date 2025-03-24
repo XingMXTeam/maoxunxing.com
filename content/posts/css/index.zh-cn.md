@@ -20,6 +20,11 @@ custom_toc:
   - title: "响应式"
 ---
 
+css推荐用原生`css + postcss`  方案， less/sass 预编译会增加复杂性/学习成本， 通过PostCSS Preset Env 支持现代css写法；  Autoprefixer 自动增加前缀
+
+vscode插件： PostCSS Language Support
+
+
 ## CSS 动画：滚动与翻转
 
 ## 1. 滚动动画（带暂停功能）

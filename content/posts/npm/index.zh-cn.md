@@ -119,6 +119,8 @@ export type { ButtonProps } from './Button';
 }
 ```
 
+
+
 ## TypeScript 配置 (`tsconfig.json`)
 
 为了确保 TypeScript 能正确解析模块并生成类型定义文件，需要对 `tsconfig.json` 进行适当配置。
@@ -263,6 +265,23 @@ https://unpkg.com/lodash/
 }
 ```
 
+## exports
+
+`exports` 字段可以限制外部对包内模块的访问方式。例如：
+
+```json
+{
+  "exports": {
+    ".": "./index.js",
+    "./feature": "./feature.js"
+  }
+}
+```
+
+通过 `exports`，可以明确指定哪些模块可以被外部访问，从而增强包的安全性和可控性。它可以定义多个文件导出声明。
+
+`exports`的优先级比`main`更高，具体查看[文档](https://nodejs.org/api/packages.html#package-entry-points)
+
 ## sideEffects
 
 `sideEffects` 字段用于标识哪些文件或模块具有副作用（副作用指对外部有影响）。  
@@ -293,20 +312,6 @@ https://unpkg.com/lodash/
 - 删除 `node_modules` 后重新运行 `npm install` 会生成新的 `package-lock.json` 文件。
 - 使用 `npm i` 或 `npm update` 会更新 `package-lock.json` 文件。
 
-## exports
-
-`exports` 字段可以限制外部对包内模块的访问方式。例如：
-
-```json
-{
-  "exports": {
-    ".": "./index.js",
-    "./feature": "./feature.js"
-  }
-}
-```
-
-通过 `exports`，可以明确指定哪些模块可以被外部访问，从而增强包的安全性和可控性。
 
 ## 案例分析
 
