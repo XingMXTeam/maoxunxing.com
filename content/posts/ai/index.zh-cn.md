@@ -10,6 +10,7 @@ custom_toc:
   - title: "AI 认知"
   - title: "如何写好提示词"
   - title: "如何用好AI"
+  - title: "自己搭建一个cursor"
   - title: "AI 工具和资源"
 ---
 
@@ -631,7 +632,7 @@ The newsletter discusses key trends in technology adoption, highlighting the ris
 
 ---
 
-## 如何用好 AI
+## 如何用好AI
 
 最近在 Youtube 上很火的一个视频<how i use llm>，作者是 Andrej Karpathy，他是一位大神，摘录一下 ChatGPT 对他的介绍：
 
@@ -786,6 +787,16 @@ chatgpt 翻译比一般的翻译更好，比如https://papago.naver.com/ 。
 这里还有一个方案，就是用谷歌智能眼镜对文字 ocr，然后丢给 chatgpt
 
 ![alt text](image-5.png)
+
+---
+
+## 自己搭建一个cursor
+
+安装vscode 插件:
+![alt text](image-6.png)
+
+Cline 插件
+
 
 ---
 

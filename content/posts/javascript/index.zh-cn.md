@@ -1523,3 +1523,90 @@ script.async = false; // 强制按插入顺序执行
 script.src = 'c.js';
 document.body.appendChild(script); 
 ```
+
+---
+
+## 跨页面通信（不同域名）
+
+
+方案1: iframe + postMessage：通过中间页面中转实现跨域通信
+
+通过iframe加载一个中间html, 比如a.html
+
+```js
+const iframe = document.createElement('iframe')
+iframe.style.display = 'none'
+iframe.src = 'a.html'
+iframe.onload = function() {
+  window.syncWindow = iframe.contentWindow
+}
+```
+
+```html
+<!-- a.html -->
+<script>
+const STORAGE_CONFIG = {
+  // 存储键名配置
+  keys: {
+
+  },
+  // 允许通信的域名
+  allowedOrigins: ["a.com", "test.a.com"],
+  // 指定存储类型（localStorage/sessionStorage）
+  storageType: 'localStorage'
+};
+
+// 获取存储对象
+const storage = window[STORAGE_CONFIG.storageType];
+
+// 通用存储处理器
+const handleStorageMessage = (event) => {
+  const { origin, data } = event;
+  const { method, type, value } = data || {};
+
+  // 安全验证
+  if (!STORAGE_CONFIG.allowedOrigins.test(origin)) return;
+
+  try {
+    switch (method) {
+      case 'get':
+        sendStorageData(origin);
+        break;
+      case 'set':
+        storage.setItem(type, value);
+        break;
+      case 'clear':
+        storage.removeItem(STORAGE_CONFIG.keys[type]);
+        break;
+      default:
+        console.warn('Unsupported storage method:', method);
+    }
+  } catch (error) {
+    console.error('Storage operation failed:', error);
+  }
+};
+
+// 获取并发送存储数据
+const sendStorageData = (targetOrigin) => {
+  const storageData = Object.entries(STORAGE_CONFIG.keys).reduce((acc, [keyName, storageKey]) => {
+    const value = storage.getItem(storageKey);
+    acc[keyName] = value ? value.split(',') : [];
+    return acc;
+  }, {});
+
+  window.parent.postMessage(storageData, targetOrigin);
+};
+
+// 监听事件
+window.addEventListener('message', handleStorageMessage);
+</script>
+```
+
+
+发送消息
+
+```js
+window.syncWindow.postMessage(data, url)
+```
+
+
