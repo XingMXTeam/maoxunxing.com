@@ -628,7 +628,12 @@ The newsletter discusses key trends in technology adoption, highlighting the ris
 
 ## What I Disliked
 ## Key Takeaways
+
 ```
+
+## 代码阅读
+
+这段代码实现了什么功能，请给出详细的介绍。并输出一份可以运行的最简代码，不需要错误处理，不需要边界场景处理。
 
 ---
 
@@ -922,3 +927,16 @@ Cline 插件
 ### fastrtc
 
 https://fastrtc.org/cookbook/
+
+---
+
+## AI工具
+chatwise
+阿里云deepseek r1
+Gemini 2 Flash Thinking 
+
+repomix 打包代码
+
+你先不要着急回答我的问题，为了质量更高的答案，我还需要补充哪些信息
+
+

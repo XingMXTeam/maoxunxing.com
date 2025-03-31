@@ -830,5 +830,33 @@ This is no longer the case. Verify if you need this module and configure a polyf
   - 如果确实需要使用这些模块，可以通过 polyfill 或替代方案解决。
 
 
+---
 
+`npm i webpack-cli`  报错：
 
+```text
+npm ERR! Cannot read properties of null (reading 'package')
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/felix/.npm/_logs/2025-03-25T03_51_31_544Z-debug-0.log
+```
+
+问题原因是：node版本太低
+
+---
+
+require包找不到, 通过resolve指定js后缀修复的
+
+```text
+bootstrap:27 Uncaught Error: Cannot find module 'core-js-pure/features/global-this'
+    at webpackMissingModule (ReactRefreshEntry.js:3:1)
+    at ../../node_modules/@ice/bundles/compiled/@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js (ReactRefreshEntry.js:3:1)
+    at options.factory (react refresh:6:1)
+    at __webpack_require__ (bootstrap:24:1)
+    at startup:4:1
+    at __webpack_require__.O (chunk loaded:23:1)
+    at startup:8:1
+    at startup:8:1
+    at webpackUniversalModuleDefinition (universalModuleDefinition:9:1)
+    at universalModuleDefinition:10:1
+```   
