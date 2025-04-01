@@ -30,6 +30,7 @@ custom_toc:
   - title: "decodeURIComponent"
   - title: "循环引用"
   - title: "模块系统"
+  - title: "forEach vs for of"
 ---
 
 ## 数组遍历
@@ -1619,5 +1620,20 @@ window.addEventListener('message', handleStorageMessage);
 ```js
 window.syncWindow.postMessage(data, url)
 ```
+---
 
+## forEach vs for of
 
+forEach的函数不支持返回promise，也就是asnyc 并没有真的async。而for of的函数支持。
+
+```js
+const asyncfn = i => new Promise(resolve => resolve(i)) 
+
+[1,2,3].forEach(async (i) => {
+  await asyncfn(i)
+})
+
+for(const i of [1,2,3]) {
+  await asyncfn(i)
+}
+```
