@@ -193,6 +193,17 @@ promise
       }
     }
     ```
+
+### 非阻塞抛错
+
+```js
+function throwNonBlockingError(error, msg) {
+	setTimeout(() => {
+		console.error(msg);
+		throw error;
+	});
+}
+```
 ---
 
 ## Promise
