@@ -518,6 +518,9 @@ GROUP BY val
 ORDER BY num
 ```
 
+如何将num改为占比：
+`ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS percentage` 
+
 ## 筛选条件
 type: perf/pv/js-error 日志类型: 比如性能/pv/错误
 page_id: 页面url
