@@ -177,7 +177,7 @@
     {{ hugo.Generator }}
     <!-- google adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   </head>
   {{ partial "google-analytics.html" . }}
   
@@ -200,9 +200,20 @@
     <main class="wrapper">
       {{ partial "header.html" . }}
 
-
       <div class="content">
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6892599483138014"
+        data-ad-slot="7317384674"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
         {{ block "content" . }}{{ end }}
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6892599483138014"
+        data-ad-slot="7317384674"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
       </div>
 
       {{ partial "footer.html" . }}
@@ -256,6 +267,9 @@
           });
           headroom.init();
         });
+      </script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
   </body>
 </html>

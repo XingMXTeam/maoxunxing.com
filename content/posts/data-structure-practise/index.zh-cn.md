@@ -959,6 +959,8 @@ class Solution:
         return ans
 ```
 
+**hint**：如果移动高的指针，宽度变小，而高度不变，水位不会变多
+
 [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 ![alt text](image-6.png)
