@@ -1143,35 +1143,6 @@ class Solution:
         return stack[-1]
 ```
 
-[Generate Parentheses   生成括号](https://leetcode.com/problems/generate-parentheses/)
-![alt text](image-10.png)
-
-
-``` python
-# openN < 3, closeN < 3
-# openN > closeN can add ')'
-# openN == closeN == 3, exit
-class Solution:  
-    def generateParenthesis(self, n: int) -> List[str]:  
-        stack = []  
-        res = []  
-        def backtrack(openN, closeN):  # 回溯
-            if openN == closeN == n:  
-                res.append("".join(stack))  
-                return  
-            if openN < n:  
-                stack.append('(')  
-                backtrack(openN+1, closeN)  
-                stack.pop()  
-            if openN > closeN:  
-                stack.append(')')  
-                backtrack(openN, closeN+1)  
-                stack.pop()  
-  
-        backtrack(0, 0)  
-        return res
-
-```
 [Daily Temperatures   每日气温](https://leetcode.com/problems/daily-temperatures/)
 
 ![alt text](image-11.png)
@@ -2501,6 +2472,37 @@ class WordDictionary:
 
 
 ### backtracking
+
+[Generate Parentheses   生成括号](https://leetcode.com/problems/generate-parentheses/)
+![alt text](image-10.png)
+
+
+``` python
+# openN < 3, closeN < 3
+# openN > closeN can add ')'
+# openN == closeN == 3, exit
+class Solution:  
+    def generateParenthesis(self, n: int) -> List[str]:  
+        stack = []  
+        res = []  
+        def backtrack(openN, closeN):  # 回溯
+            if openN == closeN == n:  
+                res.append("".join(stack))  
+                return  
+            if openN < n:  
+                stack.append('(')  
+                backtrack(openN+1, closeN)  
+                stack.pop()  
+            if openN > closeN:  
+                stack.append(')')  
+                backtrack(openN, closeN+1)  
+                stack.pop()  
+  
+        backtrack(0, 0)  
+        return res
+
+```
+
  [Subsets  子集](https://leetcode.com/problems/subsets/)
 ![alt text](image-44.png)
 
