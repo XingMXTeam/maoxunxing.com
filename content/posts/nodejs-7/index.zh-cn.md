@@ -85,6 +85,11 @@ class C {
 }
 ```
 
+```js
+this.ctx.requestContext.getAsync('testService') // 获取注入的服务
+```
+
+
 更多参考： 
 - https://midwayjs.org/docs/1.0.0/injection
 - https://jkchao.github.io/typescript-book-chinese/tips/metadata.html#%E4%BE%8B%E5%AD%90
