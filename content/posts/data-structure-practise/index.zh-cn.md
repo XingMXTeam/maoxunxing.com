@@ -1929,6 +1929,8 @@ class Solution:
 
 ![alt text](image-31.png)
 
+**这个是最佳的理解树的遍历的范例**
+
 ```python
 # DFS
 class Solution:  
@@ -2485,15 +2487,16 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:  
         stack = []  
         res = []  
+        # 整个递归调用，就是我们画出来的决策树。递归调用的参数就是我们核心考虑的两个变量，左括符和右括符的数量
         def backtrack(openN, closeN):  # 回溯
             if openN == closeN == n:  
-                res.append("".join(stack))  
+                res.append("".join(stack))  # 理解 Python 的 join 是先选定一个“模板”或“胶水”，再告诉列表“请用它来拼装自己”
                 return  
             if openN < n:  
                 stack.append('(')  
                 backtrack(openN+1, closeN)  
-                stack.pop()  
-            if openN > closeN:  
+                stack.pop()  # 回溯恢复现场，保证递归的其他分支状态正确
+            if openN > closeN:  # 保证有效组合的关键逻辑，这里其实对树进行了 ** 剪枝 ** ，对无效组合避免了递归调用
                 stack.append(')')  
                 backtrack(openN, closeN+1)  
                 stack.pop()  
