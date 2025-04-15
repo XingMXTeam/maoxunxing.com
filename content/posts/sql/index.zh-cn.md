@@ -9,21 +9,40 @@ images:
 
 ## 目录
 
-1. [DDL 语句（Data Definition Language）](#ddl-语句data-definition-language)
-   - [CREATE TABLE](#create-table)
-   - [DROP TABLE](#drop-table)
-   - [ALTER TABLE](#alter-table)
-   - [查看表结构](#查看表结构)
-2. [DML 语句（Data Manipulation Language）](#dml-语句data-manipulation-language)
-   - [SELECT](#select)
-   - [INSERT](#insert)
-3. [DCL 语句（Data Control Language）](#dcl-语句data-control-language)
-4. [常用函数](#常用函数)
-   - [日期格式化](#日期格式化)
-   - [日期加减](#日期加减)
-   - [字符串拼接](#字符串拼接)
-   - [排序与分组](#排序与分组)
-   - [取最新分区](#取最新分区)
+- [目录](#目录)
+- [DDL 语句（Data Definition Language）](#ddl-语句data-definition-language)
+  - [CREATE TABLE](#create-table)
+    - [基本用法](#基本用法)
+    - [高级用法](#高级用法)
+  - [DROP TABLE](#drop-table)
+  - [ALTER TABLE](#alter-table)
+    - [重命名](#重命名)
+    - [添加分区 \& 删除分区](#添加分区--删除分区)
+    - [修改表结构](#修改表结构)
+  - [查看表结构](#查看表结构)
+- [DML 语句（Data Manipulation Language）](#dml-语句data-manipulation-language)
+  - [SELECT](#select)
+    - [基础查询](#基础查询)
+    - [限制条数](#限制条数)
+    - [去重](#去重)
+    - [数据聚合](#数据聚合)
+    - [过滤分组统计结果集](#过滤分组统计结果集)
+    - [子查询](#子查询)
+    - [合并多张表的数据](#合并多张表的数据)
+    - [表关联操作](#表关联操作)
+  - [INSERT](#insert)
+- [DCL 语句（Data Control Language）](#dcl-语句data-control-language)
+- [常用函数](#常用函数)
+  - [日期格式化](#日期格式化)
+  - [日期加减](#日期加减)
+  - [字符串拼接](#字符串拼接)
+  - [排序与分组](#排序与分组)
+  - [取最新分区](#取最新分区)
+  - [数据库迁移](#数据库迁移)
+  - [CASE WHEN 表达式](#case-when-表达式)
+- [分析单用户行为](#分析单用户行为)
+- [剔除重复的数据](#剔除重复的数据)
+- [WITH 语句](#with-语句)
 
 ---
 
@@ -151,9 +170,10 @@ LIMIT
 ```
 
 #### 去重
+注意这里会对a,b,c组合作为整体去重，所以如果只是对某个字段去重，需要用子查询
 ```sql
 SELECT 
-  DISTINCT a 
+  DISTINCT a , b, c 
 FROM 
   aa 
 WHERE 
@@ -173,6 +193,11 @@ WHERE
 GROUP BY 
   a;
 ```
+
+```sql
+COUNT(DISTINCT col1)
+```
+
 
 ```sql
 SUM(CASE
@@ -388,3 +413,38 @@ FROM your_table;
 ```text
 type: 'pv' and pid: 'xxxx'
 ```
+
+
+## 剔除重复的数据
+
+distinct 或者 子查询
+
+子查询1：
+```sql
+SELECT a.*, b.pv 
+FROM table a 
+LEFT JOIN (
+    SELECT trace_id, COUNT(*) AS pv 
+    FROM table 
+    WHERE ds = '${bizdate}' 
+    GROUP BY trace_id
+) b 
+ON a.trace_id = b.trace_id AND a.ds = '${bizdate}' 
+WHERE pv = 1;
+```
+
+子查询2:
+```sql
+SELECT  COUNT(*) as
+FROM    aa
+WHERE    trace_id NOT IN (
+            SELECT  trace_id
+            FROM    aa
+            WHERE ds = '${bizdate}'
+            GROUP BY trace_id
+            HAVING  COUNT(trace_id) > 1
+        ) 
+```
+
+
+## WITH 语句

@@ -551,3 +551,13 @@ npm install -g npmi
 
 - **`npm version patch`**
   -  自动更新一个新的补丁版本  
+
+
+---
+
+## 安装两个不同版本的包
+
+```text
+"antdmo2": "npm:antd-mobile@^2.3.4",
+"antdmo5": "npm:antd-mobile@5.33.0",
+```
