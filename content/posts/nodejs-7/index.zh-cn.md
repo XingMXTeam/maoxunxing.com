@@ -86,7 +86,7 @@ class C {
 ```
 
 ```js
-this.ctx.requestContext.getAsync('testService') // 获取注入的服务
+this.ctx.requestContext.getAsync('testService') // 获取注入的服务 midway faas 的 IoC 请求作用域容器，用于获取其他 IoC 容器中的对象实例。
 ```
 
 

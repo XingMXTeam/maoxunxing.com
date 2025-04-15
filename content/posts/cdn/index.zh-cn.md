@@ -6,20 +6,25 @@ tags:
 ---
 
 ## 目录
-1. [CDN 的不同用法](#cdn-的不同用法)
-   - [同资源多份缓存](#同资源多份缓存)
-   - [Auto Polyfill](#auto-polyfill)
-   - [Auto WebP/AVIF](#auto-webpavif)
-   - [动态加速](#动态加速)
-   - [Prefetch 加速](#prefetch-加速)
-2. [CDN 场景问题](#cdn-场景问题)
-3. [调度方式](#调度方式)
-4. [指定缓存时间](#指定缓存时间)
-5. [IVS 架构](#ivs-架构)
-6. [CDN 的问题](#cdn-的问题)
-7. [专业技术](#专业技术)
-8. [案例](#案例)
-9. [Vercel CNAME 优化](#vercel-cname-优化)
+- [目录](#目录)
+- [CDN 的不同用法](#cdn-的不同用法)
+  - [同资源多份缓存](#同资源多份缓存)
+  - [Auto Polyfill](#auto-polyfill)
+  - [Auto WebP/AVIF](#auto-webpavif)
+  - [动态加速](#动态加速)
+  - [Prefetch 加速](#prefetch-加速)
+- [CDN 场景问题](#cdn-场景问题)
+- [调度方式](#调度方式)
+- [指定缓存时间](#指定缓存时间)
+- [IVS 架构](#ivs-架构)
+- [CDN 的问题](#cdn-的问题)
+- [专业技术](#专业技术)
+- [案例](#案例)
+- [Vercel CNAME 优化](#vercel-cname-优化)
+- [CDN 的作用](#cdn-的作用)
+- [源站的角色](#源站的角色)
+- [OSS 的本质](#oss-的本质)
+- [协作流程](#协作流程)
 
 ---
 
@@ -50,6 +55,9 @@ tags:
   - **IP 获取**：
     - HTTP 请求：CDN 通过 `X-Forwarded-For` 或 `ORIG_CLIENT_IP` 标记用户 IP。
     - HTTPS 请求：由于加密报文无法解密，CDN 将用户 IP 放入 TCP Option 中，避免解密 HTTPS 报文。
+
+举个具体例子： 如果用户访问html请求，CDN回源如果有配置动态加速，不是走的公网，走的CDN优化过的专线那么传输时间会更快。
+
 
 ### Prefetch 加速
 - **描述**：提前将静态资源从源站加载到 CDN 边缘节点。

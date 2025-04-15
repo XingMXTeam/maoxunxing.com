@@ -7,19 +7,20 @@ tags:
 ---
 
 ## 目录
-1. [CookieStore API](#cookiestore-api)
-2. [Safari 第三方 Cookie 问题](#safari-第三方-cookie-问题)
-3. [Cookie 类型](#cookie-类型)
-4. [什么是第三方 Cookie](#什么是第三方-cookie)
-   - [Google CHIPS 方案](#google-chips-方案)
-5. [浏览器默认行为与权限](#浏览器默认行为与权限)
-6. [Cookie 的 SameSite 属性](#cookie-的-samesite-属性)
-7. [跨站请求与 CSRF 防护](#跨站请求与-csrf-防护)
-8. [多域名下的 Cookie 管理](#多域名下的-cookie-管理)
-9. [Cookie 设置规则](#cookie-设置规则)
-10. [A 站点内嵌 B 站点的 Cookie 场景](#a-站点内嵌-b-站点的-cookie-场景)
-11. [Cookie 的 Path 与过期时间](#cookie-的-path-与过期时间)
-12. [Cookie 查看](#cookie-查看)
+- [目录](#目录)
+- [CookieStore API](#cookiestore-api)
+- [Safari 第三方 Cookie 问题](#safari-第三方-cookie-问题)
+- [Cookie 类型](#cookie-类型)
+- [什么是第三方 Cookie](#什么是第三方-cookie)
+  - [Google CHIPS 方案](#google-chips-方案)
+- [浏览器默认行为与权限](#浏览器默认行为与权限)
+- [Cookie 的 SameSite 属性](#cookie-的-samesite-属性)
+- [跨站请求与 CSRF 防护](#跨站请求与-csrf-防护)
+- [多域名下的 Cookie 管理](#多域名下的-cookie-管理)
+- [Cookie 设置规则](#cookie-设置规则)
+- [A 站点内嵌 B 站点的 Cookie 场景](#a-站点内嵌-b-站点的-cookie-场景)
+- [Cookie 的 Path 与过期时间](#cookie-的-path-与过期时间)
+- [Cookie 查看](#cookie-查看)
 
 ---
 
@@ -67,6 +68,8 @@ tags:
   - 欧盟 GDPR 条例正在限制第三方 Cookie 的使用。
 
 ### Google CHIPS 方案
+
+自己的请求只能往自己的域名设置cookie（浏览器无法通过document.cookie往其他三方域名写cookie)， 现在往三方cookie设置值需要用户允许，这样可以再A站点通过B站点请求往B站点设置cookie，具体设置的是一个id建立了A站点信息和B站点的关系。从而能实现访问b站点时带上这个id，知道这个用户访问过A站点的什么信息。 这样A站点到B站点投广告，会更加精准，因为B站点知道用户关注过什么内容。 通过三方脚本注入实现了自信息闭环，包括谷歌、facebook的广告机制都是如此。
 
 - **描述**：Google 提出的 CHIPS（Cookies Having Independent Partitioned State）方案，用于解决第三方 Cookie 的隐私问题。
 - **实现方式**：

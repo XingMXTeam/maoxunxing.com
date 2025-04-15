@@ -20,6 +20,10 @@ custom_toc:
 
 ---
 
+## 编程工具
+
+Jupyter 是一个vscode插件，方便一次性编译和写作
+
 ### Array & hash
  [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 
@@ -1526,7 +1530,7 @@ class Solution:
         return maxP
 ```
 
-
+最长非重复子字符串。 比如abcabcddd 输出 abc
 ```python
 class Solution:  
     def lengthOfLongestSubstring(self, s: str) -> int:  
@@ -1534,6 +1538,7 @@ class Solution:
         l = 0  
         res = 0  
         for r in range(len(s)):  
+            # 如果a已存在，则从左边移除 因为我们是要找到非重复子字符串
             while s[r] in charSet:  
                 charSet.remove(s[l])  
                 l += 1  
@@ -1543,6 +1548,8 @@ class Solution:
 ```
 
 [Longest Repeating Character Replacement  最长重复字符替换](https://leetcode.com/problems/longest-repeating-character-replacement/)
+
+
 
 ![alt text](image-19.png)
 
@@ -1635,10 +1642,56 @@ class Solution:
             return False
 ```
 
+
+```python
+def test(s1, s2):
+    s1_count = [0] * 26
+    s2_count = [0] * 26
+    len1 = len(s1)
+    len2 = len(s2)
+    if len1 > len2: 
+        return False
+    '''
+        s1: ab
+        s2: aefbaad
+
+        s1_count:
+        {
+            1: 2, 'a'
+            2: 1, 'b'
+        }
+        s2_count:
+        {
+            1: 2, 'a'
+            8: 1, 'e'
+        }
+    '''
+    for i in range(len1):
+        s1_count[ord(s1[i]) - ord('a')] += 1
+        s2_count[ord(s2[i]) - ord('a')] += 1
+    
+    for i in range(len2 - len1):  # 滑动距离0-4 
+        if s1_count == s2_count: # 如果统计出来次数一样 就说明是子串
+            return True
+        # 移动窗口长度
+        s2_count[ord(s2[i]) - ord('a')] -= 1 # 移除最左边的字符 数量-1
+        s2_count[ord(s2[i + len1] - ord('a'))] += 1 # 添加右边的1个字符
+    # 这个最后判断一下 ad
+    return s1_count == s2_count
+```
+
 ### LinkedList
 [Reverse Linked List  反向链表](https://leetcode.com/problems/reverse-linked-list/)
 
 ![alt text](image-21.png)
+
+```text
+错误的做法：
+1、一次操作移动两个指针
+2、写法是错误的 curr.next = curr
+
+```
+
 
 ```python
 # Definition for singly-linked list.  
@@ -1652,12 +1705,13 @@ class Solution:
 #         self.val = val  
 #         self.next = next
 # 双指针法
+# None <- a <- b 前面有一个None哨兵指针
 class Solution:  
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:  
         prev, curr = None, head  
-        while curr:  
+        while curr:  # 每次循环只修改一次指针
             next = curr.next  # 保存之前的指针，避免指针断开
-            # 修改指针
+            # 修改指针 curr.next = curr 这种写法是错误的
             curr.next = prev  
             # 指针往前移动
             prev = curr  
@@ -1726,6 +1780,11 @@ class Solution:
 ```
 [Remove Nth Node From End of List  从列表末尾删除第 n 个节点](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 ![alt text](image-24.png)
+
+```text
+错误示范：
+1、快慢指针不是说一定要同时移动的，可以一个先不动，fast指针先移动到指定位置
+```
 
 
 ```python
@@ -1913,6 +1972,24 @@ class LRUCache:
 
 ![alt text](image-30.png)
 
+```text
+错误的示范：
+1、需要一个temp保存你要动的指针的值 否则，你把指针直接指到另一个地方了，原先的值你找不到了
+2、可以先调换左右子树的，不是非得到叶子结点才能调换
+3、递归调用一定是针对左右子树的，不能只递归左子树或者右子树
+
+def test(root):
+    if not root:
+        return root
+    temp = root.left
+    root.left = root.right
+    root.right = temp
+    this.test(root.left)
+    this.test(root.right)
+
+```
+
+
 ```python
 class Solution:  
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:  
@@ -1940,6 +2017,28 @@ class Solution:
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
 # 层序遍历，没有递归调用
+"""
+双端队列用来存放每一层的数据, 一开始push到队列里的是根节点，根节点弹出来的时候再推入左右子节点。 
+上面做完刚好是level1 ，也就是**要先处理上一层节点再处理下一层节点**
+
+
+
+
+q = deque([root])
+
+while q: 
+    for i in range(len(q)):
+        node = q.popleft()
+        if node.left:
+            q.append(node.left)
+        if node.right:
+            q.append(node.right)        
+
+层序遍历也是BFS, 广度优先搜索
+
+
+
+"""
 class Solution:  
     def maxDepth(self, root: Optional[TreeNode]) -> int:  
         if not root:  
@@ -1948,14 +2047,14 @@ class Solution:
         level = 0  
         # 队列非空  
         while q:  
-            # 遍历一层 
+            # 要先处理上一层节点再处理下一层节点 
             for i in range(len(q)):  
                 node = q.popleft()  
                 if node.left:  
                     q.append(node.left)  
                 if node.right:  
                     q.append(node.right)  
-  
+    
             level += 1  
   
         return level
@@ -2492,6 +2591,8 @@ class Solution:
             if openN == closeN == n:  
                 res.append("".join(stack))  # 理解 Python 的 join 是先选定一个“模板”或“胶水”，再告诉列表“请用它来拼装自己”
                 return  
+            # 发现没有，回溯会调用两次递归调用。 每次都是一个新的尝试。而且要恢复现场    
+            # 这里的恢复现场时对堆栈的恢复
             if openN < n:  
                 stack.append('(')  
                 backtrack(openN+1, closeN)  
@@ -2524,11 +2625,12 @@ class Solution:
                 res.append(subsets.copy())  # 注意这里必须要用复制，因为subsets每次执行dfs时候都会被修改  
                 return  
   
-            # 决策加入 nums[i]            subsets.append(nums[i])  
+            # 决策加入 nums[i]            
+            subsets.append(nums[i])  
             # 然后递归决策下一个元素  
             dfs(i + 1)  
   
-            # 或者决策不加入  
+            # 或者决策不加入  恢复现场也是对堆栈的恢复
             subsets.pop()  
             dfs(i + 1)  
         dfs(0)  

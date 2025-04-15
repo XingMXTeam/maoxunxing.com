@@ -1,5 +1,5 @@
 ---
-title: "AIGC 绘图/图片创作"
+title: "MCP Server 初尝试"
 date: 2025-03-31
 description: ""
 draft: true

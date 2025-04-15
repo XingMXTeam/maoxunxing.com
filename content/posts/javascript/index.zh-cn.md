@@ -1637,3 +1637,11 @@ for(const i of [1,2,3]) {
   await asyncfn(i)
 }
 ```
+
+---
+
+## window.onunload
+
+location.href 会触发onload事件，场景：unload事件中触发埋点的事件作为兜底，但是如果是setTimeout机制（公交车机制）异步机制埋点事件不会发送出去；需要考虑用setBean的同步发送埋点
+
+

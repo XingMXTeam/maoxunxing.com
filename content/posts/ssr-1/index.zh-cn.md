@@ -8,16 +8,28 @@ description: ""
 ---
 
 ## 目录
-1. [SSR 概念与分类](#ssr-概念与分类)
-   - [SSR（服务端渲染）](#ssr服务端渲染)
-   - [SSG（静态化 SSR）](#ssg静态化-ssr)
-   - [个性化 SSR](#个性化-ssr)
-2. [Hydrate（水合）](#hydrate水合)
-3. [Serverless](#serverless)
-4. [同构](#同构)
-5. [专业知识与案例](#专业知识与案例)
-6. [调试方法](#调试方法)
-7. [流式渲染](#流式渲染)
+- [目录](#目录)
+- [SSR 概念与分类](#ssr-概念与分类)
+  - [SSR（服务端渲染）](#ssr服务端渲染)
+  - [SSG（静态化 SSR）](#ssg静态化-ssr)
+  - [个性化 SSR](#个性化-ssr)
+- [Hydrate（水合）](#hydrate水合)
+- [Serverless](#serverless)
+  - [1. FaaS 的定义](#1-faas-的定义)
+  - [2. Serverless 的定义](#2-serverless-的定义)
+  - [3. FaaS 与 Serverless 的关系](#3-faas-与-serverless-的关系)
+  - [4. FaaS 的特点](#4-faas-的特点)
+  - [5. Serverless 的特点](#5-serverless-的特点)
+  - [6. 通过 FaaS 部署 Serverless 服务](#6-通过-faas-部署-serverless-服务)
+  - [7. FaaS 的优势](#7-faas-的优势)
+- [同构](#同构)
+- [专业知识与案例](#专业知识与案例)
+- [调试方法](#调试方法)
+- [流式渲染](#流式渲染)
+- [源站架构](#源站架构)
+- [vm模版编译](#vm模版编译)
+- [页面路由](#页面路由)
+- [ssr 渲染底层](#ssr-渲染底层)
 
 ---
 
@@ -146,3 +158,10 @@ ReactServer.renderToStaticMarkup(
 比如aa.com/a/p/1.html -> aa.pc.a-p 作为配置的唯一key。 通过`path-to-regexp` 这个包实现pathName和url匹配
 
 ---
+
+## ssr 渲染底层
+
+docuemnt.tsx 其实就是一个React组件，里面ssr的组件分布在其他js文件里面。构建产物还是react代码（jsx编译后的），运行时会通过React的函数渲染成html string。
+
+
+

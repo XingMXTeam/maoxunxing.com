@@ -38,6 +38,15 @@ tags:
 - TTI: time to ineractive 可交互时间 需要排除前进后退的缓存
   - 通过PerformanceNavigationTiming的type: back_forward 可以区别出来
 
+```js
+
+if (domNodeReady()) {
+  performance.mark('self-tti');
+  performance.measure('tti', 'fetchStart', 'self-tti');
+  var measures = performance.getEntriesByName('tti')[0];
+}
+```
+
 #### 优化目标
 - **TTFB 和 FCP 时间差控制在 2000ms 内**。
 - 首屏样式应内联，其他非核心 CSS/JS 放到 `<body>` 底部（JS 在 CSS 前），或者使用 `rel="preload"` 加载非阻塞资源：
@@ -91,6 +100,33 @@ navigationStart (整体页面导航开始)
 
 - **CLS（Cumulative Layout Shift）**：累计布局偏移，衡量页面布局的稳定性。
 - **LCP（Largest Contentful Paint）**：最大内容绘制，衡量页面主要内容的加载速度。
+
+
+```js
+import { onLCP, onINP, onCLS, CLSMetric } from "web-vitals/attribution";
+
+onLCP(val => {
+  const customLog = ({
+    type,
+    c1,
+    c2,
+    c3,
+    ...rest
+  }: {
+    type: string;
+    c1: string | number;
+    c2?: string;
+    c3?: string;
+    rest?: any;
+  }) => {
+    customSendEvent(type, { et: "OTHER", xpath: "", c1, c2, c3, ...rest });
+  };
+  customLog({
+    type: 'LCP',
+    c1: val
+  })
+})
+```
 
 #### 关系
 - **CLS 对 Good URL 的作用大于 LCP**，因为稳定的布局直接影响用户体验。
@@ -541,7 +577,9 @@ W3C 提供了丰富的性能相关资源，帮助开发者优化网站和应用�
 
 ## 报表
 
-分析性能优化，需要哪些报表
+分析性能优化，需要哪些报表。
+上行size: 指的是请求的大小
+下行size: 响应的大小
 
 ### 后端日志报表
 
@@ -763,3 +801,10 @@ detectImageFormatAndDevice();
 
 todo
 
+---
+
+## chrome 用户体验报告
+
+https://developer.chrome.com/docs/crux?hl=zh-cn
+
+反映了真实的 Chrome 用户在网络上使用热门目标页面的情况。

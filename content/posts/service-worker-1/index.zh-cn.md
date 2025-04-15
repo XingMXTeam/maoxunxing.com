@@ -7,30 +7,48 @@ tags:
 ---
 
 ## 目录
-1. [缓存的类型](#缓存的类型)
-   - [PreCache](#precache)
-   - [RuntimeCache](#runtimecache)
-2. [缓存策略](#缓存策略)
-   - [Cache Only](#cache-only)
-   - [Network Only](#network-only)
-   - [Cache First](#cache-first)
-   - [Network First](#network-first)
-   - [Stale While Revalidate](#stale-while-revalidate)
-3. [调试方法](#调试)
-4. [实际使用中的问题与解决方案](#实际使用)
-   - [HTML 缓存策略的选择](#html-缓存策略的选择)
-   - [Service Worker 更新机制](#service-worker-更新机制)
-5. [边界 Case 分析](#边界-case)
-   - [版本回退](#版本回退)
-   - [Service Worker 开关关闭](#service-worker-开关关闭)
-   - [切换语言或账号](#切换语言或账号)
-   - [多标签页场景](#多标签页场景)
-   - [302 重定向问题](#302-重定向问题)
-   - [数据一致性问题](#数据一致性问题)
-6. [埋点问题](#埋点问题)
-7. [实验问题](#实验问题)
-8. [错误案例分析](#错误案例分析)
-9. [真实存储数据的位置](#真实存储数据的位置)
+- [目录](#目录)
+- [缓存的类型](#缓存的类型)
+  - [PreCache](#precache)
+  - [RuntimeCache](#runtimecache)
+  - [serviceworker什么时候更新sw.js](#serviceworker什么时候更新swjs)
+  - [serviceworker有两个部分](#serviceworker有两个部分)
+- [缓存策略](#缓存策略)
+  - [Cache Only](#cache-only)
+  - [Network Only](#network-only)
+  - [Cache First](#cache-first)
+  - [Network First](#network-first)
+  - [Stale While Revalidate](#stale-while-revalidate)
+- [调试](#调试)
+- [实际使用](#实际使用)
+  - [HTML 缓存策略的选择](#html-缓存策略的选择)
+  - [Service Worker 更新机制](#service-worker-更新机制)
+  - [激活机制](#激活机制)
+  - [from service worker](#from-service-worker)
+  - [复制缓存里的数据](#复制缓存里的数据)
+  - [LCP数据排除302](#lcp数据排除302)
+  - [clients.claim()](#clientsclaim)
+- [边界 Case](#边界-case)
+  - [校验是否是当前场域](#校验是否是当前场域)
+  - [版本回退](#版本回退)
+  - [Service Worker 开关关闭](#service-worker-开关关闭)
+  - [切换语言或账号](#切换语言或账号)
+  - [多标签页场景](#多标签页场景)
+  - [302 重定向问题](#302-重定向问题)
+  - [数据一致性问题](#数据一致性问题)
+- [埋点问题](#埋点问题)
+- [实验问题](#实验问题)
+- [错误案例分析](#错误案例分析)
+- [真实存储数据的位置](#真实存储数据的位置)
+- [数据监控](#数据监控)
+- [更多资料](#更多资料)
+- [漏斗分析](#漏斗分析)
+- [在使用 Firefox 浏览器调试 Service Worker](#在使用-firefox-浏览器调试-service-worker)
+  - [3.1 打开 Service Worker 调试页面](#31-打开-service-worker-调试页面)
+  - [3.2 检查并设置断点](#32-检查并设置断点)
+  - [关闭service-worker](#关闭service-worker)
+- [service worker user agent 始终未变化](#service-worker-user-agent-始终未变化)
+- [注册sw.js](#注册swjs)
 
 ---
 
@@ -345,3 +363,43 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 ### 关闭service-worker
 
 ![alt text](image-3.png)
+
+---
+
+## service worker user agent 始终未变化
+
+user agent始终是第一次打开浏览器的时候保持一致，如果切换为mobile响应式调试，
+service worker里面的user agent并不会变成mobile的。因为service worker
+是全局的生效的，不是单对某个浏览器Tab下， 这样就无法确认user agent是否是当前mobile模拟还是未开启模拟的情况。
+
+[参考](https://github.com/GoogleChrome/workbox/issues/2314)
+
+---
+
+## 注册sw.js
+有两种方式，一个是通过nginx配置，返回pwaConfig内容 二是通过controller请求
+```js
+@GetMapping(value = "/apps/pwa/sw.js")
+public void swjs(HttpServletRequest request, HttpServletResponse response) {
+
+    try {
+        response.addHeader("service-worker-allowed", "/");
+        response.setContentType("application/javascript");
+        response.setCharacterEncoding("utf-8");
+        PrintWriter writer = response.getWriter();
+        writer.write(pwaConfig.getSwJsConfig());
+        writer.flush();
+    } catch (IOException e) {
+        log.error("request swjs error: ", e);
+    }
+}
+
+// pwaConfig.json 主要是通过importScripts注册service worker脚本
+importScripts(".../plugin-dada.js");
+importScripts(".../pwa/0.0.13/service.js");
+
+var app = new INSInstance({
+ plugins: [new XXXPlugin()],
+}).init();
+
+```
