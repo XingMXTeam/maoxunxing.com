@@ -20,6 +20,11 @@ custom_toc:
 
 ---
 
+## 核心直觉
+
+1、迭代法一定会用到while循环，二叉树遍历需要借助stack实现，二分查找只需要借助指针。一般递归更加符合直觉，但是二分查找迭代法更符合直觉。
+
+
 ## 编程工具
 
 Jupyter 是一个vscode插件，方便一次性编译和写作
@@ -1348,6 +1353,12 @@ for (let i = 0; i <= n - k; i++) {
 [Binary Search  二分查找](https://leetcode.com/problems/binary-search/)
 ![alt text](image-12.png)
 
+```text
+思维误区
+1、二分查找不是单纯找指定元素。它本质上可以**缩短范围**，只要你找到条件。这里比较的是当前行的最小和最大的元素，而不是两行的第一个元素。
+2、迭代法和递归都是可以实现二分查找的
+
+```
 
 ```python
 class Solution:  
@@ -1375,6 +1386,7 @@ class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:  
         rows, cols = len(matrix), len(matrix[0])  
         top, bot = 0, rows - 1  
+        targetRow = -1
         while top <= bot:  # = 表示获取最后一个值
             mid = bot + (top - bot) // 2  
             if target > matrix[mid][-1]:  
@@ -1382,12 +1394,8 @@ class Solution:
             elif target < matrix[mid][0]:  
                 bot = mid - 1  
             else:  
+                targetRow = mid
                 break  # 找到当前行  
-  
-        if not (top <= bot):  # 没找到  
-            return False  
-  
-        row = bot + (top - bot) // 2  # 当前行  
   
         l, r = 0, cols - 1  
         while l <= r:  
