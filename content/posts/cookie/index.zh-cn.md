@@ -71,6 +71,8 @@ tags:
 
 自己的请求只能往自己的域名设置cookie（浏览器无法通过document.cookie往其他三方域名写cookie)， 现在往三方cookie设置值需要用户允许，这样可以再A站点通过B站点请求往B站点设置cookie，具体设置的是一个id建立了A站点信息和B站点的关系。从而能实现访问b站点时带上这个id，知道这个用户访问过A站点的什么信息。 这样A站点到B站点投广告，会更加精准，因为B站点知道用户关注过什么内容。 通过三方脚本注入实现了自信息闭环，包括谷歌、facebook的广告机制都是如此。
 
+简单说： 如果A站点嵌入了三方脚本，这个三方脚本可以获取到当前站点的所有信息包括cookie（非http only），然后往自己的域名里写相同的cookie，这样方访问三方站点时，cookie会自动带到服务端，也就是可以拿到A站点访问过的信息，包括设备、浏览历史等等
+
 - **描述**：Google 提出的 CHIPS（Cookies Having Independent Partitioned State）方案，用于解决第三方 Cookie 的隐私问题。
 - **实现方式**：
   - 使用 `Partitioned` 属性将 Cookie 分区。

@@ -23,7 +23,8 @@ custom_toc:
 ## 核心直觉
 
 1、迭代法一定会用到while循环，二叉树遍历需要借助stack实现，二分查找只需要借助指针。一般递归更加符合直觉，但是二分查找迭代法更符合直觉。
-
+2、树的前中后序遍历都是递归，不用关心。反而要区分层序遍历和广度遍历，层序遍历不是用递归。
+2、
 
 ## 编程工具
 
@@ -2151,6 +2152,41 @@ class Solution:
         # 节点值相等，再判断叶子树（作为整体判断）  
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 ```
+
+```python
+from collections import deque
+
+def isSameTree(tr1: TreeNode, tr2: TreeNode) -> bool:
+    if not tr1 and not tr2:
+        return True
+    if not tr1 or not tr2:
+        return False
+
+    s = deque([(tr1, tr2)])
+
+    while s:
+        n1, n2 = s.popleft()
+
+        # 当前节点值是否相同
+        if n1.val != n2.val:
+            return False
+
+        # 检查左子树: 这里的思路可以简单点，如果一个为空，一个非空，肯定返回false。如果都为空，也不需要append
+        if n1.left and not n2.left or not n1.left and n2.left:
+            return False
+        elif n1.left and n2.left:
+            s.append((n1.left, n2.left))
+
+        # 检查右子树
+        if n1.right and not n2.right or not n1.right and n2.right:
+            return False
+        elif n1.right and n2.right:
+            s.append((n1.right, n2.right))
+
+    return True
+
+```
+
 [Subtree of Another Tree  另一棵树的子树](https://leetcode.com/problems/subtree-of-another-tree/)
 
 ![alt text](image-35.png)

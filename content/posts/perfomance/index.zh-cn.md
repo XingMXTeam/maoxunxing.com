@@ -434,6 +434,8 @@ order by
 
 ## 性能分位统计
 
+https://help.aliyun.com/zh/sls/user-guide/aggregate-function?spm=a2c4g.11186623.help-menu-28958.d_2_5_1_6_0_0.47b91203fpTwZw
+
 ```sql
 ((content: 'entry_f'))| WITH extracted_data AS (
   SELECT 

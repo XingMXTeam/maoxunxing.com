@@ -1,5 +1,5 @@
 ---
-title: "SSR (Streaming Server-Side Reandering)"
+title: "React SSR (Streaming Server-Side Reandering)"
 description: "React SSR是什么？"
 date: 2024-08-03
 tags:
@@ -10,12 +10,21 @@ images:
 
 ## 目录
 
-1. [React SSR 的历史](#react-ssr-的历史)
-2. [设计初衷](#设计初衷)
-3. [React v16 SSR 的改进](#react-v16-ssr-的改进)
-4. [React v18 SSR 的改进](#react-v18-ssr-的改进)
-5. [流式 SSR 的实现](#流式-ssr-的实现)
-6. [什么是水合？](#什么是水合)
+- [目录](#目录)
+- [React SSR 的历史](#react-ssr-的历史)
+- [设计初衷](#设计初衷)
+  - [示例代码](#示例代码)
+    - [服务端渲染](#服务端渲染)
+    - [客户端水合](#客户端水合)
+- [React v16 SSR 的改进](#react-v16-ssr-的改进)
+- [React v18 SSR 的改进](#react-v18-ssr-的改进)
+- [流式 SSR 的实现](#流式-ssr-的实现)
+  - [示例代码](#示例代码-1)
+  - [解决传统 SSR 的问题](#解决传统-ssr-的问题)
+    - [解决方案](#解决方案)
+    - [懒加载组件](#懒加载组件)
+- [什么是水合？](#什么是水合)
+- [总结](#总结)
 
 ---
 

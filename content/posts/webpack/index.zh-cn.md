@@ -1,5 +1,5 @@
 ---
-title: "前端构建 你需要知道的"
+title: "前端构建，你需要知道的"
 description: ""
 date: 2025-02-06
 tags:
@@ -17,8 +17,6 @@ custom_toc:
   - title: "错误案例"
 ---
 
----
-
 ## webpack loader
 
 Webpack 的 loader 是用来**对模块的源代码进行转换**的。在构建过程中，Webpack 会使用 loader 来处理不同类型的文件，比如将 TypeScript 转换为 JavaScript，将 SCSS 转换为 CSS，或者将特定格式的源代码编译成目标代码
@@ -30,6 +28,22 @@ Webpack 的 loader 是用来**对模块的源代码进行转换**的。在构建
 ## Webpack-Chain 与 Chunk 分包详解
 
 [Webpack-Chain](https://github.com/neutrinojs/webpack-chain) 是一个链式 API 工具，用于更优雅地操作 Webpack 配置。相比于直接修改 Webpack 配置对象，Webpack-Chain 提供了更直观、可读性更高的方式。
+
+为什么更直观、可读性高？因为以前可能是通过命令式的，现在是声明式的，通过指定name，对不同的配置做操作。
+
+[详细文档](https://segmentfault.com/a/1190000017547171#articleHeader10)
+
+### exclude
+
+把某个文件剔除掉
+
+```js
+config.module
+  .rule('exclude')
+  .exclude
+  .add(/\.svg$/) // 剔除svg，svg用单独的loader处理
+  .end()
+```
 
 ### `config.target('node')`
 
@@ -494,6 +508,8 @@ ERR! The 'compilation' argument must be an instance of Compilation 348 TypeError
 
 
 Rollup 是一个模块化打包工具，专注于 ES 模块（ESM）的打包。它能够高效地将多个模块合并为一个或多个文件，并支持多种输出格式（如 ESM、CommonJS、UMD 等）。Rollup 的配置文件通常是一个 JavaScript 文件，用于定义打包行为。
+
+简单结论：rollup适合库文件的打包
 
 ## 配置文件解析
 
