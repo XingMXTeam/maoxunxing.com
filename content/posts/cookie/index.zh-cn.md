@@ -137,7 +137,7 @@ tags:
 
 - **示例**：
   ```javascript
-  document.cookie = "e_id=pt1; Domain=.aliexpress.com; Expires=Tue, 13-Mar-2091 12:03:24 GMT; Path=/; Secure; SameSite=None";
+  document.cookie = "e_id=pt1; Domain=.a.com; Expires=Tue, 13-Mar-2091 12:03:24 GMT; Path=/; Secure; SameSite=None";
   ```
 - **注意事项**：
   - `Domain` 必须与当前页面的域名一致才能设置成功。

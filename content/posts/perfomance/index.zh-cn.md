@@ -810,3 +810,18 @@ todo
 https://developer.chrome.com/docs/crux?hl=zh-cn
 
 反映了真实的 Chrome 用户在网络上使用热门目标页面的情况。
+
+
+---
+
+## transferSize 为什么比 encodedBodySize 小
+
+在 Resource Timing API 规范中，encodedBodySize 始终报告“已获取的资源负载体的字节数”（如来自第一次网络加载或缓存中的原始压缩体积），而transferSize 则报告“实际通过网络传输的字节数”，包括响应头和负载体​。
+
+当浏览器对已缓存的资源进行重新验证（revalidation）时：
+
+浏览器并不重复下载整个响应体，而仅发送 If‑Modified‑Since/ETag 等请求头并接收空体或极小的 304 响应。
+
+此时 transferSize 只反映了此次“验证请求”中包含的HTTP 头部（通常只有几 KB），而不会再次计入原有的负载体大小​
+
+但 encodedBodySize 仍然沿用“第一次从网络获取或缓存写入时”的负载体体积，故往往远大于仅包含头部的 transferSize​

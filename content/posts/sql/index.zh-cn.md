@@ -391,7 +391,7 @@ FROM (
       FROM xxxx
       WHERE pkg.dt = MAX_PT('afxadm.bmw_pkg')
         AND pkg.is_delete = '0'
-        AND pkg.name NOT LIKE '@alipay/%'
+        AND pkg.name NOT LIKE '@xx/%'
     ) pkg
   ) app
 ) lines;

@@ -598,7 +598,7 @@ Vite 是一个现代化的前端构建工具，通常需要服务端支持（如
 #### Whistle 规则示例
 
 ```shell
-/(pre-)?(c|g)sp.aliexpress.com\/apps\/.*$/ resReplace://{res-replace}
+/(pre-)?(c|g)sp.a.com\/apps\/.*$/ resReplace://{res-replace}
 ```
 
 上述规则匹配指定域名下的 HTML 文件，并通过 `resReplace` 替换其内容。
@@ -661,7 +661,7 @@ export default {
   server: {  
     // @3
     cors: {  
-      origin: ['https://pre-csp.aliexpress.com', 'https://*.aliexpress.com'],  
+      origin: ['https://pre-csp.a.com', 'https://*.a.com'],  
       credentials: true,  
     },  
     headers: {  
@@ -703,7 +703,7 @@ Access to script at 'http://localhost:5173/@vite/client' from origin 'xx' has be
 通过 `server.cors` 和 `server.headers` 配置，允许跨域访问：
 ```javascript
 cors: {  
-  origin: ['https://pre-csp.aliexpress.com', 'https://*.aliexpress.com'],  
+  origin: ['https://pre-csp.a.com', 'https://*.a.com'],  
   credentials: true,  
 },
 headers: {  
