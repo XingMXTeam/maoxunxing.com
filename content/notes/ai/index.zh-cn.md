@@ -2,7 +2,6 @@
 title: "MCP Server 初尝试"
 date: 2025-03-31
 description: ""
-draft: true
 tags:
   - AI
   - MCP

@@ -198,7 +198,7 @@
     <main class="wrapper">
       {{ partial "header.html" . }}
 
-      <div class="content">
+      <article class="content">
         <!-- google adsense -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014"
         crossorigin="anonymous"></script>
@@ -212,7 +212,7 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         {{ block "content" . }}{{ end }}
-      </div>
+      </article>
 
       {{ partial "footer.html" . }}
     </main>

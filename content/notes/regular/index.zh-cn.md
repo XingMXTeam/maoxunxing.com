@@ -76,12 +76,3 @@ Person.prototype.sayHello = function() {
 const person = new Person("Alice");
 console.log(person.__proto__ === Person.prototype); // true
 ```
-
----
-
-## 总结
-
-通过以上内容，我们了解了 Regular 框架的核心机制和优化策略，包括：
-1. **脏检查稳定性**：区分稳定的监听器和不稳定的监听器。
-2. **列表性能优化**：通过莱文斯坦编辑距离算法和内部 Diff 优化列表更新。
-4. **原型与原型链**：理解 `__proto__` 和 `prototype` 的区别及其作用。

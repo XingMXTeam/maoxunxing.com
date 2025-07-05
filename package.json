@@ -14,7 +14,10 @@
     "check-format": "prettier --check .",
     "format": "prettier --write .",
     "cover": "node scripts/generate-cover.js",
-    "cover:all": "node scripts/generate-all-covers.js"
+    "cover:all": "node scripts/generate-all-covers.js",
+    "translate:shell": "bash scripts/translate-gemini-shell.sh",
+    "translate:shell:all": "bash scripts/translate-gemini-shell.sh --all",
+    "translate:simple": "bash scripts/translate-simple.sh"
   },
   "author": "",
   "license": "ISC",

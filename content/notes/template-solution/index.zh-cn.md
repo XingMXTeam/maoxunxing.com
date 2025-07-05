@@ -2,7 +2,6 @@
 title: "技术方案模版"
 date: 2025-03-31
 description: ""
-draft: true
 tags:
   - Solution
 ---

@@ -2,7 +2,6 @@
 title: "自我反思2025"
 date: 2025-04-10
 description: ""
-draft: true
 tags:
   - 自我反思
 ---

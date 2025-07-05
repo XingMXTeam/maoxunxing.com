@@ -1,8 +1,8 @@
 baseurl = "https://maoxunxing.com/"
 title = "maoxunxing"
 theme = "hugo-coder"
-languagecode = "zh-cn"
-defaultcontentlanguage = "zh-cn"
+languagecode = "en"
+defaultcontentlanguage = "en"
 
 paginate = 10
 canonifyurls = false
@@ -170,3 +170,7 @@ resampleFilter = "Lanczos"
   name = "关于"
   url = "/about/"
   weight = 5
+[[languages.zh-CN.menu.main]]
+  name = "归档"
+  url = "/archive/"
+  weight = 6

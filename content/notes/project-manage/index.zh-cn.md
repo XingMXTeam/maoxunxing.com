@@ -2,7 +2,6 @@
 title: "项目管理的那些事"
 date: 2025-04-11
 description: ""
-draft: true
 tags:
   - 项目管理
 ---
