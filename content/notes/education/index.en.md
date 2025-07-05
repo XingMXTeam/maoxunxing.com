@@ -1,5 +1,5 @@
 ---
-title: "[Reprint] The World Is Changing, You Just Haven't Noticed"
+title: "The World Is Changing, You Just Haven't Noticed"
 date: 2019-11-25
 tags:
   - Education

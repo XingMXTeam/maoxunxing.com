@@ -1,5 +1,5 @@
 --- 
-title: "[Translation] How to fork a project and do subsequent development" 
+title: "How to fork a project and do subsequent development" 
 date: 2019-11-25 
 tags:
   - Git

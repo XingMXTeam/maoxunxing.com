@@ -1,5 +1,5 @@
 ---
-title: “Immutable Data Structure Implementation Principles and Practices”
+title: "Immutable Data Structure Implementation Principles and Practices"
 date: 2019-11-25
 tags:
   - JavaScript

@@ -1,5 +1,5 @@
 ---
-title: “How to help a blind person”
+title: "How to help a blind person"
 date: 2019-11-25
 tags:
   - Self-media

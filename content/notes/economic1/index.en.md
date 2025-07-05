@@ -1,5 +1,5 @@
 ---
-title: “2023 Investment and Economic Analysis Guide”
+title: "2023 Investment and Economic Analysis Guide"
 date: 2019-11-25
 tags:
   - Investment

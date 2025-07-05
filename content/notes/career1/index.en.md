@@ -1,5 +1,5 @@
 ---
-title: “The Fundamental Logic of Entrepreneurship”
+title: "The Fundamental Logic of Entrepreneurship"
 date: 2019-11-25
 tags:
   - Entrepreneurship

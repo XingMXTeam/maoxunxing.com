@@ -1,5 +1,5 @@
 ---
-title: “Management”
+title: "Management"
 date: 2021-12-24T11:14:58+08:00
 tags:
   - Soft skills

@@ -1,5 +1,5 @@
 ---
-title: “Interview Channels, Principles, and Response Strategies”
+title: "Interview Channels, Principles, and Response Strategies"
 date: 2019-09-08
 tags:
   - Interview

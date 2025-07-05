@@ -1,5 +1,5 @@
 ---
-title: "【Repost】Work Attitude"
+title: "Work Attitude"
 date: 2019-11-25
 tags:
   - Workplace

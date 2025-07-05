@@ -1,5 +1,5 @@
 ---
-title: “Logical Thinking and Communication Skills”
+title: "Logical Thinking and Communication Skills"
 date: 2019-11-25
 tags:
   - Communication

@@ -1,171 +1,171 @@
 ---
-title: “MobX状态管理指南”
+title: "MobX State Management Guide"
 date: 2019-11-25
 tags:
   - Mobx
-  - 状态管理
+  - State Management
 ---
 
-## 目录
+- [MobX Versions](#mobx-versions)
 
-- [MobX 版本](#mobx-版本)
-- [设计哲学](#设计哲学)
-- [核心概念](#核心概念)
-  - [可观察的状态（@observable）](#可观察的状态observable)
-  - [计算值（@computed）](#计算值computed)
-  - [反应（@observer 和 autorun）](#反应observer-和-autorun)
-- [代码示例](#代码示例)
-  - [示例代码](#示例代码)
-  - [运行逻辑](#运行逻辑)
-- [自定义反应：`autorun`](#自定义反应autorun)
-  - [特点](#特点)
+## Table of Contents
+- [Design Philosophy](#design-philosophy)
+- [Core Concepts](#core-concepts)
+  - [Observable State (@observable)](#observable-state-observable)
+  - [Computed Values (@computed)](#computed-values-computed)
+- [Reaction (@observer and autorun)](#reactionobserver-和-autorun)
+- [Code Example](#code-example)
+  - [Example Code](#example-code)
+  - [Execution Logic](#execution-logic)
+- [Custom Reaction: `autorun`](#custom-reactionautorun)
+  - [Features](#features)
 
+## MobX Versions
+
+- **MobX 4**: Supports ES5 and decorator syntax, with good compatibility.
+
+- **MobX 5**: Fully based on ES6 Proxy, better performance, but does not support IE11.
 ---
 
-## MobX 版本
+## Design Philosophy
 
-- **MobX 4**：支持 ES5 和装饰器语法，兼容性较好。
-- **MobX 5**：完全基于 ES6 Proxy，性能更优，但不支持 IE11。
+The design philosophy of MobX can be summarized in the following points:
 
----
+1. **Automatic Updates**
 
-## 设计哲学
-
-MobX 的设计哲学可以总结为以下几点：
-
-1. **自动更新**：
-   - 应用程序的状态应该自动获取，无需手动触发事件或调用分发器。
-   - MobX 提供响应式机制，确保状态图表始终保持最新。
-
-2. **高效更新**：
-   - 使用虚拟依赖状态图表，只有在需要时才更新视图，避免不必要的渲染。
-
-3. **简单且可扩展**：
-   - 对代码侵入性小，易于集成到现有项目中。
-   - 支持从小型应用扩展到复杂系统。
+- The application state should be automatically obtained without manually triggering events or calling a dispatcher.
+   - MobX provides a reactive mechanism to ensure the state graph remains up-to-date.
+2. **Efficient Updates**:
 
 ---
+   - Use a virtual dependency state graph to update views only when necessary, avoiding unnecessary rendering.
 
-## 核心概念
+3. **Simple and Scalable**:
+   - Low code intrusion, easy to integrate into existing projects.
+   - Supports scaling from small applications to complex systems.
 
-### 可观察的状态（@observable）
+## Core Concepts
 
-- **定义**：`@observable` 用于标记一个状态是可观察的，任何对该状态的修改都会触发相关视图的更新。
-- **特点**：
-  - 自动追踪依赖关系。
-  - 修改后会通知所有依赖该状态的观察者。
+### Observable State (@observable)
 
-### 计算值（@computed）
+- **Definition**: `@observable` is used to mark a state as observable, and any modification to this state will trigger updates to related views.
 
-- **定义**：`@computed` 用于定义基于其他可观察状态的派生值。
-- **特点**：
-  - 延迟计算：只有当被使用时才会重新计算。
-  - 缓存结果：如果依赖的状态未改变，则不会重复计算。
+- **Features**:
+  - Automatically tracks dependencies.
+- Changes will notify all observers that depend on this state.
+### Calculated Value (@computed)
 
-### 反应（@observer 和 autorun）
+- **Definition**: `@computed` is used to define derived values based on other observable states.
 
-- **@observer**：
-  - 将 React 组件包装为观察者组件，使其能够响应状态变化并自动重新渲染。
-- **autorun**：
-  - 定义自定义的副作用函数，当依赖的状态发生变化时自动执行。
+- **Features**:
+- Lazy computation: It is recalculated only when it is used.
+  - Cache results: It will not be recalculated if the dependent state has not changed.
+### Reaction (@observer and autorun)
 
 ---
 
-## 代码示例
+- **@observer**:
+- Wrap a React component as an observer component to make it able to respond to state changes and automatically re-render.
+- **autorun**:
+  - Define a custom side-effect function that automatically executes when the dependent state changes.
 
-以下是一个完整的 MobX 示例，展示如何使用 `@observable`、`@computed` 和 `@observer`。
+## Code Example
 
-### 示例代码
+Here is a complete MobX example showing how to use `@observable`, `@computed`, and `@observer`.
+
+### Example Code
 
 ```js
+
 import { observable, computed, observer } from “mobx”;
-import { observer as observerReact } from “mobx-react”;
-
+import { observer as observerReact } from "mobx-react";
 class TodoList {
+
     @observable todos = [];
-
     @computed get unfinishedTodoCount() {
-        return this.todos.filter(todo => !todo.finished).length;
-    }
-}
 
+return this.todos.filter(todo => !todo.finished).length;
 const todoList = new TodoList();
-
-// 观察者组件
+// Observer component
 @observer
+
 class TodoListView extends Component {
+
     render() {
         return (
             <div>
-                <ul>
+<ul>
                     {this.props.todoList.todos.map(todo => (
                         <TodoView todo={todo} key={todo.id} />
+---
                     ))}
-                </ul>
+</ul>
                 Tasks left: {this.props.todoList.unfinishedTodoCount} {/* @1 */}
             </div>
         );
-    }
-}
-
-// 单项组件
+// Single component
 const TodoView = observer(({ todo }) => (
     <li>
         <input
-            type="checkbox"
+
+type="checkbox"
             checked={todo.finished}
             onClick={() => (todo.finished = !todo.finished)}
         />
-        {todo.title}
+{todo.title}
     </li>
 ));
-
-// 添加一些初始数据
+    }
+}
+// Add some initial data
 todoList.todos.push(
-    { id: 1, title: “Learn MobX”, finished: false },
-    { id: 2, title: “Build an App”, finished: false }
-);
 
+    { id: 1, title: "Learn MobX", finished: false },
+    { id: 2, title: "Build an App", finished: false }
+);
 export default function App() {
     return <TodoListView todoList={todoList} />;
-}
-```
 
-### 运行逻辑
+### Execution Logic
+1. **Click an item**:
+- When the user clicks the checkbox of a certain todo item, `TodoView` will force a re-render.
+   - If `unfinishedTodoCount` changes, `TodoListView` will also re-render.
 
-1. **点击单项**：
-   - 当用户点击某个待办事项的复选框时，`TodoView` 会强制重新渲染。
-   - 如果 `unfinishedTodoCount` 发生变化，`TodoListView` 也会重新渲染。
+2. **Remove commented-out code**:
 
-2. **删除注释代码**：
-   - 如果删除 `Tasks left: {this.props.todoList.unfinishedTodoCount}` 这一行代码，`TodoListView` 不会重新渲染，因为没有依赖 `unfinishedTodoCount`。
-
----
-
-## 自定义反应：`autorun`
-
-`autorun` 是一种强大的工具，用于定义自定义的副作用函数。以下是一个简单的例子：
+   - If you delete the line of code `Tasks left: {this.props.todoList.unfinishedTodoCount}`, `TodoListView` will not re-render, because it does not depend on `unfinishedTodoCount`.
+## Custom Reactivity: `autorun`
+`autorun` is a powerful tool for defining custom side-effect functions. Here is a simple example:
 
 ```js
 import { observable, autorun } from “mobx”;
 
-class Store {
-    @observable count = 0;
+    }
+
 }
 
+class Store {
+
+    @observable count = 0;
 const store = new Store();
 
-// 自动运行副作用
+// Automatically runs side effects
 autorun(() => {
-    console.log(`当前计数：${store.count}`);
-});
+    console.log(`Current count: ${store.count}`);
 
-// 修改状态
+// Modify state
+
 store.count++; // Output: Current count: 1
 store.count++; // Output: Current count: 2
-```
-
 ### Features
-
 - **Automatic dependency tracking**: `autorun` automatically tracks the observable state it uses internally.
+
 - **Immediate response**: Whenever the dependent state changes, `autorun` executes immediately.
+}
+```
+---
+
+}
+
+});
+```
