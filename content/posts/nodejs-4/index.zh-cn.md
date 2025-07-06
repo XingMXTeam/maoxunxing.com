@@ -3,6 +3,8 @@ title: "NodeJS开发和运维"
 date: 2025-02-06
 tags:
   - nodejs
+images:
+  - nodejs-4/cover.png
 ---
 
 本文档整理了技术架构、稳定性保障、代码实践、问题案例及后端监控技术方案等内容，旨在为开发和运维工作提供全面的参考。

@@ -3,6 +3,8 @@ title: "Overview of Containerization Technology"
 date: 2025-02-06
 tags:
   - Docker
+images:
+  - docker/cover.png
 ---
 ## Table of Contents
 1. [Problems Solved by Containerization](#problems-solved-by-containerization)

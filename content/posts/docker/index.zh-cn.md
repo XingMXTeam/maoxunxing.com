@@ -3,6 +3,8 @@ title: "容器化技术概述"
 date: 2025-02-06
 tags:
   - Docker
+images:
+  - docker/cover.png
 ---
 
 ## 目录

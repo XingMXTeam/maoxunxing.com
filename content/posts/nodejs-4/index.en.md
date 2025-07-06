@@ -3,6 +3,8 @@ title: "NodeJS Development and Operations"
 date: 2025-02-06
 tags:
   - nodejs
+images:
+  - nodejs-4/cover.png
 ---
 This document organizes content such as technical architecture, stability assurance, code practices, case studies, and backend monitoring solutions, aiming to provide a comprehensive reference for development and operations work.
 ## Table of Contents
