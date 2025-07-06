@@ -15,6 +15,8 @@ custom_toc:
   - title: "Login-free Solution"
   - title: "metaq"
   - title: "rpc"
+images:
+  - engineer/cover.png
 ---
 ## Engineering Basics
 ## Project Directory Splitting

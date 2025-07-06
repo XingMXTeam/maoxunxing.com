@@ -15,6 +15,8 @@ custom_toc:
   - title: "免登方案"
   - title: "metaq"
   - title: "rpc"
+images:
+  - engineer/cover.png
 ---
 
 ## 工程基础
