@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - Performance Optimization
   - Web Development
+images:
+  - perfomance/cover.png
 ---
 ## Table of Contents
 1. [Key Concepts](#key-concepts)

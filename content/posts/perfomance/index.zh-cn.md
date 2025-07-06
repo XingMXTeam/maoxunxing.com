@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - 性能优化
   - Web开发
+images:
+  - perfomance/cover.png
 ---
 
 ## 目录
