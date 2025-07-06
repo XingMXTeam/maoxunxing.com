@@ -3,6 +3,8 @@ title: "Midway 6 升级到 v8 踩坑记录"
 date: 2025-02-06
 tags:
   - nodejs
+images:
+  - nodejs-5/cover.png
 ---
 
 ## 目录

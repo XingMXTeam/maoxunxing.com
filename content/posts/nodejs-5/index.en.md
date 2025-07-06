@@ -3,6 +3,8 @@ title: "Pitfalls of Upgrading Midway from v6 to v8"
 date: 2025-02-06
 tags:
   - nodejs
+images:
+  - nodejs-5/cover.png
 ---
 ## Table of Contents
 1. [this.ctx.render method does not exist](#thisctxrender-method-does-not-exist)
