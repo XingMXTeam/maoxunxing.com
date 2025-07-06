@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - Web开发
   - 中后台
+images:
+  - front-management/cover.png
 ---
 
 基于ice 3.0 搭建中后台架构

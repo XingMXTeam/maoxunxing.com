@@ -3,6 +3,8 @@ title: "Node.js 依赖注入"
 date: 2025-03-25
 tags:
   - nodejs
+images:
+  - nodejs-7/cover.png
 ---
 
 1、类型元数据的生成

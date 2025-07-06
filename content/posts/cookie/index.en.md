@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - cookie
   - Web Development
+images:
+  - cookie/cover.png
 ---
 ## Table of Contents
 - [Table of Contents](#table-of-contents)

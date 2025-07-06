@@ -15,6 +15,8 @@ custom_toc:
   - title: "跳表"
   - title: "图"
   - title: "Trie树"
+images:
+  - data-structure/cover.png
 ---
 
 基础的数据结构有： 数据、链表、栈、队列、树、图。

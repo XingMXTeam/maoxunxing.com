@@ -3,6 +3,8 @@ title: "Node.js Dependency Injection"
 date: 2025-03-25
 tags:
   - nodejs
+images:
+  - nodejs-7/cover.png
 ---
 1. Generation of Type Metadata
 When the `emitDecoratorMetadata` option is enabled during TypeScript compilation, three types of metadata are automatically generated for decorated classes (however, JavaScript does not have this step as it lacks static compilation):

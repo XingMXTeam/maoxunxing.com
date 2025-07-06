@@ -5,6 +5,8 @@ date: 2025-02-06
 tags:
   - Web Development
   - Cross-Terminal
+images:
+  - javascript-dynamic-1/cover.png
 ---
 In modern front-end development, cross-terminal development and dynamic capabilities are crucial for improving development efficiency and optimizing user experience. This article will discuss topics such as **data delivery and module publishing**, **module system layering**, **responsive design**, **platform-specific builds**, and **dynamic technologies**, providing detailed analysis and organization.
 ---

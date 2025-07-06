@@ -3,6 +3,8 @@ title: "Detailed Explanation and Problem Analysis of CDN Technology"
 date: 2025-02-06
 tags:
   - Web Development
+images:
+  - cdn/cover.png
 ---
 ## Table of Contents
 - [Table of Contents](#目录)

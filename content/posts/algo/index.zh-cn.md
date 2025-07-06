@@ -15,6 +15,8 @@ custom_toc:
   - title: "垃圾回收算法"
   - title: "压缩算法"
   - title: "莱文斯坦算法"
+images:
+  - algo/cover.png
 ---
 
 常见的算法思想： 二分法、动态规划：1 暴力 2 缓存 3 递推公式 解决问题： 找极值 找零钱 重点、回溯、递归和迭代的思想，层级遍历，比如；虚拟dom，最长递增子序列（vue的renderer.ts getSequence keepAlive(LRU Cache 基于链表的缓存结构)

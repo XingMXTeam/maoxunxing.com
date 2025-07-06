@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - Web Development
   - Admin/Backend
+images:
+  - front-management/cover.png
 ---
 Building an admin/backend architecture based on ice 3.0
 ## Communication Mechanism

@@ -7,6 +7,8 @@ tags:
 custom_toc:
   - title: "架构概念"
   - title: "如何设计导航"
+images:
+  - container/cover.png
 ---
 
 ## 架构概念

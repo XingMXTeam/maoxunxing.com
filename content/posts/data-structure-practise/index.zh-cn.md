@@ -17,7 +17,8 @@ custom_toc:
   - title: "interval"
   - title: "Greedy"
   - title: "Graph"
-
+images:
+  - data-structure-practise/cover.png
 ---
 
 ## 核心直觉

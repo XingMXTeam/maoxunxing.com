@@ -17,6 +17,8 @@ custom_toc:
   - title: "interval"
   - title: "Greedy"
   - title: "Graph"
+images:
+  - data-structure-practise/cover.png
 ---
 ## Core Intuition
 1. The iterative method will definitely use a while loop. Binary tree traversal needs the help of a stack, while binary search only needs pointers. Generally, recursion is more intuitive, but the iterative method for binary search is more intuitive.

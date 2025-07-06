@@ -3,6 +3,8 @@ title: "CDN 技术详解与问题分析"
 date: 2025-02-06
 tags:
   - Web开发
+images:
+  - cdn/cover.png
 ---
 
 ## 目录

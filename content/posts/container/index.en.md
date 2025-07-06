@@ -7,6 +7,8 @@ tags:
 custom_toc:
   - title: "Architecture Concepts"
   - title: "How to Design Navigation"
+images:
+  - container/cover.png
 ---
 ## Architecture Concepts
 ## Business Architecture

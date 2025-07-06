@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - cookie
   - Web开发
+images:
+  - cookie/cover.png
 ---
 
 ## 目录

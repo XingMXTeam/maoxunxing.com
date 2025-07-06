@@ -15,6 +15,8 @@ custom_toc:
   - title: "Garbage Collection Algorithms"
   - title: "Compression Algorithms"
   - title: "Levenshtein Algorithm"
+images:
+  - algo/cover.png
 ---
 Common algorithm ideas: Binary search, dynamic programming: 1. Brute force 2. Caching 3. Recurrence relations. Problem-solving: Finding extrema, making change. Key concepts: backtracking, recursion, and iteration, level-order traversal, for example; virtual DOM, longest increasing subsequence (Vue's renderer.ts getSequence, keepAlive (LRU Cache based on a linked list structure)).
 ## Complexity Analysis

@@ -15,6 +15,8 @@ custom_toc:
   - title: "Skip List"
   - title: "Graph"
   - title: "Trie Tree"
+images:
+  - data-structure/cover.png
 ---
 Basic data structures include: arrays, linked lists, stacks, queues, trees, and graphs.
 They can be categorized into two types: linear structures (arrays, queues, stacks, linked lists) and non-linear structures (trees, graphs).

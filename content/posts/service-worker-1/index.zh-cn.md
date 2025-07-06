@@ -4,6 +4,8 @@ description: ""
 date: 2025-02-06
 tags:
   - Service Worker
+images:
+  - service-worker-1/cover.png
 ---
 
 ## 目录

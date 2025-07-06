@@ -4,6 +4,8 @@ date: 2025-02-06
 tags:
   - JavaScript
   - Web Development
+images:
+  - javascript-anime/cover.png
 ---
 In modern front-end development, animation is a crucial tool for enhancing user experience. This article introduces two excellent animation libraries, **Framer Motion** and **AnimeJS**, and provides detailed explanations and code examples based on their features and use cases.
 ---
