@@ -200,16 +200,25 @@
 
       <article class="content">
         <!-- google adsense -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014"
-        crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-6892599483138014"
-        data-ad-slot="7317384674"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
+        <div id="adsense-container" style="min-height: 90px; margin: 20px 0; text-align: center;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-6892599483138014"
+               data-ad-slot="7317384674"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
         <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
+          // Wait for the page to be fully loaded before loading ads
+          window.addEventListener('load', function() {
+            // Additional check to ensure the container is visible
+            setTimeout(function() {
+              var adContainer = document.getElementById('adsense-container');
+              if (adContainer && adContainer.offsetWidth > 0) {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              }
+            }, 100);
+          });
         </script>
         {{ block "content" . }}{{ end }}
       </article>
@@ -240,30 +249,36 @@
       
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          // 初始化 Gumshoe
-          var spy = new Gumshoe('#TableOfContents a', {
-            navClass: 'active', // 高亮类名
-            contentClass: 'content-active',
-            offset: 70, // 偏移量
-            reflow: true, // 自动处理动态内容
-            nested: true, // 支持嵌套菜单
-            events: true, // 启用事件
-          });
+          // 初始化 Gumshoe - 只在存在目录时初始化
+          var tocLinks = document.querySelectorAll('#TableOfContents a');
+          if (tocLinks.length > 0) {
+            var spy = new Gumshoe('#TableOfContents a', {
+              navClass: 'active', // 高亮类名
+              contentClass: 'content-active',
+              offset: 70, // 偏移量
+              reflow: true, // 自动处理动态内容
+              nested: true, // 支持嵌套菜单
+              events: true, // 启用事件
+            });
+          }
 
-          // 初始化 Headroom
+          // 初始化 Headroom - 添加空值检查
           var header = document.querySelector("header");
           var toc = document.querySelector(".toc-wrapper");
-          var headroom = new Headroom(header, {
-            offset: 100,
-            tolerance: 5,
-            onPin: function() {
-              if(toc) toc.style.top = "150px";
-            },
-            onUnpin: function() {
-              if(toc) toc.style.top = "0px";
-            }
-          });
-          headroom.init();
+          
+          if (header) {
+            var headroom = new Headroom(header, {
+              offset: 100,
+              tolerance: 5,
+              onPin: function() {
+                if(toc) toc.style.top = "150px";
+              },
+              onUnpin: function() {
+                if(toc) toc.style.top = "0px";
+              }
+            });
+            headroom.init();
+          }
         });
       </script>
      
