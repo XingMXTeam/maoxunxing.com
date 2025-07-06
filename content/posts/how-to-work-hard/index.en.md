@@ -1,3 +1,4 @@
+---
 title: "[Translation] How to Work Hard"
 date: 2021-08-20
 tags:

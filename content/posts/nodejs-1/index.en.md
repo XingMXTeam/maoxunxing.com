@@ -1,3 +1,4 @@
+---
 title: "Automated Application Deployment and Publishing"
 description: "How to use pm2 for automated script-based application startup and deployment"
 date: 2024-09-14

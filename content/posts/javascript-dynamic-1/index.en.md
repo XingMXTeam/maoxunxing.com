@@ -1,3 +1,4 @@
+---
 title: "Cross-Terminal Development and Dynamic Practices"
 description: ""
 date: 2025-02-06
