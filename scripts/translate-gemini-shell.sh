@@ -10,6 +10,9 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Configuration
+MAX_RETRIES=3
+
 # Function to print colored output
 print_info() {
     echo -e "${BLUE}ℹ️  $1${NC}"
@@ -43,6 +46,59 @@ check_gemini() {
     print_success "Gemini CLI found: $(gemini --version)"
 }
 
+# Function to check if translation result is empty or invalid
+is_translation_empty() {
+    local text="$1"
+    
+    # Remove whitespace and check if empty
+    local trimmed=$(echo "$text" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    # Check if empty or only contains whitespace
+    if [[ -z "$trimmed" ]]; then
+        return 0  # Empty
+    fi
+    
+    # Check if it's extremely short (likely an error) - but be more lenient
+    if [[ ${#trimmed} -lt 2 ]]; then
+        return 0  # Too short, likely empty/invalid
+    fi
+    
+    return 1  # Not empty
+}
+
+# Function to translate text using Gemini CLI with retry
+translate_text_with_retry() {
+    local text="$1"
+    local max_retries="${2:-$MAX_RETRIES}"
+    local retry_count=0
+    
+    while [[ $retry_count -lt $max_retries ]]; do
+        print_info "Translation attempt $((retry_count + 1))/$max_retries" >&2
+        
+        if ! local response=$(translate_text "$text" 2>/dev/null); then
+            print_warning "Translation attempt $((retry_count + 1)) failed" >&2
+            ((retry_count++))
+            sleep 2
+            continue
+        fi
+        
+        # Check if translation result is empty
+        if is_translation_empty "$response"; then
+            print_warning "Translation result is empty, retrying..." >&2
+            ((retry_count++))
+            sleep 2
+            continue
+        fi
+        
+        # Success - return the translation
+        echo "$response"
+        return 0
+    done
+    
+    print_error "Failed to get valid translation after $max_retries attempts" >&2
+    return 1
+}
+
 # Function to translate text using Gemini CLI
 translate_text() {
     local text="$1"
@@ -52,11 +108,26 @@ $text"
     
     # Use gemini and clean up the response
     if ! local response=$(echo "$prompt" | gemini 2>/dev/null); then
-        return 1
+        # If Gemini CLI fails, return the original text
+        print_warning "Gemini CLI failed for text: '$text', returning original" >&2
+        echo "$text"
+        return 0
     fi
     
     # Remove the first line (which is usually the prompt) and any trailing empty lines
-    echo "$response" | sed '1d' | sed '/^$/d'
+    local cleaned_response=$(echo "$response" | sed '1d' | sed '/^$/d')
+    
+    # If the cleaned response is empty, return the original text
+    if [[ -z "$cleaned_response" ]]; then
+        print_warning "Cleaned response is empty for text: '$text', returning original" >&2
+        echo "$text"
+        return 0
+    fi
+    
+    print_info "Raw response: '$response'" >&2
+    print_info "Cleaned response: '$cleaned_response'" >&2
+    
+    echo "$cleaned_response"
     return 0
 }
 
@@ -81,11 +152,14 @@ translate_frontmatter() {
             
             # Only translate certain fields
             if [[ "$key" =~ ^(title|description|summary)$ ]] && [[ -n "$value" ]]; then
-                if ! local translated_value=$(translate_text "$value" 2>/dev/null); then
-                    print_error "Failed to translate frontmatter field '$key'"
-                    return 1
+                print_info "Attempting to translate field '$key' with value: '$value'" >&2
+                if local translated_value=$(translate_text_with_retry "$value" 2>/dev/null); then
+                    print_info "Successfully translated '$key': '$value' -> '$translated_value'" >&2
+                    translated_frontmatter+="$key: \"$translated_value\""$'\n'
+                else
+                    print_warning "Failed to translate frontmatter field '$key', keeping original value" >&2
+                    translated_frontmatter+="$line"$'\n'
                 fi
-                translated_frontmatter+="$key: \"$translated_value\""$'\n'
             else
                 translated_frontmatter+="$line"$'\n'
             fi
@@ -115,25 +189,78 @@ translate_file() {
     local frontmatter=""
     local markdown_content=""
     
-    if [[ "$content" =~ ^---$'\n'(.+)$'\n'---$'\n'(.+)$ ]]; then
-        frontmatter="${BASH_REMATCH[1]}"
-        markdown_content="${BASH_REMATCH[2]}"
+    # Use awk to properly extract frontmatter and content
+    if command -v awk &> /dev/null; then
+        # Check if file has frontmatter (starts with ---)
+        if [[ "$content" =~ ^--- ]]; then
+            # Extract frontmatter (between first and second ---)
+            frontmatter=$(echo "$content" | awk '
+                BEGIN { in_frontmatter = 0; frontmatter = ""; content = ""; line_count = 0 }
+                /^---$/ {
+                    line_count++
+                    if (line_count == 1) {
+                        in_frontmatter = 1
+                        next
+                    } else if (line_count == 2) {
+                        in_frontmatter = 0
+                        next
+                    }
+                }
+                {
+                    if (in_frontmatter) {
+                        frontmatter = frontmatter $0 "\n"
+                    } else {
+                        content = content $0 "\n"
+                    }
+                }
+                END {
+                    printf "%s", frontmatter
+                }')
+            
+            # Extract content (after second ---)
+            markdown_content=$(echo "$content" | awk '
+                BEGIN { in_frontmatter = 0; content = ""; line_count = 0 }
+                /^---$/ {
+                    line_count++
+                    if (line_count == 1) {
+                        in_frontmatter = 1
+                        next
+                    } else if (line_count == 2) {
+                        in_frontmatter = 0
+                        next
+                    }
+                }
+                {
+                    if (!in_frontmatter) {
+                        content = content $0 "\n"
+                    }
+                }
+                END {
+                    printf "%s", content
+                }')
+        else
+            markdown_content="$content"
+        fi
     else
-        markdown_content="$content"
+        # Fallback to regex if awk is not available
+        if [[ "$content" =~ ^---$'\n'(.+)$'\n'---$'\n'*([[:space:]]*.*)$ ]]; then
+            frontmatter="${BASH_REMATCH[1]}"
+            markdown_content="${BASH_REMATCH[2]}"
+        else
+            markdown_content="$content"
+        fi
     fi
     
     # Translate frontmatter
     if [[ -n "$frontmatter" ]]; then
         print_info "Translating frontmatter..."
-        if ! local translated_frontmatter=$(translate_frontmatter "$frontmatter" 2>/dev/null); then
-            print_error "Failed to translate frontmatter for: $input_file"
-            return 1
-        fi
+        local translated_frontmatter=$(translate_frontmatter "$frontmatter")
+        # Note: translate_frontmatter now handles errors gracefully, so we don't need to check return code
     fi
     
     # Translate markdown content
     print_info "Translating content..."
-    if ! local translated_content=$(translate_text "$markdown_content" 2>/dev/null); then
+    if ! local translated_content=$(translate_text_with_retry "$markdown_content" 2>/dev/null); then
         print_error "Failed to translate content for: $input_file"
         return 1
     fi
@@ -228,6 +355,11 @@ show_usage() {
     echo "  $0 --all                    # Translate all files in ./content"
     echo "  $0 --all content/notes      # Translate all files in content/notes"
     echo "  $0 file.zh-cn.md           # Translate single file"
+    echo ""
+    echo "Features:"
+    echo "  - Automatic retry on empty translation results (max $MAX_RETRIES attempts)"
+    echo "  - Preserves markdown formatting and structure"
+    echo "  - Translates frontmatter fields (title, description, summary)"
     echo ""
     echo "Requirements:"
     echo "  - Gemini CLI must be installed and authenticated"

@@ -1,4 +1,4 @@
----s
+---
 title: "The Anthology of Balaji"
 date: 2024-04-06
 rating: 7
