@@ -152,19 +152,9 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a
-                href="javascript:void"
-                id="languageMenu"
-                title="Switch Language"
-              >
-                {{ if in .Permalink "/zh-cn/" }}
-                  <a href="{{ .Permalink | replaceRE "/zh-cn/" "/" }}" title="Switch to English">English</a>
-                {{ else }}
-                  <a href="/zh-cn{{ .RelPermalink }}" title="切换到中文">中文</a>
-                {{ end }}
-              </a>
+              <a href="{{ .Permalink }}" id="languageMenu">{{ .Language.LanguageName }}</a>
             </li>
-          {{ end }}
+            {{ end }}
         {{ end }}
       {{ end }}
     </ul>
