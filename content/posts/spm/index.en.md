@@ -8,6 +8,8 @@ tags:
 custom_toc:
   - title: "SPM Tracking"
   - title: "Automatic Exposure"
+images:
+  - spm/cover.png
 ---
 ## SPM Tracking
 SPM (Super Position Model) is a tracking model used to trace user behavior and sources. It is widely applied in data analysis, traffic source tracking, and user behavior analysis. With SPM parameters, you can accurately identify the user's source field, exposure position information, and the unique identifier for a session or operation.

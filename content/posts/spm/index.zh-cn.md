@@ -8,6 +8,8 @@ tags:
 custom_toc:
   - title: "SPM 埋点"
   - title: "自动曝光"
+images:
+  - spm/cover.png
 ---
 
 
