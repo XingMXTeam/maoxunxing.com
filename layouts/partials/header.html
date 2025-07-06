@@ -152,7 +152,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a href="#" id="languageMenu">{{ if eq .Lang "zh-CN" }}English{{ else }}中文{{ end }}</a>
+              <a href="#" id="languageMenu"></a>
             </li>
           {{ end }}
         {{ end }}
@@ -165,17 +165,16 @@
 <script>
   window.addEventListener("DOMContentLoaded", function() {
     var path = window.location.pathname;
-    var isZh = /^\/zh-cn(\/|$)/.test(path);
+    var isZh = /^\/zh-cn(\/|$)/i.test(path);
     var btn = document.getElementById('languageMenu');
-    btn.textContent = isZh ? 'English' : '中文';
+    if (!btn) return;
 
-    var newPath;
-    if(!isZh) {
-      newPath = "/zh-cn" + path;
+    if (isZh) {
+      btn.textContent = 'English';
+      btn.setAttribute('href', path.replace(/^\/zh-cn/, "") || "/");
     } else {
-      newPath = path.replace(/^\/zh-cn/, "");
-      if(newPath === "") newPath = "/";
+      btn.textContent = '中文';
+      btn.setAttribute('href', "/zh-cn" + (path === "/" ? "" : path));
     }
-    btn.setAttribute('href', newPath);
   });
 </script>
