@@ -3,6 +3,8 @@ title: "Internationalization and Localization"
 date: 2025-02-06
 tags:
   - i18n
+images:
+  - i18n/cover.png
 ---
 Internationalization (i18n) and localization (l10n) are indispensable parts of modern front-end development, especially in the context of globalization. This article will discuss **core issues of internationalization**, **the use of CLDR**, **handling RTL layouts**, and **the value of the front end**, providing detailed explanations and code examples.
 ---
