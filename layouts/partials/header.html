@@ -152,9 +152,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a href="{{ .Permalink }}" id="languageMenu"
-                >{{ .Language.LanguageName }}</a
-              >
+              <a href="#" id="languageMenu">{{ if eq .Lang "zh-CN" }}English{{ else }}中文{{ end }}</a>
             </li>
           {{ end }}
         {{ end }}
@@ -165,12 +163,19 @@
 <div class="nav-search-box" id="docsearch"></div>
 
 <script>
-  window.addEventListener("load", () => {
-    const menu = document.getElementById("languageMenu");
-    const arr = location.pathname.split("/");
-    menu.setAttribute(
-      "href",
-      menu.getAttribute("href") + (arr.length >= 4 ? arr[arr.length - 2] : "")
-    );
+  window.addEventListener("DOMContentLoaded", function() {
+    var path = window.location.pathname;
+    var isZh = /^\/zh-cn(\/|$)/.test(path);
+    var btn = document.getElementById('languageMenu');
+    btn.textContent = isZh ? 'English' : '中文';
+
+    var newPath;
+    if(!isZh) {
+      newPath = "/zh-cn" + path;
+    } else {
+      newPath = path.replace(/^\/zh-cn/, "");
+      if(newPath === "") newPath = "/";
+    }
+    btn.setAttribute('href', newPath);
   });
 </script>
