@@ -453,6 +453,10 @@ h4:hover .hanchor {
   border-bottom: 1px solid rgba(177, 177, 177, 0.623);
 }
 
+.posts-list li:first-child {
+  padding-top: 0 !important;
+}
+
 @media screen and (min-width: 768px) {
   .posts-list li {
     flex-direction: row;
