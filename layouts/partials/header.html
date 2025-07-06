@@ -152,7 +152,17 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a href="#" id="languageMenu"></a>
+              <a
+                href="javascript:void"
+                id="languageMenu"
+                title="Switch Language"
+              >
+                {{ if in .Permalink "/zh-cn/" }}
+                  <a href="{{ .Permalink | replaceRE "/zh-cn/" "/" }}" title="Switch to English">English</a>
+                {{ else }}
+                  <a href="/zh-cn{{ .RelPermalink }}" title="切换到中文">中文</a>
+                {{ end }}
+              </a>
             </li>
           {{ end }}
         {{ end }}
@@ -161,20 +171,3 @@
   </section>
 </nav>
 <div class="nav-search-box" id="docsearch"></div>
-
-<script>
-  window.addEventListener("DOMContentLoaded", function() {
-    var path = window.location.pathname;
-    var isZh = /^\/zh-cn(\/|$)/i.test(path);
-    var btn = document.getElementById('languageMenu');
-    if (!btn) return;
-
-    if (isZh) {
-      btn.textContent = 'English';
-      btn.setAttribute('href', path.replace(/^\/zh-cn/, "") || "/");
-    } else {
-      btn.textContent = '中文';
-      btn.setAttribute('href', "/zh-cn" + (path === "/" ? "" : path));
-    }
-  });
-</script>
