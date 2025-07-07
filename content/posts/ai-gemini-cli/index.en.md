@@ -1,7 +1,7 @@
 ---
 title: "Gemini CLI Configuration Tutorial"
 date: 2025-07-07
-description: "how i use Gemini CLi to Translate large amouts of text"
+description: "how i use Gemini CLI to Translate large amouts of text"
 tags:
   - AI
   - Gemini CLI
