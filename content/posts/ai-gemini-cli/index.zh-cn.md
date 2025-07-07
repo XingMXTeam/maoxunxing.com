@@ -21,4 +21,4 @@ images:
 
 `echo "Please translate the following Chinese text to English: 测试标题" | gemini`
 
-{{< video src="https://www.youtube.com/shorts/ZPalbIyMt54" caption="How I Use Gemini CLI">}}
+<iframe width="960" height="659" src="https://www.youtube.com/embed/ZPalbIyMt54" title="Gemini CLI Setup Crash Course， 快速翻译50篇文章，AI效率新方式！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
