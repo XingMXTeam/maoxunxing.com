@@ -6,7 +6,7 @@ tags:
   - AI
   - Gemini CLI
 images:
-  - ai-gemini-cli/cover.png
+  - ai-gemini-cli/cover.jpg
 ---
 
 在日常内容创作、技术文档编写或多语言博客管理中，翻译大量文本往往耗时耗力。Google 推出的 Gemini CLI 为这一场景带来了全新的解决方案，通过命令行即可调用 Gemini 的翻译模型，实现批量、高效的文章翻译。

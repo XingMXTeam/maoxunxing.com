@@ -1,12 +1,12 @@
 ---
 title: "Gemini CLI Configuration Tutorial"
 date: 2025-07-07
-description: “”
+description: "how i use Gemini CLi to Translate large amouts of text"
 tags:
   - AI
   - Gemini CLI
 images:
-  - ai-gemini-cli/cover.png
+  - ai-gemini-cli/cover.jpg
 ---
 In daily content creation, technical documentation writing, or multilingual blog management, translating large amounts of text is often time-consuming and labor-intensive. Google's Gemini CLI offers a new solution for this scenario, allowing you to invoke Gemini's translation model via the command line to achieve bulk, efficient article translation.
 
