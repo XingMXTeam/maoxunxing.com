@@ -88,11 +88,11 @@ images:
 *   **动态添加 class：** 当元素 C 被渲染时，给元素 B 动态添加一个特定的 class (例如 `has-child-spacing`)。
 *   **CSS：**
 
-    ```css
-    .element-B.has-child-spacing {
-        padding-top: 84px;
-    }
-    ```
+```css
+.element-B.has-child-spacing {
+    padding-top: 84px;
+}
+```
 
 #### 方案二：Flexbox 或 Grid 布局控制 (高级选项)
 
