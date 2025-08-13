@@ -89,11 +89,11 @@ If element C is conditionally rendered (e.g., controlled by `v-if`), you may wan
 *   **Dynamically add class:** When element C is rendered, dynamically add a specific class (e.g., `has-child-spacing`) to element B.
 *   **CSS:**
 
-    ```css
+```css
 .element-B.has-child-spacing {
-        padding-top: 84px;
-    }
-    ```
+    padding-top: 84px;
+}
+```
 
 #### Option 2: Flexbox or Grid Layout Control (Advanced Option)
 

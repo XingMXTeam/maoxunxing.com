@@ -913,3 +913,52 @@ html {
   border-left: 2px solid #1565c0; /* 左边框 */
   background: rgba(21, 101, 192, 0.05); /* 背景色 */
 }
+
+/* 首页文章列表样式 */
+.article-item {
+  list-style: none;
+  margin-bottom: 0.6rem;
+}
+
+.article-list {
+  padding-left: 0;
+}
+
+.article-date {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #999;
+  display: inline-block;
+  margin-right: 0.8rem;
+}
+
+/* 移动端优化样式 */
+@media screen and (max-width: 768px) {
+  .lists h2 {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .article-item {
+    margin-bottom: 0.8rem;
+  }
+  
+  .article-title a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .article-date {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #999;
+    display: inline-block;
+    margin-right: 0.8rem;
+  }
+
+  
+  .article-date {
+    margin-bottom: 0.2rem;
+  }
+}
