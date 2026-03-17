@@ -424,7 +424,7 @@ Some classNames are not assigned to scopes.
 `import styles from "./index.module.css"` needs to be after `js import`. If it's in the middle, it might cause the class name priority of the CSS build artifact to be different.
 ---
 ## CSS Writing Guidelines
-> [Original Article Here](https://w3cplus.medium.com/%E9%98%B2%E5%BE%A1%E5%BC%8F-css-%E7%B2%精%E8%AE%B2-2d45a58dcbf1)  
+> [Original Article Here](https://w3cplus.medium.com/%E9%98%B2%E5%BE%A1%E5%BC%8F-css-%E7%B2%BD%E8%AE%B2-2d45a58dcbf1)  
 This is an excellent article covering the core principles and practical techniques of Defensive CSS. The following is a collated web backup with some additional notes and personal experience.
 ## I. Layout
 ### 1. Layout Principles

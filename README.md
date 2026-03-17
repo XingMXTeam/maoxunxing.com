@@ -4,6 +4,15 @@
 
 This is the source for https://maoxunxing.com/. Inspired by **mtlynch.io**.
 
+## Local development
+
+**Prerequisites:** [Hugo](https://gohugo.io/installation/) (extended, 0.111+ recommended) and Node.js.
+
+- **Install:** `git submodule update --init` (for theme), then `npm install`
+- **Build:** `npm run build` or `hugo --minify`
+- **Preview:** `npm run start` or `hugo server` — open http://localhost:1313/
+- **Algolia search (optional):** set `ALGOLIA_ADMIN_KEY` in env when running `npm run index-and-send` (do not commit the key; see `config.yaml`).
+
 ## Code style guides
 
 New code should adhere to the appropriate Google Style guide for the given language:

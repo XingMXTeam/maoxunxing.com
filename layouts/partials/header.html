@@ -4,7 +4,7 @@
       <a class="navigation-avatar" href="{{ .Site.BaseURL | relLangURL }}">
         {{ with .Site.Params.avatarurl }}
           <img
-            style="width: 50x; height:50px;"
+            style="width: 50px; height: 50px;"
             src="{{ . | relURL }}"
             alt="Author photo"
           />
@@ -31,7 +31,7 @@
         {{ end }}
       {{ end }}
 
-      {{ if .Site.IsMultiLingual }}
+      {{ if hugo.IsMultilingual }}
         {{ $node := . }}
         {{ .Scratch.Set "separator" true }}
         {{ range .Site.Home.AllTranslations }}
@@ -119,7 +119,7 @@
             </li> -->
             <li class="navigation-item">
               <a
-                href="javascript:void"
+                href="javascript:void(0)"
                 id="dark-mode-toggle"
                 title="Toggle Color Scheme"
               >

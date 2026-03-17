@@ -13,4 +13,4 @@ tests/lint-markdown
 hugo
 
 tests/lint-html "$@"
-tests/check-twitter-cards
+tests/check-seo-metadata
