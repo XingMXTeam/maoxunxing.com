@@ -18,6 +18,8 @@ jobs:
           hugo-version: "0.111.3"
           extended: true
       - name: Build
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
         run: npm update && rm -rf public && hugo --minify && npm run index-and-send
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

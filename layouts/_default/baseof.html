@@ -20,6 +20,7 @@
 
     {{ partial "twitter-card.html" . }}
     {{ partial "opengraph.html" . }}
+    {{ partial "schema-article.html" . }}
 
     {{ if .Permalink }}
       <base href="{{ .Permalink }}" />

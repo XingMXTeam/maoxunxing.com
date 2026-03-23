@@ -8,10 +8,37 @@ This is the source for https://maoxunxing.com/. Inspired by **mtlynch.io**.
 
 **Prerequisites:** [Hugo](https://gohugo.io/installation/) (extended, 0.111+ recommended) and Node.js.
 
-- **Install:** `git submodule update --init` (for theme), then `npm install`
-- **Build:** `npm run build` or `hugo --minify`
-- **Preview:** `npm run start` or `hugo server` — open http://localhost:1313/
-- **Algolia search (optional):** set `ALGOLIA_ADMIN_KEY` in env when running `npm run index-and-send` (do not commit the key; see `config.yaml`).
+Always run commands from the **repository root** (where `config.toml` lives).
+
+1. **Install:** `git submodule update --init` (pulls `themes/hugo-coder`), then `npm install`
+2. **Build:** `npm run build` or `hugo --minify`
+3. **Preview:** `npm run start` or `hugo server` — open http://localhost:1313/
+4. **Optional helper:** `bash scripts/ensure-dev.sh` checks that `hugo` is on your `PATH` and the theme exists, then starts `hugo server`
+
+**Note:** On some macOS setups the shell may print “Unable to locate a Java Runtime.” That message is unrelated to Hugo; if `hugo version` works, you can ignore it.
+
+### Algolia indexing (deploy / CI only)
+
+- The **Admin API key is not stored in the repo.** Set `ALGOLIA_ADMIN_KEY` in your environment when running `npm run index-and-send` (implemented by [scripts/index-and-send.sh](scripts/index-and-send.sh), which writes a temporary config file).
+- **GitHub Actions:** add a repository secret named `ALGOLIA_ADMIN_KEY` with your Algolia Admin API key so merge/PR deploy workflows can push the search index.
+- Public App ID and index name are documented under `[params.algolia]` in [config.toml](config.toml) for reference.
+
+### Architecture (short)
+
+| Area | Notes |
+|------|--------|
+| **Generator** | [Hugo](https://gohugo.io/) with theme [hugo-coder](https://github.com/luizdepra/hugo-coder) as a **git submodule** under `themes/hugo-coder`. |
+| **Layouts** | This site **overrides** the theme heavily: see root [layouts/](layouts/) (e.g. [layouts/_default/baseof.html](layouts/_default/baseof.html), partials). Theme upgrades require **manual diff** against your copies. |
+| **Styles** | Main theme pipeline: [assets/scss/coder.scss](assets/scss/coder.scss) (project copy / fork of theme SCSS). Additional overrides: [static/css/main.css](static/css/main.css) via `custom_css` in [config.toml](config.toml). Prefer changing variables in `assets/scss/_variables.scss` before piling rules into `main.css`. |
+| **Content** | Markdown under [content/](content/) with per-locale files such as `index.en.md` / `index.zh-cn.md`. |
+| **Config** | Primary [config.toml](config.toml). Algolia admin key is **not** in config files. |
+| **Search (browser)** | [layouts/partials/search.html](layouts/partials/search.html) uses the public search-only key + App ID (safe for frontend). |
+
+### Machine-readable / SEO extras
+
+- [static/llms.txt](static/llms.txt) — brief site summary for tools that look for it.
+- Article pages emit **JSON-LD** `BlogPosting` via [layouts/partials/schema-article.html](layouts/partials/schema-article.html).
+- Posts, notes, and book reports show **Copy / View raw / Edit on GitHub** when `github_repo` / `github_branch` are set under `[params]` in [config.toml](config.toml).
 
 ## Code style guides
 
@@ -30,7 +57,7 @@ If a PR has merge conflicts with the main repo's `master` branch, rebase the PR 
 
 PRs should have a descriptive one-line summary to explain the change. The PR description should add any additional required context or explanation for the change. For simple or obvious PRs, a PR description is not required.
 
-If the PR fixes an issue, include the text "Fixes #XX" in the PR description, where `XX` is the [repo issue](https://github.com/mtlynch/mtlynch.io/issues) number. This allows Github to cross-reference between PRs and issues.
+If the PR fixes an issue, include the text "Fixes #XX" in the PR description, where `XX` is the [issue number in this repository](https://github.com/XingMXTeam/maoxunxing.com/issues). This allows GitHub to cross-reference between PRs and issues.
 
 ## Build Failures
 
@@ -38,7 +65,7 @@ If the PR fixes an issue, include the text "Fixes #XX" in the PR description, wh
 
 If HTMLProofer fails on a broken link, we have three options: suppress the error, fix the link, or remove the link.
 
-You should suppress the error if the link works fine in a browser, but fails in Travis occasionally. To do this, open `_tests/build`, update the `--url-ignore` flag for the `htmlproofer` command. Add a comment above the command to explain why we're adding this suppression.
+You should suppress the error if the link works fine in a browser, but fails in CI occasionally. To do this, open [tests/lint-html](tests/lint-html), update the `--ignore-urls` / related flags for the `htmlproofer` command. Add a comment above the command to explain why we're adding this suppression.
 
 If the link is just permanently broken and does not load, even in a browser, either replace the link with another that achieves the same effect or remove the link entirely.
 

@@ -1,0 +1,19 @@
+# maoxunxing.com
+
+> Personal tech & investment blog (Hugo, bilingual EN / zh-CN).
+
+## Site
+- https://maoxunxing.com/
+
+## Main sections
+- Blog: /posts/
+- Notes: /notes/
+- Book reports: /book-reports/
+- About: /about/
+
+## Source
+- Repository: https://github.com/XingMXTeam/maoxunxing.com
+
+## Usage policy
+- Public content is for reading and citation; follow the site’s license and copyright for reuse.
+- For automated crawling or AI training, respect robots.txt and applicable laws; contact the site owner for commercial use.
