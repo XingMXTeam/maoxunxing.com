@@ -10,7 +10,7 @@ set -u
 tests/check-trailing-whitespace
 tests/lint-markdown
 
-hugo
+hugo --minify
 
 tests/lint-html "$@"
-tests/check-twitter-cards
+tests/check-seo-metadata

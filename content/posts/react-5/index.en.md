@@ -1,7 +1,7 @@
 ---
 title: "Why React Hooks"
 description: ""
-date: 2019-12-05 11:53
+date: 2019-12-05T11:53:00
 tags:
   - React
 images:

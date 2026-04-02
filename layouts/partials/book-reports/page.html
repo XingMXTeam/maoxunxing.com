@@ -4,6 +4,8 @@
       <h1>{{ .Title }}</h1>
     </header>
 
+    {{ partial "content-source-actions.html" . }}
+
     <a href="{{ .Params.purchase_url }}">
       <img src="cover.jpg" class="align-left book-cover" />
     </a>
@@ -23,7 +25,7 @@
 
     {{ partial "mailing-list-signup.html" . }}
 
-    {{ if not .Site.IsServer }}
+    {{ if not hugo.IsServer }}
       {{ partial "talkyard.html" . }}
     {{ end }}
   </article>

@@ -28,6 +28,8 @@
       </div>
     </header>
 
+    {{ partial "content-source-actions.html" . }}
+
     {{- with .Content -}}
     <div>
       {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> ${3}` | safeHTML }}
@@ -40,7 +42,7 @@
 
     {{ partial "social-discuss.html" . }}
 
-    {{ if not .Site.IsServer }}
+    {{ if not hugo.IsServer }}
     {{ partial "talkyard.html" . }}
     {{ end }}
     

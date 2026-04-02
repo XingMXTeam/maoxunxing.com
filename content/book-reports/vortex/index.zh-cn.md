@@ -1,6 +1,6 @@
 ---
 title: "旋涡 - 伊藤润二代表作"
-date: 2021-8-11
+date: 2021-08-11
 rating: 6
 purchase_url: https://item.jd.com/12706501.html
 ---

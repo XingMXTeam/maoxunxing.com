@@ -506,7 +506,7 @@ csso webpack plugin Selector can't has classes from different scopes
 ## CSS 编写准则
 
 
-> [原文点此](https://w3cplus.medium.com/%E9%98%B2%E5%BE%A1%E5%BC%8F-css-%E7%B2%精%E8%AE%B2-2d45a58dcbf1)  
+> [原文点此](https://w3cplus.medium.com/%E9%98%B2%E5%BE%A1%E5%BC%8F-css-%E7%B2%BD%E8%AE%B2-2d45a58dcbf1)  
 本文是一篇非常优秀的文章，内容涵盖了防御式 CSS 的核心原则和实践技巧。以下是整理后的网络备份，并添加了一些补充说明和个人经验。
 
 ## 一、布局

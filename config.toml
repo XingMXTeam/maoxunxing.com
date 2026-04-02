@@ -4,9 +4,12 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 10
 canonifyurls = false
 timeout = 120000
+
+[pagination]
+  pagerSize = 10
+  path = "page"
 
 pygmentsstyle = "colorful"
 pygmentscodefences = true
@@ -17,8 +20,6 @@ googleAnalytics = "UA-199510588-1"
 enableRobotsTXT = true
 
 buildFuture = true
-
-paginatePath = "page"    # 分页路径
 
 [languages]
   [languages.zh-CN]
@@ -48,24 +49,25 @@ paginatePath = "page"    # 分页路径
     startLevel = 2
 
 [languages.en.permalinks]
-posts = "/:filename/"
-notes = "/:filename/"
-book-reports = "/:filename/"
-projects = "/:filename/"
-about = "/:filename/"
+posts = "/:contentbasename/"
+notes = "/:contentbasename/"
+book-reports = "/:contentbasename/"
+projects = "/:contentbasename/"
+about = "/:contentbasename/"
 
 [languages.zh-CN.permalinks]
-posts = "/:filename/"
-notes = "/:filename/"
-book-reports = "/:filename/"
-projects = "/:filename/"
-about = "/:filename/"
-
-[social]
-twitter = "maoxunxing"
+posts = "/:contentbasename/"
+notes = "/:contentbasename/"
+book-reports = "/:contentbasename/"
+projects = "/:contentbasename/"
+about = "/:contentbasename/"
 
 [params]
     author = "Felix Mao (毛毛星)"
+    twitter = "maoxunxing"
+    # Source links on article pages (copy / raw / GitHub edit). Set branch to "main" if your default branch differs.
+    github_repo = "XingMXTeam/maoxunxing.com"
+    github_branch = "main"
     info = "Tech Explorer & Investment Enthusiast | 技术探索者 & 投资爱好者"
     description = "maoxunxing (毛毛星) sharing insights on Frontend Development, AI Applications, and Investment strategies in BTC, VGT & VOO"
     keywords = "maoxunxing,毛毛星,felix mao,frontend,AI,cryptocurrency,index funds,tech blog,investment blog,BTC,VGT,VOO"
@@ -92,6 +94,11 @@ twitter = "maoxunxing"
     # 添加 notes 部分的特定分页设置
     [params.notes]
         paginate = 100
+
+    # Algolia (public app id + index name; admin key is never set here — use ALGOLIA_ADMIN_KEY in CI / local)
+    [params.algolia]
+        app_id = "D7NQ3RODEC"
+        index_name = "my-blog-index"
 
 [imaging]
 quality = 90

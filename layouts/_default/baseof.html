@@ -20,6 +20,7 @@
 
     {{ partial "twitter-card.html" . }}
     {{ partial "opengraph.html" . }}
+    {{ partial "schema-article.html" . }}
 
     {{ if .Permalink }}
       <base href="{{ .Permalink }}" />
@@ -66,7 +67,7 @@
       />
     {{ end }}
 
-    {{ if .Site.IsServer }}
+    {{ if hugo.IsServer }}
       {{ $cssOpts := (dict "targetPath" "css/coder.css" "enableSourceMap" true ) }}
       {{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts }}
       <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen" />
@@ -83,7 +84,7 @@
     {{ end }}
 
     {{ if .Site.Params.rtl }}
-      {{ if .Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $cssOpts := (dict "targetPath" "css/coder-rtl.css" "enableSourceMap" true ) }}
         {{ $styles := resources.Get "scss/coder-rtl.scss" | resources.ExecuteAsTemplate "style.coder-rtl.css" . | toCSS $cssOpts }}
         <link
@@ -105,7 +106,7 @@
     {{ end }}
 
     {{ if  or (eq .Site.Params.colorscheme "auto") (eq .Site.Params.colorscheme "dark") }}
-      {{ if .Site.IsServer }}
+      {{ if hugo.IsServer }}
         {{ $cssOpts := (dict "targetPath" "css/coder-dark.css" "enableSourceMap" true ) }}
         {{ $styles := resources.Get "scss/coder-dark.scss" | resources.ExecuteAsTemplate "style.coder-dark.css" . | toCSS $cssOpts }}
         <link
@@ -226,7 +227,7 @@
       {{ partial "footer.html" . }}
     </main>
 
-    {{ if .Site.IsServer }}
+    {{ if hugo.IsServer }}
       {{ $script := resources.Get "js/coder.js" }}
       <script src="{{ $script.RelPermalink }}"></script>
     {{ else }}
@@ -241,7 +242,6 @@
     {{ partial "search.html" . }}
     
     {{ partial "mathjax.html" . }}
-    </script>
 
       <!-- 在其他脚本之前添加 -->
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
