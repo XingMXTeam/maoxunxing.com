@@ -49,18 +49,18 @@ buildFuture = true
     startLevel = 2
 
 [languages.en.permalinks]
-posts = "/:contentbasename/"
-notes = "/:contentbasename/"
-book-reports = "/:contentbasename/"
-projects = "/:contentbasename/"
-about = "/:contentbasename/"
+posts = "/:slugorcontentbasename/"
+notes = "/:slugorcontentbasename/"
+book-reports = "/:slugorcontentbasename/"
+projects = "/:slugorcontentbasename/"
+about = "/:slugorcontentbasename/"
 
 [languages.zh-CN.permalinks]
-posts = "/:contentbasename/"
-notes = "/:contentbasename/"
-book-reports = "/:contentbasename/"
-projects = "/:contentbasename/"
-about = "/:contentbasename/"
+posts = "/:slugorcontentbasename/"
+notes = "/:slugorcontentbasename/"
+book-reports = "/:slugorcontentbasename/"
+projects = "/:slugorcontentbasename/"
+about = "/:slugorcontentbasename/"
 
 [params]
     author = "Felix Mao (毛毛星)"
