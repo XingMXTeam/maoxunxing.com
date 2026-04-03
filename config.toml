@@ -67,7 +67,7 @@ about = "/:slugorcontentbasename/"
     twitter = "maoxunxing"
     # Source links on article pages (copy / raw / GitHub edit). Set branch to "main" if your default branch differs.
     github_repo = "XingMXTeam/maoxunxing.com"
-    github_branch = "main"
+    github_branch = "master"
     info = "Tech Explorer & Investment Enthusiast | 技术探索者 & 投资爱好者"
     description = "maoxunxing (毛毛星) sharing insights on Frontend Development, AI Applications, and Investment strategies in BTC, VGT & VOO"
     keywords = "maoxunxing,毛毛星,felix mao,frontend,AI,cryptocurrency,index funds,tech blog,investment blog,BTC,VGT,VOO"
