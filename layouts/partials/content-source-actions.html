@@ -2,28 +2,8 @@
   {{- $branch := default "master" .Site.Params.github_branch -}}
   {{- $repo := .Site.Params.github_repo -}}
   {{- $path := .File.Path -}}
-  {{- $edit := printf "https://github.com/%s/edit/%s/%s" $repo $branch $path -}}
-  {{- $raw := printf "https://raw.githubusercontent.com/%s/%s/%s" $repo $branch $path -}}
+  {{- $edit := printf "https://github.com/%s/edit/%s/content/%s" $repo $branch $path -}}
   <div class="content-source-actions" role="group" aria-label="Markdown source">
-    <button
-      type="button"
-      class="content-source-btn copy-md-btn"
-      data-raw-url="{{ $raw }}"
-      title="Copy Markdown"
-    >
-      <i class="far fa-copy" aria-hidden="true"></i>
-      <span class="content-source-btn-label">Copy</span>
-    </button>
-    <a
-      class="content-source-btn"
-      href="{{ $raw }}"
-      target="_blank"
-      rel="noopener noreferrer"
-      title="View Markdown source"
-    >
-      <i class="far fa-file-alt" aria-hidden="true"></i>
-      <span class="content-source-btn-label">View</span>
-    </a>
     <a
       class="content-source-btn"
       href="{{ $edit }}"
@@ -35,32 +15,4 @@
       <span class="content-source-btn-label">Edit</span>
     </a>
   </div>
-  <script>
-    (function () {
-      document.querySelectorAll(".copy-md-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var url = btn.getAttribute("data-raw-url");
-          if (!url) return;
-          fetch(url)
-            .then(function (r) {
-              if (!r.ok) throw new Error("fetch failed");
-              return r.text();
-            })
-            .then(function (text) {
-              return navigator.clipboard.writeText(text);
-            })
-            .then(function () {
-              var prev = btn.getAttribute("title");
-              btn.setAttribute("title", "Copied!");
-              setTimeout(function () {
-                btn.setAttribute("title", prev || "Copy Markdown");
-              }, 2000);
-            })
-            .catch(function () {
-              window.open(url, "_blank", "noopener,noreferrer");
-            });
-        });
-      });
-    })();
-  </script>
 {{- end -}}
