@@ -6,7 +6,7 @@ cd "$ROOT"
 
 KEY="${ALGOLIA_ADMIN_KEY:?Set ALGOLIA_ADMIN_KEY to your Algolia Admin API key}"
 
-TMP="$(mktemp "${TMPDIR:-/tmp}/algolia-config.XXXXXX.yaml)"
+TMP="$(mktemp "${TMPDIR:-/tmp}/algolia-config.XXXXXX.yaml")"
 cleanup() { rm -f "$TMP"; }
 trap cleanup EXIT
 
