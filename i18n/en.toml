@@ -1,36 +1,23 @@
 [blogTitle]
 other = "Felix Mao"
 
+[homeBio]
+other = "Hey! I'm Felix Mao, a senior Frontend Engineer with 10+ years at big tech companies. A reading enthusiast, crypto and index investor."
+
+[homePara1]
+other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, and investment strategies. I also share <a href="/book-reports/">book reports</a> on what I've been reading. You can find my <a href="/projects/">full projects list here</a>."""
+
+[homePara2]
+other = """Currently focused on LEARN, BUILD and GROW with AGI. Exploring two areas: Tech (AI &amp; Frontend Innovation) and Investment (BTC, VGT &amp; VOO). Weekly updates with fresh perspectives on tech and investment."""
+
+[homePara3]
+other = """Outside of coding, I enjoy reading, drawing, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">media consumption</a>."""
+
+[homeFindMe]
+other = "Find me on"
+
 [homeTitle]
-other = "Hi 👋, I'm a senior Front-end Engineer over 10 years working at big tech companies. A Reading enthusiast, crypto and index investor. Currently Focus on LEARN, BUILD and GROW with AGI, Helps you minimize effort and maximize gain."
-
-[homeIntroHi]
-other = "About Me"
-
-[homeIntroTags]
-other = """
-<span class="tag">💻 Frontend Engineer</span>
-<span class="tag">✍️ Tech Writer</span>
-<span class="tag">📊 Finance Writer</span>
-<span class="tag">📚 Deep Reader</span>
-"""
-
-[homeIntroFocus]
-other = """
-<div class="focus-area">
-  Exploring and sharing insights in two areas:
-  <br />
-  <div>💡 Tech: AI & Frontend Innovation</div>
-  <div>📈 Investment: BTC, VGT & VOO Journey</div>
-</div>
-<br />
-<div class="focus-promise">
-  Weekly updates with fresh perspectives on tech and investment ⚡️ Let's grow together ✨
-</div>
-"""
-
-[homeOutro]
-other = "Hope you find some inspiration here ✨"
+other = "Hi, I'm a senior Front-end Engineer over 10 years working at big tech companies. A Reading enthusiast, crypto and index investor."
 
 [homeCat0]
 other = "Latest Writing"
@@ -85,3 +72,42 @@ other = "Subscribe to get my latest articles. No spam, unsubscribe anytime."
 
 [emailAddress]
 other = "Email Address"
+
+[filterAll]
+other = "All"
+
+[filterPosts]
+other = "Posts"
+
+[filterNotes]
+other = "Notes"
+
+[filterBooks]
+other = "Book Reports"
+
+[navTagsCloud]
+other = "Tags Cloud"
+
+[navDemos]
+other = "Demos"
+
+[navUses]
+other = "Uses"
+
+[navBookmarks]
+other = "Bookmarks"
+
+[navMedia]
+other = "Media"
+
+[navStreams]
+other = "Streams"
+
+[navBlog]
+other = "Blog"
+
+[navNotes]
+other = "Notes"
+
+[navBooks]
+other = "Books"

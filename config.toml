@@ -54,6 +54,12 @@ notes = "/:slugorcontentbasename/"
 book-reports = "/:slugorcontentbasename/"
 projects = "/:slugorcontentbasename/"
 about = "/:slugorcontentbasename/"
+uses = "/:slugorcontentbasename/"
+bookmarks = "/:slugorcontentbasename/"
+media = "/:slugorcontentbasename/"
+streams = "/:slugorcontentbasename/"
+demos = "/:slugorcontentbasename/"
+gallery = "/:slugorcontentbasename/"
 
 [languages.zh-CN.permalinks]
 posts = "/:slugorcontentbasename/"
@@ -61,6 +67,12 @@ notes = "/:slugorcontentbasename/"
 book-reports = "/:slugorcontentbasename/"
 projects = "/:slugorcontentbasename/"
 about = "/:slugorcontentbasename/"
+uses = "/:slugorcontentbasename/"
+bookmarks = "/:slugorcontentbasename/"
+media = "/:slugorcontentbasename/"
+streams = "/:slugorcontentbasename/"
+demos = "/:slugorcontentbasename/"
+gallery = "/:slugorcontentbasename/"
 
 [params]
     author = "Felix Mao (毛毛星)"
@@ -137,47 +149,31 @@ resampleFilter = "Lanczos"
     url = "/posts/"
     weight = 1
 [[languages.en.menu.main]]
-    name = "Tags Cloud"
-    url = "/tags-cloud/"
+    name = "Projects"
+    url = "/projects/"
     weight = 2
 [[languages.en.menu.main]]
-    name = "Book Reports"
-    url = "/book-reports/"
+    name = "Gallery"
+    url = "/gallery/"
     weight = 3
-[[languages.en.menu.main]]
-  name = "Notes"
-  url = "/notes/"
-  weight = 4
 [[languages.en.menu.main]]
     name = "About"
     url = "/about/"
-    weight = 5
-[[languages.en.menu.main]]
-    name = "Archive"
-    url = "/archive/"
-    weight = 6
+    weight = 4
 
 [[languages.zh-CN.menu.main]]
   name = "博客"
   url = "/posts/"
   weight = 1
 [[languages.zh-CN.menu.main]]
-  name = "标签云"
-  url = "/tags-cloud/"
+  name = "项目"
+  url = "/projects/"
   weight = 2
 [[languages.zh-CN.menu.main]]
-  name = "读书报告"
-  url = "/book-reports/"
+  name = "画廊"
+  url = "/gallery/"
   weight = 3
-[[languages.zh-CN.menu.main]]
-  name = "随笔"
-  url = "/notes/"
-  weight = 4
 [[languages.zh-CN.menu.main]]
   name = "关于"
   url = "/about/"
-  weight = 5
-[[languages.zh-CN.menu.main]]
-  name = "归档"
-  url = "/archive/"
-  weight = 6
+  weight = 4

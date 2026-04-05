@@ -1,38 +1,9 @@
-{{ $image := "" }}
-{{ if .Page.Params.hero_image }}
-  {{ $image = printf "%s%s" .RelPermalink .Page.Params.hero_image }}
-{{ else }}
-  {{- with .Page.Params.images -}}
-    {{ $image = printf "/%s"  (index . 0) }}
-  {{- else -}}
-    {{ $image = "default" }}
-  {{- end -}}
-{{ end }}
-
-
 <li>
-  <a class="img-wrapper" href="{{ .RelPermalink }}">
-    {{ if eq $image "default" }}
-    <svg width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#f5f5f5" rx="8" ry="8"/>
-      <text x="50%" y="50%" 
-            fill="#2c2c2c" 
-            font-size="16" 
-            font-family="system-ui, -apple-system, sans-serif" 
-            text-anchor="middle" 
-            dominant-baseline="middle">
-        {{ .Title }}
-      </text>
-    </svg>
-    {{ else }}
-      <img src="{{ .Site.BaseURL }}{{ $image }}" />
+  <div class="post-item">
+    <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+    <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Page.Params.description }}
+      <p class="post-desc">{{ . }}</p>
     {{ end }}
-  </a>
-  <div>
-    <h2><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <p class="date">
-      {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
-    </p>
-    <p>{{ .Page.Params.description }}</p>
   </div>
 </li>

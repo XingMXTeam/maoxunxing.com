@@ -35,7 +35,10 @@
     
        <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="//www.gstatic.com" crossorigin />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" />
+
     <link rel="stylesheet" href="/third-party/google-fonts/css/style.css" />
     <link
       rel="stylesheet"
@@ -242,6 +245,9 @@
     {{ partial "search.html" . }}
     
     {{ partial "mathjax.html" . }}
+
+    <script src="/js/content-filter.js"></script>
+    <script src="/js/lightbox.js"></script>
 
       <!-- 在其他脚本之前添加 -->
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>

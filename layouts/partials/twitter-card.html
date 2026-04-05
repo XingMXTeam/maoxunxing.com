@@ -8,6 +8,16 @@
       <meta name="twitter:image" content="{{ strings.TrimSuffix "/" $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}/{{ . }}">
     {{- end -}}
   {{- end -}}
+{{- else -}}
+  {{- $images := $.Resources.ByType "image" -}}
+  {{- $featured := $images.GetMatch "{*cover*,*feature*,*thumbnail*}" -}}
+  {{- if not $featured }}{{ $featured = $images.GetMatch "*og-image*" }}{{ end -}}
+  {{- with $featured }}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ $featured.Permalink }}" />
+  {{- else }}
+  <meta name="twitter:card" content="summary" />
+  {{- end -}}
 {{ end }}
 {{ with .Site.Params.twitter }}
   <meta name="twitter:site" content="@{{ . }}" />

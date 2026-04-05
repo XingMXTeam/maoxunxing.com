@@ -3,15 +3,21 @@
   {{ .Site.Title }}
 {{ end }}
 {{ define "content" }}
-  <section class="container list">
-    <h1 class="title">{{ .Title }}</h1>
+  <section class="container posts-page">
+    {{ partial "subnav.html" . }}
+    <h1 class="page-title">{{ .Title }}</h1>
 
-    <ul class="blurb-list book-reports-list">
-      {{- range .Paginator.Pages -}}
-        {{- .Render "li" -}}
-      {{- end -}}
-    </ul>
-
-    {{ partial "pagination.html" . }}
+    {{ range .Pages.GroupByDate "2006" }}
+      {{ if ne .Key "0001" }}
+      <div class="posts-year-group">
+        <div class="year-bg">{{ .Key }}</div>
+        <ul class="posts-simple-list">
+          {{ range .Pages.ByDate.Reverse }}
+            {{ .Render "li" }}
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ end }}
   </section>
 {{ end }}

@@ -53,10 +53,14 @@
     {{- with $featured -}}
       <meta property="og:image" content="{{ $featured.Permalink }}" />
     {{ else -}}
-      {{- with $.Site.Params.images -}}
-        <meta property="og:image" content="{{ index . 0 | absURL }}" />
+      {{- $ogImage := $images.GetMatch "*og-image*" -}}
+      {{- with $ogImage -}}
+        <meta property="og:image" content="{{ $ogImage.Permalink }}" />
+      {{ else -}}
+        {{- with $.Site.Params.images -}}
+          <meta property="og:image" content="{{ index . 0 | absURL }}" />
+        {{ end }}
       {{ end }}
-
     {{ end }}
 
   {{ end }}

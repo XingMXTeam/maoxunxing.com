@@ -1,23 +1,85 @@
-<section class="container">
-  <div>
-    <p>
-      {{ i18n "homeTitle" }}
-    </p>
-    
-    <div class="lists">
-      <h2>{{ i18n "homeCat0" }}</h2>
+<!-- Particle animation background -->
+<div class="particle-container">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
 
-      <ul class="article-list">
-        {{ range ( .Site.RegularPages | first 10 ) }}
-          <li class="article-item">
-              <time class="article-date">{{ .Date.Format "2006-01-02" }}</time>
-              <a class="article-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-              <a class="tag tag-{{ .Section }}" href="/{{.Site.Language.Lang}}/{{ .Section }}/"
-                >{{ .Section }}</a
-              >
-          </li>
+<section class="container home-prose">
+
+  <h1 class="home-name">{{ i18n "blogTitle" }}</h1>
+
+  <p class="home-bio">{{ i18n "homeBio" | safeHTML }}</p>
+
+  <p class="home-para">{{ i18n "homePara1" | safeHTML }}</p>
+
+  <p class="home-para">{{ i18n "homePara2" | safeHTML }}</p>
+
+  <p class="home-para">{{ i18n "homePara3" | safeHTML }}</p>
+
+  <div class="home-spacer"></div>
+
+  <hr class="home-divider" />
+
+  <p class="home-find-me-label">{{ i18n "homeFindMe" | default "Find me on" }}</p>
+
+  <p class="home-find-me">
+    {{ range sort .Site.Params.social }}
+      <a href="{{ .url }}" target="_blank" rel="noopener" class="find-me-link">
+        {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
+        {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="find-me-img" />
         {{ end }}
-      </ul>
-    </div>
+        {{ .name }}
+      </a>
+    {{ end }}
+  </p>
+
+  <hr class="home-divider" />
+
+  <h2 class="home-section-title">{{ i18n "homeCat0" }}</h2>
+
+  <div class="content-filter">
+    <button class="filter-btn active" data-filter="all">{{ i18n "filterAll" | default "All" }}</button>
+    <button class="filter-btn" data-filter="posts">{{ i18n "filterPosts" | default "Posts" }}</button>
+    <button class="filter-btn" data-filter="notes">{{ i18n "filterNotes" | default "Notes" }}</button>
+    <button class="filter-btn" data-filter="book-reports">{{ i18n "filterBooks" | default "Books" }}</button>
   </div>
+
+  <ul class="article-list">
+    {{ range ( .Site.RegularPages | first 20 ) }}
+      <li class="article-item" data-section="{{ .Section }}">
+          <time class="article-date">{{ .Date.Format "2006-01-02" }}</time>
+          <a class="article-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="article-section-tag tag-{{ .Section }}">{{ .Section }}</span>
+      </li>
+    {{ end }}
+  </ul>
+
 </section>

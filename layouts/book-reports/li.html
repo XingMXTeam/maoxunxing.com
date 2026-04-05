@@ -1,18 +1,12 @@
 <li>
-  <h2 class="title"><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-  <div class="summary">
-    <div class="img-wrapper">
-      <a href="{{ .RelPermalink }}">
-        <img src="{{ .RelPermalink }}cover.jpg" />
-      </a>
-    </div>
-    <div>
-      <p class="date">
-        {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
-      </p>
-      <p>My rating: <strong>{{ .Page.Params.rating }}</strong> / 10</p>
-      {{ .Summary }}
-      <a class="full-review-link" href="{{ .RelPermalink }}">Full review</a>
-    </div>
+  <div class="post-item">
+    <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+    <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Page.Params.rating }}
+      <span class="book-rating">{{ . }}/10</span>
+    {{ end }}
+    {{ with .Page.Params.description }}
+      <p class="post-desc">{{ . }}</p>
+    {{ end }}
   </div>
 </li>
