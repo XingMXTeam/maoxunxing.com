@@ -139,7 +139,7 @@ resampleFilter = "Lanczos"
      weight = 4
      url = "https://maodi.substack.com/"
  [[params.social]]
-   name = "Rss"
+   name = "RSS"
    icon = "fa fa-rss fa-2x"
    weight = 5
    url = "https://maoxunxing.com/zh-cn/index.xml"

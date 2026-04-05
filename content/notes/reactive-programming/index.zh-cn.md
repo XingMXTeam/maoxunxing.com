@@ -212,7 +212,7 @@ receipt.print(calc.getTotal(JEANS, SHIRT, SHOES, COAT, HAT));
 
 ## 怎么让你的应用响应式
 
-# 框架比较
+## 框架比较
 
 框架和设计的区别
 框架：不同的元素之间如何交互， 比如M和V层如何交互
@@ -340,7 +340,7 @@ Redux基于以下几点：
 
 ![redux](index_files/bd5f45ea-dce9-493b-80b0-70089bc8f6d5.png)
 
-# 响应式编程
+## 响应式编程
 
 observable是一个对象，包含了一些数据，可以被observer订阅（消费），并且一旦实例化，它会提供一个取消函数。
 
@@ -503,7 +503,7 @@ const stockValuesProducer = Rx.Observable.interval(50)
 return stockValuesProducer.sampleTime(500);
 ```
 
-# reactive框架之一cycle.js
+## reactive框架之一cycle.js
 
 消息传递架构，通过流沟通，强封装，很好地隔离。
 
@@ -571,7 +571,7 @@ Onionify不是一个driver 而是一个wrapper
 
 可以结合组件的多个流组成程序更复杂的state.
 
-# 响应式框架之二Mobx
+## 响应式框架之二Mobx
 
 在非响应式的编程中，我们想要更新状态。我们手动更改model的某些部分，并且更新views。导致它们耦合。
 
@@ -605,4 +605,4 @@ store和view是一对一的关系
 
 库：mobx-state-tree
 
-# SAM（State-Action-Model）
+## SAM（State-Action-Model）

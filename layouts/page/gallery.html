@@ -1,0 +1,21 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+<section class="container">
+  <h1 class="title">{{ .Title }}</h1>
+
+  {{ $images := .Resources.ByType "image" }}
+  {{ if gt (len $images) 0 }}
+  <div class="gallery-grid">
+    {{ range $images }}
+    <a class="gallery-item" href="{{ .RelPermalink }}">
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" loading="lazy" />
+    </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <p style="opacity:0.5">No images yet. Add images to the gallery folder to display them here.</p>
+  {{ end }}
+</section>
+{{ end }}

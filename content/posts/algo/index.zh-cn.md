@@ -1372,7 +1372,7 @@ function minOfThree(n1, n2, n3) {
 }
 
 ```
-# 参考资料
+## 参考资料
 1. 《数据结构与算法之美》王争
 2. [freecodecamp教程](https://www.freecodecamp.org/chinese/news/big-o-notation/)
 3. NeetCode.io

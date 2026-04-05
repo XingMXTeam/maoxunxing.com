@@ -201,7 +201,7 @@ receipt.print(calc.getTotal(JEANS, SHIRT, SHOES, COAT, HAT));
 Microsoft and Google are also driving reactive programming: for example <http://reactivex.io/>
 ## How to Make Your Application Responsive
     }
-# Framework Comparison
+## Framework Comparison
 
 Difference Between Framework and Design
 
@@ -331,7 +331,7 @@ Redux is based on the following points:
 3 Modifications are made in a pure function manner. Reducers are pure functions.
 ### How Redux Works
 ![redux](index_files/bd5f45ea-dce9-493b-80b0-70089bc8f6d5.png)
-# Reactive Programming
+## Reactive Programming
 An observable is an object that contains some data and can be subscribed to (consumed) by an observer. Once instantiated, it provides a cancellation function.
 An observer is an object that can obtain data from an observable. It provides three methods: next, error, complete
 Observer pattern (Pub/Sub subscription pattern)
@@ -487,7 +487,7 @@ const stockValuesProducer = Rx.Observable.interval(50)
 return stockValuesProducer.sampleTime(500);
     }
 }
-# One of the reactive frameworks: Cycle.js
+## One of the reactive frameworks: Cycle.js
 Message passing architecture, communicates through streams, strong encapsulation, well-isolated.
 Three key concepts:
 1 Pure functions
@@ -551,7 +551,7 @@ Library: isolate for component isolation
 Onionify is not a driver but a wrapper
 
 Can combine multiple streams of components to form more complex program states.
-# Responsive Framework Two Mobx
+## Responsive Framework Two Mobx
 In non-responsive programming, we want to update the state. We manually change certain parts of the model and update the views. This leads to coupling.
 Keywords:
 
@@ -589,7 +589,7 @@ store and view have a one-to-one relationship
 
 Library: mobx-state-tree
 
-# SAM (State-Action-Model)
+## SAM (State-Action-Model)
 
 }
     }

@@ -9,8 +9,6 @@ tags:
   - E-commerce Technology
 ---
 
-# PPC Alliance Conversion Funnel: When Popups Meet Data Loss
-
 ## The Core Problem: Tracking Conversions Within the 7-Day Window
 
 In the world of e-commerce traffic, PPC (Pay Per Click) alliance traffic operates under a "7-day golden window" rule—user conversions from impression to purchase must occur within 7 days to be correctly attributed to the alliance channel.

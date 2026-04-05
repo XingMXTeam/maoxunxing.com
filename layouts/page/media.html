@@ -1,0 +1,56 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+<section class="container">
+  <h1 class="title">{{ .Title }}</h1>
+
+  {{ with .Content }}<div class="media-intro">{{ . }}</div>{{ end }}
+
+  {{ with .Params.media }}
+  <div class="media-tabs">
+    {{ $first := true }}
+    {{ range $type, $items := . }}
+    <button class="media-tab{{ if $first }} active{{ end }}" data-media-type="{{ $type }}">{{ $type }}</button>
+    {{ $first = false }}
+    {{ end }}
+  </div>
+
+  {{ $firstType := "" }}
+  {{ range $type, $items := . }}
+    {{ if eq $firstType "" }}{{ $firstType = $type }}{{ end }}
+  {{ end }}
+
+  {{ range $type, $items := . }}
+  <div class="media-section" data-media-section="{{ $type }}" {{ if ne $type $firstType }}style="display:none"{{ end }}>
+    <table class="media-table">
+      <tbody>
+        {{ range $items }}
+        <tr>
+          <td>{{ .name }}</td>
+          <td style="text-align:right; opacity:0.6">{{ .creator }}</td>
+          {{ with .note }}<td style="opacity:0.5">{{ . }}</td>{{ end }}
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  {{ end }}
+  {{ end }}
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.media-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var type = tab.getAttribute('data-media-type');
+      document.querySelectorAll('.media-tab').forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      document.querySelectorAll('.media-section').forEach(function(s) {
+        s.style.display = s.getAttribute('data-media-section') === type ? '' : 'none';
+      });
+    });
+  });
+});
+</script>
+{{ end }}

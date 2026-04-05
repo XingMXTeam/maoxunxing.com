@@ -5,7 +5,6 @@
 {{ define "content" }}
   <section class="container posts-page">
     {{ partial "subnav.html" . }}
-    <h1 class="page-title">{{ .Title }}</h1>
 
     {{ range .Pages.GroupByDate "2006" }}
       {{ if ne .Key "0001" }}

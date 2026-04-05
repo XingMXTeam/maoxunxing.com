@@ -1136,7 +1136,7 @@ function minOfThree(n1, n2, n3) {
     return Math.min(n1, Math.min(n2, n3));
 }
 ```
-# References
+## References
 1. 'The Beauty of Data Structures and Algorithms' by Wang Zheng
 2. [freecodecamp tutorial](https://www.freecodecamp.org/chinese/news/big-o-notation/)
 3. NeetCode.io

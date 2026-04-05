@@ -9,8 +9,6 @@ tags:
   - Responsive Design
 ---
 
-# CSS Background Size: Three Traps That Look Similar But Behave Completely Different
-
 ## The Core Problem: Three Seemingly Similar Settings
 
 In the world of CSS, `background-size` has three seemingly similar but dramatically different settings: `100%`, `100% 100%`, and `cover`.

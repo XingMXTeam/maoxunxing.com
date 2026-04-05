@@ -1,0 +1,12 @@
+<!-- SubNav for content sections (antfu style) -->
+<nav class="subnav">
+  <a href="{{ "posts/" | absLangURL }}" class="subnav-link{{ if eq .Section "posts" }} active{{ end }}">
+    {{ i18n "navBlog" | default "Blog" }}
+  </a>
+  <a href="{{ "notes/" | absLangURL }}" class="subnav-link{{ if eq .Section "notes" }} active{{ end }}">
+    {{ i18n "navNotes" | default "Notes" }}
+  </a>
+  <a href="{{ "book-reports/" | absLangURL }}" class="subnav-link{{ if eq .Section "book-reports" }} active{{ end }}">
+    {{ i18n "navBooks" | default "Books" }}
+  </a>
+</nav>

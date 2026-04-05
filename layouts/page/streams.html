@@ -1,0 +1,22 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+<section class="container">
+  <h1 class="title">{{ .Title }}</h1>
+
+  {{ with .Content }}<div>{{ . }}</div>{{ end }}
+
+  {{ with .Params.streams }}
+  <ul style="list-style:none; padding:0; margin-top:2rem;">
+    {{ range . }}
+    <li class="stream-item">
+      <span class="stream-date">{{ .date }}</span>
+      <span class="stream-title"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></span>
+      {{ with .platform }}<span class="stream-platform">{{ . }}</span>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</section>
+{{ end }}
