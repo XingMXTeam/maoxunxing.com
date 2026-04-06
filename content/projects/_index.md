@@ -3,6 +3,10 @@ title: Projects
 layout: projects
 projects:
   Books & Publications:
+    - name: "Options in Plain English"
+      link: "https://www.amazon.com/dp/B0F6NSTGPQ"
+      desc: "A beginner-friendly guide to options trading (2025)"
+      icon: "fas fa-book"
     - name: "Modern Javascript for the Impatient"
       link: "https://item.jd.com/12911627.html"
       desc: "Chinese translation of the book (2020)"
