@@ -1529,7 +1529,7 @@ body.colorscheme-dark {
   align-items: center;
   justify-content: center;
   color: var(--c-fg-light);
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: pointer;
   transition: opacity 0.2s ease;
   border-radius: 4px;
@@ -1547,11 +1547,11 @@ body.colorscheme-dark {
 }
 
 .toc-wrapper:hover .toc-anchor {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .toc-wrapper:hover .toc {
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .toc ul {
