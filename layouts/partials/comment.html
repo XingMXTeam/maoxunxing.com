@@ -4,11 +4,24 @@
     margin-top: 40px;
   }
 </style>
-<script
-  src="https://utteranc.es/client.js"
-  repo="XingMXTeam/XingMXTeam.github.io"
-  issue-term="pathname"
-  theme="github-light"
-  crossorigin="anonymous"
-  async
-></script>
+<div id="utterances-container"></div>
+<script>
+  (function() {
+    function getTheme() {
+      var body = document.body;
+      if (body.classList.contains('colorscheme-dark')) return 'github-dark';
+      if (body.classList.contains('colorscheme-auto')) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'github-dark' : 'github-light';
+      }
+      return 'github-light';
+    }
+    var s = document.createElement('script');
+    s.src = 'https://utteranc.es/client.js';
+    s.setAttribute('repo', 'XingMXTeam/XingMXTeam.github.io');
+    s.setAttribute('issue-term', 'pathname');
+    s.setAttribute('theme', getTheme());
+    s.setAttribute('crossorigin', 'anonymous');
+    s.async = true;
+    document.getElementById('utterances-container').appendChild(s);
+  })();
+</script>

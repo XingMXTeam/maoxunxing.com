@@ -1,3 +1,27 @@
+/* ========== View Transition (antfu.me dark mode toggle animation) ========== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* When switching to light mode, old layer should be on top */
+.colorscheme-dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+.colorscheme-dark::view-transition-new(root) {
+  z-index: 1;
+}
+
 /* ========== CSS Custom Properties (antfu.me color hierarchy) ========== */
 :root {
   --c-bg: #ffffff;
@@ -33,6 +57,145 @@ body.colorscheme-dark {
     --c-border: rgba(125, 125, 125, 0.3);
     --c-border-hover: #bbb;
     --c-link: #64b5f6;
+  }
+}
+
+/* Override theme dark-mode backgrounds to use --c-bg consistently */
+body.colorscheme-dark {
+  background-color: var(--c-bg);
+  color: var(--c-fg);
+}
+
+body.colorscheme-dark code {
+  background-color: rgba(125, 125, 125, 0.15);
+  color: var(--c-fg-deep);
+}
+
+body.colorscheme-dark pre code {
+  background-color: inherit;
+  color: inherit;
+}
+
+body.colorscheme-dark a {
+  color: inherit;
+}
+
+body.colorscheme-dark h1,
+body.colorscheme-dark h2,
+body.colorscheme-dark h3,
+body.colorscheme-dark h4,
+body.colorscheme-dark h5,
+body.colorscheme-dark h6 {
+  color: var(--c-fg-deeper);
+}
+
+body.colorscheme-dark blockquote {
+  border-left-color: var(--c-border);
+}
+
+body.colorscheme-dark table td,
+body.colorscheme-dark table th {
+  border-color: var(--c-border);
+}
+
+body.colorscheme-dark .navigation a,
+body.colorscheme-dark .navigation span {
+  color: var(--c-fg-deep);
+}
+
+body.colorscheme-dark .navigation a:hover,
+body.colorscheme-dark .navigation a:focus {
+  color: var(--c-fg-deeper);
+}
+
+body.colorscheme-dark .footer a {
+  color: var(--c-fg-light);
+}
+
+/* Dark mode: bold white links in homepage content & articles (antfu.me style) */
+body.colorscheme-dark .home-para a {
+  color: var(--c-fg-deeper);
+  font-weight: 600;
+}
+
+body.colorscheme-dark .find-me-link {
+  color: var(--c-fg-deeper);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+body.colorscheme-dark .content article a {
+  color: var(--c-fg-deeper);
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    background-color: var(--c-bg);
+    color: var(--c-fg);
+  }
+
+  body.colorscheme-auto code {
+    background-color: rgba(125, 125, 125, 0.15);
+    color: var(--c-fg-deep);
+  }
+
+  body.colorscheme-auto pre code {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  body.colorscheme-auto a {
+    color: inherit;
+  }
+
+  body.colorscheme-auto h1,
+  body.colorscheme-auto h2,
+  body.colorscheme-auto h3,
+  body.colorscheme-auto h4,
+  body.colorscheme-auto h5,
+  body.colorscheme-auto h6 {
+    color: var(--c-fg-deeper);
+  }
+
+  body.colorscheme-auto blockquote {
+    border-left-color: var(--c-border);
+  }
+
+  body.colorscheme-auto table td,
+  body.colorscheme-auto table th {
+    border-color: var(--c-border);
+  }
+
+  body.colorscheme-auto .navigation a,
+  body.colorscheme-auto .navigation span {
+    color: var(--c-fg-deep);
+  }
+
+  body.colorscheme-auto .navigation a:hover,
+  body.colorscheme-auto .navigation a:focus {
+    color: var(--c-fg-deeper);
+  }
+
+  body.colorscheme-auto .footer a {
+    color: var(--c-fg-light);
+  }
+
+  /* Auto mode: bold white links in homepage content & articles (antfu.me style) */
+  body.colorscheme-auto .home-para a {
+    color: var(--c-fg-deeper);
+    font-weight: 600;
+  }
+
+  body.colorscheme-auto .find-me-link {
+    color: var(--c-fg-deeper);
+    font-weight: 600;
+    opacity: 0.85;
+  }
+
+  body.colorscheme-auto .content article a {
+    color: var(--c-fg-deeper);
+    font-weight: 600;
   }
 }
 
@@ -170,6 +333,21 @@ pre code {
   padding: 0;
 }
 
+/* Dark mode: invert Hugo highlight blocks (inline styles use light-theme colors) */
+body.colorscheme-dark .highlight {
+  filter: invert(0.88) hue-rotate(180deg);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .highlight {
+    filter: invert(0.88) hue-rotate(180deg);
+    border-radius: 0.4rem;
+    overflow: hidden;
+  }
+}
+
 /* ========== Table ========== */
 table {
   max-width: 100%;
@@ -266,38 +444,98 @@ article {
   cursor: zoom-in;
 }
 
-/* ========== Navigation (Full Width) ========== */
+/* ========== Mobile Content Overflow Fix ========== */
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    overflow-x: hidden;
+  }
+
+  .content {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    overflow-x: hidden;
+  }
+
+  /* Reset inner .container padding to avoid double padding with .content */
+  .content .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .content article {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .content article pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .content article img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content article table {
+    max-width: 100%;
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2.0rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== Navigation (antfu.me style grid layout) ========== */
 .navigation {
   height: auto;
-  min-height: 5rem;
-  padding: 0.5rem 0;
-  background: var(--c-bg);
+  background: transparent;
   width: 100%;
 }
 
-/* Full-width nav container */
+/* Nav container: push icons to the right (logo is out of flow) */
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
-  padding: 0 2rem;
-  max-width: none;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+#menu-toggle,
+.menu-button {
+  display: none !important;
 }
 
 .navigation .navigation-list {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1.2rem;
   align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0.8rem;
 }
 
 .navigation .navigation-list .navigation-item a,
 .navigation .navigation-list .navigation-item span {
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
+  margin: 0;
   font-size: 1.6rem;
   font-weight: 400;
   opacity: 0.6;
@@ -314,16 +552,27 @@ article {
 .navigation .navigation-list .navigation-item span,
 .navigation a,
 .navigation span {
-  line-height: 5rem;
+  line-height: normal;
 }
 
-/* Animated M signature logo */
+/* Animated M signature logo — fixed on left like antfu.me */
 .nav-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
   display: inline-flex;
   align-items: center;
-  line-height: 5rem;
   text-decoration: none;
   color: var(--c-fg-deeper);
+  z-index: 50;
+  outline: none;
+  user-select: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .nav-logo {
+    position: fixed;
+  }
 }
 
 .logo-svg {
@@ -333,7 +582,7 @@ article {
 .logo-path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: draw-signature 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: draw-signature 5s ease-in-out infinite;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.8;
@@ -342,10 +591,10 @@ article {
 }
 
 @keyframes draw-signature {
-  0% {
+  0%, 100% {
     stroke-dashoffset: 1;
   }
-  100% {
+  30%, 70% {
     stroke-dashoffset: 0;
   }
 }
@@ -384,8 +633,7 @@ article {
 
 /* Nav icon items (social links in header) */
 .nav-icon-item a.nav-icon-link {
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+  margin: 0;
   font-size: 1.6rem !important;
   opacity: 0.6;
   transition: opacity 0.2s ease;
@@ -402,6 +650,17 @@ article {
 
 .nav-icon-item a.nav-icon-link:hover .nav-icon-img {
   opacity: 1;
+}
+
+/* Dark mode: invert img-based icons (e.g. Substack SVG loaded via <img>) */
+body.colorscheme-dark .nav-icon-img {
+  filter: invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .nav-icon-img {
+    filter: invert(1);
+  }
 }
 
 /* Dark mode toggle icons */
@@ -432,8 +691,14 @@ article {
 
 /* Mobile nav: icon-only mode (antfu.me style, no hamburger) */
 @media only screen and (max-width: 768px) {
-  .navigation .menu-button {
-    display: none !important;
+  .nav-logo {
+    position: static;
+    flex-shrink: 0;
+  }
+
+  .nav-container {
+    padding: 1.5rem;
+    justify-content: space-between;
   }
 
   .navigation .navigation-list {
@@ -442,16 +707,12 @@ article {
     opacity: 1 !important;
     max-height: none !important;
     background: none !important;
+    border-top: none !important;
     border-bottom: none !important;
-    flex-wrap: nowrap;
-    gap: 0.6rem;
+    grid-gap: 0.8rem;
   }
 
-  .navigation .navigation-item:not(.nav-icon-item):not(.menu-separator) {
-    display: none;
-  }
-
-  .navigation .menu-separator {
+  .navigation .navigation-item:not(.nav-icon-item) {
     display: none;
   }
 }
@@ -1071,8 +1332,6 @@ h4:hover .hanchor {
 .nav-search-box {
   display: inline-flex;
   align-items: center;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
 }
 
 .aa-Autocomplete .aa-DetachedSearchButton {
@@ -1086,13 +1345,48 @@ h4:hover .hanchor {
 
 .aa-DetachedSearchButtonIcon {
   cursor: pointer !important;
-  color: var(--c-fg);
+  color: var(--c-fg) !important;
   opacity: 0.4;
   transition: opacity 0.2s ease;
 }
 
+/* Dark mode: boost search icon visibility */
+body.colorscheme-dark .aa-DetachedSearchButtonIcon {
+  opacity: 0.7;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .aa-DetachedSearchButtonIcon {
+    opacity: 0.7;
+  }
+}
+
 .aa-Autocomplete .aa-DetachedSearchButton:hover .aa-DetachedSearchButtonIcon {
+  color: var(--c-fg-deeper) !important;
   opacity: 1;
+}
+
+/* Override Algolia theme primary color to match site theme */
+body.colorscheme-dark {
+  --aa-primary-color-rgb: 187, 187, 187;
+  --aa-text-color-rgb: 221, 221, 221;
+  --aa-background-color-rgb: 5, 5, 5;
+  --aa-input-background-color-rgb: 30, 30, 30;
+  --aa-muted-color-rgb: 136, 136, 136;
+  --aa-selected-color-rgb: 136, 136, 136;
+  --aa-selected-color-alpha: 0.15;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    --aa-primary-color-rgb: 187, 187, 187;
+    --aa-text-color-rgb: 221, 221, 221;
+    --aa-background-color-rgb: 5, 5, 5;
+    --aa-input-background-color-rgb: 30, 30, 30;
+    --aa-muted-color-rgb: 136, 136, 136;
+    --aa-selected-color-rgb: 136, 136, 136;
+    --aa-selected-color-alpha: 0.15;
+  }
 }
 
 .aa-DetachedSearchButtonPlaceholder {
