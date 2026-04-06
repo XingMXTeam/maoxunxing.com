@@ -7,6 +7,7 @@ images:
   - i18n/cover.png
 ---
 Internationalization (i18n) and localization (l10n) are indispensable parts of modern front-end development, especially in the context of globalization. This article will discuss **core issues of internationalization**, **the use of CLDR**, **handling RTL layouts**, and **the value of the front end**, providing detailed explanations and code examples.
+
 ---
 ## Table of Contents
 1. [Foreword](#foreword)
@@ -16,9 +17,11 @@ Internationalization (i18n) and localization (l10n) are indispensable parts of m
 3. [Handling RTL Layouts](#handling-rtl-layouts)
 4. [The Value of the Front End](#the-value-of-the-front-end)
 5. [Appendix](#appendix)
+
 ---
 ## Foreword
 Internationalization (i18n) refers to enabling an application's global capabilities at a technical level, while localization (l10n) is about providing customized services for specific regions or language environments. Internationalization involves several core issues, including multi-language support, the use of CLDR data, handling RTL layouts for the Middle East, and global monitoring and optimization.
+
 ---
 ## Core Issues of Internationalization
 ### Multi-language Support
@@ -35,6 +38,7 @@ CLDR (Common Locale Data Repository) is a standardized set of locale data provid
 #### Example Resources
 - [ICU User Guide](https://unicode-org.github.io/icu/userguide/datetime/)
 - [node-cldr](https://www.npmjs.com/package/cldr)
+
 ---
 ## Handling RTL Layouts
 RTL (Right-to-Left) layout is a text direction commonly used in Middle Eastern regions (such as for Arabic, Hebrew). When handling RTL layouts, the following points need attention:
@@ -57,6 +61,7 @@ body {
 #### Notes
 - Arabic text will automatically align to the right, but the position of absolutely positioned elements will not change.
 - The direction of images and other non-text content will not adjust automatically and requires extra handling.
+
 ---
 ## The Value of the Front End
 The value of front-end development in internationalization and localization is mainly reflected in the following two aspects:
@@ -71,6 +76,7 @@ Engineering atomic capabilities are an important foundation for front-end develo
 - **npm2umd**: Converting NPM packages to UMD format for direct use in a browser environment.
 - **Build Tools**: Supporting the packaging and dynamic loading of multi-language resources.
 - **Performance Optimization**: Improving the performance of internationalized applications through code splitting and lazy loading.
+
 ---
 ## Appendix
 ### CLDR Resources

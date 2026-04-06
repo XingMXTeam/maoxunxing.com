@@ -192,6 +192,7 @@ node: --openssl-legacy-provider is not allowed in NODE_OPTIONS
 ```
 #### Solution
 Upgrade Node.js to the latest version, or remove the relevant configuration from the `NODE_OPTIONS` environment variable.
+
 ---
 ## Grayscale Design
 ## CDN Bucketing Mechanism
@@ -389,6 +390,7 @@ fetch(`/api/function?version=${version}`)
 In your scenario, since the code is stored on local machines, it is recommended to prioritize the **Feature Toggle** or **File Path Differentiation** methods. These two methods can meet the needs of grayscale release without significantly increasing deployment and management complexity. If you expand to multiple machines in the future, you can introduce a load balancer to further optimize the grayscale strategy.
 ## Grayscale Rollout
 Solution 1: Write an ID value. When the user ID is greater than this value, the feature is enabled (similar to a whitelist mechanism).
+
 ---
 ## Lerna Multi-package Management Case Study
 When compiling a multi-package project managed by Lerna, a TypeScript error occurred. After investigation, the problem was found to be related to the version compatibility of `node`, `typescript`, and `@types/node`.
@@ -450,6 +452,7 @@ npm install
 Ensure that the `node_modules` of all sub-packages have been correctly cleaned and that the specified versions of dependencies are reinstalled.
 ### 4. Verify the Solution
 Run `npm run build` to compile and confirm that the aforementioned TypeScript errors no longer appear.
+
 ---
 ## babel
 > The latest compilation tool is: https://swc.rs/docs/usage/cli
@@ -484,6 +487,7 @@ When using the default `Object.defineProperty` to define classes, although enume
 - The compiled code can become verbose and complex.
 - In some environments, there may be performance overhead or compatibility issues.
 Therefore, when choosing whether to enable `loose` mode, you need to weigh the pros and cons based on the specific needs of the project.
+
 ---
 ## Fatigue Design
 ## Technical Implementation
@@ -537,6 +541,7 @@ Therefore, when choosing whether to enable `loose` mode, you need to weigh the p
   - Logging: Record the fatigue hit status of each request in detail for easy troubleshooting.
 - **Log Analysis**
   - Regularly analyze log data to evaluate the actual effectiveness of fatigue rules and optimize rule configurations.
+
 ---
 ## Umi Solution
 ### Umi
@@ -711,6 +716,7 @@ import getStore from 'getStore';
 const xxxStore = getStore().xxx;
 xxxStore.login();
 ```
+
 ---
 ## JSONPath Field Pruning
 ### JSON Extraction
@@ -742,6 +748,7 @@ xxxStore.login();
    ```jsonpath
    $.data.products[0:5].id
    ```
+
 ---
 ## Login-free Solution
 ## Problem Scenario
@@ -787,6 +794,7 @@ Site A embeds Site B, and the two sites have different domains. It is necessary 
      - Provide a friendly failure page to guide users to log in manually or take other actions.
    - **Logging**
      - Record key logs during the login-free process to facilitate troubleshooting.
+
 ---
 ## metaq
 In modern distributed systems, as the number of users and requests increases, the server may face the following challenges:
@@ -804,6 +812,7 @@ MetaQ is a high-performance message queue middleware with the following main fun
 You can listen to metaq messages across units, but you cannot send messages across units.
 ## Sequential Messages
 By default, order is not guaranteed. This can be handled at the business level, for example, a state that is further along cannot be updated by a state that is behind it. This ensures that the state does not regress.
+
 ---
 ## rpc
 ## RPC Overview
@@ -856,4 +865,5 @@ Change custom object to `List<Map<String, String>>` type.
 ## RPC Interface Caching
 How does HSF cache based on parameters?
 key: id(xxx)_method(get/post)_uid(unique_id), the underlying structure is a `Map<string, Promise<any>>`
+
 ---

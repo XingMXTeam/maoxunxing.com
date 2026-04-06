@@ -9,6 +9,7 @@ tags:
 - [Switching to an x86_64 Architecture Terminal](#switching-to-an-x86_64-architecture-terminal)
   - [Method](#method)
   - [Use Cases](#use-cases)
+
 ---
 ## macOS Troubleshooting
 When using NVM on macOS, you might encounter some issues. Here are some common solutions and notes:
@@ -31,6 +32,7 @@ When using NVM on macOS, you might encounter some issues. Here are some common s
     ```bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
     ```
+
 ---
 ## Switching to an x86_64 Architecture Terminal
 On Apple Silicon (M1/M2 chip) devices, the default terminal runs on the ARM architecture. If you need to run x86_64 architecture commands or tools, you can switch using the following method:

@@ -10,6 +10,7 @@ images:
 - **Location**: Determine the shooting location.
 - **Recording Content**: Clarify the content to be recorded.
 - **Duration**: Control the video length; 1-2 minutes is recommended.
+
 ---
 ## **2. Recording and Post-Processing**
 ### **2.1 Separate Recording**
@@ -20,6 +21,7 @@ images:
 ### **2.3 Beautification and Photo Editing**
 - Use beautification tools for face slimming, skin smoothing, etc.
 - Wash your hair in advance to maintain a clean and tidy appearance.
+
 ---
 ## **3. Tool Recommendations**
 ### **3.1 Screen Capture**
@@ -28,6 +30,7 @@ images:
 - Use **Jianying (CapCut)** for video editing.
 ### **3.3 Subtitles**
 - It is recommended to use a standard font for subtitles to ensure they are clear and easy to read.
+
 ---
 ## **4. Publishing and Optimization**
 ### **4.1 Video Association**
@@ -37,11 +40,14 @@ images:
 - Add necessary text descriptions on the cover to attract viewers to click.
 ### **4.3 Title**
 - The title should be shareable and able to resonate with the audience.
+
 ---
 ## **5. Host Requirements**
 - The host needs to have a good image (e.g., handsome/professional).
 - The host should exhibit an expert demeanor to enhance audience trust.
+
 ---
 ## **6. Publishing Cadence**
 - Publish one video per month or week to maintain a stable update frequency.
+
 ---

@@ -99,6 +99,7 @@ The following code implements a simple flipping animation, suitable for scenario
 3.  **Use Cases**:
     -   Scrolling animations are suitable for notice boards, marquees, etc.
     -   Flipping animations are suitable for elements that need to move in a loop, such as carousels or background animations.
+
 ---
 ## Grid Layout
 A simple business card layout, including a product title, description, price, and buy button.
@@ -165,6 +166,7 @@ Use **CSS Grid** to define the structure and style of the card.
 -   **Business Cards**: Suitable for product displays on e-commerce sites, blog post cards, etc.
 -   **Responsive Design**: Using `grid-template-columns` and `grid-template-rows` makes it easy to implement responsive layouts that adapt to different screen sizes.
 -   **Separation of Image and Content**: `grid-row-start` and `grid-row-end` allow for flexible control over the layout position of images and other content.
+
 ---
 ## Smoother Shadows
 {{< img src="effect.png" alt="Business card shadow effect" maxWidth="140px" caption="Business card shadow effect" >}}
@@ -249,6 +251,7 @@ body {
 -   **Basic Shadow**: Suitable for simple card or button designs, providing a basic sense of depth.
 -   **Layered Shadow**: Suitable for designs requiring higher visual quality, such as high-end product displays, UI components, etc.
 -   **Responsive Design**: Shadow effects can be dynamically adjusted according to screen size to enhance user experience.
+
 ---
 ## CSS Examples
 ## CSS Positioning and Layout
@@ -422,6 +425,7 @@ csso webpack plugin Selector can't has classes from different scopes
 Some classNames are not assigned to scopes.
 ## import css
 `import styles from "./index.module.css"` needs to be after `js import`. If it's in the middle, it might cause the class name priority of the CSS build artifact to be different.
+
 ---
 ## CSS Writing Guidelines
 > [Original Article Here](https://w3cplus.medium.com/%E9%98%B2%E5%BE%A1%E5%BC%8F-css-%E7%B2%BD%E8%AE%B2-2d45a58dcbf1)  
@@ -592,6 +596,7 @@ Different browsers have different support for minimum font sizes:
 - **UC Browser**: `8px`
 - **Chrome (PC)**: `12px`
 - **Safari/Firefox/Chrome (Mobile)**: `1px`
+
 ---
 ## CSS Resources
 https://www.w3.org/People/xiaoqian/talks/bytedance-2021/Overview.html
@@ -600,6 +605,7 @@ https://www.w3.org/Style/CSS/read
 https://www.w3.org/TR/css-2020/
 https://www.w3.org/Style/CSS/
 https://linxz.github.io/blog/defensive-css
+
 ---
 ## Icons
 ## Providing Excellent Icons
@@ -636,6 +642,7 @@ Address bar color:
 ```
 <link rel="apple-touch-startup-image" href="icon.png">
 ```
+
 ---
 ## SVG Cutout Effect
 ### Overview
@@ -650,6 +657,7 @@ SVG (Scalable Vector Graphics) supports creating complex visual designs through 
 **Use Cases:**
 - Icon designs that need to blend with the background.
 - When switching themes dynamically, the color of icons or graphics needs to change with the background.
+
 ---
 ## Clever Use of Steps
 `steps()` is a powerful feature in CSS3 used to create frame animation effects. It simulates frame-by-frame animation by dividing the animation into multiple discrete steps.
@@ -738,6 +746,7 @@ CSS:
     -   When using `steps()`, minimize DOM operations and complex calculations to ensure smooth animation.
 3.  **Compatibility**
     -   `steps()` is widely supported in modern browsers, but may require fallback handling in older browsers.
+
 ---
 ## Responsive Design
 ### Fully Responsive Design Principles

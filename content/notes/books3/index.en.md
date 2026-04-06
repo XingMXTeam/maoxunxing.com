@@ -39,6 +39,7 @@ tags:
   - [Phase 2: Team Value](#phase-2-team-value)
   - [Phase 3: Integration and Reshaping](#phase-3-integration-and-reshaping)
 - [References](#references)
+
 ---
 ## Network Performance Optimization
 ### Core Idea
@@ -53,6 +54,7 @@ Improve performance in weak network environments by reducing the number of reque
 ### PM2 Cluster Mode
 - [PM2 Official Documentation](http://pm2.keymetrics.io/docs/usage/cluster-mode/)
 - Use cluster mode to improve the performance and stability of Node.js applications.
+
 ---
 ## Performance Optimization Tools and Methods
 ### QPS Calculation Formula
@@ -69,6 +71,7 @@ Improve performance in weak network environments by reducing the number of reque
   - **Answer**: `(3000000 * 0.8) / (86400 * 0.2) = 139 (QPS)`
 - **Question**: If one machine has a QPS of 58, how many machines are needed to support it?
   - **Answer**: `139 / 58 ≈ 3`
+
 ---
 ## Performance Optimization for React and Next.js
 ### Next.js
@@ -85,6 +88,7 @@ Improve performance in weak network environments by reducing the number of reque
    - Reduce unnecessary levels to improve rendering efficiency.
 4. **Hot Cache**:
    - Cache frequently used modules or components.
+
 ---
 ## Beidou Framework
 ### Features
@@ -97,6 +101,7 @@ Improve performance in weak network environments by reducing the number of reque
   ```bash
   loadtest http://127.0.0.1:6001 -n 16
   ```
+
 ---
 ## QPS Calculation and Server Requirements
 ### Terminology
@@ -107,6 +112,7 @@ Improve performance in weak network environments by reducing the number of reque
   - **Answer**: `(3000000 * 0.8) / (86400 * 0.2) = 139 (QPS)`
 - **Question**: If one machine has a QPS of 58, how many machines are needed to support it?
   - **Answer**: `139 / 58 ≈ 3`
+
 ---
 ## Performance Optimization for Node.js and React
 ### Node.js Optimization
@@ -125,6 +131,7 @@ Improve performance in weak network environments by reducing the number of reque
    - Use `performance.now()` or `process.hrtime()` to measure high-precision time.
 3. **Micro-benchmarking**:
    - Test the performance of small code snippets to ensure results converge.
+
 ---
 ## Animation and User Experience Optimization
 ### Animation Optimization
@@ -154,6 +161,7 @@ Improve performance in weak network environments by reducing the number of reque
    ```
 2. **Preloading strategy**:
    - Use Service Worker to implement offline access and cross-platform preloading.
+
 ---
 ## Cross-Platform Development and Hybrid Applications
 ### Hybrid Applications
@@ -168,6 +176,7 @@ Improve performance in weak network environments by reducing the number of reque
   - Use Raspberry Pi for hardware control.
 - **WebGL and sensors**:
   - Combine WebGL and sensors to create rich interactive experiences.
+
 ---
 ## Technical Growth and Team Value
 ### The Value of Technical Personnel
@@ -182,6 +191,7 @@ Improve performance in weak network environments by reducing the number of reque
 - **Love & Belonging**: Sense of belonging.
 - **Safety**: Survival needs.
 - **Victory**: Survival needs.
+
 ---
 ## Core Competencies of Front-End Development
 ### Phase 1: Quality and Efficiency
@@ -195,6 +205,7 @@ Improve performance in weak network environments by reducing the number of reque
 ### Phase 3: Integration and Reshaping
 - **Data-oriented programming**: Data flow, data processing, data models.
 - **Business model**: Build complete solutions.
+
 ---
 ## References
 - [PM2 Official Documentation](http://pm2.keymetrics.io/docs/usage/cluster-mode/)

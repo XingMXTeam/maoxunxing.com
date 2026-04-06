@@ -39,6 +39,7 @@ tags:
   - Restart the service.
 #### More References:
 - [Official Documentation: Installation on Apple Silicon](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)
+
 ---
 ## II. Theory
 ### 1. LoRA Models
@@ -51,6 +52,7 @@ tags:
   ```bash
   python launch.py --share --xformers --enable-insecure-extension-access
   ```
+
 ---
 ## III. Practice
 ### 1. Checkpoint Models
@@ -83,6 +85,7 @@ tags:
   - [Promptomania](https://promptomania.com/)
 ### 5. Community Resources
 - **Reddit Community**: [Stable Diffusion Reddit](https://www.reddit.com/r/StableDiffusion/)
+
 ---
 ## IV. Additional Notes
 - **For Windows Users**: You can directly search for relevant tutorials; the installation process is relatively simple.

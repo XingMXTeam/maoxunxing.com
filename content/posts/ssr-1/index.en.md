@@ -29,6 +29,7 @@ description: ""
 - [VM Template Compilation](#vm-template-compilation)
 - [Page Routing](#page-routing)
 - [Underlying SSR Rendering](#underlying-ssr-rendering)
+
 ---
 ## SSR Concepts and Classifications
 ### SSR (Server-Side Rendering)
@@ -40,12 +41,14 @@ Combines CDN caching of HTML by pre-generating static pages and caching them on 
 Dynamically adjust rendering strategy based on device performance:
 - High-end devices: CSR (Client-Side Rendering)
 - Low-end devices: SSG (Static Site Generation)
+
 ---
 ## Hydrate
 **Definition:** Executing the business bundle to bind events and state.
 **Characteristics:**
 - If the hydration result matches the SSR render result, no repaint occurs. Otherwise, it might cause LCP to be recalculated, leading to a larger LCP.
 - If the two do not match, it will re-render, which can cause page layout issues or flickering. (The JS and hydrated HTML structure must be identical; **for example, rendering different JSX based on an isSSR check in the code can cause style corruption**).
+
 ---
 ## Serverless
 Deploy Serverless services via FaaS (Function as a Service) to provide page rendering capabilities.
@@ -81,9 +84,11 @@ Deploy Serverless services via FaaS (Function as a Service) to provide page rend
 - **Flexibility**: Adjust logic based on request content.
 - **Low Cost**: No need to manage servers.
 - **Rapid Iteration**: Independent deployment supports fast releases.
+
 ---
 ## Isomorphism
 Code that supports both CSR and SSR, achieving front-end and back-end unification.
+
 ---
 ## Expertise and Case Studies
 | **Knowledge Point** | **Case** |
@@ -96,11 +101,13 @@ Code that supports both CSR and SSR, achieving front-end and back-end unificatio
 | **Tool** | **Purpose** |
 | --- | --- |
 | npm package: `escapeHtml` | Used in SSR to escape HTML strings |
+
 ---
 ## Debugging Methods
 How to switch to SSR:
 1. In the browser's developer tools, block JS requests via the Network panel.
 2. View the SSR rendering result (i.e., the result before hydration).
+
 ---
 ## Streaming Rendering
 **Definition:** Streaming rendering is an optimization technique primarily used to address the issue of sending data to the client preferentially when one of several requests returns first.
@@ -123,6 +130,7 @@ ReactServer.renderToStaticMarkup(
 ```
 ## Page Routing
 For example, aa.com/a/p/1.html -> aa.pc.a-p is used as a unique key for configuration. The `path-to-regexp` package is used to match pathnames and URLs.
+
 ---
 ## Underlying SSR Rendering
 document.tsx is essentially a React component, and the SSR components within it are distributed in other JS files. The build output is still React code (compiled from JSX), which is rendered into an HTML string at runtime by React's functions.

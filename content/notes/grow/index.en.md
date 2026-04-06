@@ -11,10 +11,12 @@ tags:
 In the learning process for adults, the biggest obstacle is often not ability, but **self-esteem**. The fear of failure and concern about being judged by others can easily become stumbling blocks to learning.
 Recommended reading: **《Group Mindset》** and **《Mindset: The New Psychology of Success》**
 ![alt text](image.png)
+
 ---
 ## Focus
 1.  **《The One Thing》**
     -   Emphasizes focusing on key tasks to help readers improve efficiency and concentration.
+
 ---
 ## **1. Two Forms of Reading**
 -   **Wordless Books**
@@ -34,6 +36,7 @@ The key to reading lies in the following three points:
 ### **2.3 Memory**
 -   **Meaning**: The ability to remember what you have learned.
 -   **Improvement Methods**: Consolidate memory through repeated practice, thinking, and review.
+
 ---
 ## Maintain Curiosity
 Curiosity is a vital driving force that pushes us to explore the world and learn new knowledge. Whether through games or novels, we can stimulate our imagination, broaden our horizons, and gain inspiration through entertainment.
@@ -80,6 +83,7 @@ Novels construct rich and colorful worlds through text, leading readers into dif
 ### 3.3 Share and Communicate
 -   Discuss game strategies or novel plots with friends, exchange viewpoints, and broaden your thinking.
 -   Participate in related community activities, such as book clubs or game forums, to meet like-minded people.
+
 ---
 ## **Invest in Yourself: Vision and Insight**
 -   **Investment in Vision**
@@ -90,6 +94,7 @@ Novels construct rich and colorful worlds through text, leading readers into dif
     -   Read more, travel more, and communicate with outstanding people to broaden your horizons.
 -   **Key Point**
     > Investing in yourself is the most worthwhile investment; vision and insight are your most powerful competitive advantages.
+
 ---
 Learning is a long-term process that requires strategy and methods. Here are some thoughts and suggestions on how to learn efficiently.
 ## **1. Cognition First**
@@ -156,6 +161,7 @@ Make the people around you better.
 ## **Recommended Reading**
 -   **《Make It Stick: The Science of Successful Learning》**
     Discusses how to improve learning efficiency through scientific methods, worth reading in depth.
+
 ---
 ## Holistic Learning
 ### **1.1 Knowledge Connection and Memory**
@@ -253,6 +259,7 @@ Make the people around you better.
 -   **Advantages of Deep Understanding**
     -   By building connections between pieces of knowledge, you not only remember it better but can also apply it flexibly.
     -   After understanding the essence of the rules, you can creatively solve problems.
+
 ---
 ## Free Online Course Platforms
 Here are some high-quality free online education platforms:
@@ -278,6 +285,7 @@ Essential reading for improving efficiency:
     -   Two classic works
     -   Help improve efficiency
     -   Must-reads for tackling learning challenges
+
 ---
 On the path to growth and success, fear is a common emotion. However, true progress often happens the moment we **step out of our comfort zone**. Here is an in-depth exploration of this viewpoint.
 ## 1. **The Nature of Fear: Obstacle or Motivation?**
@@ -304,9 +312,11 @@ On the path to growth and success, fear is a common emotion. However, true progr
 ### 3.3 Accept Imperfection
 -   **Allow for Failure**: Don't let the fear of failure stop you; failure itself is part of learning.
 -   **Focus on the Process**: Instead of dwelling on the outcome, focus on the effort and enjoy the pleasure of growth.
+
 ---
 ## Efficient Learning
 https://dev.to/scroung720/learning-how-to-learn-diffused-mode-focused-mode-1-433b
+
 ---
 Tsinghua University Press has published a complete set of photocopied versions of well-known foreign computer science textbooks.
 ## **Book Recommendations**
@@ -331,6 +341,7 @@ Tsinghua University Press has published a complete set of photocopied versions o
 ### **1. The Art of Unix Programming**
 -   [The Art of Unix Programming](http://www.catb.org/~esr/writings/taoup/html/)
     -   A classic work by Eric S. Raymond that deeply explores the philosophy and practice of Unix programming.
+
 ---
 ## **1. System Architect**
 -   **Introduction**:
@@ -364,6 +375,7 @@ Tsinghua University Press has published a complete set of photocopied versions o
 -   **Preparation Advice**:
     -   Practice with past exam questions to get familiar with the exam format.
     -   Recommended practice platforms: PAT official problem set, Nowcoder.
+
 ---
 ## Intimate Relationships
 -   《Hold Me Tight》

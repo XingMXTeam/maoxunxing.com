@@ -12,6 +12,7 @@ tags:
   - **Sparking Interest**: Guide the child through summarizing and explaining to arouse curiosity about the content.  
   - **Gradual Transition**: Move from parent-child reading to independent reading to develop the child's independent learning skills.  
   - **Choosing Appropriate Content**: Select books that are interesting to the child and of moderate difficulty to avoid frustration.  
+
 ---
 ## **2. Children's Education: Planning for High School and College Entrance Exams**
 ### **2.1 The Importance of the High School Entrance Exam (Zhongkao)**

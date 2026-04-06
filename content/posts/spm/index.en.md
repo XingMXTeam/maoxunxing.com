@@ -13,6 +13,7 @@ images:
 ---
 ## SPM Tracking
 SPM (Super Position Model) is a tracking model used to trace user behavior and sources. It is widely applied in data analysis, traffic source tracking, and user behavior analysis. With SPM parameters, you can accurately identify the user's source field, exposure position information, and the unique identifier for a session or operation.
+
 ---
 ## SPM Parameter Description
 ### spm-url
@@ -34,6 +35,7 @@ SPM (Super Position Model) is a tracking model used to trace user behavior and s
   It is recommended to generate a new `pageid` for each session, or even for each operation, to ensure data accuracy and traceability.
 - **Application Scenario**  
   For example, when a user clicks a button or completes an action, a new `pageid` is generated for subsequent analysis.
+
 ---
 ## Tracking Case Study
 The following is a typical SPM tracking case study:
@@ -68,6 +70,7 @@ Through the tracking above, the following information can be analyzed:
 - Which page or recommendation slot the user entered the product detail page from.
 - Which specific product in the recommendation slot was clicked.
 - Whether the user completed the purchase operation.
+
 ---
 ## Automatic Exposure
 ### MutationObserver

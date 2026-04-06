@@ -102,6 +102,7 @@ The so-called “no silver bullet” refers to the fact that no single technolog
 - Senior managers must be aware of their influence and actively avoid using their opinions to suppress others.  
 - Example:  
   - Delay expressing opinions during discussions and listen to team members' ideas first. 
+
 ---
 
 

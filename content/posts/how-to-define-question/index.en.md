@@ -22,6 +22,7 @@ A problem is essentially a contradiction or mismatch between things. It has the 
     -   The severity of a problem can be quantified through data, metrics, and other means, which helps us better understand the problem.
 5.  **Interrelatedness**
     -   Problems may be interrelated or have causal relationships. It's necessary to consider their fundamental propositions from a holistic perspective to avoid looking at them in isolation.
+
 ---
 ## How to View/Discover Problems?
 Discovering problems is a systematic process that requires analysis and thinking from multiple dimensions. Here is a basic framework for discovering problems:
@@ -45,6 +46,7 @@ Discovering problems is a systematic process that requires analysis and thinking
 5.  **Planning (Future)**
     -   Based on the understanding and analysis of the problem, develop a solution or improvement plan.
     -   The plan should be forward-looking to ensure it is proactive and sustainable.
+
 ---
 ## Summary
 Defining a problem is the prerequisite for solving it. Only by clearly defining the problem can we make the right decisions and take effective action. By understanding the characteristics and essence of problems and applying a systematic way of thinking, we can better discover, analyze, and ultimately solve them.

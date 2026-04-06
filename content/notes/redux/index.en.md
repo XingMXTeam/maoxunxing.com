@@ -27,6 +27,7 @@ Manage shared data centrally through a mediator (Store), allowing all components
 return function() {
         if (!store) {
 store = new Regular();
+
 ---
         return store;
 };
@@ -93,6 +94,7 @@ state.title = action.data.title;
 }
 ```
                 store.$emit('change', state);
+
 ---
             };
         return store;
@@ -124,6 +126,7 @@ Example of Reducer:
 function reducer1(state, action) {
 ```
 switch (action.type) {
+
 ---
 case 'CHANGE_TITLE':
 
@@ -169,6 +172,7 @@ this.store.subscribe(function() {
 }
 ```
 ## 6. Improvement 4: Connect Function
+
 ---
 To avoid each component needing to manually implement the `mapState` method, we extracted a `connect` function.
 function connect(config, Component) {
@@ -216,6 +220,7 @@ return Object.assign({}, store, { dispatch: dispatch });
 ### Middleware Example
 ```
 function logger(next) {
+
 ---
     return function(action) {
 console.log("before dispatch");

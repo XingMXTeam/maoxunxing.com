@@ -7,6 +7,7 @@ tags:
   - Web Development
 ---
 In modern front-end development, React's state management and component design are core to building efficient and maintainable applications. This article will discuss topics such as the **pros and cons of Class components**, **best practices for Hooks**, and the **selection of state management tools**, providing detailed analysis and code examples.
+
 ---
 ## Table of Contents
 1. [Disadvantages of Class Components](#disadvantages-of-class-components)
@@ -21,6 +22,7 @@ In modern front-end development, React's state management and component design a
    - [Solution 6: zustand and valtio](#solution-6-zustand-and-valtio)
 5. [Conclusion](#conclusion)
 6. [Global Shared State Design](#global-shared-state-design)
+
 ---
 ## Disadvantages of Class Components
 Although Class components were once the core of React, with the introduction of Hooks, some of their disadvantages have become apparent:
@@ -33,6 +35,7 @@ Although Class components were once the core of React, with the introduction of 
 - The process of passing props down through HOCs creates a "consumption black box," making debugging difficult. Some props may be lost or not passed correctly, leading to rendering anomalies.
 ### 4. Dependencies Between Multiple HOCs
 - There may be sequential dependencies between multiple HOCs, which increases the complexity of code maintenance and debugging.
+
 ---
 ## Advantages of Class Components
 Although Hooks are more popular, Class components still have unique advantages in certain scenarios:
@@ -44,16 +47,19 @@ Although Hooks are more popular, Class components still have unique advantages i
 - The relationships between data can be clearly understood through type inference, which facilitates maintenance and extension.
 ### 4. More Intuitive Multi-Data Conditionals
 - When UI rendering or interaction needs to be based on multiple data points, Class components perform more intuitively.
+
 ---
 ## Best Practice Recommendations
 Combining the pros and cons of both, the following practices are recommended:
 - **Data Model**: Implement using Classes, leveraging decorators, class metadata, and dependency injection to flexibly combine data, services, and consumption. This approach can avoid the limitations imposed by traditional directory conventions or special naming rules, improving development efficiency.
 - **Component Rendering**: Implement using Hooks, taking advantage of their simplicity and composition capabilities to simplify component logic.
+
 ---
 ## How to Manage State?
 > **Broken Window Effect**  
 > State management with Hooks has issues with not being shared or persistent. Data often exists in multiple copies, which can lead to difficulties in state synchronization.
 Here are several common state management solutions and their pros and cons:
+
 ---
 ### Solution 1: [umi/hox](https://github.com/umijs/hox)
 #### Advantages
@@ -68,23 +74,27 @@ Here are several common state management solutions and their pros and cons:
    - It's impossible to view the state change process through tools, making debugging difficult.
 3. **Insufficient Side Effect Handling**  
    - Can side effect logic be written directly in the Model? This is not yet clear.
+
 ---
 ### Solution 2: Redux
 Redux is a classic state management tool suitable for large-scale projects.
 - **Advantages**: Centralized state management, supports time-travel debugging (DevTools).  
 - **Disadvantages**: Steep learning curve, more boilerplate code, which can easily lead to code bloat.
 > The filename of a Redux reducer is the mount point for the state. For example, if the filename is `schedule`, then all states within the reducer are mounted under the `schedule` object.
+
 ---
 ### Solution 3: Dva
 Dva is a wrapper based on Redux, providing a more concise API and built-in asynchronous handling capabilities.
 - **Advantages**: Built-in Redux-Saga, simplifying the handling of asynchronous logic.  
 - **Disadvantages**: Less flexible than native Redux, may not be suitable for complex business scenarios.
+
 ---
 ### Solution 4: MobX
 MobX provides a reactive state management approach, suitable for small to medium-sized projects.
 - **Advantages**: Simple to use, less code, state changes automatically trigger view updates.  
 - **Disadvantages**: For large projects, state traceability and debugging capabilities may be insufficient.
 > The `observer` object in mobx-react (usually a React component) listens for changes in the store's data (triggered when `@observable` data changes) and re-renders.
+
 ---
 ### Solution 5: Immer
 Immer is an immutable data management library, often used to simplify state update logic. **It is not a state management solution.**
@@ -110,6 +120,7 @@ nextState[1] = {
 // violate the immutability principles and introduce a bug!
 nextState.push({title: "Tweet about it"})
 ```
+
 ---
 ### Solution 6: zustand and valtio
 In early front-end development, we often used Redux, Dva, or React Context to manage state. However, these tools have limitations in certain scenarios, for example:
@@ -268,6 +279,7 @@ const Counter = () => {
 };
 export default Counter;
 ```
+
 ---
 #### Introduction to valtio
 valtio is another state management library developed by Daishi Kato, based on Proxy objects. Its functionality is similar to zustand, but its API style is different. valtio is more lightweight and suitable for developers who prefer a simple API.
@@ -355,12 +367,14 @@ export const useStore = create((set) => ({
     })
 }));
 ```
+
 ---
 ## Conclusion
 In actual projects, choosing the right state management tool and component design approach is crucial. Here are some summary recommendations:
 - **Class Components**: Suitable for scenarios with complex data models and strong extensibility requirements.
 - **Hooks**: Suitable for scenarios with simple component logic and a need for composition.
 - **State Management Tools**: Choose the appropriate tool based on project scale and complexity, such as Redux, MobX, zustand, or valtio.
+
 ---
 ## Global Shared State Design
 How to design a simple global shared state manager:

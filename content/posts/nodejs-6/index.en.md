@@ -32,6 +32,7 @@ Debugger attached.
 ## **2. More Advanced Topics**
 Refer to the official documentation for more debugging techniques and configuration methods:
 - [Official Node.js Debugging Guide](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+
 ---
 ## Node.js Case Studies
 ```text
@@ -60,6 +61,7 @@ vscode: launch.json
     ]
 }
 ```
+
 ---
 ## NodeParty Notes
 ## **1. Testing and Tools**

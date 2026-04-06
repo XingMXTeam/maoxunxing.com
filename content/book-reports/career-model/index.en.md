@@ -13,6 +13,7 @@ This book, set against a financial backdrop, tells the story of a person's growt
 <!--more-->
 
 3. **Clear Logic**: The three major modules—competencies, relationships, and management—are well-structured and progressively build upon each other, facilitating systematic learning.
+
 ---
 1. **Some Content Slightly Repetitive**: Explanations of certain models could be more concise to avoid redundancy.
 

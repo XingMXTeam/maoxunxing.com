@@ -38,6 +38,7 @@ A Reducer is a pure function used to calculate the new state based on the curren
 });
 ```
 default:
+
 ---
       return state;
 ## 3. Core Implementation of `createStore`
@@ -62,6 +63,7 @@ function reducer1(state, action) {
 ```
 
 // Dispatch Action
+
 ---
 
   store.dispatch = function (action) {
@@ -99,6 +101,7 @@ Middleware is an extension point for Redux, allowing us to insert custom logic b
 }
 ```
 // Logger middleware
+
 ---
   return function (action) {
 
@@ -138,6 +141,7 @@ Middleware can:
 
 ```
 - Insert logging, error capture, and other logic before and after `dispatch`.
+
 ---
 - Supports asynchronous operations (such as Redux Thunk or Redux Saga).
 

@@ -255,6 +255,7 @@ h5,
 h6 {
   font-weight: 700;
   color: var(--c-fg-deeper);
+  text-wrap: balance;
 }
 
 h1 {
@@ -1002,9 +1003,17 @@ body.colorscheme-dark .find-me-img {
   margin-top: 1rem;
 }
 
-/* Hide H1 inside article content (title is already rendered by the template) */
-.content article > h1 {
+/* Hide duplicate H1 inside article content (title is already rendered by the template) */
+.content .post > article > div > h1:first-child {
   display: none;
+}
+
+/* Downsize any h1 inside article content body to h2-level */
+.content .post > article > div h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3333333;
+  margin: 2em 0 1em 0;
 }
 
 /* ========== Heading Anchor ========== */

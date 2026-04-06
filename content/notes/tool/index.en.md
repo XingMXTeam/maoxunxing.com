@@ -62,12 +62,14 @@ This article is based on the key steps from [Zhihu article](https://zhuanlan.zhi
 
 
 2. Go to **General > Language & Region**.
+
 ---
 - Change the device language and region to **English (US)** (United States).
 3. Switch the account for media and purchase items:
    - Click **Apple Menu > System Settings**.
    - Find and click **[Your Name]** at the top of the sidebar (if you don't see your name, tap "Sign in with your Apple ID").
 - Log in with your newly registered **US Apple ID**.
+
 ---
 
 

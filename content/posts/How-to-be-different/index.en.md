@@ -8,6 +8,7 @@ images:
   - how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
 ---
 Last week, I attended a conference and benefited greatly from it. Here are some important lessons I learned from the speech of a high-level engineer who is about to leave Alibaba Group. He has not only made significant achievements in the technical field but also had a profound impact on the company. His sharing gave me a deeper understanding of how to learn better, cooperate with colleagues, and promote product success.
+
 ---
 ## 1. **Better master things, understand more**
 To truly master a piece of knowledge or a skill, you usually need to go through the following four stages: **remember it, understand it, express it, and use it**.
@@ -29,6 +30,7 @@ To truly master a piece of knowledge or a skill, you usually need to go through 
 - **Structure Knowledge**: Organize knowledge into an indexable and orderly form for easy retrieval at any time.
 > **The greatest happiness comes from the greatest pain.**  
 > Profound learning is often accompanied by challenges, but it is these challenges that make us grow.
+
 ---
 ## 2. **Best coding skills, become an expert**
 Becoming an excellent programmer is not just about writing code; it requires effort in many aspects. Here are the key points:
@@ -45,6 +47,7 @@ Following these three points can help you improve your coding skills:
 1. **Read excellent code resources**: Learn from the design ideas in open-source projects or classic codebases.
 2. **Communicate with excellent people**: Learn from the top talents in the industry and absorb their experience and wisdom.
 3. **Maintain a mindset of excellence**: Always pay attention to details and adhere to high-quality work standards.
+
 ---
 ## 3. **Best communication skills**
 ### Avoid the XY Problem
@@ -62,6 +65,7 @@ But in reality, what this person really wants is to buy a train ticket, because 
   - Technical scope?
   - Business scope?
 > **The core of communication is to find the root of the problem, not to dwell on the surface.**
+
 ---
 ## 4. **Make Your Product Successful**
 ### Define the Problem Scope
@@ -79,6 +83,7 @@ As mentioned in Part 3, you first need to clarify the scope of the problem:
 3. **Craftsmanship**: Treat the product as your own label and handle every detail with an attitude of excellence.
 4. **Go beyond KPIs**: Don't just see the product as a tool to complete a task, but give it life and value.
 > **Your product is your business card; patience and focus are the cornerstones of success.**
+
 ---
 ## Conclusion
 This conference made me realize that whether it's learning new knowledge, improving coding skills, enhancing communication techniques, or building a successful product, it all requires systematic thinking and continuous effort. I hope the content above can provide some inspiration and help everyone make greater progress in their respective fields.

@@ -26,11 +26,13 @@ tags:
     - **Committing mutations**: `this.$store.commit('mutationName', payload)`
     - **Dispatching actions**: `this.$store.dispatch('actionName', payload)`
     - **Getting derived data**: `this.$store.getters.xxx`
+
 ---
 ## Vue and Regular Integration
 https://sq.sf.163.com/blog/article/193853627654062080
 ## Vue Source Code
 https://juejin.cn/post/6844903422882398215
+
 ---
 ## Vue's Reactivity Implementation
 The following is a simple implementation of a reactive system, based on the fundamental principles of Vue:

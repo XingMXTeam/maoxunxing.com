@@ -22,6 +22,7 @@ Business architecture focuses on an organization's business strategy, governance
 - Formulating a company's long-term development strategy.
 - Designing cross-departmental collaborative business processes.
 - Ensuring business operations are consistent with the corporate vision.
+
 ---
 ## Product Architecture
 ### Core Definition
@@ -66,11 +67,13 @@ Business containers focus on implementing specific business logic, such as user 
 #### Examples
 - User management system: Handles user registration, login, permission control, etc.
 - Order processing system: Manages the process of order creation, payment, shipping, etc.
+
 ---
 ## Resource Deployment
 Frontend resources are generally deployed to a static server (like Nginx) or OSS (Object Storage Service), and then accelerated via a CDN.
 Alternatively, they can be integrated into a Node.js/Java application that serves static resources.
 Or, through static hosting services like Surge or Netlify.
+
 ---
 ## How to Design Navigation
 1. **Seamless Updates for Business**  

@@ -60,6 +60,7 @@ The core content of the development field can be divided into the following aspe
 
 - **Underlying Principles**: Computer architecture, memory management, processes and threads, etc.
 - **Operating System**: Common commands for Linux/Unix, file systems, permission management, etc.
+
 ---
 - **Programming Languages**: Proficiency in at least one mainstream programming language (e.g., JavaScript, Python, Java, etc.).
 - **Algorithms and Data Structures**: Sorting, searching, dynamic programming, trees, graphs, etc.
@@ -124,6 +125,7 @@ No matter what position you hold, understanding the business is key to career de
 
    - **Cost Control**: Reduce operating costs, improve profit margins.  
 ## **Recommended Reading**
+
 ---
 
 Here are some recommended books to help you better understand business and enhance your comprehensive abilities:
@@ -133,6 +135,7 @@ Here are some recommended books to help you better understand business and enhan
 - "Contagious": The psychological principles of product communication.
 - "Growth Hacker Book": Methodology for achieving rapid user growth at low cost.
 - "The Fundamental Power of Forging Great Business Legends": Digging into the essence of user needs.
+
 ---
 - "The Innovator's Dilemma": The relationship between technological innovation and market changes.
 ### **About Depth and Breadth**
@@ -189,6 +192,7 @@ Suppose a website provides an interface to delete negative reviews. If an attack
 
 ## Software Engineering
 ### Design Methods
+
 ---
 
 Software design methodology is the core concept guiding software development, including but not limited to the following:
@@ -278,6 +282,7 @@ Business data model -> Component protocol -> Slot mapping protocol -> View proto
   - CSS specificity: Understand selector weights.
 
 - Animation: CSS animations and transitions.
+
 ---
 
 - **JavaScript**
@@ -384,6 +389,7 @@ Business data model -> Component protocol -> Slot mapping protocol -> View proto
 ```
 
 ## Analysis of Technical Highlights
+
 ---
 In front-end development, the following technical areas are particularly important, among which **performance, frameworks, tracking, canary releases, security, deployment, scaffolding, caching, specifications, and cross-platform** are core focus points. Below are three or five highlights:
 
@@ -486,6 +492,7 @@ In front-end development, the following technical areas are particularly importa
   - **Early Positioning**: Grab the initiative.
   - **Strong Goals/Strong Determination/Priority**: Clarify goals and execute firmly.
 - **Industry Selection**:
+
 ---
 
   - Finance can be a lifelong career.
@@ -548,6 +555,7 @@ Solution:
 4 Intelligent image composition, visual 稿 generation component
 From the perspective of the front-end engineer career path: From Lass, Pass to the current popularity of Sass products, will Sass-level engineers continue to grow in the future, even surpassing back-end engineers? For SaaS-based startup companies, out of 100 engineers, are there basically 50-60 front-end engineers? The medium of human-machine interaction is essentially the product; will front-end engineers gradually evolve into Sass product engineers?
 * Sass product engineer
+
 ---
 
 * SRE engineer
@@ -600,6 +608,7 @@ Advanced:
 Intermediate:
 - [] R&D pipeline
 - [] Library
+
 ---
 - [] Framework
 - [] Performance Optimization
@@ -641,6 +650,7 @@ pv missing
 ### Team Building
 * Sharing mechanism
   * Become a brand
+
 ---
 * Easy-to-understand heuristic, avoid high-sounding and empty presentations
 
@@ -677,11 +687,13 @@ Physical impact + Notify business parties
 2 grayscale + rollback
 3 verification in real online environment (public access)
 ### Frontend monitoring
+
 ---
 
 Collection plan: Based on Element timing + Performance Observer, custom attribute reporting
 
 Approach to real-time calculation of massive data: Space for time -> Pre-calculate the data cube, just take it out when needed -->
+
 ---
 ---
 

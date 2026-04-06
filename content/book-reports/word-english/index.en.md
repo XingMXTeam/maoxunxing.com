@@ -13,6 +13,7 @@ This book reveals how to efficiently master English like a native speaker throug
 <!--more-->
 
 - **Combining Pronunciation with Muscle Movement**: Visualizes pronunciation as muscle movement, helping to understand the rules of vowel and consonant pronunciation.
+
 ---
 - **Flexibility of Prepositions**: Analyzes the different meanings of prepositions (such as at/on/over) through specific scenarios, revealing the logic of language expression.
 ## What I Liked
@@ -39,6 +40,7 @@ This book reveals how to efficiently master English like a native speaker throug
    - Vowel pronunciation involves coordinated movements of the jaw, mouth, nose, and tongue.
 
      - When pronouncing from /i:/ to /u:/, the mouth shape changes from large to small, the tongue position moves from back to front, and the muscles gradually relax.
+
 ---
 - Consonant pronunciation rules:
 ## Key Takeaways

@@ -9,11 +9,13 @@ images:
 ---
 ## **Foreword**
 This article summarizes some common problems and solutions encountered when using the PM2 tool, helping developers quickly get started with PM2's automatic deployment feature.
+
 ---
 ## **Preparation**
 ### **Experimental Environment**
 - **Virtual Machine**: VMware virtual machine with Ubuntu 16.04 installed.
 - **Local Environment**: Windows 7 platform with Xshell installed.
+
 ---
 ### **Steps**
 #### **1. Install VMware and Configure the Window**
@@ -22,6 +24,7 @@ This article summarizes some common problems and solutions encountered when usin
   ![Adjusting the window](a.jpg)
 #### **2. Install Xshell**
 - Install Xshell on the local Windows 7 system to remotely connect to the virtual machine.
+
 ---
 ## **Getting Started**
 ### **Virtual Machine Environment Configuration**
@@ -60,6 +63,7 @@ npm install vue-cli pm2 -g
 - **Yarn**: A package management tool, similar to npm.
 - **Vue CLI**: Vue's command-line tool.
 - **PM2**: A service management tool for Node.js.
+
 ---
 ### **Testing the Node.js Environment on the Virtual Machine**
 1. Create a `server.js` file:
@@ -78,6 +82,7 @@ npm install vue-cli pm2 -g
    ```
    If you see the following status, the startup was successful:
    ![PM2 started successfully](c.png)
+
 ---
 ## **Connecting to the Virtual Machine from Local Windows**
 ### **1. Modify SSH Configuration**
@@ -118,6 +123,7 @@ ssh ubuntu@192.168.150.129
 - **IP Address**: The virtual machine's IP address.
 - **Network Mode**: NAT mode is sufficient; no need to change to bridged mode.
 If the configuration is correct, you should be able to connect successfully.
+
 ---
 ## **Creating a Private Repository**
 ### **1. Create a Bitbucket Repository**
@@ -180,6 +186,7 @@ mkdir -p /home/ubuntu/www/testproject/production
 sudo chmod 777 /home/ubuntu/www
 sudo chmod 777 /home/ubuntu/www/testproject
 ```
+
 ---
 ## **Pre-Deployment Configuration**
 ### **1. Initialize Deployment**
@@ -203,6 +210,7 @@ pm2 deploy ecosystem.json production setup
    - Ensure the virtual machine's SSH Key has been correctly added to Bitbucket.
 3. **Other Errors**
    - Troubleshoot step-by-step based on the error message, for example, by checking paths, permissions, etc.
+
 ---
 ## **Publishing the Project**
 Execute the following command to complete the project deployment:
@@ -211,6 +219,7 @@ pm2 deploy ecosystem.json production
 ```
 Check on the virtual machine to see if the automatic deployment was successful:
 ![Deployment successful](z.png)
+
 ---
 ## **Summary**
 Through the steps above, we have completed the automatic deployment configuration for PM2. Here is a summary of the key points:

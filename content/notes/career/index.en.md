@@ -9,6 +9,7 @@ tags:
 > When Jack Ma was first building China Pages, he knew he was creating something different. This belief and vision not only drove his success but also provide valuable inspiration for us today.
 > You're making a big bet, but the bet is on yourself. - Better Call Saul
 > Basecamp: We have always been committed to making Basecamp a calm company. We don't make impossible promises, we don't chase high turnover, we don't set deadlines, and we don't artificially create busy work and systemic anxiety. Some projects seem to never end, and we think that's OK.
+
 ---
 ## **1. Pre-sales and Productization**
 - **Pre-sales**: Gain early support and user trust.
@@ -92,6 +93,7 @@ tags:
 - **Technical Barriers**:
   - Create high-tech products to form a competitive barrier.
 ![Alt Text](image-1.png)
+
 ---
 ## **Forward-Thinking: Foresee the Future, Solve Problems**
 > Over-pursuing how to **best solve one problem**, while ignoring a more important point—**solving more problems**.
@@ -102,6 +104,7 @@ tags:
 - **Key Points**  
   - Forward-thinking is a capability that helps you seize opportunities and avoid risks in complex environments.  
   - Learn to look at problems from a long-term perspective and avoid being constrained by immediate difficulties.
+
 ---
 ## Sales **Acquiring the First Batch of Users: Starting with Xiaoyuan Souti**
 ### Human Nature
@@ -184,6 +187,7 @@ As a telemarketer, the key to success lies not only in the product itself but al
 > Let other people discuss it: for example, "the best phone in the Eastern Hemisphere" is very important.
 > Entrepreneurs must be careful. Especially in front of the media.
 > Differentiated things are what create competitiveness.
+
 ---
 ## Design
 In product design, advertising, and user communication, "**Less is More**" is a golden rule. The following content, based on simplicity, user perspective, and practicality, will help you better understand and apply this concept.
@@ -214,6 +218,7 @@ In product design, advertising, and user communication, "**Less is More**" is a 
 - **Explain in One Sentence**: Ad copy should get straight to the point, for example, “Learn a new skill in just 5 minutes a day.”
 - **Visual Impact**: Use simple graphics or colors to attract attention, but don't let them overshadow the main message.
 - **Call to Action**: Clearly tell the user what to do next, such as “Sign Up Now” or “Free Trial.”
+
 ---
 ## The Work
 - **Core Viewpoint**  
@@ -259,6 +264,7 @@ In product design, advertising, and user communication, "**Less is More**" is a 
 - **A Better Way**  
   - Encourage individual independent thinking and deep dives into consumer insights.  
   - After a clear direction is established, then conduct small-scale discussions and optimizations.
+
 ---
 ## New Oriental Case Study: **1. Entrepreneurial Investment and Focus**
 - **Full Commitment**  
@@ -304,6 +310,7 @@ In product design, advertising, and user communication, "**Less is More**" is a 
 - **Reflecting on Success and Failure**  
   > “Any trait that made you successful in the past could become the reason for your failure.”  
   - Successful experiences can become future constraints. Entrepreneurs need to be constantly vigilant and adjust their thinking patterns.
+
 ---
 Two Stages of Business Strategy
 ## **Phase 1: Conversion**
@@ -318,6 +325,7 @@ Two Stages of Business Strategy
   - **Advantages**:  
     - Lock in profits early, reducing risk.  
     - Maintain a healthy financial model during large-scale expansion.  
+
 ---
 ## **1. The Importance of Industry Selection**
 - **Core Viewpoint**:
@@ -358,6 +366,7 @@ Two Stages of Business Strategy
 - **How to Grasp the Patterns**:
   - Spend time communicating with users face-to-face to deeply understand their needs.
   - Only by truly understanding users can you grasp the patterns of product development.
+
 ---
 ## Business Concepts
 Platform Value: 

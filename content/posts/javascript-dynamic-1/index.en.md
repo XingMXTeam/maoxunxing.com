@@ -9,6 +9,7 @@ images:
   - javascript-dynamic-1/cover.png
 ---
 In modern front-end development, cross-terminal development and dynamic capabilities are crucial for improving development efficiency and optimizing user experience. This article will discuss topics such as **data delivery and module publishing**, **module system layering**, **responsive design**, **platform-specific builds**, and **dynamic technologies**, providing detailed analysis and organization.
+
 ---
 ## Table of Contents
 1. [Cross-Terminal Development Overview](#跨端开发概述)
@@ -19,9 +20,11 @@ In modern front-end development, cross-terminal development and dynamic capabili
 6. [Dynamic Technologies](#动态化技术)
 7. [Performance Metrics](#性能指标)
 8. [Conclusion](#总结)
+
 ---
 ## Cross-Terminal Development Overview
 The core goal of cross-terminal development is to use a single codebase to adapt to multiple platforms, including H5, PC, and mini-programs. The key lies in modular design, optimization of data delivery and publishing processes, and support for dynamic capabilities.
+
 ---
 ## Three-Layer Structure of Data Sources
 In cross-terminal development, the design of data sources is typically divided into the following three layers:
@@ -43,6 +46,7 @@ In cross-terminal development, the design of data sources is typically divided i
   - Dynamically generated, suitable for runtime data processing.
   - Supports multi-terminal adaptation; instantiation logic can be adjusted based on the needs of different terminals.
   - Example: A specific user's shopping cart instance.
+
 ---
 ## Module System Layering
 The design of the module system is fundamental to cross-terminal development and is usually divided into the following two layers:
@@ -58,6 +62,7 @@ The design of the module system is fundamental to cross-terminal development and
   - Designed for specific business scenarios.
   - Include a Schema definition to describe the module's configuration (e.g., data, internationalization, themes).
   - Examples: Product details module, Order confirmation module.
+
 ---
 ## Responsive Design
 Responsive design is a crucial part of cross-terminal development, ensuring that pages display well on different devices. Its core includes:
@@ -65,6 +70,7 @@ Responsive design is a crucial part of cross-terminal development, ensuring that
 - **Media Queries**: Adjusting styles based on device characteristics (such as screen width and resolution).
 - **Dynamic Units**: Using `rem` or `vw/vh` units to enhance adaptation flexibility.
 ![alt text](image.png)
+
 ---
 ## Platform-Specific Builds
 Platform-specific builds refer to generating specific code packages for different terminals (such as H5 and PC) to meet their respective performance and functional requirements.
@@ -76,6 +82,7 @@ Platform-specific builds refer to generating specific code packages for differen
 - **Functions**:
   - Centralized management of API requests.
   - Supports mock data, facilitating development and testing.
+
 ---
 ## Dynamic Technologies
 Dynamic technologies are key in cross-terminal development, enhancing application flexibility and update efficiency.
@@ -89,8 +96,10 @@ Dynamic technologies are key in cross-terminal development, enhancing applicatio
 - **Solutions**:
   - Use a dynamic container (like DX) to replace pure H5 implementations.
   - Optimize animations and gesture interactions to improve user experience.
+
 ---
 ## Performance Metrics
 Time to Interactive (TTI) for the first screen, generally `onLoad` is not used.
+
 ---
 ## Rendering Origin Design

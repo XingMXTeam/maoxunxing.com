@@ -20,6 +20,7 @@ The three most important financial statements are: **Balance Sheet**, **Income S
   - Asset investment is an **Investing Cash Outflow**.
   - Operating assets generate **Operating Outflows** and **Operating Inflows**, forming **Net Operating Inflow**.
   - Investment income generates **Investing Cash Inflows** and **Financing Cash Outflows**.
+
 ---
 ## **2. The Work of Accounting**
 The work of accounting is not just bookkeeping, but includes the following processes:
@@ -48,6 +49,7 @@ The work of accounting is not just bookkeeping, but includes the following proce
 - **Intangible Assets**:
   - Includes patent rights, non-patented technology, trademark rights, copyrights (IP), land use rights, franchise rights (franchise stores).
   - A brand cannot be sold independently and is not an intangible asset.
+
 ---
 ## **3. Operating Asset Analysis**
 ### **3.1 Important Formulas**
@@ -92,12 +94,14 @@ The work of accounting is not just bookkeeping, but includes the following proce
   - High short-term loans.
 - **Important indicator for evaluating profit**:
   - Net Operating Inflow / Core Profit = 1.2 to 1.5 is optimal.
+
 ---
 ## **4. Problems with Feasibility Reports**
 - Economic development has inertia, no cycles.
 - Policies are continuously favorable.
 - Competition and substitute products are not fully considered.
 - Resource constraints are not fully considered.
+
 ---
 ## **5. Several Ways to Make Money**
 1. **Earning from price differences in trading**:
@@ -106,6 +110,7 @@ The work of accounting is not just bookkeeping, but includes the following proce
    - e.g., a subsidiary hiding profits through its advertising business.
 3. **Earning from financial arbitrage**:
    - Information asymmetry, financial arbitrage.
+
 ---
 ## **6. How to Look at a Company**
 ### **6.1 Competitiveness**
@@ -119,6 +124,7 @@ The work of accounting is not just bookkeeping, but includes the following proce
 - Operating risk and financial risk:
   - Cash flow statement.
   - Whether operating cash flow is positive.
+
 ---
 ## **7. Supplementary Information**
 ### **7.1 Financial Fraud in Agriculture**
@@ -135,4 +141,5 @@ The work of accounting is not just bookkeeping, but includes the following proce
 - Advances from customers are one indicator of a company's strong market position.
 ### **7.7 Cash Flow**
 - A positive operating cash flow indicates that the company is able to earn money.
+
 ---

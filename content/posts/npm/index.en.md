@@ -62,6 +62,7 @@ pnpm addresses many issues found in traditional package managers (like npm and Y
 ### 6. Better Lock File
 - **Feature**: pnpm's lock file (`pnpm-lock.yaml`) is more concise and easier to manage in version control.
 - **Problem Solved**: Improves team collaboration and version consistency, ensuring identical dependency installation results across different environments.
+
 ---
 ## Component Library TS Type Definitions
 ## Component Export Declaration
@@ -144,6 +145,7 @@ To maintain compatibility with different versions of TypeScript, you can use the
 ### Explanation
 - **`<4.5`**: For older versions of TypeScript, use CommonJS type definition files.
 - **`>=4.5`**: For TypeScript 4.5 and higher, use ESM type definition files.
+
 ---
 ## UNPKG
 [UNPKG](https://unpkg.com/) is a content delivery network (CDN) based on [npm](https://www.npmjs.com/) that allows developers to directly access and load resources from npm packages via a browser. It provides a convenient way for front-end development to quickly include necessary libraries or tools without downloading or installing them.
@@ -189,6 +191,7 @@ This will display the directory structure of the `lodash` package, including its
    You can directly view the contents of an npm package to understand its file structure and dependencies.
 5. **Seamless Integration with the npm Ecosystem**  
    All packages published to npm can be accessed through UNPKG, fully leveraging npm's vast ecosystem.
+
 ---
 ## Parsing package.json Fields
 ## main
@@ -243,6 +246,7 @@ By comparing the `package-lock.json` files, it was found that the `next` version
 When using `tnpm`, after configuring the `resolutions` field, deleting `node_modules` does not automatically generate a `package-lock.json` file.
 #### Solution
 Change `tnpm`'s `resolutions` configuration to npm's `overrides` configuration to ensure that the `package-lock.json` file can be generated correctly.
+
 ---
 ## files
 In `package.json`, the `files` field is used to specify which files or directories will be included in the content of an npm package when it is published. By explicitly listing the files to be included, developers can more precisely control the content of the published package and avoid including unnecessary files.
@@ -319,11 +323,13 @@ The following is a complete `package.json` example showing how to use the `files
   }
 }
 ```
+
 ---
 ## Deleting node_modules
 ```shell
 find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
 ```
+
 ---
 ## npm link
 ## **1. Basic Usage of `npm link`**
@@ -399,6 +405,7 @@ npm install -g npmi
   - After installation, you can directly use `npmi <package-name>` to install dependency packages.
 - **`npm version patch`**
   -  Automatically updates to a new patch version.
+
 ---
 ## Install two different versions of a package
 ```text

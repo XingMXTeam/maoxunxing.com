@@ -59,12 +59,14 @@ This document organizes content such as technical architecture, stability assura
    Pay attention to changes in API call volume to ensure traffic is within a reasonable range.
 3. **Observe APIs: Ensure they scale with the canary release**  
    Gradually increase traffic during a canary release to ensure the stability of the new version.
+
 ---
 ## Online Issues Caused by Multi-Data Source Sorting + In-Memory Sorting
 1. **Insufficient Memory**: Large data volume leads to out-of-memory errors.
 2. **Network Latency**: Long data transmission times affect performance.
 3. **Data Consistency Issues**: Inconsistent data synchronization between multiple data sources.
 4. **Concurrency Conflict Issues**: Concurrent operations may lead to data races or deadlocks.
+
 ---
 ## Case Studies
 1. **Database Query Connections Exhausted**  

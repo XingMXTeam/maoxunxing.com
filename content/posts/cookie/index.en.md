@@ -22,18 +22,21 @@ images:
 - [Cookie Scenarios with Site B Embedded in Site A](#cookie-scenarios-with-site-b-embedded-in-site-a)
 - [Cookie Path and Expiration Time](#cookie-path-and-expiration-time)
 - [Viewing Cookies](#viewing-cookies)
+
 ---
 ## CookieStore API
 - **Description**: Chrome provides the new `cookieStore` API for more convenient management and manipulation of Cookies.
 - **Features**:
   - Provides an asynchronous interface to avoid blocking the main thread.
   - Supports CRUD (Create, Read, Update, Delete) operations on specific Cookies.
+
 ---
 ## Safari Third-Party Cookie Issues
 - **Problem Description**: Safari's support for third-party Cookies exhibits some strange behavior that requires further investigation.
 - **Possible Reasons**:
   - Safari's privacy protection policies (like ITP) restrict the use of third-party Cookies.
   - In some scenarios, Safari might directly discard or block third-party Cookies.
+
 ---
 ## Cookie Types
 1. **Session Cookies**:
@@ -45,6 +48,7 @@ images:
 3. **HttpOnly Cookies**:
    - Cannot be accessed or modified via JavaScript.
    - Set by the server, mainly used to prevent CSRF attacks.
+
 ---
 ## What Are Third-Party Cookies
 - **Definition**: When site A accesses domain B, the Cookie set by domain B in its response is called a third-party Cookie.
@@ -64,10 +68,12 @@ In simple terms: If site A embeds a third-party script, this script can access a
   ```http
   Set-Cookie: __Host-name=value; Secure; Path=/; SameSite=None; Partitioned;
   ```
+
 ---
 ## Browser Default Behavior and Permissions
 - **Default Behavior**: Browsers typically disable permission to modify Cookies via JavaScript.
 - **Solution**: Browser permissions need to be manually modified to allow Cookie modification.
+
 ---
 ## The SameSite Attribute of Cookies
 - **Purpose**: Controls whether Cookies are sent with cross-site requests, preventing CSRF attacks.
@@ -81,6 +87,7 @@ In simple terms: If site A embeds a third-party script, this script can access a
   Set-Cookie: key=value; SameSite=Lax;
   Set-Cookie: key=value; SameSite=None; Secure;
   ```
+
 ---
 ## Cross-Site Requests and CSRF Protection
 - **Characteristics**:
@@ -89,6 +96,7 @@ In simple terms: If site A embeds a third-party script, this script can access a
 - **Recommendations**:
   - Avoid using GET requests to update state.
   - Use POST requests to handle sensitive operations.
+
 ---
 ## Cookie Management with Multiple Domains
 - **Problem Description**:
@@ -101,6 +109,7 @@ In simple terms: If site A embeds a third-party script, this script can access a
 - **Solution**:
   - Clearly distinguish the scope of Cookies on the server side.
   - The client-side parsing logic needs to be handled carefully during reads.
+
 ---
 ## Cookie Setting Rules
 - **Example**:
@@ -111,6 +120,7 @@ In simple terms: If site A embeds a third-party script, this script can access a
   - `Domain` must be consistent with the current page's domain to be set successfully.
   - `SameSite=None` allows Cookies to be sent and received with cross-site requests, but the CSRF risk must be assessed.
   - `Secure` requires the request to be HTTPS.
+
 ---
 ## Cookie Scenarios with Site B Embedded in Site A
 - **Scenario Description**:
@@ -120,6 +130,7 @@ In simple terms: If site A embeds a third-party script, this script can access a
   - If the language Cookie is not passed correctly, site B will set a new Cookie in the response header.
 - **Solution**:
   - Ensure the language Cookie is passed correctly in the request to avoid redundant setting by the server.
+
 ---
 ## Cookie Path and Expiration Time
 - **Path Attribute**:
@@ -132,6 +143,7 @@ In simple terms: If site A embeds a third-party script, this script can access a
 - **Expiration Time**:
   - Determined based on the client's time.
   - If the client's time is tampered with, it may cause abnormal Cookie expiration.
+
 ---
 ## Viewing Cookies
 ![alt text](image.png)

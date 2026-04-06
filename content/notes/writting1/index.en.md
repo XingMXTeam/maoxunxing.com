@@ -40,6 +40,7 @@ Each paragraph must have an opening sentence that clearly states the main idea o
   - Technical term: "JavaScript is a single-threaded language." → [What is single-threaded?](https://example.com)
 - Non-technical term: "JavaScript can only do one thing at a time."
 ## Common Problems and Improvement Suggestions
+
 ---
 
 ### 1. Use fewer pronouns to avoid ambiguity
@@ -65,6 +66,7 @@ Each paragraph must have an opening sentence that clearly states the main idea o
   - Revised: "Software and hardware have many overlaps."  
   - Original sentence: "There is no multithreading in JavaScript."
 - Changed to: "JavaScript does not have multi-threading."
+
 ---
 
 ### 4. Use fewer adjectives and adverbs

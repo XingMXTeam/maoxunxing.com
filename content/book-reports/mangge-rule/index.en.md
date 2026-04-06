@@ -13,6 +13,7 @@ rating: 7
 <!--more-->
 
 - **Practical Life Wisdom**: Munger's advice on character traits like honesty, integrity, and staying away from gambling is not only applicable to investing but also offers significant inspiration for personal growth.
+
 ---
 - **Real Case Studies**: Through actual investment cases (such as railroad companies, The Wall Street Journal), it demonstrates how to identify good businesses and competitive advantages.
 ## What I Liked
@@ -37,6 +38,7 @@ rating: 7
 
 - Munger suggests investing in less crowded places (like the Chinese market) because there may be undervalued opportunities.
 4. **Importance of Financial Indicators**:
+
 ---
 
    - Focus on Return on Equity (ROE) and Net Cash Flow.

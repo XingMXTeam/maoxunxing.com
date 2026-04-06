@@ -33,10 +33,12 @@ export const DecoratorDemo = (props) => (WrappedComponent) => {
 - Decorators need to be compiled before they can run, which can make debugging difficult and hard to trace the root of a problem.
 #### **3.3 Impact on API Contracts**
 - Decorators are generated at runtime and can affect API contracts, leading to unexpected behavior.
+
 ---
 ## import
 `import * as path from 'path';` and `import path from 'path';`
 are two different syntaxes for importing modules. The former exports all content. The latter exports the default, and since `path` has no default export, it will cause an error.
+
 ---
 In JavaScript classes, the binding of `this` is a common issue. Especially when passing a class member function as a callback, `this` can lose its original context, leading to runtime errors.
 Here is a typical example:

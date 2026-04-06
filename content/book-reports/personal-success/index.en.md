@@ -5,17 +5,20 @@ rating: 7
 ---
 This book is written by David F. Swensen and recommended in a preface by Zhang Lei of Hillhouse Capital. From his perspective as the head of the Yale University endowment fund, the author shares his experience of achieving a long-term annualized return of nearly 17%. The book emphasizes the importance of asset allocation, proposing a diversified, passively managed, and equity-oriented investment portfolio strategy.
 <!--more-->
+
 ---
 ## What I Liked
 - **Clear Core Philosophy**: The book clearly states that asset allocation is the core of investment, advising against market timing and security selection, and reducing the frequency of trades.
 - **High Practicality**: It provides specific asset allocation ratio recommendations (e.g., 30% domestic stocks, 20% real estate), offering practical guidance for investors.
 - **International Perspective**: It covers not only the U.S. market but also investment tools in global markets (like the Nasdaq index, Nikkei 225 ETF), broadening the investment horizon.
 - **Combination of Theory and Practice**: By analyzing the characteristics of different asset classes (such as bonds, stocks, real estate), it helps readers understand how to build a diversified investment portfolio.
+
 ---
 ## What I Disliked
 - **Some Content Not Fully Applicable to Chinese Investors**: The asset allocation ratios and tools recommended in the book are primarily based on the U.S. market, which has certain limitations for the practical operations of Chinese investors.
 - **Lack of In-depth Case Studies**: Although some specific investment tools are mentioned, it does not provide detailed case studies or practical implementation steps.
 - **Limited Discussion on Non-Core Assets**: Emerging asset classes like cryptocurrencies and options are only briefly mentioned, without in-depth exploration of their risks and opportunities.
+
 ---
 ## Key Takeaways
 1. **Definition of Core Assets**:

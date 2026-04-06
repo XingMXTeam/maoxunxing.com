@@ -13,6 +13,7 @@ This book provides an in-depth analysis of the core elements of financial statem
 <!--more-->
 
 - **Case studies combined with practicality**: By illustrating the applicability of analytical methods through the characteristics of specific industries (such as hydropower generation, real estate), it enhances practicality.
+
 ---
 - **Multi-dimensional perspective**: Analyzing corporate financial statements from three dimensions—structure, history, and peers—to comprehensively reveal the operational status and competitiveness of the enterprise.
 ## What I Liked
@@ -37,6 +38,7 @@ This book provides an in-depth analysis of the core elements of financial statem
    - **Revenue Growth**: Only by exceeding the industry average can market share expansion be proven.
 
    - **Gross Profit Margin**: Above 40% usually indicates sustainable competitive advantages, while below 20% warrants cautious attention.
+
 ---
 - **Cost Ratio**: (Selling Expenses + Administrative Expenses + Financial Expenses) / Operating Revenue, be wary of companies with excessively high cost ratios.
 ## Key Takeaways

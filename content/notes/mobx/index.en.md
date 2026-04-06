@@ -25,6 +25,7 @@ tags:
 - **MobX 4**: Supports ES5 and decorator syntax, with good compatibility.
 
 - **MobX 5**: Fully based on ES6 Proxy, better performance, but does not support IE11.
+
 ---
 
 ## Design Philosophy
@@ -97,6 +98,7 @@ class TodoListView extends Component {
 <ul>
                     {this.props.todoList.todos.map(todo => (
                         <TodoView todo={todo} key={todo.id} />
+
 ---
                     ))}
 </ul>
@@ -163,6 +165,7 @@ store.count++; // Output: Current count: 2
 - **Immediate response**: Whenever the dependent state changes, `autorun` executes immediately.
 }
 ```
+
 ---
 
 }

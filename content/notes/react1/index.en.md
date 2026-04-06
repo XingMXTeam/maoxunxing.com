@@ -7,6 +7,7 @@ tags:
 In React, event handling has some differences compared to native DOM event handling. Here are the basic usage and points to note about React events.
 ## 1. Event Names are camelCase
 React event names use **camelCase**, such as `onClick`, `onMouseOver`, etc., instead of the lowercase form in native HTML (like `onclick`).
+
 ---
 ## 2. Passing a Function as an Event Handler
 In JSX files, you need to pass a function reference as the event handler, not a string. Here is a simple example:
@@ -27,9 +28,11 @@ class Hello extends Component {
 }
 export default Hello;
 ```
+
 ---
 ## 3. Preventing Default Behavior
 In React, you must call `e.preventDefault()` to prevent the default behavior; you cannot achieve this by `return false`.
+
 ---
 ## 4. Synthetic Event Object
 The React event object `e` is a **SyntheticEvent**, which is a wrapper around the native event object and provides cross-browser consistency.
@@ -51,6 +54,7 @@ DOMEventTarget target;          // The original DOM element that triggered the e
 number timeStamp;               // The timestamp of when the event occurred
 string type;                    // The event type
 ```
+
 ---
 ## 5. Handling the `this` Binding Issue
 In class components, `this` in an event handler defaults to `undefined`. To make `this` point to the current component instance, you can use one of the following methods:
@@ -69,6 +73,7 @@ clickHandler = (e) => {
 ```jsx
 <button onClick={(e) => this.clickHandler(e)}>Click Me</button>
 ```
+
 ---
 ## 6. Passing Arguments to Event Handlers
 If you need to pass extra parameters (like an ID) to an event handler, you can use the following two methods:
@@ -80,6 +85,7 @@ If you need to pass extra parameters (like an ID) to an event handler, you can u
 ```jsx
 <button onClick={this.clickHandler.bind(this, this.id)}>Delete Row</button>
 ```
+
 ---
 ## 7. Asynchronously Accessing the Synthetic Event Object
 For performance reasons, React nullifies all properties of the Synthetic Event object after the event handler has finished executing. Therefore, you cannot access these properties asynchronously.
@@ -107,6 +113,7 @@ clickHandler(id, e) {
   }, 0);
 }
 ```
+
 ---
 ## 8. Supporting Capture Phase Event Triggering
 If you need to trigger an event during the capture phase, you can append `Capture` to the event name, for example:

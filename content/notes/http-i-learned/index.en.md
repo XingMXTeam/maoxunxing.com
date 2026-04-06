@@ -5,12 +5,14 @@ tags:
   - HTTP
 ---
 In front-end development, when we need to send form data, we often use the `FormData` object to construct request parameters. However, `FormData` is different from a regular JavaScript object. It is a key-value pair structure, and its content cannot be directly extracted using ES6 destructuring syntax. This adds a certain level of complexity for developers when handling `FormData`.
+
 ---
 ## Characteristics of FormData
 - **Key-Value Pair Structure**: `FormData` internally stores key-value pairs, similar to URL query parameters.
 - **Not Directly Destructible**: `FormData` does not support direct use of ES6 destructuring syntax (e.g., `{ key } = formData`).
 - **Dynamic Addition and Deletion**: Data can be dynamically manipulated using the `append` and `delete` methods.
 - **Suitable for File Uploads**: `FormData` supports binary data (like files), making it very suitable for file upload scenarios.
+
 ---
 ## Methods for Handling FormData
 ### Iterating Through FormData
@@ -41,6 +43,7 @@ const formDataToObject = (formData) => {
 console.log(formDataToObject(formData));
 // Output: { name: 'Alice', age: '25' }
 ```
+
 ---
 ## Code Example
 Here is a complete example demonstrating how to handle request parameters of type `FormData`:
@@ -73,6 +76,7 @@ fetch('/api/submit', {
   .then((data) => console.log('Server response:', data))
   .catch((error) => console.error('Request failed:', error));
 ```
+
 ---
 ## Can Request Parameters Be an Array?
 ### **1. Answer**
@@ -107,9 +111,11 @@ $.ajax({
     },
   });
   ```
+
 ---
 ## HTTPS
 https://www.wosign.com/News/news_2018082801.htm
+
 ---
 ## LightProxy
 Besides Chrome, some scenarios require a global proxy. I used to use Charles a lot, but recently I've been using `LightProxy` more. However, I found that when using the proxy with Firefox, it shows a certificate error, displaying a message like: **Your connection is not secure**
@@ -119,6 +125,7 @@ Solution:
 2. Disable HSTS
 In the Firefox address bar, type `about:config`, search for `network.stricttransportsecurity.preloadlist`, and set it to `false`.
 **LightProxy** is a lightweight proxy tool based on Node.js, mainly used for debugging and intercepting HTTP/HTTPS requests. It decrypts HTTPS traffic through a Man-in-the-Middle (MITM) attack, allowing users to view and modify the encrypted request content.
+
 ---
 ## HTTP/2 Protocol
 ### HTTP Pipelining
@@ -185,12 +192,14 @@ HTTPS accessing HTTP will cause the browser to show a security warning. In IE8, 
 Will HTTP images inside an iframe be affected?
 ### JS
 HTTPS accessing HTTP will be blocked.
+
 ---
 ## Problem Description
 When visiting a website, some images fail to load, and the console shows certificate-related errors. For example:
 - `NET::ERR_CERT_DATE_INVALID` (Certificate has expired)
 - `NET::ERR_CERT_AUTHORITY_INVALID` (Certificate is not trusted)
 This is usually caused by an expired or misconfigured SSL/TLS certificate.
+
 ---
 ## Cause Analysis
 1. **Certificate Expired**
@@ -201,6 +210,7 @@ This is usually caused by an expired or misconfigured SSL/TLS certificate.
    Using a self-signed certificate or a certificate issued by an untrusted Certificate Authority (CA).
 4. **Time Synchronization Issues**
    If the server or client's time is set incorrectly, it may cause the certificate to be mistakenly identified as invalid.
+
 ---
 ## Solutions
 ### Check the SSL/TLS Certificate
@@ -244,6 +254,7 @@ Example:
    Ensure the certificate is issued by a trusted CA. Avoid using self-signed certificates.
 2. **Manually Add Trust (Internal Environments Only)**
    In a development or testing environment, you can add the self-signed certificate to the browser's trust list.
+
 ---
 ## Preventive Measures
 1. **Set Up Automatic Renewal**
@@ -254,9 +265,11 @@ Example:
    Periodically use SSL detection tools to check if the certificate configuration is correct.
 4. **Use a CDN Service**
    Host static resources on a CDN (like Alibaba Cloud OSS, Cloudflare) and leverage the HTTPS support they provide.
+
 ---
 ## HTTP Standard Document
 https://datatracker.ietf.org/doc/html/rfc7231#page-70
+
 ---
 When implementing a download feature, requests are often sent via an `XHR` object. However, this method can inevitably encounter **cross-origin issues**.
 ## **2. Solution**
@@ -277,6 +290,7 @@ When implementing a download feature, requests are often sent via an `XHR` objec
   const downloadLink = `https://example.com/download?fileId=123`;
   window.open(downloadLink);
   ```
+
 ---
 ## Crawlers
 ### Good Crawlers

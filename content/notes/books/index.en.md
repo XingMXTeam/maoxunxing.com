@@ -51,6 +51,7 @@ custom_toc:
 - **Essence**: Computation is mechanized information processing.  
 ### Router Convergence Time
 **Router Convergence Time** is the time it takes for all routers in a network to synchronize their routing information and reach a consistent state. In other words, when the network topology changes (e.g., link failure, device restart, or new link addition), routers need to recalculate the best paths and propagate these changes throughout the network. The process is considered complete only when all routers have updated their routing tables and reached a consensus.
+
 ---
 ## Thoughts After Reading Wang Yin's Blog
 When discussing the essence of computer science, many people habitually regard mathematics as its core foundation. However, this view is not entirely accurate. The following is an in-depth discussion of this topic.
@@ -80,6 +81,7 @@ When discussing the essence of computer science, many people habitually regard m
 ### 3.2 Interdisciplinary Integration
 - **Multidisciplinary Collaboration**: The success of computer science often depends on collaboration with other disciplines, such as biology (bioinformatics), physics (simulation and modeling), etc.
 - **Comprehensive Abilities**: Mastering multiple skills (programming, design, communication, etc.) is more conducive to the advancement of computer science than simply being proficient in mathematics.
+
 ---
 ## Cloud Native
 | Concept         | Explanation                                                                                                                                                                                          | Others |
@@ -108,6 +110,7 @@ When discussing the essence of computer science, many people habitually regard m
   - **Immutable Infrastructure**: Once deployed, the infrastructure is not modified. Updates are made by deploying new versions, ensuring consistency.  
   - **Service Mesh**: Such as Istio, provides communication, monitoring, and security for microservices.  
   - **Serverless**: Developers focus on business logic without worrying about the underlying servers, executing code on demand.
+
 ---
 ## DNS
 DNS (Domain Name System) is a core service of the internet that translates human-readable domain names (e.g., `www.example.com`) into machine-readable IP addresses (e.g., `192.168.1.1`). The DNS system resolves domain names through a hierarchical structure, primarily consisting of **Local DNS** and **Authoritative DNS**.
@@ -138,6 +141,7 @@ Authoritative DNS is the ultimate source for domain name resolution, storing and
 1. The authoritative DNS server is managed by the domain owner or their hosting provider and is responsible for maintaining the domain's DNS records.
 2. When a Local DNS queries the authoritative DNS, the authoritative DNS returns the corresponding DNS record based on the requested domain name.
 3. The authoritative DNS does not cache records for other domains; it is only responsible for providing resolution information for the domains it manages.
+
 ---
 ## File System - Glob Pattern
 Glob is a pattern language used for matching file paths, widely applied in file searching, build tools (like Webpack, ESLint), and scripts. It can quickly locate files that match specific rules using simple wildcards and pattern expressions.
@@ -148,6 +152,7 @@ Common wildcards include:
 - `[]`: Matches any single character within the brackets.
 - `{}`: Matches any of the patterns within the braces (comma-separated).
 - `@()`: Matches any of the patterns within the parentheses (pipe-separated).
+
 ---
 ## Special Syntax Parsing
 ### @() Syntax
@@ -158,6 +163,7 @@ Common wildcards include:
 ```
 - Each pattern inside `@()` can be a filename, extension, or part of a path.
 - A file path matches if it conforms to any of the patterns inside the parentheses.
+
 ---
 ## Example Analysis
 Here is a specific Glob pattern example and its analysis:
@@ -198,6 +204,7 @@ After running the above command, the matched files are:
 - `docs/README.md`
 - `docs/guide/tutorial.md`
 Note: `test/example.js` will not be matched because it is not in the `src` or `docs` folder.
+
 ---
 ## linux
 ## Terminal Page Scrolling Shortcuts
@@ -339,6 +346,7 @@ When we type `ping <target_IP>` in the terminal and press Enter, the following i
     ```
   - pcap: Use `editcap` to trim the captured packet to avoid it being too large, e.g., `editcap -A start_time -B end_time test.pcap test-filtered.pcap`
   - Then load it into Wireshark.
+
 ---
 ## Functional Programming
 ## Characteristics of Functional Programming
@@ -380,6 +388,7 @@ When we type `ping <target_IP>` in the terminal and press Enter, the following i
 - **Framework Design**: Such as frameworks like Express, Midway, which use OOP to build extensible modules.
 - **Complex Business Logic**: Such as order, payment, and inventory modules in an e-commerce system, where code is organized through classes and objects.
 - **State Management**: Such as in game development, where OOP is used to manage character states and behaviors.
+
 ---
 ## TCP
 ## RFC 1180 - A TCP/IP Tutorial
@@ -475,6 +484,7 @@ TCP uses an acknowledgment mechanism (ACK) to ensure that data packets are succe
 - In the TCP protocol, a flags field value of 2 indicates this is a SYN packet.
 - tcp.time_relative>0: This part of the condition filters for packets with a relative time greater than 0. Relative time usually refers to the time offset from the start of the capture to the current packet. This means it filters all packets that occurred after the capture started.
 - Use the `sysctl -a` command to view system kernel parameters. You found a parameter related to the retry mechanism: `net.netfilter.nf_conntrack_tcp_max_retrans`, with a value of 3.
+
 ---
 ```shell
 set -e

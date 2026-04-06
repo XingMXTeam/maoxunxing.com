@@ -25,6 +25,7 @@ Its advantages are very direct:
 
 * Fully open source, no worries about fees and licensing issues.
 * Primarily command-line operations, highly compatible with the native Docker CLI, with a very low learning cost.
+
 ---
 
 You only need one command:
@@ -76,6 +77,7 @@ You can view and manage images in the Alibaba Cloud image repository:
 
 docker login --username=xunxi******@163.com crpi-107q1l68xq5wwq11.cn-hangzhou.personal.cr.aliyuncs.co
 # Tagging
+
 ---
 
 docker tag [ImageId] crpi-107q1l68xq5wwq11.cn-hangzhou.personal.cr.aliyuncs.com/xunxing-docker/ebook-base:[Image Version Number]
@@ -112,4 +114,5 @@ Colima is more like a lightweight folding knife, sharp enough and easy to carry.
 In a nutshell:
 
 **When you start to get tired of fans spinning wildly and CPU soaring, Colima might just be your best choice.**
+
 ---

@@ -13,6 +13,7 @@ This book helps readers master the essence of wealth management through core con
 <!--more-->
 
 - **Inspiring**: Encourages readers to act bravely through the view that "fear of failure prevents attempts."
+
 ---
 - **Repetitive Content**: Certain concepts (such as diversification) are mentioned multiple times in different chapters, appearing somewhat redundant.
 
@@ -95,6 +96,7 @@ Increased market value will only lead to a continuous rise in income.
 
 3. **Value-Oriented Corporate Strategy**  
    - The core of a business lies in the advantages or value it provides, not merely in pursuing profits.  
+
 ---
 
    - Customer relationships are crucial; never casually lose any customer.  
@@ -115,4 +117,5 @@ The real limitation on income isn't the work itself, but creativity, focus, and 
    Repetition is the mother of skill. Continuously review and practice the essence of the book, internalizing it as your own guiding principles for action.
 
 《Money: 7 Steps to Create Lifetime Income》 is not just a book about wealth management, but also a guide to value creation and continuous growth. Through diversifying investments, enhancing market value, and focusing on controllable factors, we can achieve financial freedom and find satisfaction in life. Remember, the key to success lies in bringing value to the market, while the secret to happiness lies in love and focus.
+
 ---

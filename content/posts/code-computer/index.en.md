@@ -10,6 +10,7 @@ images:
 ## Digital Encoding
 ### 1. The Essence of a Computer
 The essence of a computer is a **world of 0s and 1s**. To **represent this world using 0s and 1s**, the conclusion is: **encoding** is required.
+
 ---
 ### 2. How Numbers Are Represented
 #### Why does two's complement exist?
@@ -36,6 +37,7 @@ The essence of a computer is a **world of 0s and 1s**. To **represent this world
   Therefore, the final range is `[-8, 7]`. By the same logic, `[-128, 127]` can also be explained.
 #### Why do decimals have precision issues?
 - **Reason**: In some languages, `0.1 + 0.2` will never equal `0.3`. This is because binary decimals can only be represented by a fixed combination of digits, and a number like `0.2` cannot be precisely represented in binary.
+
 ---
 ## Text Encoding
 ### 1. The Concept of Encoding
@@ -54,6 +56,7 @@ The essence of a computer is a **world of 0s and 1s**. To **represent this world
   - Generally, Unicode encoding refers to UTF-16 encoding, which is variable-length, uses 2-byte code units, and has byte order issues.
   - **UTF-8**: Variable-length encoding, single-byte code units, no byte order issues.
 - **Development Process**: Initialization -> Localization (GB stands for National Standard) -> Internationalization -> Efficiency.
+
 ---
 ## Multimedia Encoding
 ### 1. Audio
@@ -68,6 +71,7 @@ The essence of a computer is a **world of 0s and 1s**. To **represent this world
 ### 3. Video
 - **Frames**: Composed of images; multiple frames form a video stream.
 - **Encoding Methods**: MPEG-1, MPEG-2, MPEG-4, H.264, H.265.
+
 ---
 ## The Essence of Computation
 ### 1. Concept
@@ -75,12 +79,14 @@ With encoding in place, how do computers perform calculations? Why are memory st
 #### Logical Operations
 - **Basic Operations**: AND, OR, NOT, XOR.
 - **Implementation**: Implemented through logic gate circuits. The input is a switch, and the output is typically an LED light (a colored light). Chips generally implement logical operations, for example, a 7486 (XOR gate) chip will expose some pins, such as one for power, one for ground, and others for input and output.
+
 ---
 ### 2. Half Adder
 - **Definition**: An adder that does not consider the carry-in.
 - **Formulas**:
   - `Cout = X * Y`
   - `S = X ⊕ Y`
+
 ---
 ### 3. Full Adder
 - **Definition**: An adder that considers the carry-in.
@@ -89,22 +95,28 @@ With encoding in place, how do computers perform calculations? Why are memory st
   S = X ⊕ Y ⊕ Cin
   Cout = (X * Y) + ((X ⊕ Y) * Cin)
   ```
+
 ---
 ### 4. Two-bit Adder & Multi-bit Adder
 - **Two-bit Adder**: Two full adders connected in series.
 - **Multi-bit Adder**: Multiple full adders connected in series.
+
 ---
 ### 5. Adder with Memory
 - **Function**: Saves the result of the previous calculation.
+
 ---
 ### 6. Selective Adder
 - **Function**: Use several adders with memory to avoid starting over when an input error occurs.
+
 ---
 ### 7. Automatic Adder
 - **Function**: Press a switch to automatically input and sum all the numbers.
+
 ---
 ### 8. Programmable Adder
 - **Function**: Can be controlled to calculate only a subset of the numbers.
+
 ---
 ### 9. Comparison with Modern Computers
 Current computers can perform **1 billion addition operations per second**. A computer consists of the following parts:
@@ -114,9 +126,11 @@ Current computers can perform **1 billion addition operations per second**. A co
 4. **Input Device**: The input panel, for inputting with switches.
 5. **Output Device**: The output light bulbs, which display the output data.
 The above includes concepts such as: input, output, memory, addressing, decoding, instructions, arithmetic logic unit, etc.
+
 ---
 ## Virtual Circuit Simulation
 - **Tool**: [Virtual Circuit Simulator](https://exp.xiaogd.net/circuitjs1-zh/circuitjs.html)
+
 ---
 ## Difference Between Interpreters and Compilers
 ### 1. How does a program run?
@@ -163,9 +177,11 @@ function compile(ast) {
   }
 }
 ```
+
 ---
 ## The Essence of Code
 Code controls the machine; it is instructions for humans to read. It has two main elements: **data** and **operations** (conditionals, selections, loops, branches, etc.).
+
 ---
 ### Memory Model
 #### 1. How do computers store data?

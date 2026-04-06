@@ -257,6 +257,7 @@ Despite its powerful functions, GPT still has some limitations:
     -   The knowledge base does not require fine-tuning; it directly uses the pre-trained model to generate content.
 ### Possibility of Long-chain
 - Long-chain (long-chain reasoning) may be a future development direction, further enhancing the model's performance in complex tasks.
+
 ---
 ## How to Write Good Prompts
 The following are prompt examples for information classification, information extraction, personalized replies, and summarization.
@@ -404,6 +405,7 @@ Help me organize this into a better markdown format. Please ensure no content is
 Format requirements:
 A 50-word summary
 <!--more-->
+
 ---
 ## What I Liked
 ## What I Disliked
@@ -411,6 +413,7 @@ A 50-word summary
 ```
 ## Code Reading
 What function does this code implement? Please provide a detailed introduction, draw a colored table or generate a visualization to aid understanding. And output a minimal runnable code snippet, without error handling, boundary case handling, or logging.
+
 ---
 ## How to Use AI Well
 A recent popular video on YouTube, <how i use llm>, is by Andrej Karpathy, a great mind. Here is ChatGPT's introduction to him:
@@ -512,11 +515,13 @@ Explaining movie subtitles:
 {{< img src="image-4.png" alt="ChatGPT OCR" caption="ChatGPT OCR" maxWidth="450px" align="center" >}}
 Here is another solution, using Google smart glasses to OCR text, and then feeding it to ChatGPT.
 ![alt text](image-5.png)
+
 ---
 ## Build Your Own Cursor
 Install the vscode plugin:
 ![alt text](image-6.png)
 Cline plugin
+
 ---
 ## AI Tools and Resources
 ## **1. Image & Prompt Tools**
@@ -604,6 +609,7 @@ Cline plugin
 -   [Bilibili Video](https://www.bilibili.com/video/BV1Tc411L7UA/?spm_id_from=333.337.search-card.all.click)
 ### fastrtc
 https://fastrtc.org/cookbook/
+
 ---
 ## AI Tools
 chatwise

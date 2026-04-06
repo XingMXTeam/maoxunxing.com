@@ -94,6 +94,7 @@ ALTER TABLE table_name RENAME TO new_table_name;
 
 ```
 - Adding Partitions:
+
 ---
 ```sql
 
@@ -105,6 +106,7 @@ ALTER TABLE table_name DROP IF EXISTS
 ```
 
 PARTITION (partition_col1=partition_col1_value1, ...);
+
 ---
 #### Modify table structure
 ```
@@ -167,6 +169,7 @@ WHERE
 LIMIT 
 ```
   10;
+
 ---
 #### Remove duplicates
 Note that this will remove combinations of a, b, c as a whole, so if you need to remove duplicates based on a specific field, you need to use a subquery
@@ -175,6 +178,7 @@ SELECT
 
 ```
   DISTINCT a , b, c 
+
 ---
 FROM
 ```
@@ -348,12 +352,14 @@ To get the latest partition of a table:
 ```sql
 SELECT * 
 FROM xx 
+
 ---
 WHERE ds = MAX_PT('xx');
 ### Database Migration
 ```sql
 SELECT WM_CONCAT(sql || '\n') AS sql_script
 FROM (
+
 ---
 
   SELECT
@@ -362,6 +368,7 @@ CONCAT(
       'INSERT INTO a (id, gmt_create, gmt_modified) VALUES (',
       yuyan_id, ', SYSDATE, SYSDATE); '
     ) ||
+
 ---
 CONCAT(
       'INSERT INTO a_ext (id, repo_url, repo_project_id) VALUES (',
@@ -373,6 +380,7 @@ CONCAT(
       'INSERT INTO b_platform_binding (id, yuyan_id, deploy_pla) VALUES (',
 ```
       yuyan_id, ', ', yuyan_id, ', ''deploy_pla_value'');'
+
 ---
     ) AS sql
 FROM (
@@ -386,6 +394,7 @@ package.name AS name,
     FROM (
 ```
 SELECT
+
 ---
         pkg.*, 
         ROW_NUMBER() OVER (PARTITION BY pkg.dt ORDER BY pkg.gmt_create) AS rnk
@@ -393,6 +402,7 @@ SELECT
 WHERE pkg.dt = MAX_PT('afxadm.bmw_pkg')
 ```
         AND pkg.is_delete = '0'
+
 ---
         AND pkg.name NOT LIKE '@xx/%'
     ) pkg
@@ -429,6 +439,7 @@ LEFT JOIN (
 
 ```
     FROM table
+
 ---
 WHERE ds = '${bizdate}' 
 GROUP BY trace_id

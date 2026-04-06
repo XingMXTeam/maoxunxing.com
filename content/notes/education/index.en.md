@@ -12,6 +12,7 @@ Reflections on a Ph.D. and the Path of Self-Learning
 - **Core Idea**  
   - Even in a sophisticated field like artificial intelligence, a Ph.D. is not necessary.  
   - The opportunity cost of pursuing a Ph.D. can be too high, especially when you neglect practical experience and diverse skills from the industry.
+
 ---
 ## **2. Self-Learning: Five Ways to Explore the World**
 ### **(1) Travel: Discovering Passion and Direction**
@@ -21,6 +22,7 @@ Reflections on a Ph.D. and the Path of Self-Learning
   - Travel to distant countries, experience different cultures, and meet all kinds of people.  
   - Try out different lifestyles and observe how the world works.  
   - Experience the real world, understand how people live in other places, and find your own interests and goals from it.
+
 ---
 ### **(2) Self-Learning: The Core Path to Mastering Knowledge**
 - **Why is self-learning feasible?**  
@@ -32,6 +34,7 @@ Reflections on a Ph.D. and the Path of Self-Learning
   - **Listen to podcasts**: Get industry updates and deep insights.  
   - **Read books**: Choose the best business and professional books for systematic learning.  
   - **Hire a consultant**: Find a mentor or consultant in your target field for personalized guidance.
+
 ---
 ### **(3) Follow Outstanding People: Imitate the Path of the Successful**
 - **Why follow successful people?**  
@@ -40,6 +43,7 @@ Reflections on a Ph.D. and the Path of Self-Learning
   - Choose a successful person you admire and study their words and actions.  
   - Learn the details of their field and understand their habits and ways of thinking.  
   - Try to integrate these habits and ways of thinking into your own life.
+
 ---
 ### **(4) Make More Positive Friends: Build a Social Network**
 - **What is the value of a university?**  
@@ -47,6 +51,7 @@ Reflections on a Ph.D. and the Path of Self-Learning
 - **What if you don't go to university?**  
   - Proactively make an effort to build your own social network.  
   - Make positive friends, communicate with like-minded people, and grow together.
+
 ---
 ### **(5) Save More Money: Invest in Your Future**
 - **Why is saving money important?**  

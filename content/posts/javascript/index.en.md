@@ -79,6 +79,7 @@ const a = ~~12.12; // 12
 3. **Assignment and Validation**:
    - Use `|` for bitwise OR assignment.
    - Use `&` to check specific flags.
+
 ---
 ## Exception Handling
 ### Encapsulation to reduce indentation
@@ -174,6 +175,7 @@ function throwNonBlockingError(error, msg) {
 	});
 }
 ```
+
 ---
 ## Promise
 ### Inversion of Control (IoC)
@@ -206,6 +208,7 @@ Promise.allSettled([
   // ]
 });
 ```
+
 ---
 ## Symbol
 ### Global Registration and Retrieval
@@ -224,6 +227,7 @@ const str = JSON.stringify(obj, (key, value) =>
 );
 console.log(str); // {"key":"Symbol(value)"}
 ```
+
 ---
 ## Deep and Shallow Copy
 ### Shallow Copy Issue
@@ -245,6 +249,7 @@ var b = _.cloneDeep(a);
 b[0].xx = 123;
 console.log(a); // a is not affected
 ```
+
 ---
 ## Lodash
 ### `chunk` method
@@ -349,6 +354,7 @@ const result = compiled({
 });
 console.log(result);
 ```
+
 ---
 ## Destructuring Assignment
 ### Default Value Issue
@@ -358,6 +364,7 @@ const b = { a: null };
 const { a = {} } = b;
 console.log(a); // null
 ```
+
 ---
 ## Spread Syntax
 ### Difference between Arrays and Objects
@@ -365,6 +372,7 @@ console.log(a); // null
 [...undefined]; // Throws an error
 { ...undefined }; // Works fine
 ```
+
 ---
 ## Special Properties
 ### `window.name`
@@ -374,6 +382,7 @@ var name1 = ["3", "32"];
 window.name = ["3", "32"];
 console.log(window.name); // "3,32"
 ```
+
 ---
 ## Set to Array
 ### Spread Syntax
@@ -401,6 +410,7 @@ Or use `type="module"` to load modular scripts:
 <script type="module" src="/path/to/module.js"></script>
 ```
 These methods allow for dynamic script insertion in the returned HTML string, enabling on-demand loading or dynamic feature extension.
+
 ---
 ## Nested a Tags
 ### Problem Description
@@ -432,6 +442,7 @@ Example:
 }
 ```
 This approach is suitable for layout adjustments to avoid logical nesting issues.
+
 ---
 ## Asynchronous Loading of HTML Structure
 When viewing the source code in a browser, you see the original HTML structure; however, when inspecting elements in the developer tools, you might see some asynchronously loaded content (like `<link>` or `<script>` tags). This is because some resources are dynamically inserted via JavaScript.
@@ -440,6 +451,7 @@ For example:
 document.body.appendChild(document.createElement('script')).src = '/path/to/script.js';
 ```
 This dynamic loading method is often used for performance optimization or on-demand loading.
+
 ---
 ## SCSS Compilation
 [Sass.js](https://github.com/medialize/sass.js) is a JavaScript-based Sass compiler that can compile SCSS code to CSS directly in the browser.
@@ -461,6 +473,7 @@ Sass.compile(scss, (res) => {
 - `resolve` is the callback function of a Promise, used to handle the compilation result.
 - If compilation is successful, it returns the compiled CSS code; if it fails, it returns an empty string or an error code.
 ## The `download` attribute of the `a` tag has a same-origin restriction
+
 ---
 ## A11Y
 **Accessibility** (often abbreviated as **A11y** — "a" plus 11 characters plus "y") in Web development means making websites usable by as many people as possible, even if their abilities are limited in some way.
@@ -508,6 +521,7 @@ W3C provides comprehensive testing resources to help developers verify that thei
 - **DOM Specification (WHATWG)**  
   [https://dom.spec.whatwg.org/](https://dom.spec.whatwg.org/)  
   Defines the DOM (Document Object Model) standard, describing how to programmatically manipulate HTML and XML documents.
+
 ---
 ## D3-format
 [D3-Format](https://github.com/d3/d3-format) is a powerful and flexible JavaScript library for formatting numbers. It is provided by the [D3.js](https://d3js.org/) project and supports various number formatting needs, including currency, percentages, scientific notation, thousands separators, etc.
@@ -581,6 +595,7 @@ console.log(formatter(value)); // Output: "12,346"
 - **GitHub Repository**: [https://github.com/d3/d3-format](https://github.com/d3/d3-format)
 - **Official API Documentation**: [https://github.com/d3/d3-format#api-reference](https://github.com/d3/d3-format#api-reference)
 - **Online Formatting Tool**: [https://observablehq.com/@d3/d3-format](https://observablehq.com/@d3/d3-format)
+
 ---
 ## Chrome Network Log
 ### Steps:
@@ -602,6 +617,7 @@ Use the [NetLog Viewer](https://netlog-viewer.appspot.com/#import) online tool t
 1. Open [NetLog Viewer](https://netlog-viewer.appspot.com/#import).
 2. Click the **"Choose File"** button and upload the previously saved `.json` log file.
 3. After the log file is loaded, you can view detailed network requests, response times, error messages, etc., through the interface.
+
 ---
 ## What is a Component?
 - **Definition**: A component is a smaller, independent part of a larger entity or system. It can perform certain functions, may require some input, or produce some output.
@@ -626,6 +642,7 @@ Use the [NetLog Viewer](https://netlog-viewer.appspot.com/#import) online tool t
 ### 3. Project-Integrated
 - **Characteristics**: Coupled with other content, cannot be used independently, usually tightly bound to a specific project.
 - **Applicable Scenarios**: Customized components used within a project.
+
 ---
 ## Service SLA (Service-Level Agreement) Standards
 A Service-Level Agreement (SLA) is a set of committed metrics defined between a service provider and a customer, including quality, availability, delivery cycle, etc.
@@ -643,6 +660,7 @@ A Service-Level Agreement (SLA) is a set of committed metrics defined between a 
 - **Stability**:
   - No P1, P2 incidents.
   - Incident score convergence of 30%.
+
 ---
 ## Sorting Functions
 ## **1. `sort` Method**
@@ -720,6 +738,7 @@ console.log('10'.localeCompare('2', undefined, { numeric: true }));
 | `sort`        | Yes                    | When you need to sort the array in place             | Sorts lexicographically by default; use a compare function for numbers. |
 | `toSorted`    | No                     | When you need to preserve the original array and create a new one | New in ES2023, may not be supported in older browsers.             |
 | `localeCompare` | No                     | Locale-sensitive string comparison                   | Supports various locales and custom options.                       |
+
 ---
 ## Cache Issues
 ## Case 1: API returns normally, but page data is displayed incorrectly
@@ -856,6 +875,7 @@ In the Chrome console, if you log a reference object (like an array or object), 
   ```javascript
   console.dir(obj);
   ```
+
 ---
 ## decodeURIComponent
 ### Example Code
@@ -922,6 +942,7 @@ try {
   console.log(isValidURIComponent('%C4%97%')); // Output: false
   console.log(isValidURIComponent('%C4%97'));  // Output: true
   ```
+
 ---
 ## Circular Dependencies
 In TypeScript or JavaScript projects, you need to be careful with dependencies between modules. If a **Circular Dependency** exists, it can cause the exported value of some modules to be `undefined`.
@@ -1002,6 +1023,7 @@ console.log("xx in b.ts:", xx);
 ```
 **Effect**:
 - `getYy` is a function, and its content from `b.ts` is only accessed when it's called, thus avoiding the initialization order issue.
+
 ---
 ## Module System
 - **Error Message**:
@@ -1063,6 +1085,7 @@ console.log("xx in b.ts:", xx);
     }
   };
   ```
+
 ---
 ## typescript
 ## **1. Error: Element implicitly has an "any" type**
@@ -1082,6 +1105,7 @@ declare interface Window {
   [GLOBAL_SYMBOL: symbol]: {};
 }
 ```
+
 ---
 ## **2. Error: Could not find a declaration file for module 'js-cookie'**
 ### **Problem Description**
@@ -1097,6 +1121,7 @@ declare module "js-cookie" {
 ### **References**
 - [Could not find a declaration file for module 'module-name'](https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam)
 - [Could not find a declaration file for module 'module-name'](https://stackoverflow.com/questions/41292559/could-not-find-a-declaration-file-for-module-module-name-path-to-module-nam)
+
 ---
 ## declare const window: any; declare window inside a file
 ## Global Variable Declaration
@@ -1107,8 +1132,10 @@ declare module '*.scss' {
 interface Window {
 }
 ```
+
 ---
 ## visibilityChange and pagehide events
+
 ---
 ## script tag loading order issue
 1. Traditional scripts block parsing (DOM construction) and rendering
@@ -1135,6 +1162,7 @@ script.async = false; // Force execution in insertion order
 script.src = 'c.js';
 document.body.appendChild(script); 
 ```
+
 ---
 ## Cross-page communication (different domains)
 Solution 1: iframe + postMessage: Implement cross-domain communication via an intermediary page
@@ -1202,6 +1230,7 @@ Send message
 ```js
 window.syncWindow.postMessage(data, url)
 ```
+
 ---
 ## forEach vs for of
 The function passed to forEach does not support returning a promise, meaning `async` isn't truly async. However, the function in a `for...of` loop does.
@@ -1214,6 +1243,7 @@ for(const i of [1,2,3]) {
   await asyncfn(i)
 }
 ```
+
 ---
 ## window.onunload
 `location.href` triggers the `onload` event. Scenario: An analytics event triggered in the `unload` event serves as a fallback. However, if it's an asynchronous mechanism like `setTimeout` (the "bus" mechanism), the analytics event won't be sent. Consider using `sendBeacon` for synchronous sending of analytics.

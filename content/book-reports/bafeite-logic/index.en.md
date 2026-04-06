@@ -13,6 +13,7 @@ One-sentence summary of "Buffett's Valuation Logic": Insightful industry assessm
 <!--more-->
 
 - **Management's Deep Insights**: Evaluate the management team's successful track record, integrity, and capital allocation ability to ensure the reliability of business decision-making.
+
 ---
 - **Margin of Safety**: All three investment types (long-term investments, arbitrage, and controlling stakes) emphasize a margin of safety, reducing risk and increasing the certainty of returns.
 ## What I Liked
@@ -63,6 +64,7 @@ Buffett's investment types are divided into three categories:
 #### Long-term investment
 
 - **American Express**
+
 ---
 - Provided financial services such as traveler's checks, and the stock price fell after the salad oil incident.
   - Despite the increase in short-term liabilities, the float value is significant (470 million traveler's checks), which can generate stable investment returns.

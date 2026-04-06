@@ -19,6 +19,7 @@ Multi-platform development refers to using a single codebase or technology stack
 - **Electron**  
   Used for building cross-platform desktop applications based on Web technologies (HTML, CSS, JavaScript).
 Choosing the right multi-platform development framework requires balancing project requirements, team technology stack, and target platforms.
+
 ---
 ## Mobile Layout (Responsive Design)
 Responsive design is the core of mobile development, ensuring that pages display correctly on different devices and screen sizes. Common techniques and methods include:
@@ -39,6 +40,7 @@ Responsive design is the core of mobile development, ensuring that pages display
   Use `vw` and `vh` units to define sizes based on viewport width and height.
 - **Responsive Images**  
   Use `max-width: 100%` to ensure images do not exceed their container's width.
+
 ---
 ## Usability Design
 ### Accessibility Design
@@ -68,6 +70,7 @@ Accessibility design aims to make products usable by all users, including those 
   Provide friendly error messages to avoid user confusion.
 - **Loading States**  
   Display loading animations or placeholders while data is loading.
+
 ---
 ## User Experience Optimization
 User Experience (UX) is a crucial metric for product success. Methods for optimizing UX include:
@@ -77,6 +80,7 @@ User Experience (UX) is a crucial metric for product success. Methods for optimi
   Provide customized content based on user behavior.
 - **Feedback mechanisms**  
   Provide timely feedback for user actions, such as showing a loading state after a button click.
+
 ---
 ## Performance Optimization
 Performance optimization directly impacts the user experience. Here are some key points:
@@ -90,6 +94,7 @@ Performance optimization directly impacts the user experience. Here are some key
   Combine files to reduce the number of requests.
 - **Caching Strategy**  
   Use browser caching and Service Workers to improve loading speed.
+
 ---
 ## Mini Program Development
 Mini Programs are a lightweight form of application widely used on platforms like WeChat and Alipay. Key points to consider during development include:

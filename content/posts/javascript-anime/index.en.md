@@ -8,6 +8,7 @@ images:
   - javascript-anime/cover.png
 ---
 In modern front-end development, animation is a crucial tool for enhancing user experience. This article introduces two excellent animation libraries, **Framer Motion** and **AnimeJS**, and provides detailed explanations and code examples based on their features and use cases.
+
 ---
 ## Table of Contents
 1. [Introduction to Framer Motion](#introduction-to-framer-motion)
@@ -17,6 +18,7 @@ In modern front-end development, animation is a crucial tool for enhancing user 
 5. [Framer Motion Usage Examples](#framer-motion-usage-examples)
 6. [AnimeJS Usage Examples](#animejs-usage-examples)
 7. [Summary](#summary)
+
 ---
 ## Introduction to Framer Motion
 **Framer Motion** is a declarative animation library based on React, designed specifically for building interactive user interfaces. It provides a simple and easy-to-use API for quickly implementing complex animation effects and integrates seamlessly with React's component-based development model.
@@ -25,6 +27,7 @@ In modern front-end development, animation is a crucial tool for enhancing user 
 - **Rich Animation Support**: Includes transition animations, gesture animations, drag, layout animations, and more.
 - **High Performance**: Optimized for animation performance based on React's rendering mechanism.
 - **Cross-Platform Support**: Compatible with both Web and React Native.
+
 ---
 ## Introduction to AnimeJS
 **AnimeJS** is a lightweight and powerful JavaScript animation library suitable for web and cross-platform development. It supports various animation types, including CSS properties, SVG, DOM elements, and JavaScript objects, meeting animation needs from simple to complex.
@@ -33,6 +36,7 @@ In modern front-end development, animation is a crucial tool for enhancing user 
 - **Flexibility**: Supports chained animations, timeline control, keyframe animations, and more.
 - **Cross-Platform**: Compatible with major browsers, supporting SVG and Canvas animations.
 - **Ease of Use**: The API is designed to be simple and intuitive, with a low learning curve.
+
 ---
 ## Core Features of Framer Motion
 ### 1. Basic Animations
@@ -47,6 +51,7 @@ In modern front-end development, animation is a crucial tool for enhancing user 
 ### 4. Timeline Control
 - Supports complex, multi-stage animation sequences.
 - Example: Multiple elements appearing sequentially.
+
 ---
 ## Core Features of AnimeJS
 ### 1. Basic Animations
@@ -61,6 +66,7 @@ In modern front-end development, animation is a crucial tool for enhancing user 
 ### 4. SVG Animations
 - Supports animating properties of SVG elements like path, shape, fill, etc.
 - Examples: Drawing SVG shapes, path stroke animation.
+
 ---
 ## Framer Motion Usage Examples
 Here are some common Framer Motion use cases and code examples:
@@ -128,6 +134,7 @@ function App() {
 }
 export default App;
 ```
+
 ---
 ## AnimeJS Usage Examples
 Here are some common AnimeJS use cases and code examples:
@@ -189,6 +196,7 @@ anime({
   loop: true
 });
 ```
+
 ---
 ## Summary
 **Framer Motion** and **AnimeJS** are two powerful and easy-to-use animation libraries, each suited for different development scenarios:

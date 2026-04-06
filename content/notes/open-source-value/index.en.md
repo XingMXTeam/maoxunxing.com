@@ -12,6 +12,7 @@ Concepts and Licenses of Open Source and Commercial Software
 ### **The Cathedral and the Bazaar**
 - **Cathedral**: Commercial software, emphasizing closure and proprietorship.
 - **Bazaar**: Open-source software, emphasizing openness and community collaboration.
+
 ---
 ## **2. Classification of Open Source Licenses**
 ### **Academic-Style Licenses**
@@ -24,6 +25,7 @@ Concepts and Licenses of Open Source and Commercial Software
   - Requirements of academic-style licenses + derivative works must also be open source.
 - **Examples**:
   - GPL, LGPL, AGPL, CDDL, CPL, EPL, MPL, LGPL.
+
 ---
 ## **3. Definition of Derivative Works**
 ### **Derivative Works**
@@ -36,21 +38,25 @@ Concepts and Licenses of Open Source and Commercial Software
   - Runs on a different layer.
   - The open-source program and your own program run independently without interaction.
   - Remote calls (e.g., via API calls).
+
 ---
 ## **4. Definition of Distribution**
 - **What constitutes distribution**:
   1. Downloaded to the user's client.
   2. Interaction with the user over a network (not considered distribution, except under AGPL, CPAL, OSL).
   3. Used on the server-side (specifically regulated by AGPL).
+
 ---
 ## **5. Why Open Source?**
 - **Purpose**:
   - To promote technological development through community operation.
   - To attract more developers to participate and improve project quality.
+
 ---
 ## **6. Monetization Models for Open Source Projects**
 ### **Paid Technical Support**
 - Provide professional technical support services for a fee.
 ### **Paid Commercial Version**
 - Offer a more powerful commercial version to meet enterprise needs, charging a license fee.
+
 ---

@@ -60,6 +60,7 @@ Regular uses the **Levenshtein Edit Distance Algorithm** to optimize list update
 - **`__proto__`** is an object's property that points to the prototype object of that object.
 
 - **`prototype`** is a property on a constructor function used to define shared properties and methods for instance objects.
+
 ---
 
 #### Example

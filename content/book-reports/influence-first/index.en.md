@@ -13,6 +13,7 @@ rating: 5
 <!--more-->
 
 3. **Highly Inspirational**: Whether in workplace communication or daily interactions, readers can gain inspiration from it.
+
 ---
 1. **Some Content is Slightly Repetitive**: Certain cases and details can be further condensed to improve reading efficiency.
 
@@ -61,6 +62,7 @@ Association enhances persuasiveness by triggering specific emotional or cognitiv
 
 - **External Environment**: Elements in the environment can influence people's associations. For example, the lighting and music in a restaurant can affect customers' perceptions of the food.
 - **Internal Experience of the Self**: By evoking personal memories or emotions, deep-level associations can be established.
+
 ---
 - **Power of Positive Emotions**: Positive emotions can amplify the effectiveness of persuasion.
 - **Creating an Ideal Mental State**: Create a state suitable for persuasion through language or environment.

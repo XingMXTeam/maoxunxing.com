@@ -13,6 +13,7 @@ Cognition is not just motivational talk, but rather the way we perceive things. 
 <!--more-->
 
 - **Highly practical**: Each habit provides specific methodologies, such as "Begin with the End in Mind" and "Win-Win Thinking."
+
 ---
 - **Preconceived notions**: Initially thought it was just motivational fluff, leading to missing out on its value for years. In reality, the content is very practical.
 
@@ -53,6 +54,7 @@ Cognition is not just motivational talk, but rather the way we perceive things. 
 - **Self-Management**: Includes attention management, goal management, and time management.
 - **Priority in the Second Quadrant**: Focus on important but not urgent tasks, avoiding getting trapped in urgent and important crises.
 - **Authorization Model**: Shift from directive authorization to responsibility-based authorization, clarifying expected outcomes, guidelines, available resources, etc.
+
 ---
 
 ### III. Public Success
@@ -80,6 +82,7 @@ Cognition is not just motivational talk, but rather the way we perceive things. 
    Prevent health problems in advance, focusing on endurance, flexibility, and strength training.
 
 2. **Intellectual Level**  
+
 ---
    
    Regularly read classic works, cultivating writing and thinking skills.
@@ -89,5 +92,6 @@ Cognition is not just motivational talk, but rather the way we perceive things. 
 4. **Social/Emotional Level**  
    
    Improve interpersonal skills, practice effective communication and teamwork.
+
 ---
 

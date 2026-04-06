@@ -43,6 +43,7 @@ The devil is in the details. When you get caught up in the details, you will fac
 - **Path to Realization**: How to achieve the goal?
 - **MindNode**: A mind mapping tool to help organize thoughts.
 Don't study the methodologies of those who have never succeeded.
+
 ---
 ## Causal Science and Statistical Inference
 ### DDPP Paradigm  

@@ -19,9 +19,11 @@ cd /home/admin/{appname}/bin/
 ```shell
 ./nodejsctl pubstart
 ```
+
 ---
 ## **Multi-tenant HSF Service Calls**
 In a multi-tenant scenario, service calls are implemented by passing tenant identifiers through middleware.
+
 ---
 ## **Multi-tenant Environment Deployment**
 1. **Multi-tenant Environment Deployment**  
@@ -29,6 +31,7 @@ In a multi-tenant scenario, service calls are implemented by passing tenant iden
 2. **Generate Tenant Identifiers via URL Configuration**  
    - Tenant identifiers can be dynamically generated through URL parameters.
    - Example: `https://example.com/api?tenantId=12345`
+
 ---
 ## **Log Management**
 Logs are crucial for troubleshooting. Here are common log paths and their purposes:
@@ -45,6 +48,7 @@ Logs are crucial for troubleshooting. Here are common log paths and their purpos
 - **Nginx Access Log**  
   Path: `admin/cai/logs/cronolog/2021/.log`  
   Purpose: Records Nginx access logs, stored in daily shards.
+
 ---
 ## **Docker Optimization**
 To improve the speed and efficiency of image builds, the following strategies can be adopted:
@@ -54,6 +58,7 @@ To improve the speed and efficiency of image builds, the following strategies ca
 2. **Image Distribution**  
    - Push the application's base image to all build machines to reduce time spent on repeated pulls.
    - Improve build efficiency and avoid long waiting times.
+
 ---
 ## **Common Tools**
 ### **nodemon**

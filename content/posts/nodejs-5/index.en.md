@@ -14,6 +14,7 @@ images:
 5. [Fatal JavaScript invalid size error](#fatal-javascript-invalid-size-error)
 6. [Remove @ali/node-scripts dependency](#remove-alinode-scripts-dependency)
 7. [Manually add logger dependency](#manually-add-logger-dependency)
+
 ---
 ## this.ctx.render method does not exist
 During the upgrade process, you may find that the `this.ctx.render` method is unavailable. This is because, by default, Midway v8 no longer automatically enables the view rendering feature.
@@ -43,6 +44,7 @@ During the upgrade process, you may find that the `this.ctx.render` method is un
      },
    };
    ```
+
 ---
 ## TypeError: require(...).startCluster is not a function
 When running the project, you may encounter the following error:
@@ -54,6 +56,7 @@ Remove the `@ali/midway-bin` dependency:
 ```bash
 npm uninstall @ali/midway-bin
 ```
+
 ---
 ## start error: EROFS: read-only file system, mkdir '/home'
 When starting the project, the following error may occur:
@@ -62,6 +65,7 @@ Error: EROFS: read-only file system, mkdir '/home'
 ```
 ### Solution
 Remove `onelog`-related code or dependencies. For example, comment out the imports and configurations related to `onelog` in `src/configuration.ts`.
+
 ---
 ## Config file issues
 After the upgrade, some export methods in the `config` file may no longer be compatible. For example, `export const development` might cause issues.
@@ -73,6 +77,7 @@ export default {
   // other configurations...
 };
 ```
+
 ---
 ## Fatal JavaScript invalid size error
 When running the project, you may encounter the following error:
@@ -87,6 +92,7 @@ This issue is usually related to the Node.js version or memory limits. You can t
    ```bash
    node --max-old-space-size=4096 your-entry-file.js
    ```
+
 ---
 ## Remove @ali/node-scripts dependency
 During the upgrade process, `@ali/node-scripts` may cause compatibility issues.
@@ -95,6 +101,7 @@ Remove the `@ali/node-scripts` dependency:
 ```bash
 npm uninstall @ali/node-scripts
 ```
+
 ---
 ## Manually add logger dependency
 According to the [Midway Official Blog](https://midway.alibaba-inc.com/blog/release/3.13.0/), after upgrading to v8, you need to manually add logging-related dependencies.
@@ -111,6 +118,7 @@ import * as logger from '@midwayjs/logger';
 })
 export class AutoConfiguration {}
 ```
+
 ---
 ## Summary
 During the upgrade to Midway v8, you may encounter various issues. This article summarizes common pitfalls and their solutions, including view rendering, dependency conflicts, and configuration file adjustments. It is recommended to carefully read the official documentation and test each module's functionality step-by-step before upgrading to ensure the project's stability.

@@ -17,10 +17,12 @@ tags:
 ### **Workflow Suggestions**
 - First, clarify the current workflow from the product's business perspective to see what technical output can be achieved.
   - Example: From business model to layered architecture.
+
 ---
 ## **2. Background Music Resources**
 - [Download Sound](https://downloadsound.cloud/)  
   - Provides high-quality background music.
+
 ---
 ## **3. Design Inspiration and Tools**
 ### **Design Articles and Guides**
@@ -46,10 +48,12 @@ tags:
   - A powerful drawing tool, suitable for flowcharts and prototype design.
 - [Canva](https://www.canva.com/)  
   - An easy-to-use online design tool.
+
 ---
 ## **4. Other Resources**
 - **Clueify**:
   - A data visualization tool that helps quickly generate insights.
 - **Medium Design Community**:
   - Recommended to follow design-related articles on Medium to get the latest design trends.
+
 ---

@@ -13,6 +13,7 @@ rating: 7
 <!--more-->
 
 - **Accessible and Comprehensive**: Even financial novices can quickly grasp the core points of financial statement analysis through this book.
+
 ---
 - **Multi-dimensional Perspective**: Covers key business indicators of corporate operations from profitability, solvency to expansion strategies.
 ## What I Liked
@@ -37,6 +38,7 @@ rating: 7
 - Assets are arranged by liquidity, and liabilities are listed by urgency.
 
    - Focus on items such as accounts receivable, inventory, accounts payable, etc., to analyze the company's competitiveness and industry position.
+
 ---
 4. **Role of the Cash Flow Statement**:
 

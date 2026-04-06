@@ -205,6 +205,7 @@ function throwNonBlockingError(error, msg) {
 	});
 }
 ```
+
 ---
 
 ## Promise
@@ -1220,6 +1221,7 @@ try {
   console.log(isValidURIComponent('%C4%97%')); // 输出: false
   console.log(isValidURIComponent('%C4%97'));  // 输出: true
   ```
+
 ---
 
 ## 循环引用
@@ -1620,6 +1622,7 @@ window.addEventListener('message', handleStorageMessage);
 ```js
 window.syncWindow.postMessage(data, url)
 ```
+
 ---
 
 ## forEach vs for of

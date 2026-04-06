@@ -21,9 +21,11 @@ images:
    - [useDeferredValue](#usedeferredvalue)
    - [useSyncExternalStore](#usesyncexternalstore)
 5. [Version Requirements](#version-requirements)
+
 ---
 ## Design Philosophy
 **Concurrent Mode** is a new feature in the React framework designed to improve the responsiveness and user experience of React applications. It enhances performance and interaction smoothness by allowing React to handle multiple tasks simultaneously, rather than completing each task in sequence.
+
 ---
 ## Key Concepts and Advantages
 ### Time Slicing
@@ -32,6 +34,7 @@ images:
 - Complex calculations or rendering tasks.
 - A large number of DOM updates causing the main thread to be occupied for a long time.
 - When animations and user interactions need to remain smooth.
+
 ---
 ### Priority Scheduling
 In **Concurrent Mode**, different tasks can be assigned different priorities. For example, handling user input will have a higher priority than loading data. This scheduling mechanism allows high-priority tasks to be processed first, thereby improving the user experience.
@@ -42,6 +45,7 @@ In **Concurrent Mode**, different tasks can be assigned different priorities. Fo
 #### Examples:
 - If a user is scrolling on a complex page while data is loading in the background, time slicing allows React to pause the data loading process to ensure the scrolling is smooth.
 - If a user is typing in a form, priority scheduling ensures that the input events are responded to quickly, while background data synchronization might be delayed.
+
 ---
 ### Pausing, Resuming, and Aborting Renders
 #### Pausing a Render:
@@ -50,9 +54,11 @@ In **Concurrent Mode**, different tasks can be assigned different priorities. Fo
 - The user stops scrolling, and React continues rendering the previously paused data-intensive components during the browser's idle time.
 #### Aborting a Render:
 - A user quickly switches between different pages or views. React will discard rendering tasks that are not yet complete but are no longer needed, to avoid unnecessary computation.
+
 ---
 ### Suspense
 **Suspense** is a key feature in Concurrent Mode that allows components to "suspend" rendering while waiting for asynchronous data to load, until the data is ready. This provides a more elegant way to handle asynchronous operations and a better user experience.
+
 ---
 ### Automatic Batching of Updates
 **Automatic Batching of Updates** means React automatically groups multiple state updates into a single re-render for better performance.
@@ -92,6 +98,7 @@ In **Concurrent Mode**, different tasks can be assigned different priorities. Fo
     });
   }, 1000);
   ```
+
 ---
 ## How to Enable Concurrent Mode
 Once you create the root using `createRoot`, all child components will automatically run in Concurrent Mode:
@@ -108,6 +115,7 @@ root.render(
   </React.StrictMode>
 );
 ```
+
 ---
 ## Core API Details
 ### useTransition
@@ -132,6 +140,7 @@ function App() {
 }
 export default App;
 ```
+
 ---
 ### useDeferredValue
 **useDeferredValue** lets you defer updating a part of the UI. It tells React that this is a non-urgent update, which is useful for scenarios like responding to user input.
@@ -153,6 +162,7 @@ function App() {
 }
 export default App;
 ```
+
 ---
 ### useSyncExternalStore
 **useSyncExternalStore** is a new hook introduced in React 18 for ensuring synchronous updates with external stores. It is primarily used for handling state sources outside of React's state, such as Redux, MobX, Zustand, or other custom storage solutions.
@@ -204,9 +214,11 @@ function App() {
 }
 export default App;
 ```
+
 ---
 ## Version Requirements
 - **React >= 18**
+
 ---
 ## Summary
 **Concurrent Mode** is a crucial feature of React that significantly improves application responsiveness and user experience through mechanisms like time slicing, priority scheduling, and the ability to pause, resume, or abort renders. Combined with APIs like `useTransition`, `useDeferredValue`, and `useSyncExternalStore`, developers can more flexibly optimize performance in complex scenarios.

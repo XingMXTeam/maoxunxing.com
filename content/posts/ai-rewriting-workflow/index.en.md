@@ -209,6 +209,7 @@ custom_toc:
   - title: "Layoff Risk Is Structural"
   - title: "From Executor to Leverage Designer"
   - title: "30-Day Action Checklist and Long-Term Moats"
+
 ---
 
 ## Introduction: A Silent Paradigm Shift

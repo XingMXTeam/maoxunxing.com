@@ -50,6 +50,7 @@ images:
   - [Disable service-worker](#disable-service-worker)
 - [service worker user agent never changes](#service-worker-user-agent-never-changes)
 - [Registering sw.js](#registering-swjs)
+
 ---
 ## Cache Types
 ### PreCache
@@ -115,6 +116,7 @@ class SwMessage {
 }
 ```
 When sending a message, use `event.resultingClientId` instead of `event.clientId`, because the page might have a navigation refresh, making the client impossible to find.
+
 ---
 ## Caching Strategies
 ### Cache Only
@@ -131,12 +133,14 @@ Prioritizes network requests and writes the result to the cache. If the request 
 When there is a corresponding cached result, it is returned directly, while a network request is initiated in the background to update the cache.
 **Advantages:** Improves user experience.
 **Disadvantages:** Network requests will consume user bandwidth.
+
 ---
 ## Debugging
 1. Clear site Cookies.
 ![alt text](image-2.png)
 2. Proxy the JS resources and `.map` resources called by `importScript` in the `sw.js` request.
 3. The first page refresh is the `install` step and will not trigger runtime plugin calls. A second refresh is needed for it to take effect.
+
 ---
 ## Practical Usage
 ### Choosing a Caching Strategy for HTML
@@ -184,6 +188,7 @@ The server can count the number of 302 redirects, or it can be done through a he
 Normally, without a 302, the fetchStart time will be very short, around 20ms.
 ### clients.claim()
 After a service worker is activated, it does not immediately intercept requests. `clients.claim()` is needed for it to start taking over requests. However, if only HTML is cached, immediate takeover is generally not necessary, unless there are other asynchronous resource requests.
+
 ---
 ## Edge Cases
 ### Verifying if it's the current domain
@@ -210,14 +215,17 @@ Generally, the language follows the domain. In the same country, different langu
    - In SSR (Server-Side Rendering) scenarios, on the initial load, the JS might be behind the data, causing style corruption.
 3. **Canary release:** Users might jump between different versions.
 4. **JS version and HTML rendered data are inconsistent:** Leads to style corruption. Solution: Follow the canary release.
+
 ---
 ## Tracking/Analytics Issues
 1. Impression errors
 2. PV data depends on the API response (e.g., `utabtest`), which can affect experiment results.
+
 ---
 ## Experimentation Issues
 1. Layout experiments are obtained through the Aochuang interface.
 2. Global experiments are based on the `ca` device ID in the cookie.
+
 ---
 ## Error Case Analysis
 **Error Message:**
@@ -228,6 +236,7 @@ sw.js?version=0.0.62:6 Uncaught NetworkError: Failed to execute 'importScripts' 
 ```
 **Cause Analysis:**
 The Service Worker failed to initialize because the JS file loaded by `importScripts` had an error.
+
 ---
 ## Actual Data Storage Location
 ![alt text](image.png)
@@ -238,11 +247,13 @@ Add a flag to the cached HTML to make it easier for JS code to determine if the 
 Observe business metrics:
 For example, compare API call volume year-over-year, page view volume year-over-year, and core module render volume year-over-year.
 If the trend is not obvious, you can analyze it on a weekly or monthly basis.
+
 ---
 ## More Resources
 `https://web.dev/articles/service-worker-lifecycle`
 ## Funnel Analysis
 The upper and lower parts of the funnel must not have overlapping sections, otherwise, it will be impossible to identify the problem. The priority focus should be at the front of the funnel.
+
 ---
 ## Debugging Service Worker in Firefox
 - **Problem Description**: Firefox does not directly show the request for `sw.js`, even if the file is actually loaded.
@@ -269,10 +280,12 @@ Although packet sniffing tools are very useful, for more efficient Service Worke
 4. Use the features provided by the debugging tools (like step-by-step execution, viewing variable values, etc.) for in-depth analysis.
 ### Disable service-worker
 ![alt text](image-3.png)
+
 ---
 ## service worker user agent never changes
 The user agent always remains the same as when the browser was first opened. If you switch to mobile responsive debugging, the user agent inside the service worker will not change to the mobile one. This is because the service worker is effective globally, not just for a single browser tab. This makes it impossible to confirm whether the user agent is for the current mobile simulation or the non-simulated state.
 [Reference](https://github.com/GoogleChrome/workbox/issues/2314)
+
 ---
 ## Registering sw.js
 There are two ways: one is through Nginx configuration, returning the pwaConfig content; the other is through a controller request.

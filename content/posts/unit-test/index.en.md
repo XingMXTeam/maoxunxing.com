@@ -9,6 +9,7 @@ tags:
   - Web Development
 ---
 This document provides a detailed guide on how to configure unit testing tools (like Mocha) and code coverage tools (like NYC) in a TypeScript project. It also includes instructions for using the required dependency libraries. It is suitable for developers who need to quickly set up a testing environment.
+
 ---
 ## Table of Contents
 1. [Unit Testing](#unit-testing)
@@ -18,6 +19,7 @@ This document provides a detailed guide on how to configure unit testing tools (
    - [NYC Configuration](#nyc-configuration)
    - [Calculating Coverage with Lerna](#calculating-coverage-with-lerna)
 3. [Common npm Packages](#common-npm-packages)
+
 ---
 ## Unit Testing
 ### Mocha Configuration
@@ -43,6 +45,7 @@ describe("Example Test", () => {
   });
 });
 ```
+
 ---
 ## Code Coverage
 ### NYC Configuration
@@ -88,6 +91,7 @@ Run the command:
 ```bash
 npm run cov
 ```
+
 ---
 ### Calculating Coverage with Lerna
 If your project uses Lerna to manage a multi-package structure, you can calculate coverage using the following method:
@@ -119,6 +123,7 @@ Add the following to your `nyc` configuration:
 }
 ```
 > **Note**: `nyc` and `ts-node` only need to be installed at the top level.
+
 ---
 ## Common npm Packages
 The following are commonly used npm packages and their functional descriptions:

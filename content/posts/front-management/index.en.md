@@ -102,6 +102,7 @@ request.createInst({
 Supports page-level / API-level / global preloading
 `definePageConfig` configures preloaded data
 `defineConfig`
+
 ---
 ## Case Studies
 ### New Ideas for Improving R&D Efficiency

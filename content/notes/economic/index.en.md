@@ -15,6 +15,7 @@ The macroeconomic model describes the flow of money between housing, government,
     3. **Self-built housing**: Houses built by individuals or businesses.
 - **Services**:
   - e.g., service industries like healthcare and education.
+
 ---
 ## **2. How to Calculate GDP**
 ### **2.1 Expenditure Approach**
@@ -34,6 +35,7 @@ i.e., S = I + NCO (Net Capital Outflow)
 #### **2.3.2 Relationship between NX and Exchange Rate**
 NX = NCO
 An increase in the exchange rate leads to a decrease in net exports.
+
 ---
 ## **3. Loanable Funds Market and Foreign Exchange Market**
 ### **3.1 Loanable Funds Market**
@@ -43,21 +45,25 @@ An increase in the exchange rate leads to a decrease in net exports.
 - NX is negatively correlated with the exchange rate E.
 - Case study of hedge funds attacking the Thai Baht:
   - Borrowing and selling Thai Baht, causing capital flight and a drop in the exchange rate.
+
 ---
 ## **4. Balance of International Payments**
 ### **4.1 Net Exports and Net Capital Outflow**
 - NX (Net Exports) = Exports - Imports
 - NCO (Net Capital Outflow) = Capital Outflow - Capital Inflow
 - NX = NCO
+
 ---
 ## **5. Why are Foreign Exchange Reserves Increasing?**
 NX = NCO = Exports - Imports = Chinese residents + Businesses + Central Bank (ΔForeign Exchange Reserves) - Imports
 Central Bank (ΔForeign Exchange Reserves) = NX + Imports - (Chinese residents + Businesses)
 - NX and imports are constantly increasing, while export-related investments are subject to financial controls.
+
 ---
 ## **6. What is the Exchange Rate?**
 e = $/¥
 How many US dollars can 1 RMB be exchanged for, i.e., foreign currency / domestic currency.
+
 ---
 ## **7. What is Purchasing Power Parity?**
 ### **7.1 Purchasing Power Parity Formula**
@@ -68,6 +74,7 @@ If 100/P_China > 100e/P_US, then buy goods from China and sell them in the US.
 Eventually, the arbitrage opportunity disappears. The exchange rate adjusts the fastest, and prices may also change.
 e = P_US / P_China
 This is purchasing power parity.
+
 ---
 ## **8. What is Financial Arbitrage?**
 ### **8.1 Interest Rate Arbitrage**
@@ -77,29 +84,35 @@ Investment return formula:
 - Return on investment in China: e1 × (100/e0 × (1 + r_China))
 - Return on investment in the US: 100 × (1 + r_US)
 If e1 × (100/e0 × (1 + r_China)) - 100 × (1 + r_US) > 0, the arbitrage is successful.
+
 ---
 ## **9. What is the Real Interest Rate?**
 Real Interest Rate = Nominal Interest Rate - Inflation Expectation
 E = e × CPI_domestic / CPI_foreign
 e = (Foreign currency 1/6.5) / (Domestic currency 1)
 - The nominal exchange rate reflects current purchasing power, but the CPI (Consumer Price Index) must be considered.
+
 ---
 ## **10. Why Don't Export-Oriented Enterprises Invest Abroad?**
 - Revenue (USD) - Costs (RMB)
 - Real Exchange Rate E = e × CPI_domestic / CPI_foreign
   - e increases (appreciation against foreign currency), CPI_domestic increases (depreciation domestically), the real exchange rate rises.
   - With USD pricing unchanged, revenue decreases, costs increase, and gross margin falls.
+
 ---
 ## **11. The Power of Compounding**
 - At a 10% annual growth rate, it doubles in 7 years.
 - At a 7% annual growth rate, it doubles in 10 years.
+
 ---
 ## **12. What is Financial Repression?**
 - Nothing can fully hedge against inflation.
+
 ---
 ## **13. Relationship between Exchange Rates and Interest Rates**
 The interest rate can be seen as the rate of return for investing in a country.
 When the Fed raises interest rates, r_US > r_China, capital flows to the US, and the USD appreciates.
+
 ---
 ## **14. What is Goods Arbitrage?**
 Assume the price of a certain commodity is P_China in China and P_US in the US.
@@ -107,14 +120,17 @@ With 100 RMB:
 - You can buy 100/P_China in China
 - You can buy 100e/P_US in the US
 If 100/P_China > 100e/P_US, then buy the commodity in China and sell it in the US to earn the price difference.
+
 ---
 ## **15. What is Friedman's Theory?**
 Rational income allocation: Spend future middle-age income when young, and spend middle-age savings after retirement.
+
 ---
 ## **16. Why are Banks so Profitable?**
 - Banks make profits through the net interest margin (about 2.5%).
 - Shadow banks (like WeBank) lend without reserve requirements; enterprises borrow from shadow banks to invest.
 - Bank intermediaries recommend wealth management products, earning a spread, while users earn investment returns.
+
 ---
 ## **17. What is M2?**
 M2: Money Supply
@@ -122,16 +138,19 @@ M2: Money Supply
 - Δm: Total money supply increase
 - ΔMB: Money issued by the central bank (Monetary Base)
 - MM: Money Multiplier
+
 ---
 ## **18. The Role of Issuing Currency**
 - To avoid monetary deflation, print money.
 - Measures for the central bank to withdraw funds and reduce inflation:
   1. Borrowing (e.g., issuing government bonds).
   2. Increasing the reserve requirement ratio.
+
 ---
 ## **19. What are Surplus and Deficit?**
 - **Surplus**: Exports > Imports.
 - **Deficit**: Imports > Exports.
+
 ---
 ## Market Economy
 - **There's no such thing as a free lunch**
@@ -148,9 +167,11 @@ M2: Money Supply
 3. **Implications for Individuals and Society**
    - For individuals: Make rational decisions, weigh the pros and cons, and avoid the lure of "free".
    - For society: Understand market principles and respect the value of labor and resources.
+
 ---
 ## 2018 Macroeconomic Review
 https://jlclipboard.wordpress.com/2024/01/06/%e8%b4%a2%e5%af%8c%e6%b3%a1%e5%bd%b1%e3%80%90%e5%85%a8%e6%96%87%e3%80%91-2018%e5%b9%b4%e5%ae%8f%e8%a7%82%e7%bb%8f%e6%b5%8e%e7%bb%bc%e8%bf%b0/
+
 ---
 ## Classic Works of Marx, Engels, Lenin, and Stalin
 ### Marx

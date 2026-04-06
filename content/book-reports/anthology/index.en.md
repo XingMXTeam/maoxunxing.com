@@ -5,6 +5,7 @@ rating: 7
 ---
 This book compiles the profound insights of Balaji S. Srinivasan, covering technology, entrepreneurship, wealth creation, and personal growth. He explores how to change the world through technology and innovation from a unique perspective, while also revealing the nature of wealth and the core principles of entrepreneurship.
 <!--more-->
+
 ---
 ## What I Liked
 - **Technology-Driven Future**: Balaji's fervent belief in technology and his insights into future trends are inspiring.
@@ -24,6 +25,7 @@ This book compiles the profound insights of Balaji S. Srinivasan, covering techn
     Although money may seem zero-sum in a transaction (A loses $1, B gains $1), a voluntary exchange actually benefits both parties because the transaction brings non-monetary value.
 4.  **Raw Materials vs. Technical Know-How**  
     The value of raw materials themselves is far less than the technology, machinery, and effort required to assemble them into a product.
+
 ---
 ### II. Personal Independence and Time Management
 1.  **Economic Independence = Personal Independence**  
@@ -33,6 +35,7 @@ This book compiles the profound insights of Balaji S. Srinivasan, covering techn
     - The rest time accumulated for each year of work can be used to start a business or achieve financial independence.
 3.  **Reducing Dependence**  
     The less money you need, the less dependent you are on the outside world, thus gaining greater freedom.
+
 ---
 ### III. Entrepreneurship and Product Development
 1.  **Build Alternatives, Don't Argue**  
@@ -43,6 +46,7 @@ This book compiles the profound insights of Balaji S. Srinivasan, covering techn
     Founders are unique because they are willing to pay a huge short-term price for long-term gain.
 4.  **Practice Over Theory**  
     The process of entrepreneurship is a form of learning in itself. Many critics and academics only realize the difficulty of creation and management when they put it into practice.
+
 ---
 ### IV. Creator Economy and Incentive Mechanisms
 1.  **The Value of Creators**  
@@ -53,6 +57,7 @@ This book compiles the profound insights of Balaji S. Srinivasan, covering techn
 3.  **The Creative Explosion of the Individual Era**  
     - You can create movies or content on a computer and reach your audience directly, without relying on traditional media.
     - Great journalists or creators could become millionaires or even billionaires.
+
 ---
 ### V. Two Ways to Influence the World
 1.  **Create or Invest**  
@@ -60,12 +65,14 @@ This book compiles the profound insights of Balaji S. Srinivasan, covering techn
 2.  **Acquiring Status**  
     - The hard way: Gain status through building, achieving, and adding value.
     - The easy way: Gain relative status by blaming others. But real influence comes from creation, not criticism.
+
 ---
 ### VI. The Leadership of Technologists
 1.  **Ranking of Leader Types**  
     Socialist < Nationalist < Capitalist < Technologist. Technologists drive progress through innovation and technology, making them the most forward-thinking leaders.
 2.  **The Power of 3D Printing and Open Source**  
     Tools like open source, 3D printing, app stores, and crowdfunding combine the digital with the physical to create products people want.
+
 ---
 ### Summary
 *The Anthology of Balaji* is a work full of wisdom and insight, showing how a tech believer can change the world through innovation and action. The book emphasizes the possibility of wealth creation, the core principles of entrepreneurship, and the potential of the creator economy. Whether you are an entrepreneur, investor, or general reader, you can draw inspiration from it and put it into practice. Remember, to influence the world, you must either create or invest—mere talk is useless.

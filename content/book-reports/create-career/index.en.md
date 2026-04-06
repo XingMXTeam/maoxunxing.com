@@ -13,6 +13,7 @@ This book shares Sahil Lavingia's personal experiences on how to create and grow
 1. **High Practicality**: The book provides numerous real-world examples and tool recommendations, making it suitable for beginners to quickly get started.
 
 2. **Clear Logic**: Progressing from cognition to practice, and then to sales and customer relationship management, it builds upon itself in a logical and well-structured manner.
+
 ---
 3. **Highly Inspirational**: Breaks away from traditional entrepreneurial thinking, emphasizing starting small to lower the barriers to entrepreneurship.
 
@@ -78,6 +79,7 @@ Example: Gumroad initially had only 2700 lines of code, manually handling paymen
 10. **Small and Reliable Customers Are More Important**: Like Mailchimp focusing on small business customers.
 11. **Customers Are the Business Plan**: Embrace customer education and focus on customer needs.
 ## Extreme Minimalism Practice
+
 ---
 
 ### Funding Channels
@@ -91,6 +93,7 @@ Example: Gumroad initially had only 2700 lines of code, manually handling paymen
 
 - Recommended books: Jeff Hyman's "Recruiting Rock Stars."
 ### Corporate Structure
+
 ---
 
 - When there are enough customers, establish a limited liability company (LLC or S-corporation).
@@ -113,6 +116,7 @@ Example: Gumroad initially had only 2700 lines of code, manually handling paymen
 - Methods to improve fit: Adjust messaging, features, pricing.
 - High fit performance: Proactive recommendations, low churn rate, price insensitive.
 - Recommended books: Steve Blank's "The Startup User Manual".
+
 ---
 
 ### High Market Fit
@@ -145,4 +149,5 @@ Example: Gumroad initially had only 2700 lines of code, manually handling paymen
 > **Do ordinary people need to master these rules?**
 
 Whether you are a programmer or an entrepreneur in other fields, these principles can help you reduce entrepreneurial risks, quickly identify market demand, and achieve sustainable growth through continuous optimization.
+
 ---

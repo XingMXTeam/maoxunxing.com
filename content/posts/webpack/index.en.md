@@ -18,6 +18,7 @@ custom_toc:
 ---
 ## Webpack Loader
 Webpack's loaders are used to **transform the source code of modules**. During the build process, Webpack uses loaders to process different types of files, such as converting TypeScript to JavaScript, SCSS to CSS, or compiling source code in a specific format into target code.
+
 ---
 ## Webpack-Chain and Chunk Splitting Explained
 [Webpack-Chain](https://github.com/neutrinojs/webpack-chain) is a chainable API tool for more elegantly manipulating Webpack configurations. Compared to directly modifying the Webpack configuration object, Webpack-Chain provides a more intuitive and readable approach.
@@ -114,6 +115,7 @@ The code above will generate a new Chunk named `dynamicModule.[contenthash].js`.
 #### Advantages of Dynamic Imports
 - On-demand loading: The corresponding module is loaded only when needed.
 - Reduced initial load time: The main bundle is smaller and loads faster.
+
 ---
 ## Webpack Externals
 ## Introduction to Externals
@@ -187,6 +189,7 @@ In a UMD-formatted bundle file, you can determine if a package has been external
 - Be aware if the CDN acceleration is still active.
 - A global `externals` configuration could cause failures if a page forgets to include the script; the same applies to deletion.
 - For package size and build speed, these can be handled by package build tools.
+
 ---
 ## Module Federation
 Module Federation is a powerful feature introduced in Webpack 5, designed to solve module sharing and independent deployment issues in micro-frontend architectures. With Module Federation, each module can be developed and deployed independently, while still being able to work together to build a complete application.
@@ -258,6 +261,7 @@ module.exports = {
 - The host application dynamically loads the remote module through the `remotes` configuration.
 - The remote module exposes its components or functions through the `exposes` configuration.
 - Shared dependencies (like React) are shared between the host application and the remote module, avoiding redundant loading.
+
 ---
 ## Tree Shaking
 ## usedExports
@@ -354,6 +358,7 @@ ERR! The 'compilation' argument must be an instance of Compilation 348 TypeError
 ```
 #### Solution
 - Incompatible Webpack version, it is recommended to downgrade to Webpack 4.
+
 ---
 ## Rollup
 Rollup is a module bundler that focuses on bundling ES modules (ESM). It can efficiently merge multiple modules into one or more files and supports multiple output formats (such as ESM, CommonJS, UMD, etc.). Rollup's configuration file is typically a JavaScript file used to define the bundling behavior.
@@ -413,6 +418,7 @@ export default {
   ],
 };
 ```
+
 ---
 ## Vite
 Vite is a modern frontend build tool that typically requires server-side support (such as modifying template files, injecting scripts, etc.) to run properly. However, in some scenarios (like regular page development), we cannot directly modify the server-side code. In such cases, we can use a **Whistle proxy** to dynamically modify HTML files and inject the scripts required by Vite, thus indirectly enabling Vite development.
@@ -523,6 +529,7 @@ headers: {
 2. By dynamically modifying HTML files and injecting the necessary scripts for Vite, a development environment can be quickly set up.
 3. In the Vite configuration, proper use of `resolve.alias` and `server.cors` can solve common style import and cross-origin issues.
 4. This solution is suitable for scenarios where server-side code cannot be directly modified, but attention should be paid to security and performance optimization in the production environment.
+
 ---
 ## Error Cases
 When using the `graceful-fs` module, you may encounter the following errors:
@@ -612,6 +619,7 @@ Based on the error hint and common scenarios, the following are possible causes:
 - **Best Practices**:
   - During development, you should try to avoid importing Node.js-specific modules into browser projects.
   - If you really need to use these modules, you can resolve the issue with polyfills or alternative solutions.
+
 ---
 `npm i webpack-cli`  error:
 ```text
@@ -620,6 +628,7 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/felix/.npm/_logs/2025-03-25T03_51_31_544Z-debug-0.log
 ```
 Problem cause: node version is too low
+
 ---
 `require` package not found, fixed by specifying js extension in resolve
 ```text

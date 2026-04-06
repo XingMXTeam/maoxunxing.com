@@ -45,6 +45,7 @@ In the workplace, solving problems does not necessarily lead to promotion, as pr
 
 - **Proactive Communication**: Regularly share work progress, ideas, and intentions, and listen to feedback and suggestions.
 - **Proactive Reception**: Stay informed about business developments (such as launch performance, technical architecture changes), and identify gaps and improvements from a promotion perspective.
+
 ---
 
 #### **2. Principles of Growth**
@@ -147,6 +148,7 @@ Adopt the **Pyramid Principle** (explain what, defense explain why):
 - **Share Proactively**:
   - Share your experiences and achievements with the team to help everyone grow together.
 - **Showcase Contributions**:
+
 ---
   - The team leader will evaluate your performance through code quality and contribution level.
   - **Provide a Concrete Example**: Use real-life cases to illustrate your contributions, such as solving a complex problem or optimizing a critical process.
@@ -202,6 +204,7 @@ Adopt the **Pyramid Principle** (explain what, defense explain why):
 | Input | Learning Ability |  |  Basic Learning Process: 1 Select Direction 2 Obtain Materials 3 Filter Materials <mark style="background: #FFB86CA6;">4 Cognitive Acquisition</mark> -> Digestion -> Solidify Patterns  5 Solve Problems <br>Three-Step Rapid Learning Method: 1 Establish Overall Cognition: Speed Reading/Directory -> Draw Mind Map -> Write Down 2 Solve Problems, Build Networks 3 Supplement Knowledge, Deliberate Practice |
 | Output | Problem-Solving Ability; 4D Summary Method | Summarize the 4D Summary Method from technical, business, and management dimensions in stages.  |
   |
+
 ---
 ## Method of Doing Things
 

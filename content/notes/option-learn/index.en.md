@@ -37,6 +37,7 @@ This article aims to help beginners and advanced investors understand the basic 
 + **The dual nature of options**:
   - **Insurance function**: Provides protection for stock investments.
   - **Leverage tool**: Aims for high returns with low cost.
+
 ---
 + **Core Principles**:
   - **Buy Call when bullish**, buy Put when bearish.
@@ -54,6 +55,7 @@ This article aims to help beginners and advanced investors understand the basic 
   
   - **Sell Call**：The investor sells when they believe the stock price will not rise significantly, earning the premium.
   - **Sell Put**：The investor sells when they believe the stock price will not fall significantly, earning the premium.
+
 ---
 
 ### Call Option and Put Option
@@ -102,6 +104,7 @@ This article aims to help beginners and advanced investors understand the basic 
 
 - Option cost: $1 per share (1 option contract = 100 shares)
 **Operation**:
+
 ---
 
 1. If the stock price falls to $40, sell 100 shares at the $50 strike price, then buy back at $40, making a profit of $900 (after deducting $100 option cost).
@@ -134,6 +137,7 @@ This article aims to help beginners and advanced investors understand the basic 
 
 ## Combination Option Strategies
 ### Bear Call Spread（Bullish Call Spread）
+
 ---
 
 #### Scenario: Bearish market with a bearish outlook.
@@ -159,6 +163,7 @@ This article aims to help beginners and advanced investors understand the basic 
 **Result**:
 
 - If the stock price does not fall below the strike price, the option expires worthless, and the net profit is the premium received.
+
 ---
 - If the stock price drops significantly, use a Spread to reduce the loss.
 
@@ -177,6 +182,7 @@ This article aims to help beginners and advanced investors understand the basic 
 **Conclusion**:
 - If the stock price is below $70, buy the stock at $70 after exercising the option.
 - If the stock price is above $70, the premium is pure profit.
+
 ---
 
 ## Glossary Explanation

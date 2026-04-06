@@ -19,6 +19,7 @@ It may be split into multiple packets.
 ## TCP and UDP Protocols
 
 ### TCP (Transmission Control Protocol)
+
 ---
 - **Reliable transmission**: If a packet is not acknowledged (ACK) by the receiver, it will be retransmitted.
 - **Application Scenarios**: Widely used in most network communication scenarios, such as web browsing, file transfer, etc.
@@ -33,6 +34,7 @@ Network protocols are the language of communication between computer programs. H
 - **HTTP**: Used for browsing web pages.
 - **HTTPS**: Used for browsing web pages with encryption.
 - **SMTP**: Used for sending and receiving email.
+
 ---
 - **IMAP/POP3**: Used for loading emails from the mailbox.
 - **IRC**: Used for chatting.
@@ -49,6 +51,7 @@ In Node.js, streams are a way of handling data. Here are some common stream type
    - Produces data, from which data can be piped.
    - Example code:
 ```javascript
+
 ---
      var fs = require('fs');
      var r = fs.createReadStream('file.txt');
@@ -121,6 +124,7 @@ var req = http.request(opts, function(res) {});
 ### Example: HTTP Server
 
 Here is a simple HTTP server example that demonstrates how to use stream processing for requests and responses:
+
 ---
 var http = require('http');
 
@@ -137,6 +141,7 @@ req.pipe(process.stdout);
         });
 } else {
         // Return file content as response
+
 ---
         res.setHeader('content-type', 'text/plain');
         fs.createReadStream('hello.txt').pipe(res);
@@ -145,6 +150,7 @@ server.listen(8080, function() {
 This article introduces the basics of network communication, including the differences between TCP and UDP, common network protocols, types of streams and their usage methods, and demonstrates how to implement an HTTP server in Node.js through code examples. These contents lay the foundation for understanding network programming and stream-based data processing.
 ```javascript
 ```
+
 ---
 
 ```javascript

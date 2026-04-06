@@ -24,6 +24,7 @@ React's goal is to create a fast and responsive web architecture. To achieve thi
 - **React 18's Solution**:
   - Introduces **Time Slicing**, which splits synchronous update tasks into interruptible asynchronous ones.
   - Uses the **Fiber Architecture** to break down tasks into smaller units, prioritizing high-priority tasks (like user clicks, animations, etc.) to ensure a stable rendering frame rate.
+
 ---
 ## Architecture Design
 React's architecture consists of three main parts:
@@ -34,6 +35,7 @@ React's architecture consists of three main parts:
 3. **Renderer**  
    - Responsible for converting the virtual DOM into actual DOM nodes and rendering them on the page.
 ![React Architecture Diagram](arch.png)
+
 ---
 ## Principle Analysis
 ### How the Renderer Works
@@ -49,6 +51,7 @@ React's architecture consists of three main parts:
 - **Why is Fiber needed?**
   - When there are a large number of JSX nodes, direct rendering can cause long-running tasks that block the main thread (stuttering).
   - The Fiber architecture splits the rendering task into multiple smaller tasks and uses time slicing to complete them incrementally, ensuring the main thread is not blocked for long periods.
+
 ---
 ## Framework Design and Feature Set
 Modern front-end frameworks typically include the following features in their design:
@@ -63,6 +66,7 @@ Modern front-end frameworks typically include the following features in their de
    - Extends framework capabilities through temporary files at compile time, offering greater flexibility.
 5. **Plugins and Extension Mechanisms**  
    - Supports plugin-based development, allowing developers to include functional modules as needed.
+
 ---
 ### Data Loading Mechanism Comparison
 Different frameworks have their own implementations for data loading mechanisms. Here is a comparison of several mainstream frameworks:
@@ -73,11 +77,13 @@ Different frameworks have their own implementations for data loading mechanisms.
 | **Qwik**   | `export onGet`                  | Uses an `onGet` method to load data, emphasizing its resumable lazy-loading capabilities.            |
 | **Fresh**  | `export handler`                | Exports a handler object containing a `Get` method, based on Deno and a true bundless architecture. |
 | **Solid Start** | `export routeData`          | Provides a `routeData` function, supporting declarative data fetching and cache optimization.          |
+
 ---
 ### Core Idea of Data Loading
 - **Runtime Libraries vs. Framework Integration**  
   - Community solutions (like `useEffect`, `SWR`, `React Query`) can solve some problems, but if you are pursuing the ultimate request speed, relying solely on runtime libraries is not enough.
   - Data loading needs to be deeply integrated with the framework (combining routing and compile-time aspects) to achieve faster request initiation, parallel execution, and cache optimization.
+
 ---
 ## Summary
 React's design philosophy revolves around improving the responsiveness of web applications. By introducing the **Fiber Architecture** and **Time Slicing**, it solves the performance bottlenecks found in traditional rendering. Meanwhile, modern front-end frameworks are continuously evolving in their functional design, offering a rich set of tools and mechanisms (such as convention-based routing, SSR/SSG, plugin extensions, etc.) to help developers build high-performance applications.

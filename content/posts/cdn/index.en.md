@@ -26,6 +26,7 @@ images:
 - [The Role of the Origin Server](#源站的角色)
 - [The Essence of OSS](#oss-的本质)
 - [Collaboration Workflow](#协作流程)
+
 ---
 ## Different Usages of CDN
 ### Multiple Caches for the Same Resource
@@ -56,6 +57,7 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
 - **Implementation Principle**:
   - During DNS resolution, the authoritative DNS returns a CNAME record pointing to the CDN's global scheduler.
   - The CDN fetches the HTML file from the origin server, parses the image URLs, and caches them on the edge nodes in advance.
+
 ---
 ## CDN Scenario Problems
 1.  **HTML request timeout due to CDN node failure**:
@@ -64,16 +66,19 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
 2.  **Newly added node has 100% packet loss**:
     -   Possible cause: Incorrect network configuration or hardware failure.
     -   Solution: Check network equipment and configuration to ensure the link is normal.
+
 ---
 ## Dispatching Methods
 1.  **Cost-based**:
     -   Description: In situations where some countries have few nodes but high traffic, to reduce costs, traffic can be dispatched to nodes in other countries.
 2.  **Priority-based**:
     -   Description: High-priority users have higher dispatching accuracy to ensure a quality user experience.
+
 ---
 ## Specifying Cache Time
 - **Implementation**: Specify the CDN cache time via the `s-maxage` in the response header.
 - **Purpose**: To prevent HTML from being cached in the browser, which can lead to inaccurate PV calculations.
+
 ---
 ## IVS Architecture
 - **LVS (Linux Virtual Server)**:
@@ -86,6 +91,7 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
   - The server that handles the specific business logic.
 - **Linux Kernel TCP Kernel**:
   - Handles the TCP protocol stack, parsing TCP packets and extracting relevant information.
+
 ---
 ## CDN Issues
 1.  **Overwrite deployment causes cache to not take effect**:
@@ -94,18 +100,22 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
 2.  **Using timestamps may lead to cache penetration**:
     -   Cause: The timestamp is different for each request, causing the cache to be invalidated.
     -   Solution: Remove the timestamp or use a fixed version number.
+
 ---
 ## Professional Technology
 - **CDN is for network acceleration**:
   - Generally, resources are pushed to OSS, and then the CDN cache is refreshed.
+
 ---
 ## Case Study
 - **Use CDN or OSS**:
   - CDN is more suitable for dynamic acceleration and global distribution, while OSS is better for storing static resources.
+
 ---
 ## Vercel CNAME Optimization
 - **CNAME Value**: `cname-china.vercel-dns.com`
 - **Features**: Vercel has specifically optimized for the Chinese network, improving access speed and stability.
+
 ---
 ## The Role of CDN
 - **Definition**: A CDN (Content Delivery Network) is a distributed network used to cache and distribute static resources.
@@ -114,6 +124,7 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
   - Improves resource loading speed and enhances user experience.
   - Reduces the load pressure on the origin server.
 - **Applicable Scenarios**: Suitable for frequently accessed static resources (such as images, CSS, JavaScript files, etc.).
+
 ---
 ## The Role of the Origin Server
 - **Definition**: The origin server is the original storage location of resources, typically a server or a cluster of services.
@@ -123,6 +134,7 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
 - **Characteristics**:
   - The origin server is usually the processing center for dynamic content.
   - In static resource distribution, the origin server plays more of a backup role.
+
 ---
 ## The Essence of OSS
 - **Definition**: OSS (Object Storage Service) is a highly available and reliable cloud storage service.
@@ -134,6 +146,7 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
   - High Scalability: Supports storage of massive files.
   - Low Cost: Pay-as-you-go, suitable for large-scale storage needs.
   - High Reliability: Multiple replicas for storage, ensuring data security.
+
 ---
 ## Collaboration Workflow
 1.  **Prioritize CDN**:

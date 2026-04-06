@@ -13,6 +13,7 @@ rating: 5
 <!--more-->
 
 - **Thought-Provoking**: It provides a profound philosophical perspective on the role of money and the meaning of investing.
+
 ---
 - **Overly Simplified**: Some principles, such as the "72-hour rule," may lack sufficient strategies to address complex real-world issues.
 
@@ -55,6 +56,7 @@ The key to a happy life lies in changing yourself, not simply relying on money. 
    Imagine already possessing the things in your dreams, transforming small wishes into strong desires, thereby overcoming difficulties.
 
 2. **Strengthening Belief
+
 ---
 
 - Persevering with the plan during the most challenging times leads to outstanding performance.  

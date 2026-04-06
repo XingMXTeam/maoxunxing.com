@@ -13,6 +13,7 @@ rating: 5
 <!--more-->
 
 - **Real-world cases**: Combines the author's practical experience to provide actionable advice, particularly suitable for solo entrepreneurs.
+
 ---
 - **Content scattered**: Some chapters list many tools but lack in-depth explanations, which might not be very beginner-friendly.
 
@@ -96,6 +97,7 @@ https://petsy.com
 
 - **Notification Tools**: Telegram Bot (higher click-through rate than email), browser notifications  
 ### Register a Company
+
 ---
 - **User Scale Determines Registration Timing**: When users reach a certain scale, consider registering a company.
 
@@ -105,6 +107,7 @@ https://petsy.com
   - More convenient invoicing with lower tax rates.  
   - Enjoy corporate discounts on cloud service platforms.
 #### Cost Comparison:
+
 ---
 - **Overseas Company**: Stripe Atlas one-time fee of $500 + $100/year registered agent fee.  
 
