@@ -47,8 +47,6 @@
       {{- end -}}
 
       {{ if hugo.IsMultilingual }}
-        {{ range .Site.Home.AllTranslations }}
-          {{ if ne $.Site.Language .Language }}
             <li class="navigation-item nav-icon-item">
               <a
                 href="javascript:void(0)"
@@ -84,11 +82,14 @@
                 </svg>
               </a>
             </li>
+            {{- $translations := .AllTranslations | default .Site.Home.AllTranslations -}}
+            {{ range $translations }}
+              {{ if ne $.Site.Language .Language }}
             <li class="navigation-item nav-icon-item">
               <a href="{{ .Permalink }}" id="languageMenu" class="nav-icon-link" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
             </li>
-          {{ end }}
-        {{ end }}
+              {{ end }}
+            {{ end }}
       {{ end }}
     </ul>
   </section>
