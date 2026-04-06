@@ -12,10 +12,47 @@ if (localStorage.getItem("colorscheme")) {
 }
 
 if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
+    darkModeToggle.addEventListener('click', (e) => {
         let theme = body.classList.contains("colorscheme-dark") ? "light" : "dark";
+        toggleThemeWithTransition(e, theme);
+    });
+}
+
+function toggleThemeWithTransition(event, theme) {
+    // Fallback if View Transition API is not supported or user prefers reduced motion
+    if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         setTheme(theme);
         rememberTheme(theme);
+        return;
+    }
+
+    const x = event.clientX;
+    const y = event.clientY;
+    const endRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+    );
+
+    const isDark = theme === 'dark';
+
+    const transition = document.startViewTransition(() => {
+        setTheme(theme);
+        rememberTheme(theme);
+    });
+
+    transition.ready.then(() => {
+        const clipPath = [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`
+        ];
+        document.documentElement.animate(
+            { clipPath: isDark ? clipPath : [...clipPath].reverse() },
+            {
+                duration: 400,
+                easing: 'ease-in-out',
+                pseudoElement: isDark ? '::view-transition-new(root)' : '::view-transition-old(root)',
+            }
+        );
     });
 }
 
