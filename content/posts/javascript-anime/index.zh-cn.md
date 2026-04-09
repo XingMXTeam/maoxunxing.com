@@ -1,5 +1,6 @@
 ---
 title: "动画库推荐与使用指南"
+description: "动画库推荐与使用指南，深入讲解 Framer Motion 和 Anime.js 的核心功能与应用场景。"
 date: 2025-02-06
 tags:
   - JavaScript
@@ -248,3 +249,10 @@ anime({
 1. **选择合适的工具**：根据项目需求和技术栈选择合适的动画库。
 2. **基础动画优先**：优先掌握基础动画功能，熟悉常见属性的动画实现。
 3. **性能优化**：注意动画的性能开销，避免过多的 DOM 操作或复杂的计算。
+
+
+## References
+
+- [Framer Motion Documentation](https://www.framer.com/motion/) — Official Framer Motion animation library documentation
+- [Anime.js Documentation](https://animejs.com/documentation/) — Official Anime.js animation library API reference
+- [Web Animations API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) — Native browser Web Animations API documentation

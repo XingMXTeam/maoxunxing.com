@@ -1,8 +1,10 @@
 ---
 title: "Data Structure Practice Problems"
+description: "Data structures problem-solving guide with LeetCode examples covering arrays, stacks, binary search, trees, heaps, and graph algorithms."
 date: 2025-03-03
 tags:
   - Data Structure
+  - Algorithm
 custom_toc:
   - title: "Array & hash"
   - title: "Two Pointer"
@@ -3219,3 +3221,10 @@ console.log("Has Circle (BFS):", g.hasCircleByBfs());
 |------------|------------|
 | BFS/DFS    | O(V + E)   |
 | Disjoint Set     | O(n) → O(log n) (after optimization with path compression and union by rank) |
+
+
+## References
+
+- [LeetCode](https://leetcode.com/) — Platform for practicing data structure and algorithm problems
+- [NeetCode Roadmap](https://neetcode.io/roadmap) — Curated LeetCode problem roadmap organized by pattern
+- [Algorithms Visualization — VisuAlgo](https://visualgo.net/) — Interactive visualizations for learning algorithms

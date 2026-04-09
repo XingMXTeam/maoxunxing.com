@@ -1,8 +1,10 @@
 ---
 title: "SQL Statement Classification and Usage Guide"
+description: "Complete SQL guide covering DDL, DML, DCL statements, common functions, and practical database operation examples."
 date: 2022-04-03T10:29:35+08:00
 tags:
   - Sql
+  - Database
 images:
   - sql/a.jpg
 ---
@@ -467,3 +469,10 @@ WHERE ds = '${bizdate}'
 
 
 ```
+
+
+## References
+
+- [SQL Tutorial — W3Schools](https://www.w3schools.com/sql/) — Interactive SQL tutorial covering all major statement types
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/current/sql.html) — Comprehensive SQL reference from PostgreSQL
+- [Use The Index, Luke — SQL Indexing](https://use-the-index-luke.com/) — Guide to SQL indexing and query performance optimization

@@ -1,5 +1,6 @@
 ---
 title: "Frontend Engineering Guide"
+description: "Frontend engineering guide covering project structure, Lerna multi-package management, Babel, gray deployment, and best practices."
 date: 2025-02-06
 tags:
   - Engineering
@@ -867,3 +868,10 @@ How does HSF cache based on parameters?
 key: id(xxx)_method(get/post)_uid(unique_id), the underlying structure is a `Map<string, Promise<any>>`
 
 ---
+
+
+## References
+
+- [The Twelve-Factor App](https://12factor.net/) — Methodology for building modern, scalable web applications
+- [Google Engineering Practices](https://google.github.io/eng-practices/) — Google's engineering best practices for code review and development
+- [Babel Documentation](https://babeljs.io/docs/) — Official Babel JavaScript compiler documentation

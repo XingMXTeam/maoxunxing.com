@@ -1,6 +1,6 @@
 ---
 title: "Practicing Karpathy's Personal Knowledge Base Method with a Git Repository"
-description: "Inspired by Andrej Karpathy's LLM Wiki, build a raw -> notes -> posts three-layer knowledge pipeline inside an existing Hugo blog repository. Zero extra software — just Git + Markdown + LLM for a complete collect-to-publish workflow."
+description: "Build a three-layer knowledge pipeline (raw, notes, posts) with Git + Markdown + LLM, inspired by Karpathy's LLM Wiki method."
 date: 2026-04-09
 tags:
   - AI

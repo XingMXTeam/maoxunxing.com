@@ -1,9 +1,10 @@
 ---
 title: "React解决什么问题"
-description: "Why React ?"
+description: "理解 React 的设计哲学与核心原理、它解决的核心问题以及组件模型为何对现代 UI 开发至关重要。"
 date: 2024-07-15
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -116,3 +117,10 @@ React 的架构由三个主要部分组成：
 React 的设计理念围绕着如何提升 Web 应用的响应速度展开，通过引入 **Fiber 架构** 和 **时间切片** 技术，解决了传统渲染中的性能瓶颈问题。同时，现代前端框架在功能设计上不断演进，提供了丰富的工具和机制（如约定式路由、SSR/SSG、插件扩展等），帮助开发者构建高性能的应用程序。
 
 通过深入理解 React 的架构和原理，以及不同框架的数据加载机制，我们可以更好地选择和设计适合项目需求的技术方案。
+
+
+## References
+
+- [React Official Documentation](https://react.dev/) — Official React documentation covering core concepts and design philosophy
+- [Dan Abramov — React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/) — Deep dive into React's mental model and design decisions
+- [Why React? — UI.dev](https://ui.dev/why-react) — Explanation of the problems React solves and its component model

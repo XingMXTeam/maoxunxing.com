@@ -1,9 +1,10 @@
 ---
 title: "Node Stream Complete Guide Notes"
-description: ""
+description: "Node.js streams and network fundamentals covering TCP/UDP protocols, HTTP, HTTPS, and common communication protocols."
 date: 2025-02-04
 tags:
   - nodejs
+  - Networking
 images:
   - nodejs-1/node-js.jpeg
 ---
@@ -159,3 +160,10 @@ This article introduces the basics of network communication, including the diffe
 });
 
 ```
+
+
+## References
+
+- [Node.js Net Module Documentation](https://nodejs.org/api/net.html) — Official Node.js TCP networking API documentation
+- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/) — Classic guide to network programming concepts and protocols
+- [HTTP/2 Explained — Daniel Stenberg](https://http2-explained.haxx.se/) — Comprehensive explanation of HTTP/2 protocol

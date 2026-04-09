@@ -1,9 +1,10 @@
 ---
 title: "Service Worker 实践指南"
-description: ""
+description: "Service Worker 实践指南：缓存策略配置、版本更新机制、离线支持方案和 PWA 开发边界处理。"
 date: 2025-02-06
 tags:
   - Service Worker
+  - PWA
 images:
   - service-worker-1/cover.png
 ---
@@ -405,3 +406,10 @@ var app = new INSInstance({
 }).init();
 
 ```
+
+
+## References
+
+- [Service Worker API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) — Comprehensive Service Worker API documentation
+- [Workbox Documentation — Google](https://developer.chrome.com/docs/workbox/) — Google's library for Service Worker caching strategies
+- [The Offline Cookbook — Jake Archibald](https://web.dev/articles/offline-cookbook) — Patterns for offline-first web applications

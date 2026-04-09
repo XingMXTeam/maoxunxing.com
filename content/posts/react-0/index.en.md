@@ -1,9 +1,10 @@
 ---
 title: "What Problems Does React Solve?"
-description: "Why React?"
+description: "Understand React's design philosophy, the problems it solves, and why its component model matters for modern UI development."
 date: 2024-07-15
 tags:
   - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -88,3 +89,10 @@ Different frameworks have their own implementations for data loading mechanisms.
 ## Summary
 React's design philosophy revolves around improving the responsiveness of web applications. By introducing the **Fiber Architecture** and **Time Slicing**, it solves the performance bottlenecks found in traditional rendering. Meanwhile, modern front-end frameworks are continuously evolving in their functional design, offering a rich set of tools and mechanisms (such as convention-based routing, SSR/SSG, plugin extensions, etc.) to help developers build high-performance applications.
 By deeply understanding React's architecture and principles, as well as the data loading mechanisms of different frameworks, we can better choose and design technical solutions that fit our project's needs.
+
+
+## References
+
+- [React Official Documentation](https://react.dev/) — Official React documentation covering core concepts and design philosophy
+- [Dan Abramov — React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/) — Deep dive into React's mental model and design decisions
+- [Why React? — UI.dev](https://ui.dev/why-react) — Explanation of the problems React solves and its component model

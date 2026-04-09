@@ -3,7 +3,8 @@ title: "如何定义问题"
 date: 2021-09-08
 tags:
   - 职场
-description: "能定义多大的问题，就能做出多大的事业。"
+  - 思维
+description: "能定义多大的问题就能做出多大的事业。系统探讨如何精准定义问题以驱动职业发展、业务创新和个人突破的方法论。"
 images:
   - how-to-define-question/define-question.jpeg
 ---
@@ -223,3 +224,10 @@ Column A | data类需求 | information类需求 | Insight类需求
 通过假设然后去验证 -->
 <!-- 2 整体性：矛盾时系统的一部分，来自同一个系统或者分别来自一个系统和其子系统 -->
 <!-- 三大价值（客户价值、社会价值、商业价值）。决策是为了扩大矛盾或者缩小矛盾。 -->
+
+
+## References
+
+- [Paul Graham — How to Do Great Work](https://paulgraham.com/greatwork.html) — On finding important problems to work on
+- [The Art of Problem Solving — Richard Hamming (YouTube)](https://www.youtube.com/watch?v=a1zDuOPkMSw) — Hamming's famous talk on choosing important problems
+- [First Principles Thinking — Farnam Street](https://fs.blog/first-principles/) — Guide to breaking down problems to their fundamental truths

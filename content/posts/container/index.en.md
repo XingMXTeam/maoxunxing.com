@@ -1,5 +1,6 @@
 ---
 title: "Frontend Architecture"
+description: "Frontend architecture guide covering business architecture, product design, and enterprise application principles."
 date: 2025-02-06
 tags:
   - Web Development
@@ -108,3 +109,10 @@ By maintaining a versionless CDN path, seamless updates can be achieved without 
 - Lack of canary release capability makes it difficult to control the risks of updates.
 - It may negatively impact page performance metrics like LCP.
 In practical applications, it is necessary to weigh the pros and cons based on business requirements to choose the appropriate update strategy.
+
+
+## References
+
+- [Patterns.dev — Design Patterns](https://www.patterns.dev/) — Modern web application design patterns and architecture
+- [Clean Architecture — Robert C. Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) — The Clean Architecture principles for software design
+- [Micro Frontends — Martin Fowler](https://martinfowler.com/articles/micro-frontends.html) — Guide to micro-frontend architecture patterns

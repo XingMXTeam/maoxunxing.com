@@ -4,6 +4,7 @@ date: 2021-10-06T11:20:33+08:00
 description: "How to become better from a technical person's perspective"
 tags:
   - Career
+  - Growth
 images:
   - how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
 ---
@@ -87,3 +88,10 @@ As mentioned in Part 3, you first need to clarify the scope of the problem:
 ---
 ## Conclusion
 This conference made me realize that whether it's learning new knowledge, improving coding skills, enhancing communication techniques, or building a successful product, it all requires systematic thinking and continuous effort. I hope the content above can provide some inspiration and help everyone make greater progress in their respective fields.
+
+
+## References
+
+- [Paul Graham — How to Do Great Work](https://paulgraham.com/greatwork.html) — Essay on what it takes to do great work in any field
+- [Staff Engineer: Leadership Beyond the Management Track — Will Larson](https://staffeng.com/) — Guide to technical leadership and career growth for engineers
+- [The Pragmatic Engineer Newsletter](https://newsletter.pragmaticengineer.com/) — Industry insights on engineering careers and growth

@@ -1,9 +1,10 @@
 ---
 title: "A Practical Guide to Service Worker"
-description: ""
+description: "Implement Service Workers: caching strategies, update mechanisms, offline support, and edge cases in PWA development."
 date: 2025-02-06
 tags:
   - Service Worker
+  - PWA
 images:
   - service-worker-1/cover.png
 ---
@@ -310,3 +311,10 @@ var app = new INSInstance({
  plugins: [new XXXPlugin()],
 }).init();
 ```
+
+
+## References
+
+- [Service Worker API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) — Comprehensive Service Worker API documentation
+- [Workbox Documentation — Google](https://developer.chrome.com/docs/workbox/) — Google's library for Service Worker caching strategies
+- [The Offline Cookbook — Jake Archibald](https://web.dev/articles/offline-cookbook) — Patterns for offline-first web applications

@@ -1,8 +1,10 @@
 ---
 title: "Node.js Dependency Injection"
+description: "Node.js dependency injection explained with TypeScript metadata generation, reflection API, and framework implementation details."
 date: 2025-03-25
 tags:
   - nodejs
+  - Dependency Injection
 images:
   - nodejs-7/cover.png
 ---
@@ -75,3 +77,10 @@ this.ctx.requestContext.getAsync('testService') // Get the injected service. Thi
 More references: 
 - https://midwayjs.org/docs/1.0.0/injection
 - https://jkchao.github.io/typescript-book-chinese/tips/metadata.html#%E4%BE%8B%E5%AD%90
+
+
+## References
+
+- [InversifyJS Documentation](https://inversify.io/) — TypeScript dependency injection container documentation
+- [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html) — Official TypeScript decorator specification
+- [Dependency Injection in Node.js — LogRocket](https://blog.logrocket.com/dependency-injection-node-js-typedi/) — Guide to DI patterns in Node.js applications

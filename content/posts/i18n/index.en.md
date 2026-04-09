@@ -1,8 +1,10 @@
 ---
 title: "Internationalization and Localization"
+description: "Complete i18n/l10n guide covering multi-language support, CLDR data usage, RTL layout handling, and frontend value considerations."
 date: 2025-02-06
 tags:
   - i18n
+  - Web Development
 images:
   - i18n/cover.png
 ---
@@ -109,3 +111,10 @@ For international sites, the local TTFB during performance testing is inaccurate
 ### Regional Routing
 The regional routing of an account has a higher priority than that of an IP proxy.
 After logging in, regional routing will be based on the account (usually the country in the cookie). Using only an IP proxy may not reach the pre-production environment. It is recommended to log out.
+
+
+## References
+
+- [Unicode CLDR Project](https://cldr.unicode.org/) — Unicode Common Locale Data Repository for internationalization
+- [Internationalization (i18n) — web.dev](https://web.dev/articles/i18n) — Google's guide to internationalizing web applications
+- [RTL Styling 101 — Ahmad Shadeed](https://rtlstyling.com/) — Comprehensive guide to RTL layout support in CSS

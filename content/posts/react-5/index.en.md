@@ -1,9 +1,10 @@
 ---
 title: "Why React Hooks"
-description: ""
+description: "React Hooks evolution from class components, core hooks (useState, useEffect), and performance optimization strategies."
 date: 2019-12-05T11:53:00
 tags:
   - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -211,3 +212,10 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
 ```
+
+
+## References
+
+- [React Hooks Documentation](https://react.dev/reference/react/hooks) — Official React documentation for all built-in hooks
+- [A Complete Guide to useEffect — Dan Abramov](https://overreacted.io/a-complete-guide-to-useeffect/) — Comprehensive guide to understanding useEffect
+- [Why React Hooks? — YouTube (React Conf 2018)](https://www.youtube.com/watch?v=dpw9EHDh2bM) — Sophie Alpert and Dan Abramov introducing Hooks at React Conf

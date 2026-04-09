@@ -1,8 +1,10 @@
 ---
 title: "NodeJS开发和运维"
+description: "Node.js 开发运维完整指南，系统涵盖技术架构选型、服务稳定性保障方案、监控体系搭建和灰度放量方案。"
 date: 2025-02-06
 tags:
   - nodejs
+  - 运维
 images:
   - nodejs-4/cover.png
 ---
@@ -194,3 +196,10 @@ byteBuffer.put(encoder.write(timestamp).get());
 
 ## 学习
 antfu的小库（1000行以内）： ni
+
+
+## References
+
+- [Node.js Diagnostics Guide](https://nodejs.org/en/learn/getting-started/debugging) — Official Node.js debugging and diagnostics documentation
+- [Monitoring Node.js Applications — Datadog](https://www.datadoghq.com/blog/node-monitoring-guide/) — Guide to monitoring Node.js applications in production
+- [Node.js Performance Best Practices — Clinic.js](https://clinicjs.org/) — Performance profiling tools and best practices for Node.js

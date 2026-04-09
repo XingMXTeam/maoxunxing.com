@@ -1,8 +1,10 @@
 ---
 title: "Node.js Case Studies"
+description: "Node.js debugging guide with Chrome Inspector techniques, practical case studies, and NodeParty community insights."
 date: 2019-11-25
 tags:
   - nodejs
+  - Debugging
 custom_toc:
   - title: "Node.js Debugging"
   - title: "Node.js Case Studies"
@@ -143,3 +145,10 @@ vscode: launch.json
   - Easy-to-use development tools.
 ### **Team Tool Accumulation**
 - **Practice**: Gradually accumulate and improve the toolchain based on business needs.
+
+
+## References
+
+- [Debugging Node.js with Chrome DevTools](https://nodejs.org/en/learn/getting-started/debugging) — Official guide to debugging Node.js with Chrome Inspector
+- [Node.js Debugging Guide — JetBrains](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html) — Comprehensive Node.js debugging setup guide
+- [NDB: Chrome DevTools for Node — Google](https://github.com/GoogleChromeLabs/ndb) — Improved debugging experience for Node.js

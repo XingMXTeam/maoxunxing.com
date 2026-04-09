@@ -1,9 +1,10 @@
 ---
 title: "React Server Component"
-description: "What are React Server Components?"
+description: "React Server Components explained: zero-bundle components, server-client boundaries, and the future of React rendering."
 date: 2024-08-18
 tags:
   - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -153,3 +154,10 @@ console.log(json); // Output: {"name":"John","age":30}
 `JSON.stringify` can only serialize basic data types within an object (like strings, numbers, booleans, etc.) and cannot handle functions or methods.
 **Application Scenario:**  
 In the RSC serialization protocol, special care must be taken to avoid passing objects that contain functions, as this can lead to data loss or errors.
+
+
+## References
+
+- [React Server Components RFC](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md) — Official RFC for React Server Components
+- [Making Sense of React Server Components — Josh W. Comeau](https://www.joshwcomeau.com/react/server-components/) — Clear explanation of RSC concepts and mental model
+- [React Server Components — YouTube (Theo Browne)](https://www.youtube.com/watch?v=TQQPAU21ZUw) — Video deep dive into React Server Components

@@ -3,6 +3,7 @@ title: "Frontend Engineer Skill Tree"
 date: 2021-08-24
 tags:
   - Web Development
+  - Career
 description: "Refine the growth model indicators for frontend engineers, gradually improving personal professional skills"
 ---
 
@@ -701,3 +702,10 @@ Approach to real-time calculation of massive data: Space for time -> Pre-calcula
 
 ---
 ---
+
+
+## References
+
+- [Frontend Developer Roadmap — roadmap.sh](https://roadmap.sh/frontend) — Community-curated frontend developer skill roadmap
+- [State of JS Survey](https://stateofjs.com/) — Annual survey on the state of JavaScript ecosystem and trends
+- [The Pragmatic Engineer — Growing as an Engineer](https://newsletter.pragmaticengineer.com/) — Career growth insights for software engineers

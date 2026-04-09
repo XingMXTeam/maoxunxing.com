@@ -1,8 +1,10 @@
 ---
 title: "国际化与本地化"
+description: "国际化和本地化完整实践指南，涵盖多语言支持方案设计、CLDR 数据使用方法和 RTL 布局处理的最佳实践。"
 date: 2025-02-06
 tags:
   - i18n
+  - Web开发
 images:
   - i18n/cover.png
 ---
@@ -139,3 +141,10 @@ body {
 
 账号的区域化路由优先级比ip代理的优先级更高。
 登陆账号后，会根据账号（一般是cookie的国家）做区域化路由。仅代理ip可能走不到预发环境。建议退出账号。
+
+
+## References
+
+- [Unicode CLDR Project](https://cldr.unicode.org/) — Unicode Common Locale Data Repository for internationalization
+- [Internationalization (i18n) — web.dev](https://web.dev/articles/i18n) — Google's guide to internationalizing web applications
+- [RTL Styling 101 — Ahmad Shadeed](https://rtlstyling.com/) — Comprehensive guide to RTL layout support in CSS

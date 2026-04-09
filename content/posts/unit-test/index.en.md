@@ -1,7 +1,7 @@
 ---
 title: "How to Write Unit Tests"
 date: 2021-08-27T10:20:36+08:00
-description: ""
+description: "Unit testing setup with Mocha, TypeScript integration, code coverage with NYC, and testing best practices."
 images:
   - unit-test/unit-test.jpeg
 tags:
@@ -145,3 +145,10 @@ The following are commonly used npm packages and their functional descriptions:
     - `screen`: Accesses DOM elements.
 - **@testing-library/jest-dom/extend-expect**
   - Extends Jest's assertion methods, for example, `toBeInTheDocument`.
+
+
+## References
+
+- [Mocha Documentation](https://mochajs.org/) — Official Mocha test framework documentation
+- [Testing JavaScript — Kent C. Dodds](https://testingjavascript.com/) — Comprehensive course on JavaScript testing strategies
+- [Istanbul / NYC Documentation](https://istanbul.js.org/) — Code coverage tool documentation for JavaScript

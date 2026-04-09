@@ -1,7 +1,9 @@
 ---
 title: "CDN 技术详解与问题分析"
+description: "CDN 技术架构详解，包括缓存策略配置、自动 Polyfill 方案、加速方式对比、IVS 架构和实际案例分析。"
 date: 2025-02-06
 tags:
+  - CDN
   - Web开发
 images:
   - cdn/cover.png
@@ -203,3 +205,10 @@ images:
 
 4. **更新缓存**：
    - 源站返回资源后，CDN 会缓存该资源，以便后续请求直接从 CDN 获取。
+
+
+## References
+
+- [CDN — MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/CDN) — Overview of Content Delivery Networks and how they work
+- [Web Performance Optimization with CDN — web.dev](https://web.dev/articles/content-delivery-networks) — Google's guide to using CDNs for performance optimization
+- [Cloudflare Learning Center — What is a CDN?](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) — Comprehensive CDN explanation with architecture diagrams

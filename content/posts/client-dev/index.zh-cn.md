@@ -1,9 +1,10 @@
 ---
 title: "多端开发与移动端优化指南"
 date: 2024-12-09
-description: ""
+description: "多端开发框架对比分析（React Native、Flutter、Taro）与移动端响应式设计优化实践指南。"
 tags:
   - Web开发
+  - 移动端
 ---
 
 ## 多端开发框架
@@ -135,3 +136,9 @@ tags:
 - **兼容性测试**  
   测试不同设备和操作系统下的表现。
 
+
+## References
+
+- [React Native Documentation](https://reactnative.dev/docs/getting-started) — Official React Native cross-platform development guide
+- [Flutter Documentation](https://docs.flutter.dev/) — Official Flutter multi-platform UI development documentation
+- [Responsive Web Design Basics — web.dev](https://web.dev/articles/responsive-web-design-basics) — Google's guide to responsive design fundamentals

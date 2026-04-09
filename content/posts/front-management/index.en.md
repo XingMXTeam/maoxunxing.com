@@ -1,5 +1,6 @@
 ---
 title: "Admin/Backend Solutions"
+description: "Admin/backend architecture solution based on ICE 3.0 with permission control and communication mechanisms."
 date: 2025-02-06
 tags:
   - Web Development
@@ -249,3 +250,10 @@ Problem 3: SEO optimization issue
   The page routes of an SPA cannot be correctly crawled by search engines.
 - **Solution**  
   Use Server-Side Rendering (SSR) or Static Site Generation (SSG) techniques to ensure that each page route can return complete HTML content.
+
+
+## References
+
+- [Ant Design Pro Documentation](https://pro.ant.design/docs/getting-started) — Enterprise-level admin/backend UI solution documentation
+- [ICE.js Documentation](https://v3.ice.work/) — Official ICE.js framework documentation for admin systems
+- [Role-Based Access Control — Auth0](https://auth0.com/docs/manage-users/access-control/rbac) — Guide to implementing RBAC in web applications

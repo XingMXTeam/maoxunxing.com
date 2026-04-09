@@ -1,6 +1,6 @@
 ---
 title: "JavaScript 你需要知道的"
-description: "sort vs toSorted vs localCompare"
+description: "JavaScript 核心知识体系：闭包原理、原型链机制、异步编程模式、DOM 操作和现代 ES 特性详解。"
 date: 2024-09-08
 tags:
   - JavaScript
@@ -1648,3 +1648,8 @@ for(const i of [1,2,3]) {
 location.href 会触发onload事件，场景：unload事件中触发埋点的事件作为兜底，但是如果是setTimeout机制（公交车机制）异步机制埋点事件不会发送出去；需要考虑用setBean的同步发送埋点
 
 
+## References
+
+- [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) — Comprehensive JavaScript language reference from Mozilla
+- [JavaScript.info](https://javascript.info/) — Modern JavaScript tutorial covering fundamentals to advanced topics
+- [You Don't Know JS — Kyle Simpson](https://github.com/getify/You-Dont-Know-JS) — Deep dive book series into JavaScript language mechanisms

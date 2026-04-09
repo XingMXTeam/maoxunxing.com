@@ -1,8 +1,10 @@
 ---
 title: "SQL 语句分类与使用指南"
+description: "SQL 语句分类与使用完整指南，系统涵盖 DDL、DML、DCL 语句类型和常用函数的详细用法与使用示例。"
 date: 2022-04-03T10:29:35+08:00
 tags:
   - Sql
+  - 数据库
 images:
   - sql/a.jpg
 ---
@@ -448,3 +450,10 @@ WHERE    trace_id NOT IN (
 
 
 ## WITH 语句
+
+
+## References
+
+- [SQL Tutorial — W3Schools](https://www.w3schools.com/sql/) — Interactive SQL tutorial covering all major statement types
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/current/sql.html) — Comprehensive SQL reference from PostgreSQL
+- [Use The Index, Luke — SQL Indexing](https://use-the-index-luke.com/) — Guide to SQL indexing and query performance optimization

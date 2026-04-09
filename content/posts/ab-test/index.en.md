@@ -4,7 +4,7 @@ date: 2021-09-09
 tags:
   - AB experiment
   - Web Development
-description: ""
+description: "Learn A/B testing principles including hypothesis testing, orthogonal experiments, traffic splitting, and data-driven decision strategies."
 images:
   - ab-test/ab.png
 ---
@@ -199,3 +199,10 @@ images:
 ---
 
    - Experiments on a single floor obtain the experiment ID through the experiment platform and route based on business logic.
+
+
+## References
+
+- [A/B Testing Guide — Google Optimize](https://support.google.com/optimize/answer/7012154) — Google's guide to A/B testing fundamentals
+- [Trustworthy Online Controlled Experiments (Book)](https://experimentguide.com/) — Comprehensive reference on A/B testing by Microsoft researchers
+- [Statistical Significance in A/B Testing — Evan Miller](https://www.evanmiller.org/ab-testing/) — Tools and explanation for understanding statistical significance

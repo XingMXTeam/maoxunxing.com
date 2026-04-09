@@ -1,8 +1,10 @@
 ---
 title: "My Investment Journey"
+description: "Personal investment guide covering index funds, stock analysis, financial statements, investment psychology, and financial freedom."
 date: 2023-11-20
 tags:
   - Investment
+  - Finance
 custom_toc:
   - title: "Yields of Different Investment Tools"
   - title: "Index Investing"
@@ -1042,3 +1044,10 @@ Although passive income sounds great, it's not something that can be achieved ov
 ---
 ---
 ---
+
+
+## References
+
+- [The Little Book of Common Sense Investing — John Bogle](https://www.etf.com/sections/index-investor-corner/index-funds-investment-revolution) — Index investing philosophy by Vanguard's founder
+- [Investopedia](https://www.investopedia.com/) — Comprehensive financial education resource
+- [Warren Buffett's Annual Letters](https://www.berkshirehathaway.com/letters/letters.html) — Berkshire Hathaway shareholder letters with investment wisdom

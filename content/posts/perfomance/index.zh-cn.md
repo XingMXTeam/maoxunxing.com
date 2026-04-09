@@ -1,5 +1,6 @@
 ---
 title: "前端性能优化指南"
+description: "前端性能优化完整指南，涵盖关键指标分析（TTFB、FCP、LCP、CLS）、优化策略和性能诊断方法。"
 date: 2025-02-06
 tags:
   - 性能优化

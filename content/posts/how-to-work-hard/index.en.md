@@ -3,7 +3,8 @@ title: "[Translation] How to Work Hard"
 date: 2021-08-20
 tags:
   - Career
-description: "An understanding of how to work hard"
+  - Productivity
+description: "Paul Graham's essay on how to work hard -- finding the right field, sustained effort, and avoiding procrastination."
 images:
   - how-to-work-hard/work.jpeg
 ---
@@ -49,3 +50,10 @@ What counts as good results? That's really hard to decide. If you're exploring a
 The best test of whether it's worth working on something is whether you find it interesting. That may sound like a dangerously subjective measure, but it's probably the most accurate one you're going to get. It's you who are doing this stuff. Who is a better judge than you of whether it's important, and what better predictor of its importance than whether it's interesting?
 For this test to work, however, you have to be honest with yourself. And in fact that's the most striking thing about the whole question of working hard: how at every point, it depends on being honest with yourself.
 Working hard is not just a dial you turn up to 11. It's a complicated, dynamic system that has to be tuned at every point. You have to understand the shape of real work, see clearly what kind you're best suited for, aim as close to its real core as you can, accurately judge your performance at every moment, and put in as many hours a day as you can without degrading the quality of the result. This network is too complex to trick. But if you're consistently honest and clear-sighted, it will automatically assume an optimal shape, and you'll be productive in a way few people are.
+
+
+## References
+
+- [Paul Graham — How to Work Hard](https://paulgraham.com/hwh.html) — Original essay on the nature of hard work
+- [Deep Work — Cal Newport](https://www.calnewport.com/books/deep-work/) — Book on focused work in a distracted world
+- [Paul Graham Essays](https://paulgraham.com/articles.html) — Complete collection of Paul Graham's essays

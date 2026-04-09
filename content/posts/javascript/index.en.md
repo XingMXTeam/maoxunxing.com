@@ -1,6 +1,6 @@
 ---
 title: "What You Need to Know About JavaScript"
-description: "sort vs toSorted vs localeCompare"
+description: "Essential JavaScript knowledge covering closures, prototypes, async patterns, DOM manipulation, and modern ES features."
 date: 2024-09-08
 tags:
   - JavaScript
@@ -1247,3 +1247,10 @@ for(const i of [1,2,3]) {
 ---
 ## window.onunload
 `location.href` triggers the `onload` event. Scenario: An analytics event triggered in the `unload` event serves as a fallback. However, if it's an asynchronous mechanism like `setTimeout` (the "bus" mechanism), the analytics event won't be sent. Consider using `sendBeacon` for synchronous sending of analytics.
+
+
+## References
+
+- [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) — Comprehensive JavaScript language reference from Mozilla
+- [JavaScript.info](https://javascript.info/) — Modern JavaScript tutorial covering fundamentals to advanced topics
+- [You Don't Know JS — Kyle Simpson](https://github.com/getify/You-Dont-Know-JS) — Deep dive book series into JavaScript language mechanisms

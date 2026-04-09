@@ -1,9 +1,10 @@
 ---
 title: "What You Need to Know About Frontend Build"
-description: ""
+description: "Frontend build tools: Webpack loaders, chunk splitting, tree shaking, Module Federation, Rollup, Vite, and advanced patterns."
 date: 2025-02-06
 tags:
   - Webpack
+  - Web Development
 images:
   - webpack/a.png
 custom_toc:
@@ -643,4 +644,11 @@ bootstrap:27 Uncaught Error: Cannot find module 'core-js-pure/features/global-th
     at startup:8:1
     at webpackUniversalModuleDefinition (universalModuleDefinition:9:1)
     at universalModuleDefinition:10:1
-```   
+```
+
+
+## References
+
+- [Webpack Official Documentation](https://webpack.js.org/concepts/) — Official Webpack concepts and configuration guide
+- [Vite Documentation](https://vitejs.dev/guide/) — Official Vite documentation and migration guide
+- [Module Federation Documentation](https://module-federation.io/) — Official Module Federation plugin documentation and examples

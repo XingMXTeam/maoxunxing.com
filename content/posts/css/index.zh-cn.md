@@ -740,7 +740,7 @@ https://linxz.github.io/blog/defensive-css
 
 比如添加到主屏幕 （its Home screen icon (or the Web Clip icon), and its startup image）
 
-```
+```html
 <!-- icon in the highest resolution we need it for -->
 <link rel="icon" sizes="192x192" href="icon.png">
 
@@ -772,7 +772,7 @@ Favicons.ico不推荐
 
 ### Chrome 和 Opera 的元主题背景色
 
-```
+```html
 <!-- Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="#4285f4">
 ```
@@ -784,7 +784,7 @@ Favicons.ico不推荐
 
 ### Safari
 
-```
+```html
 <link rel="apple-touch-startup-image" href="icon.png">
 ```
 
@@ -1039,3 +1039,9 @@ function HomePage() {
    - 将浏览器屏幕宽度设置为750px时，检查卡片数量是否符合预期（例如，此时应显示5张卡片）。
    - 确保间距和卡片宽度的比例与设计稿一致。
 
+
+## References
+
+- [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) — Comprehensive CSS property reference from Mozilla
+- [CSS Tricks — Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) — Visual guide to CSS Flexbox layout
+- [web.dev CSS Course](https://web.dev/learn/css/) — Google's free comprehensive CSS course

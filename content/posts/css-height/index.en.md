@@ -181,3 +181,10 @@ The rows defined by Grid's `grid-template-rows` always exist. Conditional stylin
 2、Understand the role of height: 100%; when the parent element does not explicitly set a height, this height will not take effect, meaning it is determined by the height of the child element's content.
 
 3、Understand that block formatting context (BFC) elements (flex/grid/overflow: hidden) do not have margin collapsing. It is recommended to use grid/flex for all layout purposes.
+
+
+## References
+
+- [MDN — CSS Viewport Units](https://developer.mozilla.org/en-US/docs/Web/CSS/length#viewport-percentage_lengths) — Documentation on viewport units (vh, svh, dvh, lvh)
+- [The Large, Small, and Dynamic Viewport Units — web.dev](https://web.dev/blog/viewport-units) — Guide to new viewport units solving mobile 100vh issues
+- [CSS Tricks — Fun with Viewport Units](https://css-tricks.com/fun-viewport-units/) — Practical examples and solutions for viewport unit challenges

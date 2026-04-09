@@ -1,9 +1,10 @@
 ---
 title: "React 常见问题与解决方案"
-description: ""
+description: "React 常见开发问题与解决方案完整合集：表单重置、闭包陷阱、死循环排查方法、错误边界和性能优化。"
 date: 2025-02-06
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -258,3 +259,10 @@ error-boundary实现组件级别的错误捕获
 
 ## 离屏优化
 https://react.dev/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022#offscreen
+
+
+## References
+
+- [React Error Boundaries Documentation](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) — Official documentation for Error Boundaries in React
+- [Common React Mistakes — Josh W. Comeau](https://www.joshwcomeau.com/react/common-beginner-mistakes/) — Guide to common React pitfalls and how to avoid them
+- [React Re-renders Guide — Developer Way](https://www.developerway.com/posts/react-re-renders-guide) — Understanding when and why React components re-render

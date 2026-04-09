@@ -1,8 +1,10 @@
 ---
 title: "Overview of Containerization Technology"
+description: "Container technology overview explaining Docker, resource management, and the evolution from physical machines to virtualization to containers."
 date: 2025-02-06
 tags:
   - Docker
+  - Containerization
 images:
   - docker/cover.png
 ---
@@ -82,3 +84,10 @@ An image is an executable package that includes everything needed to run an appl
 `docker rm container-id`  Removes the container
 `docker build -t your-image-name` Builds an image
 Docker is used to build containers, and Kubernetes is used to manage complex systems composed of containers.
+
+
+## References
+
+- [Docker Official Documentation](https://docs.docker.com/get-started/) — Official Docker getting started guide
+- [Docker Curriculum](https://docker-curriculum.com/) — Comprehensive Docker tutorial for beginners
+- [Container Networking — Docker Docs](https://docs.docker.com/network/) — Guide to Docker container networking concepts

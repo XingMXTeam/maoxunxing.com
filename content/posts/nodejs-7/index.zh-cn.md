@@ -1,8 +1,10 @@
 ---
 title: "Node.js 依赖注入"
+description: "Node.js 依赖注入机制详解，深入涵盖 TypeScript 元数据生成原理和递归依赖解析的实现过程。"
 date: 2025-03-25
 tags:
   - nodejs
+  - 依赖注入
 images:
   - nodejs-7/cover.png
 ---
@@ -95,3 +97,10 @@ this.ctx.requestContext.getAsync('testService') // 获取注入的服务 midway 
 更多参考： 
 - https://midwayjs.org/docs/1.0.0/injection
 - https://jkchao.github.io/typescript-book-chinese/tips/metadata.html#%E4%BE%8B%E5%AD%90
+
+
+## References
+
+- [InversifyJS Documentation](https://inversify.io/) — TypeScript dependency injection container documentation
+- [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html) — Official TypeScript decorator specification
+- [Dependency Injection in Node.js — LogRocket](https://blog.logrocket.com/dependency-injection-node-js-typedi/) — Guide to DI patterns in Node.js applications

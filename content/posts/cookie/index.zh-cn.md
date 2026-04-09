@@ -1,5 +1,6 @@
 ---
 title: "Cookie 技术详解与问题分析"
+description: "Cookie 技术详解，包括 CookieStore API、SameSite 属性、CSRF 防护和跨域管理方案。"
 date: 2025-02-06
 tags:
   - cookie
@@ -178,3 +179,10 @@ images:
 ## Cookie 查看
 
 ![alt text](image.png)
+
+
+## References
+
+- [HTTP Cookies — MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) — Comprehensive guide to HTTP cookies and their attributes
+- [SameSite Cookies Explained — web.dev](https://web.dev/articles/samesite-cookies-explained) — Google's guide to SameSite cookie attribute
+- [CSRF Prevention Cheat Sheet — OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) — OWASP guide to preventing CSRF attacks

@@ -2,8 +2,9 @@
 title: "我的英语学习历程与反思"
 date: 2023-07-08T11:36:43+08:00
 tags:
-    - 英语
-description: "人生应该是有趣而好玩的，包括英语学习。AI大模型让学习英语变得有趣。"
+  - 英语
+  - 学习
+description: "人生应该是有趣而好玩的，包括英语学习。AI 大模型让学习英语变得有趣，分享我用 AI 辅助英语学习的方法和心得。"
 images:
     - how-i-learn-english/img_1.jpg
 ---
@@ -114,5 +115,8 @@ images:
 **记住：在正确的方向上持续努力，时间会给你最好的回报！**
 
 
+## References
 
-
+- [Comprehensible Input Hypothesis — Stephen Krashen (YouTube)](https://www.youtube.com/watch?v=NiTsduRreug) — Dr. Krashen explains the theory behind natural language acquisition
+- [Anki — Spaced Repetition Software](https://apps.ankiweb.net/) — Open-source flashcard app using spaced repetition for effective memorization
+- [Fluent Forever — Gabriel Wyner](https://fluent-forever.com/) — Science-based method for learning languages effectively

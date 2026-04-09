@@ -3,7 +3,8 @@ title: "计算机本质的理解"
 date: 2021-08-24
 tags:
   - 计算机
-description: "计算机本质是什么？"
+  - 编程
+description: "深入探索计算机的本质原理：数字编码系统、二进制运算基础、逻辑门电路设计和硬件如何逐步执行软件指令的完整过程。"
 images:
   - code-computer/code-computer.jpeg
 ---
@@ -231,3 +232,10 @@ function compile(ast) {
 
 #### 3. 活动记录
 执行过程的活动记录由标记顶部位置的 **帧指针** 和标记底部位置的 **栈指针** 定义。当执行完毕，帧指针指向下一条指令地址。
+
+
+## References
+
+- [Code: The Hidden Language of Computer Hardware and Software — Charles Petzold](https://www.charlespetzold.com/code/) — Classic book explaining how computers work from first principles
+- [Crash Course Computer Science — YouTube](https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo) — Video series covering computer science fundamentals
+- [Nand2Tetris](https://www.nand2tetris.org/) — Build a computer from logic gates to a full operating system

@@ -1,8 +1,10 @@
 ---
 title: "Node.js 案例"
+description: "Node.js 调试实战和案例分析详解，涵盖 Chrome Inspector 调试方法、性能分析和最佳实践。"
 date: 2019-11-25
 tags:
   - nodejs
+  - 调试
 custom_toc:
   - title: "Node.js Debug"
   - title: "Node.js 案例"
@@ -215,3 +217,9 @@ vscode: launch.json
 
 - **实践**：基于业务需求逐步积累和完善工具链。
 
+
+## References
+
+- [Debugging Node.js with Chrome DevTools](https://nodejs.org/en/learn/getting-started/debugging) — Official guide to debugging Node.js with Chrome Inspector
+- [Node.js Debugging Guide — JetBrains](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html) — Comprehensive Node.js debugging setup guide
+- [NDB: Chrome DevTools for Node — Google](https://github.com/GoogleChromeLabs/ndb) — Improved debugging experience for Node.js

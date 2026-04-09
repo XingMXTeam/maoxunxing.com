@@ -3,7 +3,8 @@ title: "前端工程师技能树"
 date: 2021-08-24
 tags:
   - Web开发
-description: "细化前端工程师的成长模型指标，逐步提高个人专业技能"
+  - 职业发展
+description: "前端工程师技能树与职业成长模型深入分析，详细规划专业技能提升路径、核心竞争力构建方案和职业发展策略。"
 ---
 
 ## 目录
@@ -689,3 +690,10 @@ eslint-watch
 
 采集方案： 基于Element timing+Performance Observer, 自定义属性上报
 实时计算海量数据的思路： 空间换时间->提前计算好 数据立方 需要的时候取出来就行 -->
+
+
+## References
+
+- [Frontend Developer Roadmap — roadmap.sh](https://roadmap.sh/frontend) — Community-curated frontend developer skill roadmap
+- [State of JS Survey](https://stateofjs.com/) — Annual survey on the state of JavaScript ecosystem and trends
+- [The Pragmatic Engineer — Growing as an Engineer](https://newsletter.pragmaticengineer.com/) — Career growth insights for software engineers

@@ -1,7 +1,7 @@
 ---
 title: "前端埋点指南"
 date: 2024-12-09
-description: ""
+description: "前端埋点方案完整详解：SPM 参数体系设计原则、来源追踪方法实现、曝光位标识和跨页面用户行为分析实践。"
 tags:
   - Web开发
   - 埋点
@@ -170,3 +170,10 @@ observeElementExposure('.target-div', (element) => {
   console.log('目标 div 已曝光:', element);
 });
 ```
+
+
+## References
+
+- [Google Analytics Documentation](https://developers.google.com/analytics) — Official Google Analytics implementation guide
+- [UTM Parameters Guide — Google](https://support.google.com/analytics/answer/1033863) — Guide to UTM campaign tracking parameters
+- [Web Analytics — MDN](https://developer.mozilla.org/en-US/docs/Web/Performance) — Web performance measurement and analytics overview

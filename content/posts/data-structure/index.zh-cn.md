@@ -1,8 +1,10 @@
 ---
 title: "数据结构特点分析"
+description: "数据结构核心特点深入分析，涵盖线性表、非线性表、红黑树、堆、跳表、Trie 树等关键结构的原理与应用。"
 date: 2025-03-03
 tags:
   - 数据结构
+  - 算法
 custom_toc:
   - title: "数组"
   - title: "链表"
@@ -1516,3 +1518,9 @@ export function trie_TestFunction() {
 
 ```
 
+
+## References
+
+- [Introduction to Algorithms (CLRS) — MIT OpenCourseWare](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) — MIT's free algorithms and data structures course
+- [Visualgo — Data Structure Visualizations](https://visualgo.net/) — Interactive visualizations of data structures and algorithms
+- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) — Quick reference for data structure and algorithm complexities

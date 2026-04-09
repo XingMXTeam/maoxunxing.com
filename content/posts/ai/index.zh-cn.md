@@ -1,9 +1,10 @@
 ---
 title: "AI 你需要知道的"
-description: ""
+description: "AI 基础知识全面指南：机器学习原理、嵌入向量、模型训练流程、Prompt 工程技巧和 AI 工具的实践应用。"
 date: 2024-07-07
 tags:
   - AI
+  - 机器学习
 images:
   - ai/a.jpg
 custom_toc:
@@ -947,4 +948,8 @@ repomix 打包代码
 《第一只眼》
 
 
+## References
 
+- [Prompt Engineering Guide](https://www.promptingguide.ai/) — Comprehensive guide to prompt engineering techniques and best practices for LLMs
+- [State of AI Report 2024](https://www.stateof.ai/) — Annual report covering the most important developments in AI research and industry
+- [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) — Free course covering ML fundamentals, neural networks, and embeddings

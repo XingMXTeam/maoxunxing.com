@@ -1,7 +1,7 @@
 ---
 title: "Gemini CLI配置教程"
 date: 2025-07-07
-description: ""
+description: "Gemini CLI 安装配置完整教程，包含 API 密钥设置、网络代理配置、常见问题排查和使用技巧。"
 tags:
   - AI
   - Gemini CLI
@@ -22,3 +22,10 @@ images:
 `echo "Please translate the following Chinese text to English: 测试标题" | gemini`
 
 <iframe width="960" height="659" src="https://www.youtube.com/embed/ZPalbIyMt54" title="Gemini CLI Setup Crash Course， 快速翻译50篇文章，AI效率新方式！" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+## References
+
+- [Gemini CLI GitHub Repository](https://github.com/google-gemini/gemini-cli) — Official Gemini CLI source code and documentation
+- [Google AI Studio](https://aistudio.google.com/) — Google's web-based tool for prototyping with Gemini models and obtaining API keys
+- [Gemini API Documentation](https://ai.google.dev/docs) — Official Google Gemini API reference and getting started guides

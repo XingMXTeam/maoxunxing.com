@@ -1,5 +1,6 @@
 ---
 title: "前端工程指南"
+description: "前端工程化完整指南，涵盖工程体系构建方案、Lerna 多包管理、Babel 配置优化、灰度方案等工程最佳实践。"
 date: 2025-02-06
 tags:
   - 工程
@@ -1145,3 +1146,10 @@ hsf是如何根据参数缓存的？
 key: id(xxx)_method(get/post)_uid(唯一id) , 底层是一个`Map<string, Promise<any>>`
 
 ---
+
+
+## References
+
+- [The Twelve-Factor App](https://12factor.net/) — Methodology for building modern, scalable web applications
+- [Google Engineering Practices](https://google.github.io/eng-practices/) — Google's engineering best practices for code review and development
+- [Babel Documentation](https://babeljs.io/docs/) — Official Babel JavaScript compiler documentation

@@ -1,5 +1,6 @@
 ---
 title: "A Detailed Explanation and Problem Analysis of Cookie Technology"
+description: "Complete Cookie technology guide covering CookieStore API, SameSite protection, CSRF defense, and cross-domain strategies."
 date: 2025-02-06
 tags:
   - cookie
@@ -147,3 +148,10 @@ In simple terms: If site A embeds a third-party script, this script can access a
 ---
 ## Viewing Cookies
 ![alt text](image.png)
+
+
+## References
+
+- [HTTP Cookies — MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) — Comprehensive guide to HTTP cookies and their attributes
+- [SameSite Cookies Explained — web.dev](https://web.dev/articles/samesite-cookies-explained) — Google's guide to SameSite cookie attribute
+- [CSRF Prevention Cheat Sheet — OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) — OWASP guide to preventing CSRF attacks

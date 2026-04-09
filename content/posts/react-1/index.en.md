@@ -1,9 +1,10 @@
 ---
 title: "Suspense"
-description: "how to write prompt"
+description: "Master React Suspense for async components, code-splitting, data fetching, and providing better UX with fallback UI patterns."
 date: 2024-07-07
 tags:
-  - React 
+  - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -42,3 +43,10 @@ export default SuspenseWithLazyLoading;
 ## Version
 
 `>= React 18`
+
+
+## References
+
+- [React Suspense Documentation](https://react.dev/reference/react/Suspense) — Official React documentation for the Suspense component
+- [Dan Abramov — Algebraic Effects for the Rest of Us](https://overreacted.io/algebraic-effects-for-the-rest-of-us/) — Understanding the theory behind React Suspense
+- [React Lazy Loading Guide — web.dev](https://web.dev/articles/code-splitting-suspense) — Google's guide to code splitting with React Suspense

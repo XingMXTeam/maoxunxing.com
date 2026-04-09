@@ -163,3 +163,47 @@ ffmpeg \
 
 `npm run cover vue` 封面默认大小`1200*300` 封面采用统一风格
 
+## Qoder Skills
+
+This repo includes three [Qoder](https://qoder.com) skills under `.qoder/skills/` to streamline content workflows. Use them in any Qoder session while working in this repository.
+
+### `/kb` — Knowledge Base Manager
+
+Manage the three-layer knowledge pipeline: `content/raw/` -> `content/notes/` -> `content/posts/`.
+
+| Command | What it does |
+|---------|-------------|
+| `/kb collect https://...` | Fetch a URL, summarize it, and create a `content/raw/` entry (draft) |
+| `/kb collect Some quick thought...` | Save freeform text as a raw entry |
+| `/kb compile AI` | Merge raw entries matching a topic/tag into a structured `content/notes/` entry |
+| `/kb preview` | Start `hugo server -D` to preview all content including drafts |
+| `/kb check` | Audit raw/ and notes/ for duplicates, missing tags, and compilation candidates |
+| `/kb list` | List all raw entries in a table |
+
+### `/bilingual` — Bilingual Article Generator
+
+Auto-detect and generate the missing language version for any article.
+
+- Triggers automatically when a post/note has only `index.zh-cn.md` or only `index.en.md`
+- Translates naturally (not word-by-word), preserves code blocks/URLs/technical terms
+- Tags are translated to their counterparts (e.g. "知识管理" <-> "Knowledge Management")
+- `content/raw/` bilingual is opt-in only
+
+### `/article-check` — Article Quality Checker
+
+Validate articles against five quality checks for SEO and completeness.
+
+| Command | What it does |
+|---------|-------------|
+| `/article-check` | Check ALL posts, output a summary table sorted by score |
+| `/article-check content/posts/my-post/` | Check a specific article |
+| `/article-check --fix content/posts/my-post/` | Check and auto-fix (add references, generate missing language, etc.) |
+
+**Checks performed:**
+
+1. **References** — At least 3 English-language external sources (prefers YouTube, official docs, major publications)
+2. **Bilingual** — Both `index.zh-cn.md` and `index.en.md` exist with matching structure
+3. **Frontmatter** — title, description (50-160 chars), date, tags (2-5)
+4. **Structure** — Heading hierarchy, code block annotations, well-formed tables
+5. **Links** — No broken internal links, all HTTPS, no placeholder URLs
+

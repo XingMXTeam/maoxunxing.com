@@ -1,5 +1,6 @@
 ---
 title: "Frontend Performance Optimization Guide"
+description: "Frontend performance optimization covering key metrics (TTFB, FCP, LCP, CLS), optimization strategies, and analysis methods."
 date: 2025-02-06
 tags:
   - Performance Optimization

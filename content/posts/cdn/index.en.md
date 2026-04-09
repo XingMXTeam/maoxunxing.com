@@ -1,7 +1,9 @@
 ---
 title: "Detailed Explanation and Problem Analysis of CDN Technology"
+description: "CDN technical guide covering caching strategies, auto-optimization, acceleration methods, IVS architecture, and real-world case studies."
 date: 2025-02-06
 tags:
+  - CDN
   - Web Development
 images:
   - cdn/cover.png
@@ -159,3 +161,10 @@ Here's a specific example: If a user requests an HTML page and the CDN is config
     -   OSS acts as the underlying storage service, providing the final storage and management of resources.
 4.  **Update Cache**:
     -   After the origin server returns the resource, the CDN will cache it so that subsequent requests can be fetched directly from the CDN.
+
+
+## References
+
+- [CDN — MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/CDN) — Overview of Content Delivery Networks and how they work
+- [Web Performance Optimization with CDN — web.dev](https://web.dev/articles/content-delivery-networks) — Google's guide to using CDNs for performance optimization
+- [Cloudflare Learning Center — What is a CDN?](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) — Comprehensive CDN explanation with architecture diagrams

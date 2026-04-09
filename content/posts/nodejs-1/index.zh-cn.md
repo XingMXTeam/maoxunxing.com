@@ -1,9 +1,10 @@
 ---
 title: "应用自动部署和发布"
-description: "pm2如何脚本自动化启动和部署应用"
+description: "应用自动部署和发布的完整实践指南，涵盖 PM2 脚本化启动配置方法、自动化部署流程设计和灰度发布策略。"
 date: 2024-09-14
 tags:
   - nodejs
+  - 部署
 images:
   - nodejs-1/node-js.jpeg
 ---
@@ -272,3 +273,10 @@ pm2 deploy ecosystem.json production
 4. **常见问题排查**：针对常见错误提供了解决方案。
 
 希望本文能帮助你快速掌握 PM2 的使用！
+
+
+## References
+
+- [PM2 Documentation](https://pm2.keymetrics.io/docs/usage/quick-start/) — Official PM2 process manager documentation
+- [Node.js Deployment Best Practices — Rising Stack](https://blog.risingstack.com/node-js-deployment/) — Guide to deploying Node.js applications in production
+- [GitHub Actions Documentation](https://docs.github.com/en/actions) — Official documentation for CI/CD automation with GitHub Actions

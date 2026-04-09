@@ -1,9 +1,10 @@
 ---
 title: "React Common Issues and Solutions"
-description: ""
+description: "Solve common React issues: form resets, closure pitfalls, infinite loops, Error Boundaries, and performance optimization patterns."
 date: 2025-02-06
 tags:
   - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -258,3 +259,10 @@ error-boundary implements component-level error catching.
 
 ## Offscreen Optimization
 https://react.dev/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022#offscreen
+
+
+## References
+
+- [React Error Boundaries Documentation](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) — Official documentation for Error Boundaries in React
+- [Common React Mistakes — Josh W. Comeau](https://www.joshwcomeau.com/react/common-beginner-mistakes/) — Guide to common React pitfalls and how to avoid them
+- [React Re-renders Guide — Developer Way](https://www.developerway.com/posts/react-re-renders-guide) — Understanding when and why React components re-render

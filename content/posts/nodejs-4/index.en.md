@@ -1,8 +1,10 @@
 ---
 title: "NodeJS Development and Operations"
+description: "Complete Node.js development and operations guide covering architecture, stability, monitoring, and deployment strategies."
 date: 2025-02-06
 tags:
   - nodejs
+  - Operations
 images:
   - nodejs-4/cover.png
 ---
@@ -152,3 +154,10 @@ The core is to monitor page render volume/key page elements. Even if JS is block
 5 LEVEL 5: Doctor. CI/CD static analysis.  
 ## Learning
 antfu's small libraries (under 1000 lines): ni
+
+
+## References
+
+- [Node.js Diagnostics Guide](https://nodejs.org/en/learn/getting-started/debugging) — Official Node.js debugging and diagnostics documentation
+- [Monitoring Node.js Applications — Datadog](https://www.datadoghq.com/blog/node-monitoring-guide/) — Guide to monitoring Node.js applications in production
+- [Node.js Performance Best Practices — Clinic.js](https://clinicjs.org/) — Performance profiling tools and best practices for Node.js

@@ -1,9 +1,10 @@
 ---
 title: "前端构建，你需要知道的"
-description: ""
+description: "前端构建工具详解：Webpack loader、chunk splitting、tree shaking、Module Federation、Rollup 和 Vite。"
 date: 2025-02-06
 tags:
   - Webpack
+  - Web开发
 images:
   - webpack/a.png
 custom_toc:
@@ -875,4 +876,11 @@ bootstrap:27 Uncaught Error: Cannot find module 'core-js-pure/features/global-th
     at startup:8:1
     at webpackUniversalModuleDefinition (universalModuleDefinition:9:1)
     at universalModuleDefinition:10:1
-```   
+```
+
+
+## References
+
+- [Webpack Official Documentation](https://webpack.js.org/concepts/) — Official Webpack concepts and configuration guide
+- [Vite Documentation](https://vitejs.dev/guide/) — Official Vite documentation and migration guide
+- [Module Federation Documentation](https://module-federation.io/) — Official Module Federation plugin documentation and examples

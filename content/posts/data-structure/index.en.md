@@ -1,8 +1,10 @@
 ---
 title: "Analysis of Data Structure Characteristics"
+description: "Data structures fundamentals covering linear and non-linear structures, including trees, heaps, skip lists, and advanced data structures."
 date: 2025-03-03
 tags:
   - Data Structures
+  - Algorithm
 custom_toc:
   - title: "Array"
   - title: "Linked List"
@@ -1189,3 +1191,10 @@ export function trie_TestFunction() {
 }
 ```
 ```
+
+
+## References
+
+- [Introduction to Algorithms (CLRS) — MIT OpenCourseWare](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) — MIT's free algorithms and data structures course
+- [Visualgo — Data Structure Visualizations](https://visualgo.net/) — Interactive visualizations of data structures and algorithms
+- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) — Quick reference for data structure and algorithm complexities

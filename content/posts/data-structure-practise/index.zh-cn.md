@@ -1,8 +1,10 @@
 ---
 title: "数据结构刷题实战"
+description: "数据结构刷题实战完整指南，系统涵盖数组、栈、二分查找、链表、树、堆等核心数据结构与经典算法题解分析。"
 date: 2025-03-03
 tags:
   - 数据结构
+  - 算法
 custom_toc:
   - title: "Array & hash"
   - title: "Two Pointer"
@@ -3749,3 +3751,8 @@ console.log("Has Circle (BFS):", g.hasCircleByBfs());
 | 并查集     | O(n) → O(log n)（使用路径压缩和按秩合并优化后） |
 
 
+## References
+
+- [LeetCode](https://leetcode.com/) — Platform for practicing data structure and algorithm problems
+- [NeetCode Roadmap](https://neetcode.io/roadmap) — Curated LeetCode problem roadmap organized by pattern
+- [Algorithms Visualization — VisuAlgo](https://visualgo.net/) — Interactive visualizations for learning algorithms

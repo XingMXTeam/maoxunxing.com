@@ -1,9 +1,10 @@
 ---
 title: "Influence and Promotion Guide"
 date: 2021-08-27T10:20:36+08:00
-description: "How to Shape Influence"
+description: "Guide to building workplace influence, navigating promotions, and developing core competencies for career growth."
 tags:
   - Workplace
+  - Career
 custom_toc:
   - title: "Influence"
   - title: "Promotion & Defense Key Points"
@@ -395,3 +396,9 @@ What technology and architecture should do to continuously create value
 
 ---
 
+
+## References
+
+- [Staff Engineer: Leadership Beyond the Management Track](https://staffeng.com/) — Guide to growing influence as a senior engineer
+- [An Elegant Puzzle: Systems of Engineering Management — Will Larson](https://lethain.com/elegant-puzzle/) — Book on engineering leadership and organizational design
+- [The Manager's Path — Camille Fournier](https://www.oreilly.com/library/view/the-managers-path/9781491973882/) — Guide to tech leadership from engineer to CTO

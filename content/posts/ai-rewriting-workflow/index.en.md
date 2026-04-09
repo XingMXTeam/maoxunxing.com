@@ -1,6 +1,6 @@
 ---
 title: "AI Is Rewriting the Playbook: How to Thrive When Productivity Jumps 10x"
-description: "Drawing on Redpoint Ventures' 2026 AI software industry report, SaaS financial model evolution, historical parallels from the Industrial Revolution, and frontline enterprise practices, this article offers knowledge workers an actionable framework for career adaptation."
+description: "An actionable career adaptation framework for knowledge workers when AI boosts productivity 10x, based on industry reports and history."
 date: 2026-04-02
 tags:
   - AI
@@ -391,3 +391,10 @@ History doesn't repeat, but it rhymes. The skill and institutional restructuring
 > - Daron Acemoglu & Simon Johnson, *Power and Progress* (The logic of technology dividend distribution and institutional choices)
 
 *Note: Financial metrics and tool features referenced in this article are based on publicly available industry data and hands-on product testing from 2024–2026. Specific pricing and capabilities may change with version updates. Readers are advised to adapt the recommendations to their own company's IT policies and career stage.*
+
+
+## References
+
+- [Redpoint AI/Software Industry Report](https://www.redpoint.com/infrared/ai-for-the-next-era-of-work/) — Redpoint Ventures' analysis of AI's impact on software industry and workforce
+- [McKinsey — The Economic Potential of Generative AI](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier) — McKinsey's research on generative AI's productivity impact across industries
+- [Harvard Business Review — How AI Will Transform Project Management](https://hbr.org/2023/02/how-ai-will-transform-project-management) — HBR analysis on AI's role in transforming knowledge work

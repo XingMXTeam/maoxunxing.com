@@ -1,8 +1,10 @@
 ---
 title: "Midway 6 升级到 v8 踩坑记录"
+description: "Midway 6 升级到 v8 的踩坑记录和解决方案完整汇总，涵盖常见报错排查方法和配置迁移的关键问题。"
 date: 2025-02-06
 tags:
   - nodejs
+  - Midway
 images:
   - nodejs-5/cover.png
 ---
@@ -151,3 +153,10 @@ export class AutoConfiguration {}
 ## 总结
 
 升级到 Midway v8 的过程中，可能会遇到多种问题。本文总结了常见的踩坑点及解决方案，包括视图渲染、依赖冲突、配置文件调整等。建议在升级前仔细阅读官方文档，并逐步测试每个模块的功能，以确保项目的稳定性。
+
+
+## References
+
+- [Midway.js Documentation](https://midwayjs.org/) — Official Midway.js framework documentation
+- [Node.js LTS Schedule](https://github.com/nodejs/release#release-schedule) — Official Node.js release schedule and LTS information
+- [Migrating to ESM — sindresorhus](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) — Guide to migrating Node.js projects between module systems

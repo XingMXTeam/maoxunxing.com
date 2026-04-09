@@ -1,5 +1,6 @@
 ---
 title: "React State Management & Global Shared State Design"
+description: "React state management guide comparing Class vs Hooks patterns and solutions like Redux, MobX, and zustand."
 date: 2021-12-02T15:00:46+08:00
 tags:
   - React
@@ -394,3 +395,10 @@ const model = getModel("foo");  // Create or get an existing model
 New Intuitions:
 1. `useModel` within a component is essentially a subscription; updates are subscribed to via an intermediary component; notifications are sent via the container's observer pattern.
 2. `const { data, setData } = useModel('bannerComponent')` will only subscribe to the data of the component you want, and `setData` will also only update the data for that specific component.
+
+
+## References
+
+- [Zustand GitHub Repository](https://github.com/pmndrs/zustand) — Lightweight state management library for React
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/) — Official Redux Toolkit documentation and best practices
+- [Practical React State Management — Kent C. Dodds](https://kentcdodds.com/blog/application-state-management-with-react) — Guide to choosing the right state management approach

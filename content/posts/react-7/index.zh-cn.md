@@ -1,5 +1,6 @@
 ---
 title: "React 状态管理 & 全局共享状态设计"
+description: "React 状态管理与全局共享状态设计，对比 Class 组件和 Hooks，分析 Redux、MobX、zustand 等方案。"
 date: 2021-12-02T15:00:46+08:00
 tags:
   - React
@@ -502,3 +503,9 @@ const model = getModel("foo");  // 创建或获取已存在的模型
 1、组件里面useModel实际就是订阅；通过中间组件订阅更新；通过container观察者模式通知
 2、`const { data, setData } = useModel('bannerComponent')` 只会订阅你想要的这个组件的数据， `setData` 也只会更新指定组件的数据。
 
+
+## References
+
+- [Zustand GitHub Repository](https://github.com/pmndrs/zustand) — Lightweight state management library for React
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/) — Official Redux Toolkit documentation and best practices
+- [Practical React State Management — Kent C. Dodds](https://kentcdodds.com/blog/application-state-management-with-react) — Guide to choosing the right state management approach

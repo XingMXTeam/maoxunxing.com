@@ -1,7 +1,7 @@
 ---
 title: "Frontend Tracking Guide"
 date: 2024-12-09
-description: ""
+description: "Frontend tracking with SPM parameters: source tracking, exposure positions, session identification, and cross-page analytics."
 tags:
   - Web Development
   - Tracking
@@ -139,3 +139,10 @@ observeElementExposure('.target-div', (element) => {
   console.log('Target div has been exposed:', element);
 });
 ```
+
+
+## References
+
+- [Google Analytics Documentation](https://developers.google.com/analytics) — Official Google Analytics implementation guide
+- [UTM Parameters Guide — Google](https://support.google.com/analytics/answer/1033863) — Guide to UTM campaign tracking parameters
+- [Web Analytics — MDN](https://developer.mozilla.org/en-US/docs/Web/Performance) — Web performance measurement and analytics overview

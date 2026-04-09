@@ -1,9 +1,10 @@
 ---
 title: "影响力与晋升指南"
 date: 2021-08-27T10:20:36+08:00
-description: "如何塑造影响力"
+description: "职场影响力塑造方法论、晋升答辩实战技巧和核心竞争力构建的完整实践指南，助力技术人的职业成长与突破提升。"
 tags:
   - 职场
+  - 职业发展
 custom_toc:
   - title: "影响力"
   - title: "晋升 & 答辩要点"
@@ -392,3 +393,9 @@ COMD 模型从四个复杂度和三个维度来描述一个人的能力模型。
 
 技术和架构要做什么，持续产生价值
 
+
+## References
+
+- [Staff Engineer: Leadership Beyond the Management Track](https://staffeng.com/) — Guide to growing influence as a senior engineer
+- [An Elegant Puzzle: Systems of Engineering Management — Will Larson](https://lethain.com/elegant-puzzle/) — Book on engineering leadership and organizational design
+- [The Manager's Path — Camille Fournier](https://www.oreilly.com/library/view/the-managers-path/9781491973882/) — Guide to tech leadership from engineer to CTO

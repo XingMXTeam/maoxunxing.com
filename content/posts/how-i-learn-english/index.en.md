@@ -2,8 +2,9 @@
 title: "Top 3 English Learning Tools in the Age of AI"
 date: 2023-07-08T11:36:43+08:00
 tags:
-- English 
-description: "Life should be fun and interesting, including learning English.AI big models make learning English fun."
+  - English
+  - Learning
+description: "Modern English learning with AI: practical strategies, speaking practice tips, and building confidence without expensive classes."
 images:
 - how-i-learn-english/img_1.jpg
 ---
@@ -79,3 +80,10 @@ Primarily to do comparative translations of passages between Chinese and English
 
 And that's it.  
 **If this article was helpful to you, feel free to subscribe and forward it!!!**
+
+
+## References
+
+- [Comprehensible Input Hypothesis — Stephen Krashen (YouTube)](https://www.youtube.com/watch?v=NiTsduRreug) — Dr. Krashen explains the theory behind natural language acquisition
+- [Anki — Spaced Repetition Software](https://apps.ankiweb.net/) — Open-source flashcard app using spaced repetition for effective memorization
+- [Fluent Forever — Gabriel Wyner](https://fluent-forever.com/) — Science-based method for learning languages effectively

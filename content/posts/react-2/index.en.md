@@ -4,6 +4,7 @@ description: "What is the history of Concurrent Mode and what problems does it s
 date: 2024-07-30
 tags:
   - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -222,3 +223,10 @@ export default App;
 ---
 ## Summary
 **Concurrent Mode** is a crucial feature of React that significantly improves application responsiveness and user experience through mechanisms like time slicing, priority scheduling, and the ability to pause, resume, or abort renders. Combined with APIs like `useTransition`, `useDeferredValue`, and `useSyncExternalStore`, developers can more flexibly optimize performance in complex scenarios.
+
+
+## References
+
+- [React Concurrent Features](https://react.dev/blog/2022/03/29/react-v18#new-feature-concurrent-rendering) — Official React 18 concurrent rendering announcement
+- [Inside React Query — TkDodo](https://tkdodo.eu/blog/inside-react-query) — Deep dive into concurrent features in React data fetching
+- [Understanding React Concurrent Mode — LogRocket](https://blog.logrocket.com/react-concurrent-mode/) — Practical guide to React concurrent features

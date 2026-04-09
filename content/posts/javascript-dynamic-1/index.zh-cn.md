@@ -1,6 +1,6 @@
 ---
 title: "跨端开发与动态化实践"
-description: ""
+description: "跨端开发架构设计与动态化实践的完整方案，涵盖模块分层设计原则、响应式布局适配方案和平台差异化构建策略。"
 date: 2025-02-06
 tags:
   - Web开发
@@ -133,3 +133,9 @@ images:
 
 ## 渲染源站设计
 
+
+## References
+
+- [React Native Documentation](https://reactnative.dev/docs/getting-started) — Official React Native documentation for cross-platform development
+- [Flutter Documentation](https://docs.flutter.dev/) — Official Flutter documentation for multi-platform UI development
+- [Responsive Web Design — MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design) — Guide to responsive design principles and techniques

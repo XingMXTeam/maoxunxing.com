@@ -1,9 +1,10 @@
 ---
 title: "React.Suspense 使用指南"
-description: ""
+description: "React Suspense 使用指南：异步组件、代码分割、数据加载和 fallback UI 模式实践。"
 date: 2024-07-28
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -106,3 +107,10 @@ export default SuspenseWithLazyLoading;
 `React.Suspense` 是一种强大的工具，用于处理异步操作（如懒加载和数据获取）。它通过声明式的方式简化了异步状态管理，提升了代码的可读性和维护性。同时，它的智能加载机制和异常捕获能力，使得开发者能够更轻松地构建高性能的 Web 应用。
 
 无论是服务端渲染还是客户端渲染，`Suspense` 都能为开发者提供一致且高效的解决方案。
+
+
+## References
+
+- [React Suspense Documentation](https://react.dev/reference/react/Suspense) — Official React documentation for the Suspense component
+- [Dan Abramov — Algebraic Effects for the Rest of Us](https://overreacted.io/algebraic-effects-for-the-rest-of-us/) — Understanding the theory behind React Suspense
+- [React Lazy Loading Guide — web.dev](https://web.dev/articles/code-splitting-suspense) — Google's guide to code splitting with React Suspense

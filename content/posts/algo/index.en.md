@@ -1,8 +1,10 @@
 ---
 title: "Algorithm Analysis"
+description: "In-depth algorithm analysis covering complexity, sorting, binary search, greedy, divide-and-conquer, backtracking, and dynamic programming."
 date: 2025-03-03
 tags:
   - Algorithm
+  - Data Structures
 custom_toc:
   - title: "Complexity Analysis"
   - title: "Sorting"

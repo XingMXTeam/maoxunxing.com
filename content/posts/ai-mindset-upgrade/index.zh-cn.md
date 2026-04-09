@@ -1,6 +1,6 @@
 ---
 title: "AI 时代的认知升级：从写代码到定义问题"
-description: "当代码生成成本趋近于零，真正稀缺的不再是技术执行力，而是提出好问题的能力。本文整理了关于 AI 时代思维转变、职业发展与行业趋势的思考笔记。"
+description: "当代码生成成本趋近于零，真正稀缺的是提出好问题的能力。关于 AI 时代思维转变与职业发展路径的深度思考。"
 date: 2026-04-08
 tags:
   - AI
@@ -139,3 +139,10 @@ custom_toc:
 ### 其他
 
 - [Polymarket](https://polymarket.com/) — 预测市场平台
+
+
+## References
+
+- [The Feynman Technique — Farnam Street](https://fs.blog/feynman-technique/) — Detailed explanation of the Feynman learning technique and how to apply it
+- [Paul Graham — How to Do Great Work](https://paulgraham.com/greatwork.html) — Essay on finding important problems and doing meaningful work
+- [The Thinking Game — YouTube Documentary](https://www.youtube.com/watch?v=d95J8yzvjbQ) — Documentary featuring DeepMind's Demis Hassabis on the future of AI

@@ -1,9 +1,10 @@
 ---
 title: "What You Need to Know About AI"
-description: ""
+description: "AI fundamentals: machine learning, embeddings, model training, prompt engineering, and practical guidance on using AI tools effectively."
 date: 2024-07-07
 tags:
   - AI
+  - Machine Learning
 images:
   - ai/a.jpg
 custom_toc:
@@ -622,3 +623,10 @@ Don't rush to answer my question yet. What additional information do I need to p
 "The Pattern of the World"
 "A Brief History of Intelligence"
 "The First Eye"
+
+
+## References
+
+- [Prompt Engineering Guide](https://www.promptingguide.ai/) — Comprehensive guide to prompt engineering techniques and best practices for LLMs
+- [State of AI Report 2024](https://www.stateof.ai/) — Annual report covering the most important developments in AI research and industry
+- [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) — Free course covering ML fundamentals, neural networks, and embeddings

@@ -1,6 +1,6 @@
 ---
 title: "用 Git 仓库实践 Karpathy 的个人知识库方法：零软件依赖的完整方案"
-description: "受 Andrej Karpathy 启发，在已有的 Hugo 博客仓库中建立 raw -> notes -> posts 三层知识管道。不依赖 Obsidian 或任何额外软件，仅用 Git + Markdown + LLM 完成从素材收集到知识沉淀的完整闭环。"
+description: "受 Karpathy 启发，用 Git + Markdown + LLM 建立 raw->notes->posts 三层知识管道，零额外软件依赖。"
 date: 2026-04-09
 tags:
   - AI

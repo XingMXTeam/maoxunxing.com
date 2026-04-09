@@ -1,9 +1,10 @@
 ---
 title: "React SSR (Streaming Server-Side Reandering)"
-description: "React SSR是什么？"
+description: "React SSR 深入解析：流式服务端渲染实现、选择性 hydration 机制和服务端性能优化技巧。"
 date: 2024-08-03
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -192,3 +193,10 @@ const Comments = lazy(() => import('./comments.js'));
 ## 总结
 
 React 的服务端渲染从早期的简单字符串渲染，逐步演进到流式渲染和异步水合，极大地提升了应用的性能和用户体验。通过引入 `Suspense` 和 `React Server Components` 等新特性，React v18 进一步优化了 SSR 的灵活性和效率。未来，随着技术的不断发展，React 的 SSR 能力将继续为开发者提供更强大的工具来构建高性能的 Web 应用。
+
+
+## References
+
+- [New Suspense SSR Architecture in React 18](https://github.com/reactwg/react-18/discussions/37) — Official React Working Group discussion on streaming SSR
+- [Rendering on the Web — web.dev](https://web.dev/articles/rendering-on-the-web) — Google's comprehensive guide to web rendering strategies
+- [React 18 Streaming SSR — YouTube (Jack Herrington)](https://www.youtube.com/watch?v=o3JWb04DRIs) — Video tutorial on React 18 streaming SSR implementation

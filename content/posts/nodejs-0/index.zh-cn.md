@@ -3,7 +3,8 @@ title: "Nodejs中Stream的理解"
 date: 2021-10-19T14:28:57+08:00
 tags:
   - nodejs
-description: "什么是流？这篇文章详细介绍了Nodejs的流技术，带你从入门到进阶。并且了解网络、RPC、WebSocket等高阶技术"
+  - 流
+description: "Node.js 流技术从入门到进阶详解，涵盖 Readable/Writable 流、网络编程、RPC 和 WebSocket 等高阶实践。"
 images:
   - nodejs-1/node-js.jpeg
 ---
@@ -750,3 +751,10 @@ Readable.prototype.pipe = function (writable, options) {
 ## 流被消费以后则无法再次消费
 
 需要用clone()方法先克隆后再处理。比如serviceworker里面的response。
+
+
+## References
+
+- [Node.js Streams Documentation](https://nodejs.org/api/stream.html) — Official Node.js stream API documentation
+- [Stream Handbook — substack](https://github.com/substack/stream-handbook) — Comprehensive guide to Node.js streams
+- [Node.js Streams — Everything You Need to Know (freeCodeCamp)](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/) — Beginner-friendly guide to understanding Node.js streams

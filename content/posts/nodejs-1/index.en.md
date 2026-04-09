@@ -4,6 +4,7 @@ description: "How to use pm2 for automated script-based application startup and 
 date: 2024-09-14
 tags:
   - nodejs
+  - Deployment
 images:
   - nodejs-1/node-js.jpeg
 ---
@@ -228,3 +229,10 @@ Through the steps above, we have completed the automatic deployment configuratio
 3. **Permission Management**: Ensuring the target directories and files have the correct permissions.
 4. **Troubleshooting Common Issues**: Provided solutions for common errors.
 Hope this article helps you quickly master the use of PM2
+
+
+## References
+
+- [PM2 Documentation](https://pm2.keymetrics.io/docs/usage/quick-start/) — Official PM2 process manager documentation
+- [Node.js Deployment Best Practices — Rising Stack](https://blog.risingstack.com/node-js-deployment/) — Guide to deploying Node.js applications in production
+- [GitHub Actions Documentation](https://docs.github.com/en/actions) — Official documentation for CI/CD automation with GitHub Actions

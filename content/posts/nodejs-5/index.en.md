@@ -1,8 +1,10 @@
 ---
 title: "Pitfalls of Upgrading Midway from v6 to v8"
+description: "Midway v6 to v8 upgrade troubleshooting guide covering common errors, configuration migration, and dependency issues."
 date: 2025-02-06
 tags:
   - nodejs
+  - Midway
 images:
   - nodejs-5/cover.png
 ---
@@ -122,3 +124,10 @@ export class AutoConfiguration {}
 ---
 ## Summary
 During the upgrade to Midway v8, you may encounter various issues. This article summarizes common pitfalls and their solutions, including view rendering, dependency conflicts, and configuration file adjustments. It is recommended to carefully read the official documentation and test each module's functionality step-by-step before upgrading to ensure the project's stability.
+
+
+## References
+
+- [Midway.js Documentation](https://midwayjs.org/) — Official Midway.js framework documentation
+- [Node.js LTS Schedule](https://github.com/nodejs/release#release-schedule) — Official Node.js release schedule and LTS information
+- [Migrating to ESM — sindresorhus](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) — Guide to migrating Node.js projects between module systems

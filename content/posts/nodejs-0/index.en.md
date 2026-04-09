@@ -3,7 +3,8 @@ title: "Understanding Streams in Node.js"
 date: 2021-10-19T14:28:57+08:00
 tags:
   - nodejs
-description: "What are streams? This article provides a detailed introduction to Node.js stream technology, taking you from beginner to advanced. You will also learn about advanced technologies like networking, RPC, and WebSockets."
+  - Streams
+description: "Node.js stream technology from beginner to advanced, covering networking, RPC, WebSockets, and practical patterns."
 images:
   - nodejs-1/node-js.jpeg
 ---
@@ -585,3 +586,10 @@ Readable.prototype.pipe = function (writable, options) {
 ```
 ## Streams Cannot Be Consumed More Than Once
 You need to use a `clone()` method to clone it before processing. For example, the `Response` object in a Service Worker.
+
+
+## References
+
+- [Node.js Streams Documentation](https://nodejs.org/api/stream.html) — Official Node.js stream API documentation
+- [Stream Handbook — substack](https://github.com/substack/stream-handbook) — Comprehensive guide to Node.js streams
+- [Node.js Streams — Everything You Need to Know (freeCodeCamp)](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/) — Beginner-friendly guide to understanding Node.js streams

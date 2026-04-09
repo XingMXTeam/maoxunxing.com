@@ -1,9 +1,10 @@
 ---
 title: "如何做一个与众不同的成功的工程师"
 date: 2021-10-06T11:20:33+08:00
-description: "从技术人角度看，怎么变得更好"
+description: "从技术人角度探讨如何成为与众不同的工程师，涵盖职业发展路径规划、技术深度提升方法和个人成长策略分享。"
 tags:
   - 职场
+  - 职业发展
 images:
   - how-to-be-different/jefferson-santos-9SoCnyQmkzI-unsplash.jpg
 ---
@@ -109,3 +110,10 @@ images:
 ## 总结
 
 这次会议让我深刻认识到，无论是学习新知识、提升编码能力，还是改善沟通技巧和打造成功产品，都需要系统化的思维和持续的努力。希望以上内容能够为大家提供一些启发，帮助我们在各自的领域取得更大的进步。
+
+
+## References
+
+- [Paul Graham — How to Do Great Work](https://paulgraham.com/greatwork.html) — Essay on what it takes to do great work in any field
+- [Staff Engineer: Leadership Beyond the Management Track — Will Larson](https://staffeng.com/) — Guide to technical leadership and career growth for engineers
+- [The Pragmatic Engineer Newsletter](https://newsletter.pragmaticengineer.com/) — Industry insights on engineering careers and growth

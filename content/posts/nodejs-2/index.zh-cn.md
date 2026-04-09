@@ -3,7 +3,8 @@ title: "nodejs你需要知道的"
 date: 2021-08-27T10:20:36+08:00
 tags:
   - nodejs
-description: ""
+  - 运维
+description: "Node.js 运维实战经验总结，涵盖服务重启恢复策略、多租户部署方案、HSF 服务调用技巧和日志管理。"
 ---
 
 ## **服务重启**
@@ -96,3 +97,9 @@ nodemon app.js
 
 `this.ctx.time vs Date.now()` 前面会包含框架初始化时间，所以在实际的埋点统计时间要用前者。
 
+
+## References
+
+- [Node.js Official Documentation](https://nodejs.org/docs/latest/api/) — Complete Node.js API reference documentation
+- [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices) — Comprehensive collection of Node.js best practices
+- [Node.js Production Checklist — Rising Stack](https://blog.risingstack.com/node-js-production-checklist/) — Essential checklist for running Node.js in production

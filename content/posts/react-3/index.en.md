@@ -1,9 +1,10 @@
 ---
 title: "React SSR (Streaming Server-Side Rendering)"
-description: "What is React SSR?"
+description: "React SSR deep dive: streaming server-side rendering, selective hydration, and performance optimization techniques."
 date: 2024-08-03
 tags:
   - React
+  - Web Development
 images:
   - react-1/a.png
 ---
@@ -149,3 +150,10 @@ const Comments = lazy(() => import('./comments.js'));
 ---
 ## Summary
 React's server-side rendering has evolved from simple string rendering to streaming rendering and selective hydration, significantly improving application performance and user experience. With the introduction of new features like `Suspense` and `React Server Components`, React v18 has further enhanced the flexibility and efficiency of SSR. In the future, as technology continues to advance, React's SSR capabilities will continue to provide developers with more powerful tools for building high-performance web applications.
+
+
+## References
+
+- [New Suspense SSR Architecture in React 18](https://github.com/reactwg/react-18/discussions/37) — Official React Working Group discussion on streaming SSR
+- [Rendering on the Web — web.dev](https://web.dev/articles/rendering-on-the-web) — Google's comprehensive guide to web rendering strategies
+- [React 18 Streaming SSR — YouTube (Jack Herrington)](https://www.youtube.com/watch?v=o3JWb04DRIs) — Video tutorial on React 18 streaming SSR implementation

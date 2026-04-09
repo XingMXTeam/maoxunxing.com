@@ -1,9 +1,10 @@
 ---
 title: "Why React Hooks"
-description: ""
+description: "React Hooks 演进历程：从 Class 组件到 Hooks，核心 API 详解和性能优化策略。"
 date: 2019-12-05T11:53:00
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -208,3 +209,10 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
 {{< img src="image-19.png" alt="" maxWidth="540px" >}}
+
+
+## References
+
+- [React Hooks Documentation](https://react.dev/reference/react/hooks) — Official React documentation for all built-in hooks
+- [A Complete Guide to useEffect — Dan Abramov](https://overreacted.io/a-complete-guide-to-useeffect/) — Comprehensive guide to understanding useEffect
+- [Why React Hooks? — YouTube (React Conf 2018)](https://www.youtube.com/watch?v=dpw9EHDh2bM) — Sophie Alpert and Dan Abramov introducing Hooks at React Conf

@@ -1,9 +1,10 @@
 ---
 title: "Guide to Multi-platform Development and Mobile Optimization"
 date: 2024-12-09
-description: ""
+description: "Multi-platform development with React Native, Flutter, Taro, and responsive design techniques for mobile optimization."
 tags:
   - Web Development
+  - Mobile
 ---
 ## Multi-platform Development Frameworks
 Multi-platform development refers to using a single codebase or technology stack to adapt to multiple platforms (such as Web, iOS, Android, Mini Programs, etc.). Common multi-platform development frameworks include:
@@ -108,3 +109,10 @@ Mini Programs are a lightweight form of application widely used on platforms lik
   Mini Programs have package size limits, so pay attention to code splitting and resource optimization.
 - **Compatibility Testing**  
   Test performance across different devices and operating systems.
+
+
+## References
+
+- [React Native Documentation](https://reactnative.dev/docs/getting-started) — Official React Native cross-platform development guide
+- [Flutter Documentation](https://docs.flutter.dev/) — Official Flutter multi-platform UI development documentation
+- [Responsive Web Design Basics — web.dev](https://web.dev/articles/responsive-web-design-basics) — Google's guide to responsive design fundamentals

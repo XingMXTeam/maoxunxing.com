@@ -1,6 +1,6 @@
 ---
 title: "Node.js CPU 飙升分析：为什么一个慢任务会让整个服务卡死"
-description: "为什么请求挂起时 CPU 会飙升到 100% - 关于超时和限流的两个真实生产案例"
+description: "为什么请求挂起时 CPU 会飙升到 100%？关于 Node.js 超时处理和限流策略的两个真实生产案例分析。"
 date: 2025-04-08
 tags:
   - Node.js
@@ -50,7 +50,7 @@ async getBatchCompleteModuleDiff(componentIds: number[]) {
 
 以下是发生的过程：
 
-```
+```text
 时间线：
 ├── 批次 1 开始（5 组件 × 4 RPC 调用 = 20 个 Promise）
 ├── 批次 1 挂起（后端数据库异常，没有超时）
@@ -138,7 +138,7 @@ export class CheckTaskResultSubscriber implements IMessageSubscriber {
 4. **连接池耗尽** - 数据库连接达到上限
 5. **事件循环饱和** - 等待 I/O 操作
 
-```
+```text
 消息突发（1000 条消息）
     ↓
 无限流
@@ -276,3 +276,10 @@ Node.js 在请求挂起时的 CPU 飙升是反直觉但可以解释的：
 ---
 
 *本文基于一个大规模运营平台的真实生产事故。优化将 P99 延迟从 60 秒降低到 8 秒，并将 CPU 使用率稳定在 40-50%。*
+
+
+## References
+
+- [The Node.js Event Loop — Node.js Documentation](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick) — Official documentation of the Node.js event loop
+- [Don't Block the Event Loop — Node.js Guide](https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop) — Official guide on avoiding event loop blocking
+- [Understanding the Node.js Event Loop — YouTube (Bert Belder)](https://www.youtube.com/watch?v=PNa9OMajw9w) — Deep dive into event loop internals from a Node.js core contributor

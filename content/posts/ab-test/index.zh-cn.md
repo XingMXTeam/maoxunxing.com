@@ -4,7 +4,7 @@ date: 2021-09-09
 tags:
   - AB实验
   - Web开发
-description: ""
+description: "AB 实验原理与最佳实践详解，系统涵盖假设检验方法论、正交实验设计原理、流量分割策略和数据驱动决策方法。"
 images:
   - ab-test/ab.png
 ---
@@ -204,3 +204,10 @@ images:
 
 1. **单楼层实验如何分流？**
    - 单楼层实验通过实验平台获取实验 ID，并根据业务逻辑进行分流。
+
+
+## References
+
+- [A/B Testing Guide — Google Optimize](https://support.google.com/optimize/answer/7012154) — Google's guide to A/B testing fundamentals
+- [Trustworthy Online Controlled Experiments (Book)](https://experimentguide.com/) — Comprehensive reference on A/B testing by Microsoft researchers
+- [Statistical Significance in A/B Testing — Evan Miller](https://www.evanmiller.org/ab-testing/) — Tools and explanation for understanding statistical significance

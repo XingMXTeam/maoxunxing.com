@@ -4,7 +4,7 @@ date: 2021-08-24
 tags:
   - Web开发
   - SSR
-description: ""
+description: "SSR 实践指南：服务端渲染原理、静态页面生成、hydration 机制、Serverless 部署和流式渲染优化。"
 ---
 
 ## 目录
@@ -165,4 +165,8 @@ ReactServer.renderToStaticMarkup(
 docuemnt.tsx 其实就是一个React组件，里面ssr的组件分布在其他js文件里面。构建产物还是react代码（jsx编译后的），运行时会通过React的函数渲染成html string。
 
 
+## References
 
+- [Rendering on the Web — web.dev](https://web.dev/articles/rendering-on-the-web) — Google's guide to SSR, SSG, CSR, and hybrid rendering strategies
+- [Next.js Documentation — Rendering](https://nextjs.org/docs/app/building-your-application/rendering) — Official Next.js rendering documentation
+- [Patterns.dev — Rendering Patterns](https://www.patterns.dev/react/rendering-patterns/) — Modern rendering patterns for web applications

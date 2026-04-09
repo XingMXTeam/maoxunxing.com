@@ -3,7 +3,8 @@ title: "What You Need to Know About Node.js"
 date: 2021-08-27T10:20:36+08:00
 tags:
   - nodejs
-description: ""
+  - Operations
+description: "Node.js operations guide covering service restart, multi-tenant deployment, HSF service calls, and log management."
 ---
 ## **Service Restart**
 During operations and maintenance, restarting services is a common task. Here are the relevant commands:
@@ -70,3 +71,10 @@ nodemon app.js
 ```
 ## Midway Framework
 `this.ctx.time vs Date.now()` The former includes the framework's initialization time, so it should be used for actual tracking and time statistics.
+
+
+## References
+
+- [Node.js Official Documentation](https://nodejs.org/docs/latest/api/) — Complete Node.js API reference documentation
+- [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices) — Comprehensive collection of Node.js best practices
+- [Node.js Production Checklist — Rising Stack](https://blog.risingstack.com/node-js-production-checklist/) — Essential checklist for running Node.js in production

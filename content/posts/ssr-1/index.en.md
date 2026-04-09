@@ -4,7 +4,7 @@ date: 2021-08-24
 tags:
   - Web Development
   - SSR
-description: ""
+description: "Master SSR: server-side rendering, static generation, hydration, serverless deployment, and streaming for optimal performance."
 ---
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -134,3 +134,10 @@ For example, aa.com/a/p/1.html -> aa.pc.a-p is used as a unique key for configur
 ---
 ## Underlying SSR Rendering
 document.tsx is essentially a React component, and the SSR components within it are distributed in other JS files. The build output is still React code (compiled from JSX), which is rendered into an HTML string at runtime by React's functions.
+
+
+## References
+
+- [Rendering on the Web — web.dev](https://web.dev/articles/rendering-on-the-web) — Google's guide to SSR, SSG, CSR, and hybrid rendering strategies
+- [Next.js Documentation — Rendering](https://nextjs.org/docs/app/building-your-application/rendering) — Official Next.js rendering documentation
+- [Patterns.dev — Rendering Patterns](https://www.patterns.dev/react/rendering-patterns/) — Modern rendering patterns for web applications

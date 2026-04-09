@@ -3,7 +3,8 @@ title: "Understanding the Essence of Computers"
 date: 2021-08-24
 tags:
   - Computer
-description: "What is the essence of a computer?"
+  - Programming
+description: "Explore the essence of computers: digital encoding, binary systems, logic gates, and how hardware executes software instructions."
 images:
   - code-computer/code-computer.jpeg
 ---
@@ -192,3 +193,10 @@ The latches (a large array made of 64-bit units) mentioned in [The Essence of Co
 - **Nested Execution**: A function call opens up a contiguous block of memory space. Before the function code executes, stack space is allocated based on the number and size of parameters, with the bottom of the stack at the higher memory address.
 #### 3. Activation Record
 The activation record of the execution process is defined by a **frame pointer** marking the top and a **stack pointer** marking the bottom. When execution is complete, the frame pointer points to the address of the next instruction.
+
+
+## References
+
+- [Code: The Hidden Language of Computer Hardware and Software — Charles Petzold](https://www.charlespetzold.com/code/) — Classic book explaining how computers work from first principles
+- [Crash Course Computer Science — YouTube](https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo) — Video series covering computer science fundamentals
+- [Nand2Tetris](https://www.nand2tetris.org/) — Build a computer from logic gates to a full operating system

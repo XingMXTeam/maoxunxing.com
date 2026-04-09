@@ -1,9 +1,10 @@
 ---
 title: "Node Stream Complete Guide Notes"
-description: ""
+description: "Node.js 流与网络基础，涵盖 TCP/UDP 协议、HTTP/HTTPS 和常见通信协议详解。"
 date: 2025-02-04
 tags:
   - nodejs
+  - 网络
 images:
   - nodejs-1/node-js.jpeg
 ---
@@ -155,3 +156,10 @@ server.listen(8080, function() {
 
 ## 总结
 本文介绍了网络通信的基础知识，包括 TCP 和 UDP 的区别、常见网络协议、流的类型及其使用方法，并通过代码示例展示了如何在 Node.js 中实现 HTTP 服务器。这些内容为理解网络编程和流式数据处理奠定了基础。
+
+
+## References
+
+- [Node.js Net Module Documentation](https://nodejs.org/api/net.html) — Official Node.js TCP networking API documentation
+- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/) — Classic guide to network programming concepts and protocols
+- [HTTP/2 Explained — Daniel Stenberg](https://http2-explained.haxx.se/) — Comprehensive explanation of HTTP/2 protocol

@@ -1,5 +1,6 @@
 ---
 title: "前端架构"
+description: "前端架构设计完整指南，系统涵盖业务架构规划方法、产品架构设计思路和企业级应用系统的设计原则与工程最佳实践。"
 date: 2025-02-06
 tags:
   - Web开发
@@ -147,3 +148,9 @@ https://cdn.example.com/script-latest.js -> 指向最新版本（如 v1.1.0）
 
 在实际应用中，需根据业务需求权衡利弊，选择合适的更新策略。
 
+
+## References
+
+- [Patterns.dev — Design Patterns](https://www.patterns.dev/) — Modern web application design patterns and architecture
+- [Clean Architecture — Robert C. Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) — The Clean Architecture principles for software design
+- [Micro Frontends — Martin Fowler](https://martinfowler.com/articles/micro-frontends.html) — Guide to micro-frontend architecture patterns

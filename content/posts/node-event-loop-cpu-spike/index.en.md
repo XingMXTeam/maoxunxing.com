@@ -50,7 +50,7 @@ The root cause is **Event Loop Starvation** caused by the combination of:
 
 Here's what happens:
 
-```
+```text
 Timeline:
 ├── Batch 1 starts (5 components × 4 RPC calls = 20 Promises)
 ├── Batch 1 hangs (backend database exception, no timeout)
@@ -138,7 +138,7 @@ Message queue consumers by default **pull messages as fast as possible**. When:
 4. **Connection pool exhaustion** - DB connections max out
 5. **Event loop saturated** - waiting on I/O operations
 
-```
+```text
 Message Burst (1000 messages)
     ↓
 No Rate Limiting
@@ -276,3 +276,10 @@ The key insight: Node.js requires explicit resource management that other langua
 ---
 
 *This article is based on real production incidents from a large-scale operation platform. The optimization reduced P99 latency from 60s to 8s and stabilized CPU usage at 40-50%.*
+
+
+## References
+
+- [The Node.js Event Loop — Node.js Documentation](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick) — Official documentation of the Node.js event loop
+- [Don't Block the Event Loop — Node.js Guide](https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop) — Official guide on avoiding event loop blocking
+- [Understanding the Node.js Event Loop — YouTube (Bert Belder)](https://www.youtube.com/watch?v=PNa9OMajw9w) — Deep dive into event loop internals from a Node.js core contributor

@@ -3,7 +3,8 @@ title: "[翻译]论如何努力工作"
 date: 2021-08-20
 tags:
   - 职场
-description: "关于如何努力工作的理解"
+  - 效率
+description: "Paul Graham 关于如何努力工作的文章翻译与解读：找到正确的领域、持续付出努力和克服拖延的方法。"
 images:
   - how-to-work-hard/work.jpeg
 ---
@@ -90,3 +91,10 @@ images:
 然而，为了让这个测试生效，你必须对自己诚实。事实上，这是整个努力工作问题中最引人注目的事情: 在每一点上，它如何取决于对自己诚实。
 
 努力工作不仅仅是一个你调到 11 的转盘。这是一个复杂的动态系统，必须在每一点进行调整。你必须了解真实作品的形状，清楚地看到你最适合哪种作品，尽可能接近它的真正核心，每时每刻都准确地判断你的能力和表现，并且每天投入尽可能多的时间而不损害结果的质量。这个网络太复杂了，无法欺骗。但是如果你一直诚实和清晰，它会自动呈现一个最佳的形状，你会以很少有人的方式有效率。
+
+
+## References
+
+- [Paul Graham — How to Work Hard](https://paulgraham.com/hwh.html) — Original essay on the nature of hard work
+- [Deep Work — Cal Newport](https://www.calnewport.com/books/deep-work/) — Book on focused work in a distracted world
+- [Paul Graham Essays](https://paulgraham.com/articles.html) — Complete collection of Paul Graham's essays

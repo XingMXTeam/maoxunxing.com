@@ -1,9 +1,10 @@
 ---
 title: "React Server Component"
-description: "React Server Component是什么？"
+description: "React Server Component 详解：零 bundle 组件、服务端与客户端边界和 React 渲染的未来。"
 date: 2024-08-18
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -197,3 +198,10 @@ console.log(json); // 输出：{"name":"John","age":30}
 
 **应用场景：**  
 在 RSC 的序列化协议中，需要特别注意避免传递包含函数的对象，否则会导致数据丢失或错误。
+
+
+## References
+
+- [React Server Components RFC](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md) — Official RFC for React Server Components
+- [Making Sense of React Server Components — Josh W. Comeau](https://www.joshwcomeau.com/react/server-components/) — Clear explanation of RSC concepts and mental model
+- [React Server Components — YouTube (Theo Browne)](https://www.youtube.com/watch?v=TQQPAU21ZUw) — Video deep dive into React Server Components

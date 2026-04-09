@@ -1,6 +1,6 @@
 ---
 title: "NPM 你需要知道的"
-description: ""
+description: "NPM 实用指南：幽灵依赖、pnpm 对比、TypeScript 类型、package.json 配置和依赖管理。"
 date: 2024-09-10
 tags:
   - NPM
@@ -561,3 +561,10 @@ npm install -g npmi
 "antdmo2": "npm:antd-mobile@^2.3.4",
 "antdmo5": "npm:antd-mobile@5.33.0",
 ```
+
+
+## References
+
+- [npm Documentation](https://docs.npmjs.com/) — Official npm registry and CLI documentation
+- [pnpm Documentation](https://pnpm.io/) — Official pnpm documentation explaining its advantages over npm
+- [Node.js Package Manager Guide — Socket.dev](https://socket.dev/blog/package-manager-comparison) — Comparison of npm, yarn, and pnpm package managers

@@ -1,7 +1,7 @@
 ---
 title: "如何写单测"
 date: 2021-08-27T10:20:36+08:00
-description: ""
+description: "单元测试实践完整指南：Mocha 配置方法、TypeScript 集成方案、NYC 覆盖率统计和测试最佳实践。"
 images:
   - unit-test/unit-test.jpeg
 tags:
@@ -167,3 +167,10 @@ nyc lerna run cov --concurrency=1
     - `screen`: 获取 DOM 元素。
 - **@testing-library/jest-dom/extend-expect**
   - 扩展 Jest 的断言方法，例如 `toBeInTheDocument`。
+
+
+## References
+
+- [Mocha Documentation](https://mochajs.org/) — Official Mocha test framework documentation
+- [Testing JavaScript — Kent C. Dodds](https://testingjavascript.com/) — Comprehensive course on JavaScript testing strategies
+- [Istanbul / NYC Documentation](https://istanbul.js.org/) — Code coverage tool documentation for JavaScript

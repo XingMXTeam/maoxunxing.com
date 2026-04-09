@@ -1,9 +1,10 @@
 ---
 title: "Concurrent Mode并发模式"
-description: "并发模式的历史、解决的问题是什么？"
+description: "React 并发模式深入解析：Concurrent Mode 的发展历史、解决的核心问题和 Fiber 架构的工作原理。"
 date: 2024-07-30
 tags:
   - React
+  - Web开发
 images:
   - react-1/a.png
 ---
@@ -285,3 +286,10 @@ export default App;
 ## 总结
 
 **Concurrent Mode** 是 React 的一项重要特性，通过时间切片、优先级调度、暂停/恢复/丢弃渲染等机制，显著提升了应用的响应速度和用户体验。结合 `useTransition`、`useDeferredValue` 和 `useSyncExternalStore` 等 API，开发者可以更灵活地优化复杂场景下的性能问题。
+
+
+## References
+
+- [React Concurrent Features](https://react.dev/blog/2022/03/29/react-v18#new-feature-concurrent-rendering) — Official React 18 concurrent rendering announcement
+- [Inside React Query — TkDodo](https://tkdodo.eu/blog/inside-react-query) — Deep dive into concurrent features in React data fetching
+- [Understanding React Concurrent Mode — LogRocket](https://blog.logrocket.com/react-concurrent-mode/) — Practical guide to React concurrent features

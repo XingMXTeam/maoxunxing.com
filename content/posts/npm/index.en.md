@@ -1,6 +1,6 @@
 ---
 title: "What You Need to Know About NPM"
-description: ""
+description: "Master NPM: ghost dependencies, pnpm comparison, TypeScript types, package.json fields, and dependency management best practices."
 date: 2024-09-10
 tags:
   - NPM
@@ -412,3 +412,10 @@ npm install -g npmi
 "antdmo2": "npm:antd-mobile@^2.3.4",
 "antdmo5": "npm:antd-mobile@5.33.0",
 ```
+
+
+## References
+
+- [npm Documentation](https://docs.npmjs.com/) — Official npm registry and CLI documentation
+- [pnpm Documentation](https://pnpm.io/) — Official pnpm documentation explaining its advantages over npm
+- [Node.js Package Manager Guide — Socket.dev](https://socket.dev/blog/package-manager-comparison) — Comparison of npm, yarn, and pnpm package managers

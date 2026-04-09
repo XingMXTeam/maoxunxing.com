@@ -1,5 +1,6 @@
 ---
 title: "中后台解决方案"
+description: "基于 ICE 3.0 的中后台架构解决方案详解，涵盖权限控制模型、Store 状态通信和事件通信机制设计。"
 date: 2025-02-06
 tags:
   - Web开发
@@ -349,6 +350,8 @@ request.createInst({
   使用服务端渲染（SSR）或静态生成（SSG）技术，确保每个页面路由都能返回完整的HTML内容。
 
 
+## References
 
-
-
+- [Ant Design Pro Documentation](https://pro.ant.design/docs/getting-started) — Enterprise-level admin/backend UI solution documentation
+- [ICE.js Documentation](https://v3.ice.work/) — Official ICE.js framework documentation for admin systems
+- [Role-Based Access Control — Auth0](https://auth0.com/docs/manage-users/access-control/rbac) — Guide to implementing RBAC in web applications

@@ -3,6 +3,7 @@ title: "How to Define a Problem"
 date: 2021-09-08
 tags:
   - Career
+  - Thinking
 description: "The greater the problem you can define, the greater the success you can achieve."
 images:
   - how-to-define-question/define-question.jpeg
@@ -164,3 +165,10 @@ ZhiData Platform -> Business 360 + Domain 360 (DeepInsight, OneData, Dataphin) -
 Make hypotheses and then verify them. -->
 <!-- 2. Wholeness: A contradiction is part of a system, coming from the same system or from a system and its subsystem respectively. -->
 <!-- Three major values (customer value, social value, business value). Decisions are made to expand or narrow the contradiction. -->
+
+
+## References
+
+- [Paul Graham — How to Do Great Work](https://paulgraham.com/greatwork.html) — On finding important problems to work on
+- [The Art of Problem Solving — Richard Hamming (YouTube)](https://www.youtube.com/watch?v=a1zDuOPkMSw) — Hamming's famous talk on choosing important problems
+- [First Principles Thinking — Farnam Street](https://fs.blog/first-principles/) — Guide to breaking down problems to their fundamental truths

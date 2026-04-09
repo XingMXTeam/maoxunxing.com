@@ -1,5 +1,6 @@
 ---
 title: "Animation Library Recommendations and Usage Guide"
+description: "Animation library guide covering Framer Motion and Anime.js with declarative animations, gestures, and practical examples."
 date: 2025-02-06
 tags:
   - JavaScript
@@ -206,3 +207,10 @@ Here are a few recommendations:
 1. **Choose the right tool**: Select the appropriate animation library based on your project's requirements and tech stack.
 2. **Prioritize basic animations**: Master basic animation features first and become familiar with animating common properties.
 3. **Performance optimization**: Pay attention to the performance overhead of animations; avoid excessive DOM manipulation or complex calculations.
+
+
+## References
+
+- [Framer Motion Documentation](https://www.framer.com/motion/) — Official Framer Motion animation library documentation
+- [Anime.js Documentation](https://animejs.com/documentation/) — Official Anime.js animation library API reference
+- [Web Animations API — MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) — Native browser Web Animations API documentation

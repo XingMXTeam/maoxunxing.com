@@ -611,7 +611,7 @@ https://linxz.github.io/blog/defensive-css
 ## Providing Excellent Icons
 When a user visits your webpage, the browser will try to extract an icon from the HTML. The icon can appear in many places, including the browser tab, the recent apps switcher, new (or recently visited) tab pages, etc.
 For example, adding to the Home screen (its Home screen icon (or the Web Clip icon), and its startup image)
-```
+```html
 <!-- icon in the highest resolution we need it for -->
 <link rel="icon" sizes="192x192" href="icon.png">
 <!-- reuse same icon for Safari -->
@@ -631,7 +631,7 @@ Favicons.ico is not recommended.
 114
 ## Defining Browser Element Colors
 ### Meta Theme Background Color for Chrome and Opera
-```
+```html
 <!-- Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="#4285f4">
 ```
@@ -639,7 +639,7 @@ Address bar color:
 ![](index_files/7f233d96-08f1-4665-a852-2594d2d0a2e7.jpg)
 ## Setting a Startup Image
 ### Safari
-```
+```html
 <link rel="apple-touch-startup-image" href="icon.png">
 ```
 
@@ -822,3 +822,10 @@ This approach ensures that the layout automatically adjusts at different screen 
 2.  **High-Contrast Verification**
     -   When the browser screen width is set to 750px, check if the number of cards meets expectations (e.g., 5 cards should be displayed at this point).
     -   Ensure that the ratio of spacing and card width is consistent with the design draft.
+
+
+## References
+
+- [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) — Comprehensive CSS property reference from Mozilla
+- [CSS Tricks — Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) — Visual guide to CSS Flexbox layout
+- [web.dev CSS Course](https://web.dev/learn/css/) — Google's free comprehensive CSS course
