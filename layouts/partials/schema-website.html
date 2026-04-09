@@ -1,0 +1,18 @@
+{{- if .IsHome -}}
+  {{- $searchUrl := printf "%s%s" .Site.BaseURL "search/?q={search_term_string}" -}}
+  {{- $searchAction := dict
+      "@type" "SearchAction"
+      "target" $searchUrl
+      "query-input" "required name=search_term_string"
+  -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "WebSite"
+      "name" .Site.Title
+      "url" .Site.BaseURL
+      "description" (.Site.Language.Params.description | default .Site.Params.description)
+      "inLanguage" .Language.Lang
+      "potentialAction" $searchAction
+  -}}
+<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+{{- end -}}

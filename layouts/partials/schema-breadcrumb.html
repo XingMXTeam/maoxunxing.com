@@ -1,0 +1,22 @@
+{{- if and .IsPage (not .IsHome) -}}
+  {{- $items := slice -}}
+  {{- $pos := 1 -}}
+  {{- $homeItem := dict "@type" "ListItem" "position" $pos "name" .Site.Title "item" .Site.BaseURL -}}
+  {{- $items = $items | append $homeItem -}}
+  {{- if .Section -}}
+    {{- $pos = add $pos 1 -}}
+    {{- $sectionTitle := .Section | humanize | title -}}
+    {{- $sectionUrl := printf "%s%s/" .Site.BaseURL .Section -}}
+    {{- $sectionItem := dict "@type" "ListItem" "position" $pos "name" $sectionTitle "item" $sectionUrl -}}
+    {{- $items = $items | append $sectionItem -}}
+  {{- end -}}
+  {{- $pos = add $pos 1 -}}
+  {{- $pageItem := dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink -}}
+  {{- $items = $items | append $pageItem -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "BreadcrumbList"
+      "itemListElement" $items
+  -}}
+<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+{{- end -}}

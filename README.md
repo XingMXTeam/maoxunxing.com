@@ -37,7 +37,13 @@ Always run commands from the **repository root** (where `config.toml` lives).
 ### Machine-readable / SEO extras
 
 - [static/llms.txt](static/llms.txt) — brief site summary for tools that look for it.
-- Article pages emit **JSON-LD** `BlogPosting` via [layouts/partials/schema-article.html](layouts/partials/schema-article.html).
+- Article pages emit **JSON-LD** `BlogPosting` (with `description`, `image`, `mainEntityOfPage`, `publisher.logo`, `keywords`) via [layouts/partials/schema-article.html](layouts/partials/schema-article.html).
+- Homepage emits **JSON-LD** `WebSite` with `SearchAction` (sitelinks search box) via [layouts/partials/schema-website.html](layouts/partials/schema-website.html).
+- Article pages emit **JSON-LD** `BreadcrumbList` via [layouts/partials/schema-breadcrumb.html](layouts/partials/schema-breadcrumb.html).
+- **hreflang** `<link rel="alternate">` tags are injected in the HTML `<head>` for all translated pages (plus `x-default`), in addition to the sitemap-level hreflang that Hugo generates automatically.
+- **canonical** `<link rel="canonical">` is set on every page (supports per-page `canonical_url` front matter override).
+- **Bilingual sitemap**: Hugo auto-generates `sitemap.xml` index with per-language sitemaps (`en/sitemap.xml`, `zh-cn/sitemap.xml`) including `xhtml:link` hreflang alternates.
+- **Security headers** (`X-Frame-Options`, `X-Content-Type-Options`, `Strict-Transport-Security`, `Referrer-Policy`, `Permissions-Policy`) are configured in [firebase.json](firebase.json).
 - Posts, notes, and book reports show **Copy / View raw / Edit on GitHub** when `github_repo` / `github_branch` are set under `[params]` in [config.toml](config.toml).
 
 ## Code style guides

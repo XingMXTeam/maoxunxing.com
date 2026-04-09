@@ -60,6 +60,7 @@ media = "/:slugorcontentbasename/"
 streams = "/:slugorcontentbasename/"
 demos = "/:slugorcontentbasename/"
 gallery = "/:slugorcontentbasename/"
+raw = "/:slugorcontentbasename/"
 
 [languages.zh-CN.permalinks]
 posts = "/:slugorcontentbasename/"
@@ -73,6 +74,7 @@ media = "/:slugorcontentbasename/"
 streams = "/:slugorcontentbasename/"
 demos = "/:slugorcontentbasename/"
 gallery = "/:slugorcontentbasename/"
+raw = "/:slugorcontentbasename/"
 
 [params]
     author = "Felix Mao (毛毛星)"

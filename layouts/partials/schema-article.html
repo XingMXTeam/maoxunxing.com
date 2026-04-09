@@ -1,9 +1,13 @@
 {{- if and .IsPage (in (slice "posts" "notes" "book-reports") .Section) -}}
-  {{- $author := dict "@type" "Person" "name" .Site.Params.author -}}
-  {{- $publisher := dict "@type" "Organization" "name" .Site.Title -}}
+  {{- $authorUrl := printf "%s%s" .Site.BaseURL "about/" -}}
+  {{- $author := dict "@type" "Person" "name" .Site.Params.author "url" $authorUrl -}}
+  {{- $logo := dict "@type" "ImageObject" "url" (printf "%s%s" .Site.BaseURL "images/avatar.avif") -}}
+  {{- $publisher := dict "@type" "Organization" "name" .Site.Title "logo" $logo -}}
+  {{- $mainEntity := dict "@type" "WebPage" "@id" .Permalink -}}
   {{- $schema := dict
       "@context" "https://schema.org"
       "@type" "BlogPosting"
+      "mainEntityOfPage" $mainEntity
       "headline" .Title
       "url" .Permalink
       "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
@@ -13,6 +17,26 @@
   -}}
   {{- if not .Lastmod.IsZero -}}
     {{- $schema = merge $schema (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+  {{- with .Description -}}
+    {{- $schema = merge $schema (dict "description" .) -}}
+  {{- else -}}
+    {{- with .Summary -}}
+      {{- $schema = merge $schema (dict "description" (plainify .)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $images := .Resources.ByType "image" -}}
+  {{- $featured := $images.GetMatch "*feature*" -}}
+  {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+  {{- with $featured -}}
+    {{- $schema = merge $schema (dict "image" .Permalink) -}}
+  {{- else -}}
+    {{- with $.Params.hero_image -}}
+      {{- $schema = merge $schema (dict "image" (printf "%s%s" $.Permalink .)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with .Params.tags -}}
+    {{- $schema = merge $schema (dict "keywords" (delimit . ", ")) -}}
   {{- end -}}
 <script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
 {{- end -}}
