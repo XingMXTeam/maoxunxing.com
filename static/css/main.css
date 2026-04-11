@@ -905,7 +905,15 @@ body.colorscheme-dark .find-me-img {
   }
 
   .article-item {
-    margin-bottom: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .article-title {
+    font-size: 1.5rem;
+    line-height: 1.4;
   }
 
   .article-title a {
@@ -918,7 +926,15 @@ body.colorscheme-dark .find-me-img {
     color: var(--c-fg-light);
     display: inline-block;
     margin-right: 0.8rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0;
+  }
+
+  .article-section-tag {
+    font-size: 1.0rem;
+  }
+
+  .filter-btn {
+    font-size: 1.6rem;
   }
 }
 
@@ -935,7 +951,7 @@ body.colorscheme-dark .find-me-img {
   border: none;
   padding: 0;
   cursor: pointer;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--c-fg);
   opacity: 0.2;
