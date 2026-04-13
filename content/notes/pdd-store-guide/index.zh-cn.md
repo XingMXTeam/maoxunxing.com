@@ -138,4 +138,9 @@ tags:
 - AI再强大，也不能代替你对经营的血肉感
 - 后续时间少，可以尝试抖店和淘宝
 
+## 常用链接
+
+- 退货官方仓: https://air.1688.com/app/ctf-m-page/official-logistics/menu-cloud.html
+- 多多后台: https://mms.pinduoduo.com/
+
 ---
