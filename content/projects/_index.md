@@ -17,8 +17,8 @@ projects:
       desc: "Personal blog built with Hugo"
       icon: "fab fa-github"
   Tools & Extensions:
-    - name: "Coming soon..."
-      link: "#"
-      desc: "More projects in the works"
-      icon: "fas fa-rocket"
+    - name: "Twitter Crawler"
+      link: "https://github.com/XingMXTeam/crawler_ai_chrome"
+      desc: "Chrome extension for crawling and extracting data from Twitter/X"
+      icon: "fab fa-chrome"
 ---

@@ -17,8 +17,8 @@ projects:
       desc: "基于 Hugo 的个人博客"
       icon: "fab fa-github"
   工具 & 扩展:
-    - name: "敬请期待..."
-      link: "#"
-      desc: "更多项目开发中"
-      icon: "fas fa-rocket"
+    - name: "Twitter 爬虫"
+      link: "https://github.com/XingMXTeam/crawler_ai_chrome"
+      desc: "用于爬取和提取 Twitter/X 数据的 Chrome 扩展"
+      icon: "fab fa-chrome"
 ---
