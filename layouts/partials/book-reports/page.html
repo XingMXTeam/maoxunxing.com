@@ -7,7 +7,10 @@
     {{ partial "content-source-actions.html" . }}
 
     <a href="{{ .Params.purchase_url }}">
-      <img src="cover.jpg" class="align-left book-cover" />
+      {{- $cover := .Resources.GetMatch "cover.*" -}}
+      {{- with $cover -}}
+        <img src="{{ .RelPermalink }}" class="align-left book-cover" />
+      {{- end -}}
     </a>
 
     <ul class="book-summary">
