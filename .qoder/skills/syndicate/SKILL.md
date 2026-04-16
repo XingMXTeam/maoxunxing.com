@@ -60,12 +60,12 @@ Apply these conversions to the article body:
 
 | Hugo syntax | dev.to replacement | CSDN replacement |
 |---|---|---|
-| `{{</* img src="X" alt="Y" */>}}` and variants | `![Y](https://maoxunxing.com/posts/{slug}/X)` | Same |
-| `{{</* img src="X" alt="Y" maxWidth="Z" align="W" caption="C" */>}}` | `![C](https://maoxunxing.com/posts/{slug}/X)` | Same |
+| `{{</* img src="X" alt="Y" */>}}` and variants | `![Y](https://maoxunxing.com/{slug}/X)` | Same |
+| `{{</* img src="X" alt="Y" maxWidth="Z" align="W" caption="C" */>}}` | `![C](https://maoxunxing.com/{slug}/X)` | Same |
 | `{{</* youtube ID */>}}` | `{% youtube ID %}` | `[Watch on YouTube](https://youtube.com/watch?v=ID)` |
 | `{{</* gallery */>}}...{{</* /gallery */>}}` | Convert each image to markdown image | Same |
 | `<!--more-->` | Remove | Remove |
-| Relative image paths (e.g., `image.png`, `./image.png`) | `https://maoxunxing.com/posts/{slug}/image.png` | Same |
+| Relative image paths (e.g., `image.png`, `./image.png`) | `https://maoxunxing.com/{slug}/image.png` | Same |
 | `custom_toc` in frontmatter | Remove entirely | Remove entirely |
 | `images` in frontmatter | Use first image as `cover_image` for dev.to | Remove |
 
@@ -111,7 +111,11 @@ cover_image: {absolute URL to first image if exists, otherwise omit this line}
 Write to `scripts/templates/csdn-{slug}.md`:
 
 ```markdown
+# {title from ZH-CN frontmatter}
+
 > **本文首发于 [maoxunxing.com](https://maoxunxing.com/zh-cn/{slug}/)**，转载请注明出处。更多{main topic in Chinese}深度文章，欢迎访问我的博客。
+
+**标签**: {tags from ZH-CN frontmatter, comma-separated}
 
 ---
 
@@ -190,7 +194,7 @@ When the user runs `/syndicate list`:
 ## Important Notes
 
 - NEVER modify the original article files. Only write to `scripts/templates/`.
-- Always use absolute URLs for images: `https://maoxunxing.com/posts/{slug}/{image}`
+- Always use absolute URLs for images: `https://maoxunxing.com/{slug}/{image}`
 - The `canonical_url` in dev.to frontmatter is the MOST important backlink. Double-check it uses the correct slug.
 - For EN articles, link to `https://maoxunxing.com/{slug}/` (no language prefix, EN is default)
 - For ZH-CN articles, link to `https://maoxunxing.com/zh-cn/{slug}/`

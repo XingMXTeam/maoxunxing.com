@@ -1,0 +1,197 @@
+# AI Coding 实战手册：工具选型、工作流与提示词模板
+
+> **本文首发于 [maoxunxing.com](https://maoxunxing.com/zh-cn/ai-coding-practice/)**，转载请注明出处。更多 AI 编程实战文章，欢迎访问我的博客。
+
+**标签**: AI, Coding, 工具, Prompt
+
+---
+
+## 按场景选择 AI 工具
+
+不同任务适合不同的模型和工具组合：
+
+| 场景 | 推荐方案 | 理由 |
+|------|---------|------|
+| **阅读理解** | Qwen CLI + Qwen Coder | 速度快，幻觉少，价格低 |
+| **分析脚本** | Claude Code | 深度思考，能给出不同维度的统计维度，往往角度独特、意想不到 |
+| **报告生成** | Cherry Studio + Claude Sonnet + 特定模板 | 设计风格统一，避免 AI 味 |
+
+### 常用 AI 工具
+
+- **ChatWise** — 多模型聊天客户端
+- **DeepSeek R1** — 推理模型
+- **Gemini 2 Flash Thinking** — 快速思维模型
+- **Repomix** — 打包代码库，方便整体投喂给 AI
+- **Spark Desktop** — 桌面端 AI 助手
+
+---
+
+## Cherry Studio 设计出图工作流
+
+Cherry Studio + HTML 可以快速完成页面设计"抽卡"。核心思路：
+
+- 与生图逻辑一样，尽量**一次生成多张**，然后从中挑选
+- 出图采用 **HTML 或 SVG** 进行绘制
+- 为减少返回内容，规定 AI 采用 **TailwindCSS**
+- 参照设计规范可以先定 Ant Design、Shadcn UI 等公域背景知识
+
+### UI/UX 设计师 System Prompt 模板
+
+以下是一个经过实践验证的 UI/UX 设计 System Prompt，适合在 Cherry Studio 或类似工具中使用：
+
+```text
+# 角色
+UI/UX 设计师专家
+
+## 注意
+1. 激励模型深入思考角色配置细节，确保任务完成。
+2. 专家设计应考虑使用者的需求和关注点。
+3. 使用情感提示的方法来强调角色的意义和情感层面。
+
+## 性格类型指标
+INTJ（内向直觉思维判断型）
+
+## 背景
+UI/UX 设计师专家的角色设计是为了帮助用户在视觉设计和用户体验领域中做出明智的决策。
+这个角色可以为用户提供专业的指导和建议，帮助他们创造出既美观又实用的界面设计。
+
+## 约束条件
+- 必须遵循用户中心设计原则
+- 需要考虑跨平台和多设备的兼容性
+
+## 目标
+- 提供创新和实用的 UI/UX 设计方案
+- 增强用户满意度和产品易用性
+- 优化用户与产品之间的交互体验
+
+## Skills
+1. 视觉设计能力
+2. 用户研究和分析能力
+3. 交互设计能力
+4. 技术实现能力
+
+## 音调
+- 专业且富有洞察力
+- 鼓励创新和实验性思维
+- 亲切且易于理解
+
+## 价值观
+- 用户至上，一切设计以用户需求为中心
+- 追求简洁而不失功能性的设计
+- 持续学习和适应新技术、新趋势
+
+## 工作流程
+1. 理解用户需求和目标
+2. 进行市场调研和竞品分析
+3. 确定设计方向和风格
+4. 创建原型和交互流程
+5. 进行用户测试和反馈收集
+6. 根据反馈进行迭代优化
+7. 最终交付高质量的设计成果
+
+# Initialization
+您好，接下来，让我们一步一步地思考，努力且细心地工作，
+请根据您选择的角色，严格遵循步骤（Workflow）step-by-step，完成目标（Goals）。
+这对我来说非常重要，请帮助我，谢谢！让我们开始吧。
+
+# 返回格式
+最终设计结果，使用 html 进行返回，样式部分使用 tailwindcss 实现
+```
+
+---
+
+## AI 辅助开发的核心问题
+
+在团队中推广 AI 编程时，需要思考以下问题：
+
+1. **工具对比**：Cursor 自带的浏览器 Agent 和 chrome-devtools-mcp 各自的适用场景？
+2. **产品形态**：Claude Code 和 Codex 与 IDE 的区别是什么？
+3. **团队泛化**：当前的 AI 编程实践，能否泛化到团队其他成员？
+4. **研发标准**：研发标准是什么？怎么建立的？是否高内聚低耦合？
+5. **AI 找茬**：让 AI 给我提问题，补充一些没有的思考——AI 做 Code Review 和方案挑战者
+6. **Tech Lead 视角**：Tech Lead 关注的问题是什么？我怎么回答？
+7. **记忆管理**：Cursor Memory Bank 如何有效维护上下文？
+
+---
+
+## Prompt 模板库
+
+### 代码阅读
+
+```text
+这段代码实现了什么功能，请给出详细的介绍，画成彩色表格图或者生成可视化图像辅助理解。
+并输出一份可以运行的最简代码，不需要错误处理，不需要边界场景处理，不需要日志。
+```
+
+### 文章/笔记整理
+
+```text
+帮我组织成更好的 markdown 格式（内容多的话加上目录），请确保内容不要丢失，
+可以适当小小补充。所有内容都组织在 Markdown 格式中，方便我直接复制使用，请用中文回答。
+```
+
+### 读书报告
+
+```text
+帮我组织成更好的 markdown 格式，请确保内容不要丢失，可以适当小小补充。
+所有内容都组织在 Markdown 格式中，方便我直接复制使用，请用中文回答。
+格式要求：
+
+50字的概述
+
+---
+
+## What I Liked
+
+## What I Disliked
+
+## Key Takeaways
+```
+
+### 论文阅读
+
+```text
+给我列出这篇论文采取的与众不同的方法。
+将它与之前的技术进行比较。给我一个列表，极其具体地告诉我他们所做的与之前技术相比有什么不同。
+```
+
+### 代码库改进
+
+```text
+你好，AI，这是我的整个代码库。告诉我 10 个我可以改进它的想法。
+```
+
+### 高质量回答前置
+
+```text
+你先不要着急回答我的问题，为了质量更高的答案，我还需要补充哪些信息？
+```
+
+### 写作风格切换
+
+- "请将这篇文章用**海明威**式的写法写出来。" — 短句、直白、有力
+- "用**斯蒂芬·金**《写作这回事》的风格写出来。" — 故事感、节奏感、画面感
+
+
+## References
+
+- [Cursor Documentation](https://docs.cursor.com/) — Official documentation for Cursor AI-powered code editor
+- [GitHub Copilot Documentation](https://docs.github.com/en/copilot) — Official GitHub Copilot documentation covering setup and best practices
+- [Prompt Engineering for Developers — DeepLearning.AI](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) — Free course on prompt engineering techniques for software development
+
+---
+
+## 延伸阅读
+
+如果你想知道 AI Agent 和你现在用的编程助手有什么本质区别，我的 [AI Agent 新手指南](https://maoxunxing.com/zh-cn/ai-agent-guide/) 详细拆解了 Agent vs Copilot 架构、MCP 协议，以及什么时候该用什么模式。
+
+当 AI 把个人生产力提升 10 倍后，真正的挑战是职业如何转型。[AI 正在改写游戏规则](https://maoxunxing.com/zh-cn/ai-rewriting-workflow/) 从执行者到杠杆设计师的结构性转变，附带 30 天行动清单。
+
+想像 Karpathy 一样系统化管理你的知识？我的 [Git 驱动知识库实战](https://maoxunxing.com/zh-cn/karpathy-knowledge-base-practice/) 展示了如何搭建 raw→notes→posts 三层流水线并用 LLM 编译。
+
+---
+
+**作者**: Felix Mao (毛毛星)
+**博客**: [maoxunxing.com](https://maoxunxing.com)
+**GitHub**: [github.com/XingMXTeam](https://github.com/XingMXTeam/)
+**Twitter**: [@maoxunxing](https://twitter.com/maoxunxing)
