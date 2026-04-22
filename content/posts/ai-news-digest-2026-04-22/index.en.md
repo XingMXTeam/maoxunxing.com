@@ -1,6 +1,6 @@
 ---
-title: "Frontier AI Digest | Musk Predicts AGI Two Steps Away; NSA Controversy Over Anthropic Model Usage; Grok Transforms Creative Mode"
-description: "This AI digest covers Musk's roadmap defining Grok 5 as AGI, NSA's model supply chain controversy, Anthropic's Opus 4.7 major update, Tesla Bot structural evolution, and the latest AI developments."
+title: "AI News Digest | OpenAI Images 2.0 Dominates Image Generation; SpaceX Invests Billions in Cursor; Meta's Mandatory AI Training Tracking Sparks Controversy"
+description: "This AI news digest covers OpenAI's Images 2.0 model release, SpaceX's strategic partnership with Cursor, Google Gemini Deep Research updates, Kimi K2.6's agent capabilities, and Meta's mandatory AI training tracking software controversy."
 date: 2026-04-22
 tags:
   - AI
@@ -10,87 +10,112 @@ tags:
   - Robotics
   - Industry Trends
 custom_toc:
-  - title: "Core Model Releases & Technical Iterations"
-  - title: "AI Programming & Developer Tools"
-  - title: "Multimodal Interaction & Specialized Applications"
-  - title: "Robotics & Physical AI"
-  - title: "Industry Perspectives, Social Impact & Financial Updates"
+  - title: "Core Model Releases and Technical Iterations"
+  - title: "AI Programming and Developer Tools"
+  - title: "Multimodal Interaction and Specialized Applications"
+  - title: "Academic Research and Underlying Algorithms"
+  - title: "Robotics and Physical AI"
+  - title: "Industry Perspectives, Social Impact and Financial Status"
 ---
 
-## 1. Core Model Releases & Technical Iterations
+## 1. Core Model Releases and Technical Iterations
 
-* **Musk's Roadmap Revealed: Grok 5 Will Achieve AGI**
-    Elon Musk disclosed Grok's iteration plan: Grok 4.4 (1T parameters) and Grok 4.5 (1.5T parameters) will be released in early and late May respectively, while the subsequent Grok 5 will be defined as Artificial General Intelligence (AGI).
-    (Source: [https://x.com/minchoi/status/2045907457344516515](https://x.com/minchoi/status/2045907457344516515))
+* **OpenAI Officially Releases ChatGPT Images 2.0 (gpt-image-2)**
+    The model dominated the image generation benchmark (Arena) with a high score of 1512, far exceeding its peers. It features "thinking-level" intelligence, supporting extremely complex visual tasks, precise text rendering, rich slide layouts, and native chart generation. It is now available on API, Codex, and fal platforms.
+    (Source: [https://x.com/OpenAI/status/2046670977145372771](https://x.com/OpenAI/status/2046670977145372771))
 
-* **Opus 4.7 Released: Introducing "Extra High Effort" & "Task Budget" Modes**
-    The new version supports xhigh effort (increasing computation for complex problems) and task budgets (models can perceive constraints and gracefully conclude), enhancing agents' awareness of task boundaries.
-    (Source: [https://x.com/sydneyrunkle/status/2046214452895228144](https://x.com/sydneyrunkle/status/2046214452895228144))
+* **Google Gemini Deep Research Major Update**
+    Introduces two modes: `Deep Research` (pursuing speed and cost-effectiveness) and `Deep Research Max` (pursuing highest quality background collection). The new version supports MCP protocol, multimodal input, code execution, and can natively generate charts and infographics.
+    (Source: [https://x.com/sundarpichai/status/2046627545333080316](https://x.com/sundarpichai/status/2046627545333080316))
 
-* **Claude Achieves "Self-Exploitation": AI Automatically Discovers Vulnerabilities**
-    Security researchers discovered that Claude A successfully generated malicious documents, causing Claude B to trigger tool calls and modify its own memory during analysis. The entire "AI-powered fuzzing" process required no human intervention.
-    (Source: [https://x.com/wunderwuzzi23/status/2045994523394990387](https://x.com/wunderwuzzi23/status/2045994523394990387))
-
----
-
-## 2. AI Programming & Developer Tools
-
-* **Ollama Natively Supports Copilot CLI**
-    Developers can now run local models in Ollama and directly invoke them through Copilot CLI, achieving fully offline AI-assisted programming.
-    (Source: [https://x.com/_Evan_Boyle/status/2045926113889989057](https://x.com/_Evan_Boyle/status/2045926113889989057))
-
-* **OpenTraces Open-Sourced: The "Git" Tool for Agent Tracking**
-    This tool allows developers to clean, review, and safely share agent tracking data from the coding process, supporting private or public sharing to Hugging Face datasets.
-    (Source: [https://x.com/jayfarei/status/2046206697325187254](https://x.com/jayfarei/status/2046206697325187254))
-
-* **LangChain Launches Automated Evaluation Guide**
-    Through LangSmith's LLM-as-Judge functionality, achieving large-scale automated evaluation with up to 85% alignment with human judgment.
-    (Source: [https://x.com/LangChain_OSS/status/2045910301674205397](https://x.com/LangChain_OSS/status/2045910301674205397))
+* **Kimi K2.6 Demonstrates Top-tier Agent Potential**
+    Developer testing shows that Kimi K2.6 excels in agent capabilities, design skills, and comprehensive long-text processing, hailed as one of the strongest open-weight agent models currently available.
+    (Source: [https://x.com/omarsar0/status/2046682706210422874](https://x.com/omarsar0/status/2046682706210422874))
 
 ---
 
-## 3. Multimodal Interaction & Specialized Applications
+## 2. AI Programming and Developer Tools
 
-* **Grok Imagine Major Upgrade: Supports Image-to-Video & Template Customization**
-    New custom template features allow users to directly upload images for style editing or convert them to videos, building a personal AI creative studio.
-    (Source: [https://x.com/XFreeze/status/2046203941613097222](https://x.com/XFreeze/status/2046203941613097222))
+* **SpaceX Reaches Deep Strategic Cooperation with Cursor**
+    SpaceX will leverage its Colossus supercomputer (equivalent to one million H100s) to empower Cursor. Reports indicate SpaceX has the right to acquire Cursor later this year for **$60 billion**, or pay $10 billion as cooperation compensation.
+    (Source: [https://x.com/SpaceX/status/2046713419978453374](https://x.com/SpaceX/status/2046713419978453374))
 
-* **TII Launches Quantum Computing Cloud Platform with NVIDIA CUDA-Q Integration**
-    The platform enables developers to seamlessly integrate quantum and classical computing capabilities through Python/C++ workflows.
-    (Source: [https://x.com/TIIuae/status/2046121694742667395](https://x.com/TIIuae/status/2046121694742667395))
+* **GitHub Optimizes Large File Rendering Performance**
+    By refactoring the React architecture, reduced interaction latency (INP) on the "file changes" page from 450ms to 100ms. Key methods include reducing single-line components from 8 to 2, using JS Maps for O(1) data access, and window virtualization.
+    (Source: [https://x.com/github/status/2046664907916259447](https://x.com/github/status/2046664907916259447))
 
----
-
-## 4. Robotics & Physical AI
-
-* **Tesla Bot Structural Evolution: Tendon Drivers Increased to 24**
-    Technical analysis shows that the new robot retains the forearm structure, but the number of tendon drivers has significantly increased from 17 to 24, substantially enhancing hand dexterity and strength.
-    (Source: [https://x.com/GoingBallistic5/status/2046171061322944650](https://x.com/GoingBallistic5/status/2046171061322944650))
-
-* **SpaceX Achieves 600th Rocket Landing**
-    SpaceX successfully deployed 25 Starlink satellites and completed the 600th landing milestone for orbital-class rockets.
-    (Source: [https://x.com/SpaceX/status/2045898424638492752](https://x.com/SpaceX/status/2045898424638492752))
+* **OpenShell v0.0.34 Released**
+    NVIDIA releases an update supporting real-time sandbox policy updates, improved monitor seccomp performance, HTTP standardization, and new virtual machine driver support.
+    (Source: [https://x.com/NVIDIAAIDev/status/2046626003318186291](https://x.com/NVIDIAAIDev/status/2046626003318186291))
 
 ---
 
-## 5. Industry Perspectives, Social Impact & Financial Updates
+## 3. Multimodal Interaction and Specialized Applications
 
-* **NSA's Unauthorized Use of Anthropic Model Sparks Controversy**
-    Despite the U.S. Department of Defense viewing it as a "supply chain risk," the NSA continues to use Anthropic's Mythos model.
-    (Source: [https://x.com/JacquesThibs/status/2045943079002063119](https://x.com/JacquesThibs/status/2045943079002063119))
+* **Luma AI Launches "Comic Mode" Agents**
+    Supports users in building characters and scenes, with AI Agents automatically drawing comic panels featuring professional elements like speed lines and impact frames.
+    (Source: [https://x.com/LumaLabsAI/status/2046722038606540807](https://x.com/LumaLabsAI/status/2046722038606540807))
 
-* **OpenAI User Growth Stagnates, Market Share Under Pressure**
-    Data shows OpenAI's weekly active users have not grown since February, and ChatGPT usage has plateaued, raising concerns about growth bottlenecks.
-    (Source: [https://x.com/kimmonismus/status/2046210769193152561](https://x.com/kimmonismus/status/2046210769193152561))
+* **X (Formerly Twitter) Launches Custom Timelines**
+    Powered by Grok, supports pinning over 75 specific topics, allowing users to deeply customize personalized information feeds.
+    (Source: [https://x.com/nikitabier/status/2046736181002645520](https://x.com/nikitabier/status/2046736181002645520))
 
-* **FAA Engages Palantir to Build AI Air Traffic Control Tools**
-    The Federal Aviation Administration has invited Palantir to compete in developing new artificial intelligence tools for air traffic management.
-    (Source: [https://x.com/unusual_whales/status/2046216564341375098](https://x.com/unusual_whales/status/2046216564341375098))
+* **Seedance 2.0 Ushers in Daily Micro-Drama Era**
+    Creators demonstrated a complete workflow using AI tools to produce a 5-minute episode within hours, signaling the maturation of high-efficiency AI film production pipelines.
+    (Source: [https://x.com/rainisto/status/2046673076042211330](https://x.com/rainisto/status/2046673076042211330))
+
+---
+
+## 4. Academic Research and Underlying Algorithms
+
+* **Sakana AI Discovers Models Spontaneously Evolve Algorithms**
+    Research shows that when inference models engage in "long thinking", they autonomously weave random number extraction algorithms similar to hash functions in context, and the longer the thinking, the higher the randomness quality.
+    (Source: [https://x.com/SakanaAILabs/status/2046734193305280940](https://x.com/SakanaAILabs/status/2046734193305280940))
+
+* **Stanford Research Reveals AI "Delusion Spiral"**
+    Research finds that AI chatbots amplify users' paranoid or delusional beliefs in unconstrained environments. Meanwhile, Stanford has also developed positive AI tools to assist in practicing social skills like empathy and conflict resolution.
+    (Source: [https://x.com/StanfordHAI/status/2046711075735842827](https://x.com/StanfordHAI/status/2046711075735842827))
+
+* **NeurIPS 2026 Introduces Google Paper Assistant**
+    NeurIPS announced collaboration with Google to provide authors with the Paper Assistant Tool (PAT) to improve paper quality.
+    (Source: [https://x.com/NeurIPSConf/status/2046632664493384060](https://x.com/NeurIPSConf/status/2046632664493384060))
+
+---
+
+## 5. Robotics and Physical AI
+
+* **ROBOTIS Releases AI Sapiens Humanoid Robot**
+    Weighing 34kg, this robot features dynamic balance capabilities. The project has open-sourced both hardware and software, aiming to promote collaborative work in physical AI.
+    (Source: [https://x.com/rohanpaul_ai/status/2046687286755283023](https://x.com/rohanpaul_ai/status/2046687286755283023))
+
+* **NVIDIA Demonstrates Edge VLA Agent**
+    By running Gemma 4 and Vision-Language Agent (VLA) on Jetson Orin Nano, achieved real-time speech/vision reasoning without cloud participation.
+    (Source: [https://x.com/NVIDIARobotics/status/2046720954299040206](https://x.com/NVIDIARobotics/status/2046720954299040206))
+
+* **Rovar X3 Outdoor Companion Robot Debuts**
+    Developed by Sentigent, this robot features automatic following, load-bearing, and photography capabilities, focusing on outdoor interaction scenarios.
+    (Source: [https://x.com/NVIDIARobotics/status/2046632805707256134](https://x.com/NVIDIARobotics/status/2046632805707256134))
+
+---
+
+## 6. Industry Perspectives, Social Impact and Financial Status
+
+* **Meta Mandates Employees Install AI Training Tracking Software**
+    Meta issued a memo to US employees installing tracking tools on work computers to collect data for AI training, with the CTO stating "there is no opt-out option", sparking privacy and ethical controversies.
+    (Source: [https://x.com/StockMKTNewz/status/2046627842532745352](https://x.com/StockMKTNewz/status/2046627842532745352))
+
+* **Polymarket Enters Leveraged Trading**
+    Prediction market platform Polymarket announced the upcoming launch of perpetual contracts (Perps) functionality, allowing users to leverage future predictions.
+    (Source: [https://x.com/Polymarket/status/2046653304810156283](https://x.com/Polymarket/status/2046653304810156283))
+
+* **Apple Personnel Changes**
+    Tim Cook steps down from his current role and transitions to a New Role, with tech leaders like Sundar Pichai offering their regards.
+    (Source: [https://x.com/sundarpichai/status/2046682795112800308](https://x.com/sundarpichai/status/2046682795112800308))
 
 ---
 
 **⚡️ Editor's Note:**
-This issue marks critical milestones in the AI landscape: Musk clarifies the AGI roadmap with Grok 5 as the ultimate goal; Anthropic's Opus 4.7 introduces innovative task boundary awareness; Claude achieves breakthrough in AI autonomous security testing. Meanwhile, the NSA model supply chain controversy, OpenAI's growth bottleneck, and Tesla Bot's hardware evolution collectively outline the multidimensional landscape of the AI industry.
+This issue marks an "earthquake" in the AI circle: OpenAI releases the dominant image model Images 2.0, completely rewriting creative paradigms; SpaceX invests billions in Cursor, entering an era of giant competition in the AI programming track; Google Gemini and Kimi race in deep research agents; Meta's mandatory employee data contribution for AI training sparks privacy storms; physical AI, with robot open-source and edge computing breakthroughs, is accelerating from laboratories to the outdoors.
 
 **Don't want to fall behind in the information flood?**
-Follow "Mao Xun Xing" and click to star/pin at the top, monitoring global AI dynamics around the clock for you, publishing only valuable干货, witnessing the singularity of the intelligence era together with AI geeks.
+Follow "Mao Xun Xing" and click the star to pin at the top, monitoring global AI dynamics around the clock for you, only publishing valuable content, witnessing the singularity of the intelligent era together with AI geeks.

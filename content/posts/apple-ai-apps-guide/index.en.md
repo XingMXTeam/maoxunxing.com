@@ -47,17 +47,73 @@ If you don't have a US Apple ID yet, create one first:
 
 ### Method 1: Purchase Gift Cards via Alipay (Recommended)
 
-This is the simplest and safest method:
+This is the simplest and safest method through Alipay's "出境" (Outbound Travel) mini-program:
 
-1. Search for "Apple Gift Card" or "App Store Recharge" in Alipay
-2. Select "US" gift card
-3. Choose denomination (recommend starting with $25 or $50)
-4. After payment, you'll receive a gift card redemption code
-5. Redeem in App Store:
-   - Open App Store
-   - Tap your profile icon in the top right
-   - Select "Redeem Gift Card or Code"
-   - Enter the redemption code
+#### Detailed Steps
+
+**Step 1: Switch Alipay Location**
+
+1. Open Alipay App
+2. Tap the **"Location"** in the top-left corner (e.g., shows "Shanghai")
+3. Select **"International/HK/Macau/Taiwan"**
+4. On the left, select **"North America"**
+5. On the right, select **"San Francisco"** from the popular cities list (or search for other US cities)
+
+**Step 2: Enter the Outbound Travel Mini-Program**
+
+1. Tap the **search bar** at the top of Alipay
+2. Search for: **"出境"** (Outbound Travel)
+3. Select the **"出境" mini-program** (shows "400K+ recent users")
+
+**Step 3: Find Gift Card Purchase Entry**
+
+1. After entering the mini-program, **scroll down**
+2. Find **"Discount Gift Cards"** and tap to enter
+3. **Continue scrolling down**, find **"More Branded Discount Gift Cards"** in the middle section, tap to enter
+   
+   > ⚠️ **Note**: There may be three "More Branded Discount Gift Cards" sections. If you can't find Apple Store in the second one, try the others
+
+4. Search for **"apple store"**, or scroll down to find it
+5. Select **"App Store & iTunes US"** and tap to enter
+
+**Step 4: Register/Login to Mini-Program Account**
+
+1. The mini-program will prompt you to register/login
+2. Use your common **Chinese email to register and login**
+
+**Step 5: Purchase Gift Card**
+
+1. **Enter amount**:
+   - You can enter $19.99 or $20 (USD)
+   - Recharge range: $2-$500 (customizable)
+   - Recommendation: ChatGPT Plus $20/month, Claude Pro $20/month
+2. Tap **"Purchase Now"**
+3. **Select payment method**:
+   - Alipay balance
+   - Credit card
+   - Debit card
+   - All are acceptable
+4. Tap **Pay** to complete payment
+
+**Step 6: Get Redemption Code**
+
+1. After successful payment, the redemption code can be viewed in **"My Orders"**
+2. Or check the **email you used during registration**
+3. Copy the redemption code (usually a code starting with letters)
+
+**Step 7: Redeem in Apple Store**
+
+1. Open **Apple Store** App
+2. Tap **profile icon in the top-right**
+3. Scroll to the bottom, **tap to logout from current Chinese Apple ID**
+4. **Login with your US Apple ID**
+5. Tap **"Redeem Gift Card or Code"**
+6. Tap **"Enter Code Manually"**
+7. Return to Alipay, **copy the redemption code you just purchased**
+8. Return to Apple Store
+9. **Paste the redemption code**
+10. Tap **"Redeem"**
+11. You'll see a message confirming **successful recharge**
 
 ### Method 2: Credit Card Payment
 
@@ -105,51 +161,60 @@ Phone: (503) 555-0123
 
 ---
 
-## Contacting US Support to Remove Purchase Restrictions
+## Contacting OpenAI Support to Remove ChatGPT Purchase Restrictions
 
-Many users report being unable to purchase subscriptions directly in the app. You need to contact US support to remove this restriction.
+Many users report that the purchase button in the ChatGPT App is disabled or unclickable. You need to contact **OpenAI Support** (not Apple Support) to remove this restriction.
+
+### Why is the Purchase Button Disabled?
+
+- Account regional restrictions
+- New account requires verification
+- Mismatch between Apple ID region and OpenAI account region
 
 ### Contact Methods
 
-**Recommended: Online Chat**
+**Recommended: OpenAI Official Support**
 
-1. Visit [Apple Support US](https://support.apple.com/en-us)
-2. Select "Subscription & Purchases"
-3. Choose "Chat"
-4. Explain your issue:
+1. Visit [OpenAI Support](https://help.openai.com)
+2. Click "Submit a request" to create a ticket
+3. Select issue type:
+   - Category: `ChatGPT` 
+   - Type: `Billing and Payments` or `Technical Issue`
+4. Fill in the issue description:
    ```
-   Hello, I'm trying to subscribe to ChatGPT Plus in the app, 
-   but the purchase button is not working. Could you please 
-   help me enable in-app purchases for my account?
+   Subject: Unable to Purchase ChatGPT Plus - Purchase Button Disabled
    
-   My Apple ID: [your email]
+   Description:
+   Hello OpenAI Support Team,
+   
+   I'm trying to subscribe to ChatGPT Plus in the iOS app, but the 
+   purchase/upgrade button is grayed out or not working.
+   
+   My Account Details:
+   - Email: [Your OpenAI account email]
+   - Device: iPhone/iPad
+   - Apple ID Region: United States
+   
+   I have a US Apple ID with sufficient balance and a valid payment 
+   method. Could you please help enable the purchase feature for my account?
+   
+   Thank you!
    ```
 
-**Alternative: Phone**
+**Alternative: In-App Feedback**
 
-- US Support Phone: 1-800-275-2273
-- Hours: Monday-Friday 5:00 AM - 9:00 PM (PST)
-- Mind the time difference, recommend contacting during Beijing evening hours
-
-### Key Points for the Conversation
-
-Questions support might ask:
-
-1. **What's the issue?**
-   - "I can't purchase ChatGPT Plus subscription in the app"
-   
-2. **Are you currently in the US?**
-   - "I have a US Apple ID and US payment method"
-   
-3. **Account verification**
-   - Provide your Apple ID email
-   - May need to verify security questions
+1. Open ChatGPT App
+2. Tap "Settings"
+3. Scroll to the bottom and find "Help" or "Support"
+4. Select "Send Feedback" or "Contact Support"
+5. Describe the issue with the non-functional purchase button
 
 ### Processing Time
 
-- Usually resolved within 24-48 hours
-- Support will flag your account in the backend
-- You'll receive a confirmation email upon completion
+- Usually responds within 24-72 hours
+- Support may request account verification
+- You'll receive an email notification after the restriction is removed
+- Reopen the App to see the available purchase button
 
 ---
 
@@ -176,9 +241,9 @@ Questions support might ask:
 
 ## FAQ and Important Notes
 
-### Q1: Why is the in-app purchase button grayed out/unavailable?
+### Q1: Why is the ChatGPT App purchase button grayed out/unavailable?
 
-**A**: This is because your account hasn't had regional restrictions removed. You must contact US support to resolve this.
+**A**: This is a restriction by OpenAI on accounts from certain regions. You need to contact **OpenAI Support** (not Apple Support) to remove it. Usually resolved within 24-72 hours after submitting a ticket.
 
 ### Q2: Will I be charged tax?
 

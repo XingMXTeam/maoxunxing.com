@@ -47,17 +47,73 @@ ChatGPT 和 Claude 等 AI 应用的订阅服务在某些地区不可用，或者
 
 ### 方法一：支付宝购买礼品卡（推荐）
 
-这是最简单、安全的方式：
+这是最简单、安全的方式，通过支付宝的「出境」小程序购买：
 
-1. 在支付宝搜索"苹果礼品卡"或"App Store 充值"
-2. 选择"美区"或"US"礼品卡
-3. 选择面额（建议 $25 或 $50 起步）
-4. 完成支付后获得礼品卡兑换码
-5. 在 App Store 中兑换：
-   - 打开 App Store
-   - 点击右上角头像
-   - 选择"兑换礼品卡或代码"
-   - 输入兑换码
+#### 详细操作步骤
+
+**第一步：切换支付宝地区定位**
+
+1. 打开支付宝 App
+2. 点击左上角的**「定位」**（比如显示「上海」）
+3. 选择 **「国际/港澳台」**
+4. 左边选择 **「北美洲」**
+5. 右边选择热门城市列表中的 **「旧金山」**（也可以搜索其他美国城市）
+
+**第二步：进入出境小程序**
+
+1. 点击支付宝顶部**搜索框**
+2. 搜索关键词：**「出境」**
+3. 选择 **「出境」小程序**（显示「40万+人最近使用」）
+
+**第三步：找到礼品卡购买入口**
+
+1. 进入小程序后，**向下滑动**
+2. 找到 **「折扣礼品卡」**，点击进入
+3. **继续向下滑**，找到中间位置的 **「更多大牌折扣礼品卡」**，点击进入
+   
+   > ⚠️ **注意**：界面可能有三个「更多大牌折扣礼品卡」，如果点击第二个找不到 Apple Store，就试试其他两个
+
+4. 搜索 **「apple store」**，或者向下滑动也可以找到
+5. 选择 **「App Store & iTunes US」**，点击进入
+
+**第四步：注册/登录小程序账号**
+
+1. 小程序会提示注册登录
+2. 使用常用的**国内邮箱注册登录**即可
+
+**第五步：购买礼品卡**
+
+1. **输入金额**：
+   - 可以输入 $19.99 或 $20（美金）
+   - 充值金额范围：$2-$500（可自定义输入）
+   - 建议：ChatGPT Plus $20/月，Claude Pro $20/月
+2. 点击 **「立即购买」**
+3. **选择支付方式**：
+   - 支付宝余额
+   - 信用卡
+   - 储蓄卡
+   - 以上都可以
+4. 点击**支付**完成付款
+
+**第六步：获取兑换码**
+
+1. 支付成功后，兑换码可以在**「我的订单」**里查看
+2. 也可以在**注册时填写的邮箱**里查看
+3. 复制兑换码（通常以字母开头的一串代码）
+
+**第七步：在 Apple Store 中兑换**
+
+1. 打开 **Apple Store** App
+2. 点击 **右上角头像**
+3. 滑到最下面，**点击退出当前国内 Apple ID 账号**
+4. **登录美区 Apple ID 账号**
+5. 点击 **「兑换充值卡或代码」**
+6. 点击 **「手动输入兑换码」**
+7. 返回支付宝，**复制刚才购买的兑换码**
+8. 再返回 Apple Store
+9. **粘贴兑换码**
+10. 点击 **「兑换」**
+11. 提示**已经充值成功**
 
 ### 方法二：信用卡支付
 
@@ -105,51 +161,60 @@ Phone: (503) 555-0123
 
 ---
 
-## 联系美国客服解除购买限制
+## 联系 OpenAI 客服解除 ChatGPT 购买限制
 
-很多用户反映在 App 内无法直接购买订阅，需要联系美国客服解除限制。
+很多用户反映在 ChatGPT App 内购买按钮被禁用或无法点击，需要联系 **OpenAI 客服**（不是 Apple 客服）解除限制。
+
+### 为什么购买按钮被禁用？
+
+- 账户所在地区限制
+- 新账户需要验证
+- Apple ID 与 OpenAI 账号的地区不匹配
 
 ### 联系方式
 
-**推荐方式：在线聊天**
+**推荐方式：OpenAI 官方支持**
 
-1. 访问 [Apple Support 美国](https://support.apple.com/en-us)
-2. 选择"Subscription & Purchases"（订阅与购买）
-3. 选择"Chat"（在线聊天）
-4. 说明问题：
+1. 访问 [OpenAI Support](https://help.openai.com)
+2. 点击「Submit a request」提交工单
+3. 选择问题类型：
+   - Category: `ChatGPT` 
+   - Type: `Billing and Payments` 或 `Technical Issue`
+4. 填写问题描述：
    ```
-   Hello, I'm trying to subscribe to ChatGPT Plus in the app, 
-   but the purchase button is not working. Could you please 
-   help me enable in-app purchases for my account?
+   Subject: Unable to Purchase ChatGPT Plus - Purchase Button Disabled
    
-   My Apple ID: [你的邮箱]
+   Description:
+   Hello OpenAI Support Team,
+   
+   I'm trying to subscribe to ChatGPT Plus in the iOS app, but the 
+   purchase/upgrade button is grayed out or not working.
+   
+   My Account Details:
+   - Email: [你的 OpenAI 账号邮箱]
+   - Device: iPhone/iPad
+   - Apple ID Region: United States
+   
+   I have a US Apple ID with sufficient balance and a valid payment 
+   method. Could you please help enable the purchase feature for my account?
+   
+   Thank you!
    ```
 
-**备选方式：电话**
+**备选方式：App 内反馈**
 
-- 美国客服电话：1-800-275-2273
-- 工作时间：周一至周五 5:00 AM - 9:00 PM (PST)
-- 注意时差，建议北京时间晚上联系
-
-### 对话要点
-
-客服可能会问的问题：
-
-1. **What's the issue?**
-   - "I can't purchase ChatGPT Plus subscription in the app"
-   
-2. **Are you currently in the US?**
-   - "I have a US Apple ID and US payment method"
-   
-3. **Account verification**
-   - 提供 Apple ID 邮箱
-   - 可能需要验证安全问题
+1. 打开 ChatGPT App
+2. 点击「Settings」（设置）
+3. 滑到底部找到「Help」或「Support」
+4. 选择「Send Feedback」或「Contact Support」
+5. 描述购买按钮无法使用的问题
 
 ### 处理时间
 
-- 通常在 24-48 小时内解决
-- 客服会在后台标记你的账户
-- 完成后你会收到确认邮件
+- 通常在 24-72 小时内回复
+- 客服可能会要求验证账户信息
+- 解除限制后你会收到邮件通知
+- 重新打开 App 即可看到可用的购买按钮
 
 ---
 
@@ -176,9 +241,9 @@ Phone: (503) 555-0123
 
 ## 常见问题与注意事项
 
-### Q1: 为什么 App 内购买按钮灰色/不可用？
+### Q1: 为什么 ChatGPT App 内购买按钮灰色/不可用？
 
-**A**: 这是因为账户未解除地区限制，必须联系美国客服处理。
+**A**: 这是 OpenAI 对某些地区账户的限制，需要联系 **OpenAI 客服**（不是 Apple 客服）解除。提交工单后通常 24-72 小时内解决。
 
 ### Q2: 会被扣税吗？
 
