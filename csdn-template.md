@@ -1,10 +1,15 @@
-# AI 你需要知道的 - 基础知识全面指南
+# CSDN 发布模板
+# CSDN 不支持 frontmatter,直接写 markdown 正文
+# 在 CSDN 编辑器中手动设置: 标题、摘要、标签、分类
 
-> **摘要**: 本文全面介绍 AI 基础知识，包括机器学习原理、嵌入向量、模型训练流程、Prompt 工程技巧和 AI 工具的实践应用。适合想要系统了解 AI 的开发者和技术爱好者。
+# ============ 文章开头 (第二层回链) ============
 
-**关键词**: AI, 机器学习, 深度学习, Prompt工程, 嵌入向量, 模型训练
+> **本文首发于 [maoxunxing.com](https://maoxunxing.com/posts/ai/)**,转载请注明出处。
+> 更多 AI、Node.js 和前端工程深度文章,欢迎访问我的博客。
 
 ---
+
+# AI 你需要知道的
 
 ## 一、AI 认知升级
 
@@ -307,17 +312,43 @@ export OPENAI_API_KEY="your-api-key"
 
 ---
 
-## 参考资料
+# ============ 第三层回链: 正文中的自然内链 ============
 
-1. Andrew Ng. Machine Learning Yearning
-2. Ian Goodfellow. Deep Learning
-3. OpenAI. GPT-4 Technical Report
-4. Google. Attention Is All You Need
+# 在正文中自然位置插入对你其他文章的引用:
+
+如果你对 AI 辅助开发感兴趣,可以看我的另一篇文章
+[AI Coding 实战手册：工具选型、工作流与提示词模板](https://maoxunxing.com/zh-cn/ai-coding-practice/)。
+
+我还写了一篇关于
+[用 Karpathy 的方法构建个人知识库](https://maoxunxing.com/zh-cn/karpathy-knowledge-base-practice/)
+的实践文章,介绍如何把技术学习组织成发布流水线。
 
 ---
 
-> **作者简介**: 前端技术专家，专注于 AI 应用开发和工程实践  
-> **版权声明**: 本文为原创文章，转载请联系作者授权  
-> **更新时间**: 2024-07-07
+# ============ 文章结尾 (作者信息 + 回链) ============
 
-**如果觉得本文有帮助，欢迎点赞👍、收藏⭐、关注➕，一起学习进步！**
+---
+
+**作者**: Felix Mao (毛毛星)
+**博客**: [maoxunxing.com](https://maoxunxing.com)
+**GitHub**: [github.com/XingMXTeam](https://github.com/XingMXTeam/)
+**Twitter**: [@maoxunxing](https://twitter.com/maoxunxing)
+
+---
+
+# ============ CSDN 编辑器设置备忘 ============
+# 标题: AI 你需要知道的
+# 摘要: AI 基础知识全面指南：机器学习原理、嵌入向量、模型训练流程、Prompt 工程技巧和 AI 工具的实践应用
+# 标签: AI, 机器学习, 深度学习, Prompt工程, 嵌入向量
+# 分类: 人工智能 / 机器学习
+# 原文链接: https://maoxunxing.com/posts/ai/
+
+# ============ 验证 canonical 标签 ============
+# 发布后:
+# 1. 打开文章页面
+# 2. 右键 -> 查看页面源代码
+# 3. Ctrl+F 搜索 "canonical"
+# 4. 如果 <link rel="canonical" href="..."> 指向 CSDN 而非你的博客,
+#    说明 CSDN 没有尊重你的 canonical 设置
+# 5. 这种情况下,文章顶部的 "本文首发于" 链接就是你的主要回链
+
