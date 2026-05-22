@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>maoxunxing.com 增长策略执行报告 — 2026.04.30</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f5;--card:#fff;--card-alt:#f7f5f1;
+  --ink:#1a1a1a;--ink2:#3d3d3d;--ink3:#6b6b6b;--ink4:#999;--ink5:#bbb;
+  --accent:#2563eb;--accent2:#7c3aed;--green:#059669;--red:#dc2626;--gold:#d97706;--orange:#ea580c;
+  --bdr:#e5e1db;--bdr2:#d4cfc7;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 40px;}
+.sf{font-family:'Noto Serif SC',serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.cd{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink4);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;padding-top:8px;}
+.dv{height:1px;background:linear-gradient(90deg,transparent,var(--bdr2),transparent);margin:24px 0;}
+.brand{font-family:'Noto Serif SC',serif;font-weight:900;font-size:16px;color:var(--accent2);letter-spacing:0.02em;}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 0 12px;border-bottom:2px solid var(--ink);margin-bottom:20px;}
+.tg{display:inline-block;padding:3px 10px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.04em;font-weight:500;}
+.tg-blue{background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;}
+.tg-purple{background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;}
+.tg-gold{background:#fffbeb;color:#d97706;border:1px solid #fde68a;}
+.tg-green{background:#ecfdf5;color:#059669;border:1px solid #a7f3d0;}
+.tg-red{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;}
+.item{display:flex;gap:8px;margin-bottom:8px;font-size:15px;color:var(--ink2);line-height:1.6;}
+.item b{color:var(--ink);font-weight:600;}
+.item .n{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:3px;flex-shrink:0;font-weight:600;}
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px;}
+.kpi-box{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:16px;text-align:center;}
+.kpi-box .label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink4);letter-spacing:0.1em;margin-bottom:4px;}
+.kpi-box .val{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--ink);}
+.kpi-box .sub{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:2px;}
+.chart-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 16px 8px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.chart-title{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink4);letter-spacing:0.08em;margin-bottom:8px;}
+@media(max-width:400px){
+  .wrap{padding:12px 10px 32px;}
+  .kpi-box .val{font-size:22px;}
+  .cd{padding:16px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hd">
+  <div class="brand">maoxunxing.com</div>
+  <div class="mono" style="font-size:11px;color:var(--ink4);letter-spacing:0.08em;">GROWTH REPORT · 2026.04.30</div>
+</div>
+
+<!-- HERO -->
+<div style="text-align:center;margin-bottom:24px;">
+  <div class="mono" style="font-size:11px;letter-spacing:0.15em;color:var(--ink4);margin-bottom:10px;">SYNDICATION-FIRST STRATEGY · 2 WEEKS IN</div>
+  <h1 class="sf" style="font-size:32px;font-weight:900;line-height:1.25;color:var(--ink);margin-bottom:8px;">增长策略执行分析</h1>
+  <p class="sf" style="font-size:17px;color:var(--ink3);">dev.to + CSDN 内容分发效果评估与策略迭代</p>
+  <p class="mono" style="font-size:12px;color:var(--ink5);margin-top:10px;font-style:italic;">数据区间: 2026.04.02 — 2026.04.29 (28 天)</p>
+</div>
+
+<!-- KPI -->
+<div class="kpi-grid">
+  <div class="kpi-box"><div class="label">GA ACTIVE USERS</div><div class="val" style="color:var(--accent);">342</div><div class="sub" style="color:var(--gold);">~90 real (见下文)</div></div>
+  <div class="kpi-box"><div class="label">TOTAL SESSIONS</div><div class="val">430</div><div class="sub" style="color:var(--red);">92% Direct</div></div>
+  <div class="kpi-box"><div class="label">DEV.TO VIEWS</div><div class="val" style="color:var(--gold);">~184</div><div class="sub" style="color:var(--red);">0 reactions</div></div>
+  <div class="kpi-box"><div class="label">REFERRAL TO BLOG</div><div class="val" style="color:var(--red);">5</div><div class="sub" style="color:var(--red);">CSDN 5 · dev.to 0</div></div>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: SINGAPORE ANOMALY -->
+<div class="sec-label">DATA QUALITY ALERT · 数据质量预警</div>
+
+<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px 20px;margin-bottom:16px;">
+  <div class="mono" style="font-size:11px;color:var(--red);letter-spacing:0.08em;margin-bottom:6px;">CRITICAL · 关键发现</div>
+  <p style="font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:8px;"><b style="color:var(--red);">Singapore 贡献了 252/342 (73.7%) 的活跃用户</b>，但这些访问的 engagement rate 极低 (9.6%)、平均停留仅 8 秒，且几乎全部归类为 Direct 流量。</p>
+  <p style="font-size:14px;color:var(--ink3);line-height:1.6;">这很可能是<b>爬虫/监控工具/CDN 健康检查</b>产生的虚假流量。你在策略制定时的 30 MAU 数据反而更真实。排除 Singapore 异常后，实际活跃用户约为 <b style="color:var(--accent);">~90 人</b>，仍是原来的 3 倍增长。</p>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: GA TRAFFIC SOURCES -->
+<div class="sec-label">TRAFFIC SOURCES · 流量来源分析</div>
+
+<div class="chart-card"><div class="chart-title">SESSION SOURCE / MEDIUM (28 DAYS)</div><div id="c1" style="width:100%;height:300px;"></div></div>
+
+<div class="cd">
+  <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px;">流量来源明细</div>
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead><tr style="border-bottom:2px solid var(--bdr2);">
+        <th style="text-align:left;padding:8px 6px;color:var(--ink4);font-size:11px;font-family:'JetBrains Mono',monospace;">SOURCE</th>
+        <th style="text-align:right;padding:8px 6px;color:var(--ink4);font-size:11px;font-family:'JetBrains Mono',monospace;">SESSIONS</th>
+        <th style="text-align:right;padding:8px 6px;color:var(--ink4);font-size:11px;font-family:'JetBrains Mono',monospace;">ENG RATE</th>
+        <th style="text-align:right;padding:8px 6px;color:var(--ink4);font-size:11px;font-family:'JetBrains Mono',monospace;">AVG TIME</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--bdr);"><td style="padding:8px 6px;color:var(--ink2);">(direct)</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">396</td><td style="text-align:right;padding:8px 6px;color:var(--red);font-family:'JetBrains Mono',monospace;">9.6%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">8s</td></tr>
+        <tr style="border-bottom:1px solid var(--bdr);background:var(--card-alt);"><td style="padding:8px 6px;color:var(--green);font-weight:600;">t.co (Twitter)</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">12</td><td style="text-align:right;padding:8px 6px;color:var(--green);font-family:'JetBrains Mono',monospace;">91.67%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">1m 13s</td></tr>
+        <tr style="border-bottom:1px solid var(--bdr);"><td style="padding:8px 6px;color:var(--ink2);">Google organic</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">5</td><td style="text-align:right;padding:8px 6px;color:var(--green);font-family:'JetBrains Mono',monospace;">80%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">1m 01s</td></tr>
+        <tr style="border-bottom:1px solid var(--bdr);background:var(--card-alt);"><td style="padding:8px 6px;color:var(--ink2);">editor.csdn.net</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">4</td><td style="text-align:right;padding:8px 6px;color:var(--green);font-family:'JetBrains Mono',monospace;">75%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">1m 15s</td></tr>
+        <tr style="border-bottom:1px solid var(--bdr);"><td style="padding:8px 6px;color:var(--accent);font-weight:600;">ChatGPT</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">3</td><td style="text-align:right;padding:8px 6px;color:var(--green);font-family:'JetBrains Mono',monospace;">100%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">~1m</td></tr>
+        <tr style="border-bottom:1px solid var(--bdr);background:var(--card-alt);"><td style="padding:8px 6px;color:var(--ink2);">Bing organic</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">2</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">50%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">50s</td></tr>
+        <tr><td style="padding:8px 6px;color:var(--ink2);">DuckDuckGo</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;font-weight:600;">1</td><td style="text-align:right;padding:8px 6px;color:var(--green);font-family:'JetBrains Mono',monospace;">100%</td><td style="text-align:right;padding:8px 6px;font-family:'JetBrains Mono',monospace;">22s</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Insight -->
+<div style="background:#f0f4ff;border:1px solid #c7d2fe;border-radius:12px;padding:16px 20px;margin-bottom:16px;">
+  <p style="font-size:14px;color:var(--ink2);line-height:1.7;"><b style="color:var(--accent);">核心发现：</b>Twitter (t.co) 以 12 次 session 成为最有效的引流渠道，engagement rate 高达 91.67%，平均停留 1 分 13 秒。而 CSDN 和 dev.to 的回链效果几乎为零。ChatGPT 作为新兴发现渠道值得关注 — 3 次访问全部深度互动。</p>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: DEV.TO PERFORMANCE -->
+<div class="sec-label">DEV.TO PERFORMANCE · dev.to 文章表现</div>
+
+<div class="cd">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+    <div class="tg tg-red">UNDERPERFORMING</div>
+    <span class="mono" style="font-size:12px;color:var(--ink4);">6 articles · 2 weeks</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;margin-bottom:16px;">
+    <div><div style="color:var(--ink4);font-size:11px;">Total Views</div><div class="mono" style="color:var(--gold);font-weight:700;font-size:18px;">~184</div></div>
+    <div><div style="color:var(--ink4);font-size:11px;">Reactions</div><div class="mono" style="color:var(--red);font-weight:700;font-size:18px;">0</div></div>
+    <div><div style="color:var(--ink4);font-size:11px;">Comments</div><div class="mono" style="color:var(--red);font-weight:700;font-size:18px;">0</div></div>
+  </div>
+</div>
+
+<div class="chart-card"><div class="chart-title">DEV.TO ARTICLE VIEWS</div><div id="c2" style="width:100%;height:240px;"></div></div>
+
+<div class="cd">
+  <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px;">各文章明细</div>
+  <div class="item"><span class="n" style="color:var(--accent);">53</span><span><b>AI Coding Playbook</b> — 工具选择、工作流和 Prompt 模板 (Apr 16)</span></div>
+  <div class="item"><span class="n" style="color:var(--accent);">29</span><span><b>AI Coding Tool Comparison 2026</b> — AI 编程工具综合对比 (Apr 24)</span></div>
+  <div class="item"><span class="n" style="color:var(--accent);">27</span><span><b>Node.js CPU Spike Analysis</b> — Event Loop 阻塞分析 (Apr 14)</span></div>
+  <div class="item"><span class="n" style="color:var(--ink4);"><25</span><span>Karpathy's Knowledge Base Method (Apr 22)</span></div>
+  <div class="item"><span class="n" style="color:var(--ink4);"><25</span><span>AI Agent Beginner's Guide (Apr 27)</span></div>
+  <div class="item"><span class="n" style="color:var(--ink4);"><25</span><span>Terminal Tools in AI Age (Apr 30)</span></div>
+</div>
+
+<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px 20px;margin-bottom:16px;">
+  <p style="font-size:14px;color:var(--ink2);line-height:1.7;"><b style="color:var(--gold);">问题诊断：</b>6 篇文章、0 reaction、0 comment，说明内容没有引起 dev.to 社区共鸣。文章以知识整理为主，缺少 dev.to 读者喜欢的元素 — 个人故事、争议性观点、互动性提问。此外<b>零社区互动</b>（未关注/评论他人文章）导致零社区回馈。</p>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: CSDN PERFORMANCE -->
+<div class="sec-label">CSDN PERFORMANCE · CSDN 表现</div>
+
+<div class="cd">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+    <div class="tg tg-gold">MINIMAL DATA</div>
+    <span class="mono" style="font-size:12px;color:var(--ink4);">referral only</span>
+  </div>
+  <p style="font-size:15px;color:var(--ink2);line-height:1.7;margin-bottom:12px;">CSDN 向博客引流共 <b>~5 sessions</b>。其中 4 次来自 <code style="background:var(--card-alt);padding:2px 6px;border-radius:4px;font-size:13px;">editor.csdn.net</code>（编辑器预览点击），仅 1 次来自 <code style="background:var(--card-alt);padding:2px 6px;border-radius:4px;font-size:13px;">link.csdn.net</code>（真实读者点击）。</p>
+  <p style="font-size:14px;color:var(--ink3);line-height:1.6;">CSDN 的 canonical URL 支持有限，文章可能被 CSDN 搜索引擎抓取但不会回链到你的博客。如果没有在 CSDN 后台查看文章数据，无法确认文章本身的阅读量。</p>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: STRATEGY vs REALITY -->
+<div class="sec-label">STRATEGY vs REALITY · 目标对比</div>
+
+<div class="chart-card"><div class="chart-title">60-DAY TARGET PROGRESS (HALFWAY)</div><div id="c3" style="width:100%;height:280px;"></div></div>
+
+<div class="cd">
+  <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px;">目标达成评估（策略执行 2 周 / 共 8 周）</div>
+  <div style="display:grid;gap:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card-alt);border-radius:10px;">
+      <div><div style="font-size:13px;color:var(--ink3);">月活用户 (排除异常)</div><div style="font-size:15px;font-weight:600;">~90 / 500</div></div>
+      <div class="tg tg-gold">18%</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card-alt);border-radius:10px;">
+      <div><div style="font-size:13px;color:var(--ink3);">Referral 占比</div><div style="font-size:15px;font-weight:600;">~2% / 20%</div></div>
+      <div class="tg tg-red">10%</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card-alt);border-radius:10px;">
+      <div><div style="font-size:13px;color:var(--ink3);">100+ views 文章数</div><div style="font-size:15px;font-weight:600;">0 / 2</div></div>
+      <div class="tg tg-red">0%</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card-alt);border-radius:10px;">
+      <div><div style="font-size:13px;color:var(--ink3);">陌生人评论</div><div style="font-size:15px;font-weight:600;">0 / 1</div></div>
+      <div class="tg tg-red">0%</div>
+    </div>
+  </div>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: DIAGNOSIS -->
+<div class="sec-label">ROOT CAUSE · 问题根因</div>
+
+<div class="cd" style="border-color:#fecaca;">
+  <div style="font-size:18px;font-weight:700;color:var(--red);margin-bottom:14px;">为什么分发策略没有奏效？</div>
+  <div class="item"><span class="n" style="color:var(--red);">01</span><span><b>"发布即分发"是错觉</b> — 在 dev.to/CSDN 上发布 ≠ 获得曝光。新账号零关注者、零历史，平台算法不会推荐你的内容。</span></div>
+  <div class="item"><span class="n" style="color:var(--red);">02</span><span><b>零社区参与</b> — 增长策略建议"在发文前先评论 3-5 篇相关文章"，这一步似乎被跳过了。平台是双向的：你不参与社区，社区也不会发现你。</span></div>
+  <div class="item"><span class="n" style="color:var(--red);">03</span><span><b>内容风格不匹配</b> — dev.to 上爆款文章通常有：个人经历叙事、争议性标题、互动性提问、代码实战。你的文章偏知识整理/指南体，缺少"钩子"。</span></div>
+  <div class="item"><span class="n" style="color:var(--red);">04</span><span><b>发布时间未优化</b> — 策略建议 8-10am UTC 发布以覆盖美欧读者，但未确认是否执行。</span></div>
+  <div class="item"><span class="n" style="color:var(--red);">05</span><span><b>回链机制失效</b> — dev.to 虽然支持 canonical URL，但读者在平台内消费内容，不会主动点击回到你的博客。CSDN 的回链更弱。</span></div>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: WHAT WORKED -->
+<div class="sec-label">BRIGHT SPOTS · 亮点信号</div>
+
+<div class="cd" style="border-color:#a7f3d0;">
+  <div style="font-size:18px;font-weight:700;color:var(--green);margin-bottom:14px;">值得加倍投入的方向</div>
+  <div class="item"><span class="n" style="color:var(--green);">01</span><span><b>Twitter (t.co) 是王者</b> — 12 sessions、91.67% engagement rate、平均停留 1m 13s。这是你最高质量的流量来源，每个访客都在深度阅读。</span></div>
+  <div class="item"><span class="n" style="color:var(--green);">02</span><span><b>AI 驱动的发现</b> — ChatGPT 贡献了 3 次高质量访问（100% engagement），这是全新的流量渠道。你的技术内容正在被 AI 引用。</span></div>
+  <div class="item"><span class="n" style="color:var(--green);">03</span><span><b>搜索引擎开始收录</b> — Google (5) + Bing (4) + DuckDuckGo (1) = 10 次有机搜索，虽然很少，但 engagement rate 70-100%，说明搜索用户找到了他们需要的内容。</span></div>
+  <div class="item"><span class="n" style="color:var(--green);">04</span><span><b>发布节奏优秀</b> — 2 周 6 篇 dev.to 文章，执行力很强。问题不在产出量，而在分发方式和内容适配。</span></div>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: NEW STRATEGY -->
+<div class="sec-label">REVISED STRATEGY · 策略迭代建议</div>
+
+<div class="cd" style="background:linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 100%);border-color:#c7d2fe;">
+  <div style="font-size:20px;font-weight:700;color:var(--accent);margin-bottom:4px;">策略调整：从"广撒网"到"单点突破"</div>
+  <p style="font-size:14px;color:var(--ink3);margin-bottom:16px;">原策略 Approach A (Syndication-First) 已提供了数据信号。现在需要根据数据迭代。</p>
+
+  <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:12px;">Phase 1: 立即执行 (本周)</div>
+  <div class="item"><span class="n" style="color:var(--accent);">A</span><span><b>All-in Twitter/X</b> — 它是你唯一被验证的分发渠道。每篇博客文章同步发 Twitter thread (3-5 条)，用 thread 形式拆解核心观点，最后一条放原文链接。</span></div>
+  <div class="item"><span class="n" style="color:var(--accent);">B</span><span><b>dev.to 社区参与先行</b> — 暂停发新文章 1 周。每天花 15 分钟评论 3-5 篇 #ai #webdev 热门文章，建立你的账号存在感。再恢复发文时，你已经有了社区连接。</span></div>
+  <div class="item"><span class="n" style="color:var(--accent);">C</span><span><b>改写一篇 dev.to 文章</b> — 把 "AI Coding Playbook" 改写为叙事体：开头讲一个你用 AI 工具解决的真实 bug，中间展开工具对比，结尾提问"你的 AI 工作流是什么？"。测试这种风格的效果。</span></div>
+
+  <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:12px;margin-top:20px;">Phase 2: 中期布局 (接下来 2-4 周)</div>
+  <div class="item"><span class="n" style="color:var(--accent2);">D</span><span><b>LLM SEO 优化</b> — ChatGPT 已经在引用你的内容。确保每篇文章有清晰的 FAQ 结构、结构化数据 (已有 JSON-LD)、专业术语定义。这对 AI 搜索引擎的收录至关重要。</span></div>
+  <div class="item"><span class="n" style="color:var(--accent2);">E</span><span><b>CSDN 深耕或放弃</b> — 登录 CSDN 后台查看文章真实阅读数据。如果 CSDN 文章本身有 500+ 阅读但不回链，说明 CSDN 作为品牌曝光有效但不适合引流；如果 CSDN 文章也没人看，果断放弃转投掘金或 V2EX。</span></div>
+  <div class="item"><span class="n" style="color:var(--accent2);">F</span><span><b>内容差异化</b> — 写 1-2 篇"只有你能写"的文章：你自己的双语内容工具链、你的博客从 0 到 N 的数据复盘 (就像这份报告)。独特经验 > 知识整理。</span></div>
+
+  <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:12px;margin-top:20px;">Phase 3: 增长飞轮 (30-60 天后)</div>
+  <div class="item"><span class="n" style="color:var(--green);">G</span><span><b>Newsletter 捕获</b> — 当 Twitter 带来稳定流量后，在博客加邮件订阅入口。将 social 流量转化为 owned audience。</span></div>
+  <div class="item"><span class="n" style="color:var(--green);">H</span><span><b>Hacker News 试水</b> — 当你有了一篇高质量的独特经验文章（如双语工具链），尝试提交 Hacker News Show HN。一篇爆文可以带来数千访问。</span></div>
+</div>
+
+<div class="dv"></div>
+
+<!-- SECTION: ENGAGEMENT QUALITY -->
+<div class="sec-label">ENGAGEMENT QUALITY · 互动质量对比</div>
+
+<div class="chart-card"><div class="chart-title">ENGAGEMENT RATE BY SOURCE (%)</div><div id="c4" style="width:100%;height:260px;"></div></div>
+
+<div class="chart-card"><div class="chart-title">AVG ENGAGEMENT TIME BY SOURCE (SEC)</div><div id="c5" style="width:100%;height:260px;"></div></div>
+
+<div class="dv"></div>
+
+<!-- CONCLUSION -->
+<div class="sec-label">CONCLUSION · 总结</div>
+
+<div class="cd" style="background:linear-gradient(135deg, #ecfdf5 0%, #f0f4ff 100%);border-color:#a7f3d0;">
+  <div style="font-size:20px;font-weight:700;color:var(--ink);margin-bottom:12px;" class="sf">策略诊断：分发渠道错配，不是内容失败</div>
+  <p style="font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:12px;">你的内容质量是有基础的 — Google organic 和 ChatGPT 访客的深度互动证明了这一点。问题出在分发端：dev.to 和 CSDN 不是"发了就有人看"的平台，它们需要社区信任的积累。</p>
+  <p style="font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:12px;">Twitter 是你当前唯一被数据验证的有效渠道。在接下来的 4 周，建议将 80% 的分发精力投入 Twitter thread + 社区互动，20% 用于 dev.to 社区参与。不要再增加新平台。</p>
+  <p style="font-size:15px;color:var(--ink2);line-height:1.8;"><b style="color:var(--accent);">修正后的 30 天目标：</b>Twitter 获得 50 个新 follower、dev.to 获得 1 篇 10+ reaction 文章、博客月活稳定在 150+（排除异常流量后）。</p>
+</div>
+
+<!-- FOOTER -->
+<div class="dv"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;">
+  <div class="brand" style="font-size:13px;">maoxunxing.com</div>
+  <div class="mono" style="font-size:10px;color:var(--ink5);">GENERATED 2026.04.30 · DATA: GA4 + DEV.TO DASHBOARD</div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const T={accent:'#2563eb',purple:'#7c3aed',green:'#059669',red:'#dc2626',gold:'#d97706',orange:'#ea580c',ink3:'#6b6b6b',ink4:'#999',bdr:'#e5e1db'};
+const tt=()=>({backgroundColor:'#fff',borderColor:'#e5e1db',borderWidth:1,textStyle:{color:'#1a1a1a',fontFamily:'Inter',fontSize:12},padding:[8,12],extraCssText:'box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:8px;'});
+const splitL={lineStyle:{color:'#f0eeea'}};
+
+// C1: Traffic Sources Pie
+const c1=echarts.init(document.getElementById('c1'),null,{renderer:'svg'});
+c1.setOption({
+  tooltip:{...tt(),trigger:'item',formatter:'{b}: {c} sessions ({d}%)'},
+  series:[{
+    type:'pie',radius:['40%','70%'],center:['50%','50%'],
+    label:{fontFamily:'JetBrains Mono',fontSize:11,color:T.ink3},
+    data:[
+      {value:396,name:'Direct',itemStyle:{color:'#ddd'}},
+      {value:12,name:'Twitter',itemStyle:{color:T.green}},
+      {value:5,name:'Google',itemStyle:{color:T.accent}},
+      {value:4,name:'CSDN',itemStyle:{color:T.gold}},
+      {value:3,name:'ChatGPT',itemStyle:{color:T.purple}},
+      {value:4,name:'Bing',itemStyle:{color:'#aaa'}},
+      {value:6,name:'Other',itemStyle:{color:'#eee'}}
+    ]
+  }]
+});
+
+// C2: dev.to Article Views
+const c2=echarts.init(document.getElementById('c2'),null,{renderer:'svg'});
+c2.setOption({
+  tooltip:tt(),
+  grid:{top:20,right:20,bottom:60,left:48},
+  xAxis:{type:'category',data:['AI Coding\nPlaybook','AI Tool\nComparison','Node.js\nCPU Spike','Karpathy\nKB','AI Agent\nGuide','Terminal\nTools'],
+    axisLine:{lineStyle:{color:T.bdr}},axisTick:{show:false},
+    axisLabel:{color:T.ink3,fontFamily:'JetBrains Mono',fontSize:10,interval:0,rotate:0}},
+  yAxis:{type:'value',splitLine:splitL,axisLabel:{color:T.ink4,fontFamily:'JetBrains Mono',fontSize:11}},
+  series:[{type:'bar',data:[53,29,27,20,20,15],
+    itemStyle:{color:new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:T.accent},{offset:1,color:'rgba(37,99,235,0.15)'}]),borderRadius:[6,6,0,0]},
+    barWidth:'50%',
+    label:{show:true,position:'top',fontFamily:'JetBrains Mono',fontSize:11,fontWeight:600,color:T.accent}
+  }]
+});
+
+// C3: Target Progress Radar
+const c3=echarts.init(document.getElementById('c3'),null,{renderer:'svg'});
+c3.setOption({
+  tooltip:tt(),
+  radar:{
+    shape:'polygon',splitNumber:5,radius:'65%',
+    indicator:[
+      {name:'月活 (500)',max:100},
+      {name:'Referral占比 (20%)',max:100},
+      {name:'100+views文章 (2)',max:100},
+      {name:'陌生人评论 (1)',max:100}
+    ],
+    axisName:{color:T.ink3,fontFamily:'Noto Serif SC',fontSize:12},
+    splitLine:{lineStyle:{color:'#e5e1db'}},
+    splitArea:{areaStyle:{color:['transparent']}},
+    axisLine:{lineStyle:{color:'#e5e1db'}}
+  },
+  series:[{
+    type:'radar',
+    data:[
+      {value:[18,10,0,0],name:'Current',
+        areaStyle:{color:'rgba(220,38,38,0.1)'},
+        lineStyle:{color:T.red},
+        itemStyle:{color:T.red,borderColor:'#fff',borderWidth:2}},
+      {value:[100,100,100,100],name:'Target',
+        lineStyle:{color:T.green,type:'dashed'},
+        itemStyle:{color:T.green,borderColor:'#fff',borderWidth:2},
+        areaStyle:{color:'rgba(5,150,105,0.05)'}}
+    ]
+  }]
+});
+
+// C4: Engagement Rate by Source
+const c4=echarts.init(document.getElementById('c4'),null,{renderer:'svg'});
+c4.setOption({
+  tooltip:tt(),
+  grid:{top:20,right:20,bottom:40,left:60},
+  yAxis:{type:'category',data:['Direct','Bing','CSDN','Google','Twitter','ChatGPT','DuckDuckGo'].reverse(),
+    axisLine:{lineStyle:{color:T.bdr}},axisTick:{show:false},
+    axisLabel:{color:T.ink3,fontFamily:'JetBrains Mono',fontSize:11}},
+  xAxis:{type:'value',max:100,splitLine:splitL,
+    axisLabel:{color:T.ink4,fontFamily:'JetBrains Mono',fontSize:11,formatter:'{value}%'}},
+  series:[{type:'bar',data:[100,100,91.67,80,75,50,9.6].reverse(),
+    itemStyle:{color:function(p){
+      const v=p.value;
+      if(v>=90)return T.green;
+      if(v>=60)return T.accent;
+      if(v>=30)return T.gold;
+      return T.red;
+    },borderRadius:[0,6,6,0]},
+    barWidth:'55%',
+    label:{show:true,position:'right',fontFamily:'JetBrains Mono',fontSize:11,fontWeight:600,formatter:'{c}%'}
+  }]
+});
+
+// C5: Avg Engagement Time
+const c5=echarts.init(document.getElementById('c5'),null,{renderer:'svg'});
+c5.setOption({
+  tooltip:{...tt(),formatter:function(p){return p.name+': '+p.value+'s'}},
+  grid:{top:20,right:20,bottom:40,left:60},
+  yAxis:{type:'category',data:['Direct','cn.bing','DuckDuckGo','Bing','CSDN','Google','Twitter','ChatGPT'].reverse(),
+    axisLine:{lineStyle:{color:T.bdr}},axisTick:{show:false},
+    axisLabel:{color:T.ink3,fontFamily:'JetBrains Mono',fontSize:11}},
+  xAxis:{type:'value',splitLine:splitL,
+    axisLabel:{color:T.ink4,fontFamily:'JetBrains Mono',fontSize:11,formatter:'{value}s'}},
+  series:[{type:'bar',data:[76,73,75,50,22,12,8,8].reverse(),
+    itemStyle:{color:new echarts.graphic.LinearGradient(0,0,1,0,[{offset:0,color:'rgba(124,58,237,0.15)'},{offset:1,color:T.purple}]),borderRadius:[0,6,6,0]},
+    barWidth:'55%',
+    label:{show:true,position:'right',fontFamily:'JetBrains Mono',fontSize:11,fontWeight:600,color:T.purple,formatter:function(p){return p.value>=60?Math.floor(p.value/60)+'m '+(p.value%60)+'s':p.value+'s';}}
+  }]
+});
+
+window.addEventListener('resize',()=>{[c1,c2,c3,c4,c5].forEach(c=>{if(c)c.resize();});});
+</script>
+</body>
+</html>
