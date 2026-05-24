@@ -150,50 +150,50 @@ resampleFilter = "Lanczos"
 
 [[languages.en.menu.main]]
     name = "Blog"
-    url = "/posts/"
+    pageRef = "/posts"
     weight = 1
 [[languages.en.menu.main]]
     name = "AI Indie Hacking"
-    url = "/ai-indie-hacking/"
+    pageRef = "/ai-indie-hacking"
     weight = 2
 [[languages.en.menu.main]]
     name = "AI Coding"
-    url = "/ai-coding-workflow/"
+    pageRef = "/ai-coding-workflow"
     weight = 3
 [[languages.en.menu.main]]
     name = "Creator Workflow"
-    url = "/creator-workflow/"
+    pageRef = "/creator-workflow"
     weight = 4
 [[languages.en.menu.main]]
     name = "Projects"
-    url = "/projects/"
+    pageRef = "/projects"
     weight = 5
 [[languages.en.menu.main]]
     name = "About"
-    url = "/about/"
+    pageRef = "/about"
     weight = 6
 
 [[languages.zh-CN.menu.main]]
   name = "博客"
-  url = "/posts/"
+  pageRef = "/posts"
   weight = 1
 [[languages.zh-CN.menu.main]]
   name = "AI 个体创业"
-  url = "/ai-indie-hacking/"
+  pageRef = "/ai-indie-hacking"
   weight = 2
 [[languages.zh-CN.menu.main]]
   name = "AI 编程"
-  url = "/ai-coding-workflow/"
+  pageRef = "/ai-coding-workflow"
   weight = 3
 [[languages.zh-CN.menu.main]]
   name = "创作者系统"
-  url = "/creator-workflow/"
+  pageRef = "/creator-workflow"
   weight = 4
 [[languages.zh-CN.menu.main]]
   name = "项目"
-  url = "/projects/"
+  pageRef = "/projects"
   weight = 5
 [[languages.zh-CN.menu.main]]
   name = "关于"
-  url = "/about/"
+  pageRef = "/about"
   weight = 6
