@@ -1,6 +1,7 @@
 {{- if and .IsPage (in (slice "posts" "notes" "book-reports") .Section) -}}
   {{- $authorUrl := printf "%s%s" .Site.BaseURL "about/" -}}
-  {{- $author := dict "@type" "Person" "name" .Site.Params.author "url" $authorUrl -}}
+  {{- $authorId := printf "%s%s" .Site.BaseURL "about/#person" -}}
+  {{- $author := dict "@type" "Person" "@id" $authorId "name" "Felix Mao" "alternateName" (slice "毛毛星" "maoxunxing") "url" $authorUrl -}}
   {{- $logo := dict "@type" "ImageObject" "url" (printf "%s%s" .Site.BaseURL "images/avatar.avif") -}}
   {{- $publisher := dict "@type" "Organization" "name" .Site.Title "logo" $logo -}}
   {{- $mainEntity := dict "@type" "WebPage" "@id" .Permalink -}}
