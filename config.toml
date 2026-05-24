@@ -49,6 +49,7 @@ buildFuture = true
     startLevel = 2
 
 [languages.en.permalinks]
+pages = "/:slugorcontentbasename/"
 posts = "/:slugorcontentbasename/"
 notes = "/:slugorcontentbasename/"
 book-reports = "/:slugorcontentbasename/"
@@ -63,6 +64,7 @@ gallery = "/:slugorcontentbasename/"
 raw = "/:slugorcontentbasename/"
 
 [languages.zh-CN.permalinks]
+pages = "/:slugorcontentbasename/"
 posts = "/:slugorcontentbasename/"
 notes = "/:slugorcontentbasename/"
 book-reports = "/:slugorcontentbasename/"
