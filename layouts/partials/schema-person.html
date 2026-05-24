@@ -1,0 +1,36 @@
+{{- if and .IsPage (eq .Section "about") -}}
+  {{- $personId := printf "%s%s" .Site.BaseURL "about/#person" -}}
+  {{- $personUrl := printf "%s%s" .Site.BaseURL "about/" -}}
+  {{- $sameAs := slice
+      "https://twitter.com/maoxunxing/"
+      "https://github.com/XingMXTeam/"
+      "https://www.youtube.com/@Felix_AGI"
+      "https://maodi.substack.com/"
+  -}}
+  {{- $knowsAbout := slice
+      "AI creator"
+      "frontend engineering"
+      "indie hacking"
+      "AI coding"
+      "AI agents"
+      "creator workflows"
+      "personal knowledge systems"
+      "systems thinking"
+      "long-term investing"
+  -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "Person"
+      "@id" $personId
+      "name" "Felix Mao"
+      "alternateName" (slice "毛毛星" "maoxunxing" "Felix Mao")
+      "url" $personUrl
+      "image" (printf "%s%s" .Site.BaseURL "images/avatar.avif")
+      "jobTitle" "AI Creator and Senior Frontend Engineer"
+      "description" (.Description | default "Felix Mao / 毛毛星 is an AI creator, senior frontend engineer, and indie hacker in progress writing about AI coding, creator workflows, frontend engineering, and long-term investing.")
+      "sameAs" $sameAs
+      "knowsAbout" $knowsAbout
+      "email" "mailto:xunxing1989@gmail.com"
+  -}}
+<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+{{- end -}}
