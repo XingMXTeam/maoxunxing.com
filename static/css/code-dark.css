@@ -10,8 +10,7 @@
  */
 
 body.colorscheme-dark .highlight,
-body.colorscheme-dark .chroma,
-body.colorscheme-dark pre {
+body.colorscheme-dark .chroma {
   filter: none !important;
   background: #111418 !important;
   color: #e8e8e8 !important;
@@ -105,8 +104,7 @@ body.colorscheme-dark :not(pre) > code {
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .highlight,
-  body.colorscheme-auto .chroma,
-  body.colorscheme-auto pre {
+  body.colorscheme-auto .chroma {
     filter: none !important;
     background: #111418 !important;
     color: #e8e8e8 !important;
