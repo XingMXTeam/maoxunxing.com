@@ -11,6 +11,8 @@ images:
 
 在日常内容创作、技术文档编写或多语言博客管理中，翻译大量文本往往耗时耗力。Google 推出的 Gemini CLI 为这一场景带来了全新的解决方案，通过命令行即可调用 Gemini 的翻译模型，实现批量、高效的文章翻译。
 
+> 更新说明：Google 已宣布 Gemini CLI 迁移到 Antigravity CLI。若你现在要新搭环境或继续维护工作流，优先阅读这篇最新迁移教程：[Gemini CLI 即将停服：如何迁移到 Antigravity CLI？2026 最新教程](/gemini-cli-antigravity-cli-migration-2026/)。
+
 {{< img src="draw.png" alt="gemini setup steps" maxWidth="960px" align="center" caption="gemini setup steps" >}}
 
 ## Gemini 设置环境变量
