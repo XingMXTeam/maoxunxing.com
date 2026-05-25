@@ -10,6 +10,8 @@ images:
 ---
 In daily content creation, technical documentation writing, or multilingual blog management, translating large amounts of text is often time-consuming and labor-intensive. Google's Gemini CLI offers a new solution for this scenario, allowing you to invoke Gemini's translation model via the command line to achieve bulk, efficient article translation.
 
+> Update: Google has announced the transition from Gemini CLI to Antigravity CLI. If you are setting up a new workflow today, start with this migration guide: [Gemini CLI Is Being Sunset: How to Migrate to Antigravity CLI in 2026](/gemini-cli-antigravity-cli-migration-2026/).
+
 {{< img src="draw.png" alt="gemini setup steps" maxWidth="960px" align="center" caption="gemini setup steps" >}}
 ## Set Gemini environment variables
 `echo 'export GEMINI_API_KEY="AIzaSyDotsntj" >> ~/.config/fish/config.fish`
