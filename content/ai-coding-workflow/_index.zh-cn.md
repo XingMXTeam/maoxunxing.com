@@ -155,7 +155,7 @@ AI 工具编排
 
 ### 2. Skills 和插件
 
-我会逐步安装和集成包括 Superpulse、Gstack 在内的各种 Skills，用来完善工作流。
+我会逐步安装和集成包括 superpowers、Gstack 在内的各种 Skills，用来完善工作流。
 
 Skills 的价值是把一类任务变成可复用能力，而不是每次重新写 Prompt。
 
