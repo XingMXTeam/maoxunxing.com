@@ -1,0 +1,19 @@
+{{- if in (slice "ai-indie-hacking" "ai-coding-workflow" "creator-workflow") .Section -}}
+  {{- $author := dict
+      "@type" "Person"
+      "@id" "https://maoxunxing.com/about/#person"
+      "name" "Felix Mao"
+      "alternateName" (slice "毛毛星" "maoxunxing")
+      "url" "https://maoxunxing.com/about/"
+  -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "CollectionPage"
+      "headline" .Title
+      "description" (.Description | default .Summary | plainify)
+      "url" .Permalink
+      "author" $author
+      "inLanguage" .Language.Lang
+  -}}
+<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+{{- end -}}
