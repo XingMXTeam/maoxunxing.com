@@ -1,0 +1,197 @@
+/* ========== Dark Mode Code Blocks ========== */
+/*
+ * Fix low-contrast code blocks in dark mode.
+ *
+ * main.css currently uses filter-based inversion for Hugo highlight blocks:
+ *   filter: invert(0.88) hue-rotate(180deg)
+ * That makes backgrounds and text turn gray together, lowering contrast.
+ * This file is loaded after main.css and overrides that behavior with
+ * explicit dark-mode colors.
+ */
+
+body.colorscheme-dark .highlight,
+body.colorscheme-dark .chroma,
+body.colorscheme-dark pre {
+  filter: none !important;
+  background: #111418 !important;
+  color: #e8e8e8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+body.colorscheme-dark .highlight pre,
+body.colorscheme-dark .highlight code,
+body.colorscheme-dark pre code,
+body.colorscheme-dark .chroma code {
+  background: transparent !important;
+  color: #e8e8e8 !important;
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+/* Keep plain-text code fences readable even when Hugo emits nested spans. */
+body.colorscheme-dark .highlight span,
+body.colorscheme-dark .chroma span {
+  opacity: 1;
+}
+
+/* Chroma token colors for better contrast on dark background. */
+body.colorscheme-dark .chroma .k,
+body.colorscheme-dark .chroma .kc,
+body.colorscheme-dark .chroma .kd,
+body.colorscheme-dark .chroma .kn,
+body.colorscheme-dark .chroma .kp,
+body.colorscheme-dark .chroma .kr,
+body.colorscheme-dark .chroma .kt,
+body.colorscheme-dark .highlight .k,
+body.colorscheme-dark .highlight .kc,
+body.colorscheme-dark .highlight .kd,
+body.colorscheme-dark .highlight .kn,
+body.colorscheme-dark .highlight .kp,
+body.colorscheme-dark .highlight .kr,
+body.colorscheme-dark .highlight .kt {
+  color: #c792ea !important;
+}
+
+body.colorscheme-dark .chroma .s,
+body.colorscheme-dark .chroma .s1,
+body.colorscheme-dark .chroma .s2,
+body.colorscheme-dark .chroma .sb,
+body.colorscheme-dark .chroma .sc,
+body.colorscheme-dark .chroma .sd,
+body.colorscheme-dark .highlight .s,
+body.colorscheme-dark .highlight .s1,
+body.colorscheme-dark .highlight .s2,
+body.colorscheme-dark .highlight .sb,
+body.colorscheme-dark .highlight .sc,
+body.colorscheme-dark .highlight .sd {
+  color: #c3e88d !important;
+}
+
+body.colorscheme-dark .chroma .nf,
+body.colorscheme-dark .chroma .na,
+body.colorscheme-dark .chroma .nx,
+body.colorscheme-dark .highlight .nf,
+body.colorscheme-dark .highlight .na,
+body.colorscheme-dark .highlight .nx {
+  color: #82aaff !important;
+}
+
+body.colorscheme-dark .chroma .c,
+body.colorscheme-dark .chroma .c1,
+body.colorscheme-dark .chroma .cm,
+body.colorscheme-dark .highlight .c,
+body.colorscheme-dark .highlight .c1,
+body.colorscheme-dark .highlight .cm {
+  color: #8b949e !important;
+}
+
+body.colorscheme-dark .chroma .m,
+body.colorscheme-dark .chroma .mi,
+body.colorscheme-dark .chroma .mf,
+body.colorscheme-dark .highlight .m,
+body.colorscheme-dark .highlight .mi,
+body.colorscheme-dark .highlight .mf {
+  color: #f78c6c !important;
+}
+
+/* Inline code in dark mode. */
+body.colorscheme-dark :not(pre) > code {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #f3f4f6 !important;
+  border-radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .highlight,
+  body.colorscheme-auto .chroma,
+  body.colorscheme-auto pre {
+    filter: none !important;
+    background: #111418 !important;
+    color: #e8e8e8 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow-x: auto;
+  }
+
+  body.colorscheme-auto .highlight pre,
+  body.colorscheme-auto .highlight code,
+  body.colorscheme-auto pre code,
+  body.colorscheme-auto .chroma code {
+    background: transparent !important;
+    color: #e8e8e8 !important;
+    font-weight: 500;
+    line-height: 1.9;
+  }
+
+  body.colorscheme-auto .highlight span,
+  body.colorscheme-auto .chroma span {
+    opacity: 1;
+  }
+
+  body.colorscheme-auto .chroma .k,
+  body.colorscheme-auto .chroma .kc,
+  body.colorscheme-auto .chroma .kd,
+  body.colorscheme-auto .chroma .kn,
+  body.colorscheme-auto .chroma .kp,
+  body.colorscheme-auto .chroma .kr,
+  body.colorscheme-auto .chroma .kt,
+  body.colorscheme-auto .highlight .k,
+  body.colorscheme-auto .highlight .kc,
+  body.colorscheme-auto .highlight .kd,
+  body.colorscheme-auto .highlight .kn,
+  body.colorscheme-auto .highlight .kp,
+  body.colorscheme-auto .highlight .kr,
+  body.colorscheme-auto .highlight .kt {
+    color: #c792ea !important;
+  }
+
+  body.colorscheme-auto .chroma .s,
+  body.colorscheme-auto .chroma .s1,
+  body.colorscheme-auto .chroma .s2,
+  body.colorscheme-auto .chroma .sb,
+  body.colorscheme-auto .chroma .sc,
+  body.colorscheme-auto .chroma .sd,
+  body.colorscheme-auto .highlight .s,
+  body.colorscheme-auto .highlight .s1,
+  body.colorscheme-auto .highlight .s2,
+  body.colorscheme-auto .highlight .sb,
+  body.colorscheme-auto .highlight .sc,
+  body.colorscheme-auto .highlight .sd {
+    color: #c3e88d !important;
+  }
+
+  body.colorscheme-auto .chroma .nf,
+  body.colorscheme-auto .chroma .na,
+  body.colorscheme-auto .chroma .nx,
+  body.colorscheme-auto .highlight .nf,
+  body.colorscheme-auto .highlight .na,
+  body.colorscheme-auto .highlight .nx {
+    color: #82aaff !important;
+  }
+
+  body.colorscheme-auto .chroma .c,
+  body.colorscheme-auto .chroma .c1,
+  body.colorscheme-auto .chroma .cm,
+  body.colorscheme-auto .highlight .c,
+  body.colorscheme-auto .highlight .c1,
+  body.colorscheme-auto .highlight .cm {
+    color: #8b949e !important;
+  }
+
+  body.colorscheme-auto .chroma .m,
+  body.colorscheme-auto .chroma .mi,
+  body.colorscheme-auto .chroma .mf,
+  body.colorscheme-auto .highlight .m,
+  body.colorscheme-auto .highlight .mi,
+  body.colorscheme-auto .highlight .mf {
+    color: #f78c6c !important;
+  }
+
+  body.colorscheme-auto :not(pre) > code {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #f3f4f6 !important;
+    border-radius: 6px;
+  }
+}
