@@ -17,49 +17,63 @@ tags:
 
 AI 编程不只是“让 AI 帮我写代码”，而是重新设计从需求、架构、开发、调试、测试到发布的完整工程流程。
 
+它解决的核心问题是：当前端工程师拥有 AI Agent、代码生成、自动调试和自动部署能力后，应该如何重新组织自己的工作方式，而不是继续用旧流程套新工具。
+
 ## 我的核心判断
+
+AI 编程的价值不在于少写几行代码，而在于把开发流程从“手工执行”升级为“目标驱动 + 反馈循环”。
+
+未来工程师的核心能力会从记忆 API、手写样板代码，转向提出清晰需求、设计系统边界、审查 AI 输出、定位问题、组织上下文和建立自动化流程。
+
+真正有效的 AI 编程工作流，需要同时包含：清晰任务描述、可验证的中间结果、自动化测试、日志反馈、代码审查和部署验证。
 
 ## AI 编程工具分层
 
 ### 1. 编辑器层
 
-Cursor、VS Code、GitHub Copilot 等。
+Cursor、VS Code、GitHub Copilot 等工具适合处理局部代码修改、组件重构、样式调整、解释代码和生成小型功能。
 
 ### 2. 终端 Agent 层
 
-Claude Code、Codex CLI、Gemini CLI、OpenCode 等。
+Claude Code、Codex CLI、Gemini CLI、OpenCode 等更适合跨文件修改、运行命令、调试报错、生成补丁和处理更完整的工程任务。
 
 ### 3. 项目发布层
 
-Vercel、GitHub Actions、Hugo、Next.js 等。
+Vercel、GitHub Actions、Hugo、Next.js 等工具决定了代码如何被构建、测试和上线。AI 编程不能只停留在本地，必须进入真实发布流程。
 
 ### 4. 工作流辅助层
 
-脚本、模板、自动生成封面、自动生成 OG 图片、自动索引等。
+脚本、模板、自动生成封面、自动生成 OG 图片、自动索引、自动提交 sitemap 和 IndexNow，都属于工作流辅助层。它们会把一次性操作变成可复用流程。
 
 ## 推荐阅读
 
-- [AI 编程工具对比（2026）：Cursor、Claude Code、Codex、Gemini CLI](/zh-cn/posts/ai-coding-tools-comparison-2026/)
-- [Gemini CLI 实战：终端 Agent 工作方式与使用场景](/zh-cn/posts/ai-gemini-cli/)
-- [AI 编程实践：如何把 Agent 引入日常研发流程](/zh-cn/posts/ai-coding-practice/)
-- [Code Computer：从“写代码”到“用代码指挥系统”](/zh-cn/posts/code-computer/)
-- [前端工程师的未来：AI 协作时代的工程能力升级](/zh-cn/posts/front-end-engineer-future/)
+<!-- USER TODO: 补充 5-10 篇真实存在且已发布的相关文章链接。不要手写未验证 URL，优先使用 Hugo relref。 -->
 
 ## 我的真实工作流
 
-<!-- USER TODO: 补充你目前 Cursor / Codex / Claude Code / Gemini CLI 的真实使用方式 -->
+<!-- USER TODO: 补充你目前 Cursor / Codex / Claude Code / Gemini CLI 的真实使用方式，包括哪些任务交给 AI，哪些任务自己审查，如何部署和复盘。 -->
 
 ## FAQ
 
 ### AI 编程会替代前端工程师吗？
 
+AI 会替代一部分重复性编码工作，但不会直接替代真正能理解产品、系统和用户体验的前端工程师。前端工程师的价值会从“写页面”转向“定义交互、组织系统、审查质量和推动交付”。
+
 ### Cursor 和 Claude Code 应该怎么选？
+
+Cursor 更适合在编辑器里做局部开发、阅读代码和快速修改。Claude Code 这类终端 Agent 更适合处理跨文件任务、运行命令和持续调试。实际工作中，它们不是互斥关系，而是适合不同层级的任务。
 
 ### Codex CLI 适合什么场景？
 
+Codex CLI 适合把一个明确的工程目标交给 Agent 处理，比如批量修改文件、补测试、修构建错误、整理脚本或生成 PR 草稿。前提是任务边界要清楚，并且修改结果必须经过人工 review。
+
 ### 前端工程师如何用 AI 提升开发效率？
 
+最有效的方式不是让 AI 随便写代码，而是把日常工作拆成稳定流程：需求澄清、组件设计、样式实现、错误定位、测试补充、文档整理和部署检查。每个流程都可以逐步引入 AI。
+
 ### AI 编程最大的风险是什么？
+
+最大的风险是“看起来能跑”，但长期质量下降。AI 可能生成重复逻辑、错误抽象、不一致的风格和隐藏 bug。所以必须保留测试、代码审查、构建验证和人工判断。
 
 ## 相关主题
 
