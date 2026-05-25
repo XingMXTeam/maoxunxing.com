@@ -4,7 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-6892599483138014">
-    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121" />
+    <script>
+      (function () {
+        var preferred = 'light';
+        try {
+          var saved = localStorage.getItem('colorscheme');
+          if (saved === 'dark' || saved === 'light') {
+            preferred = saved;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            preferred = 'dark';
+          }
+        } catch (e) {}
+        if (preferred === 'dark') {
+          document.documentElement.style.backgroundColor = '#212121';
+        }
+      })();
+    </script>
     <link rel="manifest" href="/manifest.json" />
     <meta name="baidu-site-verification" content="codeva-UenLF4MOmu" />
     <link rel="apple-touch-icon" href="/images/avatar.avif" />
