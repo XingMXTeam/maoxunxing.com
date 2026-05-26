@@ -2,16 +2,112 @@
 other = "毛毛星"
 
 [homeBio]
-other = "Hi，我是毛毛星，一名资深前端工程师，互联网大厂从业 10 年+。前网易、阿里员工。热爱阅读，加密货币和指数基金投资者。"
+other = "用 AI 构建，用系统思考，用长期主义复利。"
 
 [homePara1]
-other = """我写<a href="/zh-cn/posts/">技术博客</a>和<a href="/zh-cn/notes/">随笔</a>，分享前端开发、AI 应用和投资策略方面的思考。也会分享<a href="/zh-cn/book-reports/">读书报告</a>。你可以在<a href="/zh-cn/projects/">项目页面</a>查看我的全部项目。"""
+other = """Hi，我是毛毛星。前端工程师，也是一个正在公开构建的创作者。我主要记录 AI Coding、独立产品、创作者工作流、个人知识系统和长期投资。"""
 
 [homePara2]
-other = """目前专注于 Learn、Build and Grow with AGI。探索两个方向：技术（AI 与前端创新实践）和投资（BTC、VGT、VOO 的投资复盘）。每周更新，用简单的视角解读技术与投资。"""
+other = """这个网站是我的公开知识节点：我会测试 AI 工具，做小产品，整理内容生产流程，也会把投资思考翻译成更简单、可执行的系统。"""
 
 [homePara3]
-other = """编程之外，我喜欢阅读、绘画和内容创作。可以看看我的<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">影音记录</a>。"""
+other = """你可以从下面的 Start Here 开始，也可以直接看最新文章，或者在 Substack、Twitter/X、YouTube 和 GitHub 上关注我的持续更新。"""
+
+[homeCtaPrimary]
+other = "从这里开始"
+
+[homeCtaSecondary]
+other = "订阅更新"
+
+[homeFocusTitle]
+other = "我主要写什么"
+
+[homeFocusIntro]
+other = "四条主线：AI 提升杠杆，代码构建产品，媒体放大分发，投资追求长期复利。"
+
+[homeTopic1Title]
+other = "AI Coding"
+
+[homeTopic1Desc]
+other = "Cursor、Claude Code、Codex、Gemini CLI、Vercel 与前端工程中的真实工作流。"
+
+[homeTopic2Title]
+other = "AI 独立产品"
+
+[homeTopic2Desc]
+other = "一个人如何发现问题、构建 AI 产品、设计定价，并建立分发闭环。"
+
+[homeTopic3Title]
+other = "创作者工作流"
+
+[homeTopic3Desc]
+other = "把零散想法变成文章、Newsletter、视频、视觉图和可复用的发布系统。"
+
+[homeTopic4Title]
+other = "长期投资"
+
+[homeTopic4Desc]
+other = "指数基金、科技 ETF、比特币、现金流、风险控制和普通人可执行的资产配置。"
+
+[homeStartHereTitle]
+other = "Start Here"
+
+[homeStartHereIntro]
+other = "第一次来这里，可以先从这几篇代表性内容开始。"
+
+[homeStart1Title]
+other = "AI Coding Playbook"
+
+[homeStart1Desc]
+other = "AI 编程工具选择、工作流和提示词模板。"
+
+[homeStart2Title]
+other = "AI Agent 入门指南"
+
+[homeStart2Desc]
+other = "理解 Agent、协议与真正的效率杠杆。"
+
+[homeStart3Title]
+other = "Karpathy 的个人知识库方法"
+
+[homeStart3Desc]
+other = "用 Git 仓库搭建一个长期演化的个人知识库。"
+
+[homeStart4Title]
+other = "如何构建真正的财富"
+
+[homeStart4Desc]
+other = "关于金钱、复利和长期系统的一种实践视角。"
+
+[homeProofTitle]
+other = "项目与作品"
+
+[homeProofIntro]
+other = "一些我已经发布或正在构建的东西。"
+
+[homeProof1Title]
+other = "Options Made Simple"
+
+[homeProof1Desc]
+other = "一本写给期权新手的入门书。"
+
+[homeProof2Title]
+other = "Twitter Crawler"
+
+[homeProof2Desc]
+other = "一个用于收集和提取高质量 X/Twitter 内容的 Chrome 插件。"
+
+[homeProof3Title]
+other = "maoxunxing.com"
+
+[homeProof3Desc]
+other = "用 Hugo 搭建的个人公开知识节点。"
+
+[homeProof4Title]
+other = "Modern JavaScript 翻译"
+
+[homeProof4Desc]
+other = "《Modern JavaScript for the Impatient》的中文翻译。"
 
 [homeFindMe]
 other = "在这里找到我"

@@ -44,7 +44,98 @@
 
   <p class="home-para">{{ i18n "homePara3" | safeHTML }}</p>
 
+  <p class="home-cta-row">
+    <a class="home-cta home-cta-primary" href="#start-here">{{ i18n "homeCtaPrimary" | default "Start Here" }}</a>
+    <a class="home-cta" href="https://maoxunxing.substack.com/" target="_blank" rel="noopener">{{ i18n "homeCtaSecondary" | default "Subscribe" }}</a>
+  </p>
+
   <div class="home-spacer"></div>
+
+  <hr class="home-divider" />
+
+  <section class="home-block" aria-labelledby="home-focus-title">
+    <h2 id="home-focus-title" class="home-section-title">{{ i18n "homeFocusTitle" | default "What I Write About" }}</h2>
+    <p class="home-muted">{{ i18n "homeFocusIntro" | safeHTML }}</p>
+
+    <div class="home-card-grid">
+      <a class="home-card" href="{{ "ai-coding-workflow/" | relLangURL }}">
+        <span class="home-card-kicker">01</span>
+        <span class="home-card-title">{{ i18n "homeTopic1Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeTopic1Desc" }}</span>
+      </a>
+      <a class="home-card" href="{{ "ai-indie-hacking/" | relLangURL }}">
+        <span class="home-card-kicker">02</span>
+        <span class="home-card-title">{{ i18n "homeTopic2Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeTopic2Desc" }}</span>
+      </a>
+      <a class="home-card" href="{{ "creator-workflow/" | relLangURL }}">
+        <span class="home-card-kicker">03</span>
+        <span class="home-card-title">{{ i18n "homeTopic3Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeTopic3Desc" }}</span>
+      </a>
+      <a class="home-card" href="{{ "posts/invest/" | relLangURL }}">
+        <span class="home-card-kicker">04</span>
+        <span class="home-card-title">{{ i18n "homeTopic4Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeTopic4Desc" }}</span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="home-divider" />
+
+  <section id="start-here" class="home-block" aria-labelledby="start-here-title">
+    <h2 id="start-here-title" class="home-section-title">{{ i18n "homeStartHereTitle" | default "Start Here" }}</h2>
+    <p class="home-muted">{{ i18n "homeStartHereIntro" | safeHTML }}</p>
+
+    <ul class="article-list home-featured-list">
+      <li class="article-item">
+        <span class="article-section-tag">AI</span>
+        <a class="article-title" href="{{ "ai-coding-workflow/" | relLangURL }}">{{ i18n "homeStart1Title" }}</a>
+        <span class="home-featured-desc">{{ i18n "homeStart1Desc" }}</span>
+      </li>
+      <li class="article-item">
+        <span class="article-section-tag">Agent</span>
+        <a class="article-title" href="{{ "ai-indie-hacking/" | relLangURL }}">{{ i18n "homeStart2Title" }}</a>
+        <span class="home-featured-desc">{{ i18n "homeStart2Desc" }}</span>
+      </li>
+      <li class="article-item">
+        <span class="article-section-tag">PKM</span>
+        <a class="article-title" href="{{ "posts/karpathy-knowledge-base-practice/" | relLangURL }}">{{ i18n "homeStart3Title" }}</a>
+        <span class="home-featured-desc">{{ i18n "homeStart3Desc" }}</span>
+      </li>
+      <li class="article-item">
+        <span class="article-section-tag">Investing</span>
+        <a class="article-title" href="{{ "posts/invest/" | relLangURL }}">{{ i18n "homeStart4Title" }}</a>
+        <span class="home-featured-desc">{{ i18n "homeStart4Desc" }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="home-divider" />
+
+  <section class="home-block" aria-labelledby="home-proof-title">
+    <h2 id="home-proof-title" class="home-section-title">{{ i18n "homeProofTitle" | default "Projects & Publications" }}</h2>
+    <p class="home-muted">{{ i18n "homeProofIntro" | safeHTML }}</p>
+
+    <div class="home-card-grid home-proof-grid">
+      <a class="home-card" href="https://leanpub.com/optionsmadesimple" target="_blank" rel="noopener">
+        <span class="home-card-title">{{ i18n "homeProof1Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeProof1Desc" }}</span>
+      </a>
+      <a class="home-card" href="{{ "projects/" | relLangURL }}">
+        <span class="home-card-title">{{ i18n "homeProof2Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeProof2Desc" }}</span>
+      </a>
+      <a class="home-card" href="https://github.com/XingMXTeam/maoxunxing.com" target="_blank" rel="noopener">
+        <span class="home-card-title">{{ i18n "homeProof3Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeProof3Desc" }}</span>
+      </a>
+      <a class="home-card" href="{{ "projects/" | relLangURL }}">
+        <span class="home-card-title">{{ i18n "homeProof4Title" }}</span>
+        <span class="home-card-desc">{{ i18n "homeProof4Desc" }}</span>
+      </a>
+    </div>
+  </section>
 
   <hr class="home-divider" />
 
