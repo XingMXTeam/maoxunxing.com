@@ -1,0 +1,13 @@
+interface:
+  display_name: "GitHub Direct Publish"
+  short_description: "Publish through GitHub when local git is blocked."
+  default_prompt: "Use $github-direct-publish to publish prepared local files to a remote GitHub branch and verify the branch diff."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "github"
+      description: "GitHub connector for repository metadata, branches, contents, refs, and compare operations."
+      transport: "streamable_http"
+      url: "https://api.githubcopilot.com/mcp/"
+policy:
+  allow_implicit_invocation: true
