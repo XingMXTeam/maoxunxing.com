@@ -13,6 +13,96 @@ other = """Currently focused on LEARN, BUILD and GROW with AGI. Exploring two ar
 [homePara3]
 other = """Outside of coding, I enjoy reading, drawing, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">media consumption</a>."""
 
+[homeEyebrow]
+other = "Felix Mao · AI Creator · Frontend Engineer · Indie Hacker"
+
+[homeHeroTitle]
+other = "Building personal leverage with AI, code, and content"
+
+[homeHeroDesc]
+other = "I write about AI coding, AI indie hacking, long-term investing, and ebook experiments. The goal is not to chase hype, but to turn technical skills, writing, and investing experience into reusable, distributable, and sellable assets."
+
+[homePrimaryCTA]
+other = "Start with AI Indie Hacking"
+
+[homePrimaryHref]
+other = "/en/ai-indie-hacking/"
+
+[homeSecondaryCTA]
+other = "Read my AI Coding Workflow"
+
+[homeSecondaryHref]
+other = "/en/ai-coding-workflow/"
+
+[homeStartLabel]
+other = "Start here"
+
+[homeCard1Kicker]
+other = "AI Coding"
+
+[homeCard1Title]
+other = "AI Coding Workflow"
+
+[homeCard1Desc]
+other = "From Copilot and Cursor to Codex / Qoder: how I turn coding into goal-driven task orchestration."
+
+[homeCard1Href]
+other = "/en/ai-coding-workflow/"
+
+[homeCard2Kicker]
+other = "Indie Hacking"
+
+[homeCard2Title]
+other = "AI Indie Hacking"
+
+[homeCard2Desc]
+other = "Why I do not want to rely only on salary, and how I use ebooks, blog GEO, and small tools to build a second curve."
+
+[homeCard2Href]
+other = "/en/ai-indie-hacking/"
+
+[homeCard3Kicker]
+other = "Creator System"
+
+[homeCard3Title]
+other = "Creator Workflow"
+
+[homeCard3Desc]
+other = "From materials, articles, covers, videos, to multi-platform distribution: turning content creation into a compounding system."
+
+[homeCard3Href]
+other = "/en/creator-workflow/"
+
+[homeFocusTitle]
+other = "What I am working on"
+
+[homeFocus1Title]
+other = "AI coding and frontend engineering"
+
+[homeFocus1Desc]
+other = "I study how AI enters real engineering workflows: requirement clarification, context preparation, Plan, code generation, Code Review, Browser Use validation, and human judgment."
+
+[homeFocus2Title]
+other = "AI indie hacking and productizing myself"
+
+[homeFocus2Desc]
+other = "I start with ebooks as small real cash flow, build traffic through blog, Xiaohongshu, WeChat, and Substack, then extract products such as GEO tools from real workflows."
+
+[homeFocus3Title]
+other = "Long-term investing and family cash flow"
+
+[homeFocus3Desc]
+other = "I write about index funds, asset allocation, options, cash flow, and risk control. Investing is not about getting rich overnight, but managing time, risk, and family security with systems thinking."
+
+[homeBookTitle]
+other = "My ebook"
+
+[homeBookDesc]
+other = "I wrote an ebook about options, trying to explain options, risk-reward, and financial tools in a simpler way for ordinary readers."
+
+[homeBookCTA]
+other = "Read Options Made Simple"
+
 [homeFindMe]
 other = "Find me on"
 
