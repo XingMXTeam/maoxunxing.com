@@ -1,5 +1,6 @@
 ---
 title: "Time Difference Between US West Coast Time and Beijing Time"
+description: "Clear PST/PDT vs Beijing time conversion with 15- and 16-hour offsets, examples, and daylight-saving notes to avoid scheduling mistakes."
 date: 2021-11-11T19:29:05+08:00
 tags:
   - Daily

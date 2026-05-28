@@ -1,6 +1,6 @@
 ---
 title: "用 Git 仓库实践 Karpathy 的个人知识库方法：零软件依赖的完整方案"
-description: "受 Karpathy 启发，用 Git + Markdown + LLM 建立 raw->notes->posts 三层知识管道，零额外软件依赖。"
+description: "受 Karpathy 启发，本文详解用 Git + Markdown + LLM 搭建 raw→notes→posts 知识生产流水线，实现从素材收集到博客发布的一体化工作流。"
 date: 2026-04-09
 tags:
   - AI
