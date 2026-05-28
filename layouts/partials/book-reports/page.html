@@ -9,7 +9,7 @@
     <a href="{{ .Params.purchase_url }}">
       {{- $cover := .Resources.GetMatch "cover.*" -}}
       {{- with $cover -}}
-        <img src="{{ .RelPermalink }}" class="align-left book-cover" />
+        <img src="{{ .RelPermalink }}" alt="{{ $.Title }} cover" class="align-left book-cover" />
       {{- end -}}
     </a>
 
