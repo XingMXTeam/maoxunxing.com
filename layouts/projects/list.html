@@ -3,6 +3,7 @@
 {{ end }}
 {{ define "content" }}
 <section class="container projects-page">
+  <h1 class="title">{{ .Title }}</h1>
   {{ range $category, $items := .Params.projects }}
   <div class="project-category">
     <div class="project-category-bg">{{ $category }}</div>
