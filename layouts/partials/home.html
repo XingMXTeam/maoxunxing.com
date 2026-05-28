@@ -34,17 +34,61 @@
 
 <section class="container home-prose">
 
-  <h1 class="home-name">{{ i18n "blogTitle" }}</h1>
+  <section class="home-hero" aria-labelledby="home-hero-title">
+    <p class="home-eyebrow">{{ i18n "homeEyebrow" | safeHTML }}</p>
+    <h1 id="home-hero-title" class="home-hero-title">{{ i18n "homeHeroTitle" | safeHTML }}</h1>
+    <p class="home-hero-desc">{{ i18n "homeHeroDesc" | safeHTML }}</p>
+    <div class="home-hero-actions">
+      <a class="home-action-primary" href="{{ i18n "homePrimaryHref" }}">{{ i18n "homePrimaryCTA" }}</a>
+      <a class="home-action-secondary" href="{{ i18n "homeSecondaryHref" }}">{{ i18n "homeSecondaryCTA" }}</a>
+    </div>
+  </section>
 
-  <p class="home-bio">{{ i18n "homeBio" | safeHTML }}</p>
+  <div class="home-start-grid" aria-label="{{ i18n "homeStartLabel" }}">
+    <a class="home-start-card" href="{{ i18n "homeCard1Href" }}">
+      <span class="home-start-kicker">{{ i18n "homeCard1Kicker" }}</span>
+      <strong>{{ i18n "homeCard1Title" }}</strong>
+      <p>{{ i18n "homeCard1Desc" }}</p>
+    </a>
 
-  <p class="home-para">{{ i18n "homePara1" | safeHTML }}</p>
+    <a class="home-start-card" href="{{ i18n "homeCard2Href" }}">
+      <span class="home-start-kicker">{{ i18n "homeCard2Kicker" }}</span>
+      <strong>{{ i18n "homeCard2Title" }}</strong>
+      <p>{{ i18n "homeCard2Desc" }}</p>
+    </a>
 
-  <p class="home-para">{{ i18n "homePara2" | safeHTML }}</p>
+    <a class="home-start-card" href="{{ i18n "homeCard3Href" }}">
+      <span class="home-start-kicker">{{ i18n "homeCard3Kicker" }}</span>
+      <strong>{{ i18n "homeCard3Title" }}</strong>
+      <p>{{ i18n "homeCard3Desc" }}</p>
+    </a>
+  </div>
 
-  <p class="home-para">{{ i18n "homePara3" | safeHTML }}</p>
+  <section class="home-section-block">
+    <h2 class="home-section-title">{{ i18n "homeFocusTitle" }}</h2>
+    <div class="home-focus-list">
+      <div class="home-focus-item">
+        <strong>{{ i18n "homeFocus1Title" }}</strong>
+        <p>{{ i18n "homeFocus1Desc" }}</p>
+      </div>
+      <div class="home-focus-item">
+        <strong>{{ i18n "homeFocus2Title" }}</strong>
+        <p>{{ i18n "homeFocus2Desc" }}</p>
+      </div>
+      <div class="home-focus-item">
+        <strong>{{ i18n "homeFocus3Title" }}</strong>
+        <p>{{ i18n "homeFocus3Desc" }}</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="home-spacer"></div>
+  <section class="home-section-block">
+    <h2 class="home-section-title">{{ i18n "homeBookTitle" }}</h2>
+    <div class="home-book-card">
+      <p>{{ i18n "homeBookDesc" | safeHTML }}</p>
+      <p><a class="home-action-secondary" href="https://leanpub.com/optionsmadesimple" target="_blank" rel="noopener">{{ i18n "homeBookCTA" }}</a></p>
+    </div>
+  </section>
 
   <hr class="home-divider" />
 
