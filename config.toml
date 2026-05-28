@@ -97,7 +97,7 @@ raw = "/:slugorcontentbasename/"
 
     rtl = false
 
-    custom_css = ["css/main.css", "css/code-dark.css"]
+    custom_css = ["css/main.css", "css/code-dark.css", "css/home.css"]
 
     photoWidths = [300, 600, 800, 1200]
 
