@@ -1,5 +1,6 @@
 ---
 title: "Why Use Colima Instead of Docker Desktop?"
+description: "Compare Colima and Docker Desktop on Mac: CPU, memory, licensing, and workflow trade-offs, plus practical commands to run Docker with a lighter setup."
 date: 2025-09-06
 tags:
   - docker

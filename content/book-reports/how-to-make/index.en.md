@@ -1,5 +1,6 @@
 ---
 title: "Make Bootstrappers Handbook"
+description: "A practical review of Make Bootstrappers Handbook, covering idea validation, MVP building, launch, growth, monetization, and tools for solo founders."
 date: 2023-12-09
 rating: 5
 ---
