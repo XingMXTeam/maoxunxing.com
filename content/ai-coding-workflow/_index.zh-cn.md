@@ -365,7 +365,10 @@ Skills / Rules / Qoder / Codex / MCP 阶段，我开始把 AI 编程流程工程
 
 ## 推荐阅读
 
-<!-- USER TODO: 补充 5-10 篇真实存在且已发布的相关文章链接。不要手写未验证 URL，优先使用 Hugo relref。 -->
+- [如何用 Google Play 购买 ChatGPT Plus：安卓实测路径](/zh-cn/chatgpt-plus-google-play/)
+- [OpenAI Codex CLI 完整教程：安装、AGENTS.md、权限与自动化工作流](/zh-cn/codex-cli-guide/)
+- [Claude Code vs OpenAI Codex：2026 年到底该选哪个 AI 编程 Agent？](/zh-cn/claude-code-vs-codex-2026/)
+- [AI Coding 实战手册：工具选型、工作流与提示词模板](/zh-cn/ai-coding-practice/)
 
 ## FAQ
 

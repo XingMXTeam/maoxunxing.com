@@ -365,7 +365,10 @@ The important future skill is not whether we can manually write a page. It is wh
 
 ## Recommended reading
 
-<!-- USER TODO: Add 5-10 real, published related articles. Avoid unverified handwritten URLs; prefer Hugo relref. -->
+- [How to Buy ChatGPT Plus with Google Play on Android](/en/chatgpt-plus-google-play/)
+- [OpenAI Codex CLI guide: install, AGENTS.md, permissions, and automation workflows](/en/codex-cli-guide/)
+- [Claude Code vs OpenAI Codex in 2026: Which AI Coding Agent Should You Choose?](/en/claude-code-vs-codex-2026/)
+- [AI Coding Playbook: Tool Selection, Workflows, and Prompt Templates](/en/ai-coding-practice/)
 
 ## FAQ
 
