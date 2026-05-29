@@ -345,6 +345,10 @@ Context + Plan + Review + Browser Validation 驱动
 
 AI 可以承担越来越多执行工作，但方向、边界、质量和业务判断仍然需要人负责。
 
+## AI Coding 工具购买与上手指南
+
+- [如何购买 Cursor：国内用户的支付准备与订阅步骤](/zh-cn/posts/how-to-buy-cursor/)
+
 ## 结论：AI 编程不是 Prompt 魔法，而是工程系统
 
 我现在对 AI 编程的理解是：
