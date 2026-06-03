@@ -62,6 +62,7 @@ streams = "/:slugorcontentbasename/"
 demos = "/:slugorcontentbasename/"
 gallery = "/:slugorcontentbasename/"
 raw = "/:slugorcontentbasename/"
+prompts = "/:slugorcontentbasename/"
 
 [languages.zh-CN.permalinks]
 pages = "/:slugorcontentbasename/"
@@ -77,6 +78,7 @@ streams = "/:slugorcontentbasename/"
 demos = "/:slugorcontentbasename/"
 gallery = "/:slugorcontentbasename/"
 raw = "/:slugorcontentbasename/"
+prompts = "/:slugorcontentbasename/"
 
 [params]
     author = "Felix Mao (毛毛星)"
@@ -97,7 +99,7 @@ raw = "/:slugorcontentbasename/"
 
     rtl = false
 
-    custom_css = ["css/main.css", "css/code-dark.css", "css/home.css"]
+    custom_css = ["css/main.css", "css/code-dark.css", "css/home.css", "css/prompts.css"]
 
     photoWidths = [300, 600, 800, 1200]
 
@@ -165,13 +167,17 @@ resampleFilter = "Lanczos"
     pageRef = "/creator-workflow"
     weight = 4
 [[languages.en.menu.main]]
+    name = "Prompts"
+    pageRef = "/prompts"
+    weight = 5
+[[languages.en.menu.main]]
     name = "Projects"
     pageRef = "/projects"
-    weight = 5
+    weight = 6
 [[languages.en.menu.main]]
     name = "About"
     pageRef = "/about"
-    weight = 6
+    weight = 7
 
 [[languages.zh-CN.menu.main]]
   name = "博客"
@@ -190,10 +196,14 @@ resampleFilter = "Lanczos"
   pageRef = "/creator-workflow"
   weight = 4
 [[languages.zh-CN.menu.main]]
+  name = "Prompt 库"
+  pageRef = "/prompts"
+  weight = 5
+[[languages.zh-CN.menu.main]]
   name = "项目"
   pageRef = "/projects"
-  weight = 5
+  weight = 6
 [[languages.zh-CN.menu.main]]
   name = "关于"
   pageRef = "/about"
-  weight = 6
+  weight = 7
