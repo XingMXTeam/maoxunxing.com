@@ -67,7 +67,7 @@ This is my long-running prompt library. It is not just a copy-and-paste prompt d
 
 Future prompts should follow this structure where possible:
 
-```markdown
+````markdown
 ### Prompt title
 
 - Use case: what this prompt solves
@@ -79,16 +79,11 @@ Future prompts should follow this structure where possible:
 ```text
 Put the full prompt here.
 ```
-```
+````
 
 ## AI coding prompts
 
 ### Goal-driven development plan prompt
-
-- Use case: Ask an AI coding agent to understand the goal, break down the task, and identify risks before editing code.
-- Best for: Cursor, Codex, Claude Code, Qoder.
-- Input variables: `{{requirement}}`, `{{related files}}`, `{{technical constraints}}`, `{{acceptance criteria}}`.
-- Output format: Markdown development plan.
 
 ```text
 You are a senior frontend engineer and code reviewer. Before changing any code, generate a development plan based on the following information.
@@ -112,10 +107,6 @@ Do not edit code until I confirm the plan.
 
 ### Frontend micro-adjustment prompt
 
-- Use case: Ask an AI coding agent to make small UI refinements without over-editing.
-- Best for: Cursor, Claude Code, Codex.
-- Output format: Suggested changes plus minimal diff.
-
 ```text
 You are a detail-oriented frontend design engineer. Please only make small refinements. Do not refactor the page. Do not change business logic.
 
@@ -124,29 +115,14 @@ Target effect: {{target effect}}
 Reference style: {{reference style}}
 Constraints: {{constraints}}
 
-Prioritize checking:
-- Consistent spacing
-- Clear typography hierarchy
-- Natural alignment
-- Mobile overflow
-- Dark mode readability
-- Hover and focus states
+Prioritize checking: spacing, typography hierarchy, alignment, mobile overflow, dark mode readability, and hover/focus states.
 
-Output:
-1. Problem diagnosis
-2. Minimal-change solution
-3. Files to modify
-4. Code diff
-5. Acceptance method
+Output: problem diagnosis, minimal-change solution, files to modify, code diff, and acceptance method.
 ```
 
 ## Image generation prompts
 
 ### Real sports broadcast audience capture prompt
-
-- Use case: Generate realistic audience-capture images for short video frames.
-- Best for: image generation models.
-- Output format: 9:16 vertical image.
 
 ```text
 A documentary-style photo set in the audience stands of {{sports event}}, presented as a live sports broadcast screenshot.
@@ -166,9 +142,6 @@ Image ratio: 9:16.
 
 ### 9-frame short video rhythm prompt
 
-- Use case: Turn static image ideas into a Douyin/TikTok-style short video sequence.
-- Best for: image generation models, video generation models, editing workflows.
-
 ```text
 Based on the same subject and the same scene, design 9 continuous frame images for a 3-5 second short video.
 
@@ -185,12 +158,7 @@ Frame 4: 0.7s, a striking pause
 Frames 5-7: 0.35s, natural actions such as drinking, watching the game, or fixing hair
 Frames 8-9: 0.6s, back to focused watching
 
-Requirements:
-- Keep the same identity, outfit, facial features, and hairstyle
-- Each frame should be slightly different
-- Expressions should feel natural, not stiff
-- Keep a realistic candid-capture texture
-- Do not create a collage; each image should be a separate image
+Requirements: keep the same identity, outfit, facial features, and hairstyle; make every frame slightly different; keep expressions natural; do not create a collage.
 ```
 
 ## Writing prompts
@@ -203,16 +171,9 @@ You are a Chinese nonfiction writer and editor. Help me rewrite the article belo
 Topic: {{topic}}
 Target reader: {{target reader}}
 Core argument: {{core argument}}
-Original text:
-{{original text}}
+Original text: {{original text}}
 
-Please follow these rules:
-1. Preserve my personal voice and lived-in expression
-2. Make the logic clearer without over-structuring it
-3. Add useful examples and transitions where needed
-4. Remove repeated and vague expressions
-5. Make the title more clickable without becoming clickbait
-6. Give me 3 alternative titles at the end
+Preserve my personal voice, make the logic clearer, add useful examples, remove vague repetition, and give me 3 alternative titles at the end.
 ```
 
 ## Product design prompts
@@ -222,18 +183,7 @@ Please follow these rules:
 ```text
 Extract a reusable design guide from the following screenshot or reference image.
 
-Goal: another AI model should be able to recreate a similar style from the guide, without pixel-level copying.
-
-Please output:
-1. Overall visual keywords
-2. Color system
-3. Typography and type scale
-4. Spacing rules
-5. Card, button, and input styles
-6. Icon and illustration style
-7. Motion and interaction details
-8. Mobile adaptation notes
-9. A directly reusable prompt version
+Please output: overall visual keywords, color system, typography and type scale, spacing rules, card/button/input styles, icon and illustration style, motion and interaction details, mobile adaptation notes, and a directly reusable prompt version.
 
 Reference material: {{reference material}}
 ```
@@ -250,14 +200,7 @@ Asset or company: {{asset or company}}
 Holding period: {{holding period}}
 My reasoning: {{my reasoning}}
 
-Please output:
-1. The strongest supporting case
-2. The strongest opposing case
-3. Risks I may be ignoring
-4. Data that could validate or falsify the idea
-5. Conditions where position size should be reduced
-6. Conditions where holding may still be reasonable
-7. A final emotionally neutral conclusion
+Please output: the strongest supporting case, the strongest opposing case, risks I may be ignoring, data that could validate or falsify the idea, conditions where position size should be reduced, conditions where holding may still be reasonable, and a final emotionally neutral conclusion.
 
 Do not give direct buy or sell advice. Focus on improving judgment quality.
 ```
@@ -273,14 +216,7 @@ Raw thought: {{raw thought}}
 Related field: {{related field}}
 My background: frontend engineer, AI creator, indie developer, long-term investor
 
-Please output:
-1. One-sentence summary
-2. Why this idea matters
-3. Topics it belongs to
-4. Articles it could become
-5. Products or tools it could become
-6. How it relates to my existing content system
-7. Next action
+Please output: one-sentence summary, why this idea matters, topics it belongs to, articles it could become, products or tools it could become, how it relates to my existing content system, and next action.
 ```
 
 ## GEO note
