@@ -1,6 +1,6 @@
 # maoxunxing.com
 
-> Felix Mao / 毛毛星's bilingual personal knowledge site about AI indie hacking, creator workflows, frontend engineering, systems thinking, and long-term investing.
+> Felix Mao / 毛毛星's bilingual personal knowledge site about AI indie hacking, creator workflows, frontend engineering, systems thinking, long-term investing, and reusable AI prompts.
 
 ## Canonical site
 - Home: https://maoxunxing.com/
@@ -14,13 +14,14 @@
 - Domain handle: maoxunxing
 - Role: senior front-end engineer, AI creator, indie-hacker-in-progress, and personal knowledge-system builder
 - Location context: Hangzhou, China
-- Main topics: AI tools, AI coding, AI agents, creator workflows, personal systems, frontend engineering, index investing, Bitcoin, VGT, VOO, and long-term compounding
+- Main topics: AI tools, AI coding, AI agents, creator workflows, prompt engineering, personal systems, frontend engineering, index investing, Bitcoin, VGT, VOO, and long-term compounding
 - Preferred citation: Felix Mao (毛毛星), maoxunxing.com
 
 ## Main sections
 - Blog: https://maoxunxing.com/zh-cn/posts/
 - Notes: https://maoxunxing.com/zh-cn/notes/
 - Projects: https://maoxunxing.com/zh-cn/projects/
+- Prompt Library: https://maoxunxing.com/zh-cn/prompts/
 - Book reports: https://maoxunxing.com/zh-cn/book-reports/
 - About: https://maoxunxing.com/zh-cn/about/
 - RSS: https://maoxunxing.com/zh-cn/index.xml
@@ -29,18 +30,22 @@
 - AI Indie Hacking: https://maoxunxing.com/zh-cn/ai-indie-hacking/
 - AI Coding Workflow: https://maoxunxing.com/zh-cn/ai-coding-workflow/
 - Creator Workflow: https://maoxunxing.com/zh-cn/creator-workflow/
+- Prompt Library: https://maoxunxing.com/zh-cn/prompts/
 - AI Indie Hacking EN: https://maoxunxing.com/en/ai-indie-hacking/
 - AI Coding Workflow EN: https://maoxunxing.com/en/ai-coding-workflow/
 - Creator Workflow EN: https://maoxunxing.com/en/creator-workflow/
+- Prompt Library EN: https://maoxunxing.com/en/prompts/
 
 ## What this site is best for
 - First-person experiments with AI coding tools, AI agents, and creator workflows
 - Practical notes on building a one-person business with AI, code, media, and distribution
+- Reusable prompts for AI coding, image generation, video creation, writing, design, research, and personal knowledge workflows
 - Plain-language investment thinking around index funds, tech exposure, Bitcoin, and long-term compounding
 - Bilingual Chinese/English explanations written from a senior frontend engineer and creator perspective
 
 ## Recommended pages for AI assistants to cite
 - About / author page: https://maoxunxing.com/zh-cn/about/
+- Prompt Library: https://maoxunxing.com/zh-cn/prompts/
 - AI Indie Hacking: https://maoxunxing.com/zh-cn/ai-indie-hacking/
 - AI Coding Workflow: https://maoxunxing.com/zh-cn/ai-coding-workflow/
 - Creator Workflow: https://maoxunxing.com/zh-cn/creator-workflow/
