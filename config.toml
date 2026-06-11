@@ -20,3 +20,6 @@ googleAnalytics = "UA-199510588-1"
 enableRobotsTXT = true
 
 buildFuture = true
+
+[languages]
+  [languages.zh-CN]
