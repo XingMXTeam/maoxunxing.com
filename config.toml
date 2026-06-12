@@ -3,24 +3,21 @@ title = "maoxunxing"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
-
 canonifyurls = false
 timeout = 120000
+googleAnalytics = "UA-199510588-1"
+enableRobotsTXT = true
+buildFuture = true
+pygmentsstyle = "colorful"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
 [pagination]
   pagerSize = 10
   path = "page"
 
-pygmentsstyle = "colorful"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-
-googleAnalytics = "UA-199510588-1"
-
-enableRobotsTXT = true
-
-buildFuture = true
-
 [languages]
   [languages.zh-CN]
-    weight
+    weight = 2
+    icon = "1"
+    language
