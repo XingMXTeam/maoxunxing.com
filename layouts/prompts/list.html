@@ -1,0 +1,11 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+
+{{ define "content" }}
+  <section class="container page prompt-library-page">
+    <article>
+      {{ .Content }}
+    </article>
+  </section>
+{{ end }}
