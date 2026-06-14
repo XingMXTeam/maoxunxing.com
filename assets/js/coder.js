@@ -1,6 +1,11 @@
 const body = document.body;
+const root = document.documentElement;
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const themeBackgrounds = {
+    light: '#ffffff',
+    dark: '#212121',
+};
 
 // Check if user preference is set, if not check value of body class for light or dark else it means that colorscheme = auto
 if (localStorage.getItem("colorscheme")) {
@@ -34,6 +39,11 @@ function setTheme(theme) {
     if(body) {
         body.classList.remove('colorscheme-' + inverse);
         body.classList.add('colorscheme-' + theme);
+    }
+
+    if (root) {
+        root.style.backgroundColor = themeBackgrounds[theme] || themeBackgrounds.light;
+        root.style.colorScheme = theme;
     }
 
     const iframe = document.querySelector('.utterances-frame')
