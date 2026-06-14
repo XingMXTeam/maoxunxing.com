@@ -1,54 +1,103 @@
 @mixin navigation_dark {
-
-
   .navigation {
-    a, span {
+    .nav-logo,
+    a,
+    span,
+    button,
+    .nav-icon-link,
+    .nav-icon-button {
       color: $fg-color-dark;
     }
-    a {
+
+    a,
+    .nav-logo,
+    .nav-icon-link,
+    .nav-icon-button {
       &:hover,
       &:focus {
         color: $link-color-dark;
       }
     }
-    .navigation-list {
-      @media only screen and (max-width : 768px) {
-        background-color: $bg-color-dark;
-        border-top: solid 2px $alt-bg-color-dark;
-        border-bottom: solid 2px $alt-bg-color-dark;
-      }
-      .menu-separator {
-        @media only screen and (max-width : 768px) {
-          border-top: 2px solid $fg-color-dark;
-        }
-      }
-    }
-    #menu-toggle {
-      @media only screen and (max-width : 768px) {
-        &:checked + label {
-          color: $alt-bg-color-dark;
-        }
-      }
-    }
-    .menu-button {
-      @media only screen and (max-width : 768px) {
-        color: $fg-color-dark;
+
+    #menu-toggle.menu-button {
+      color: $fg-color-dark;
+
+      @media only screen and (max-width: 768px) {
+        background: $bg-color-dark;
+        border-color: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.36);
+
         &:hover,
         &:focus {
           color: $link-color-dark;
+          border-color: rgba(255, 255, 255, 0.34);
         }
       }
     }
-  }
 
+    @media only screen and (max-width: 768px) {
+      &.is-open::before {
+        background: rgba(0, 0, 0, 0.58);
+      }
+
+      .navigation-list {
+        background: $bg-color-dark;
+        border-left-color: rgba(255, 255, 255, 0.14);
+        box-shadow: -24px 0 60px rgba(0, 0, 0, 0.48);
+      }
+
+      .mobile-menu-header,
+      .nav-section {
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .mobile-menu-title,
+      .nav-primary-item > .navigation-link,
+      .nav-utility-row > .nav-icon-link,
+      .nav-utility-row > button.nav-icon-link,
+      .nav-social-grid > .nav-icon-link {
+        color: $fg-color-dark;
+      }
+
+      .mobile-menu-subtitle,
+      .mobile-menu-section-label,
+      .nav-primary-item > .navigation-link::after {
+        color: mix($fg-color-dark, $bg-color-dark, 58%);
+      }
+
+      .nav-primary-item > .navigation-link:hover,
+      .nav-primary-item > .navigation-link:focus {
+        background: rgba(255, 255, 255, 0.08);
+        color: $link-color-dark;
+      }
+
+      .nav-utility-row > .nav-icon-link,
+      .nav-utility-row > button.nav-icon-link,
+      .nav-social-grid > .nav-icon-link {
+        border-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .nav-utility-row > .nav-icon-link:hover,
+      .nav-utility-row > .nav-icon-link:focus,
+      .nav-utility-row > button.nav-icon-link:hover,
+      .nav-utility-row > button.nav-icon-link:focus,
+      .nav-social-grid > .nav-icon-link:hover,
+      .nav-social-grid > .nav-icon-link:focus {
+        border-color: rgba(255, 255, 255, 0.28);
+        background: rgba(255, 255, 255, 0.1);
+        color: $link-color-dark;
+      }
+    }
+  }
 }
 
 body.colorscheme-dark {
-  @include navigation_dark()
+  @include navigation_dark();
 }
 
 body.colorscheme-auto {
   @media (prefers-color-scheme: dark) {
-    @include navigation_dark()
+    @include navigation_dark();
   }
 }
