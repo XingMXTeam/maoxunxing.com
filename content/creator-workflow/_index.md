@@ -56,14 +56,6 @@ Different platforms play different roles: Xiaohongshu tests topics, WeChat build
 
 Review should track which titles work, which topics attract attention, which posts create product leads, and which ideas deserve to become long-term pages.
 
-## Recommended reading
-
-<!-- USER TODO: Add 5-10 real, published related articles. Avoid unverified handwritten URLs; prefer Hugo relref. -->
-
-## My current content system
-
-<!-- USER TODO: Add your current distribution process across Xiaohongshu, WeChat Official Accounts, YouTube, Substack, and personal website, including which steps are already automated. -->
-
 ## FAQ
 
 ### Why do ordinary people need a creator workflow?
