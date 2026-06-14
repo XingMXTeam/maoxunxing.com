@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-6892599483138014">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#050505" />
     <script>
       (function () {
         var preferred = 'light';
+        var root = document.documentElement;
+        var tokens = {
+          light: {
+            '--c-bg': '#ffffff',
+            '--c-fg-deeper': '#000',
+            '--c-fg-deep': '#222',
+            '--c-fg': '#555',
+            '--c-fg-light': '#888',
+            '--c-border': 'rgba(125, 125, 125, 0.3)',
+            '--c-border-hover': '#555',
+            '--c-link': '#1565c0'
+          },
+          dark: {
+            '--c-bg': '#050505',
+            '--c-fg-deeper': '#fff',
+            '--c-fg-deep': '#ddd',
+            '--c-fg': '#bbb',
+            '--c-fg-light': '#888',
+            '--c-border': 'rgba(125, 125, 125, 0.3)',
+            '--c-border-hover': '#bbb',
+            '--c-link': '#64b5f6'
+          }
+        };
+
         try {
           var saved = localStorage.getItem('colorscheme');
           if (saved === 'dark' || saved === 'light') {
@@ -17,11 +41,30 @@
             preferred = 'dark';
           }
         } catch (e) {}
-        if (preferred === 'dark') {
-          document.documentElement.style.backgroundColor = '#212121';
+
+        root.dataset.initialColorScheme = preferred;
+        root.style.colorScheme = preferred;
+        root.style.backgroundColor = preferred === 'dark' ? '#050505' : '#ffffff';
+        var activeTokens = tokens[preferred] || tokens.light;
+        for (var token in activeTokens) {
+          root.style.setProperty(token, activeTokens[token]);
         }
       })();
     </script>
+    <style>
+      html[data-initial-color-scheme="dark"] {
+        background: #050505;
+        color-scheme: dark;
+      }
+      html[data-initial-color-scheme="light"] {
+        background: #ffffff;
+        color-scheme: light;
+      }
+      html[data-initial-color-scheme="dark"] body {
+        background: #050505;
+        color: #bbb;
+      }
+    </style>
     <link rel="manifest" href="/manifest.json" />
     <meta name="baidu-site-verification" content="codeva-UenLF4MOmu" />
     <link rel="apple-touch-icon" href="/images/avatar.avif" />
