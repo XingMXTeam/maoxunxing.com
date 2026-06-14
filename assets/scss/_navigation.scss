@@ -190,7 +190,8 @@ body.nav-menu-open {
       flex-direction: column;
       align-items: stretch;
       gap: 0.2rem;
-      width: min(calc(100vw - 2.8rem), 34rem);
+      width: calc(100vw - 2.8rem);
+      max-width: 34rem;
       max-height: calc(100vh - 9rem);
       margin: 0;
       padding: 1.15rem;
@@ -200,6 +201,7 @@ body.nav-menu-open {
       border: 1px solid rgba(125, 125, 125, 0.18);
       border-radius: 24px;
       box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+      box-sizing: border-box;
       visibility: hidden;
       opacity: 0;
       pointer-events: none;
