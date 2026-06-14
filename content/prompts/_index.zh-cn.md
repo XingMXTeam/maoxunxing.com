@@ -1,7 +1,7 @@
 ---
 title: "Prompt 库：我常用的 AI 提示词"
 date: 2026-06-03
-description: "Felix Mao（毛毛星）整理的常用 Prompt，包括 AI 编程、图片生成、视频创作、写作、产品设计、研究分析和个人工作流。"
+description: "我整理的一些真实用过、值得长期留下来的 Prompt，覆盖 AI 编程、图片生成、视频创作、写作、产品设计、研究分析和个人工作流。"
 keywords: "Prompt库,提示词库,AI提示词,AI编程Prompt,AI绘图Prompt,AI视频Prompt,内容创作Prompt,Claude Prompt,ChatGPT Prompt,Codex Prompt,Cursor Prompt,毛毛星,Felix Mao,maoxunxing"
 tags:
   - Prompt 库
@@ -13,9 +13,9 @@ tags:
 
 # Prompt 库
 
-<div class="prompt-page" itemscope itemtype="https://schema.org/CollectionPage">
+<div class="prompt-page">
 
-<p class="prompt-lead" itemprop="description">
+<p class="prompt-lead">
 这里放一些我真实用过、觉得值得留下来的 Prompt。不追求数量，只放那些我在写代码、做内容、生成图片、做视频、研究问题时真的会反复用到的版本。
 </p>
 
@@ -23,23 +23,25 @@ tags:
   <div>
     <p class="prompt-eyebrow">Felix Mao / 毛毛星</p>
     <h2>我常用的 Prompt</h2>
-    <p>有些 Prompt 用来提高工作效率，有些用来稳定创作风格，有些只是帮我把脑子里零散的想法整理清楚。这个页面会慢慢更新。</p>
+    <p>这些 Prompt 有些是为了提高工作效率，有些是为了稳定创作风格，有些只是帮我把脑子里零散的想法整理清楚。这个页面会慢慢更新。</p>
   </div>
-  <div class="prompt-hero-meta" aria-label="Prompt library metadata">
-    <span>持续更新</span>
-    <span>我自己在用</span>
-    <span>可复制</span>
-    <span>中文为主</span>
-  </div>
+</div>
+
+<div class="prompt-category-list">
+  <a class="prompt-category" href="#ai-编程">AI 编程</a>
+  <a class="prompt-category" href="#图片生成">图片生成</a>
+  <a class="prompt-category" href="#视频创作">视频创作</a>
+  <a class="prompt-category" href="#写作与改稿">写作与改稿</a>
+  <a class="prompt-category" href="#产品与设计">产品与设计</a>
+  <a class="prompt-category" href="#研究与分析">研究与分析</a>
+  <a class="prompt-category" href="#工作流">工作流</a>
 </div>
 
 ## AI 编程
 
 ### 目标驱动开发计划 Prompt
 
-- 场景：让 AI 在动代码之前先理解目标、拆任务、识别风险。
-- 适合模型：Cursor、Codex、Claude Code、Qoder。
-- 输出格式：Markdown 开发计划。
+这条适合在 Cursor、Codex、Claude Code 这类工具里动手改代码前使用。我的习惯是先让 AI 把需求、风险、边界和最小改动路径说清楚，再开始写代码。
 
 ```text
 你是一名资深前端工程师和代码审查者。请在修改代码之前，先基于下面的信息生成一份开发计划。
@@ -63,6 +65,8 @@ tags:
 
 ### 前端 UI 细微调整 Prompt
 
+这条适合用来做页面细节打磨。它的重点不是大改，而是约束 AI 只处理间距、字号、对齐、移动端溢出、深色模式这类细节问题。
+
 ```text
 你是一名注重细节的前端设计工程师。请只做细微调整，不要重构页面，不要改变业务逻辑。
 
@@ -80,6 +84,8 @@ tags:
 
 ### 真实体育直播观众抓拍 Prompt
 
+这条是我用来做“体育直播观众席真实抓拍感”的通用版本，重点是去掉写真感、网红感和过度修图感。
+
 ```text
 一张纪录片风格的照片，场景设置在{{体育赛事}}的观众看台上，采用体育赛事直播截图的形式。
 
@@ -96,9 +102,7 @@ tags:
 
 ### 法网观众真实抓拍 Prompt
 
-- 场景：生成法国网球公开赛罗兰·加洛斯观众席中，被直播镜头无意扫到的真实亚洲女性观众画面。
-- 适合模型：图片生成模型。
-- 输出格式：纪录片风格、体育直播截图、真实抓拍质感。
+这是上面体育观众抓拍 Prompt 的法网版本，更强调罗兰·加洛斯、红土球场、FILA 网球服和直播截图质感。
 
 ```text
 一张纪录片风格的照片，场景设置在法国网球公开赛罗兰•加洛斯球场的观众看台上，采用体育赛事直播截图的形式。
@@ -135,6 +139,8 @@ tags:
 
 ### 9 张图生成短视频节奏设计 Prompt
 
+这条适合把静态图做成短视频前使用。它解决的是“连续帧应该怎么设计才像一个自然瞬间”，而不是简单让图片乱动。
+
 ```text
 请基于同一人物、同一场景，设计 9 张连续帧图片，用来生成一个 3-5 秒的短视频。
 
@@ -158,6 +164,8 @@ tags:
 
 ### 文章结构化改稿 Prompt
 
+这条是给中文文章改稿用的。核心是保留个人语气，不要把文章改成那种一眼看出来的 AI 公文。
+
 ```text
 你是一名中文非虚构写作者和编辑。请帮我改写下面这篇文章，但不要把它改成 AI 味很重的公文。
 
@@ -173,6 +181,8 @@ tags:
 
 ### Design guide 抽取 Prompt
 
+这条适合看到一个喜欢的页面或截图后，把它拆成可复用的设计风格说明，再交给别的模型或前端工具继续使用。
+
 ```text
 请从下面的页面截图或参考图中抽取一份可复用的 design guide。
 
@@ -184,6 +194,8 @@ tags:
 ## 研究与分析
 
 ### 投资研究反方检查 Prompt
+
+这条适合在自己已经有一个投资判断时使用。它不是让 AI 告诉我买还是卖，而是逼自己看见反方证据和可能忽略的风险。
 
 ```text
 你是一名严谨的投资研究员。请不要只支持我的观点，而是从反方角度检查这个投资想法。
@@ -202,6 +214,8 @@ tags:
 
 ### 个人知识沉淀 Prompt
 
+这条适合把一段零散想法变成可以放进知识库的笔记，尤其适合用来沉淀文章选题、产品想法和长期主题。
+
 ```text
 请把下面这段零散想法整理成一条可沉淀到个人知识库的笔记。
 
@@ -214,9 +228,7 @@ tags:
 
 ### 理解检查型老师 Prompt
 
-- 场景：让 AI 像一位有效老师一样，分阶段确认学习者是否真的理解当前内容。
-- 适合模型：ChatGPT、Claude、Gemini、带问答控件的 Agent。
-- 输出格式：阶段式教学、Markdown 检查清单、开放题或选择题。
+这条适合学习复杂内容时使用。它会要求模型像老师一样分阶段确认你是否真的理解，而不是一次性把答案全讲完。
 
 ```text
 you are a wise and incredibly effective teacher. your goal is to make sure the human deeply understands the session.
