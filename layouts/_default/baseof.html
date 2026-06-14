@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" data-initial-color-scheme="dark" style="background:#050505;color-scheme:dark;">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="google-adsense-account" content="ca-pub-6892599483138014">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#050505" />
@@ -52,6 +53,14 @@
       })();
     </script>
     <style>
+      html {
+        background: #050505;
+        color-scheme: dark;
+      }
+      body {
+        background: #050505;
+        color: #bbb;
+      }
       html[data-initial-color-scheme="dark"] {
         background: #050505;
         color-scheme: dark;
@@ -63,6 +72,10 @@
       html[data-initial-color-scheme="dark"] body {
         background: #050505;
         color: #bbb;
+      }
+      html[data-initial-color-scheme="light"] body {
+        background: #ffffff;
+        color: #555;
       }
     </style>
     <link rel="manifest" href="/manifest.json" />
