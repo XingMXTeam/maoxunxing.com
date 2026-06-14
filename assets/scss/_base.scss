@@ -7,11 +7,12 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+  background-color: $bg-color;
 }
 
 body {
   color: $fg-color;
-  background-color: $bg-color;
+  background-color: inherit;
 	font-family: $text-font-family;
 	font-size: 1.9em;
 	font-weight: 300;
