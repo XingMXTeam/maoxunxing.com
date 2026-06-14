@@ -27,10 +27,15 @@
       <i class="fas fa-bars" aria-hidden="true"></i>
     </button>
 
-    <ul class="navigation-list" id="site-navigation">
+    <ul class="navigation-list" id="site-navigation" aria-hidden="true">
+      <li class="navigation-item mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+        <span class="mobile-menu-subtitle">Navigate Felix Mao's writing and projects</span>
+      </li>
+
       {{ with .Site.Menus.main }}
         {{ range sort . }}
-          <li class="navigation-item">
+          <li class="navigation-item nav-primary-item">
             <a class="navigation-link" href="{{ .URL | absLangURL }}"
               >{{ .Name }}</a
             >
@@ -38,71 +43,75 @@
         {{ end }}
       {{ end }}
 
-      <li class="navigation-item nav-icon-item">
-        <div class="nav-search-box" id="docsearch"></div>
-      </li>
+      <li class="navigation-item nav-section nav-utilities">
+        <span class="mobile-menu-section-label">Tools</span>
+        <div class="nav-utility-row">
+          <div class="nav-search-box" id="docsearch"></div>
 
-      <!-- Social links -->
-      {{- range sort .Site.Params.social -}}
-      <li class="navigation-item nav-icon-item">
-        <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
-          {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
-          {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="nav-icon-img" />
-          {{ end }}
-        </a>
-      </li>
-      {{- end -}}
+          {{ if hugo.IsMultilingual }}
+          <button
+            type="button"
+            id="dark-mode-toggle"
+            title="Toggle color scheme"
+            aria-label="Toggle color scheme"
+            aria-pressed="false"
+            class="nav-icon-link nav-icon-button"
+          >
+            <svg
+              class="inline dark-mode-icon"
+              width="1.2em"
+              height="1.2em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              style="vertical-align: sub;"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <svg
+              class="inline light-mode-icon"
+              width="1.2em"
+              height="1.2em"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              style="vertical-align: sub;"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
 
-      {{ if hugo.IsMultilingual }}
-            <li class="navigation-item nav-icon-item">
-              <button
-                type="button"
-                id="dark-mode-toggle"
-                title="Toggle color scheme"
-                aria-label="Toggle color scheme"
-                aria-pressed="false"
-                class="nav-icon-link nav-icon-button"
-              >
-                <svg
-                  class="inline dark-mode-icon"
-                  width="1.2em"
-                  height="1.2em"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                  style="vertical-align: sub;"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938A7.999 7.999 0 0 0 4 12z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-                <svg
-                  class="inline light-mode-icon"
-                  width="1.2em"
-                  height="1.2em"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                  style="vertical-align: sub;"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    d="M12 18a6 6 0 1 1 0-12a6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636L5.636 7.05L3.515 4.93zM16.95 18.364l1.414-1.414l2.121 2.121l-1.414 1.414l-2.121-2.121zm2.121-14.85l1.414 1.415l-2.121 2.121l-1.414-1.414l2.121-2.121zM5.636 16.95l1.414 1.414l-2.121 2.121l-1.414-1.414l2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </button>
-            </li>
-            {{- $translations := .AllTranslations | default .Site.Home.AllTranslations -}}
-            {{ range $translations }}
-              {{ if ne $.Site.Language .Language }}
-            <li class="navigation-item nav-icon-item">
-              <a href="{{ .Permalink }}" id="languageMenu" class="nav-icon-link" title="{{ .Language.LanguageName }}" aria-label="Switch language to {{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
-            </li>
-              {{ end }}
+          {{- $translations := .AllTranslations | default .Site.Home.AllTranslations -}}
+          {{ range $translations }}
+            {{ if ne $.Site.Language .Language }}
+          <a href="{{ .Permalink }}" id="languageMenu" class="nav-icon-link nav-language-link" title="{{ .Language.LanguageName }}" aria-label="Switch language to {{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
             {{ end }}
+          {{ end }}
+          {{ end }}
+        </div>
+      </li>
+
+      {{ with .Site.Params.social }}
+      <li class="navigation-item nav-section nav-socials">
+        <span class="mobile-menu-section-label">Follow</span>
+        <div class="nav-social-grid">
+          {{- range sort . -}}
+          <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
+            {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
+            {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="nav-icon-img" />
+            {{ end }}
+          </a>
+          {{- end -}}
+        </div>
+      </li>
       {{ end }}
     </ul>
   </section>
