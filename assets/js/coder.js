@@ -2,6 +2,7 @@ const body = document.body;
 const root = document.documentElement;
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const menuToggle = document.getElementById('menu-toggle');
+const menuToggleIcon = menuToggle ? menuToggle.querySelector('i') : null;
 const navigation = document.querySelector('.navigation');
 const navigationList = document.getElementById('site-navigation');
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -74,6 +75,8 @@ if (darkModeMediaQuery.addEventListener) {
 }
 
 if (menuToggle && navigation && navigationList) {
+    setMenuState(false);
+
     menuToggle.addEventListener('click', () => {
         setMenuState(!navigation.classList.contains('is-open'));
     });
@@ -89,7 +92,7 @@ if (menuToggle && navigation && navigationList) {
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && navigation.classList.contains('is-open')) {
             setMenuState(false);
             menuToggle.focus();
         }
@@ -145,8 +148,16 @@ function rememberTheme(theme) {
 }
 
 function setMenuState(isOpen) {
-    if (!menuToggle || !navigation) return;
+    if (!menuToggle || !navigation || !navigationList) return;
+
     navigation.classList.toggle('is-open', isOpen);
+    body.classList.toggle('nav-menu-open', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    navigationList.setAttribute('aria-hidden', String(!isOpen));
+
+    if (menuToggleIcon) {
+        menuToggleIcon.classList.toggle('fa-bars', !isOpen);
+        menuToggleIcon.classList.toggle('fa-times', isOpen);
+    }
 }
