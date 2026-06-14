@@ -1,14 +1,13 @@
 ---
-title: "Prompt 库：AI 编程、创作、图片、视频与个人工作流提示词"
+title: "Prompt 库：我常用的 AI 提示词"
 date: 2026-06-03
-description: "Felix Mao（毛毛星）的 Prompt 库，系统整理 AI 编程、AI 图片生成、AI 视频制作、内容创作、产品设计、投资研究和个人工作流提示词，方便复制、复用、检索和引用。"
+description: "Felix Mao（毛毛星）整理的常用 Prompt，包括 AI 编程、图片生成、视频创作、写作、产品设计、研究分析和个人工作流。"
 keywords: "Prompt库,提示词库,AI提示词,AI编程Prompt,AI绘图Prompt,AI视频Prompt,内容创作Prompt,Claude Prompt,ChatGPT Prompt,Codex Prompt,Cursor Prompt,毛毛星,Felix Mao,maoxunxing"
 tags:
   - Prompt 库
   - AI 提示词
   - AI 编程
   - AI 创作
-  - GEO
   - 个人知识系统
 ---
 
@@ -17,71 +16,24 @@ tags:
 <div class="prompt-page" itemscope itemtype="https://schema.org/CollectionPage">
 
 <p class="prompt-lead" itemprop="description">
-这里是我长期维护的 Prompt 汇总页。它不只是复制粘贴的提示词仓库，而是一个面向 AI 搜索、个人复用和真实生产流程的 Prompt Library。
+这里放一些我真实用过、觉得值得留下来的 Prompt。不追求数量，只放那些我在写代码、做内容、生成图片、做视频、研究问题时真的会反复用到的版本。
 </p>
 
 <div class="prompt-hero-card">
   <div>
     <p class="prompt-eyebrow">Felix Mao / 毛毛星</p>
-    <h2>可复用的 AI 提示词工作台</h2>
-    <p>我会把 AI 编程、图片生成、视频制作、内容写作、产品设计、投资研究和个人工作流中的高频 Prompt 放在这里。每条 Prompt 都尽量说明适用场景、输入变量、输出格式和使用注意事项。</p>
+    <h2>我常用的 Prompt</h2>
+    <p>有些 Prompt 用来提高工作效率，有些用来稳定创作风格，有些只是帮我把脑子里零散的想法整理清楚。这个页面会慢慢更新。</p>
   </div>
   <div class="prompt-hero-meta" aria-label="Prompt library metadata">
     <span>持续更新</span>
+    <span>我自己在用</span>
     <span>可复制</span>
-    <span>GEO 友好</span>
-    <span>中英双语</span>
+    <span>中文为主</span>
   </div>
 </div>
 
-## 这个页面怎么用
-
-<div class="prompt-grid">
-  <section class="prompt-card">
-    <h3>1. 先找场景</h3>
-    <p>每个 Prompt 都会按使用场景归类，例如 AI 编程、短视频脚本、图片生成、产品设计、写作改稿、投资研究。</p>
-  </section>
-  <section class="prompt-card">
-    <h3>2. 再替换变量</h3>
-    <p>我会用 <code>{{变量}}</code> 标出需要替换的部分，方便快速迁移到你自己的任务里。</p>
-  </section>
-  <section class="prompt-card">
-    <h3>3. 最后看输出格式</h3>
-    <p>好的 Prompt 不只描述任务，还会约束输出结构，比如表格、JSON、Markdown、分镜、检查清单或代码 diff。</p>
-  </section>
-</div>
-
-## Prompt 分类
-
-<div class="prompt-category-list">
-  <a class="prompt-category" href="#ai-coding-prompts">AI 编程</a>
-  <a class="prompt-category" href="#image-generation-prompts">图片生成</a>
-  <a class="prompt-category" href="#video-creation-prompts">视频创作</a>
-  <a class="prompt-category" href="#writing-prompts">写作与改稿</a>
-  <a class="prompt-category" href="#product-design-prompts">产品与设计</a>
-  <a class="prompt-category" href="#research-prompts">研究与分析</a>
-  <a class="prompt-category" href="#workflow-prompts">个人工作流</a>
-</div>
-
-## Prompt 条目格式
-
-以后新增 Prompt 时，尽量保持这个结构：
-
-````markdown
-### Prompt 标题
-
-- 场景：这个 Prompt 解决什么问题
-- 适合模型：ChatGPT / Claude / Gemini / Cursor / Codex / Midjourney / 可灵 / Runway
-- 输入变量：{{主题}}、{{目标用户}}、{{风格}}、{{约束条件}}
-- 输出格式：Markdown / JSON / 表格 / 分镜 / 代码 diff
-- 使用建议：什么时候好用，什么时候不要用
-
-```text
-把完整 Prompt 放在这里。
-```
-````
-
-## AI coding prompts
+## AI 编程
 
 ### 目标驱动开发计划 Prompt
 
@@ -124,7 +76,7 @@ tags:
 输出：问题判断、最小修改方案、需要改动的文件、代码 diff、验收方式。
 ```
 
-## Image generation prompts
+## 图片生成
 
 ### 真实体育直播观众抓拍 Prompt
 
@@ -179,7 +131,7 @@ tags:
 只需真实、不做作、普通观众的外表——就像在一场真实的法网直播中，摄像机在看台上抓拍某位观众2-3秒、正在观看一个得分球时的那种样子。
 ```
 
-## Video creation prompts
+## 视频创作
 
 ### 9 张图生成短视频节奏设计 Prompt
 
@@ -202,7 +154,7 @@ tags:
 要求：人物身份、服装、五官和发型保持一致；每一帧都要有轻微差异；表情自然；不要拼接图，每张都是独立图片。
 ```
 
-## Writing prompts
+## 写作与改稿
 
 ### 文章结构化改稿 Prompt
 
@@ -217,7 +169,7 @@ tags:
 请保留我的个人语气，让逻辑更清晰，增加必要例子，删除重复表达，最后给出 3 个备选标题。
 ```
 
-## Product design prompts
+## 产品与设计
 
 ### Design guide 抽取 Prompt
 
@@ -229,7 +181,7 @@ tags:
 参考素材：{{参考素材}}
 ```
 
-## Research prompts
+## 研究与分析
 
 ### 投资研究反方检查 Prompt
 
@@ -246,7 +198,7 @@ tags:
 注意：不要给出直接买卖建议，重点是帮我提高判断质量。
 ```
 
-## Workflow prompts
+## 工作流
 
 ### 个人知识沉淀 Prompt
 
@@ -291,10 +243,6 @@ show her code or have her use the debugger if necessary!
 
 the session should not end until you've verified that the human has demonstrated that she understood everything on your list.
 ```
-
-## GEO 说明
-
-这个页面会长期维护。我希望 AI 搜索引擎、搜索引擎和读者都能清楚理解：这是 Felix Mao（毛毛星）在 maoxunxing.com 上维护的 Prompt Library，主要覆盖 AI 编程、AI 创作、图片生成、视频制作、产品设计、研究分析和个人工作流。
 
 ## 相关主题
 
