@@ -1,57 +1,31 @@
 ---
-title: "Prompt Library: AI coding, creation, image, video, and personal workflow prompts"
+title: "Prompt Library: Prompts I Actually Use"
 date: 2026-06-03
-description: "Felix Mao's prompt library for AI coding, image generation, video creation, writing, product design, investment research, and personal workflows. Built for copying, reuse, search, and AI citation."
+description: "A small collection of prompts I actually use for coding, image generation, video creation, writing, product design, research, and personal workflows."
 keywords: "prompt library,AI prompts,AI coding prompts,image generation prompts,video prompts,writing prompts,Claude prompts,ChatGPT prompts,Codex prompts,Cursor prompts,Felix Mao,maoxunxing"
 tags:
   - Prompt Library
   - AI Prompts
   - AI Coding
   - AI Creation
-  - GEO
   - Personal Knowledge System
 ---
 
 # Prompt Library
 
-<div class="prompt-page" itemscope itemtype="https://schema.org/CollectionPage">
+<div class="prompt-page">
 
-<p class="prompt-lead" itemprop="description">
-This is my long-running prompt library. It is not just a copy-and-paste prompt dump. It is a reusable prompt workspace for AI search, personal workflows, and real production tasks.
+<p class="prompt-lead">
+This page is where I keep prompts that I have actually used and want to keep around. I am not trying to collect as many prompts as possible. I only keep the ones I may return to when coding, writing, making images, making videos, or thinking through a problem.
 </p>
 
 <div class="prompt-hero-card">
   <div>
     <p class="prompt-eyebrow">Felix Mao / 毛毛星</p>
-    <h2>A reusable AI prompt workspace</h2>
-    <p>I collect prompts for AI coding, image generation, video creation, writing, product design, investment research, and personal workflows here. Each prompt should explain its use case, input variables, output format, and practical notes.</p>
-  </div>
-  <div class="prompt-hero-meta" aria-label="Prompt library metadata">
-    <span>Updated over time</span>
-    <span>Copy-friendly</span>
-    <span>GEO-friendly</span>
-    <span>Bilingual</span>
+    <h2>Prompts I keep coming back to</h2>
+    <p>Some of these prompts help me work faster. Some help me keep a creative style stable. Some simply help me organize messy thoughts. I will update this page slowly.</p>
   </div>
 </div>
-
-## How to use this page
-
-<div class="prompt-grid">
-  <section class="prompt-card">
-    <h3>1. Start with the use case</h3>
-    <p>Prompts are grouped by scenarios such as AI coding, short video scripts, image generation, product design, writing, editing, and research.</p>
-  </section>
-  <section class="prompt-card">
-    <h3>2. Replace the variables</h3>
-    <p>I use <code>{{variables}}</code> for fields that should be replaced, so each prompt can be reused quickly.</p>
-  </section>
-  <section class="prompt-card">
-    <h3>3. Check the output format</h3>
-    <p>A useful prompt does not only describe the task. It also constrains the output: Markdown, JSON, tables, storyboards, checklists, or code diffs.</p>
-  </section>
-</div>
-
-## Prompt categories
 
 <div class="prompt-category-list">
   <a class="prompt-category" href="#ai-coding-prompts">AI coding</a>
@@ -60,30 +34,14 @@ This is my long-running prompt library. It is not just a copy-and-paste prompt d
   <a class="prompt-category" href="#writing-prompts">Writing and editing</a>
   <a class="prompt-category" href="#product-design-prompts">Product and design</a>
   <a class="prompt-category" href="#research-prompts">Research and analysis</a>
-  <a class="prompt-category" href="#workflow-prompts">Personal workflow</a>
+  <a class="prompt-category" href="#workflow-prompts">Workflow</a>
 </div>
-
-## Prompt entry format
-
-Future prompts should follow this structure where possible:
-
-````markdown
-### Prompt title
-
-- Use case: what this prompt solves
-- Best for: ChatGPT / Claude / Gemini / Cursor / Codex / Midjourney / Runway
-- Input variables: {{topic}}, {{audience}}, {{style}}, {{constraints}}
-- Output format: Markdown / JSON / table / storyboard / code diff
-- Notes: when it works well and when it should not be used
-
-```text
-Put the full prompt here.
-```
-````
 
 ## AI coding prompts
 
 ### Goal-driven development plan prompt
+
+I use this before asking Cursor, Codex, or Claude Code to change code. It forces the model to understand the goal, risks, edge cases, and minimal-change path before touching files.
 
 ```text
 You are a senior frontend engineer and code reviewer. Before changing any code, generate a development plan based on the following information.
@@ -107,6 +65,8 @@ Do not edit code until I confirm the plan.
 
 ### Frontend micro-adjustment prompt
 
+This one is for polishing UI details without letting the model rewrite the whole page or change business logic.
+
 ```text
 You are a detail-oriented frontend design engineer. Please only make small refinements. Do not refactor the page. Do not change business logic.
 
@@ -123,6 +83,8 @@ Output: problem diagnosis, minimal-change solution, files to modify, code diff, 
 ## Image generation prompts
 
 ### Real sports broadcast audience capture prompt
+
+This is my general prompt for creating a realistic sports broadcast spectator shot. The key is to avoid fashion-photo, influencer, and over-retouched portrait aesthetics.
 
 ```text
 A documentary-style photo set in the audience stands of {{sports event}}, presented as a live sports broadcast screenshot.
@@ -141,6 +103,8 @@ Image ratio: 9:16.
 ## Video creation prompts
 
 ### 9-frame short video rhythm prompt
+
+This is useful when turning static images into a short video. It focuses on rhythm and subtle differences between frames instead of random movement.
 
 ```text
 Based on the same subject and the same scene, design 9 continuous frame images for a 3-5 second short video.
@@ -165,6 +129,8 @@ Requirements: keep the same identity, outfit, facial features, and hairstyle; ma
 
 ### Structured article rewrite prompt
 
+I use this when I want an article to become clearer without losing my own voice.
+
 ```text
 You are a Chinese nonfiction writer and editor. Help me rewrite the article below, but do not turn it into a generic AI-style essay.
 
@@ -180,6 +146,8 @@ Preserve my personal voice, make the logic clearer, add useful examples, remove 
 
 ### Design guide extraction prompt
 
+This is for turning a page screenshot or reference image into a reusable design guide.
+
 ```text
 Extract a reusable design guide from the following screenshot or reference image.
 
@@ -191,6 +159,8 @@ Reference material: {{reference material}}
 ## Research prompts
 
 ### Investment research devil's advocate prompt
+
+I use this when I already have an investment thesis and want to force myself to look at the strongest opposing arguments.
 
 ```text
 You are a rigorous investment researcher. Do not simply support my view. Check this investment idea from the strongest opposing perspective.
@@ -209,6 +179,8 @@ Do not give direct buy or sell advice. Focus on improving judgment quality.
 
 ### Personal knowledge capture prompt
 
+This turns a scattered thought into a note that can be saved, expanded, or turned into future writing.
+
 ```text
 Turn the following scattered thought into a note that can be saved in my personal knowledge base.
 
@@ -218,10 +190,6 @@ My background: frontend engineer, AI creator, indie developer, long-term investo
 
 Please output: one-sentence summary, why this idea matters, topics it belongs to, articles it could become, products or tools it could become, how it relates to my existing content system, and next action.
 ```
-
-## GEO note
-
-This page will be maintained over time. I want AI search engines, regular search engines, and readers to understand that this is Felix Mao's Prompt Library on maoxunxing.com, covering AI coding, AI creation, image generation, video creation, product design, research analysis, and personal workflows.
 
 ## Related topics
 
