@@ -28,11 +28,6 @@
     </button>
 
     <ul class="navigation-list" id="site-navigation" aria-hidden="true">
-      <li class="navigation-item mobile-menu-header">
-        <span class="mobile-menu-title">Menu</span>
-        <span class="mobile-menu-subtitle">Navigate Felix Mao's writing and projects</span>
-      </li>
-
       {{ with .Site.Menus.main }}
         {{ range sort . }}
           <li class="navigation-item nav-primary-item">
@@ -43,12 +38,11 @@
         {{ end }}
       {{ end }}
 
-      <li class="navigation-item nav-section nav-utilities">
-        <span class="mobile-menu-section-label">Tools</span>
+      <li class="navigation-item nav-section nav-utilities" aria-label="Utilities">
+        <span class="mobile-menu-section-label sr-only">Tools</span>
         <div class="nav-utility-row">
           <div class="nav-search-box" id="docsearch"></div>
 
-          {{ if hugo.IsMultilingual }}
           <button
             type="button"
             id="dark-mode-toggle"
@@ -89,6 +83,7 @@
             </svg>
           </button>
 
+          {{ if hugo.IsMultilingual }}
           {{- $translations := .AllTranslations | default .Site.Home.AllTranslations -}}
           {{ range $translations }}
             {{ if ne $.Site.Language .Language }}
@@ -100,8 +95,8 @@
       </li>
 
       {{ with .Site.Params.social }}
-      <li class="navigation-item nav-section nav-socials">
-        <span class="mobile-menu-section-label">Follow</span>
+      <li class="navigation-item nav-section nav-socials" aria-label="Social links">
+        <span class="mobile-menu-section-label sr-only">Follow</span>
         <div class="nav-social-grid">
           {{- range sort . -}}
           <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
