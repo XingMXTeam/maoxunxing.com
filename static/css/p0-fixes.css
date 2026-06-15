@@ -29,12 +29,6 @@ button:focus:not(:focus-visible),
   outline: none;
 }
 
-@media only screen and (min-width: 769px) {
-  .navigation .nav-container {
-    justify-content: center;
-  }
-}
-
 .navigation .nav-social-grid > .nav-icon-link {
   border: 0 !important;
   background: transparent !important;
@@ -47,13 +41,6 @@ html[lang="zh-CN"] body {
 }
 
 @media only screen and (max-width: 768px) {
-  .navigation .nav-container {
-    width: calc(100% - 3.2rem);
-    padding-left: 0;
-    padding-right: 0;
-    justify-content: space-between;
-  }
-
   html[lang="zh-CN"] body {
     font-size: 1.48em;
     line-height: 1.72em;
