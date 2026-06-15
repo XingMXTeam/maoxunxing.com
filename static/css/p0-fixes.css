@@ -30,9 +30,12 @@ button:focus:not(:focus-visible),
 }
 
 .navigation .nav-container {
+  width: 100%;
   max-width: 90rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
 }
 
