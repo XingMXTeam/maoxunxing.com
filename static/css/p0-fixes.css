@@ -1,5 +1,5 @@
 /* ========== P0 UX Fixes ========== */
-/* Keep only cross-cutting fixes here. Navigation lives in assets/scss/_navigation.scss. */
+/* Keep cross-cutting visual fixes here because this file loads last. */
 
 html[data-initial-color-scheme="dark"] {
   background: #050505;
@@ -29,12 +29,31 @@ button:focus:not(:focus-visible),
   outline: none;
 }
 
+.navigation .nav-container {
+  max-width: 90rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.navigation .nav-social-grid > .nav-icon-link {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 html[lang="zh-CN"] body {
   font-size: 1.72em;
   line-height: 1.78em;
 }
 
 @media only screen and (max-width: 768px) {
+  .navigation .nav-container {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   html[lang="zh-CN"] body {
     font-size: 1.48em;
     line-height: 1.72em;
@@ -45,8 +64,12 @@ html[lang="zh-CN"] body {
   }
 
   .navigation .nav-social-grid > .nav-icon-link {
-    border: 0;
-    background: transparent;
-    box-shadow: none;
+    min-width: 2.4rem !important;
+    width: auto !important;
+    height: 2.8rem !important;
+    min-height: 2.8rem !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    opacity: 0.56;
   }
 }
