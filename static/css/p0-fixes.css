@@ -29,6 +29,12 @@ button:focus:not(:focus-visible),
   outline: none;
 }
 
+@media only screen and (min-width: 769px) {
+  .navigation .nav-container {
+    justify-content: center;
+  }
+}
+
 .navigation .nav-social-grid > .nav-icon-link {
   border: 0 !important;
   background: transparent !important;
@@ -45,6 +51,7 @@ html[lang="zh-CN"] body {
     width: calc(100% - 3.2rem);
     padding-left: 0;
     padding-right: 0;
+    justify-content: space-between;
   }
 
   html[lang="zh-CN"] body {
