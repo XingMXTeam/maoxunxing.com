@@ -29,16 +29,6 @@ button:focus:not(:focus-visible),
   outline: none;
 }
 
-.navigation .nav-container {
-  width: 100%;
-  max-width: 90rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
-
 .navigation .nav-social-grid > .nav-icon-link {
   border: 0 !important;
   background: transparent !important;
@@ -52,9 +42,9 @@ html[lang="zh-CN"] body {
 
 @media only screen and (max-width: 768px) {
   .navigation .nav-container {
-    width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    width: calc(100% - 3.2rem);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   html[lang="zh-CN"] body {
