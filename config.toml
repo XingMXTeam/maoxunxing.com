@@ -24,12 +24,16 @@ pygmentscodefencesguesssyntax = true
     title = "毛毛星 Felix Mao - AI 创作者、前端工程师与独立开发者"
     description = "Felix Mao（毛毛星）的个人知识站，记录 AI 编程、AI 个体创业、前端工程、创作者工作流、系统思维和长期投资实践。"
     keywords = "毛毛星,Felix Mao,maoxunxing,AI创作者,AI个体创业,AI编程,独立开发,前端工程师,创作者工作流,个人知识系统,长期投资"
+    [languages.zh-CN.params]
+      custom_css = ["/css/main.css", "/css/code-dark.css", "/css/home.css", "/css/prompts.css", "/css/p0-fixes.css", "/css/nav-hotfix.css"]
   [languages.en]
     languageName = "EN"
     weight = 1
     title = "Felix Mao - AI Creator, Frontend Engineer & Indie Hacker"
     description = "Felix Mao's personal knowledge site about AI coding, AI indie hacking, frontend engineering, creator workflows, systems thinking, and long-term investing."
     keywords = "Felix Mao,maoxunxing,AI creator,AI indie hacking,AI coding,frontend engineer,indie hacker,creator workflows,personal knowledge system,long-term investing"
+    [languages.en.params]
+      custom_css = ["/css/main.css", "/css/code-dark.css", "/css/home.css", "/css/prompts.css", "/css/p0-fixes.css", "/css/nav-hotfix.css"]
 
 [markup]
   [markup.highlight]
@@ -87,7 +91,7 @@ prompts = "/:slugorcontentbasename/"
   hidecredits = false
   hidecopyright = false
   rtl = false
-  custom_css = ["css/main.css", "css/code-dark.css", "css/home.css", "css/prompts.css", "css/p0-fixes.css", "css/nav-hotfix.css"]
+  custom_css = ["/css/main.css", "/css/code-dark.css", "/css/home.css", "/css/prompts.css", "/css/p0-fixes.css", "/css/nav-hotfix.css"]
   photoWidths = [300, 600, 800, 1200]
   colorscheme = "auto"
   hideColorSchemeToggle = false
