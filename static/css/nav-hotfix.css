@@ -1,0 +1,19 @@
+/* Temporary P0 hotfix: override stale coder.min.css nav-container layout. */
+.navigation .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: none;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation .nav-container {
+    width: calc(100% - 3.2rem);
+    max-width: none;
+    padding: 0;
+    justify-content: space-between;
+  }
+}
