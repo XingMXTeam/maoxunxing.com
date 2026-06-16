@@ -83,7 +83,7 @@
             </svg>
           </button>
 
-          {{ if .Site.IsMultiLingual }}
+          {{ if hugo.IsMultilingual }}
           {{- $translations := .AllTranslations | default .Site.Home.AllTranslations -}}
           {{ range $translations }}
             {{ if ne $.Site.Language .Language }}
