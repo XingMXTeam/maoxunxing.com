@@ -1,4 +1,4 @@
-/* Draft UI experiment: circular theme reveal and subtle homepage particles. */
+/* Circular theme reveal and homepage particle background. */
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -37,32 +37,42 @@ body.page-home {
   position: relative;
   overflow-x: hidden;
   background-color: var(--c-bg);
-  --home-glow-primary: rgba(21, 101, 192, 0.14);
-  --home-glow-secondary: rgba(125, 125, 125, 0.12);
-  --home-glow-bottom: rgba(0, 0, 0, 0.045);
-  --home-dot-strong: rgba(0, 0, 0, 0.2);
-  --home-dot-mid: rgba(21, 101, 192, 0.18);
-  --home-dot-soft: rgba(0, 0, 0, 0.1);
+  --home-glow-primary: rgba(21, 101, 192, 0.12);
+  --home-glow-secondary: rgba(125, 125, 125, 0.08);
+  --home-dot-strong: rgba(0, 0, 0, 0.22);
+  --home-dot-mid: rgba(21, 101, 192, 0.2);
+  --home-dot-soft: rgba(0, 0, 0, 0.12);
 }
 
 body.page-home.colorscheme-dark {
-  --home-glow-primary: rgba(100, 181, 246, 0.16);
-  --home-glow-secondary: rgba(255, 255, 255, 0.055);
-  --home-glow-bottom: rgba(255, 255, 255, 0.05);
-  --home-dot-strong: rgba(255, 255, 255, 0.48);
-  --home-dot-mid: rgba(100, 181, 246, 0.42);
-  --home-dot-soft: rgba(255, 255, 255, 0.22);
+  --home-glow-primary: rgba(100, 181, 246, 0.13);
+  --home-glow-secondary: rgba(255, 255, 255, 0.045);
+  --home-dot-strong: rgba(255, 255, 255, 0.5);
+  --home-dot-mid: rgba(100, 181, 246, 0.44);
+  --home-dot-soft: rgba(255, 255, 255, 0.24);
 }
 
 @media (prefers-color-scheme: dark) {
   body.page-home.colorscheme-auto {
-    --home-glow-primary: rgba(100, 181, 246, 0.16);
-    --home-glow-secondary: rgba(255, 255, 255, 0.055);
-    --home-glow-bottom: rgba(255, 255, 255, 0.05);
-    --home-dot-strong: rgba(255, 255, 255, 0.48);
-    --home-dot-mid: rgba(100, 181, 246, 0.42);
-    --home-dot-soft: rgba(255, 255, 255, 0.22);
+    --home-glow-primary: rgba(100, 181, 246, 0.13);
+    --home-glow-secondary: rgba(255, 255, 255, 0.045);
+    --home-dot-strong: rgba(255, 255, 255, 0.5);
+    --home-dot-mid: rgba(100, 181, 246, 0.44);
+    --home-dot-soft: rgba(255, 255, 255, 0.24);
   }
+}
+
+body.page-home .particle,
+body.page-home .particles,
+body.page-home .particles-container,
+body.page-home .floating-particles,
+body.page-home .float-particles,
+body.page-home .float-particle,
+body.page-home .particle-background,
+body.page-home .home-particle,
+body.page-home canvas.particles-js-canvas-el {
+  display: none !important;
+  animation: none !important;
 }
 
 body.page-home .wrapper {
@@ -83,22 +93,22 @@ body.page-home::before {
   background:
     radial-gradient(circle at 14% 18%, var(--home-glow-primary), transparent 28rem),
     radial-gradient(circle at 88% 16%, var(--home-glow-secondary), transparent 25rem),
-    radial-gradient(circle at 50% 100%, var(--home-glow-bottom), transparent 36rem),
-    linear-gradient(180deg, rgba(125, 125, 125, 0.03), transparent 28rem);
+    linear-gradient(180deg, rgba(125, 125, 125, 0.025), transparent 28rem);
   filter: saturate(1.04);
 }
 
 body.page-home::after {
-  opacity: 0.72;
+  opacity: 0.78;
   background-image:
     radial-gradient(circle, var(--home-dot-strong) 0 1px, transparent 1.35px),
     radial-gradient(circle, var(--home-dot-mid) 0 1.15px, transparent 1.65px),
     radial-gradient(circle, var(--home-dot-soft) 0 0.8px, transparent 1.25px);
   background-size: 32px 32px, 54px 54px, 91px 91px;
   background-position: 0 0, 17px 23px, -22px 31px;
+  will-change: background-position, opacity;
   animation:
-    home-particles-drift 56s linear infinite,
-    home-particles-pulse 7.5s ease-in-out infinite alternate;
+    home-particles-drift 18s linear infinite,
+    home-particles-pulse 5s ease-in-out infinite alternate;
 }
 
 body.page-home .home-start-card,
@@ -111,16 +121,16 @@ body.page-home .home-book-card {
     background-position: 0 0, 17px 23px, -22px 31px;
   }
   to {
-    background-position: 48px 36px, -31px 61px, 27px -19px;
+    background-position: 96px 72px, -91px 113px, 79px -71px;
   }
 }
 
 @keyframes home-particles-pulse {
   from {
-    opacity: 0.5;
+    opacity: 0.58;
   }
   to {
-    opacity: 0.78;
+    opacity: 0.86;
   }
 }
 
@@ -135,12 +145,12 @@ body.page-home .home-book-card {
   body.page-home::before {
     background:
       radial-gradient(circle at 0% 10%, var(--home-glow-primary), transparent 20rem),
-      radial-gradient(circle at 100% 12%, var(--home-glow-secondary), transparent 18rem),
-      radial-gradient(circle at 50% 100%, var(--home-glow-bottom), transparent 24rem);
+      radial-gradient(circle at 100% 12%, var(--home-glow-secondary), transparent 18rem);
   }
 
   body.page-home::after {
-    opacity: 0.6;
+    opacity: 0.68;
     background-size: 30px 30px, 48px 48px, 78px 78px;
+    animation-duration: 16s, 5s;
   }
 }
