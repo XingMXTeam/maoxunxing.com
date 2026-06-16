@@ -6,6 +6,7 @@ const menuToggleIcon = menuToggle ? menuToggle.querySelector('i') : null;
 const navigation = document.querySelector('.navigation');
 const navigationList = document.getElementById('site-navigation');
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const reducedMotionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const themeBackgrounds = {
     light: '#ffffff',
@@ -35,6 +36,8 @@ const themeTokens = {
     },
 };
 
+markHomePage();
+
 function getStoredTheme() {
     try {
         const theme = localStorage.getItem('colorscheme');
@@ -42,6 +45,12 @@ function getStoredTheme() {
     } catch (error) {
         return null;
     }
+}
+
+function markHomePage() {
+    const normalizedPath = window.location.pathname.replace(/\/+$/, '');
+    const isHomePage = normalizedPath === '' || normalizedPath === '/zh-cn' || normalizedPath === '/en';
+    body.classList.toggle('page-home', isHomePage);
 }
 
 // Check if user preference is set, if not check value of body class for light or dark else it means that colorscheme = auto
@@ -57,7 +66,7 @@ if (storedTheme) {
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', () => {
         const theme = body.classList.contains('colorscheme-dark') ? 'light' : 'dark';
-        setTheme(theme);
+        setThemeWithTransition(theme);
         rememberTheme(theme);
     });
 }
@@ -119,6 +128,55 @@ function setTheme(theme) {
     if (iframe) {
         iframe.src = iframe.src.replace('github-light', `github-${theme}`).replace('github-dark', `github-${theme}`);
     }
+}
+
+function setThemeWithTransition(theme) {
+    if (!canRunThemeTransition()) {
+        setTheme(theme);
+        return;
+    }
+
+    prepareThemeTransition(theme);
+
+    const transition = document.startViewTransition(() => {
+        setTheme(theme);
+    });
+
+    transition.finished.finally(() => {
+        cleanupThemeTransition();
+    });
+}
+
+function canRunThemeTransition() {
+    return Boolean(
+        darkModeToggle &&
+        document.startViewTransition &&
+        !reducedMotionMediaQuery.matches
+    );
+}
+
+function prepareThemeTransition(theme) {
+    const rect = darkModeToggle.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const endRadius = Math.ceil(
+        Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        )
+    );
+
+    root.style.setProperty('--theme-transition-x', `${x}px`);
+    root.style.setProperty('--theme-transition-y', `${y}px`);
+    root.style.setProperty('--theme-transition-radius', `${endRadius}px`);
+    root.dataset.themeTransition = theme === 'dark' ? 'to-dark' : 'to-light';
+}
+
+function cleanupThemeTransition() {
+    delete root.dataset.themeTransition;
+    root.style.removeProperty('--theme-transition-x');
+    root.style.removeProperty('--theme-transition-y');
+    root.style.removeProperty('--theme-transition-radius');
 }
 
 function applyRootTheme(theme) {

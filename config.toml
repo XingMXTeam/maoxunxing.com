@@ -19,20 +19,20 @@ pygmentscodefencesguesssyntax = true
 [languages]
   [languages.zh-CN]
     weight = 2
-    icon = "1"
     languageName = "CN"
     title = "毛毛星 Felix Mao - AI 创作者、前端工程师与独立开发者"
-    description = "Felix Mao（毛毛星）的个人知识站，记录 AI 编程、AI 个体创业、前端工程、创作者工作流、系统思维和长期投资实践。"
-    keywords = "毛毛星,Felix Mao,maoxunxing,AI创作者,AI个体创业,AI编程,独立开发,前端工程师,创作者工作流,个人知识系统,长期投资"
     [languages.zh-CN.params]
+      icon = "1"
+      description = "Felix Mao（毛毛星）的个人知识站，记录 AI 编程、AI 个体创业、前端工程、创作者工作流、系统思维和长期投资实践。"
+      keywords = "毛毛星,Felix Mao,maoxunxing,AI创作者,AI个体创业,AI编程,独立开发,前端工程师,创作者工作流,个人知识系统,长期投资"
       custom_css = ["/css/main.css", "/css/code-dark.css", "/css/home.css", "/css/prompts.css", "/css/p0-fixes.css", "/css/nav-hotfix.css"]
   [languages.en]
     languageName = "EN"
     weight = 1
     title = "Felix Mao - AI Creator, Frontend Engineer & Indie Hacker"
-    description = "Felix Mao's personal knowledge site about AI coding, AI indie hacking, frontend engineering, creator workflows, systems thinking, and long-term investing."
-    keywords = "Felix Mao,maoxunxing,AI creator,AI indie hacking,AI coding,frontend engineer,indie hacker,creator workflows,personal knowledge system,long-term investing"
     [languages.en.params]
+      description = "Felix Mao's personal knowledge site about AI coding, AI indie hacking, frontend engineering, creator workflows, systems thinking, and long-term investing."
+      keywords = "Felix Mao,maoxunxing,AI creator,AI indie hacking,AI coding,frontend engineer,indie hacker,creator workflows,personal knowledge system,long-term investing"
       custom_css = ["/css/main.css", "/css/code-dark.css", "/css/home.css", "/css/prompts.css", "/css/p0-fixes.css", "/css/nav-hotfix.css"]
 
 [markup]
@@ -46,36 +46,36 @@ pygmentscodefencesguesssyntax = true
     startLevel = 2
 
 [languages.en.permalinks]
-pages = "/:slugorcontentbasename/"
-posts = "/:slugorcontentbasename/"
-notes = "/:slugorcontentbasename/"
-book-reports = "/:slugorcontentbasename/"
-projects = "/:slugorcontentbasename/"
-about = "/:slugorcontentbasename/"
-uses = "/:slugorcontentbasename/"
-bookmarks = "/:slugorcontentbasename/"
-media = "/:slugorcontentbasename/"
-streams = "/:slugorcontentbasename/"
-demos = "/:slugorcontentbasename/"
-gallery = "/:slugorcontentbasename/"
-raw = "/:slugorcontentbasename/"
-prompts = "/:slugorcontentbasename/"
+pages = "/:slugorfilename/"
+posts = "/:slugorfilename/"
+notes = "/:slugorfilename/"
+book-reports = "/:slugorfilename/"
+projects = "/:slugorfilename/"
+about = "/:slugorfilename/"
+uses = "/:slugorfilename/"
+bookmarks = "/:slugorfilename/"
+media = "/:slugorfilename/"
+streams = "/:slugorfilename/"
+demos = "/:slugorfilename/"
+gallery = "/:slugorfilename/"
+raw = "/:slugorfilename/"
+prompts = "/:slugorfilename/"
 
 [languages.zh-CN.permalinks]
-pages = "/:slugorcontentbasename/"
-posts = "/:slugorcontentbasename/"
-notes = "/:slugorcontentbasename/"
-book-reports = "/:slugorcontentbasename/"
-projects = "/:slugorcontentbasename/"
-about = "/:slugorcontentbasename/"
-uses = "/:slugorcontentbasename/"
-bookmarks = "/:slugorcontentbasename/"
-media = "/:slugorcontentbasename/"
-streams = "/:slugorcontentbasename/"
-demos = "/:slugorcontentbasename/"
-gallery = "/:slugorcontentbasename/"
-raw = "/:slugorcontentbasename/"
-prompts = "/:slugorcontentbasename/"
+pages = "/:slugorfilename/"
+posts = "/:slugorfilename/"
+notes = "/:slugorfilename/"
+book-reports = "/:slugorfilename/"
+projects = "/:slugorfilename/"
+about = "/:slugorfilename/"
+uses = "/:slugorfilename/"
+bookmarks = "/:slugorfilename/"
+media = "/:slugorfilename/"
+streams = "/:slugorfilename/"
+demos = "/:slugorfilename/"
+gallery = "/:slugorfilename/"
+raw = "/:slugorfilename/"
+prompts = "/:slugorfilename/"
 
 [params]
   author = "Felix Mao (毛毛星)"
