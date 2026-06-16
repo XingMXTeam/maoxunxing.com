@@ -27,7 +27,7 @@
     
     
 
-    {{ if not hugo.IsServer }}
+    {{ if not .Site.IsServer }}
       {{ partial "talkyard.html" . }}
     {{ end }} -->
   </article>

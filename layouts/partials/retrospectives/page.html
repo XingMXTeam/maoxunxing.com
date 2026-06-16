@@ -32,7 +32,7 @@
 
     {{ partial "mailing-list-signup.html" . }}
 
-    {{ if not hugo.IsServer }}
+    {{ if not .Site.IsServer }}
       {{ partial "talkyard.html" . }}
     {{ end }}
   </article>

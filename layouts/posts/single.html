@@ -52,7 +52,7 @@
 
         {{ partial "comment.html" . }}
 
-        {{ if not hugo.IsServer }}
+        {{ if not .Site.IsServer }}
           {{ partial "talkyard.html" . }}
         {{ end }}
 
