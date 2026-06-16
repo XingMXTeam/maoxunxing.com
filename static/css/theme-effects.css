@@ -1,4 +1,4 @@
-/* Circular theme reveal and homepage particle background. */
+/* Circular theme reveal and homepage canvas particle background. */
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -39,26 +39,17 @@ body.page-home {
   background-color: var(--c-bg);
   --home-glow-primary: rgba(21, 101, 192, 0.12);
   --home-glow-secondary: rgba(125, 125, 125, 0.08);
-  --home-dot-strong: rgba(0, 0, 0, 0.22);
-  --home-dot-mid: rgba(21, 101, 192, 0.2);
-  --home-dot-soft: rgba(0, 0, 0, 0.12);
 }
 
 body.page-home.colorscheme-dark {
   --home-glow-primary: rgba(100, 181, 246, 0.13);
   --home-glow-secondary: rgba(255, 255, 255, 0.045);
-  --home-dot-strong: rgba(255, 255, 255, 0.5);
-  --home-dot-mid: rgba(100, 181, 246, 0.44);
-  --home-dot-soft: rgba(255, 255, 255, 0.24);
 }
 
 @media (prefers-color-scheme: dark) {
   body.page-home.colorscheme-auto {
     --home-glow-primary: rgba(100, 181, 246, 0.13);
     --home-glow-secondary: rgba(255, 255, 255, 0.045);
-    --home-dot-strong: rgba(255, 255, 255, 0.5);
-    --home-dot-mid: rgba(100, 181, 246, 0.44);
-    --home-dot-soft: rgba(255, 255, 255, 0.24);
   }
 }
 
@@ -80,16 +71,12 @@ body.page-home .wrapper {
   z-index: 1;
 }
 
-body.page-home::before,
-body.page-home::after {
+body.page-home::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-}
-
-body.page-home::before {
   background:
     radial-gradient(circle at 14% 18%, var(--home-glow-primary), transparent 28rem),
     radial-gradient(circle at 88% 16%, var(--home-glow-secondary), transparent 25rem),
@@ -98,47 +85,35 @@ body.page-home::before {
 }
 
 body.page-home::after {
-  opacity: 0.78;
-  background-image:
-    radial-gradient(circle, var(--home-dot-strong) 0 1px, transparent 1.35px),
-    radial-gradient(circle, var(--home-dot-mid) 0 1.15px, transparent 1.65px),
-    radial-gradient(circle, var(--home-dot-soft) 0 0.8px, transparent 1.25px);
-  background-size: 32px 32px, 54px 54px, 91px 91px;
-  background-position: 0 0, 17px 23px, -22px 31px;
-  will-change: background-position, opacity;
-  animation:
-    home-particles-drift 18s linear infinite,
-    home-particles-pulse 5s ease-in-out infinite alternate;
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+}
+
+body.page-home .home-particles-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.92;
+}
+
+body.page-home.colorscheme-dark .home-particles-canvas {
+  opacity: 0.86;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.page-home.colorscheme-auto .home-particles-canvas {
+    opacity: 0.86;
+  }
 }
 
 body.page-home .home-start-card,
 body.page-home .home-book-card {
   backdrop-filter: blur(10px);
-}
-
-@keyframes home-particles-drift {
-  from {
-    background-position: 0 0, 17px 23px, -22px 31px;
-  }
-  to {
-    background-position: 96px 72px, -91px 113px, 79px -71px;
-  }
-}
-
-@keyframes home-particles-pulse {
-  from {
-    opacity: 0.58;
-  }
-  to {
-    opacity: 0.86;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.page-home::before,
-  body.page-home::after {
-    animation: none;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -148,9 +123,7 @@ body.page-home .home-book-card {
       radial-gradient(circle at 100% 12%, var(--home-glow-secondary), transparent 18rem);
   }
 
-  body.page-home::after {
-    opacity: 0.68;
-    background-size: 30px 30px, 48px 48px, 78px 78px;
-    animation-duration: 16s, 5s;
+  body.page-home .home-particles-canvas {
+    opacity: 0.78;
   }
 }
