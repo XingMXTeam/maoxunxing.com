@@ -26,6 +26,7 @@ pygmentscodefencesguesssyntax = true
       description = "Felix Mao（毛毛星）的个人知识站，记录 AI 编程、AI 个体创业、前端工程、创作者工作流、系统思维和长期投资实践。"
       keywords = "毛毛星,Felix Mao,maoxunxing,AI创作者,AI个体创业,AI编程,独立开发,前端工程师,创作者工作流,个人知识系统,长期投资"
       custom_css = ["/css/main.css?v=20260616b", "/css/code-dark.css?v=20260616b", "/css/home.css?v=20260616b", "/css/prompts.css?v=20260616b", "/css/p0-fixes.css?v=20260616b", "/css/nav-hotfix.css?v=20260616b"]
+      custom_js = ["/js/home-particle-noise-field.js?v=20260616a"]
   [languages.en]
     languageName = "EN"
     weight = 1
@@ -34,6 +35,7 @@ pygmentscodefencesguesssyntax = true
       description = "Felix Mao's personal knowledge site about AI coding, AI indie hacking, frontend engineering, creator workflows, systems thinking, and long-term investing."
       keywords = "Felix Mao,maoxunxing,AI creator,AI indie hacking,AI coding,frontend engineer,indie hacker,creator workflows,personal knowledge system,long-term investing"
       custom_css = ["/css/main.css?v=20260616b", "/css/code-dark.css?v=20260616b", "/css/home.css?v=20260616b", "/css/prompts.css?v=20260616b", "/css/p0-fixes.css?v=20260616b", "/css/nav-hotfix.css?v=20260616b"]
+      custom_js = ["/js/home-particle-noise-field.js?v=20260616a"]
 
 [markup]
   [markup.highlight]
@@ -92,6 +94,7 @@ prompts = "/:slugorfilename/"
   hidecopyright = false
   rtl = false
   custom_css = ["/css/main.css?v=20260616b", "/css/code-dark.css?v=20260616b", "/css/home.css?v=20260616b", "/css/prompts.css?v=20260616b", "/css/p0-fixes.css?v=20260616b", "/css/nav-hotfix.css?v=20260616b"]
+  custom_js = ["/js/home-particle-noise-field.js?v=20260616a"]
   photoWidths = [300, 600, 800, 1200]
   colorscheme = "auto"
   hideColorSchemeToggle = false
