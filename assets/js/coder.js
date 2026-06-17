@@ -36,8 +36,7 @@ const themeTokens = {
     },
 };
 
-const isHomePage = markHomePage();
-let homeParticleScene = null;
+markHomePage();
 
 function getStoredTheme() {
     try {
@@ -63,10 +62,6 @@ if (storedTheme) {
     setTheme(body.classList.contains('colorscheme-dark') ? 'dark' : 'light');
 } else {
     setTheme(darkModeMediaQuery.matches ? 'dark' : 'light');
-}
-
-if (isHomePage) {
-    homeParticleScene = createHomeParticleScene();
 }
 
 if (darkModeToggle) {
@@ -129,7 +124,6 @@ function setTheme(theme) {
 
     applyRootTheme(theme);
     updateThemeToggle(theme);
-    homeParticleScene && homeParticleScene.redraw();
 
     const iframe = document.querySelector('.utterances-frame');
     if (iframe) {
@@ -225,165 +219,4 @@ function setMenuState(isOpen) {
         menuToggleIcon.classList.toggle('fa-bars', !isOpen);
         menuToggleIcon.classList.toggle('fa-times', isOpen);
     }
-}
-
-function createHomeParticleScene() {
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-
-    if (!context) return null;
-
-    canvas.className = 'home-particles-canvas';
-    canvas.setAttribute('aria-hidden', 'true');
-    body.insertBefore(canvas, body.firstChild);
-
-    const scene = {
-        canvas,
-        context,
-        width: 0,
-        height: 0,
-        pixelRatio: 1,
-        particles: [],
-        frame: 0,
-        startedAt: performance.now(),
-        reducedMotion: reducedMotionMediaQuery.matches,
-    };
-
-    const resize = () => resizeHomeParticleScene(scene);
-    const tick = (timestamp) => renderHomeParticleScene(scene, timestamp, tick);
-
-    resize();
-    window.addEventListener('resize', resize, { passive: true });
-
-    const onReducedMotionChange = (event) => {
-        scene.reducedMotion = event.matches;
-        scene.startedAt = performance.now();
-        drawHomeParticleScene(scene, performance.now());
-
-        if (!scene.reducedMotion && !scene.frame) {
-            scene.frame = requestAnimationFrame(tick);
-        }
-    };
-
-    if (reducedMotionMediaQuery.addEventListener) {
-        reducedMotionMediaQuery.addEventListener('change', onReducedMotionChange);
-    } else if (reducedMotionMediaQuery.addListener) {
-        reducedMotionMediaQuery.addListener(onReducedMotionChange);
-    }
-
-    if (!scene.reducedMotion) {
-        scene.frame = requestAnimationFrame(tick);
-    }
-
-    return {
-        redraw() {
-            drawHomeParticleScene(scene, performance.now());
-        },
-    };
-}
-
-function resizeHomeParticleScene(scene) {
-    scene.width = window.innerWidth;
-    scene.height = window.innerHeight;
-    scene.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-
-    scene.canvas.width = Math.round(scene.width * scene.pixelRatio);
-    scene.canvas.height = Math.round(scene.height * scene.pixelRatio);
-    scene.canvas.style.width = `${scene.width}px`;
-    scene.canvas.style.height = `${scene.height}px`;
-    scene.context.setTransform(scene.pixelRatio, 0, 0, scene.pixelRatio, 0, 0);
-    scene.particles = buildHomeParticles(scene.width, scene.height);
-    drawHomeParticleScene(scene, performance.now());
-}
-
-function buildHomeParticles(width, height) {
-    const particles = [];
-    const spacing = width < 768 ? 34 : 32;
-    const columns = Math.ceil(width / spacing) + 2;
-    const rows = Math.ceil(height / spacing) + 2;
-
-    for (let row = -1; row < rows; row += 1) {
-        for (let column = -1; column < columns; column += 1) {
-            const seed = seededHomeRandom(row * 928371 + column * 364479);
-            const secondarySeed = seededHomeRandom(row * 167761 + column * 475733 + 19);
-            const depth = 0.45 + seededHomeRandom(row * 73471 + column * 91873 + 7) * 0.8;
-
-            particles.push({
-                baseX: column * spacing + (seed - 0.5) * spacing * 0.42,
-                baseY: row * spacing + (secondarySeed - 0.5) * spacing * 0.42,
-                depth,
-                radius: 0.58 + depth * 0.48,
-                alpha: 0.3 + depth * 0.36,
-                phase: seed * Math.PI * 2,
-            });
-        }
-    }
-
-    return particles;
-}
-
-function seededHomeRandom(value) {
-    const x = Math.sin(value * 12.9898) * 43758.5453;
-    return x - Math.floor(x);
-}
-
-function renderHomeParticleScene(scene, timestamp, tick) {
-    drawHomeParticleScene(scene, timestamp);
-
-    if (scene.reducedMotion) {
-        scene.frame = 0;
-        return;
-    }
-
-    scene.frame = requestAnimationFrame(tick);
-}
-
-function drawHomeParticleScene(scene, timestamp) {
-    const { context, width, height, particles } = scene;
-    const time = (timestamp - scene.startedAt) / 1000;
-    const colors = getHomeParticleColors();
-
-    context.clearRect(0, 0, width, height);
-
-    particles.forEach((particle, index) => {
-        const waveX = Math.sin(time * 0.95 + particle.baseY * 0.018 + particle.phase);
-        const waveY = Math.cos(time * 0.78 + particle.baseX * 0.015 + particle.phase * 0.7);
-        const ripple = Math.sin(time * 0.5 + (particle.baseX + particle.baseY) * 0.012 + particle.phase);
-        const breathing = 0.74 + Math.sin(time * 1.2 + particle.phase + index * 0.017) * 0.16;
-        const amplitude = scene.reducedMotion ? 0 : 1.45 + particle.depth * 1.25;
-        const x = particle.baseX + waveX * amplitude + ripple * 0.7;
-        const y = particle.baseY + waveY * amplitude + ripple * 0.45;
-
-        if (x < -8 || x > width + 8 || y < -8 || y > height + 8) return;
-
-        const color = particle.depth > 0.95 ? colors.strong : particle.depth > 0.72 ? colors.mid : colors.soft;
-        context.globalAlpha = particle.alpha * breathing * colors.opacity;
-        context.fillStyle = color;
-        context.beginPath();
-        context.arc(x, y, particle.radius, 0, Math.PI * 2);
-        context.fill();
-    });
-
-    context.globalAlpha = 1;
-}
-
-function getHomeParticleColors() {
-    const isDark = body.classList.contains('colorscheme-dark') ||
-        (body.classList.contains('colorscheme-auto') && darkModeMediaQuery.matches);
-
-    if (isDark) {
-        return {
-            strong: 'rgba(255, 255, 255, 0.82)',
-            mid: 'rgba(100, 181, 246, 0.64)',
-            soft: 'rgba(255, 255, 255, 0.45)',
-            opacity: 0.72,
-        };
-    }
-
-    return {
-        strong: 'rgba(15, 23, 42, 0.34)',
-        mid: 'rgba(21, 101, 192, 0.32)',
-        soft: 'rgba(15, 23, 42, 0.2)',
-        opacity: 0.66,
-    };
 }
