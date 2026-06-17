@@ -16,6 +16,7 @@
 
 @media only screen and (max-width: 768px) {
   .navigation .nav-container {
+    position: relative;
     width: calc(100% - 3.2rem);
     max-width: none;
     padding: 0;
@@ -27,10 +28,57 @@
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--c-fg-deeper);
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
-    z-index: 30;
+    z-index: 60;
+    cursor: pointer;
+  }
+
+  .navigation .navigation-list {
+    display: none !important;
+    position: absolute !important;
+    top: calc(100% + 1rem) !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    width: 100% !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 1.2rem !important;
+    list-style: none !important;
+    background: color-mix(in srgb, var(--c-bg) 92%, transparent) !important;
+    border: 1px solid var(--c-border) !important;
+    border-radius: 1.2rem !important;
+    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.12) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  .navigation.is-open .navigation-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .navigation.is-open .navigation-list .navigation-item,
+  .navigation.is-open .navigation-list .nav-section,
+  .navigation.is-open .navigation-list .nav-primary-item {
+    display: block !important;
+  }
+
+  .navigation.is-open .navigation-list .nav-utility-row,
+  .navigation.is-open .navigation-list .nav-social-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
   }
 }
 
