@@ -1,4 +1,9 @@
 /* Temporary P0 hotfix: override stale coder.min.css nav-container layout. */
+.navigation {
+  position: relative;
+  z-index: 20;
+}
+
 .navigation .nav-container {
   display: flex;
   align-items: center;
@@ -15,6 +20,17 @@
     max-width: none;
     padding: 0;
     justify-content: space-between;
+  }
+
+  .navigation #menu-toggle,
+  .navigation .menu-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 30;
   }
 }
 
