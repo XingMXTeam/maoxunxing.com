@@ -119,6 +119,9 @@
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((particle) => {
+        // Same motion model as antfu.me ArtDots: fixed grid point + animated noise
+        // field angle + second noise field length. This creates local wobbling,
+        // not whole-layer drifting.
         const angle = (noise3(particle.x / scale, particle.y / scale, time) - 0.5) * Math.PI * 2;
         const offset = (noise3(particle.x / scale + 18.3, particle.y / scale - 7.1, time * 2) + 0.5) * length;
         const x = particle.x + Math.cos(angle) * offset;
