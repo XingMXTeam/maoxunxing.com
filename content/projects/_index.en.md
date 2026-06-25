@@ -4,8 +4,8 @@ layout: projects
 projects:
   AI / Agent Engineering:
     - name: "Agent Workstation"
-      link: "https://github.com/XingMXTeam/agent-workstation"
-      desc: "A reusable multi-agent orchestration framework for task-specific AI workstations."
+      link: "https://maoxunxing.com/agent-workstation/"
+      desc: "A reusable multi-agent orchestration framework for task-specific AI workstations. Case study published; template cleanup in progress."
       icon: "fas fa-robot"
     - name: "MCP Screenshot Inverter"
       link: "https://github.com/XingMXTeam/a-simple-mcp"
@@ -30,8 +30,8 @@ projects:
       icon: "fas fa-closed-captioning"
   Publishing & Knowledge:
     - name: "Ebook Factory"
-      link: "https://github.com/XingMXTeam/ebook-maker"
-      desc: "A Markdown-to-ebook production pipeline based on Pandoc, Make, Docker, and TypeScript."
+      link: "https://maoxunxing.com/ebook-factory/"
+      desc: "A Markdown-to-ebook production pipeline based on Pandoc, Make, Docker, and TypeScript. Public template planned."
       icon: "fas fa-book"
     - name: "Prompt Library"
       link: "https://maoxunxing.com/prompt-library-prompts-i-actually-use/"
