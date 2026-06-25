@@ -49,8 +49,9 @@ function getStoredTheme() {
 
 function markHomePage() {
     const normalizedPath = window.location.pathname.replace(/\/+$/, '');
-    const isHomePage = normalizedPath === '' || normalizedPath === '/zh-cn' || normalizedPath === '/en';
-    body.classList.toggle('page-home', isHomePage);
+    const isHome = normalizedPath === '' || normalizedPath === '/zh-cn' || normalizedPath === '/en';
+    body.classList.toggle('page-home', isHome);
+    return isHome;
 }
 
 // Check if user preference is set, if not check value of body class for light or dark else it means that colorscheme = auto
