@@ -11,10 +11,6 @@ projects:
       link: "https://github.com/XingMXTeam/a-simple-mcp"
       desc: "一个 MCP + Puppeteer 实验，用于浏览器截图和 AI 工具调用工作流。"
       icon: "fas fa-camera"
-    - name: "RAG Search API"
-      link: "https://github.com/XingMXTeam/rag-search"
-      desc: "基于 FastAPI 的 RAG 搜索后端，包含 web search、rerank、详情抓取和内容过滤。"
-      icon: "fas fa-search"
   创作者工具:
     - name: "Xiaohongshu AI Operator"
       link: "https://github.com/XingMXTeam/xiaohongshushipfast"
@@ -46,6 +42,11 @@ projects:
       link: "https://github.com/XingMXTeam/frontend-map"
       desc: "覆盖 JavaScript、TypeScript、Vue 和前端工程的历史知识档案。"
       icon: "fas fa-code"
+  Reference Experiments:
+    - name: "RAG Search API"
+      link: "https://github.com/XingMXTeam/rag-search"
+      desc: "fork / 参考改造型 RAG 后端学习实验，不作为原创代表项目展示。"
+      icon: "fas fa-search"
   书籍 & 出版:
     - name: "期权大白话"
       link: "https://www.amazon.com/dp/B0F6NSTGPQ"
