@@ -4,8 +4,8 @@ layout: projects
 projects:
   AI / Agent 工程:
     - name: "Agent Workstation"
-      link: "https://github.com/XingMXTeam/agent-workstation"
-      desc: "用于搭建任务型 AI 工作站的多 Agent 编排框架。"
+      link: "https://maoxunxing.com/zh-cn/agent-workstation/"
+      desc: "用于搭建任务型 AI 工作站的多 Agent 编排框架。已发布项目说明，公开模板清理中。"
       icon: "fas fa-robot"
     - name: "MCP Screenshot Inverter"
       link: "https://github.com/XingMXTeam/a-simple-mcp"
@@ -30,8 +30,8 @@ projects:
       icon: "fas fa-closed-captioning"
   出版与知识系统:
     - name: "Ebook Factory"
-      link: "https://github.com/XingMXTeam/ebook-maker"
-      desc: "基于 Pandoc、Make、Docker 和 TypeScript 的 Markdown 到电子书生产流水线。"
+      link: "https://maoxunxing.com/zh-cn/ebook-factory/"
+      desc: "基于 Pandoc、Make、Docker 和 TypeScript 的 Markdown 到电子书生产流水线。计划抽出公开模板。"
       icon: "fas fa-book"
     - name: "Prompt Library"
       link: "https://maoxunxing.com/zh-cn/prompt-library-prompts-i-actually-use/"
