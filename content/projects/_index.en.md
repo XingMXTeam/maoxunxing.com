@@ -11,10 +11,6 @@ projects:
       link: "https://github.com/XingMXTeam/a-simple-mcp"
       desc: "An MCP + Puppeteer experiment for browser screenshots and tool-calling workflows."
       icon: "fas fa-camera"
-    - name: "RAG Search API"
-      link: "https://github.com/XingMXTeam/rag-search"
-      desc: "A FastAPI RAG search backend with web search, reranking, detail fetching, and filtering."
-      icon: "fas fa-search"
   Creator Tools:
     - name: "Xiaohongshu AI Operator"
       link: "https://github.com/XingMXTeam/xiaohongshushipfast"
@@ -46,4 +42,9 @@ projects:
       link: "https://github.com/XingMXTeam/frontend-map"
       desc: "A historical frontend knowledge archive covering JavaScript, TypeScript, Vue, and frontend engineering."
       icon: "fas fa-code"
+  Reference Experiments:
+    - name: "RAG Search API"
+      link: "https://github.com/XingMXTeam/rag-search"
+      desc: "A forked / reference-based RAG backend learning experiment, not positioned as an original flagship project."
+      icon: "fas fa-search"
 ---
