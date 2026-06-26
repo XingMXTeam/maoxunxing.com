@@ -18,7 +18,7 @@
   }
 }
 
-/* Circular theme reveal and homepage plum background. */
+/* Circular theme reveal and antfu.me-style random homepage art background. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 560ms;
@@ -58,7 +58,7 @@ body.page-home {
   background-color: var(--c-bg);
 }
 
-/* Disable previous fake particle backgrounds. antfu.me uses a fixed canvas line-growth layer. */
+/* Disable previous fake particle backgrounds. The current antfu.me homepage uses random art: plum or dots. */
 body.page-home .particle,
 body.page-home .particles,
 body.page-home .particles-container,
@@ -83,7 +83,7 @@ body.page-home .wrapper {
   z-index: 1;
 }
 
-#home-plum-canvas {
+#home-art-canvas {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -91,12 +91,25 @@ body.page-home .wrapper {
   pointer-events: none;
   z-index: 0;
   opacity: 1;
+}
+
+#home-art-canvas[data-art="plum"] {
   -webkit-mask-image: radial-gradient(circle, transparent, black);
   mask-image: radial-gradient(circle, transparent, black);
 }
 
+body.colorscheme-dark #home-art-canvas[data-art="dots"] {
+  filter: invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto #home-art-canvas[data-art="dots"] {
+    filter: invert(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  #home-plum-canvas {
+  #home-art-canvas {
     opacity: 0.75;
   }
 }
