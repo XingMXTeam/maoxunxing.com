@@ -18,7 +18,7 @@
   }
 }
 
-/* Circular theme reveal and homepage particle background. */
+/* Circular theme reveal and homepage plum background. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 560ms;
@@ -56,33 +56,9 @@ body.page-home {
   position: relative;
   overflow-x: hidden;
   background-color: var(--c-bg);
-  --home-glow-primary: rgba(21, 101, 192, 0.12);
-  --home-glow-secondary: rgba(125, 125, 125, 0.08);
-  --home-dot-strong: rgba(0, 0, 0, 0.22);
-  --home-dot-mid: rgba(21, 101, 192, 0.2);
-  --home-dot-soft: rgba(0, 0, 0, 0.12);
 }
 
-body.page-home.colorscheme-dark {
-  --home-glow-primary: rgba(100, 181, 246, 0.13);
-  --home-glow-secondary: rgba(255, 255, 255, 0.045);
-  --home-dot-strong: rgba(255, 255, 255, 0.5);
-  --home-dot-mid: rgba(100, 181, 246, 0.44);
-  --home-dot-soft: rgba(255, 255, 255, 0.24);
-}
-
-@media (prefers-color-scheme: dark) {
-  body.page-home.colorscheme-auto {
-    --home-glow-primary: rgba(100, 181, 246, 0.13);
-    --home-glow-secondary: rgba(255, 255, 255, 0.045);
-    --home-dot-strong: rgba(255, 255, 255, 0.5);
-    --home-dot-mid: rgba(100, 181, 246, 0.44);
-    --home-dot-soft: rgba(255, 255, 255, 0.24);
-  }
-}
-
-/* Disable the previous homepage floating-particle implementation if an old cached template
-   or experimental container is still present on the page. The new background uses body::after. */
+/* Disable previous fake particle backgrounds. antfu.me uses a fixed canvas line-growth layer. */
 body.page-home .particle,
 body.page-home .particles,
 body.page-home .particles-container,
@@ -96,82 +72,211 @@ body.page-home canvas.particles-js-canvas-el {
   animation: none !important;
 }
 
+body.page-home::before,
+body.page-home::after {
+  display: none !important;
+  content: none !important;
+}
+
 body.page-home .wrapper {
   position: relative;
   z-index: 1;
 }
 
-body.page-home::before,
-body.page-home::after {
-  content: "";
+#home-plum-canvas {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: 0;
-}
-
-body.page-home::before {
-  background:
-    radial-gradient(circle at 14% 18%, var(--home-glow-primary), transparent 28rem),
-    radial-gradient(circle at 88% 16%, var(--home-glow-secondary), transparent 25rem),
-    linear-gradient(180deg, rgba(125, 125, 125, 0.025), transparent 28rem);
-  filter: saturate(1.04);
-}
-
-body.page-home::after {
-  opacity: 0.78;
-  background-image:
-    radial-gradient(circle, var(--home-dot-strong) 0 1px, transparent 1.35px),
-    radial-gradient(circle, var(--home-dot-mid) 0 1.15px, transparent 1.65px),
-    radial-gradient(circle, var(--home-dot-soft) 0 0.8px, transparent 1.25px);
-  background-size: 32px 32px, 54px 54px, 91px 91px;
-  background-position: 0 0, 17px 23px, -22px 31px;
-  will-change: background-position, opacity;
-  animation:
-    home-particles-drift 18s linear infinite,
-    home-particles-pulse 5s ease-in-out infinite alternate;
-}
-
-body.page-home .home-start-card,
-body.page-home .home-book-card {
-  backdrop-filter: blur(10px);
-}
-
-@keyframes home-particles-drift {
-  from {
-    background-position: 0 0, 17px 23px, -22px 31px;
-  }
-  to {
-    background-position: 96px 72px, -91px 113px, 79px -71px;
-  }
-}
-
-@keyframes home-particles-pulse {
-  from {
-    opacity: 0.58;
-  }
-  to {
-    opacity: 0.86;
-  }
+  opacity: 1;
+  -webkit-mask-image: radial-gradient(circle, transparent, black);
+  mask-image: radial-gradient(circle, transparent, black);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.page-home::before,
-  body.page-home::after {
-    animation: none;
+  #home-plum-canvas {
+    opacity: 0.75;
+  }
+}
+
+/* Mobile menu: main.css was hiding #menu-toggle and all non-icon nav items. Restore a real drawer. */
+#menu-toggle.menu-button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--c-fg-deep);
+  cursor: pointer;
+  padding: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  #menu-toggle.menu-button {
+    display: none !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  body.page-home::before {
-    background:
-      radial-gradient(circle at 0% 10%, var(--home-glow-primary), transparent 20rem),
-      radial-gradient(circle at 100% 12%, var(--home-glow-secondary), transparent 18rem);
+  #menu-toggle.menu-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--c-bg) 92%, transparent);
+    color: var(--c-fg-deep);
+    font-size: 1.8rem;
+    line-height: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1001;
   }
 
-  body.page-home::after {
-    opacity: 0.68;
-    background-size: 30px 30px, 48px 48px, 78px 78px;
-    animation-duration: 16s, 5s;
+  .navigation.is-open #menu-toggle.menu-button {
+    color: var(--c-fg-deeper);
+    background: var(--c-bg);
+  }
+
+  .navigation .navigation-list {
+    position: absolute !important;
+    top: calc(100% + 0.6rem) !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0.9rem;
+    box-sizing: border-box;
+    border: 1px solid var(--c-border) !important;
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--c-bg) 96%, transparent) !important;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(16px);
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: translateY(-0.6rem) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    z-index: 1000;
+  }
+
+  .navigation.is-open .navigation-list {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .navigation .navigation-item,
+  .navigation .navigation-item:not(.nav-icon-item),
+  .navigation .navigation-item.nav-section {
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .navigation .nav-primary-item > .navigation-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 4.6rem;
+    padding: 0 1.1rem;
+    border-radius: 14px;
+    box-sizing: border-box;
+    color: var(--c-fg-deep);
+    font-size: 1.65rem;
+    font-weight: 650;
+    letter-spacing: -0.012em;
+    opacity: 0.9;
+  }
+
+  .navigation .nav-primary-item > .navigation-link:hover,
+  .navigation .nav-primary-item > .navigation-link:focus {
+    background: rgba(125, 125, 125, 0.09);
+    color: var(--c-fg-deeper);
+  }
+
+  .navigation .nav-utilities {
+    margin-top: 0.55rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .navigation .nav-utility-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+  }
+
+  .navigation .nav-socials {
+    display: none !important;
+  }
+
+  .navigation .nav-search-box,
+  .navigation .aa-Autocomplete {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+  }
+
+  .navigation .aa-Autocomplete .aa-DetachedSearchButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 4.2rem;
+    min-height: 4.2rem;
+    padding: 0 1rem;
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    box-sizing: border-box;
+    background: rgba(125, 125, 125, 0.045);
+  }
+
+  .navigation .aa-DetachedSearchButtonQuery,
+  .navigation .aa-DetachedSearchButtonShortcut {
+    display: none;
+  }
+
+  .navigation .aa-DetachedSearchButtonPlaceholder {
+    display: inline-block;
+    margin-left: 0.55rem;
+    font-size: 1.28rem;
+    font-weight: 650;
+  }
+
+  .navigation .nav-utility-row > .nav-icon-link,
+  .navigation .nav-utility-row > button.nav-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    min-width: 4.2rem;
+    min-height: 4.2rem;
+    padding: 0;
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    background: rgba(125, 125, 125, 0.045);
+    color: var(--c-fg-deep);
+    font-size: 1.45rem;
+    opacity: 0.88;
+    box-sizing: border-box;
+  }
+
+  .navigation .nav-language-link {
+    width: auto;
+    min-width: 4.2rem;
+    padding: 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 }
