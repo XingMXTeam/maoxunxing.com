@@ -37,7 +37,7 @@ const themeTokens = {
 };
 
 markHomePage();
-initHomePlumBackground();
+initHomeRandomArtBackground();
 
 function getStoredTheme() {
     try {
@@ -221,18 +221,100 @@ function setMenuState(isOpen) {
     }
 }
 
-function initHomePlumBackground() {
+function initHomeRandomArtBackground() {
     if (!body.classList.contains('page-home')) return;
-    if (document.getElementById('home-plum-canvas')) return;
+    if (document.getElementById('home-art-canvas')) return;
 
     const canvas = document.createElement('canvas');
-    canvas.id = 'home-plum-canvas';
-    canvas.setAttribute('aria-hidden', 'true');
-    body.prepend(canvas);
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const art = Math.random() > 0.5 ? 'plum' : 'dots';
+    canvas.id = 'home-art-canvas';
+    canvas.dataset.art = art;
+    canvas.setAttribute('aria-hidden', 'true');
+    body.prepend(canvas);
+
+    if (art === 'plum') {
+        initHomePlumArt(canvas, ctx);
+    } else {
+        initHomeDotsArt(canvas, ctx);
+    }
+}
+
+function initHomeDotsArt(canvas, ctx) {
+    const scale = 200;
+    const length = 5;
+    const spacing = 15;
+    const dotColor = '#cccccc';
+    let width = 0;
+    let height = 0;
+    let points = [];
+    let animationFrame = 0;
+
+    const noise = (x, y, z) => {
+        const value = Math.sin(x * 12.9898 + y * 78.233 + z * 37.719) * 43758.5453;
+        return value - Math.floor(value);
+    };
+
+    const getForceOnPoint = (x, y, z) => (noise(x / scale, y / scale, z) - 0.5) * 2 * Math.PI;
+
+    const resize = () => {
+        const dpr = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        points = [];
+
+        for (let x = -spacing / 2; x < width + spacing; x += spacing) {
+            for (let y = -spacing / 2; y < height + spacing; y += spacing) {
+                points.push({
+                    x,
+                    y,
+                    opacity: Math.random() * 0.5 + 0.5,
+                });
+            }
+        }
+    };
+
+    const draw = () => {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = dotColor;
+        const t = Date.now() / 10000;
+
+        for (const point of points) {
+            const rad = getForceOnPoint(point.x, point.y, t);
+            const len = (noise(point.x / scale, point.y / scale, t * 2) + 0.5) * length;
+            const nx = point.x + Math.cos(rad) * len;
+            const ny = point.y + Math.sin(rad) * len;
+            const alpha = (Math.abs(Math.cos(rad)) * 0.8 + 0.2) * point.opacity;
+
+            ctx.globalAlpha = alpha;
+            ctx.beginPath();
+            ctx.arc(nx, ny, 1, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        ctx.globalAlpha = 1;
+        if (!reducedMotionMediaQuery.matches) {
+            animationFrame = requestAnimationFrame(draw);
+        }
+    };
+
+    resize();
+    draw();
+    window.addEventListener('resize', debounce(() => {
+        if (animationFrame) cancelAnimationFrame(animationFrame);
+        resize();
+        draw();
+    }, 180));
+}
+
+function initHomePlumArt(canvas, ctx) {
     const r180 = Math.PI;
     const r90 = Math.PI / 2;
     const r15 = Math.PI / 12;
@@ -266,9 +348,9 @@ function initHomePlumBackground() {
     };
 
     const step = (x, y, rad, counter = { value: 0 }) => {
-        const length = Math.random() * len;
+        const stepLength = Math.random() * len;
         counter.value += 1;
-        const [nx, ny] = polar2cart(x, y, length, rad);
+        const [nx, ny] = polar2cart(x, y, stepLength, rad);
 
         ctx.beginPath();
         ctx.moveTo(x, y);
