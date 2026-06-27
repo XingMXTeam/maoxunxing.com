@@ -121,8 +121,8 @@
     {{ else if .Permalink }}
       <link rel="canonical" href="{{ .Permalink }}" />
     {{ end }}
-    
-       <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin />
+
+    <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="//www.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -131,12 +131,11 @@
     <link rel="stylesheet" href="/third-party/google-fonts/css/style.css" />
     <link
       rel="stylesheet"
-      media="print" 
+      media="print"
       onload="this.media='all'"
       href="/third-party/font-awesome/v5.11.2/css/all.css"
     />
 
-    
     {{ if .HasShortcode "zestful-ad" }}
       <link
         rel="stylesheet"
@@ -234,7 +233,6 @@
       <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       rel="icon"
@@ -257,10 +255,9 @@
       {{ printf `<link rel="alternate" type="application/rss+xml" href="%s/%s" title="%s" />` .Site.BaseURL "index.xml" $.Site.Title | safeHTML }}
     {{ end -}}
 
-
     <link
       rel="stylesheet"
-      media="print" 
+      media="print"
       onload="this.media='all'"
       href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
     />
@@ -268,11 +265,12 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
 
     {{ hugo.Generator }}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014"
-    crossorigin="anonymous"></script>
+    {{ if not .IsHome }}
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
+    {{ end }}
   </head>
   {{ partial "google-analytics.html" . }}
-  
+
   {{ $csClass := "colorscheme-light" }}
   {{ if eq .Site.Params.colorscheme "dark" }}
     {{ $csClass = "colorscheme-dark" }}
@@ -286,34 +284,36 @@
   {{ else if eq .Language.LanguageName "CN" }}
     {{ $langClass = "cn" }}
   {{ end }}
-  
-  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}">
+
+  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}{{ if .IsHome }} page-home{{ end }}">
     {{ partial "float" . }}
     <main class="wrapper">
       {{ partial "header.html" . }}
 
       <article class="content">
-        <!-- google adsense -->
-        <div id="adsense-container" style="min-height: 90px; margin: 20px 0; text-align: center;">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-6892599483138014"
-               data-ad-slot="7317384674"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-        <script>
-          // Wait for the page to be fully loaded before loading ads
-          window.addEventListener('load', function() {
-            // Additional check to ensure the container is visible
-            setTimeout(function() {
-              var adContainer = document.getElementById('adsense-container');
-              if (adContainer && adContainer.offsetWidth > 0) {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              }
-            }, 100);
-          });
-        </script>
+        {{ if not .IsHome }}
+          <!-- google adsense -->
+          <div id="adsense-container" style="min-height: 90px; margin: 20px 0; text-align: center;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6892599483138014"
+                 data-ad-slot="7317384674"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+          </div>
+          <script>
+            // Wait for the page to be fully loaded before loading ads
+            window.addEventListener('load', function() {
+              // Additional check to ensure the container is visible
+              setTimeout(function() {
+                var adContainer = document.getElementById('adsense-container');
+                if (adContainer && adContainer.offsetWidth > 0) {
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+              }, 100);
+            });
+          </script>
+        {{ end }}
         {{ block "content" . }}{{ end }}
       </article>
 
@@ -333,7 +333,7 @@
 
     {{ partial "serviceworker.html" . }}
     {{ partial "search.html" . }}
-    
+
     {{ partial "mathjax.html" . }}
 
     <script src="/js/content-filter.js"></script>
@@ -342,7 +342,7 @@
       <!-- 在其他脚本之前添加 -->
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
       <script src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
-      
+
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           // 初始化 Gumshoe - 只在存在目录时初始化
@@ -361,7 +361,7 @@
           // 初始化 Headroom - 添加空值检查
           var header = document.querySelector("header");
           var toc = document.querySelector(".toc-wrapper");
-          
+
           if (header) {
             var headroom = new Headroom(header, {
               offset: 100,
@@ -377,6 +377,6 @@
           }
         });
       </script>
-     
+
   </body>
 </html>
