@@ -2,7 +2,31 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20260627-home3" />
+<link rel="stylesheet" href="/css/home.css?v=20260627-home4" />
+<style>
+  /* Critical guard: the generated art canvas must never participate in layout.
+     Without this inline rule, a stale external CSS cache can make the canvas
+     occupy a full viewport height and push the mobile homepage down. */
+  body.page-home #home-art-canvas {
+    position: fixed !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+
+  body.page-home .wrapper {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+</style>
 
 <section class="container home-prose">
 
