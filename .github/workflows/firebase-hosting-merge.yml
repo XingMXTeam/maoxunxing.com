@@ -6,6 +6,11 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - master
+
+concurrency:
+  group: firebase-hosting-live
+  cancel-in-progress: true
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -23,9 +28,25 @@ jobs:
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
         run: npm update && rm -rf public && hugo --minify && npm run index-and-send
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOG_6A0BF }}"
-          channelId: live
-          projectId: blog-6a0bf
+      - name: Deploy to Firebase Hosting
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOG_6A0BF }}
+        run: |
+          set +e
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-service-account.json"
+
+          output=$(npx --yes firebase-tools deploy --only hosting --project blog-6a0bf --json 2>&1)
+          status=$?
+          echo "$output"
+
+          if [ "$status" -eq 0 ]; then
+            exit 0
+          fi
+
+          if echo "$output" | grep -q "current active version"; then
+            echo "Firebase Hosting live channel already points to this version; treating this idempotent deploy as success."
+            exit 0
+          fi
+
+          exit "$status"
