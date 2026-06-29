@@ -2,7 +2,7 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20260627-home4" />
+<link rel="stylesheet" href="/css/home.css?v=20260627-home5" />
 <style>
   /* Critical guard: the generated art canvas must never participate in layout.
      Without this inline rule, a stale external CSS cache can make the canvas
@@ -22,11 +22,31 @@
     z-index: 0 !important;
   }
 
+  body.page-home #home-art-canvas[data-art="plum"] {
+    display: none !important;
+  }
+
   body.page-home .wrapper {
     position: relative !important;
     z-index: 1 !important;
   }
 </style>
+<script>
+  // The current antfu.me homepage can randomly choose plum or dots.
+  // maoxunxing.com should always use the antfu dots effect, not plum.
+  (function forceAntfuDotsOnce() {
+    var originalRandom = Math.random;
+    var forced = true;
+    Math.random = function forcedFirstRandom() {
+      if (forced) {
+        forced = false;
+        Math.random = originalRandom;
+        return 0;
+      }
+      return originalRandom.apply(Math, arguments);
+    };
+  })();
+</script>
 
 <section class="container home-prose">
 
