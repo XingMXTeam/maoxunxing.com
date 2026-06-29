@@ -238,22 +238,18 @@ function initHomeDotsBackground() {
 }
 
 function applyHomeCanvasStyle(canvas) {
-    // Critical layout guard: this canvas is decorative background only.
-    // Keep it out of document flow even if external CSS is stale or late.
-    Object.assign(canvas.style, {
-        position: 'fixed',
-        inset: '0',
-        display: 'block',
-        width: '100vw',
-        height: '100vh',
-        maxWidth: 'none',
-        maxHeight: 'none',
-        margin: '0',
-        padding: '0',
-        border: '0',
-        pointerEvents: 'none',
-        zIndex: '0',
-    });
+    canvas.style.position = 'fixed';
+    canvas.style.inset = '0';
+    canvas.style.display = 'block';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.maxWidth = 'none';
+    canvas.style.maxHeight = 'none';
+    canvas.style.margin = '0';
+    canvas.style.padding = '0';
+    canvas.style.border = '0';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '0';
 }
 
 function initHomeDotsArt(canvas, ctx) {
@@ -274,8 +270,6 @@ function initHomeDotsArt(canvas, ctx) {
 
     const hash3 = (x, y, z) => fract(Math.sin(x * 127.1 + y * 311.7 + z * 74.7) * 43758.5453123);
 
-    // Continuous 3D value noise. The previous sin-hash changed discontinuously
-    // with time, causing mobile dots to flicker and jump every frame.
     const valueNoise3D = (x, y, z) => {
         const xi = Math.floor(x);
         const yi = Math.floor(y);
@@ -317,7 +311,11 @@ function initHomeDotsArt(canvas, ctx) {
         }
     };
 
-    const draw = (now = performance.now()) => {
+    const draw = (now) => {
+        if (typeof now !== 'number') {
+            now = performance.now();
+        }
+
         if (!reducedMotionMediaQuery.matches && now - lastFrame < frameInterval) {
             animationFrame = requestAnimationFrame(draw);
             return;
@@ -331,9 +329,9 @@ function initHomeDotsArt(canvas, ctx) {
         for (const point of points) {
             const rad = getForceOnPoint(point.x, point.y, t);
             const lenNoise = valueNoise3D(point.x / scale, point.y / scale, t * 2);
-            const len = (lenNoise * 0.75 + 0.25) * length;
-            const nx = point.x + Math.cos(rad) * len;
-            const ny = point.y + Math.sin(rad) * len;
+            const dotLength = (lenNoise * 0.75 + 0.25) * length;
+            const nx = point.x + Math.cos(rad) * dotLength;
+            const ny = point.y + Math.sin(rad) * dotLength;
             const alpha = (Math.abs(Math.cos(rad)) * 0.55 + 0.18) * point.opacity;
 
             ctx.globalAlpha = alpha;
