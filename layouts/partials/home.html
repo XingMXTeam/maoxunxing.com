@@ -2,7 +2,7 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20260627-home7" />
+<link rel="stylesheet" href="/css/home.css?v=20260627-home8" />
 <style>
   #home-dots-background {
     position: fixed;
@@ -11,33 +11,35 @@
     height: 100vh;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.42;
+    opacity: 0.46;
     background-image:
-      radial-gradient(circle, rgba(130, 130, 130, 0.42) 0 1px, transparent 1.4px),
-      radial-gradient(circle, rgba(130, 130, 130, 0.24) 0 1px, transparent 1.5px);
-    background-size: 18px 18px, 46px 46px;
-    background-position: 0 0, 13px 19px;
-    animation: home-dots-slow-drift 120s linear infinite;
+      radial-gradient(circle, rgba(130, 130, 130, 0.44) 0 1px, transparent 1.4px),
+      radial-gradient(circle, rgba(130, 130, 130, 0.26) 0 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(130, 130, 130, 0.18) 0 0.9px, transparent 1.4px);
+    background-size: 18px 18px, 46px 46px, 82px 82px;
+    background-position: 0 0, 13px 19px, -21px 37px;
+    animation: home-dots-slow-drift 36s linear infinite;
+    will-change: background-position;
   }
 
   body.colorscheme-dark #home-dots-background {
-    opacity: 0.32;
+    opacity: 0.34;
     filter: invert(1);
   }
 
   @media (prefers-color-scheme: dark) {
     body.colorscheme-auto #home-dots-background {
-      opacity: 0.32;
+      opacity: 0.34;
       filter: invert(1);
     }
   }
 
   @keyframes home-dots-slow-drift {
     from {
-      background-position: 0 0, 13px 19px;
+      background-position: 0 0, 13px 19px, -21px 37px;
     }
     to {
-      background-position: 180px 120px, -92px 157px;
+      background-position: 360px 240px, -184px 314px, 247px -205px;
     }
   }
 
