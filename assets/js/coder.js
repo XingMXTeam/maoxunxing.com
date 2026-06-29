@@ -37,7 +37,7 @@ const themeTokens = {
 };
 
 markHomePage();
-initHomeRandomArtBackground();
+initHomeDotsBackground();
 
 function getStoredTheme() {
     try {
@@ -221,7 +221,7 @@ function setMenuState(isOpen) {
     }
 }
 
-function initHomeRandomArtBackground() {
+function initHomeDotsBackground() {
     if (!body.classList.contains('page-home')) return;
     if (document.getElementById('home-art-canvas')) return;
 
@@ -229,17 +229,31 @@ function initHomeRandomArtBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const art = Math.random() > 0.5 ? 'plum' : 'dots';
     canvas.id = 'home-art-canvas';
-    canvas.dataset.art = art;
+    canvas.dataset.art = 'dots';
     canvas.setAttribute('aria-hidden', 'true');
+    applyHomeCanvasStyle(canvas);
     body.prepend(canvas);
+    initHomeDotsArt(canvas, ctx);
+}
 
-    if (art === 'plum') {
-        initHomePlumArt(canvas, ctx);
-    } else {
-        initHomeDotsArt(canvas, ctx);
-    }
+function applyHomeCanvasStyle(canvas) {
+    // Critical layout guard: this canvas is decorative background only.
+    // Keep it out of document flow even if external CSS is stale or late.
+    Object.assign(canvas.style, {
+        position: 'fixed',
+        inset: '0',
+        display: 'block',
+        width: '100vw',
+        height: '100vh',
+        maxWidth: 'none',
+        maxHeight: 'none',
+        margin: '0',
+        padding: '0',
+        border: '0',
+        pointerEvents: 'none',
+        zIndex: '0',
+    });
 }
 
 function initHomeDotsArt(canvas, ctx) {
@@ -247,17 +261,39 @@ function initHomeDotsArt(canvas, ctx) {
     const length = 5;
     const spacing = 15;
     const dotColor = '#cccccc';
+    const frameInterval = 1000 / 24;
     let width = 0;
     let height = 0;
     let points = [];
     let animationFrame = 0;
+    let lastFrame = 0;
 
-    const noise = (x, y, z) => {
-        const value = Math.sin(x * 12.9898 + y * 78.233 + z * 37.719) * 43758.5453;
-        return value - Math.floor(value);
+    const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const fract = (n) => n - Math.floor(n);
+
+    const hash3 = (x, y, z) => fract(Math.sin(x * 127.1 + y * 311.7 + z * 74.7) * 43758.5453123);
+
+    // Continuous 3D value noise. The previous sin-hash changed discontinuously
+    // with time, causing mobile dots to flicker and jump every frame.
+    const valueNoise3D = (x, y, z) => {
+        const xi = Math.floor(x);
+        const yi = Math.floor(y);
+        const zi = Math.floor(z);
+        const xf = fade(x - xi);
+        const yf = fade(y - yi);
+        const zf = fade(z - zi);
+
+        const x00 = lerp(hash3(xi, yi, zi), hash3(xi + 1, yi, zi), xf);
+        const x10 = lerp(hash3(xi, yi + 1, zi), hash3(xi + 1, yi + 1, zi), xf);
+        const x01 = lerp(hash3(xi, yi, zi + 1), hash3(xi + 1, yi, zi + 1), xf);
+        const x11 = lerp(hash3(xi, yi + 1, zi + 1), hash3(xi + 1, yi + 1, zi + 1), xf);
+        const y0 = lerp(x00, x10, yf);
+        const y1 = lerp(x01, x11, yf);
+        return lerp(y0, y1, zf);
     };
 
-    const getForceOnPoint = (x, y, z) => (noise(x / scale, y / scale, z) - 0.5) * 2 * Math.PI;
+    const getForceOnPoint = (x, y, z) => (valueNoise3D(x / scale, y / scale, z) - 0.5) * 2 * Math.PI;
 
     const resize = () => {
         const dpr = window.devicePixelRatio || 1;
@@ -281,17 +317,24 @@ function initHomeDotsArt(canvas, ctx) {
         }
     };
 
-    const draw = () => {
+    const draw = (now = performance.now()) => {
+        if (!reducedMotionMediaQuery.matches && now - lastFrame < frameInterval) {
+            animationFrame = requestAnimationFrame(draw);
+            return;
+        }
+
+        lastFrame = now;
         ctx.clearRect(0, 0, width, height);
         ctx.fillStyle = dotColor;
-        const t = Date.now() / 10000;
+        const t = now / 16000;
 
         for (const point of points) {
             const rad = getForceOnPoint(point.x, point.y, t);
-            const len = (noise(point.x / scale, point.y / scale, t * 2) + 0.5) * length;
+            const lenNoise = valueNoise3D(point.x / scale, point.y / scale, t * 2);
+            const len = (lenNoise * 0.75 + 0.25) * length;
             const nx = point.x + Math.cos(rad) * len;
             const ny = point.y + Math.sin(rad) * len;
-            const alpha = (Math.abs(Math.cos(rad)) * 0.8 + 0.2) * point.opacity;
+            const alpha = (Math.abs(Math.cos(rad)) * 0.55 + 0.18) * point.opacity;
 
             ctx.globalAlpha = alpha;
             ctx.beginPath();
@@ -312,122 +355,6 @@ function initHomeDotsArt(canvas, ctx) {
         resize();
         draw();
     }, 180));
-}
-
-function initHomePlumArt(canvas, ctx) {
-    const r180 = Math.PI;
-    const r90 = Math.PI / 2;
-    const r15 = Math.PI / 12;
-    const minBranch = 30;
-    const len = 6;
-    const color = '#88888825';
-    const frameInterval = reducedMotionMediaQuery.matches ? 0 : 1000 / 40;
-    let width = 0;
-    let height = 0;
-    let steps = [];
-    let prevSteps = [];
-    let animationFrame = 0;
-    let lastTime = performance.now();
-
-    const randomMiddle = () => Math.random() * 0.6 + 0.2;
-    const polar2cart = (x = 0, y = 0, r = 0, theta = 0) => [
-        x + r * Math.cos(theta),
-        y + r * Math.sin(theta),
-    ];
-
-    const resize = () => {
-        const dpr = window.devicePixelRatio || 1;
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
-        canvas.width = Math.floor(width * dpr);
-        canvas.height = Math.floor(height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        start();
-    };
-
-    const step = (x, y, rad, counter = { value: 0 }) => {
-        const stepLength = Math.random() * len;
-        counter.value += 1;
-        const [nx, ny] = polar2cart(x, y, stepLength, rad);
-
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(nx, ny);
-        ctx.stroke();
-
-        const rad1 = rad + Math.random() * r15;
-        const rad2 = rad - Math.random() * r15;
-
-        if (nx < -100 || nx > width + 100 || ny < -100 || ny > height + 100) {
-            return;
-        }
-
-        const rate = counter.value <= minBranch ? 0.8 : 0.5;
-        if (Math.random() < rate) steps.push(() => step(nx, ny, rad1, counter));
-        if (Math.random() < rate) steps.push(() => step(nx, ny, rad2, counter));
-    };
-
-    const render = () => {
-        if (!frameInterval || performance.now() - lastTime >= frameInterval) {
-            prevSteps = steps;
-            steps = [];
-            lastTime = performance.now();
-
-            if (!prevSteps.length) {
-                cancelAnimationFrame(animationFrame);
-                animationFrame = 0;
-                return;
-            }
-
-            prevSteps.forEach((item) => {
-                if (Math.random() < 0.5) {
-                    steps.push(item);
-                } else {
-                    item();
-                }
-            });
-        }
-
-        animationFrame = requestAnimationFrame(render);
-    };
-
-    function start() {
-        if (animationFrame) {
-            cancelAnimationFrame(animationFrame);
-            animationFrame = 0;
-        }
-
-        ctx.clearRect(0, 0, width, height);
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = color;
-        prevSteps = [];
-        steps = [
-            () => step(randomMiddle() * width, -5, r90),
-            () => step(randomMiddle() * width, height + 5, -r90),
-            () => step(-5, randomMiddle() * height, 0),
-            () => step(width + 5, randomMiddle() * height, r180),
-        ];
-
-        if (width < 500) {
-            steps = steps.slice(0, 2);
-        }
-
-        if (reducedMotionMediaQuery.matches) {
-            for (let i = 0; i < 260 && steps.length; i += 1) {
-                prevSteps = steps;
-                steps = [];
-                prevSteps.forEach((item) => item());
-            }
-            return;
-        }
-
-        animationFrame = requestAnimationFrame(render);
-    }
-
-    resize();
-    window.addEventListener('resize', debounce(resize, 180));
 }
 
 function debounce(fn, wait) {
