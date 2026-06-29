@@ -2,24 +2,49 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20260627-home6" />
+<link rel="stylesheet" href="/css/home.css?v=20260627-home7" />
 <style>
-  /* Critical guard: the generated art canvas must never participate in layout.
-     Without this inline rule, a stale external CSS cache can make the canvas
-     occupy a full viewport height and push the mobile homepage down. */
-  body.page-home #home-art-canvas {
-    position: fixed !important;
-    inset: 0 !important;
-    display: block !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: none !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    pointer-events: none !important;
-    z-index: 0 !important;
+  #home-dots-background {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.42;
+    background-image:
+      radial-gradient(circle, rgba(130, 130, 130, 0.42) 0 1px, transparent 1.4px),
+      radial-gradient(circle, rgba(130, 130, 130, 0.24) 0 1px, transparent 1.5px);
+    background-size: 18px 18px, 46px 46px;
+    background-position: 0 0, 13px 19px;
+    animation: home-dots-slow-drift 120s linear infinite;
+  }
+
+  body.colorscheme-dark #home-dots-background {
+    opacity: 0.32;
+    filter: invert(1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body.colorscheme-auto #home-dots-background {
+      opacity: 0.32;
+      filter: invert(1);
+    }
+  }
+
+  @keyframes home-dots-slow-drift {
+    from {
+      background-position: 0 0, 13px 19px;
+    }
+    to {
+      background-position: 180px 120px, -92px 157px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #home-dots-background {
+      animation: none;
+    }
   }
 
   body.page-home .wrapper {
@@ -27,6 +52,8 @@
     z-index: 1 !important;
   }
 </style>
+
+<div id="home-dots-background" aria-hidden="true"></div>
 
 <section class="container home-prose">
 
