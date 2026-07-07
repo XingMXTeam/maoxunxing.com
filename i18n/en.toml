@@ -2,91 +2,94 @@
 other = "Felix Mao"
 
 [homeBio]
-other = "Hey! I'm Felix Mao, a senior Frontend Engineer with 10+ years at big tech companies. A reading enthusiast, crypto and index investor."
+other = "Hey, I'm Felix Mao, a frontend engineer with 10+ years of building software. I used to work at NetEase and Alibaba, and these days I write more about AI, personal products, creator systems, and long-term investing."
 
 [homePara1]
-other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, and investment strategies. I also share <a href="/book-reports/">book reports</a> on what I've been reading. You can find my <a href="/projects/">full projects list here</a>."""
+other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, career choices, and investing reviews. I also share <a href="/book-reports/">book reports</a> to keep ideas that may stay useful over time."""
 
 [homePara2]
 other = """Currently focused on LEARN, BUILD and GROW with AGI. Exploring two areas: Tech (AI &amp; Frontend Innovation) and Investment (BTC, VGT &amp; VOO). Weekly updates with fresh perspectives on tech and investment."""
 
 [homePara3]
-other = """Outside of coding, I enjoy reading, drawing, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">media consumption</a>."""
+other = """Outside of coding, I also keep notes on reading, drawing, tools, media, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">media log</a>."""
 
 [homeEyebrow]
-other = "Felix Mao · AI Creator · Frontend Engineer · Indie Hacker"
+other = "Felix Mao · public notebook"
 
 [homeHeroTitle]
-other = "Building personal leverage with AI, code, and content"
+other = "Hi, I'm Felix Mao"
 
 [homeHeroDesc]
-other = "I write about AI coding, AI indie hacking, long-term investing, and ebook experiments. The goal is not to chase hype, but to turn technical skills, writing, and investing experience into reusable, distributable, and sellable assets."
+other = "I spent a decade writing frontend code. Recently, I have been learning AI seriously, building small personal products, and keeping notes on long-term investing and family cash flow. This is not a course landing page. It is closer to a public notebook of things I actually used, thought about, or struggled with."
 
 [homePrimaryCTA]
-other = "Start with AI Indie Hacking"
+other = "Start with the blog"
 
 [homePrimaryHref]
-other = "/en/ai-indie-hacking/"
+other = "/posts/"
 
 [homeSecondaryCTA]
-other = "Read my AI Coding Workflow"
+other = "About me"
 
 [homeSecondaryHref]
-other = "/en/ai-coding-workflow/"
+other = "/about/"
+
+[homeIntroLabel]
+other = "Personal introduction"
 
 [homeStartLabel]
-other = "Start here"
+other = "If this is your first visit, start here"
 
 [homeCard1Kicker]
-other = "AI Coding"
+other = "Code"
 
 [homeCard1Title]
-other = "AI Coding Workflow"
+other = "How I code with AI"
 
 [homeCard1Desc]
-other = "From Copilot and Cursor to Codex / Qoder: how I turn coding into goal-driven task orchestration."
+other = "Not tool chasing, but how I put AI into real engineering workflows: requirements, context, planning, implementation, validation, and judgment."
 
 [homeCard1Href]
-other = "/en/ai-coding-workflow/"
+other = "/ai-coding-workflow/"
 
 [homeCard2Kicker]
-other = "Indie Hacking"
+other = "Build"
 
 [homeCard2Title]
-other = "AI Indie Hacking"
+other = "How I build personal products"
 
 [homeCard2Desc]
-other = "Why I do not want to rely only on salary, and how I use ebooks, blog GEO, and small tools to build a second curve."
+other = "Starting with ebooks, blog GEO, small tools, and content channels to slowly validate a second curve for an engineer."
 
 [homeCard2Href]
-other = "/en/ai-indie-hacking/"
+other = "/ai-indie-hacking/"
 
 [homeCard3Kicker]
-other = "Creator System"
+other = "Create"
 
 [homeCard3Title]
-other = "Creator Workflow"
+other = "How I organize knowledge and content"
 
 [homeCard3Desc]
-other = "From materials, articles, covers, videos, to multi-platform distribution: turning content creation into a compounding system."
+other = "Notes on topics, writing, materials, covers, videos, distribution, and review loops for building a long-term creator system."
 
 [homeCard3Href]
-other = "/en/creator-workflow/"
+other = "/creator-workflow/"
 
 [homeFocusTitle]
-other = "What I am working on"
+other = "What I am seriously working on"
 
 [homeFocus1Title]
 other = "AI coding and frontend engineering"
 
 [homeFocus1Desc]
-other = "I study how AI enters real engineering workflows: requirement clarification, context preparation, Plan, code generation, Code Review, Browser Use validation, and human judgment."
+other = "I study how AI enters real engineering workflows: requirement clarification, context preparation, planning, code generation, code review, browser validation, and human judgment."
 
 [homeFocus2Title]
-other = "AI indie hacking and productizing myself"
+other = "Personal products, ebooks, and content experiments"
 
 [homeFocus2Desc]
-other = "I start with ebooks as small real cash flow, build traffic through blog, Xiaohongshu, WeChat, and Substack, then extract products such as GEO tools from real workflows."
+other = "Instead of rushing into a big product, I extract small products, resources, tools, and content assets from real workflows, then test whether people want to read them, use them, or pay for them."
 
 [homeFocus3Title]
 other = "Long-term investing and family cash flow"
@@ -94,11 +97,89 @@ other = "Long-term investing and family cash flow"
 [homeFocus3Desc]
 other = "I write about index funds, asset allocation, options, cash flow, and risk control. Investing is not about getting rich overnight, but managing time, risk, and family security with systems thinking."
 
+[homeBrowseTitle]
+other = "Or just wander around"
+
+[homeBrowseDesc]
+other = "A personal blog should not have only one conversion path. These are looser entrances into what I read, use, build, watch, and think about."
+
+[homeBrowse1Title]
+other = "Blog"
+
+[homeBrowse1Desc]
+other = "Engineering, AI, frontend, and practice"
+
+[homeBrowse1Href]
+other = "/posts/"
+
+[homeBrowse2Title]
+other = "Notes"
+
+[homeBrowse2Desc]
+other = "Thoughts, observations, and unfinished judgments"
+
+[homeBrowse2Href]
+other = "/notes/"
+
+[homeBrowse3Title]
+other = "Book reports"
+
+[homeBrowse3Desc]
+other = "Books I read and ideas worth keeping"
+
+[homeBrowse3Href]
+other = "/book-reports/"
+
+[homeBrowse4Title]
+other = "Projects"
+
+[homeBrowse4Desc]
+other = "Small things I built or am building"
+
+[homeBrowse4Href]
+other = "/projects/"
+
+[homeBrowse5Title]
+other = "Uses"
+
+[homeBrowse5Desc]
+other = "Software, hardware, and tools I use"
+
+[homeBrowse5Href]
+other = "/uses/"
+
+[homeBrowse6Title]
+other = "Bookmarks"
+
+[homeBrowse6Desc]
+other = "Links worth opening again"
+
+[homeBrowse6Href]
+other = "/bookmarks/"
+
+[homeBrowse7Title]
+other = "Media"
+
+[homeBrowse7Desc]
+other = "Things I watched, listened to, or learned from"
+
+[homeBrowse7Href]
+other = "/media/"
+
+[homeBrowse8Title]
+other = "Gallery"
+
+[homeBrowse8Desc]
+other = "Images, visual experiments, and interests"
+
+[homeBrowse8Href]
+other = "/gallery/"
+
 [homeBookTitle]
-other = "My ebook"
+other = "A small product experiment: my options ebook"
 
 [homeBookDesc]
-other = "I wrote an ebook about options, trying to explain options, risk-reward, and financial tools in a simpler way for ordinary readers."
+other = "I wrote an ebook about options, trying to explain options, risk-reward, and financial tools in a simpler way for ordinary readers. It is also a small experiment in productizing knowledge."
 
 [homeBookCTA]
 other = "Read Options Made Simple"
