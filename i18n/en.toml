@@ -20,7 +20,7 @@ other = "Felix Mao · public notebook"
 other = "Hi, I'm Felix Mao"
 
 [homeHeroDesc]
-other = "I spent a decade writing frontend code. Recently, I have been learning AI seriously, building small personal products, and keeping notes on long-term investing and family cash flow. This is not a course landing page. It is closer to a public notebook of things I actually used, thought about, or struggled with."
+other = "I spent a decade writing frontend code. Recently, I have been learning AI seriously, building small personal products, and keeping notes on long-term investing and family cash flow. I keep writing down the things I actually used, thought about, and struggled with here."
 
 [homePrimaryCTA]
 other = "Start with the blog"
@@ -59,7 +59,7 @@ other = "Build"
 other = "How I build personal products"
 
 [homeCard2Desc]
-other = "Starting with ebooks, blog GEO, small tools, and content channels to slowly validate a second curve for an engineer."
+other = "Starting with ebooks, blogs, small tools, and content accounts, I am slowly figuring out what an engineer can build beyond a day job."
 
 [homeCard2Href]
 other = "/ai-indie-hacking/"
@@ -89,7 +89,7 @@ other = "I study how AI enters real engineering workflows: requirement clarifica
 other = "Personal products, ebooks, and content experiments"
 
 [homeFocus2Desc]
-other = "Instead of rushing into a big product, I extract small products, resources, tools, and content assets from real workflows, then test whether people want to read them, use them, or pay for them."
+other = "I start from my own real experiences: small resources, tools, and articles, then slowly watch which ones actually help people and bring in a little income."
 
 [homeFocus3Title]
 other = "Long-term investing and family cash flow"
@@ -101,7 +101,7 @@ other = "I write about index funds, asset allocation, options, cash flow, and ri
 other = "Or just wander around"
 
 [homeBrowseDesc]
-other = "A personal blog should not have only one conversion path. These are looser entrances into what I read, use, build, watch, and think about."
+other = "I do not only write about technology here. I also keep long-term collections from life and interests: books I read, tools I used, small things I built, and media I still want to remember."
 
 [homeBrowse1Title]
 other = "Blog"
@@ -176,10 +176,10 @@ other = "Images, visual experiments, and interests"
 other = "/gallery/"
 
 [homeBookTitle]
-other = "A small product experiment: my options ebook"
+other = "An options ebook I wrote"
 
 [homeBookDesc]
-other = "I wrote an ebook about options, trying to explain options, risk-reward, and financial tools in a simpler way for ordinary readers. It is also a small experiment in productizing knowledge."
+other = "I wrote an ebook about options, trying to explain options, risk-reward, and financial tools in a simpler way for ordinary readers. It also records my first serious attempt to turn one knowledge topic into a complete piece of work."
 
 [homeBookCTA]
 other = "Read Options Made Simple"
