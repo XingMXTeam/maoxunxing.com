@@ -2,7 +2,7 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20260629-home-dots-soft1" />
+<link rel="stylesheet" href="/css/home.css?v=20260707-human1" />
 <style>
   #home-dots-background {
     position: fixed;
@@ -85,25 +85,34 @@
     </div>
   </section>
 
-  <div class="home-start-grid" aria-label="{{ i18n "homeStartLabel" }}">
-    <a class="home-start-card" href="{{ i18n "homeCard1Href" }}">
-      <span class="home-start-kicker">{{ i18n "homeCard1Kicker" }}</span>
-      <strong>{{ i18n "homeCard1Title" }}</strong>
-      <p>{{ i18n "homeCard1Desc" }}</p>
-    </a>
+  <section class="home-human-panel" aria-label="{{ i18n "homeIntroLabel" }}">
+    <p>{{ i18n "homeBio" | safeHTML }}</p>
+    <p>{{ i18n "homePara1" | safeHTML }}</p>
+    <p>{{ i18n "homePara3" | safeHTML }}</p>
+  </section>
 
-    <a class="home-start-card" href="{{ i18n "homeCard2Href" }}">
-      <span class="home-start-kicker">{{ i18n "homeCard2Kicker" }}</span>
-      <strong>{{ i18n "homeCard2Title" }}</strong>
-      <p>{{ i18n "homeCard2Desc" }}</p>
-    </a>
+  <section class="home-section-block home-start-block">
+    <h2 class="home-section-title">{{ i18n "homeStartLabel" }}</h2>
+    <div class="home-start-grid" aria-label="{{ i18n "homeStartLabel" }}">
+      <a class="home-start-card" href="{{ i18n "homeCard1Href" }}">
+        <span class="home-start-kicker">{{ i18n "homeCard1Kicker" }}</span>
+        <strong>{{ i18n "homeCard1Title" }}</strong>
+        <p>{{ i18n "homeCard1Desc" }}</p>
+      </a>
 
-    <a class="home-start-card" href="{{ i18n "homeCard3Href" }}">
-      <span class="home-start-kicker">{{ i18n "homeCard3Kicker" }}</span>
-      <strong>{{ i18n "homeCard3Title" }}</strong>
-      <p>{{ i18n "homeCard3Desc" }}</p>
-    </a>
-  </div>
+      <a class="home-start-card" href="{{ i18n "homeCard2Href" }}">
+        <span class="home-start-kicker">{{ i18n "homeCard2Kicker" }}</span>
+        <strong>{{ i18n "homeCard2Title" }}</strong>
+        <p>{{ i18n "homeCard2Desc" }}</p>
+      </a>
+
+      <a class="home-start-card" href="{{ i18n "homeCard3Href" }}">
+        <span class="home-start-kicker">{{ i18n "homeCard3Kicker" }}</span>
+        <strong>{{ i18n "homeCard3Title" }}</strong>
+        <p>{{ i18n "homeCard3Desc" }}</p>
+      </a>
+    </div>
+  </section>
 
   <section class="home-section-block">
     <h2 class="home-section-title">{{ i18n "homeFocusTitle" }}</h2>
@@ -120,6 +129,21 @@
         <strong>{{ i18n "homeFocus3Title" }}</strong>
         <p>{{ i18n "homeFocus3Desc" }}</p>
       </div>
+    </div>
+  </section>
+
+  <section class="home-section-block">
+    <h2 class="home-section-title">{{ i18n "homeBrowseTitle" }}</h2>
+    <p class="home-browse-desc">{{ i18n "homeBrowseDesc" }}</p>
+    <div class="home-browse-grid">
+      <a class="home-browse-link" href="{{ i18n "homeBrowse1Href" }}"><strong>{{ i18n "homeBrowse1Title" }}</strong><span>{{ i18n "homeBrowse1Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse2Href" }}"><strong>{{ i18n "homeBrowse2Title" }}</strong><span>{{ i18n "homeBrowse2Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse3Href" }}"><strong>{{ i18n "homeBrowse3Title" }}</strong><span>{{ i18n "homeBrowse3Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse4Href" }}"><strong>{{ i18n "homeBrowse4Title" }}</strong><span>{{ i18n "homeBrowse4Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse5Href" }}"><strong>{{ i18n "homeBrowse5Title" }}</strong><span>{{ i18n "homeBrowse5Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse6Href" }}"><strong>{{ i18n "homeBrowse6Title" }}</strong><span>{{ i18n "homeBrowse6Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse7Href" }}"><strong>{{ i18n "homeBrowse7Title" }}</strong><span>{{ i18n "homeBrowse7Desc" }}</span></a>
+      <a class="home-browse-link" href="{{ i18n "homeBrowse8Href" }}"><strong>{{ i18n "homeBrowse8Title" }}</strong><span>{{ i18n "homeBrowse8Desc" }}</span></a>
     </div>
   </section>
 
