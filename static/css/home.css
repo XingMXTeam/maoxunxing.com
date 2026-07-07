@@ -1,14 +1,14 @@
-/* ========== Homepage Conversion Layer ========== */
-/* Focus: clearer positioning, stronger CTAs, better internal navigation. */
+/* ========== Homepage Personal Layer ========== */
+/* Focus: personal first impression, clear reading paths, and lightweight conversion. */
 
 .home-hero {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 .home-eyebrow {
   margin: 0 0 1rem;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   color: var(--c-fg-light);
 }
@@ -28,9 +28,9 @@
 }
 
 .home-hero-desc {
-  max-width: 58ch;
+  max-width: 62ch;
   margin: 0 0 1.6rem;
-  font-size: 1.75rem;
+  font-size: 1.72rem;
   line-height: 1.75;
   color: var(--c-fg);
 }
@@ -76,11 +76,35 @@
   text-decoration: none;
 }
 
+.home-human-panel {
+  max-width: 72ch;
+  margin: 0 0 2.6rem;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--c-border);
+  border-radius: 18px;
+  background: rgba(125, 125, 125, 0.03);
+}
+
+.home-human-panel p {
+  margin: 0 0 1rem;
+  color: var(--c-fg);
+  font-size: 1.45rem;
+  line-height: 1.75;
+}
+
+.home-human-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.home-human-panel a {
+  font-weight: 600;
+}
+
 .home-start-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
-  margin: 2rem 0 2.4rem;
+  margin: 1.2rem 0 2.4rem;
 }
 
 .home-start-card {
@@ -158,6 +182,53 @@
   line-height: 1.7;
 }
 
+.home-browse-desc {
+  max-width: 64ch;
+  margin: 0.4rem 0 1.3rem;
+  color: var(--c-fg);
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.home-browse-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.home-browse-link {
+  display: block;
+  min-height: 8.6rem;
+  padding: 1rem;
+  border: 1px solid var(--c-border) !important;
+  border-radius: 14px;
+  color: inherit !important;
+  text-decoration: none !important;
+  background: rgba(125, 125, 125, 0.025);
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.home-browse-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--c-border-hover) !important;
+  background: rgba(125, 125, 125, 0.055);
+}
+
+.home-browse-link strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--c-fg-deeper);
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.home-browse-link span {
+  display: block;
+  color: var(--c-fg-light);
+  font-size: 1.18rem;
+  line-height: 1.5;
+}
+
 .home-book-card {
   margin: 1.5rem 0 0;
   padding: 1.5rem;
@@ -179,12 +250,15 @@
   font-size: 1.35rem;
 }
 
+body.colorscheme-dark .home-human-panel,
 body.colorscheme-dark .home-start-card,
+body.colorscheme-dark .home-browse-link,
 body.colorscheme-dark .home-book-card {
   background: rgba(255, 255, 255, 0.035);
 }
 
-body.colorscheme-dark .home-start-card:hover {
+body.colorscheme-dark .home-start-card:hover,
+body.colorscheme-dark .home-browse-link:hover {
   background: rgba(255, 255, 255, 0.055);
 }
 
@@ -199,12 +273,15 @@ body.colorscheme-dark .home-action-secondary {
 }
 
 @media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .home-human-panel,
   body.colorscheme-auto .home-start-card,
+  body.colorscheme-auto .home-browse-link,
   body.colorscheme-auto .home-book-card {
     background: rgba(255, 255, 255, 0.035);
   }
 
-  body.colorscheme-auto .home-start-card:hover {
+  body.colorscheme-auto .home-start-card:hover,
+  body.colorscheme-auto .home-browse-link:hover {
     background: rgba(255, 255, 255, 0.055);
   }
 
@@ -216,6 +293,12 @@ body.colorscheme-dark .home-action-secondary {
 
   body.colorscheme-auto .home-action-secondary {
     color: var(--c-fg-deeper) !important;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .home-browse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -235,7 +318,7 @@ body.colorscheme-dark .home-action-secondary {
 
   .home-eyebrow {
     margin-bottom: 0.7rem;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .home-hero-title {
@@ -260,8 +343,25 @@ body.colorscheme-dark .home-action-secondary {
     width: 100%;
   }
 
+  .home-human-panel {
+    padding: 1rem;
+  }
+
+  .home-human-panel p {
+    font-size: 1.35rem;
+    line-height: 1.68;
+  }
+
   .home-start-grid {
     grid-template-columns: 1fr;
     margin-top: 1.3rem;
+  }
+
+  .home-browse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-browse-link {
+    min-height: auto;
   }
 }
