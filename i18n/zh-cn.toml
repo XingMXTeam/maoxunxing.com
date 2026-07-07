@@ -2,79 +2,82 @@
 other = "毛毛星"
 
 [homeBio]
-other = "Hi，我是毛毛星，一名资深前端工程师，互联网大厂从业 10 年+。前网易、阿里员工。热爱阅读，加密货币和指数基金投资者。"
+other = "Hi，我是毛毛星，一名做了十多年工程的前端开发者。以前在网易、阿里写代码，现在更多是在记录 AI、个人产品、内容创作和长期投资这些真实问题。"
 
 [homePara1]
-other = """我写<a href="/zh-cn/posts/">技术博客</a>和<a href="/zh-cn/notes/">随笔</a>，分享前端开发、AI 应用和投资策略方面的思考。也会分享<a href="/zh-cn/book-reports/">读书报告</a>。你可以在<a href="/zh-cn/projects/">项目页面</a>查看我的全部项目。"""
+other = """我写<a href="/zh-cn/posts/">技术博客</a>和<a href="/zh-cn/notes/">随笔</a>，分享前端开发、AI 应用、职业选择和投资复盘。也会整理<a href="/zh-cn/book-reports/">读书报告</a>，把一些长期有用的东西留下来。"""
 
 [homePara2]
 other = """目前专注于 Learn、Build and Grow with AGI。探索两个方向：技术（AI 与前端创新实践）和投资（BTC、VGT、VOO 的投资复盘）。每周更新，用简单的视角解读技术与投资。"""
 
 [homePara3]
-other = """编程之外，我喜欢阅读、绘画和内容创作。可以看看我的<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">影音记录</a>。"""
+other = """编程之外，我也会记录阅读、绘画、工具、影音和内容创作。你可以看看我的<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">影音记录</a>。"""
 
 [homeEyebrow]
-other = "Felix Mao / 毛毛星 · AI Creator · Frontend Engineer · Indie Hacker"
+other = "Felix Mao / 毛毛星 · 个人公开笔记本"
 
 [homeHeroTitle]
-other = "用 AI、代码和内容，建立个人杠杆"
+other = "Hi，我是毛毛星"
 
 [homeHeroDesc]
-other = "我记录 AI 编程、AI 个体创业、长期投资和电子书实验。目标不是追热点，而是把技术能力、写作能力和投资经验，慢慢外化成可以复用、传播和交易的产品。"
+other = "写了十年前端，最近在认真学习 AI、做个人产品，也记录长期投资和家庭现金流。这里不是课程官网，更像我的公开笔记本：把我真正用过、想过、踩过坑的东西留下来。"
 
 [homePrimaryCTA]
-other = "从 AI 个体创业开始"
+other = "从博客开始"
 
 [homePrimaryHref]
-other = "/zh-cn/ai-indie-hacking/"
+other = "/zh-cn/posts/"
 
 [homeSecondaryCTA]
-other = "看 AI 编程工作流"
+other = "了解我是谁"
 
 [homeSecondaryHref]
-other = "/zh-cn/ai-coding-workflow/"
+other = "/zh-cn/about/"
+
+[homeIntroLabel]
+other = "个人介绍"
 
 [homeStartLabel]
-other = "从这里开始"
+other = "如果你第一次来，可以从这里开始"
 
 [homeCard1Kicker]
-other = "AI Coding"
+other = "Code"
 
 [homeCard1Title]
-other = "AI 编程工作流"
+other = "我怎么用 AI 写代码"
 
 [homeCard1Desc]
-other = "从 Copilot、Cursor 到 Codex / Qoder，记录我如何把写代码变成目标驱动的任务编排。"
+other = "不是追工具，而是记录我怎么把 AI 放进真实工程流程：需求、上下文、计划、实现、验收和判断。"
 
 [homeCard1Href]
 other = "/zh-cn/ai-coding-workflow/"
 
 [homeCard2Kicker]
-other = "Indie Hacking"
+other = "Build"
 
 [homeCard2Title]
-other = "AI 个体创业"
+other = "我怎么做个人产品和副业"
 
 [homeCard2Desc]
-other = "我为什么不想长期只靠工资，以及如何用电子书、博客 GEO 和小工具实验建立第二曲线。"
+other = "从电子书、博客 GEO、小工具和内容账号开始，慢慢验证一个工程师的第二曲线。"
 
 [homeCard2Href]
 other = "/zh-cn/ai-indie-hacking/"
 
 [homeCard3Kicker]
-other = "Creator System"
+other = "Create"
 
 [homeCard3Title]
-other = "创作者工作流"
+other = "我怎么整理知识和内容"
 
 [homeCard3Desc]
-other = "从素材、文章、封面、视频到多平台分发，把内容创作变成长期复利系统。"
+other = "记录选题、写作、素材、封面、视频、多平台分发和复盘，把内容创作变成长期系统。"
 
 [homeCard3Href]
 other = "/zh-cn/creator-workflow/"
 
 [homeFocusTitle]
-other = "我现在重点做什么"
+other = "我最近在认真做的事"
 
 [homeFocus1Title]
 other = "AI 编程与前端工程"
@@ -83,10 +86,10 @@ other = "AI 编程与前端工程"
 other = "关注 AI 如何进入真实工程流程：需求澄清、上下文准备、Plan、代码生成、Code Review、Browser Use 验收和人工判断。"
 
 [homeFocus2Title]
-other = "AI 个体创业与产品化自己"
+other = "个人产品、电子书和内容实验"
 
 [homeFocus2Desc]
-other = "先用电子书获得真实小现金流，再用博客、小红书、公众号和 Substack 积累流量，最后从真实工作流里拆出 GEO 优化工具或其他小产品。"
+other = "不急着做大产品，而是从自己真实工作流里拆出小产品、小资料、小工具和内容资产，先验证有没有人愿意看、愿意用、愿意付费。"
 
 [homeFocus3Title]
 other = "长期投资与家庭现金流"
@@ -94,11 +97,89 @@ other = "长期投资与家庭现金流"
 [homeFocus3Desc]
 other = "长期关注指数基金、资产配置、期权、现金流和风险控制。投资不是一夜暴富，而是用系统思维管理时间、风险和家庭安全感。"
 
+[homeBrowseTitle]
+other = "也可以随便逛逛"
+
+[homeBrowseDesc]
+other = "个人博客不应该只有一个转化路径。这里还有一些更松弛的入口，记录我读过、用过、做过、看过的东西。"
+
+[homeBrowse1Title]
+other = "技术博客"
+
+[homeBrowse1Desc]
+other = "工程、AI、前端和实践文章"
+
+[homeBrowse1Href]
+other = "/zh-cn/posts/"
+
+[homeBrowse2Title]
+other = "随笔"
+
+[homeBrowse2Desc]
+other = "想法、观察和未完成的判断"
+
+[homeBrowse2Href]
+other = "/zh-cn/notes/"
+
+[homeBrowse3Title]
+other = "读书报告"
+
+[homeBrowse3Desc]
+other = "读过的书和可复用的观点"
+
+[homeBrowse3Href]
+other = "/zh-cn/book-reports/"
+
+[homeBrowse4Title]
+other = "项目"
+
+[homeBrowse4Desc]
+other = "我做过和正在做的小东西"
+
+[homeBrowse4Href]
+other = "/zh-cn/projects/"
+
+[homeBrowse5Title]
+other = "工具箱"
+
+[homeBrowse5Desc]
+other = "我正在用的软件、硬件和工具"
+
+[homeBrowse5Href]
+other = "/zh-cn/uses/"
+
+[homeBrowse6Title]
+other = "书签"
+
+[homeBrowse6Desc]
+other = "值得反复打开的链接收藏"
+
+[homeBrowse6Href]
+other = "/zh-cn/bookmarks/"
+
+[homeBrowse7Title]
+other = "影音"
+
+[homeBrowse7Desc]
+other = "看过、听过和受到启发的内容"
+
+[homeBrowse7Href]
+other = "/zh-cn/media/"
+
+[homeBrowse8Title]
+other = "画廊"
+
+[homeBrowse8Desc]
+other = "图像、视觉实验和兴趣记录"
+
+[homeBrowse8Href]
+other = "/zh-cn/gallery/"
+
 [homeBookTitle]
-other = "我的电子书"
+other = "一个小产品实验：期权电子书"
 
 [homeBookDesc]
-other = "我写过一本关于期权的电子书，尝试用更简单的方式解释期权、风险收益和普通人如何理解金融工具。"
+other = "我写过一本关于期权的电子书，尝试用更简单的方式解释期权、风险收益和普通人如何理解金融工具。它也是我把知识产品化的一次小实验。"
 
 [homeBookCTA]
 other = "阅读 Options Made Simple"
