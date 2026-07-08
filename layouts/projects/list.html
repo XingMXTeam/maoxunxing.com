@@ -1,24 +1,100 @@
 {{ define "title" }}
   {{ .Title }} · {{ .Site.Title }}
 {{ end }}
+
 {{ define "content" }}
 <section class="container projects-page">
-  <h1 class="title">{{ .Title }}</h1>
-  {{ range $category, $items := .Params.projects }}
-  <div class="project-category">
-    <div class="project-category-bg">{{ $category }}</div>
-    <div class="project-grid">
-      {{ range $items }}
-      <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
-        {{ with .icon }}<i class="{{ . }} project-icon"></i>{{ end }}
-        <div class="project-info">
-          <div class="project-name">{{ .name }}</div>
-          <div class="project-desc">{{ .desc }}</div>
-        </div>
+  <header class="projects-hero">
+    {{ with .Params.kicker }}<p class="projects-eyebrow">{{ . }}</p>{{ end }}
+    <h1 class="title projects-title">{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="projects-intro">{{ . }}</p>{{ end }}
+
+    {{ with .Params.project_links }}
+    <div class="projects-actions">
+      {{ range . }}
+      <a class="project-action" href="{{ .url }}" target="_blank" rel="noopener">
+        {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
+        <span>{{ .label }}</span>
       </a>
       {{ end }}
     </div>
+    {{ end }}
+  </header>
+
+  {{ $sections := .Params.project_sections }}
+  {{ if $sections }}
+  <div class="projects-shell">
+    <aside class="projects-side-nav" aria-label="Project sections">
+      {{ range $sections }}
+        {{ $sectionID := default (urlize .title) .id }}
+        <a href="#{{ $sectionID }}">{{ .title }}</a>
+      {{ end }}
+    </aside>
+
+    <div class="projects-main">
+      {{ range $sections }}
+        {{ $sectionID := default (urlize .title) .id }}
+        <section id="{{ $sectionID }}" class="project-category{{ if .featured }} project-category-featured{{ end }}">
+          <div class="project-category-bg">{{ .title }}</div>
+          <div class="project-category-heading">
+            <h2>{{ .title }}</h2>
+            {{ with .lead }}<p>{{ . }}</p>{{ end }}
+          </div>
+
+          <div class="project-grid{{ if .featured }} project-grid-featured{{ end }}">
+            {{ range .items }}
+              {{ $hasLink := .link }}
+              {{ if $hasLink }}
+              <a class="project-card{{ if $.Params.project_sections }}{{ end }}{{ if .featured }} project-card-featured{{ end }}" href="{{ .link }}" target="_blank" rel="noopener">
+              {{ else }}
+              <div class="project-card{{ if .featured }} project-card-featured{{ end }} project-card-static">
+              {{ end }}
+                <div class="project-visual" aria-hidden="true">
+                  {{ with .icon }}<i class="{{ . }} project-icon"></i>{{ end }}
+                  <span class="project-visual-label">{{ default .name .visual }}</span>
+                </div>
+
+                <div class="project-info">
+                  <div class="project-topline">
+                    {{ with .status }}<span class="project-status">{{ . }}</span>{{ end }}
+                    {{ if $hasLink }}<span class="project-arrow">↗</span>{{ end }}
+                  </div>
+                  <div class="project-name">{{ .name }}</div>
+                  <div class="project-desc">{{ .desc }}</div>
+                  {{ with .tags }}
+                  <div class="project-tags">
+                    {{ range . }}<span>{{ . }}</span>{{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              {{ if $hasLink }}
+              </a>
+              {{ else }}
+              </div>
+              {{ end }}
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    </div>
   </div>
+  {{ else }}
+    {{ range $category, $items := .Params.projects }}
+    <div class="project-category">
+      <div class="project-category-bg">{{ $category }}</div>
+      <div class="project-grid">
+        {{ range $items }}
+        <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
+          {{ with .icon }}<i class="{{ . }} project-icon"></i>{{ end }}
+          <div class="project-info">
+            <div class="project-name">{{ .name }}</div>
+            <div class="project-desc">{{ .desc }}</div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   {{ end }}
 </section>
 {{ end }}
