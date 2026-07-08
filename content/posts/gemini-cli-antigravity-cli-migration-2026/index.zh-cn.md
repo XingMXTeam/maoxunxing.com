@@ -1,7 +1,7 @@
 ---
 title: "Gemini CLI 即将停服：如何迁移到 Antigravity CLI？2026 最新教程"
 date: 2026-05-25
-description: "Google 已宣布 Gemini CLI 将迁移到 Antigravity CLI，并在 2026 年 6 月 18 日起停止个人版和免费相关请求服务。本文整理受影响范围、迁移步骤、命令示例和常见问题。"
+description: "Google 已宣布 Gemini CLI 将迁移到 Antigravity CLI，并在 2026 年 6 月 18 日起停止个人版和免费相关请求服务。整理受影响范围、迁移步骤、命令示例和常见问题。"
 tags:
   - AI
   - Gemini CLI
@@ -21,7 +21,7 @@ custom_toc:
 
 **Google 已经宣布 Gemini CLI 将迁移到 Antigravity CLI，而且从 2026 年 6 月 18 日开始，个人版和免费 Gemini CLI / Gemini Code Assist 相关请求将停止服务。**
 
-这不是“未来可能变化”，而是已经给出明确时间点的官方迁移通知。对于靠命令行做内容处理、代码生成、脚本协作和日常自动化的人来说，这篇文章最核心的目标只有一个：**帮你尽快完成迁移，避免工作流中断。**
+这不是“未来可能变化”，而是已经给出明确时间点的官方迁移通知。对于靠命令行做内容处理、代码生成、脚本协作和日常自动化的人来说，现在的重点只有一个：**尽快完成迁移，避免工作流中断。**
 
 如果你之前是照着我那篇 [`Gemini CLI 配置教程`](/ai-gemini-cli/) 配起来的，现在可以把它视为旧环境安装文；从今天开始，更应该关注的是 **Gemini CLI -> Antigravity CLI 的迁移路径**。
 
@@ -218,47 +218,3 @@ alias gemini="some-old-wrapper"
 这次官方给的是明确服务停止日期，不是一次临时故障公告。
 
 如果你依赖这条链路做生产性工作，最好在 **2026 年 6 月 18 日之前** 就完成迁移验证。
-
----
-
-## 常见问题
-
-### Q1：Gemini CLI 现在还能不能继续用？
-
-在官方停止相关请求服务前，部分场景可能还能用。但从迁移成本和稳定性来看，已经不值得继续把新工作流建立在旧工具上。
-
-### Q2：企业用户需要马上迁吗？
-
-Google 官方说明企业版和标准版 Gemini Code Assist 不受这次变化影响。但如果你的团队同时维护个人环境、教程和自动化脚本，提早统一仍然更省事。
-
-### Q3：我以前写的 Gemini CLI 教程是不是过时了？
-
-如果教程的目标是“帮助用户今天开始搭环境”，那它已经部分过时；如果教程的目标是“解释旧方案曾经怎么配”，它仍然有存档价值。更好的做法是补一篇迁移指南，并在旧文里加新文入口。
-
-### Q4：现在还有必要继续学这类 CLI 工具吗？
-
-有必要，而且重要性更高了。
-
-因为这波变化说明一件事：AI CLI 不再只是模型调用入口，而是正在演化成 **Agent 工作流入口**。命令会变，平台会变，但“用终端组织 AI 工作流”的能力只会越来越值钱。
-
----
-
-## 最后
-
-如果你只想记住一件事，那就是：
-
-**Gemini CLI 的问题已经不是“还好不好用”，而是“官方路线已经切换到 Antigravity CLI，且 2026 年 6 月 18 日开始个人版和免费相关请求将停止服务”。**
-
-所以最务实的动作不是继续观望，而是：
-
-1. 先安装 Antigravity CLI
-2. 导入 Gemini 插件兼容层
-3. 把高频工作流迁过去
-4. 更新自己的教程、脚本和文档
-
-这样你后面无论是做内容创作、AI 编程，还是终端自动化，至少不会在最基础的命令入口上被突然卡住。
-
-## References
-
-- [An important update: transitioning Gemini CLI to Antigravity CLI — Google Developers Blog, May 19, 2026](https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)
-- [Building the agentic future: Developer highlights from I/O 2026 — Google Blog, May 19, 2026](https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/)
