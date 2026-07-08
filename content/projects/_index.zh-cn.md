@@ -124,7 +124,7 @@ project_sections:
         visual: markdown → epub → kindle
         tags: [出版系统, Markdown, Pandoc]
       - name: Prompt Library
-        link: https://maoxunxing.com/zh-cn/prompt-library-prompts-i-actually-use/
+        link: https://maoxunxing.com/prompts/
         desc: 我实际用过、觉得有复用价值的一些 Prompt。不是提示词大全，更像是我做编程、写作、研究时留下来的工作手册。
         icon: fas fa-lightbulb
         status: Active
