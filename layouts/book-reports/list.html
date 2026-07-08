@@ -6,6 +6,11 @@
   <section class="container posts-page">
     {{ partial "subnav.html" . }}
 
+    <article class="book-reports-intro">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+    </article>
+
     {{ range .Pages.GroupByDate "2006" }}
       {{ if ne .Key "0001" }}
       <div class="posts-year-group">
