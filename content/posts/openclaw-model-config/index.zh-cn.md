@@ -24,7 +24,7 @@ custom_toc:
 
 刚开始用的时候，最关键的一步其实不是研究它有多少功能，而是先把模型配置好。模型没配通，后面的 Dashboard、TUI、Agent、技能这些东西都没法真正跑起来。
 
-我这篇就简单记录一下，怎么把阿里云百炼的模型接到 OpenClaw 里面。不是特别复杂，但有几个地方确实容易踩坑。官方文档也可以放在旁边对照看：[OpenClaw 使用阿里云百炼配置模型](https://www.alibabacloud.com/help/zh/model-studio/openclaw)。
+这里直接记录把阿里云百炼模型接到 OpenClaw 里的配置方式。过程不复杂，但有几个地方确实容易踩坑。官方文档也可以放在旁边对照看：[OpenClaw 使用阿里云百炼配置模型](https://www.alibabacloud.com/help/zh/model-studio/openclaw)。
 
 ## 先说核心
 
