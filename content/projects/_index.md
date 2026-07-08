@@ -117,7 +117,7 @@ project_sections:
         visual: markdown → epub → kindle
         tags: [Publishing, Markdown, Pandoc]
       - name: Prompt Library
-        link: https://maoxunxing.com/prompt-library-prompts-i-actually-use/
+        link: https://maoxunxing.com/prompts/
         desc: A curated collection of prompts used for coding, creation, writing, research, and workflows.
         icon: fas fa-lightbulb
         status: Active
