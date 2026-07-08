@@ -7,6 +7,18 @@ media:
       creator: "Morgan Housel"
     - name: "最优解人生"
       creator: "Bill Perkins"
+    - name: "生命周期投资法"
+      creator: "Ian Ayres / Barry Nalebuff"
+    - name: "持续买入"
+      creator: "Nick Maggiulli"
+    - name: "战胜华尔街"
+      creator: "Peter Lynch / John Rothchild"
+    - name: "Options as a Strategic Investment"
+      creator: "Lawrence G. McMillan"
+    - name: "避风港"
+      creator: "Mark Spitznagel"
+    - name: "The Second Leg Down"
+      creator: "Hari P. Krishnan"
   movie:
     - name: "星际穿越"
       creator: "Christopher Nolan"
@@ -38,6 +50,28 @@ media:
 
 - **最优解人生** — Bill Perkins  
   它提醒我，钱不只是一个越多越好的数字，也要和时间、体验、家庭阶段放在一起看。
+
+### Leto 推荐的投资书单
+
+这组书单真正值得参考的地方，不是“某个人赚了多少钱”，而是学习顺序很完整：从资产配置、长期买入，到选股、期权，再到市场大跌时的风险保护。
+
+- **生命周期投资法** — Ian Ayres / Barry Nalebuff  
+  先学资产配置，再谈收益。它适合用来理解：不同人生阶段应该怎样承担风险，怎样把长期复利和个人现金流放在一起看。
+
+- **持续买入** — Nick Maggiulli  
+  让现金流参与复利，而不是天天择时。它提醒我，普通人投资最重要的能力之一，是建立长期投入的纪律，减少情绪化操作。
+
+- **战胜华尔街** — Peter Lynch / John Rothchild  
+  从生活发现线索，再回到基本面验证。生活观察只是起点，真正的关键是发现之后还要验证，而不是看到什么火就追什么。
+
+- **Options as a Strategic Investment** — Lawrence G. McMillan  
+  系统理解期权，不是为了赌，而是为了懂风险。同样看多或看空，期权提供的是不同的风险收益表达方式。
+
+- **避风港** — Mark Spitznagel  
+  投资不只是进攻，真正成熟的人也会认真学习防守。它适合在已经有一定仓位之后，用来补上对冲、尾部风险和组合保护这一课。
+
+- **The Second Leg Down** — Hari P. Krishnan  
+  真正难扛的，往往是第二波下跌。第一次下跌你可能还觉得是机会，第二次下跌才会真正考验纪律、现金管理和心理承受力。
 
 ## 电影
 
