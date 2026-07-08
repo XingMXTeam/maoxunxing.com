@@ -20,9 +20,9 @@ custom_toc:
   - title: "常见问题"
 ---
 
-如果你最近在搜 **Claude Code vs Codex**、**OpenAI Codex vs Claude Code**、**2026 最值得用的 AI coding agent**，那你真正需要的不是一篇泛泛而谈的评测，而是一篇能帮你做购买和迁移决策的文章。
+如果你最近在搜 **Claude Code vs Codex**、**OpenAI Codex vs Claude Code**、**2026 最值得用的 AI coding agent**，真正的问题通常不是谁更聪明，而是哪个工具更适合你的开发工作流。
 
-这篇文章基于 **2026 年 5 月 26 日** 之前的官方资料来写，只讨论一件事：
+截至 **2026 年 5 月 26 日**，这两个工具的分化已经很明显：
 
 **你现在到底该装哪个、付哪个、长期把哪个纳入自己的开发工作流。**
 
@@ -257,27 +257,3 @@ Anthropic 当前的 Claude Code 成本文档写得很直接：对于团队使用
 ### 哪个更便宜？
 
 没有稳定的统一答案。OpenAI 在 **2026 年 4 月 2 日** 改了 Codex 计费方式；Anthropic 文档也明确写了 Claude Code 团队成本会随自动化和会话长度波动。别只比套餐名，要对照自己的真实使用方式看。
-
-### 我该从 Claude Code 切到 Codex 吗？
-
-如果你的瓶颈已经不是“终端里怎么把 prompt 写更好”，而是“怎么把任务委托出去、怎么并行、怎么跨界面协同”，那就该切。
-
-### 我该从 Codex 切回 Claude Code 吗？
-
-如果你试了一圈之后，发现自己每天真正高频的需求仍然只是一个更紧凑的本地回路，而不是更宽的产品面，那切回去反而更高效。
-
-## 延伸阅读
-
-- [AI Coding 选哪一家？2026 全面对比指南](/ai-coding-tools-comparison-2026/)
-- [AI 编程工作流](/ai-coding-workflow/)
-
-## 参考资料
-
-- [OpenAI：Introducing the Codex app](https://openai.com/index/introducing-the-codex-app/)
-- [OpenAI Help：Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt)
-- [OpenAI Help：Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card)
-- [OpenAI Help：Codex CLI and Sign in with ChatGPT](https://help.openai.com/en/articles/11381614-api-codex-cli-and-sign-in-with-chatgpt)
-- [OpenAI Developers：Codex cloud](https://developers.openai.com/codex/cloud)
-- [Anthropic：Claude Code product page](https://www.anthropic.com/product/claude-code)
-- [Anthropic Docs：Claude Code getting started](https://code.claude.com/docs/en/getting-started)
-- [Anthropic Docs：Manage costs effectively](https://code.claude.com/docs/en/costs)
