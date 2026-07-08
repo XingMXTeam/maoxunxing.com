@@ -5,13 +5,13 @@ other = "Felix Mao"
 other = "Hey, I'm Felix Mao, a frontend engineer with 10+ years of building software. I used to work at NetEase and Alibaba, and these days I write more about AI, personal products, creator systems, and long-term investing."
 
 [homePara1]
-other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, career choices, and investing reviews. I also share <a href="/book-reports/">book reports</a> to keep ideas that may stay useful over time."""
+other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, career choices, and investing reviews. I also keep <a href="/media/">books & media</a> notes and longer <a href="/book-reports/">book reports</a> to preserve ideas that may stay useful over time."""
 
 [homePara2]
 other = """Currently focused on LEARN, BUILD and GROW with AGI. Exploring two areas: Tech (AI &amp; Frontend Innovation) and Investment (BTC, VGT &amp; VOO). Weekly updates with fresh perspectives on tech and investment."""
 
 [homePara3]
-other = """Outside of coding, I also keep notes on reading, drawing, tools, media, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">media log</a>."""
+other = """Outside of coding, I also keep notes on reading, drawing, tools, media, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">books & media</a> notes."""
 
 [homeEyebrow]
 other = "Felix Mao · public notebook"
@@ -122,13 +122,13 @@ other = "Thoughts, observations, and unfinished judgments"
 other = "/notes/"
 
 [homeBrowse3Title]
-other = "Book reports"
+other = "Books & Media"
 
 [homeBrowse3Desc]
-other = "Books I read and ideas worth keeping"
+other = "Books, films, anime, and longer notes"
 
 [homeBrowse3Href]
-other = "/book-reports/"
+other = "/media/"
 
 [homeBrowse4Title]
 other = "Projects"
@@ -158,13 +158,13 @@ other = "Links worth opening again"
 other = "/bookmarks/"
 
 [homeBrowse7Title]
-other = "Media"
+other = "Demos"
 
 [homeBrowse7Desc]
-other = "Things I watched, listened to, or learned from"
+other = "Interactive experiments and technical demos"
 
 [homeBrowse7Href]
-other = "/media/"
+other = "/demos/"
 
 [homeBrowse8Title]
 other = "Gallery"
@@ -269,7 +269,7 @@ other = "Uses"
 other = "Bookmarks"
 
 [navMedia]
-other = "Media"
+other = "Books & Media"
 
 [navStreams]
 other = "Streams"
@@ -281,4 +281,4 @@ other = "Blog"
 other = "Notes"
 
 [navBooks]
-other = "Books"
+other = "Book Reports"
