@@ -5,13 +5,13 @@ other = "毛毛星"
 other = "Hi，我是毛毛星，一名做了十多年工程的前端开发者。以前在网易、阿里写代码，现在更多是在记录 AI、个人产品、内容创作和长期投资这些真实问题。"
 
 [homePara1]
-other = """我写<a href="/zh-cn/posts/">技术博客</a>和<a href="/zh-cn/notes/">随笔</a>，分享前端开发、AI 应用、职业选择和投资复盘。也会整理<a href="/zh-cn/book-reports/">读书报告</a>，把一些长期有用的东西留下来。"""
+other = """我写<a href="/zh-cn/posts/">技术博客</a>和<a href="/zh-cn/notes/">随笔</a>，分享前端开发、AI 应用、职业选择和投资复盘。也会整理<a href="/zh-cn/media/">书影音</a>和<a href="/zh-cn/book-reports/">读书报告</a>，把一些长期有用的东西留下来。"""
 
 [homePara2]
 other = """目前专注于 Learn、Build and Grow with AGI。探索两个方向：技术（AI 与前端创新实践）和投资（BTC、VGT、VOO 的投资复盘）。每周更新，用简单的视角解读技术与投资。"""
 
 [homePara3]
-other = """编程之外，我也会记录阅读、绘画、工具、影音和内容创作。你可以看看我的<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">影音记录</a>。"""
+other = """编程之外，我也会记录阅读、绘画、工具、影音和内容创作。你可以看看我的<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">书影音</a>。"""
 
 [homeEyebrow]
 other = "Felix Mao / 毛毛星 · 个人公开笔记本"
@@ -122,13 +122,13 @@ other = "想法、观察和未完成的判断"
 other = "/zh-cn/notes/"
 
 [homeBrowse3Title]
-other = "读书报告"
+other = "书影音"
 
 [homeBrowse3Desc]
-other = "读过的书和可复用的观点"
+other = "读过的书、看过的电影和动漫"
 
 [homeBrowse3Href]
-other = "/zh-cn/book-reports/"
+other = "/zh-cn/media/"
 
 [homeBrowse4Title]
 other = "项目"
@@ -158,13 +158,13 @@ other = "值得反复打开的链接收藏"
 other = "/zh-cn/bookmarks/"
 
 [homeBrowse7Title]
-other = "影音"
+other = "演示"
 
 [homeBrowse7Desc]
-other = "看过、听过和受到启发的内容"
+other = "交互实验和技术演示"
 
 [homeBrowse7Href]
-other = "/zh-cn/media/"
+other = "/zh-cn/demos/"
 
 [homeBrowse8Title]
 other = "画廊"
@@ -250,7 +250,7 @@ other = "文章"
 other = "随笔"
 
 [filterBooks]
-other = "读书报告"
+other = "书评"
 
 [navTagsCloud]
 other = "标签云"
@@ -265,7 +265,7 @@ other = "装备"
 other = "书签"
 
 [navMedia]
-other = "媒体"
+other = "书影音"
 
 [navStreams]
 other = "直播"
@@ -277,7 +277,7 @@ other = "博客"
 other = "随笔"
 
 [navBooks]
-other = "读书"
+other = "书评"
 
 [homeOutro]
 other = "希望你能在这里找到一些灵感"
