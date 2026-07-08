@@ -78,7 +78,7 @@ project_sections:
         tags: [RAG, Backend, Reference]
   - title: Frontend Infrastructure
     id: frontend-infrastructure
-    lead: This is the engineering base: schema-driven UI, frontend knowledge archives, and older experiments that still explain how I think about systems.
+    lead: "This is the engineering base: schema-driven UI, frontend knowledge archives, and older experiments that still explain how I think about systems."
     items:
       - name: schema-render
         link: https://github.com/XingMXTeam/schema-render
