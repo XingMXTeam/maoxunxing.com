@@ -250,6 +250,39 @@
   font-size: 1.35rem;
 }
 
+/* Latest Writing: scoped alignment fix.
+   Keep this inside the homepage only so article lists elsewhere are untouched. */
+body.page-home .home-prose .article-list {
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-home .home-prose .article-item {
+  display: grid;
+  grid-template-columns: 10ch minmax(0, 1fr) max-content;
+  column-gap: 1.2rem;
+  align-items: baseline;
+  width: 100%;
+}
+
+body.page-home .home-prose .article-date {
+  width: 10ch;
+  color: var(--c-fg-light);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+body.page-home .home-prose .article-title {
+  min-width: 0;
+}
+
+body.page-home .home-prose .article-section-tag {
+  justify-self: end;
+  white-space: nowrap;
+}
+
 body.colorscheme-dark .home-human-panel,
 body.colorscheme-dark .home-start-card,
 body.colorscheme-dark .home-browse-link,
@@ -363,5 +396,20 @@ body.colorscheme-dark .home-action-secondary {
 
   .home-browse-link {
     min-height: auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  body.page-home .home-prose .article-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.15rem;
+  }
+
+  body.page-home .home-prose .article-date {
+    width: auto;
+  }
+
+  body.page-home .home-prose .article-section-tag {
+    justify-self: start;
   }
 }
