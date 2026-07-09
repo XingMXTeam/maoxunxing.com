@@ -32,6 +32,7 @@ tags:
 
 ## 已整理文章
 
+- [我的资产配置清单：把所有标的放进 8 个篮子](/zh-cn/long-term-investing/asset-allocation-library/)
 - [我的加密资产观察清单：ETH、BNB 和 AI Agent 代币](/zh-cn/long-term-investing/crypto-assets-watchlist/)
 
 ## 后面准备继续整理
