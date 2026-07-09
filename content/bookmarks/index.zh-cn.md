@@ -1,7 +1,13 @@
 ---
 title: "书签"
-description: "精选的工具、网站和推荐资源"
+description: "我会反复打开的工具、网站和资料入口"
 ---
+
+这里放一些我会反复打开的链接。它更像一个入口索引：开发、前端、学习、博客和创作工具都会放在这里，但具体工具怎么用、适合什么场景，会拆到对应的专题页里。
+
+## 创作工具
+
+- [内容创作者工具箱](/zh-cn/notes/creator-toolkit/) - PixPin、PixelLab、Unsplash 等内容生产、截图、素材和视觉工具的详细说明
 
 ## 开发工具
 
@@ -10,7 +16,7 @@ description: "精选的工具、网站和推荐资源"
 - [Vercel](https://vercel.com/) - 前端部署平台
 - [Netlify](https://netlify.com/) - 网站托管
 
-## 设计资源
+## 设计与图标
 
 - [Figma](https://www.figma.com/) - 协作设计工具
 - [unDraw](https://undraw.co/) - 开源插图
