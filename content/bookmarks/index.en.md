@@ -1,7 +1,13 @@
 ---
 title: "Bookmarks"
-description: "Curated list of tools, websites, and resources I recommend"
+description: "Tools, websites, and resources I open repeatedly"
 ---
+
+This page is more like a resource index. I keep links for development, frontend work, learning, blogs, and creator tools here. When a tool needs more context, usage notes, or examples, I move the details into a dedicated page.
+
+## Creator Tools
+
+- [Creator toolkit](/notes/creator-toolkit/) - Detailed notes on tools such as PixPin, PixelLab, Unsplash, screenshots, visual assets, and content production
 
 ## Development Tools
 
@@ -10,7 +16,7 @@ description: "Curated list of tools, websites, and resources I recommend"
 - [Vercel](https://vercel.com/) - Frontend deployment platform
 - [Netlify](https://netlify.com/) - Web hosting and automation
 
-## Design Resources
+## Design and Icons
 
 - [Figma](https://www.figma.com/) - Collaborative design tool
 - [unDraw](https://undraw.co/) - Open-source illustrations
