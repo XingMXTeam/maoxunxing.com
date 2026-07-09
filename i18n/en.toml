@@ -2,7 +2,7 @@
 other = "Felix Mao"
 
 [homeBio]
-other = "Hey, I'm Felix Mao, a frontend engineer with 10+ years of building software. I used to work at NetEase and Alibaba, and these days I write more about AI, personal products, creator systems, and long-term investing."
+other = "A frontend engineer with 10+ years of building software, formerly at NetEase and Alibaba. These days I organize notes on AI coding, personal products, creator workflows, and long-term investing."
 
 [homePara1]
 other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, career choices, and investing reviews. I also keep <a href="/media/">books & media</a> notes and longer <a href="/book-reports/">book reports</a> to preserve ideas that may stay useful over time."""
