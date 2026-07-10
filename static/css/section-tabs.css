@@ -11,10 +11,13 @@
   flex-wrap: wrap;
   align-items: baseline;
   gap: clamp(0.9rem, 1.6vw, 1.8rem) clamp(1.4rem, 2.2vw, 2.6rem);
-  width: min(100%, 108rem);
-  margin: clamp(2rem, 4vw, 3.6rem) auto clamp(1.4rem, 2.8vw, 2.4rem);
+  width: min(calc(100vw - 4rem), 118rem);
+  max-width: none;
+  margin: clamp(2rem, 4vw, 3.6rem) 0 clamp(1.4rem, 2.8vw, 2.4rem);
+  margin-left: 50%;
   padding: 0.2rem 0 0.7rem;
   overflow: visible;
+  transform: translateX(-50%);
 }
 
 .section-tab {
@@ -67,6 +70,7 @@
     overflow-y: hidden;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    transform: none;
   }
 
   .section-tabs::-webkit-scrollbar {
