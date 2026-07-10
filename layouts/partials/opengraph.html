@@ -110,18 +110,22 @@
 
 {{ end }}
 
-{{- /* If it is part of a series, link to related articles */}}
+{{- /* If it is part of a series, link to related articles. Guard missing taxonomy entries. */}}
 {{- $permalink := .Permalink }}
-{{- $siteSeries := .Site.Taxonomies.series }}{{ with .Params.series }}
-  {{- range $name := . }}
-    {{- $series := index $siteSeries $name }}
-    {{- range $page := first 6 $series.Pages }}
-      {{- if ne $page.Permalink $permalink }}
-        <meta property="og:see_also" content="{{ $page.Permalink }}" />
-      {{ end }}
+{{- $pageSeries := .Params.series }}
+{{- with .Site.Taxonomies.series }}
+  {{- $siteSeries := . }}
+  {{- with $pageSeries }}
+    {{- range $name := . }}
+      {{- with (index $siteSeries $name) }}
+        {{- range $page := first 6 .Pages }}
+          {{- if ne $page.Permalink $permalink }}
+            <meta property="og:see_also" content="{{ $page.Permalink }}" />
+          {{ end }}
+        {{- end }}
+      {{- end }}
     {{- end }}
-  {{ end }}
-
+  {{- end }}
 {{ end }}
 
 {{- if .IsPage }}
