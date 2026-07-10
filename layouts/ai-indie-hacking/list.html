@@ -2,7 +2,9 @@
   {{ .Title }} · {{ .Site.Title }}
 {{ end }}
 {{ define "content" }}
-  <section class="container page">
+  <section class="container page section-hub-page">
+    {{ partial "blog-section-tabs.html" . }}
+
     <article>
       {{ .Content }}
     </article>
