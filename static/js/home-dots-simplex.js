@@ -119,8 +119,8 @@
         var kk = k & 255;
         var gi0 = perm[ii + perm[jj + perm[kk]]] % 12;
         var gi1 = perm[ii + i1 + perm[jj + j1 + perm[kk + k1]]] % 12;
-        var gi2 = perm[ii + i2 + perm[jj + j2 + perm[kk + k2])] % 12;
-        var gi3 = perm[ii + 1 + perm[jj + 1 + perm[kk + 1])] % 12;
+        var gi2 = perm[ii + i2 + perm[jj + j2 + perm[kk + k2]]] % 12;
+        var gi3 = perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12;
         var t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
         if (t0 > 0) { t0 *= t0; n0 = t0 * t0 * dot(grad3[gi0], x0, y0, z0); }
         var t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
