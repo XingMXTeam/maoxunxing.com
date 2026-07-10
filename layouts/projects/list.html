@@ -35,7 +35,6 @@
       {{ range $sections }}
         {{ $sectionID := default (urlize .title) .id }}
         <section id="{{ $sectionID }}" class="project-category{{ if .featured }} project-category-featured{{ end }}">
-          <div class="project-category-bg">{{ .title }}</div>
           <div class="project-category-heading">
             <h2>{{ .title }}</h2>
             {{ with .lead }}<p>{{ . }}</p>{{ end }}
@@ -81,7 +80,6 @@
   {{ else }}
     {{ range $category, $items := .Params.projects }}
     <div class="project-category">
-      <div class="project-category-bg">{{ $category }}</div>
       <div class="project-grid">
         {{ range $items }}
         <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
