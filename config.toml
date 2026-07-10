@@ -172,19 +172,19 @@ resampleFilter = "Lanczos"
   pageRef = "/posts"
   weight = 1
 [[languages.zh-CN.menu.main]]
-  name = "投资"
+  name = "长期投资"
   pageRef = "/long-term-investing"
   weight = 2
 [[languages.zh-CN.menu.main]]
-  name = "创业"
+  name = "AI创业"
   pageRef = "/ai-indie-hacking"
   weight = 3
 [[languages.zh-CN.menu.main]]
-  name = "编程"
+  name = "AI编程"
   pageRef = "/ai-coding-workflow"
   weight = 4
 [[languages.zh-CN.menu.main]]
-  name = "创作"
+  name = "创作系统"
   pageRef = "/creator-workflow"
   weight = 5
 [[languages.zh-CN.menu.main]]
