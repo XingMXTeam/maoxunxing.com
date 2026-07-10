@@ -155,17 +155,13 @@ resampleFilter = "Lanczos"
   pageRef = "/creator-workflow"
   weight = 4
 [[languages.en.menu.main]]
-  name = "Prompt"
-  pageRef = "/prompts"
-  weight = 5
-[[languages.en.menu.main]]
   name = "Projects"
   pageRef = "/projects"
-  weight = 6
+  weight = 5
 [[languages.en.menu.main]]
   name = "About"
   pageRef = "/about"
-  weight = 7
+  weight = 6
 
 [[languages.zh-CN.menu.main]]
   name = "博客"
@@ -188,14 +184,10 @@ resampleFilter = "Lanczos"
   pageRef = "/creator-workflow"
   weight = 5
 [[languages.zh-CN.menu.main]]
-  name = "Prompt"
-  pageRef = "/prompts"
-  weight = 6
-[[languages.zh-CN.menu.main]]
   name = "项目"
   pageRef = "/projects"
-  weight = 7
+  weight = 6
 [[languages.zh-CN.menu.main]]
   name = "关于"
   pageRef = "/about"
-  weight = 8
+  weight = 7
