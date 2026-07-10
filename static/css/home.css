@@ -260,14 +260,14 @@ body.page-home .home-prose .article-list {
 
 body.page-home .home-prose .article-item {
   display: grid;
-  grid-template-columns: 10ch minmax(0, 1fr) max-content;
-  column-gap: 1.2rem;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  column-gap: 0.8rem;
   align-items: baseline;
   width: 100%;
 }
 
 body.page-home .home-prose .article-date {
-  width: 10ch;
+  width: auto;
   color: var(--c-fg-light);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
