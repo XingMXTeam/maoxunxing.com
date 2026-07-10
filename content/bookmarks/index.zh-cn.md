@@ -20,6 +20,7 @@ description: "我会反复打开的工具、网站和资料入口"
 - [GitHub](https://github.com/) - 代码托管与协作
 - [Vercel](https://vercel.com/) - 前端部署平台
 - [Netlify](https://netlify.com/) - 网站托管
+- [Phaser](https://github.com/phaserjs/phaser) - 用于网页游戏和互动体验开发的 HTML5 游戏框架，后续可能会用到
 
 ## 设计与图标
 
