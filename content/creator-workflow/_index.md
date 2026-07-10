@@ -80,5 +80,6 @@ Technical creators can systematize the content workflow with scripts, templates,
 
 ## Related topics
 
+- [Prompt Library: Prompts I Actually Use](/en/prompts/)
 - [AI Indie Hacking](/en/ai-indie-hacking/)
 - [AI Coding Workflow](/en/ai-coding-workflow/)
