@@ -1,10 +1,10 @@
 {{ if .Params.custom_toc }}
 <div class="toc-wrapper">
-  <div class="toc-anchor">
-    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+  <button class="toc-anchor" type="button" aria-expanded="true" aria-controls="toc" aria-label="收起文章目录">
+    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
       <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
     </svg>
-  </div>
+  </button>
   <nav class="toc" id="toc">
     <nav id="TableOfContents">
       <ul>
@@ -26,13 +26,27 @@
 </div>
 {{ else if .TableOfContents }}
 <div class="toc-wrapper">
-  <div class="toc-anchor">
-    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+  <button class="toc-anchor" type="button" aria-expanded="true" aria-controls="toc" aria-label="收起文章目录">
+    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
       <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
     </svg>
-  </div>
+  </button>
   <nav class="toc" id="toc">
     {{ .TableOfContents }}
   </nav>
 </div>
 {{ end }}
+
+<script>
+  document.querySelectorAll('.toc-wrapper').forEach(function (wrapper) {
+    var button = wrapper.querySelector('.toc-anchor');
+    var toc = wrapper.querySelector('.toc');
+    if (!button || !toc) return;
+
+    button.addEventListener('click', function () {
+      var collapsed = wrapper.classList.toggle('is-collapsed');
+      button.setAttribute('aria-expanded', String(!collapsed));
+      button.setAttribute('aria-label', collapsed ? '展开文章目录' : '收起文章目录');
+    });
+  });
+</script>
