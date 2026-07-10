@@ -1529,8 +1529,8 @@ body.colorscheme-dark {
 .toc-wrapper {
   position: fixed;
   right: 2rem;
-  top: 150px;
-  width: 200px;
+  top: 120px;
+  width: 320px;
   z-index: 100;
   transition: top 0.2s ease-in-out;
   display: flex;
@@ -1553,36 +1553,48 @@ body.colorscheme-dark {
 }
 
 .toc {
-  max-height: calc(100vh - 180px);
+  width: 100%;
+  max-height: calc(100vh - 140px);
+  overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: none;
   font-family: inherit;
-  font-size: 1.3rem;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  padding: 0.5rem 0;
+  font-size: 1.25rem;
+  opacity: 0.82;
+  transition: opacity 0.25s ease;
+  padding: 0.35rem 0;
 }
 
-.toc-wrapper:hover .toc-anchor {
-  opacity: 0.8;
+.toc::-webkit-scrollbar {
+  display: none;
 }
 
-.toc-wrapper:hover .toc {
+.toc-wrapper:hover .toc-anchor,
+.toc-anchor:focus-visible {
   opacity: 0.85;
 }
 
+.toc-wrapper:hover .toc {
+  opacity: 1;
+}
+
 .toc ul {
+  width: 100%;
   list-style: none;
-  padding-left: 1rem;
+  padding-left: 0.9rem;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .toc li {
-  margin: 0.5rem 0;
-  line-height: 1.4;
-  padding-left: 0.8rem;
+  margin: 0.32rem 0;
+  line-height: 1.35;
+  padding-left: 0.6rem;
+  overflow-wrap: anywhere;
 }
 
 .toc a {
+  display: block;
   color: var(--c-fg-light);
   text-decoration: none;
   opacity: 0.75;
