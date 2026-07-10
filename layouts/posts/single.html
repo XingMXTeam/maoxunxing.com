@@ -3,7 +3,9 @@
   {{ .Site.Title -}}
 {{ end }}
 {{ define "content" }}
-  <section class="container post">
+  <section class="container post section-hub-page">
+    {{ partial "blog-section-tabs.html" . }}
+
     <article>
         <header>
           {{ if .Page.Params.hero_image }}
