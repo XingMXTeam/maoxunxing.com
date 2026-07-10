@@ -3,7 +3,23 @@
     var body = document.body;
     if (!body || !body.classList) return;
 
+    var path = (window.location && window.location.pathname ? window.location.pathname : '').replace(/\/$/, '');
+    var hubPaths = [
+      'posts',
+      'projects',
+      'about',
+      'long-term-investing',
+      'ai-indie-hacking',
+      'ai-coding-workflow',
+      'creator-workflow',
+      'prompts'
+    ];
+    var isHubPath = hubPaths.some(function (name) {
+      return path === '/' + name || path.endsWith('/' + name);
+    });
+
     var isArtPage = body.classList.contains('page-home') ||
+      isHubPath ||
       document.querySelector('.section-hub-page, .series-page, .projects-page');
     if (!isArtPage) return;
 
