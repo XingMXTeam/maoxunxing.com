@@ -1,4 +1,6 @@
-<section class="container series-page">
+<section class="container series-page section-hub-page">
+  {{ partial "blog-section-tabs.html" . }}
+
   <header class="series-hero">
     {{ with .Params.kicker }}<p class="series-eyebrow">{{ . }}</p>{{ end }}
     <h1 class="title series-title">{{ .Title }}</h1>
