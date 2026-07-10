@@ -56,6 +56,12 @@ Different platforms play different roles: Xiaohongshu tests topics, WeChat build
 
 Review should track which titles work, which topics attract attention, which posts create product leads, and which ideas deserve to become long-term pages.
 
+## Creator resources
+
+The workflow explains how to create consistently. The resource library collects practical materials that can be used during creation. This section is for prompts, templates, and tools I repeatedly use, kept separate from regular articles and recommended reading.
+
+- [Prompt Library: Prompts I Actually Use](/en/prompts/): prompts for AI coding, image generation, video creation, writing, product design, research, and personal workflows, updated over time.
+
 ## FAQ
 
 ### Why do ordinary people need a creator workflow?
@@ -80,6 +86,5 @@ Technical creators can systematize the content workflow with scripts, templates,
 
 ## Related topics
 
-- [Prompt Library: Prompts I Actually Use](/en/prompts/)
 - [AI Indie Hacking](/en/ai-indie-hacking/)
 - [AI Coding Workflow](/en/ai-coding-workflow/)
