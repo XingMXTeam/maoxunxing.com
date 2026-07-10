@@ -325,6 +325,7 @@ Copilot 阶段，AI 帮我补代码。Cursor 阶段，AI 帮我执行需求。Sk
 
 ## 推荐阅读
 
+- [人工智能入门：从机器学习到大模型](/zh-cn/ai-fundamentals/)
 - [如何用 Google Play 购买 ChatGPT Plus：安卓实测路径](/zh-cn/chatgpt-plus-google-play/)
 - [OpenAI Codex CLI 完整教程：安装、AGENTS.md、权限与自动化工作流](/zh-cn/codex-cli-guide/)
 - [Claude Code vs OpenAI Codex：2026 年到底该选哪个 AI 编程 Agent？](/zh-cn/claude-code-vs-codex-2026/)
