@@ -44,7 +44,7 @@ pygmentscodefencesguesssyntax = true
     unsafe = true
   [markup.tableOfContents]
     endLevel = 3
-    ordered = true
+    ordered = false
     startLevel = 2
 
 [languages.en.permalinks]
