@@ -1,0 +1,12 @@
+{{- $items := where .Site.Menus.main "Parent" "blog" -}}
+{{- if gt (len $items) 0 -}}
+<nav class="section-tabs" aria-label="Blog sections">
+  {{- $current := replaceRE "/$" "" .RelPermalink -}}
+  {{- range sort $items -}}
+    {{- $rawURL := .URL | relLangURL -}}
+    {{- $target := replaceRE "/$" "" $rawURL -}}
+    {{- $active := or (eq $current $target) (and (ne $target "") (hasPrefix $current (printf "%s/" $target))) -}}
+    <a class="section-tab{{ if $active }} is-active{{ end }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+  {{- end -}}
+</nav>
+{{- end -}}
