@@ -8,29 +8,25 @@
 
 .section-tabs {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: clamp(1.2rem, 2.2vw, 2.4rem);
-  margin: clamp(2.2rem, 4.6vw, 4.2rem) 0 clamp(1.6rem, 3vw, 2.8rem);
+  gap: clamp(0.9rem, 1.6vw, 1.8rem) clamp(1.4rem, 2.2vw, 2.6rem);
+  width: min(100%, 108rem);
+  margin: clamp(2rem, 4vw, 3.6rem) auto clamp(1.4rem, 2.8vw, 2.4rem);
   padding: 0.2rem 0 0.7rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.section-tabs::-webkit-scrollbar {
-  display: none;
+  overflow: visible;
 }
 
 .section-tab {
   flex: 0 0 auto;
   color: var(--c-fg-light);
-  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  font-size: clamp(1.9rem, 2.3vw, 2.8rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.055em;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
   text-decoration: none;
   opacity: 0.38;
+  white-space: nowrap;
   transition: color 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
 }
 
@@ -52,18 +48,32 @@
   margin-top: 0;
 }
 
-.blog-index-page .posts-year-group {
+.blog-index-page .posts-year-group,
+.section-tabs,
+.series-page,
+.section-hub-page {
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 768px) {
   .section-tabs {
-    margin-top: 1.8rem;
-    gap: 1.1rem;
+    flex-wrap: nowrap;
+    width: auto;
+    margin: 1.6rem -1.6rem 1.5rem 0;
+    padding: 0.2rem 1.6rem 0.7rem 0;
+    gap: 1.35rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .section-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .section-tab {
-    font-size: clamp(1.85rem, 9vw, 3rem);
+    font-size: clamp(1.85rem, 7vw, 2.8rem);
   }
 }
