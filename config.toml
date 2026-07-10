@@ -25,7 +25,7 @@ pygmentscodefencesguesssyntax = true
       icon = "1"
       description = "Felix Mao（毛毛星）的个人知识站，记录 AI 编程、AI 个体创业、前端工程、创作者工作流、系统思维和长期投资实践。"
       keywords = "毛毛星,Felix Mao,maoxunxing,AI创作者,AI个体创业,AI编程,独立开发,前端工程师,创作者工作流,个人知识系统,长期投资"
-      custom_css = ["/css/main.css?v=20260626a", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20260626a", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20260626a", "/css/projects.css?v=20260708a"]
+      custom_css = ["/css/main.css?v=20260626a", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20260626a", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20260626a", "/css/nav-dropdown.css?v=20260709a", "/css/projects.css?v=20260708a", "/css/series.css?v=20260709a"]
       custom_js = ["/js/home-dots-simplex.js?v=20260708-antfu-simplex1"]
   [languages.en]
     languageName = "EN"
@@ -34,7 +34,7 @@ pygmentscodefencesguesssyntax = true
     [languages.en.params]
       description = "Felix Mao's personal knowledge site about AI coding, AI indie hacking, frontend engineering, creator workflows, systems thinking, and long-term investing."
       keywords = "Felix Mao,maoxunxing,AI creator,AI indie hacking,AI coding,frontend engineer,indie hacker,creator workflows,personal knowledge system,long-term investing"
-      custom_css = ["/css/main.css?v=20260626a", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20260626a", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20260626a", "/css/projects.css?v=20260708a"]
+      custom_css = ["/css/main.css?v=20260626a", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20260626a", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20260626a", "/css/nav-dropdown.css?v=20260709a", "/css/projects.css?v=20260708a", "/css/series.css?v=20260709a"]
       custom_js = ["/js/home-dots-simplex.js?v=20260708-antfu-simplex1"]
 
 [markup]
@@ -62,6 +62,7 @@ demos = "/:slugorfilename/"
 gallery = "/:slugorfilename/"
 raw = "/:slugorfilename/"
 prompts = "/:slugorfilename/"
+long-term-investing = "/:slugorfilename/"
 
 [languages.zh-CN.permalinks]
 pages = "/:slugorfilename/"
@@ -78,6 +79,7 @@ demos = "/:slugorfilename/"
 gallery = "/:slugorfilename/"
 raw = "/:slugorfilename/"
 prompts = "/:slugorfilename/"
+long-term-investing = "/:slugorfilename/"
 
 [params]
   author = "Felix Mao (毛毛星)"
@@ -93,7 +95,7 @@ prompts = "/:slugorfilename/"
   hidecredits = false
   hidecopyright = false
   rtl = false
-  custom_css = ["/css/main.css?v=20260626a", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20260626a", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20260626a", "/css/projects.css?v=20260708a"]
+  custom_css = ["/css/main.css?v=20260626a", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20260626a", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20260626a", "/css/nav-dropdown.css?v=20260709a", "/css/projects.css?v=20260708a", "/css/series.css?v=20260709a"]
   custom_js = ["/js/home-dots-simplex.js?v=20260708-antfu-simplex1"]
   photoWidths = [300, 600, 800, 1200]
   colorscheme = "auto"
@@ -138,50 +140,83 @@ resampleFilter = "Lanczos"
 
 [[languages.en.menu.main]]
   name = "Blog"
+  identifier = "blog"
   pageRef = "/posts"
   weight = 1
 [[languages.en.menu.main]]
+  parent = "blog"
+  name = "All Posts"
+  pageRef = "/posts"
+  weight = 1
+[[languages.en.menu.main]]
+  parent = "blog"
   name = "AI Indie Hacking"
   pageRef = "/ai-indie-hacking"
   weight = 2
 [[languages.en.menu.main]]
+  parent = "blog"
   name = "AI Coding"
   pageRef = "/ai-coding-workflow"
   weight = 3
 [[languages.en.menu.main]]
+  parent = "blog"
   name = "Creator Workflow"
   pageRef = "/creator-workflow"
   weight = 4
 [[languages.en.menu.main]]
+  parent = "blog"
+  name = "Prompt Library"
+  pageRef = "/prompts"
+  weight = 5
+[[languages.en.menu.main]]
   name = "Projects"
   pageRef = "/projects"
-  weight = 5
+  weight = 2
 [[languages.en.menu.main]]
   name = "About"
   pageRef = "/about"
-  weight = 6
+  weight = 3
 
 [[languages.zh-CN.menu.main]]
   name = "博客"
+  identifier = "blog"
   pageRef = "/posts"
   weight = 1
 [[languages.zh-CN.menu.main]]
-  name = "AI 个体创业"
-  pageRef = "/ai-indie-hacking"
+  parent = "blog"
+  name = "全部文章"
+  pageRef = "/posts"
+  weight = 1
+[[languages.zh-CN.menu.main]]
+  parent = "blog"
+  name = "长期投资"
+  pageRef = "/long-term-investing"
   weight = 2
 [[languages.zh-CN.menu.main]]
-  name = "AI 编程"
-  pageRef = "/ai-coding-workflow"
+  parent = "blog"
+  name = "AI 个体创业"
+  pageRef = "/ai-indie-hacking"
   weight = 3
 [[languages.zh-CN.menu.main]]
+  parent = "blog"
+  name = "AI 编程"
+  pageRef = "/ai-coding-workflow"
+  weight = 4
+[[languages.zh-CN.menu.main]]
+  parent = "blog"
   name = "创作者系统"
   pageRef = "/creator-workflow"
-  weight = 4
+  weight = 5
+[[languages.zh-CN.menu.main]]
+  parent = "blog"
+  name = "Prompt 库"
+  pageRef = "/prompts"
+  weight = 6
 [[languages.zh-CN.menu.main]]
   name = "项目"
   pageRef = "/projects"
-  weight = 5
+  weight = 2
 [[languages.zh-CN.menu.main]]
   name = "关于"
   pageRef = "/about"
-  weight = 6
+  weight = 3
