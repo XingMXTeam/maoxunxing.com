@@ -3,8 +3,8 @@
   {{ .Site.Title }}
 {{ end }}
 {{ define "content" }}
-  <section class="container posts-page">
-    {{ partial "subnav.html" . }}
+  <section class="container posts-page section-hub-page">
+    {{ partial "blog-section-tabs.html" . }}
 
     {{ range .Pages.GroupByDate "2006" }}
       {{ if ne .Key "0001" }}
