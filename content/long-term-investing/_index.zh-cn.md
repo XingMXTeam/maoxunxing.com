@@ -29,6 +29,7 @@ tags:
 ## 推荐阅读
 
 - [我的资产配置清单：把所有标的放进 8 个篮子](/zh-cn/asset-allocation-library/)
+- [RWA：黄金没有现金流的问题，会被解决吗？](/zh-cn/rwa-gold-defi/)
 - [我的加密资产观察清单：ETH、BNB 和 AI Agent 代币](/zh-cn/crypto-assets-watchlist/)
 - [期权放在投资系统里，应该怎么理解](/zh-cn/options-basics/)
 - [我的投资之路](/zh-cn/invest/)
