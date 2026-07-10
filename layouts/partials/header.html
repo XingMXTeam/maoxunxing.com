@@ -30,10 +30,20 @@
     <ul class="navigation-list" id="site-navigation" aria-hidden="true">
       {{ with .Site.Menus.main }}
         {{ range sort . }}
-          <li class="navigation-item nav-primary-item">
-            <a class="navigation-link" href="{{ .URL | absLangURL }}"
-              >{{ .Name }}</a
-            >
+          <li class="navigation-item nav-primary-item{{ if .HasChildren }} nav-has-children{{ end }}">
+            <a class="navigation-link{{ if .HasChildren }} nav-parent-link{{ end }}" href="{{ .URL | absLangURL }}">
+              <span>{{ .Name }}</span>
+              {{ if .HasChildren }}<span class="nav-caret" aria-hidden="true">⌄</span>{{ end }}
+            </a>
+            {{ if .HasChildren }}
+              <ul class="nav-dropdown" aria-label="{{ .Name }} submenu">
+                {{ range .Children }}
+                  <li class="nav-dropdown-item">
+                    <a class="nav-dropdown-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
           </li>
         {{ end }}
       {{ end }}
