@@ -14,6 +14,9 @@
   {{ end }}
 
   {{ $pages := .RegularPages.ByDate.Reverse }}
+  {{ if eq (len $pages) 0 }}
+    {{ $pages = (where .Site.RegularPages "Section" .Section).ByDate.Reverse }}
+  {{ end }}
   {{ if $pages }}
   <section class="series-article-section" aria-label="Series articles">
     <div class="series-section-heading">
