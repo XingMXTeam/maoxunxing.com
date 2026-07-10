@@ -1,7 +1,11 @@
 (function () {
   function runHomeDots() {
     var body = document.body;
-    if (!body || !body.classList || !body.classList.contains('page-home')) return;
+    if (!body || !body.classList) return;
+
+    var isArtPage = body.classList.contains('page-home') ||
+      document.querySelector('.section-hub-page, .series-page, .projects-page');
+    if (!isArtPage) return;
 
     var oldCanvas = document.getElementById('home-art-canvas');
     if (oldCanvas && oldCanvas.parentNode) oldCanvas.parentNode.removeChild(oldCanvas);
@@ -35,6 +39,12 @@
     canvas.style.pointerEvents = 'none';
     canvas.style.zIndex = '0';
     body.insertBefore(canvas, body.firstChild);
+
+    var wrapper = document.querySelector('.wrapper');
+    if (wrapper) {
+      wrapper.style.position = 'relative';
+      wrapper.style.zIndex = '1';
+    }
 
     var width = 0;
     var height = 0;
@@ -109,8 +119,8 @@
         var kk = k & 255;
         var gi0 = perm[ii + perm[jj + perm[kk]]] % 12;
         var gi1 = perm[ii + i1 + perm[jj + j1 + perm[kk + k1]]] % 12;
-        var gi2 = perm[ii + i2 + perm[jj + j2 + perm[kk + k2]]] % 12;
-        var gi3 = perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12;
+        var gi2 = perm[ii + i2 + perm[jj + j2 + perm[kk + k2])] % 12;
+        var gi3 = perm[ii + 1 + perm[jj + 1 + perm[kk + 1])] % 12;
         var t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
         if (t0 > 0) { t0 *= t0; n0 = t0 * t0 * dot(grad3[gi0], x0, y0, z0); }
         var t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
