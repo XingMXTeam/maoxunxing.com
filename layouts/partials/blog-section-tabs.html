@@ -1,4 +1,12 @@
-{{- $items := where .Site.Menus.main "Parent" "blog" -}}
+{{- $items := slice -}}
+{{- with .Site.Menus.main -}}
+  {{- range . -}}
+    {{- if or (eq .Identifier "blog") (eq .Name "博客") (eq .Name "Blog") -}}
+      {{- $items = .Children -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 {{- if gt (len $items) 0 -}}
 <nav class="section-tabs" aria-label="Blog sections">
   {{- $current := replaceRE "/$" "" .RelPermalink -}}
