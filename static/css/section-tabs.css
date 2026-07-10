@@ -9,9 +9,9 @@
 .section-tabs {
   display: flex;
   align-items: baseline;
-  gap: clamp(1.6rem, 3vw, 3.2rem);
-  margin: clamp(3rem, 7vw, 6.2rem) 0 clamp(2rem, 4vw, 4rem);
-  padding: 0.2rem 0 0.6rem;
+  gap: clamp(1.2rem, 2.2vw, 2.4rem);
+  margin: clamp(2.2rem, 4.6vw, 4.2rem) 0 clamp(1.6rem, 3vw, 2.8rem);
+  padding: 0.2rem 0 0.7rem;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -25,12 +25,12 @@
 .section-tab {
   flex: 0 0 auto;
   color: var(--c-fg-light);
-  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-size: clamp(2rem, 3.2vw, 3.4rem);
   font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.06em;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
   text-decoration: none;
-  opacity: 0.42;
+  opacity: 0.38;
   transition: color 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
 }
 
@@ -59,11 +59,11 @@
 
 @media (max-width: 768px) {
   .section-tabs {
-    margin-top: 2.4rem;
-    gap: 1.4rem;
+    margin-top: 1.8rem;
+    gap: 1.1rem;
   }
 
   .section-tab {
-    font-size: clamp(2.2rem, 12vw, 4.2rem);
+    font-size: clamp(1.85rem, 9vw, 3rem);
   }
 }
