@@ -53,10 +53,6 @@
         {{ if not hugo.IsServer }}
           {{ partial "talkyard.html" . }}
         {{ end }}
-
-        <footer>
-          {{ partial "posts/series.html" . }}
-        </footer>
     </article>
 
     {{ partial "toc.html" . }}
