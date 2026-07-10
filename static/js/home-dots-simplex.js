@@ -3,24 +3,26 @@
     var body = document.body;
     if (!body || !body.classList) return;
 
-    var path = (window.location && window.location.pathname ? window.location.pathname : '').replace(/\/$/, '');
-    var hubPaths = [
+    // Keep the animated dots on the homepage and top-level navigation pages only.
+    // Content templates may reuse hub/series classes, so DOM classes are not a
+    // reliable way to distinguish a landing page from an article.
+    var pathname = window.location && window.location.pathname ? window.location.pathname : '/';
+    var segments = pathname.split('/').filter(Boolean);
+    if (segments[0] === 'en' || segments[0] === 'zh-cn') segments.shift();
+
+    var topLevelMenuPaths = [
       'posts',
-      'projects',
-      'about',
       'long-term-investing',
       'ai-indie-hacking',
       'ai-coding-workflow',
       'creator-workflow',
-      'prompts'
+      'projects',
+      'about'
     ];
-    var isHubPath = hubPaths.some(function (name) {
-      return path === '/' + name || path.endsWith('/' + name);
-    });
+    var isTopLevelMenuPage = segments.length === 1 &&
+      topLevelMenuPaths.indexOf(segments[0]) !== -1;
 
-    var isArtPage = body.classList.contains('page-home') ||
-      isHubPath ||
-      document.querySelector('.section-hub-page, .series-page, .projects-page');
+    var isArtPage = body.classList.contains('page-home') || isTopLevelMenuPage;
     if (!isArtPage) return;
 
     var oldCanvas = document.getElementById('home-art-canvas');
