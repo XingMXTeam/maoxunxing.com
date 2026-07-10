@@ -115,23 +115,6 @@
   margin-bottom: 5.5rem;
 }
 
-.project-category-bg {
-  position: absolute;
-  left: -0.1em;
-  top: -0.48em;
-  z-index: -1;
-  max-width: 100%;
-  font-size: clamp(5.8rem, 9vw, 12rem);
-  font-weight: 800;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--c-fg-light);
-  opacity: 0.14;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
-
 .project-category-heading {
   margin-bottom: 1.6rem;
 }
@@ -341,11 +324,6 @@ body.colorscheme-dark .project-card:hover {
 
   .project-category {
     margin-bottom: 4rem;
-  }
-
-  .project-category-bg {
-    font-size: clamp(4.5rem, 18vw, 7rem);
-    white-space: normal;
   }
 
   .project-card,
