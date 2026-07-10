@@ -1532,10 +1532,14 @@ body.colorscheme-dark {
   top: 120px;
   width: 320px;
   z-index: 100;
-  transition: top 0.2s ease-in-out;
+  transition: top 0.2s ease-in-out, width 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.toc-wrapper.is-collapsed {
+  width: 2.8rem;
 }
 
 .toc-anchor {
@@ -1548,8 +1552,16 @@ body.colorscheme-dark {
   opacity: 0.5;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  border: 0;
+  background: transparent;
+  padding: 0;
   border-radius: 4px;
+  font: inherit;
   font-size: 1.6rem;
+}
+
+.toc-wrapper.is-collapsed .toc {
+  display: none;
 }
 
 .toc {
