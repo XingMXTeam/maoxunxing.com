@@ -1,7 +1,14 @@
 {{ define "title" }}
   {{ .Title }} · {{ .Site.Title }}
 {{ end }}
-
 {{ define "content" }}
-  {{ partial "series-page.html" . }}
+  <section class="container page section-hub-page">
+    {{ partial "blog-section-tabs.html" . }}
+
+    <article>
+      {{ .Content }}
+    </article>
+
+    {{ partial "toc.html" . }}
+  </section>
 {{ end }}
