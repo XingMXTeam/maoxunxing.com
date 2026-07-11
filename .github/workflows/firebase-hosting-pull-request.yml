@@ -4,32 +4,8 @@
 name: Deploy to Firebase Hosting on PR
 "on": pull_request
 jobs:
-  inspect_problem_photo:
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          lfs: false
-          show-progress: false
-          sparse-checkout: |
-            .gitattributes
-            assets/photos/IMG_6861 2.jpeg
-          sparse-checkout-cone-mode: false
-      - name: Inspect IMG_6861 source bytes
-        run: |
-          photo='assets/photos/IMG_6861 2.jpeg'
-          git lfs pull --include="$photo" --exclude=''
-          test -f "$photo"
-          echo "FILE_DESCRIPTION=$(file --brief "$photo")"
-          echo "MIME_TYPE=$(file --brief --mime-type "$photo")"
-          echo "BYTE_SIZE=$(wc -c < "$photo" | tr -d ' ')"
-          echo "FIRST_32_BYTES=$(xxd -p -l 32 "$photo")"
-
   build_and_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
-    needs: inspect_problem_photo
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
