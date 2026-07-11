@@ -5,17 +5,23 @@
 {{ define "content" }}
 {{ $images := slice }}
 {{ $supportedExtensions := slice ".jpg" ".jpeg" ".png" ".webp" ".gif" ".avif" }}
-{{ range resources.Match "photos/**" }}
-  {{ if in $supportedExtensions (lower (path.Ext .Name)) }}
-    {{ $images = $images | append . }}
+{{ range os.ReadDir "assets/photos" }}
+  {{ if not .IsDir }}
+    {{ $fileName := .Name }}
+    {{ if in $supportedExtensions (lower (path.Ext $fileName)) }}
+      {{ $resourcePath := printf "photos/%s" $fileName }}
+      {{ with resources.Get $resourcePath }}
+        {{ $images = $images | append . }}
+      {{ end }}
+    {{ end }}
   {{ end }}
 {{ end }}
 {{ $images = sort $images "Name" "desc" }}
 {{ $isZh := eq .Site.Language.Lang "zh-CN" }}
 
-<link rel="stylesheet" href="/css/gallery.css?v=20260711a" />
+<link rel="stylesheet" href="/css/gallery.css?v=20260711d" />
 
-<section class="photo-gallery-page" data-photo-gallery data-view="cover">
+<section class="photo-gallery-page" data-photo-gallery data-view="cover" data-photo-count="{{ len $images }}">
   <header class="photo-gallery-header">
     <div class="photo-gallery-heading">
       <h1 class="title">{{ .Title }}</h1>
@@ -54,7 +60,6 @@
     {{ range $index, $image := $images }}
       {{ $baseName := path.BaseName $image.Name }}
       {{ $alt := humanize (replaceRE `[-_]+` " " $baseName) }}
-      {{ $thumb := $image.Fit "900x900 webp q82" }}
     <a
       class="photo-item"
       href="{{ $image.RelPermalink }}"
@@ -64,12 +69,10 @@
       aria-label="{{ if $isZh }}查看照片：{{ $alt }}{{ else }}View photo: {{ $alt }}{{ end }}"
     >
       <img
-        src="{{ $thumb.RelPermalink }}"
+        src="{{ $image.RelPermalink }}"
         alt="{{ $alt }}"
         loading="lazy"
         decoding="async"
-        width="{{ $thumb.Width }}"
-        height="{{ $thumb.Height }}"
       />
     </a>
     {{ end }}
@@ -129,5 +132,5 @@
   {{ end }}
 </section>
 
-<script defer src="/js/gallery.js?v=20260711a"></script>
+<script defer src="/js/gallery.js?v=20260711d"></script>
 {{ end }}
