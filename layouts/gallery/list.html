@@ -13,7 +13,7 @@
 {{ $images = sort $images "Name" "desc" }}
 {{ $isZh := eq .Site.Language.Lang "zh-CN" }}
 
-<link rel="stylesheet" href="/css/gallery.css?v=20260711b" />
+<link rel="stylesheet" href="/css/gallery.css?v=20260711c" />
 
 <section class="photo-gallery-page" data-photo-gallery data-view="cover" data-photo-count="{{ len $images }}">
   <header class="photo-gallery-header">
@@ -54,7 +54,6 @@
     {{ range $index, $image := $images }}
       {{ $baseName := path.BaseName $image.Name }}
       {{ $alt := humanize (replaceRE `[-_]+` " " $baseName) }}
-      {{ $thumb := $image.Fit "900x900 webp q82" }}
     <a
       class="photo-item"
       href="{{ $image.RelPermalink }}"
@@ -64,12 +63,10 @@
       aria-label="{{ if $isZh }}查看照片：{{ $alt }}{{ else }}View photo: {{ $alt }}{{ end }}"
     >
       <img
-        src="{{ $thumb.RelPermalink }}"
+        src="{{ $image.RelPermalink }}"
         alt="{{ $alt }}"
         loading="lazy"
         decoding="async"
-        width="{{ $thumb.Width }}"
-        height="{{ $thumb.Height }}"
       />
     </a>
     {{ end }}
@@ -129,5 +126,5 @@
   {{ end }}
 </section>
 
-<script defer src="/js/gallery.js?v=20260711b"></script>
+<script defer src="/js/gallery.js?v=20260711c"></script>
 {{ end }}
