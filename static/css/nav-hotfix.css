@@ -132,6 +132,36 @@ body.colorscheme-dark #home-art-canvas[data-art="dots"] {
   }
 }
 
+/* The theme toggle is a standalone final navigation item on desktop. */
+.navigation .nav-theme {
+  display: flex;
+  align-items: center;
+}
+
+.navigation .nav-theme-button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--c-fg-deep);
+  font: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navigation .nav-theme-button:hover,
+.navigation .nav-theme-button:focus-visible {
+  opacity: 1;
+}
+
 /* Mobile menu: main.css was hiding #menu-toggle and all non-icon nav items. Restore a real drawer. */
 #menu-toggle.menu-button {
   appearance: none;
@@ -309,5 +339,28 @@ body.colorscheme-dark #home-art-canvas[data-art="dots"] {
     padding: 0 1rem;
     font-size: 1.25rem;
     font-weight: 700;
+  }
+
+  .navigation .nav-theme {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100% !important;
+    margin-top: 0.55rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  .navigation .nav-theme-button {
+    width: 4.2rem;
+    height: 4.2rem;
+    min-width: 4.2rem;
+    min-height: 4.2rem;
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    background: rgba(125, 125, 125, 0.045);
+    font-size: 1.45rem;
+    opacity: 0.88;
+    box-sizing: border-box;
   }
 }
