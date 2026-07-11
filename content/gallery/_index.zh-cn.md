@@ -1,5 +1,5 @@
 ---
-title: "画廊"
+title: "照片"
 layout: gallery
-description: "图表、草图和视觉作品"
+description: "生活、旅途与那些想留下来的瞬间"
 ---
