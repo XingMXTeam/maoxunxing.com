@@ -13,6 +13,10 @@ jobs:
           fetch-depth: 1
           lfs: false
           show-progress: false
+          sparse-checkout: |
+            .gitattributes
+            assets/photos/IMG_6861 2.jpeg
+          sparse-checkout-cone-mode: false
       - name: Inspect IMG_6861 source bytes
         run: |
           photo='assets/photos/IMG_6861 2.jpeg'
