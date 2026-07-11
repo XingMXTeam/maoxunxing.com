@@ -1,262 +1,118 @@
-const CACHE_VERSION = 1;
+const CACHE_VERSION = "20260711-2";
 
-const BASE_CACHE_FILES = [
+const CACHE_NAMES = {
+  assets: `assets-${CACHE_VERSION}`,
+  content: `content-${CACHE_VERSION}`,
+  offline: `offline-${CACHE_VERSION}`,
+};
+
+const PRECACHE_FILES = [
   "/manifest.json",
   "/images/favicon/favicon-32x32.png",
   "/images/favicon/favicon-16x16.png",
-  "https://use.fontawesome.com/releases/v5.11.2/css/all.css",
-  "https://fonts.googleapis.com/css?family=Lato:400,700|Rubik:300,700|Source+Code+Pro:400,700",
-  "https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic",
-  "https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js",
-  "https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js",
   "/css/font.css",
   "/css/main.css",
   "/images/avatar.avif",
+  "/en/404.html",
 ];
-
-const OFFLINE_CACHE_FILES = [
-  "/manifest.json",
-  "/images/favicon/favicon-32x32.png",
-  "/images/favicon/favicon-16x16.png",
-  "https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic",
-  "https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js",
-  "https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js",
-  "/css/font.css",
-  "/css/main.css",
-  "/images/avatar.avif",
-];
-
-const NOT_FOUND_CACHE_FILES = ["/en/404.html"];
 
 const OFFLINE_PAGE = "/en/404.html";
-const NOT_FOUND_PAGE = "/en/404.html";
 
-const CACHE_VERSIONS = {
-  assets: "assets-v" + CACHE_VERSION,
-  content: "content-v" + CACHE_VERSION,
-  offline: "offline-v" + CACHE_VERSION,
-  notFound: "404-v" + CACHE_VERSION,
-};
-
-// Define MAX_TTL's in SECONDS for specific file extensions
-const MAX_TTL = {
-  "/": 3600,
-  html: 3600,
-  json: 86400,
-  js: 86400,
-  css: 86400,
-};
-
-const CACHE_BLACKLIST = [
-  (str) => {
-    return !str.startsWith("http://localhost");
-  },
-];
-
-const SUPPORTED_METHODS = ["GET"];
-
-/**
- * isBlackListed
- * @param {string} url
- * @returns {boolean}
- */
-function isBlacklisted(url) {
-  return CACHE_BLACKLIST.length > 0
-    ? !CACHE_BLACKLIST.filter((rule) => {
-        if (typeof rule === "function") {
-          return !rule(url);
-        } else {
-          return false;
-        }
-      }).length
-    : false;
+async function precacheFiles() {
+  const cache = await caches.open(CACHE_NAMES.assets);
+  await Promise.allSettled(
+    PRECACHE_FILES.map(async (url) => {
+      try {
+        await cache.add(url);
+      } catch (error) {
+        console.warn("Unable to precache", url, error);
+      }
+    }),
+  );
 }
 
-/**
- * getFileExtension
- * @param {string} url
- * @returns {string}
- */
-function getFileExtension(url) {
-  let extension = url.split(".").reverse()[0].split("?")[0];
-  return extension.endsWith("/") ? "/" : extension;
+async function deleteOldCaches() {
+  const currentNames = new Set(Object.values(CACHE_NAMES));
+  const names = await caches.keys();
+  await Promise.all(
+    names
+      .filter((name) => !currentNames.has(name))
+      .map((name) => caches.delete(name)),
+  );
 }
 
-/**
- * getTTL
- * @param {string} url
- */
-function getTTL(url) {
-  if (typeof url === "string") {
-    let extension = getFileExtension(url);
-    if (typeof MAX_TTL[extension] === "number") {
-      return MAX_TTL[extension];
-    } else {
-      return null;
+async function networkFirst(request) {
+  const cache = await caches.open(CACHE_NAMES.content);
+
+  try {
+    const response = await fetch(request);
+    if (response && response.status < 400) {
+      await cache.put(request, response.clone());
     }
-  } else {
-    return null;
+    return response;
+  } catch (error) {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+
+    const offline = await caches.match(OFFLINE_PAGE);
+    if (offline) return offline;
+
+    throw error;
   }
 }
 
-/**
- * installServiceWorker
- * @returns {Promise}
- */
-function installServiceWorker() {
-  return Promise.all([
-    caches.open(CACHE_VERSIONS.assets).then((cache) => {
-      return cache.addAll(BASE_CACHE_FILES);
-    }),
-    caches.open(CACHE_VERSIONS.offline).then((cache) => {
-      return cache.addAll(OFFLINE_CACHE_FILES);
-    }),
-    caches.open(CACHE_VERSIONS.notFound).then((cache) => {
-      return cache.addAll(NOT_FOUND_CACHE_FILES);
-    }),
-  ]);
-}
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE_NAMES.content);
+  const cached = await cache.match(request);
 
-/**
- * cleanupLegacyCache
- * @returns {Promise}
- */
-function cleanupLegacyCache() {
-  let currentCaches = Object.keys(CACHE_VERSIONS).map((key) => {
-    return CACHE_VERSIONS[key];
-  });
+  const networkRequest = fetch(request)
+    .then(async (response) => {
+      if (response && response.status < 400) {
+        await cache.put(request, response.clone());
+      }
+      return response;
+    })
+    .catch(() => null);
 
-  return new Promise((resolve, reject) => {
-    caches
-      .keys()
-      .then((keys) => {
-        return (legacyKeys = keys.filter((key) => {
-          return !~currentCaches.indexOf(key);
-        }));
-      })
-      .then((legacy) => {
-        if (legacy.length) {
-          Promise.all(
-            legacy.map((legacyKey) => {
-              return caches.delete(legacyKey);
-            })
-          )
-            .then(() => {
-              resolve();
-            })
-            .catch((err) => {
-              reject(err);
-            });
-        } else {
-          resolve();
-        }
-      })
-      .catch(() => {
-        reject();
-      });
-  });
+  if (cached) {
+    networkRequest.catch(() => null);
+    return cached;
+  }
+
+  const response = await networkRequest;
+  if (response) return response;
+
+  throw new Error(`Unable to fetch ${request.url}`);
 }
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(installServiceWorker());
+  event.waitUntil(
+    Promise.all([precacheFiles(), self.skipWaiting()]),
+  );
 });
 
-// The activate handler takes care of cleaning up old caches.
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    Promise.all([cleanupLegacyCache()]).catch((err) => {
-      event.skipWaiting();
-    })
+    Promise.all([deleteOldCaches(), self.clients.claim()]),
   );
 });
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.open(CACHE_VERSIONS.content).then((cache) => {
-      return cache
-        .match(event.request)
-        .then((response) => {
-          if (response) {
-            let headers = response.headers.entries();
-            let date = null;
+  const request = event.request;
 
-            for (let pair of headers) {
-              if (pair[0] === "date") {
-                date = new Date(pair[1]);
-              }
-            }
+  if (request.method !== "GET") return;
 
-            if (date) {
-              let age = parseInt(
-                (new Date().getTime() - date.getTime()) / 1000
-              );
-              let ttl = getTTL(event.request.url);
+  const accept = request.headers.get("accept") || "";
+  const isNavigation = request.mode === "navigate" || accept.includes("text/html");
 
-              if (ttl && age > ttl) {
-                return new Promise((resolve) => {
-                  return fetch(event.request)
-                    .then((updatedResponse) => {
-                      if (updatedResponse) {
-                        cache.put(event.request, updatedResponse.clone());
-                        resolve(updatedResponse);
-                      } else {
-                        resolve(response);
-                      }
-                    })
-                    .catch(() => {
-                      resolve(response);
-                    });
-                }).catch((err) => {
-                  return response;
-                });
-              } else {
-                return response;
-              }
-            } else {
-              return response;
-            }
-          } else {
-            return null;
-          }
-        })
-        .then((response) => {
-          if (response) {
-            return response;
-          } else {
-            return fetch(event.request)
-              .then((response) => {
-                if (response.status < 400) {
-                  if (
-                    ~SUPPORTED_METHODS.indexOf(event.request.method) &&
-                    !isBlacklisted(event.request.url)
-                  ) {
-                    cache.put(event.request, response.clone());
-                  }
-                  return response;
-                } else {
-                  return caches.open(CACHE_VERSIONS.notFound).then((cache) => {
-                    return cache.match(NOT_FOUND_PAGE);
-                  });
-                }
-              })
-              .then((response) => {
-                if (response) {
-                  return response;
-                }
-              })
-              .catch(() => {
-                return caches
-                  .open(CACHE_VERSIONS.offline)
-                  .then((offlineCache) => {
-                    return offlineCache.match(OFFLINE_PAGE);
-                  });
-              });
-          }
-        })
-        .catch((error) => {
-          console.error("  Error in fetch handler:", error);
-          throw error;
-        });
-    })
-  );
+  if (isNavigation) {
+    // HTML must be network-first so newly deployed pages are not hidden by an
+    // hour-old Service Worker response. The cached copy remains an offline fallback.
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (new URL(request.url).origin === self.location.origin) {
+    event.respondWith(staleWhileRevalidate(request));
+  }
 });
