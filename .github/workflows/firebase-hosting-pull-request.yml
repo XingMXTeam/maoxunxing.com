@@ -30,6 +30,13 @@ jobs:
         run: npm update
       - name: Generate gallery images
         run: npm run gallery:generate
+      - name: Upload gallery conversion report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gallery-conversion-report
+          path: gallery-report.json
+          if-no-files-found: warn
       - name: Build Hugo site
         run: rm -rf public && hugo --minify
       - name: Build search index
