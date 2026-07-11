@@ -1,5 +1,5 @@
 ---
-title: "Gallery"
+title: "Photos"
 layout: gallery
-description: "Diagrams, sketches, and visual works"
+description: "Photos from life, travels, and the moments I wanted to keep"
 ---
