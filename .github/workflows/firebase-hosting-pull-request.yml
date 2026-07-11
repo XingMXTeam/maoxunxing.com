@@ -26,10 +26,16 @@ jobs:
           extended: true
       - name: Install HEIF decoder
         run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends libheif-examples
-      - name: Build
+      - name: Install dependencies
+        run: npm update
+      - name: Generate gallery images
+        run: npm run gallery:generate
+      - name: Build Hugo site
+        run: rm -rf public && hugo --minify
+      - name: Build search index
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-        run: npm update && npm run gallery:generate && rm -rf public && hugo --minify && npm run index-and-send
+        run: npm run index-and-send
       - name: Verify gallery pages and converted assets
         run: |
           python - <<'PY'
