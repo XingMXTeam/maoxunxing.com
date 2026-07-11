@@ -11,6 +11,8 @@
     var gallery = document.querySelector('[data-photo-gallery]');
     if (!gallery) return;
 
+    document.body.classList.add('page-gallery');
+
     var toggle = gallery.querySelector('[data-photo-view-toggle]');
     var items = Array.prototype.slice.call(gallery.querySelectorAll('.photo-item'));
     var lightbox = gallery.querySelector('[data-photo-lightbox]');
@@ -58,31 +60,56 @@
 
     if (!lightbox || !lightboxImage || items.length === 0) return;
 
+    function normalizeIndex(index) {
+      return (index + items.length) % items.length;
+    }
+
     function getPhoto(index) {
       var item = items[index];
       var image = item && item.querySelector('img');
+      var src = '';
+
+      if (image) {
+        src = image.currentSrc || image.src || '';
+      }
+      if (!src && item) {
+        src = item.getAttribute('data-photo-src') || '';
+      }
+
       return {
-        src: item ? item.getAttribute('href') : '',
+        src: src,
         alt: item ? item.getAttribute('data-photo-alt') || (image && image.alt) || '' : ''
       };
     }
 
     function preload(index) {
       if (items.length < 2) return;
-      var normalizedIndex = (index + items.length) % items.length;
-      var photo = getPhoto(normalizedIndex);
+      var photo = getPhoto(normalizeIndex(index));
       if (!photo.src) return;
       var image = new Image();
+      image.decoding = 'async';
       image.src = photo.src;
     }
 
     function render(index) {
-      activeIndex = (index + items.length) % items.length;
+      activeIndex = normalizeIndex(index);
       var photo = getPhoto(activeIndex);
       if (!photo.src) return;
 
-      lightboxImage.src = photo.src;
+      lightboxImage.classList.remove('is-loaded');
       lightboxImage.alt = photo.alt;
+      lightboxImage.onload = function () {
+        lightboxImage.classList.add('is-loaded');
+      };
+      lightboxImage.onerror = function () {
+        lightboxImage.classList.remove('is-loaded');
+      };
+      lightboxImage.src = photo.src;
+
+      if (lightboxImage.complete && lightboxImage.naturalWidth > 0) {
+        lightboxImage.classList.add('is-loaded');
+      }
+
       if (lightboxCaption) lightboxCaption.textContent = photo.alt;
       if (lightboxCount) lightboxCount.textContent = String(activeIndex + 1) + ' / ' + String(items.length);
 
@@ -97,9 +124,9 @@
       }
 
       previousFocus = document.activeElement;
-      render(index);
       lightbox.hidden = false;
       document.body.classList.add('photo-lightbox-open');
+      render(index);
 
       window.requestAnimationFrame(function () {
         lightbox.classList.add('is-open');
@@ -116,6 +143,7 @@
       closeTimer = window.setTimeout(function () {
         lightbox.hidden = true;
         lightboxImage.removeAttribute('src');
+        lightboxImage.classList.remove('is-loaded');
         activeIndex = -1;
         closeTimer = null;
       }, 180);
@@ -132,8 +160,7 @@
     }
 
     items.forEach(function (item, index) {
-      item.addEventListener('click', function (event) {
-        event.preventDefault();
+      item.addEventListener('click', function () {
         open(index);
       });
     });
@@ -143,7 +170,13 @@
     if (nextButton) nextButton.addEventListener('click', function () { navigate(1); });
 
     lightbox.addEventListener('click', function (event) {
-      if (event.target === lightbox) close();
+      if (
+        event.target === lightbox ||
+        event.target === lightboxImage ||
+        (event.target && event.target.classList && event.target.classList.contains('photo-lightbox-backdrop'))
+      ) {
+        close();
+      }
     });
 
     lightbox.addEventListener('touchstart', function (event) {
