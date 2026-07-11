@@ -32,7 +32,9 @@ jobs:
           hugo-version: "0.145.0"
           extended: true
       - name: Install HEIF decoder
-        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends libheif-examples
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libheif-examples libheif-plugin-libde265
       - name: Build
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
