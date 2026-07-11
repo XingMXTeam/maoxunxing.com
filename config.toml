@@ -163,9 +163,13 @@ resampleFilter = "Lanczos"
   pageRef = "/projects"
   weight = 6
 [[languages.en.menu.main]]
+  name = "Photos"
+  pageRef = "/gallery"
+  weight = 7
+[[languages.en.menu.main]]
   name = "About"
   pageRef = "/about"
-  weight = 7
+  weight = 8
 [[languages.zh-CN.menu.main]]
   name = "博客"
   pageRef = "/posts"
@@ -191,6 +195,10 @@ resampleFilter = "Lanczos"
   pageRef = "/projects"
   weight = 6
 [[languages.zh-CN.menu.main]]
+  name = "照片"
+  pageRef = "/gallery"
+  weight = 7
+[[languages.zh-CN.menu.main]]
   name = "关于"
   pageRef = "/about"
-  weight = 7
+  weight = 8
