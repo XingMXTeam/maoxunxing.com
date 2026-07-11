@@ -15,11 +15,12 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
           lfs: true
+          show-progress: false
       - name: Verify source photos
         run: |
           source_count=$(find assets/photos -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.avif' -o -iname '*.heic' -o -iname '*.heif' -o -iname '*.tif' -o -iname '*.tiff' \) | wc -l | tr -d ' ')
@@ -30,6 +31,8 @@ jobs:
         with:
           hugo-version: "0.145.0"
           extended: true
+      - name: Install HEIF decoder
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends libheif-examples
       - name: Build
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
