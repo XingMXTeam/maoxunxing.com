@@ -1,3 +1,5 @@
+{{- $galleryURL := "/gallery/" | relLangURL -}}
+{{- $isZh := eq .Site.Language.Lang "zh-CN" -}}
 <nav class="navigation" aria-label="Main navigation">
   <section class="nav-container">
     <!-- Animated M signature logo -->
@@ -42,6 +44,31 @@
         <span class="mobile-menu-section-label sr-only">Tools</span>
         <div class="nav-utility-row">
           <div class="nav-search-box" id="docsearch"></div>
+
+          <a
+            href="{{ $galleryURL }}"
+            class="nav-icon-link nav-photo-link"
+            title="{{ if $isZh }}照片{{ else }}Photos{{ end }}"
+            aria-label="{{ if $isZh }}查看照片集{{ else }}View photo gallery{{ end }}"
+            {{ if eq .RelPermalink $galleryURL }}aria-current="page"{{ end }}
+          >
+            <svg
+              class="nav-camera-icon"
+              width="1.2em"
+              height="1.2em"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M14.5 4 16 6h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3l1.5-2h5z"></path>
+              <circle cx="12" cy="13" r="3.25"></circle>
+            </svg>
+          </a>
 
           <button
             type="button"
