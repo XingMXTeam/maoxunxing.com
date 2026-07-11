@@ -4,8 +4,9 @@
 
 {{ define "content" }}
 {{ $images := slice }}
+{{ $supportedExtensions := slice ".jpg" ".jpeg" ".png" ".webp" ".gif" ".avif" }}
 {{ range resources.Match "photos/**" }}
-  {{ if eq .MediaType.MainType "image" }}
+  {{ if in $supportedExtensions (lower (path.Ext .Name)) }}
     {{ $images = $images | append . }}
   {{ end }}
 {{ end }}
