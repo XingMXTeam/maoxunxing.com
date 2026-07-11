@@ -13,6 +13,11 @@ jobs:
           submodules: true
           fetch-depth: 0
           lfs: true
+      - name: Verify source photos
+        run: |
+          source_count=$(find assets/photos -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.avif' \) | wc -l | tr -d ' ')
+          echo "Source photo files: ${source_count}"
+          test "${source_count}" -ge 200
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
