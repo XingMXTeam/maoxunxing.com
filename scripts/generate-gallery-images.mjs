@@ -30,12 +30,7 @@ async function removePartialOutput(outputPath) {
   await fs.rm(outputPath, { force: true })
 }
 
-async function convertWithSharp(sourcePath, outputPath) {
-  const metadata = await sharp(sourcePath, {
-    failOn: 'none',
-    limitInputPixels: false,
-  }).metadata()
-
+async function convertSharpInput(sourcePath, outputPath, decoder) {
   const result = await sharp(sourcePath, {
     failOn: 'none',
     limitInputPixels: false,
@@ -51,9 +46,33 @@ async function convertWithSharp(sourcePath, outputPath) {
     .toFile(outputPath)
 
   return {
-    decoder: `sharp:${metadata.format || 'unknown'}`,
+    decoder,
     width: result.width,
     height: result.height,
+  }
+}
+
+async function convertWithSharp(sourcePath, outputPath) {
+  const metadata = await sharp(sourcePath, {
+    failOn: 'none',
+    limitInputPixels: false,
+  }).metadata()
+
+  return convertSharpInput(sourcePath, outputPath, `sharp:${metadata.format || 'unknown'}`)
+}
+
+async function convertWithHeif(sourcePath, outputPath) {
+  const intermediatePath = `${outputPath}.heif.png`
+  await removePartialOutput(outputPath)
+  await removePartialOutput(intermediatePath)
+
+  try {
+    await execFileAsync('heif-convert', [sourcePath, intermediatePath], {
+      maxBuffer: 20 * 1024 * 1024,
+    })
+    return await convertSharpInput(intermediatePath, outputPath, 'heif-convert')
+  } finally {
+    await removePartialOutput(intermediatePath)
   }
 }
 
@@ -80,6 +99,12 @@ async function convertWithFallbacks(sourcePath, outputPath) {
     return await convertWithSharp(sourcePath, outputPath)
   } catch (error) {
     attempts.push(`sharp: ${error instanceof Error ? error.message : String(error)}`)
+  }
+
+  try {
+    return await convertWithHeif(sourcePath, outputPath)
+  } catch (error) {
+    attempts.push(`heif-convert: ${error instanceof Error ? error.message : String(error)}`)
   }
 
   const imagemagickCommands = [
