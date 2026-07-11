@@ -3,23 +3,10 @@
 {{ end }}
 
 {{ define "content" }}
-{{ $images := slice }}
-{{ $supportedExtensions := slice ".jpg" ".jpeg" ".png" ".webp" ".gif" ".avif" }}
-{{ range os.ReadDir "assets/photos" }}
-  {{ if not .IsDir }}
-    {{ $fileName := .Name }}
-    {{ if in $supportedExtensions (lower (path.Ext $fileName)) }}
-      {{ $resourcePath := printf "photos/%s" $fileName }}
-      {{ with resources.Get $resourcePath }}
-        {{ $images = $images | append . }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-{{ $images = sort $images "Name" "desc" }}
+{{ $images := default (slice) .Site.Data.gallery }}
 {{ $isZh := eq .Site.Language.Lang "zh-CN" }}
 
-<link rel="stylesheet" href="/css/gallery.css?v=20260711e" />
+<link rel="stylesheet" href="/css/gallery.css?v=20260711f" />
 <script>document.body.classList.add('page-gallery');</script>
 
 <section class="photo-gallery-page" data-photo-gallery data-view="cover" data-photo-count="{{ len $images }}">
@@ -44,26 +31,28 @@
 
   <div class="photo-grid photos" role="list" aria-label="{{ if $isZh }}照片集{{ else }}Photo gallery{{ end }}">
     {{ range $index, $image := $images }}
-      {{ $extension := lower (path.Ext $image.Name) }}
-      {{ $baseName := path.BaseName $image.Name }}
-      {{ $alt := humanize (replaceRE `[-_]+` " " $baseName) }}
-      {{ $safeName := printf "%04d-%s%s" $index (urlize $baseName) $extension }}
-      {{ $published := resources.Copy (printf "gallery/%s" $safeName) $image }}
+      {{ $url := index $image "url" }}
+      {{ $alt := index $image "alt" }}
+      {{ $width := index $image "width" }}
+      {{ $height := index $image "height" }}
     <button
       class="photo-item"
       type="button"
       role="listitem"
       data-photo-index="{{ $index }}"
-      data-photo-src="{{ $published.RelPermalink }}"
+      data-photo-src="{{ $url }}"
       data-photo-alt="{{ $alt }}"
       aria-label="{{ if $isZh }}查看照片：{{ $alt }}{{ else }}View photo: {{ $alt }}{{ end }}"
     >
       <img
-        src="{{ $published.RelPermalink }}"
+        src="{{ $url }}"
         alt="{{ $alt }}"
+        width="{{ $width }}"
+        height="{{ $height }}"
         data-gallery-image
-        loading="lazy"
         decoding="async"
+        {{ if lt $index 8 }}loading="eager"{{ else }}loading="lazy"{{ end }}
+        {{ if eq $index 0 }}fetchpriority="high"{{ end }}
       />
     </button>
     {{ end }}
@@ -115,10 +104,10 @@
   </div>
   {{ else }}
   <p class="photo-gallery-empty">
-    {{ if $isZh }}还没有照片。把图片放进 <code>assets/photos</code> 后，它们会自动出现在这里。{{ else }}No photos yet. Add images to <code>assets/photos</code> and they will appear here automatically.{{ end }}
+    {{ if $isZh }}图库构建失败：没有生成可展示的照片。{{ else }}The gallery build did not generate any photos.{{ end }}
   </p>
   {{ end }}
 </section>
 
-<script defer src="/js/gallery.js?v=20260711e"></script>
+<script defer src="/js/gallery.js?v=20260711f"></script>
 {{ end }}

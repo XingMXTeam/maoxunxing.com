@@ -1,5 +1,4 @@
 /* Full-width photo gallery inspired by antfu.me */
-body.page-gallery,
 body.page-gallery .wrapper,
 body.page-gallery .content {
   width: 100% !important;
@@ -8,14 +7,14 @@ body.page-gallery .content {
   padding: 0 !important;
 }
 
-body.page-gallery .navigation,
-body.page-gallery .footer,
-body.page-gallery #adsense-container,
-body.page-gallery > .float,
-.wrapper:has(.photo-gallery-page) > .navigation,
-.wrapper:has(.photo-gallery-page) > .footer,
-.wrapper:has(.photo-gallery-page) #adsense-container {
+body.page-gallery #adsense-container {
   display: none !important;
+}
+
+body.page-gallery .navigation {
+  position: relative;
+  z-index: 200;
+  background: var(--c-bg);
 }
 
 body.page-gallery .content {
@@ -26,15 +25,15 @@ body.page-gallery .content {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 7.2rem 1.6rem 3.2rem;
+  padding: 1.6rem 1.6rem 3.2rem;
   background: var(--c-bg);
 }
 
 .photo-view-toggle {
   position: fixed;
-  top: 2.2rem;
+  top: 8rem;
   left: 2.2rem;
-  z-index: 120;
+  z-index: 220;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -44,15 +43,17 @@ body.page-gallery .content {
   border: 0;
   border-radius: 999px;
   color: var(--c-fg-light);
-  background: transparent;
-  opacity: 0.28;
+  background: color-mix(in srgb, var(--c-bg) 88%, transparent);
+  opacity: 0.38;
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: opacity 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
 .photo-view-toggle:hover,
 .photo-view-toggle:focus-visible {
-  background: rgba(125, 125, 125, 0.1);
+  background: rgba(125, 125, 125, 0.12);
   opacity: 1;
 }
 
@@ -184,7 +185,7 @@ body.page-gallery .content {
 .photo-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.64);
+  background: rgba(0, 0, 0, 0.68);
   backdrop-filter: blur(2.8rem);
   -webkit-backdrop-filter: blur(2.8rem);
 }
@@ -244,7 +245,7 @@ body.page-gallery .content {
   border: 0;
   color: rgba(255, 255, 255, 0.58);
   background: rgba(0, 0, 0, 0.18);
-  opacity: 0.52;
+  opacity: 0.58;
   cursor: pointer;
   transition: color 160ms ease, background-color 160ms ease, opacity 160ms ease;
 }
@@ -313,11 +314,11 @@ body.photo-lightbox-open {
 
 @media screen and (max-width: 599px) {
   .photo-gallery-page {
-    padding: 6rem 1rem 2rem;
+    padding: 1rem 1rem 2rem;
   }
 
   .photo-view-toggle {
-    top: 1.4rem;
+    top: 6.5rem;
     left: 1.4rem;
   }
 
@@ -336,39 +337,6 @@ body.photo-lightbox-open {
 
   .photo-lightbox-image {
     padding: 1rem;
-  }
-
-  .photo-lightbox-nav {
-    top: auto;
-    bottom: 1.2rem;
-    width: 4.2rem;
-    height: 4.2rem;
-    border-radius: 999px;
-    transform: none;
-  }
-
-  .photo-lightbox-prev {
-    left: 1.2rem;
-  }
-
-  .photo-lightbox-next {
-    right: 1.2rem;
-  }
-
-  .photo-lightbox-close {
-    top: 1rem;
-    right: 1rem;
-  }
-
-  .photo-lightbox-meta {
-    right: 50%;
-    bottom: 1.35rem;
-    max-width: calc(100vw - 12rem);
-    transform: translateX(50%);
-  }
-
-  .photo-lightbox-meta [data-photo-lightbox-caption] {
-    display: none;
   }
 }
 

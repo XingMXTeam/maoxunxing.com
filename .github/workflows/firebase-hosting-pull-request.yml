@@ -8,14 +8,15 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
           lfs: true
+          show-progress: false
       - name: Verify source photos
         run: |
-          source_count=$(find assets/photos -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.avif' \) | wc -l | tr -d ' ')
+          source_count=$(find assets/photos -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.avif' -o -iname '*.heic' -o -iname '*.heif' -o -iname '*.tif' -o -iname '*.tiff' \) | wc -l | tr -d ' ')
           echo "Source photo files: ${source_count}"
           test "${source_count}" -ge 200
       - name: Setup Hugo
@@ -23,11 +24,28 @@ jobs:
         with:
           hugo-version: "0.145.0"
           extended: true
-      - name: Build
+      - name: Install HEIF decoder
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libheif-examples libheif-plugin-libde265
+      - name: Install dependencies
+        run: npm update
+      - name: Generate gallery images
+        run: npm run gallery:generate
+      - name: Upload gallery conversion report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gallery-conversion-report
+          path: gallery-report.json
+          if-no-files-found: warn
+      - name: Build Hugo site
+        run: rm -rf public && hugo --minify
+      - name: Build search index
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-        run: npm update && rm -rf public && hugo --minify && npm run index-and-send
-      - name: Verify gallery output and assets
+        run: npm run index-and-send
+      - name: Verify gallery pages and converted assets
         run: |
           python - <<'PY'
           from html.parser import HTMLParser
@@ -39,24 +57,33 @@ jobs:
               def __init__(self):
                   super().__init__()
                   self.sources = []
+                  self.has_navigation = False
 
               def handle_starttag(self, tag, attrs):
-                  source = dict(attrs).get("data-photo-src")
+                  values = dict(attrs)
+                  source = values.get("data-photo-src")
                   if source:
                       self.sources.append(source)
+                  classes = set((values.get("class") or "").split())
+                  if tag == "nav" or "navigation" in classes:
+                      self.has_navigation = True
 
-          html_path = Path("public/gallery/index.html")
-          if not html_path.exists():
-              raise SystemExit("Missing public/gallery/index.html")
+          all_sources = set()
+          for html_path in [Path("public/gallery/index.html"), Path("public/zh-cn/gallery/index.html")]:
+              if not html_path.exists():
+                  raise SystemExit(f"Missing {html_path}")
 
-          parser = GalleryParser()
-          parser.feed(html_path.read_text(encoding="utf-8"))
-          print(f"Gallery generated {len(parser.sources)} photo items")
-          if len(parser.sources) < 200:
-              raise SystemExit("Gallery contains fewer than 200 photo items")
+              parser = GalleryParser()
+              parser.feed(html_path.read_text(encoding="utf-8"))
+              print(f"{html_path}: {len(parser.sources)} photo items; navigation={parser.has_navigation}")
+              if len(parser.sources) < 200:
+                  raise SystemExit(f"{html_path} contains fewer than 200 photo items")
+              if not parser.has_navigation:
+                  raise SystemExit(f"{html_path} is missing the site navigation")
+              all_sources.update(parser.sources)
 
           failures = []
-          for source in parser.sources:
+          for source in sorted(all_sources):
               relative = unquote(urlparse(source).path).lstrip("/")
               file_path = Path("public") / relative
               if not file_path.is_file():
@@ -72,14 +99,14 @@ jobs:
                   ["file", "--brief", "--mime-type", str(file_path)],
                   text=True,
               ).strip()
-              if not mime.startswith("image/"):
-                  failures.append(f"not an image ({mime}): {source}")
+              if mime != "image/webp":
+                  failures.append(f"unexpected MIME ({mime}): {source}")
 
           if failures:
               print("\n".join(failures[:20]))
               raise SystemExit(f"{len(failures)} gallery assets failed validation")
 
-          print(f"Validated {len(parser.sources)} published image assets")
+          print(f"Validated {len(all_sources)} browser-safe WebP gallery assets")
           PY
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
