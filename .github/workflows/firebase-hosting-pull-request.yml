@@ -4,8 +4,27 @@
 name: Deploy to Firebase Hosting on PR
 "on": pull_request
 jobs:
+  inspect_problem_photo:
+    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+          lfs: true
+          show-progress: false
+      - name: Inspect IMG_6861 source bytes
+        run: |
+          photo='assets/photos/IMG_6861 2.jpeg'
+          test -f "$photo"
+          echo "FILE_DESCRIPTION=$(file --brief "$photo")"
+          echo "MIME_TYPE=$(file --brief --mime-type "$photo")"
+          echo "BYTE_SIZE=$(wc -c < "$photo" | tr -d ' ')"
+          echo "FIRST_32_BYTES=$(xxd -p -l 32 "$photo")"
+
   build_and_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+    needs: inspect_problem_photo
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,6 +32,7 @@ jobs:
           submodules: true
           fetch-depth: 0
           lfs: true
+          show-progress: false
       - name: Verify source photos
         run: |
           source_count=$(find assets/photos -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.avif' -o -iname '*.heic' -o -iname '*.heif' -o -iname '*.tif' -o -iname '*.tiff' \) | wc -l | tr -d ' ')
