@@ -5,7 +5,7 @@
 {{ define "content" }}
 {{ $images := slice }}
 {{ $supportedExtensions := slice ".jpg" ".jpeg" ".png" ".webp" ".gif" ".avif" }}
-{{ range resources.Match "photos/**" }}
+{{ range resources.Match "photos/*" }}
   {{ if in $supportedExtensions (lower (path.Ext .Name)) }}
     {{ $images = $images | append . }}
   {{ end }}
@@ -13,9 +13,9 @@
 {{ $images = sort $images "Name" "desc" }}
 {{ $isZh := eq .Site.Language.Lang "zh-CN" }}
 
-<link rel="stylesheet" href="/css/gallery.css?v=20260711a" />
+<link rel="stylesheet" href="/css/gallery.css?v=20260711b" />
 
-<section class="photo-gallery-page" data-photo-gallery data-view="cover">
+<section class="photo-gallery-page" data-photo-gallery data-view="cover" data-photo-count="{{ len $images }}">
   <header class="photo-gallery-header">
     <div class="photo-gallery-heading">
       <h1 class="title">{{ .Title }}</h1>
@@ -129,5 +129,5 @@
   {{ end }}
 </section>
 
-<script defer src="/js/gallery.js?v=20260711a"></script>
+<script defer src="/js/gallery.js?v=20260711b"></script>
 {{ end }}
