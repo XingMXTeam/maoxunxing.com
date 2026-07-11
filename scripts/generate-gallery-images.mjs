@@ -9,6 +9,7 @@ const sourceDir = path.resolve('assets/photos')
 const outputDir = path.resolve('static/images/gallery')
 const dataDir = path.resolve('data')
 const manifestPath = path.join(dataDir, 'gallery.json')
+const reportPath = path.resolve('gallery-report.json')
 const supportedPattern = /\.(?:jpe?g|png|webp|gif|avif|heic|heif|tiff?)$/i
 const minimumSuccessfulImages = 200
 
@@ -151,6 +152,7 @@ async function convertWithFallbacks(sourcePath, outputPath) {
 await fs.rm(outputDir, { recursive: true, force: true })
 await fs.mkdir(outputDir, { recursive: true })
 await fs.mkdir(dataDir, { recursive: true })
+await fs.rm(reportPath, { force: true })
 
 const files = (await fs.readdir(sourceDir, { withFileTypes: true }))
   .filter((entry) => entry.isFile() && supportedPattern.test(entry.name))
@@ -203,6 +205,21 @@ const successfulImages = manifest.filter(Boolean)
 for (const failure of failures) {
   console.error(`[gallery] Skipped ${failure.sourceName}: ${failure.error}`)
 }
+
+await fs.writeFile(
+  reportPath,
+  `${JSON.stringify(
+    {
+      sourceCount: files.length,
+      successfulCount: successfulImages.length,
+      failedCount: failures.length,
+      failures,
+    },
+    null,
+    2,
+  )}\n`,
+  'utf8',
+)
 
 if (successfulImages.length < minimumSuccessfulImages) {
   throw new Error(
