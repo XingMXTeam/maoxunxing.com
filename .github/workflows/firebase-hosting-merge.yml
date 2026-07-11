@@ -29,6 +29,12 @@ jobs:
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
         run: npm update && rm -rf public && hugo --minify && npm run index-and-send
+      - name: Verify gallery output
+        run: |
+          test -f public/gallery/index.html
+          photo_count=$(grep -o 'class="photo-item"' public/gallery/index.html | wc -l | tr -d ' ')
+          echo "Gallery generated ${photo_count} photo items"
+          test "${photo_count}" -ge 200
       - name: Deploy to Firebase Hosting
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLOG_6A0BF }}
