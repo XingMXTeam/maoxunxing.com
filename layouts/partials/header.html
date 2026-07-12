@@ -82,10 +82,12 @@
       </li>
 
       {{ with .Site.Params.social }}
+        {{- $socialLinks := where . "name" "ne" "RSS" -}}
+        {{ with $socialLinks }}
       <li class="navigation-item nav-section nav-socials" aria-label="Social links">
         <span class="mobile-menu-section-label sr-only">Follow</span>
         <div class="nav-social-grid">
-          {{- range sort . -}}
+          {{- range sort . "weight" -}}
           <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
             {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
             {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="nav-icon-img" />
@@ -94,6 +96,20 @@
           {{- end -}}
         </div>
       </li>
+        {{ end }}
+
+        {{- range where . "name" "eq" "RSS" -}}
+      <li class="navigation-item nav-section nav-socials nav-rss" aria-label="RSS">
+        <span class="mobile-menu-section-label sr-only">RSS</span>
+        <div class="nav-social-grid">
+          <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
+            {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
+            {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="nav-icon-img" />
+            {{ end }}
+          </a>
+        </div>
+      </li>
+        {{- end -}}
       {{ end }}
 
       <li class="navigation-item nav-section nav-theme" aria-label="Theme">
