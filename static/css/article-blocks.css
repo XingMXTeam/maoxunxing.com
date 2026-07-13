@@ -1,0 +1,150 @@
+/* Semantic article blocks. Keep the page background visible by default. */
+.article-flow {
+  --flow-accent: var(--c-link);
+  margin: 2.4em 0;
+  max-width: 36rem;
+}
+
+.article-flow__title {
+  margin: 0 0 1.2rem;
+  color: var(--c-fg-deeper);
+  font-size: 0.86em;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+.article-flow__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: article-flow;
+}
+
+.article-flow__item {
+  position: relative;
+  min-height: 3.8rem;
+  margin: 0;
+  padding: 0 0 1.4rem 4.8rem;
+  counter-increment: article-flow;
+  color: var(--c-fg-deep);
+}
+
+.article-flow__item::before {
+  content: counter(article-flow, decimal-leading-zero);
+  position: absolute;
+  top: 0.15rem;
+  left: 0;
+  width: 3rem;
+  color: var(--flow-accent);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.72em;
+  font-weight: 500;
+  line-height: 2.4rem;
+  text-align: center;
+}
+
+.article-flow__item::after {
+  content: "";
+  position: absolute;
+  top: 2.55rem;
+  bottom: 0.15rem;
+  left: 1.45rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--flow-accent) 28%, transparent);
+}
+
+.article-flow__item:last-child {
+  min-height: 2.4rem;
+  padding-bottom: 0;
+}
+
+.article-flow__item:last-child::after {
+  display: none;
+}
+
+.article-flow__item > span {
+  display: block;
+  padding-top: 0.2rem;
+  line-height: 1.65;
+}
+
+/* Quotes stay part of the prose instead of becoming another large card. */
+.content article blockquote {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.15rem 0 0.15rem 2.2rem;
+  border-left: 2px solid color-mix(in srgb, var(--c-link) 48%, var(--c-border));
+  color: var(--c-fg);
+  font-style: normal;
+}
+
+.content article blockquote p:first-child {
+  margin-top: 0;
+}
+
+.content article blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Light code surfaces should read as tools, not opaque white sheets. */
+body.colorscheme-light .content article .highlight,
+body.colorscheme-light .content article > pre {
+  background: color-mix(
+    in srgb,
+    var(--c-bg) 82%,
+    var(--c-fg-light) 18%
+  ) !important;
+  border: 1px solid color-mix(in srgb, var(--c-border) 68%, transparent);
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+@media (prefers-color-scheme: light) {
+  body.colorscheme-auto .content article .highlight,
+  body.colorscheme-auto .content article > pre {
+    background: color-mix(
+      in srgb,
+      var(--c-bg) 82%,
+      var(--c-fg-light) 18%
+    ) !important;
+    border: 1px solid color-mix(in srgb, var(--c-border) 68%, transparent);
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+}
+
+/* Callouts share one quiet surface system in both themes. */
+.content article .notice {
+  --notice-accent: var(--c-link);
+  margin: 2em 0 !important;
+  padding: 1.4rem 1.6rem 1.4rem 2rem;
+  border: 1px solid color-mix(in srgb, var(--notice-accent) 24%, transparent);
+  border-left: 3px solid
+    color-mix(in srgb, var(--notice-accent) 62%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--notice-accent) 7%, transparent);
+  box-shadow: none;
+  color: var(--c-fg);
+}
+
+.content article .notice-info {
+  --notice-accent: #2583c7;
+}
+
+.content article .notice-warning {
+  --notice-accent: #b7791f;
+}
+
+.content article .notice-danger {
+  --notice-accent: #c2413b;
+}
+
+@media only screen and (max-width: 768px) {
+  .article-flow {
+    margin: 2em 0;
+  }
+
+  .article-flow__item {
+    padding-left: 4.2rem;
+  }
+}

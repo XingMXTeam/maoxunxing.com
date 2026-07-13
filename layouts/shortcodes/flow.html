@@ -1,0 +1,15 @@
+{{- $title := .Get "title" -}}
+{{- $rawItems := split (trim .Inner "\r\n ") "\n" -}}
+<section class="article-flow" aria-label="{{ $title | default "Workflow" }}">
+  {{- with $title }}
+  <p class="article-flow__title">{{ . }}</p>
+  {{- end }}
+  <ol class="article-flow__list">
+    {{- range $rawItems }}
+      {{- $item := trim . "\r\n \t" -}}
+      {{- if $item }}
+    <li class="article-flow__item"><span>{{ $item | markdownify }}</span></li>
+      {{- end }}
+    {{- end }}
+  </ol>
+</section>
