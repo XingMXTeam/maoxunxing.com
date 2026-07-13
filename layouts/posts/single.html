@@ -3,13 +3,34 @@
   {{ .Site.Title -}}
 {{ end }}
 {{ define "content" }}
-  <section class="container post section-hub-page">
-    {{ partial "blog-section-tabs.html" . }}
+  {{- $isZh := eq .Site.Language.Lang "zh-CN" -}}
+  {{- $postsURL := "posts/" | relLangURL -}}
+  <section class="container post section-hub-page reader-article">
+    <div class="reader-toolbar" aria-label="{{ if $isZh }}阅读工具{{ else }}Reading tools{{ end }}">
+      <a class="reader-back" href="{{ $postsURL }}" data-reader-back>
+        <span aria-hidden="true">←</span>
+        <span>{{ if $isZh }}返回文章{{ else }}Back to posts{{ end }}</span>
+      </a>
+      <button
+        type="button"
+        class="reader-toggle"
+        data-reader-toggle
+        aria-pressed="false"
+        aria-label="{{ if $isZh }}开启沉浸阅读模式{{ else }}Enter focus reading mode{{ end }}"
+      >
+        <span class="reader-toggle-enter">{{ if $isZh }}沉浸阅读{{ else }}Focus mode{{ end }}</span>
+        <span class="reader-toggle-exit">{{ if $isZh }}退出{{ else }}Exit{{ end }}</span>
+      </button>
+    </div>
+
+    <div class="reader-auxiliary">
+      {{ partial "blog-section-tabs.html" . }}
+    </div>
 
     <article>
         <header>
           {{ if .Page.Params.hero_image }}
-            <a href="{{ .Page.Params.hero_image }}">
+            <a class="reader-auxiliary" href="{{ .Page.Params.hero_image }}">
               <img src="{{ .Page.Params.hero_image }}" alt="{{ .Title }} hero image" />
             </a>
           {{ end }}
@@ -19,48 +40,114 @@
           <div class="post-meta">
             <div class="date">
               <span class="posted-on">
-                <i class="fas fa-calendar"></i>
+                <i class="fas fa-calendar reader-auxiliary" aria-hidden="true"></i>
                 <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
                   {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
                 </time>
               </span>
-              <span class="reading-time">
+              <span class="reading-time reader-auxiliary">
                 <i class="fas fa-clock"></i>
                 {{ i18n "reading_time" .ReadingTime }}
               </span>
             </div>
-            {{ with .Page.Params.Categories }}
-              {{ partial "taxonomy/categories.html" . }}
-            {{ end }}
-            {{ with .Page.Params.Tags }}
-              {{ partial "taxonomy/tags.html" . }}
-            {{ end }}
+            <div class="reader-auxiliary">
+              {{ with .Page.Params.Categories }}
+                {{ partial "taxonomy/categories.html" . }}
+              {{ end }}
+              {{ with .Page.Params.Tags }}
+                {{ partial "taxonomy/tags.html" . }}
+              {{ end }}
+            </div>
           </div>
         </header>
 
-        {{ partial "content-source-actions.html" . }}
+        <div class="reader-auxiliary">
+          {{ partial "content-source-actions.html" . }}
+        </div>
 
-        {{ .Content }}
+        <div class="reader-body">
+          {{ .Content }}
+        </div>
 
-        {{ partial "mailing-list-signup.html" . }}
+        <div class="reader-auxiliary">
+          {{ partial "mailing-list-signup.html" . }}
 
-        {{ partial "social-share.html" . }}
+          {{ partial "social-share.html" . }}
 
-        {{ partial "social-discuss.html" . }}
+          {{ partial "social-discuss.html" . }}
 
-        {{ partial "comment.html" . }}
+          {{ partial "comment.html" . }}
 
-        {{ if not hugo.IsServer }}
-          {{ partial "talkyard.html" . }}
-        {{ end }}
+          {{ if not hugo.IsServer }}
+            {{ partial "talkyard.html" . }}
+          {{ end }}
 
-        <footer>
-          {{ partial "posts/series.html" . }}
-        </footer>
+          <footer>
+            {{ partial "posts/series.html" . }}
+          </footer>
+        </div>
     </article>
 
-    {{ partial "toc.html" . }}
+    <div class="reader-auxiliary">
+      {{ partial "toc.html" . }}
+    </div>
 
     {{ partial "posts/math.html" . }}
   </section>
+
+  <script>
+    (function () {
+      var storageKey = 'immersive-reading-mode';
+      var body = document.body;
+      var toggle = document.querySelector('[data-reader-toggle]');
+      var back = document.querySelector('[data-reader-back]');
+
+      if (!toggle) return;
+
+      function applyReaderMode(enabled) {
+        body.classList.toggle('reader-mode', enabled);
+        toggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+        toggle.setAttribute(
+          'aria-label',
+          enabled
+            ? '{{ if $isZh }}退出沉浸阅读模式{{ else }}Exit focus reading mode{{ end }}'
+            : '{{ if $isZh }}开启沉浸阅读模式{{ else }}Enter focus reading mode{{ end }}'
+        );
+        try {
+          localStorage.setItem(storageKey, enabled ? 'true' : 'false');
+        } catch (e) {}
+      }
+
+      var saved = false;
+      try {
+        saved = localStorage.getItem(storageKey) === 'true';
+      } catch (e) {}
+      applyReaderMode(saved);
+
+      toggle.addEventListener('click', function () {
+        applyReaderMode(!body.classList.contains('reader-mode'));
+      });
+
+      if (back) {
+        back.addEventListener('click', function (event) {
+          if (document.referrer) {
+            try {
+              var previous = new URL(document.referrer);
+              if (previous.origin === window.location.origin) {
+                event.preventDefault();
+                window.history.back();
+              }
+            } catch (e) {}
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && body.classList.contains('reader-mode')) {
+          applyReaderMode(false);
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
 {{ end }}
