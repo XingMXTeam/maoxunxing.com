@@ -1,0 +1,29 @@
+{{- $isZh := hasPrefix (lower .Site.Language.Lang) "zh" -}}
+{{- $previous := .PrevInSection -}}
+{{- $next := .NextInSection -}}
+{{- if or $previous $next -}}
+<nav class="post-adjacent-nav" aria-label="{{ if $isZh }}文章翻页{{ else }}Article navigation{{ end }}">
+  <div class="post-adjacent-slot post-adjacent-previous">
+    {{ with $previous }}
+      <a href="{{ .RelPermalink }}" rel="prev">
+        <span class="post-adjacent-label">
+          <span aria-hidden="true">←</span>
+          {{ if $isZh }}上一篇{{ else }}Previous{{ end }}
+        </span>
+        <span class="post-adjacent-title">{{ .Title }}</span>
+      </a>
+    {{ end }}
+  </div>
+  <div class="post-adjacent-slot post-adjacent-next">
+    {{ with $next }}
+      <a href="{{ .RelPermalink }}" rel="next">
+        <span class="post-adjacent-label">
+          {{ if $isZh }}下一篇{{ else }}Next{{ end }}
+          <span aria-hidden="true">→</span>
+        </span>
+        <span class="post-adjacent-title">{{ .Title }}</span>
+      </a>
+    {{ end }}
+  </div>
+</nav>
+{{- end -}}
