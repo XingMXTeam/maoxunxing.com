@@ -24,8 +24,8 @@
     </div>
 
     <div class="reader-auxiliary">
-      {{ partial "posts/adjacent-navigation.html" . }}
       {{ partial "blog-section-tabs.html" . }}
+      {{ partial "posts/adjacent-navigation.html" . }}
     </div>
 
     <article>
@@ -51,7 +51,7 @@
                 {{ i18n "reading_time" .ReadingTime }}
               </span>
             </div>
-            <div class="reader-auxiliary">
+            <div class="reader-auxiliary post-taxonomy"> 
               {{ with .Page.Params.Categories }}
                 {{ partial "taxonomy/categories.html" . }}
               {{ end }}
@@ -71,8 +71,6 @@
         </div>
 
         <div class="reader-auxiliary reader-auxiliary-after-content">
-          {{ partial "posts/adjacent-navigation.html" . }}
-
           {{ partial "mailing-list-signup.html" . }}
 
           {{ partial "social-share.html" . }}
