@@ -370,13 +370,13 @@ body.reader-mode {
 }
 
 
-/* Lightweight previous / next navigation above the article title */
+/* Lightweight previous / next navigation at the end of the article */
 .post-adjacent-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  margin: 0.8rem 0 3.2rem;
+  margin: 6.4rem 0 3.2rem;
   padding: 0;
 }
 
@@ -415,7 +415,24 @@ body.reader-mode {
 }
 
 /* Taxonomy metadata starts flush left and wraps naturally. */
+.reader-article .post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 1.2rem;
+}
+
+.reader-article .post-meta .date {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
 .post-taxonomy {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.8rem;
   margin: 0;
   padding: 0;
 }
@@ -426,7 +443,7 @@ body.reader-mode {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.15rem 0.55rem;
-  margin: 0.45rem 0 0;
+  margin: 0;
   padding: 0;
 }
 
