@@ -370,15 +370,14 @@ body.reader-mode {
 }
 
 
-/* Previous / next navigation for regular article pages */
+/* Lightweight previous / next navigation above the article title */
 .post-adjacent-nav {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1.6rem;
-  margin: 2.4rem 0 4rem;
-  padding: 1.6rem 0;
-  border-top: 1px solid rgba(125, 125, 125, 0.18);
-  border-bottom: 1px solid rgba(125, 125, 125, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 0.8rem 0 3.2rem;
+  padding: 0;
 }
 
 .post-adjacent-slot {
@@ -386,69 +385,67 @@ body.reader-mode {
 }
 
 .post-adjacent-slot a {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
   gap: 0.45rem;
-  min-height: 6.6rem;
-  padding: 1rem 1.2rem;
-  border-radius: 1.4rem;
   color: $fg-color;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.4;
+  opacity: 0.62;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    background: rgba(125, 125, 125, 0.07);
     color: $link-color;
+    opacity: 1;
     text-decoration: none;
   }
 
   &:focus-visible {
     outline: 2px solid $link-color;
-    outline-offset: 2px;
+    outline-offset: 4px;
+    border-radius: 0.3rem;
   }
 }
 
 .post-adjacent-next {
+  margin-left: auto;
   text-align: right;
 }
 
-.post-adjacent-next a {
-  align-items: flex-end;
+/* Taxonomy metadata starts flush left and wraps naturally. */
+.post-taxonomy {
+  margin: 0;
+  padding: 0;
 }
 
-.post-adjacent-label {
-  color: $fg-color;
-  font-size: 1.3rem;
-  font-weight: 700;
-  opacity: 0.58;
+.post-taxonomy .tags,
+.post-taxonomy .categories {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.55rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
 }
 
-.post-adjacent-title {
-  display: -webkit-box;
-  overflow: hidden;
-  font-size: 1.55rem;
-  font-weight: 700;
-  line-height: 1.45;
-  text-wrap: balance;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+.post-taxonomy .tags > a:first-of-type,
+.post-taxonomy .categories > a:first-of-type {
+  margin-left: 0;
 }
 
-.reader-auxiliary-after-content > .post-adjacent-nav {
-  margin-top: 6.4rem;
+.post-taxonomy .tags .separator,
+.post-taxonomy .categories .separator {
+  flex: 0 0 auto;
 }
 
 @media only screen and (max-width: 600px) {
   .post-adjacent-nav {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
+    margin-bottom: 2.6rem;
   }
 
-  .post-adjacent-next {
-    text-align: left;
-  }
-
-  .post-adjacent-next a {
-    align-items: flex-start;
+  .post-adjacent-slot a {
+    font-size: 1.35rem;
   }
 }
