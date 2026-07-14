@@ -621,3 +621,29 @@ body.reader-mode {
     transition: none;
   }
 }
+
+/* Definitive centering for immersive reading mode */
+body.reader-mode {
+  .content {
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .content > .reader-article {
+    box-sizing: border-box;
+    flex: 0 1 78rem;
+    width: min(100%, 78rem);
+    max-width: 78rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
