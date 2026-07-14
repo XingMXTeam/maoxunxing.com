@@ -648,3 +648,44 @@ body.reader-mode {
     margin-right: auto !important;
   }
 }
+
+/* Keep date, reading time, and taxonomy in one inline flow. */
+.reader-article .post-meta {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  column-gap: 1.2rem;
+  row-gap: 0.45rem;
+}
+
+.reader-article .post-meta .date {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+  align-items: baseline;
+}
+
+.reader-article .post-meta .posted-on,
+.reader-article .post-meta .reading-time {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.reader-article .post-meta .post-taxonomy {
+  display: inline-flex;
+  flex: 0 1 auto;
+  width: auto;
+  margin: 0;
+  align-items: baseline;
+}
+
+.reader-article .post-meta .post-taxonomy .tags,
+.reader-article .post-meta .post-taxonomy .categories {
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: auto;
+  margin: 0;
+}
