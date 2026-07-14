@@ -88,7 +88,8 @@
 
 /* Light code surfaces should read as tools, not opaque white sheets. */
 body.colorscheme-light .content article .highlight,
-body.colorscheme-light .content article > pre {
+body.colorscheme-light .content article > pre,
+body.colorscheme-light .content article .code-block-shell > pre {
   background: color-mix(
     in srgb,
     var(--c-bg) 82%,
@@ -101,7 +102,8 @@ body.colorscheme-light .content article > pre {
 
 @media (prefers-color-scheme: light) {
   body.colorscheme-auto .content article .highlight,
-  body.colorscheme-auto .content article > pre {
+  body.colorscheme-auto .content article > pre,
+  body.colorscheme-auto .content article .code-block-shell > pre {
     background: color-mix(
       in srgb,
       var(--c-bg) 82%,
@@ -111,6 +113,103 @@ body.colorscheme-light .content article > pre {
     border-radius: 10px;
     overflow-x: auto;
   }
+}
+
+/* Code blocks are actionable content: keep copy within easy reach. */
+.content article .highlight.has-code-copy,
+.content article .code-block-shell {
+  position: relative;
+}
+
+.content article .code-block-shell > pre {
+  margin: 0;
+}
+
+.content article .has-code-copy pre,
+.content article .code-block-shell pre {
+  padding-right: 5.2rem;
+}
+
+.code-copy-button {
+  position: absolute;
+  z-index: 2;
+  top: 0.9rem;
+  right: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.2rem;
+  height: 3.2rem;
+  padding: 0 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--c-border) 70%, transparent);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--c-bg) 86%, transparent);
+  color: var(--c-fg-light);
+  cursor: pointer;
+  opacity: 0.72;
+  backdrop-filter: blur(8px);
+  transition: color 160ms ease, border-color 160ms ease,
+    background-color 160ms ease, opacity 160ms ease;
+}
+
+.code-copy-button:hover,
+.code-copy-button:focus-visible {
+  border-color: var(--c-border-hover);
+  color: var(--c-fg-deeper);
+  opacity: 1;
+}
+
+.code-copy-button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--c-link) 65%, transparent);
+  outline-offset: 2px;
+}
+
+.code-copy-button span {
+  width: 0;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: width 160ms ease, margin-left 160ms ease;
+}
+
+.code-copy-button[data-state="copied"] span,
+.code-copy-button[data-state="failed"] span {
+  width: auto;
+  margin-left: 0.6rem;
+}
+
+.code-copy-button[data-state="copied"] {
+  color: #25835b;
+}
+
+.code-copy-button[data-state="failed"] {
+  color: #c2413b;
+}
+
+.code-copy-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.code-copy-icon--success,
+.code-copy-button[data-state="copied"] .code-copy-icon--copy {
+  display: none;
+}
+
+.code-copy-button[data-state="copied"] .code-copy-icon--success {
+  display: block;
+}
+
+body.colorscheme-dark .code-copy-button {
+  background: rgba(17, 20, 24, 0.82);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Callouts share one quiet surface system in both themes. */
@@ -146,5 +245,10 @@ body.colorscheme-light .content article > pre {
 
   .article-flow__item {
     padding-left: 4.2rem;
+  }
+
+  .code-copy-button {
+    top: 0.7rem;
+    right: 0.7rem;
   }
 }
