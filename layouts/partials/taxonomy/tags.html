@@ -1,0 +1,8 @@
+<div class="tags">
+  {{- range $index, $el := . -}}
+    {{- if gt $index 0 -}}
+      <span class="separator" aria-hidden="true">•</span>
+    {{- end -}}
+    <a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
+  {{- end -}}
+</div>
