@@ -541,7 +541,8 @@ body.reader-mode {
     right: auto;
     z-index: 80;
     display: flex;
-    width: min(calc(100% - 3.2rem), 78rem);
+    width: calc(100% - 3.2rem);
+    max-width: 78rem;
     margin: 0;
     padding: 0;
     transform: translateX(-50%);
@@ -641,7 +642,7 @@ body.reader-mode {
   .content > .reader-article {
     box-sizing: border-box;
     flex: 0 1 78rem;
-    width: min(100%, 78rem);
+    width: 100%;
     max-width: 78rem;
     margin-left: auto !important;
     margin-right: auto !important;
