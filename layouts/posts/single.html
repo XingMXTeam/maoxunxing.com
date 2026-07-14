@@ -3,7 +3,7 @@
   {{ .Site.Title -}}
 {{ end }}
 {{ define "content" }}
-  {{- $isZh := eq .Site.Language.Lang "zh-CN" -}}
+  {{- $isZh := hasPrefix (lower .Site.Language.Lang) "zh" -}}
   {{- $postsURL := "posts/" | relLangURL -}}
   <section class="container post section-hub-page reader-article">
     <div class="reader-toolbar" aria-label="{{ if $isZh }}阅读工具{{ else }}Reading tools{{ end }}">
@@ -18,12 +18,13 @@
         aria-pressed="false"
         aria-label="{{ if $isZh }}开启沉浸阅读模式{{ else }}Enter focus reading mode{{ end }}"
       >
-        <span class="reader-toggle-enter">{{ if $isZh }}沉浸阅读{{ else }}Focus mode{{ end }}</span>
+        <span class="reader-toggle-enter">{{ if $isZh }}沉浸阅读模式{{ else }}Focus Mode{{ end }}</span>
         <span class="reader-toggle-exit">{{ if $isZh }}退出{{ else }}Exit{{ end }}</span>
       </button>
     </div>
 
     <div class="reader-auxiliary">
+      {{ partial "posts/adjacent-navigation.html" . }}
       {{ partial "blog-section-tabs.html" . }}
     </div>
 
@@ -69,7 +70,9 @@
           {{ .Content }}
         </div>
 
-        <div class="reader-auxiliary">
+        <div class="reader-auxiliary reader-auxiliary-after-content">
+          {{ partial "posts/adjacent-navigation.html" . }}
+
           {{ partial "mailing-list-signup.html" . }}
 
           {{ partial "social-share.html" . }}
