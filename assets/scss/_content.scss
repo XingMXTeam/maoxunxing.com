@@ -260,7 +260,9 @@ body.reader-mode {
   }
 
   .content {
-    margin: 0;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
   }
 
   .reader-article {
