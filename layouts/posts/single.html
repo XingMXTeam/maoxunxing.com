@@ -25,7 +25,6 @@
 
     <div class="reader-auxiliary">
       {{ partial "blog-section-tabs.html" . }}
-      {{ partial "posts/adjacent-navigation.html" . }}
     </div>
 
     <article>
@@ -71,6 +70,8 @@
         </div>
 
         <div class="reader-auxiliary reader-auxiliary-after-content">
+          {{ partial "posts/adjacent-navigation.html" . }}
+
           {{ partial "mailing-list-signup.html" . }}
 
           {{ partial "social-share.html" . }}
