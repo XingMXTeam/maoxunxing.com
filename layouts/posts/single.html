@@ -17,9 +17,16 @@
         data-reader-toggle
         aria-pressed="false"
         aria-label="{{ if $isZh }}开启沉浸阅读模式{{ else }}Enter focus reading mode{{ end }}"
+        title="{{ if $isZh }}沉浸阅读模式{{ else }}Focus Mode{{ end }}"
       >
-        <span class="reader-toggle-enter">{{ if $isZh }}沉浸阅读模式{{ else }}Focus Mode{{ end }}</span>
-        <span class="reader-toggle-exit">{{ if $isZh }}退出{{ else }}Exit{{ end }}</span>
+        <svg class="reader-icon reader-icon-enter" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 5.5c2.7-.7 5.35-.1 8 1.8v11.2c-2.65-1.9-5.3-2.5-8-1.8V5.5Zm16 0c-2.7-.7-5.35-.1-8 1.8v11.2c2.65-1.9 5.3-2.5 8-1.8V5.5Z"></path>
+        </svg>
+        <svg class="reader-icon reader-icon-exit" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M7 7l10 10M17 7 7 17"></path>
+        </svg>
+        <span class="sr-only reader-toggle-enter">{{ if $isZh }}沉浸阅读模式{{ else }}Focus Mode{{ end }}</span>
+        <span class="sr-only reader-toggle-exit">{{ if $isZh }}退出沉浸阅读模式{{ else }}Exit Focus Mode{{ end }}</span>
       </button>
     </div>
 
@@ -109,11 +116,15 @@
       function applyReaderMode(enabled) {
         body.classList.toggle('reader-mode', enabled);
         toggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+        var label = enabled
+          ? '{{ if $isZh }}退出沉浸阅读模式{{ else }}Exit Focus Mode{{ end }}'
+          : '{{ if $isZh }}开启沉浸阅读模式{{ else }}Enter Focus Mode{{ end }}';
+        toggle.setAttribute('aria-label', label);
         toggle.setAttribute(
-          'aria-label',
+          'title',
           enabled
-            ? '{{ if $isZh }}退出沉浸阅读模式{{ else }}Exit focus reading mode{{ end }}'
-            : '{{ if $isZh }}开启沉浸阅读模式{{ else }}Enter focus reading mode{{ end }}'
+            ? '{{ if $isZh }}退出沉浸阅读模式{{ else }}Exit Focus Mode{{ end }}'
+            : '{{ if $isZh }}沉浸阅读模式{{ else }}Focus Mode{{ end }}'
         );
         try {
           localStorage.setItem(storageKey, enabled ? 'true' : 'false');
