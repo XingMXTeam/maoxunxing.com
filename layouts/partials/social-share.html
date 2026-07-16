@@ -1,5 +1,17 @@
+{{- $isZh := hasPrefix (lower .Site.Language.Lang) "zh" -}}
 <section class="social-sharing">
   <span class="share-label">{{ T "shareOn" }}</span>
+  <button
+    type="button"
+    class="share-link share-copy-button"
+    data-copy-link
+    data-copy-url="{{ .Permalink }}"
+    data-copy-label="{{ if $isZh }}复制链接{{ else }}Copy link{{ end }}"
+    data-copied-label="{{ if $isZh }}已复制{{ else }}Copied{{ end }}"
+    data-copy-failed-label="{{ if $isZh }}复制失败{{ else }}Copy failed{{ end }}"
+    aria-label="{{ if $isZh }}复制文章链接{{ else }}Copy article link{{ end }}"
+  >{{ if $isZh }}复制链接{{ else }}Copy link{{ end }}</button>
+  <span class="share-sep">&middot;</span>
   <a
     href="https://twitter.com/intent/tweet?via={{ .Site.Params.twitter }}&text={{ .Title }}%20{{ .Permalink }}"
     target="_blank" rel="noopener"
@@ -18,3 +30,83 @@
     class="share-link"
   >LinkedIn</a>
 </section>
+
+<style>
+  .social-sharing .share-copy-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('[data-copy-link]');
+    if (!buttons.length) return;
+
+    function fallbackCopy(text) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+
+      var copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (error) {
+        copied = false;
+      }
+
+      document.body.removeChild(textarea);
+      return copied;
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text)
+          .then(function () { return true; })
+          .catch(function () { return fallbackCopy(text); });
+      }
+
+      return Promise.resolve(fallbackCopy(text));
+    }
+
+    buttons.forEach(function (button) {
+      if (button.getAttribute('data-copy-bound') === 'true') return;
+      button.setAttribute('data-copy-bound', 'true');
+
+      var defaultLabel = button.getAttribute('data-copy-label');
+      var copiedLabel = button.getAttribute('data-copied-label');
+      var failedLabel = button.getAttribute('data-copy-failed-label');
+      var resetTimer;
+
+      button.addEventListener('click', function () {
+        var url = button.getAttribute('data-copy-url') || window.location.href;
+
+        copyText(url).then(function (success) {
+          var statusLabel = success ? copiedLabel : failedLabel;
+          button.textContent = success ? '✓ ' + statusLabel : statusLabel;
+          button.setAttribute('aria-label', statusLabel);
+
+          window.clearTimeout(resetTimer);
+          resetTimer = window.setTimeout(function () {
+            button.textContent = defaultLabel;
+            button.setAttribute('aria-label', defaultLabel);
+          }, 2000);
+        });
+      });
+    });
+  })();
+</script>
