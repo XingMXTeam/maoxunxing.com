@@ -1,5 +1,3 @@
 User-agent: *
 
 Sitemap: https://maoxunxing.com/sitemap.xml
-Sitemap: https://maoxunxing.com/en/sitemap.xml
-Sitemap: https://maoxunxing.com/zh-cn/sitemap.xml

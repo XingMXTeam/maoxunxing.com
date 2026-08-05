@@ -1,4 +1,4 @@
-{{- if and .IsPage (eq .Section "about") -}}
+{{- if and .IsPage (hasSuffix .RelPermalink "/about/") -}}
   {{- $schema := dict
       "@context" "https://schema.org"
       "@type" "Person"
@@ -27,6 +27,6 @@
         "long-term investing"
       )
   -}}
-<script type="application/ld+json">{{ $schema | jsonify | safeHTML }}</script>
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
 {{- end -}}
 {{- partial "schema-page.html" . -}}

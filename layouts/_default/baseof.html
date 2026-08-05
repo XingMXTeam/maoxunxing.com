@@ -102,13 +102,16 @@
     {{ partial "schema-breadcrumb.html" . }}
     {{ partial "schema-person.html" . }}
 
-    {{/* hreflang alternate links for multilingual SEO */}}
+    {{/* Keep every language version reciprocal and use English as x-default. */}}
     {{- if .IsTranslated -}}
-      {{ range .Translations }}
+      {{- $defaultPermalink := .Permalink -}}
+      {{- range .AllTranslations -}}
+        {{- if eq .Language.Lang "en" -}}
+          {{- $defaultPermalink = .Permalink -}}
+        {{- end -}}
     <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
-      {{ end }}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
-    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+      {{- end }}
+    <link rel="alternate" hreflang="x-default" href="{{ $defaultPermalink }}" />
     {{- end -}}
 
     {{ if .Permalink }}
