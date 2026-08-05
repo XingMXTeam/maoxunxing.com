@@ -6,6 +6,13 @@
   <section class="container posts-page section-hub-page">
     {{ partial "blog-section-tabs.html" . }}
 
+    <header class="section-hub-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}
+        <p>{{ . }}</p>
+      {{ end }}
+    </header>
+
     {{ range .Pages.GroupByDate "2006" }}
       {{ if ne .Key "0001" }}
       <div class="posts-year-group">

@@ -9,7 +9,12 @@
         "type": 301
       },
       {
-        "source": "/en{,/**}",
+        "source": "/en",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/en/",
         "destination": "/",
         "type": 301
       }
