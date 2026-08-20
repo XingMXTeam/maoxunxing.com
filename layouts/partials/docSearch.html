@@ -2,6 +2,38 @@
 
 <script>
   const docsearch = window.docsearch;
+
+  const sectionPermalinkPrefixes = [
+    "notes",
+    "posts",
+    "projects",
+    "book-reports",
+    "prompts",
+    "long-term-investing",
+    "about",
+    "uses",
+    "bookmarks",
+    "media",
+    "streams",
+    "demos",
+    "gallery",
+    "raw",
+  ];
+
+  function normalizeSearchUrl(url) {
+    if (!url) return url;
+
+    const pathname = new URL(url, window.location.origin).pathname;
+    const segments = pathname.split("/").filter(Boolean);
+
+    // Keep language prefix, remove Hugo content section prefixes.
+    if (segments.length >= 3 && sectionPermalinkPrefixes.includes(segments[1])) {
+      return `/${segments[0]}/${segments.slice(2).join("/")}/`;
+    }
+
+    return url;
+  }
+
   docsearch({
     container: "#docsearch",
     appId: "D7NQ3RODEC",
@@ -10,6 +42,7 @@
     transformItems(items) {
       return items.map((item) => ({
         ...item,
+        url: normalizeSearchUrl(item.url),
         content: item.content.toUpperCase(),
       }));
     },
