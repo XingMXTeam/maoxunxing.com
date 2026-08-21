@@ -35,11 +35,16 @@
   color: var(--c-fg);
 }
 
-.home-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1.8rem 0 0;
+.home-quick-links {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--c-fg);
+  font-size: 1.4rem;
+  line-height: 1.75;
+}
+
+.home-quick-links a {
+  font-weight: 600;
 }
 
 .home-action-primary,
@@ -74,30 +79,6 @@
   transform: translateY(-1px);
   border-color: var(--c-border-hover);
   text-decoration: none;
-}
-
-.home-human-panel {
-  max-width: 72ch;
-  margin: 0 0 2.6rem;
-  padding: 1.35rem 1.5rem;
-  border: 1px solid var(--c-border);
-  border-radius: 18px;
-  background: rgba(125, 125, 125, 0.03);
-}
-
-.home-human-panel p {
-  margin: 0 0 1rem;
-  color: var(--c-fg);
-  font-size: 1.45rem;
-  line-height: 1.75;
-}
-
-.home-human-panel p:last-child {
-  margin-bottom: 0;
-}
-
-.home-human-panel a {
-  font-weight: 600;
 }
 
 .home-start-grid {
@@ -283,7 +264,6 @@ body.page-home .home-prose .article-section-tag {
   white-space: nowrap;
 }
 
-body.colorscheme-dark .home-human-panel,
 body.colorscheme-dark .home-start-card,
 body.colorscheme-dark .home-browse-link,
 body.colorscheme-dark .home-book-card {
@@ -306,7 +286,6 @@ body.colorscheme-dark .home-action-secondary {
 }
 
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .home-human-panel,
   body.colorscheme-auto .home-start-card,
   body.colorscheme-auto .home-browse-link,
   body.colorscheme-auto .home-book-card {
@@ -366,21 +345,7 @@ body.colorscheme-dark .home-action-secondary {
     line-height: 1.65;
   }
 
-  .home-hero-actions {
-    flex-direction: column;
-    margin-top: 1.1rem;
-  }
-
-  .home-action-primary,
-  .home-action-secondary {
-    width: 100%;
-  }
-
-  .home-human-panel {
-    padding: 1rem;
-  }
-
-  .home-human-panel p {
+  .home-quick-links {
     font-size: 1.35rem;
     line-height: 1.68;
   }

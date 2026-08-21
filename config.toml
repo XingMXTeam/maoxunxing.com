@@ -1,8 +1,9 @@
 baseurl = "https://maoxunxing.com/"
 title = "maoxunxing"
 theme = "hugo-coder"
-languagecode = "en"
-defaultcontentlanguage = "en"
+languagecode = "zh-CN"
+defaultcontentlanguage = "zh-CN"
+defaultcontentlanguageinsubdir = true
 canonifyurls = false
 timeout = 120000
 googleAnalytics = "UA-199510588-1"
@@ -18,7 +19,7 @@ pygmentscodefencesguesssyntax = true
 
 [languages]
   [languages.zh-CN]
-    weight = 2
+    weight = 1
     languageName = "CN"
     title = "毛毛星 Felix Mao - AI 创作者、前端工程师与独立开发者"
     [languages.zh-CN.params]
@@ -29,7 +30,7 @@ pygmentscodefencesguesssyntax = true
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20260713a"]
   [languages.en]
     languageName = "EN"
-    weight = 1
+    weight = 2
     title = "Felix Mao - AI Creator, Frontend Engineer & Indie Hacker"
     [languages.en.params]
       description = "Felix Mao's personal knowledge site about AI coding, AI indie hacking, frontend engineering, creator workflows, systems thinking, and long-term investing."
