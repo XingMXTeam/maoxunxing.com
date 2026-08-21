@@ -22,6 +22,9 @@ other = "Hi, I'm Felix Mao"
 [homeHeroDesc]
 other = "I spent a decade writing frontend code. Recently, I have been learning AI seriously, building small personal products, and keeping notes on long-term investing and family cash flow. I keep writing down the things I actually used, thought about, and struggled with here."
 
+[homeQuickLinks]
+other = """You can read my <a href="/en/notes/">notes</a>, browse the <a href="/en/gallery/">gallery</a>, see the <a href="/en/uses/">hardware and software I use</a>, explore my <a href="/en/bookmarks/">curated bookmarks</a>, and visit my <a href="/en/media/">books and media</a>."""
+
 [homePrimaryCTA]
 other = "Start with the blog"
 

@@ -22,6 +22,9 @@ other = "Hi，我是毛毛星"
 [homeHeroDesc]
 other = "写了十年前端，最近在认真学习 AI、做个人产品，也记录长期投资和家庭现金流。我会把自己真正用过、想过、踩过坑的东西，慢慢写在这里。"
 
+[homeQuickLinks]
+other = """你可以读我的<a href="/zh-cn/notes/">随笔</a>、看看<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">书影音</a>。"""
+
 [homePrimaryCTA]
 other = "从博客开始"
 
