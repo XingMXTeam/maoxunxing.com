@@ -63,7 +63,7 @@ jobs:
                       self.has_navigation = True
 
           all_sources = set()
-          for html_path in [Path("public/gallery/index.html"), Path("public/zh-cn/gallery/index.html")]:
+          for html_path in [Path("public/en/gallery/index.html"), Path("public/zh-cn/gallery/index.html")]:
               if not html_path.exists():
                   raise SystemExit(f"Missing {html_path}")
 
