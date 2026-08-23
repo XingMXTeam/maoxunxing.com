@@ -71,12 +71,16 @@
           </a>
 
           {{ if hugo.IsMultilingual }}
-          {{- $translations := .AllTranslations | default .Site.Home.AllTranslations -}}
-          {{ range $translations }}
-            {{ if ne $.Site.Language .Language }}
+            {{- $translations := .Translations -}}
+            {{ if gt (len $translations) 0 }}
+              {{ range $translations }}
           <a href="{{ .Permalink }}" id="languageMenu" class="nav-icon-link nav-language-link" title="{{ .Language.LanguageName }}" aria-label="Switch language to {{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+              {{ end }}
+            {{ else if $isZh }}
+          <a href="{{ "/en/" | absURL }}" id="languageMenu" class="nav-icon-link nav-language-link" title="EN" aria-label="Switch language to EN">EN</a>
+            {{ else }}
+          <a href="{{ "/zh-cn/" | absURL }}" id="languageMenu" class="nav-icon-link nav-language-link" title="CN" aria-label="Switch language to CN">CN</a>
             {{ end }}
-          {{ end }}
           {{ end }}
         </div>
       </li>
