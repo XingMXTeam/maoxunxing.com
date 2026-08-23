@@ -22,9 +22,6 @@ other = "Hi, I'm Felix Mao"
 [homeHeroDesc]
 other = "I spent a decade writing frontend code. Recently, I have been learning AI seriously, building small personal products, and keeping notes on long-term investing and family cash flow. I keep writing down the things I actually used, thought about, and struggled with here."
 
-[homeQuickLinks]
-other = """You can read my <a href="/en/notes/">notes</a>, browse the <a href="/en/gallery/">gallery</a>, see the <a href="/en/uses/">hardware and software I use</a>, explore my <a href="/en/bookmarks/">curated bookmarks</a>, and visit my <a href="/en/media/">books and media</a>."""
-
 [homePrimaryCTA]
 other = "Start with the blog"
 
@@ -39,66 +36,6 @@ other = "/about/"
 
 [homeIntroLabel]
 other = "Personal introduction"
-
-[homeStartLabel]
-other = "If this is your first visit, start here"
-
-[homeCard1Kicker]
-other = "Code"
-
-[homeCard1Title]
-other = "How I code with AI"
-
-[homeCard1Desc]
-other = "Not tool chasing, but how I put AI into real engineering workflows: requirements, context, planning, implementation, validation, and judgment."
-
-[homeCard1Href]
-other = "/ai-coding-workflow/"
-
-[homeCard2Kicker]
-other = "Build"
-
-[homeCard2Title]
-other = "How I build personal products"
-
-[homeCard2Desc]
-other = "Starting with ebooks, blogs, small tools, and content accounts, I am slowly figuring out what an engineer can build beyond a day job."
-
-[homeCard2Href]
-other = "/ai-indie-hacking/"
-
-[homeCard3Kicker]
-other = "Create"
-
-[homeCard3Title]
-other = "How I organize knowledge and content"
-
-[homeCard3Desc]
-other = "Notes on topics, writing, materials, covers, videos, distribution, and review loops for building a long-term creator system."
-
-[homeCard3Href]
-other = "/creator-workflow/"
-
-[homeFocusTitle]
-other = "What I am seriously working on"
-
-[homeFocus1Title]
-other = "AI coding and frontend engineering"
-
-[homeFocus1Desc]
-other = "I study how AI enters real engineering workflows: requirement clarification, context preparation, planning, code generation, code review, browser validation, and human judgment."
-
-[homeFocus2Title]
-other = "Personal products, ebooks, and content experiments"
-
-[homeFocus2Desc]
-other = "I start from my own real experiences: small resources, tools, and articles, then slowly watch which ones actually help people and bring in a little income."
-
-[homeFocus3Title]
-other = "Long-term investing and family cash flow"
-
-[homeFocus3Desc]
-other = "I write about index funds, asset allocation, options, cash flow, and risk control. Investing is not about getting rich overnight, but managing time, risk, and family security with systems thinking."
 
 [homeBrowseTitle]
 other = "Or just wander around"
