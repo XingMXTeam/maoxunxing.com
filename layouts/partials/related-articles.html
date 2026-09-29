@@ -1,0 +1,27 @@
+{{- /* 相关文章 / Related articles: same language, shared tags, top 4 by overlap */ -}}
+{{- $isZh := hasPrefix (lower .Site.Language.Lang) "zh" -}}
+{{- $page := . -}}
+{{- $tags := apply $page.Params.tags "lower" "." -}}
+{{- if gt (len $tags) 0 -}}
+  {{- $related := slice -}}
+  {{- range where .Site.RegularPages "Lang" $page.Lang -}}
+    {{- if ne .RelPermalink $page.RelPermalink -}}
+      {{- $otherTags := apply .Params.tags "lower" "." -}}
+      {{- $shared := len (intersect $tags $otherTags) -}}
+      {{- if gt $shared 0 -}}
+        {{- $related = $related | append (dict "page" . "score" $shared "date" .Date.Unix) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $related = first 4 (sort (sort $related "date" "desc") "score" "desc") -}}
+  {{- if gt (len $related) 0 -}}
+  <section class="related-articles" aria-label="{{ if $isZh }}相关文章{{ else }}Related articles{{ end }}">
+    <h2 class="related-articles-title">{{ if $isZh }}相关文章{{ else }}Related Articles{{ end }}</h2>
+    <ul class="related-articles-list">
+      {{- range $related -}}
+      <li><a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a></li>
+      {{- end -}}
+    </ul>
+  </section>
+  {{- end -}}
+{{- end -}}

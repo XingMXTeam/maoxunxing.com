@@ -28,6 +28,8 @@
 
     {{ partial "mailing-list-signup.html" . }}
 
+    {{ partial "related-articles.html" . }}
+
     {{ if not hugo.IsServer }}
       {{ partial "talkyard.html" . }}
     {{ end }}

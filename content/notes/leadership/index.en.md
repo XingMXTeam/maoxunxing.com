@@ -3,6 +3,7 @@ title: "Management"
 date: 2021-12-24T11:14:58+08:00
 tags:
   - Soft skills
+  - Career
 ---
 
 > Presentation skills are an important skill. They are the most important skill for advancing to management. They are a manifestation of general skills.

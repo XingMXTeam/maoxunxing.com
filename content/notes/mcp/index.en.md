@@ -3,6 +3,7 @@ title: "MCP Remote Mode vs. Local Mode"
 date: 2026-01-14
 tags:
   - MCP
+  - AI
 ---
 
 What is the difference between configuring an MCP server with a `url` versus a command/package?
