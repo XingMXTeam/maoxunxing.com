@@ -86,6 +86,9 @@
     {{ end }}
     {{ with .Description }}
       <meta name="description" content="{{ . }}" />
+    {{ else if .IsPage }}
+      {{/* 文章页没有手写 description 时，用正文摘要代替全站通用描述，避免全站共用一段描述 */}}
+      <meta name="description" content="{{ .Summary | plainify | truncate 160 }}" />
     {{ else }}
       {{ with .Site.Params.description }}
         <meta name="description" content="{{ . }}" />
