@@ -1846,6 +1846,316 @@
         "source": "/tags/integration",
         "destination": "/zh-cn/tags/",
         "type": 301
+      },
+      {
+        "source": "/tags/substack/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/substack/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/substack/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/substack/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/page/8/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/page/8/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/page/8/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/page/8/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/codex/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/codex/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/codex/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/codex/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/page/4/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/page/4/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/page/4/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/page/4/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/page/6/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/page/6/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/page/6/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/page/6/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/cpu/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/cpu/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/cpu/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/cpu/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/ai-coding/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/ai-coding/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/ai-coding/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/ai-coding/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/javascript/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/javascript/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/javascript/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/javascript/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/devops/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/devops/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/devops/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/devops/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/cookie/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/cookie/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/cookie/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/cookie/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/pwa/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/pwa/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/pwa/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/pwa/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/i18n/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/i18n/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/i18n/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/i18n/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/tailwind/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/tailwind/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/tailwind/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/tailwind/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/ppc/index.xml\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/ppc/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/ppc/index.xml\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/ppc/index.xml\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/ssr/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/ssr/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/ssr/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/ssr/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/vue/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/vue/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/vue/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/vue/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/webpack/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/webpack/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/webpack/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/webpack/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/es6/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/es6/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/es6/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/es6/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/service-worker/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/service-worker/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/service-worker/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/service-worker/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/javascript/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/javascript/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/javascript/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/javascript/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/colima/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/colima/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/colima/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/colima/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/http/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/http/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/http/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/http/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/npm/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/npm/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/npm/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/npm/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/seo/\n/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/seo/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/seo/\n",
+        "destination": "https://maoxunxing.com/zh-cn/tags/seo/\n",
+        "type": 301
+      },
+      {
+        "source": "/tags/",
+        "destination": "https://maoxunxing.com/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags",
+        "destination": "https://maoxunxing.com/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/**",
+        "destination": "https://maoxunxing.com/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/categories/",
+        "destination": "https://maoxunxing.com/zh-cn/categories/",
+        "type": 301
+      },
+      {
+        "source": "/categories",
+        "destination": "https://maoxunxing.com/zh-cn/categories/",
+        "type": 301
+      },
+      {
+        "source": "/long-term-investing/",
+        "destination": "https://maoxunxing.com/zh-cn/long-term-investing/",
+        "type": 301
+      },
+      {
+        "source": "/long-term-investing",
+        "destination": "https://maoxunxing.com/zh-cn/long-term-investing/",
+        "type": 301
+      },
+      {
+        "source": "/creator-workflow/index.xml",
+        "destination": "https://maoxunxing.com/zh-cn/creator-workflow/index.xml",
+        "type": 301
+      },
+      {
+        "source": "/index.xml",
+        "destination": "https://maoxunxing.com/zh-cn/index.xml",
+        "type": 301
+      },
+      {
+        "source": "/book-reports/",
+        "destination": "https://maoxunxing.com/zh-cn/book-reports/",
+        "type": 301
+      },
+      {
+        "source": "/book-reports",
+        "destination": "https://maoxunxing.com/zh-cn/book-reports/",
+        "type": 301
+      },
+      {
+        "source": "/book-reports/index.xml",
+        "destination": "https://maoxunxing.com/zh-cn/book-reports/index.xml",
+        "type": 301
       }
     ],
     "headers": [
