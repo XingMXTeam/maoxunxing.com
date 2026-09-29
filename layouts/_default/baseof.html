@@ -84,17 +84,18 @@
     {{ with .Site.Params.author }}
       <meta name="author" content="{{ . }}" />
     {{ end }}
-    {{ with .Description }}
-      <meta name="description" content="{{ . }}" />
-    {{ else }}
+    {{ $desc := .Description }}
+    {{ if not $desc }}
       {{ if .IsPage }}
         {{/* 文章页没有手写 description 时，用正文摘要代替全站通用描述，避免全站共用一段描述 */}}
-        <meta name="description" content="{{ .Summary | plainify | truncate 160 }}" />
-      {{ else }}
-        {{ with .Site.Params.description }}
-          <meta name="description" content="{{ . }}" />
-        {{ end }}
+        {{ $desc = .Summary | plainify | truncate 160 }}
       {{ end }}
+    {{ end }}
+    {{ if not $desc }}
+      {{ $desc = .Site.Params.description }}
+    {{ end }}
+    {{ with $desc }}
+      <meta name="description" content="{{ . }}" />
     {{ end }}
     {{ with .Site.Params.keywords }}
       <meta name="keywords" content="{{ . }}" />
@@ -107,11 +108,11 @@
     {{ partial "schema-breadcrumb.html" . }}
     {{ partial "schema-person.html" . }}
 
-    {{/* Keep every language version reciprocal and use English as x-default. */}}
+    {{/* Keep every language version reciprocal; x-default matches the site default (root 301 -> /zh-cn/). */}}
     {{- if .IsTranslated -}}
       {{- $defaultPermalink := .Permalink -}}
       {{- range .AllTranslations -}}
-        {{- if eq .Language.Lang "en" -}}
+        {{- if eq .Language.Lang "zh-cn" -}}
           {{- $defaultPermalink = .Permalink -}}
         {{- end -}}
     <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />

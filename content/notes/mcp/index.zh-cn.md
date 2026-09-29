@@ -1,10 +1,11 @@
-在 MCP (Model Context Protocol) 的配置文件中，这两种写法代表了两种截然不同的**传输协议（Transport）**和**运行模式**。
 ---
 title: "MCP的远程模式和本地模式 "
 date: 2026-01-14
 tags:
   - MCP
 ---
+
+在 MCP (Model Context Protocol) 的配置文件中，这两种写法代表了两种截然不同的**传输协议（Transport）**和**运行模式**。
 
 mcpserver可以配置url和包 这两个有什么区别 ?
 

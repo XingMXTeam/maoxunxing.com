@@ -42,7 +42,13 @@
 {{ else }}
   {{ with $.Params.images }}
     {{ range first 6 . -}}
-      <meta property="og:image" content="{{ . | absURL }}" />
+      {{ $img := . }}
+      {{ if hasPrefix $img "http" }}
+        <meta property="og:image" content="{{ $img }}" />
+      {{ else }}
+        {{/* page-bundle relative path, e.g. "webpack/a.png" -> /zh-cn/webpack/a.png */}}
+        <meta property="og:image" content="{{ strings.TrimSuffix "/" $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}/{{ $img }}" />
+      {{ end }}
     {{ end }}
   {{ else -}}
     {{- $images := $.Resources.ByType "image" -}}
