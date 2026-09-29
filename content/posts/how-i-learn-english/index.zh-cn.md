@@ -68,7 +68,7 @@ images:
    {{< img src="img.png" alt="call annie" maxWidth="960px" align="center" caption="CallAnnie 介绍" >}}  
    - **优点**：无需担心语法错误，适合初学者。  
    - **缺点**：不会纠正语法（或者我还没有发现如何使用）。  
-   - **下载方式**：目前只有 iOS 版本，中国区 App Store 没有上架，可以通过这篇博文 [如何注册App Store美区账号](/zh-cn/appleid-us-register/) 注册美区账号，过程简单，10分钟即可完成。  
+   - **下载方式**：目前只有 iOS 版本，中国区 App Store 没有上架，可以通过这篇博文 [如何注册App Store美区账号](/zh-cn/how-to-buy-codex/) 注册美区账号，过程简单，10分钟即可完成。  
 
 2. **Speak**  
    如果预算充足，可以尝试 [Speak](https://www.speak.com/)，这是一款更专业的口语练习 App，能够纠正你的语法和发音。  

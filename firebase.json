@@ -1,7 +1,11 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "redirects": [
       {
         "source": "/",
@@ -21,6 +25,1826 @@
       {
         "source": "/en/",
         "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/ai-mindset-upgrade/",
+        "destination": "/zh-cn/ai-mindset-upgrade/",
+        "type": 301
+      },
+      {
+        "source": "/ai-mindset-upgrade",
+        "destination": "/zh-cn/ai-mindset-upgrade/",
+        "type": 301
+      },
+      {
+        "source": "/tags/dependency-injection/",
+        "destination": "/zh-cn/tags/依赖注入/",
+        "type": 301
+      },
+      {
+        "source": "/tags/dependency-injection",
+        "destination": "/zh-cn/tags/依赖注入/",
+        "type": 301
+      },
+      {
+        "source": "/tags-cloud/",
+        "destination": "/zh-cn/tags-cloud/",
+        "type": 301
+      },
+      {
+        "source": "/tags-cloud",
+        "destination": "/zh-cn/tags-cloud/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-1/",
+        "destination": "/zh-cn/nodejs-1/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-1",
+        "destination": "/zh-cn/nodejs-1/",
+        "type": 301
+      },
+      {
+        "source": "/daily-wisdom/",
+        "destination": "/zh-cn/daily-wisdom/",
+        "type": 301
+      },
+      {
+        "source": "/daily-wisdom",
+        "destination": "/zh-cn/daily-wisdom/",
+        "type": 301
+      },
+      {
+        "source": "/invest/",
+        "destination": "/zh-cn/invest/",
+        "type": 301
+      },
+      {
+        "source": "/invest",
+        "destination": "/zh-cn/invest/",
+        "type": 301
+      },
+      {
+        "source": "/books/",
+        "destination": "/zh-cn/books/",
+        "type": 301
+      },
+      {
+        "source": "/books",
+        "destination": "/zh-cn/books/",
+        "type": 301
+      },
+      {
+        "source": "/sendbeacon/",
+        "destination": "/zh-cn/sendbeacon/",
+        "type": 301
+      },
+      {
+        "source": "/sendbeacon",
+        "destination": "/zh-cn/sendbeacon/",
+        "type": 301
+      },
+      {
+        "source": "/economic1/",
+        "destination": "/zh-cn/economic1/",
+        "type": 301
+      },
+      {
+        "source": "/economic1",
+        "destination": "/zh-cn/economic1/",
+        "type": 301
+      },
+      {
+        "source": "/tags/project-management/",
+        "destination": "/zh-cn/tags/项目管理/",
+        "type": 301
+      },
+      {
+        "source": "/tags/project-management",
+        "destination": "/zh-cn/tags/项目管理/",
+        "type": 301
+      },
+      {
+        "source": "/tags/openai-codex/",
+        "destination": "/zh-cn/tags/openai-codex/",
+        "type": 301
+      },
+      {
+        "source": "/tags/openai-codex",
+        "destination": "/zh-cn/tags/openai-codex/",
+        "type": 301
+      },
+      {
+        "source": "/tags/geo/",
+        "destination": "/zh-cn/tags/geo/",
+        "type": 301
+      },
+      {
+        "source": "/tags/geo",
+        "destination": "/zh-cn/tags/geo/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ai-indie-hacking/",
+        "destination": "/zh-cn/tags/ai-个体创业/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ai-indie-hacking",
+        "destination": "/zh-cn/tags/ai-个体创业/",
+        "type": 301
+      },
+      {
+        "source": "/codex-cli-guide/",
+        "destination": "/zh-cn/codex-cli-guide/",
+        "type": 301
+      },
+      {
+        "source": "/codex-cli-guide",
+        "destination": "/zh-cn/codex-cli-guide/",
+        "type": 301
+      },
+      {
+        "source": "/dog-money/",
+        "destination": "/zh-cn/dog-money/",
+        "type": 301
+      },
+      {
+        "source": "/dog-money",
+        "destination": "/zh-cn/dog-money/",
+        "type": 301
+      },
+      {
+        "source": "/tags/accounting/",
+        "destination": "/zh-cn/tags/会计/",
+        "type": 301
+      },
+      {
+        "source": "/tags/accounting",
+        "destination": "/zh-cn/tags/会计/",
+        "type": 301
+      },
+      {
+        "source": "/anthology/",
+        "destination": "/zh-cn/anthology/",
+        "type": 301
+      },
+      {
+        "source": "/anthology",
+        "destination": "/zh-cn/anthology/",
+        "type": 301
+      },
+      {
+        "source": "/claude-code-vs-codex-2026/",
+        "destination": "/zh-cn/claude-code-vs-codex-2026/",
+        "type": 301
+      },
+      {
+        "source": "/claude-code-vs-codex-2026",
+        "destination": "/zh-cn/claude-code-vs-codex-2026/",
+        "type": 301
+      },
+      {
+        "source": "/react-7/",
+        "destination": "/zh-cn/react-7/",
+        "type": 301
+      },
+      {
+        "source": "/react-7",
+        "destination": "/zh-cn/react-7/",
+        "type": 301
+      },
+      {
+        "source": "/tags/data-reporting/",
+        "destination": "/zh-cn/tags/数据上报/",
+        "type": 301
+      },
+      {
+        "source": "/tags/data-reporting",
+        "destination": "/zh-cn/tags/数据上报/",
+        "type": 301
+      },
+      {
+        "source": "/communication/",
+        "destination": "/zh-cn/communication/",
+        "type": 301
+      },
+      {
+        "source": "/communication",
+        "destination": "/zh-cn/communication/",
+        "type": 301
+      },
+      {
+        "source": "/front-management/",
+        "destination": "/zh-cn/front-management/",
+        "type": 301
+      },
+      {
+        "source": "/front-management",
+        "destination": "/zh-cn/front-management/",
+        "type": 301
+      },
+      {
+        "source": "/ai-gemini-cli/",
+        "destination": "/zh-cn/ai-gemini-cli/",
+        "type": 301
+      },
+      {
+        "source": "/ai-gemini-cli",
+        "destination": "/zh-cn/ai-gemini-cli/",
+        "type": 301
+      },
+      {
+        "source": "/react-1/",
+        "destination": "/zh-cn/react-1/",
+        "type": 301
+      },
+      {
+        "source": "/react-1",
+        "destination": "/zh-cn/react-1/",
+        "type": 301
+      },
+      {
+        "source": "/vue/",
+        "destination": "/zh-cn/vue/",
+        "type": 301
+      },
+      {
+        "source": "/vue",
+        "destination": "/zh-cn/vue/",
+        "type": 301
+      },
+      {
+        "source": "/max-update/",
+        "destination": "/zh-cn/max-update/",
+        "type": 301
+      },
+      {
+        "source": "/max-update",
+        "destination": "/zh-cn/max-update/",
+        "type": 301
+      },
+      {
+        "source": "/bookmarks/",
+        "destination": "/zh-cn/bookmarks/",
+        "type": 301
+      },
+      {
+        "source": "/bookmarks",
+        "destination": "/zh-cn/bookmarks/",
+        "type": 301
+      },
+      {
+        "source": "/m1/",
+        "destination": "/zh-cn/m1/",
+        "type": 301
+      },
+      {
+        "source": "/m1",
+        "destination": "/zh-cn/m1/",
+        "type": 301
+      },
+      {
+        "source": "/aigc/",
+        "destination": "/zh-cn/aigc/",
+        "type": 301
+      },
+      {
+        "source": "/aigc",
+        "destination": "/zh-cn/aigc/",
+        "type": 301
+      },
+      {
+        "source": "/react-6/",
+        "destination": "/zh-cn/react-6/",
+        "type": 301
+      },
+      {
+        "source": "/react-6",
+        "destination": "/zh-cn/react-6/",
+        "type": 301
+      },
+      {
+        "source": "/node-event-loop-cpu-spike/",
+        "destination": "/zh-cn/node-event-loop-cpu-spike/",
+        "type": 301
+      },
+      {
+        "source": "/node-event-loop-cpu-spike",
+        "destination": "/zh-cn/node-event-loop-cpu-spike/",
+        "type": 301
+      },
+      {
+        "source": "/deepwork/",
+        "destination": "/zh-cn/deepwork/",
+        "type": 301
+      },
+      {
+        "source": "/deepwork",
+        "destination": "/zh-cn/deepwork/",
+        "type": 301
+      },
+      {
+        "source": "/502-health-check-investigation/",
+        "destination": "/zh-cn/502-health-check-investigation/",
+        "type": 301
+      },
+      {
+        "source": "/502-health-check-investigation",
+        "destination": "/zh-cn/502-health-check-investigation/",
+        "type": 301
+      },
+      {
+        "source": "/cookie/",
+        "destination": "/zh-cn/cookie/",
+        "type": 301
+      },
+      {
+        "source": "/cookie",
+        "destination": "/zh-cn/cookie/",
+        "type": 301
+      },
+      {
+        "source": "/ppc-conversion-funnel/",
+        "destination": "/zh-cn/ppc-conversion-funnel/",
+        "type": 301
+      },
+      {
+        "source": "/ppc-conversion-funnel",
+        "destination": "/zh-cn/ppc-conversion-funnel/",
+        "type": 301
+      },
+      {
+        "source": "/useful-commands/",
+        "destination": "/zh-cn/useful-commands/",
+        "type": 301
+      },
+      {
+        "source": "/useful-commands",
+        "destination": "/zh-cn/useful-commands/",
+        "type": 301
+      },
+      {
+        "source": "/media/",
+        "destination": "/zh-cn/media/",
+        "type": 301
+      },
+      {
+        "source": "/media",
+        "destination": "/zh-cn/media/",
+        "type": 301
+      },
+      {
+        "source": "/javascript-anime/",
+        "destination": "/zh-cn/javascript-anime/",
+        "type": 301
+      },
+      {
+        "source": "/javascript-anime",
+        "destination": "/zh-cn/javascript-anime/",
+        "type": 301
+      },
+      {
+        "source": "/vortex/",
+        "destination": "/zh-cn/vortex/",
+        "type": 301
+      },
+      {
+        "source": "/vortex",
+        "destination": "/zh-cn/vortex/",
+        "type": 301
+      },
+      {
+        "source": "/books3/",
+        "destination": "/zh-cn/books3/",
+        "type": 301
+      },
+      {
+        "source": "/books3",
+        "destination": "/zh-cn/books3/",
+        "type": 301
+      },
+      {
+        "source": "/good-article/",
+        "destination": "/zh-cn/good-article/",
+        "type": 301
+      },
+      {
+        "source": "/good-article",
+        "destination": "/zh-cn/good-article/",
+        "type": 301
+      },
+      {
+        "source": "/education/",
+        "destination": "/zh-cn/education/",
+        "type": 301
+      },
+      {
+        "source": "/education",
+        "destination": "/zh-cn/education/",
+        "type": 301
+      },
+      {
+        "source": "/interview/",
+        "destination": "/zh-cn/interview/",
+        "type": 301
+      },
+      {
+        "source": "/interview",
+        "destination": "/zh-cn/interview/",
+        "type": 301
+      },
+      {
+        "source": "/git/",
+        "destination": "/zh-cn/git/",
+        "type": 301
+      },
+      {
+        "source": "/git",
+        "destination": "/zh-cn/git/",
+        "type": 301
+      },
+      {
+        "source": "/my-genius-girlfriend/",
+        "destination": "/zh-cn/my-genius-girlfriend/",
+        "type": 301
+      },
+      {
+        "source": "/my-genius-girlfriend",
+        "destination": "/zh-cn/my-genius-girlfriend/",
+        "type": 301
+      },
+      {
+        "source": "/ab-test/",
+        "destination": "/zh-cn/ab-test/",
+        "type": 301
+      },
+      {
+        "source": "/ab-test",
+        "destination": "/zh-cn/ab-test/",
+        "type": 301
+      },
+      {
+        "source": "/archive/",
+        "destination": "/zh-cn/archive/",
+        "type": 301
+      },
+      {
+        "source": "/archive",
+        "destination": "/zh-cn/archive/",
+        "type": 301
+      },
+      {
+        "source": "/bamangyanyi/",
+        "destination": "/zh-cn/bamangyanyi/",
+        "type": 301
+      },
+      {
+        "source": "/bamangyanyi",
+        "destination": "/zh-cn/bamangyanyi/",
+        "type": 301
+      },
+      {
+        "source": "/work/",
+        "destination": "/zh-cn/work/",
+        "type": 301
+      },
+      {
+        "source": "/work",
+        "destination": "/zh-cn/work/",
+        "type": 301
+      },
+      {
+        "source": "/personal-habbit/",
+        "destination": "/zh-cn/personal-habbit/",
+        "type": 301
+      },
+      {
+        "source": "/personal-habbit",
+        "destination": "/zh-cn/personal-habbit/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-22/",
+        "destination": "/zh-cn/ai-news-digest-2026-04-22/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-22",
+        "destination": "/zh-cn/ai-news-digest-2026-04-22/",
+        "type": 301
+      },
+      {
+        "source": "/react-5/",
+        "destination": "/zh-cn/react-5/",
+        "type": 301
+      },
+      {
+        "source": "/react-5",
+        "destination": "/zh-cn/react-5/",
+        "type": 301
+      },
+      {
+        "source": "/make-video/",
+        "destination": "/zh-cn/make-video/",
+        "type": 301
+      },
+      {
+        "source": "/make-video",
+        "destination": "/zh-cn/make-video/",
+        "type": 301
+      },
+      {
+        "source": "/bafeite-logic/",
+        "destination": "/zh-cn/bafeite-logic/",
+        "type": 301
+      },
+      {
+        "source": "/bafeite-logic",
+        "destination": "/zh-cn/bafeite-logic/",
+        "type": 301
+      },
+      {
+        "source": "/karpathy-knowledge-base-practice/",
+        "destination": "/zh-cn/karpathy-knowledge-base-practice/",
+        "type": 301
+      },
+      {
+        "source": "/karpathy-knowledge-base-practice",
+        "destination": "/zh-cn/karpathy-knowledge-base-practice/",
+        "type": 301
+      },
+      {
+        "source": "/template-solution/",
+        "destination": "/zh-cn/template-solution/",
+        "type": 301
+      },
+      {
+        "source": "/template-solution",
+        "destination": "/zh-cn/template-solution/",
+        "type": 301
+      },
+      {
+        "source": "/timezone/",
+        "destination": "/zh-cn/timezone/",
+        "type": 301
+      },
+      {
+        "source": "/timezone",
+        "destination": "/zh-cn/timezone/",
+        "type": 301
+      },
+      {
+        "source": "/python/",
+        "destination": "/zh-cn/python/",
+        "type": 301
+      },
+      {
+        "source": "/python",
+        "destination": "/zh-cn/python/",
+        "type": 301
+      },
+      {
+        "source": "/regular/",
+        "destination": "/zh-cn/regular/",
+        "type": 301
+      },
+      {
+        "source": "/regular",
+        "destination": "/zh-cn/regular/",
+        "type": 301
+      },
+      {
+        "source": "/personal-success/",
+        "destination": "/zh-cn/personal-success/",
+        "type": 301
+      },
+      {
+        "source": "/personal-success",
+        "destination": "/zh-cn/personal-success/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ecommerce/",
+        "destination": "/zh-cn/tags/电商/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ecommerce",
+        "destination": "/zh-cn/tags/电商/",
+        "type": 301
+      },
+      {
+        "source": "/influence-first/",
+        "destination": "/zh-cn/influence-first/",
+        "type": 301
+      },
+      {
+        "source": "/influence-first",
+        "destination": "/zh-cn/influence-first/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ai-tools/",
+        "destination": "/zh-cn/tags/ai-工具/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ai-tools",
+        "destination": "/zh-cn/tags/ai-工具/",
+        "type": 301
+      },
+      {
+        "source": "/tags/component-design/",
+        "destination": "/zh-cn/tags/组件设计/",
+        "type": 301
+      },
+      {
+        "source": "/tags/component-design",
+        "destination": "/zh-cn/tags/组件设计/",
+        "type": 301
+      },
+      {
+        "source": "/npm/",
+        "destination": "/zh-cn/npm/",
+        "type": 301
+      },
+      {
+        "source": "/npm",
+        "destination": "/zh-cn/npm/",
+        "type": 301
+      },
+      {
+        "source": "/career4/",
+        "destination": "/zh-cn/career4/",
+        "type": 301
+      },
+      {
+        "source": "/career4",
+        "destination": "/zh-cn/career4/",
+        "type": 301
+      },
+      {
+        "source": "/data-structure-practise/",
+        "destination": "/zh-cn/data-structure-practise/",
+        "type": 301
+      },
+      {
+        "source": "/data-structure-practise",
+        "destination": "/zh-cn/data-structure-practise/",
+        "type": 301
+      },
+      {
+        "source": "/create-career/",
+        "destination": "/zh-cn/create-career/",
+        "type": 301
+      },
+      {
+        "source": "/create-career",
+        "destination": "/zh-cn/create-career/",
+        "type": 301
+      },
+      {
+        "source": "/word-english/",
+        "destination": "/zh-cn/word-english/",
+        "type": 301
+      },
+      {
+        "source": "/word-english",
+        "destination": "/zh-cn/word-english/",
+        "type": 301
+      },
+      {
+        "source": "/mangge-rule/",
+        "destination": "/zh-cn/mangge-rule/",
+        "type": 301
+      },
+      {
+        "source": "/mangge-rule",
+        "destination": "/zh-cn/mangge-rule/",
+        "type": 301
+      },
+      {
+        "source": "/jsx-runtime/",
+        "destination": "/zh-cn/jsx-runtime/",
+        "type": 301
+      },
+      {
+        "source": "/jsx-runtime",
+        "destination": "/zh-cn/jsx-runtime/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-2/",
+        "destination": "/zh-cn/nodejs-2/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-2",
+        "destination": "/zh-cn/nodejs-2/",
+        "type": 301
+      },
+      {
+        "source": "/tags/cdn/",
+        "destination": "/zh-cn/tags/cdn/",
+        "type": 301
+      },
+      {
+        "source": "/tags/cdn",
+        "destination": "/zh-cn/tags/cdn/",
+        "type": 301
+      },
+      {
+        "source": "/how-i-learn-english/",
+        "destination": "/zh-cn/how-i-learn-english/",
+        "type": 301
+      },
+      {
+        "source": "/how-i-learn-english",
+        "destination": "/zh-cn/how-i-learn-english/",
+        "type": 301
+      },
+      {
+        "source": "/ui/",
+        "destination": "/zh-cn/ui/",
+        "type": 301
+      },
+      {
+        "source": "/ui",
+        "destination": "/zh-cn/ui/",
+        "type": 301
+      },
+      {
+        "source": "/http-i-learned/",
+        "destination": "/zh-cn/http-i-learned/",
+        "type": 301
+      },
+      {
+        "source": "/http-i-learned",
+        "destination": "/zh-cn/http-i-learned/",
+        "type": 301
+      },
+      {
+        "source": "/mobx/",
+        "destination": "/zh-cn/mobx/",
+        "type": 301
+      },
+      {
+        "source": "/mobx",
+        "destination": "/zh-cn/mobx/",
+        "type": 301
+      },
+      {
+        "source": "/tags/e-commerce-technology/",
+        "destination": "/zh-cn/tags/电商技术/",
+        "type": 301
+      },
+      {
+        "source": "/tags/e-commerce-technology",
+        "destination": "/zh-cn/tags/电商技术/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-0/",
+        "destination": "/zh-cn/nodejs-0/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-0",
+        "destination": "/zh-cn/nodejs-0/",
+        "type": 301
+      },
+      {
+        "source": "/tags/computer/",
+        "destination": "/zh-cn/tags/计算机/",
+        "type": 301
+      },
+      {
+        "source": "/tags/computer",
+        "destination": "/zh-cn/tags/计算机/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-be-different/",
+        "destination": "/zh-cn/how-to-be-different/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-be-different",
+        "destination": "/zh-cn/how-to-be-different/",
+        "type": 301
+      },
+      {
+        "source": "/writting1/",
+        "destination": "/zh-cn/writting1/",
+        "type": 301
+      },
+      {
+        "source": "/writting1",
+        "destination": "/zh-cn/writting1/",
+        "type": 301
+      },
+      {
+        "source": "/hooks-lint/",
+        "destination": "/zh-cn/hooks-lint/",
+        "type": 301
+      },
+      {
+        "source": "/hooks-lint",
+        "destination": "/zh-cn/hooks-lint/",
+        "type": 301
+      },
+      {
+        "source": "/unit-test/",
+        "destination": "/zh-cn/unit-test/",
+        "type": 301
+      },
+      {
+        "source": "/unit-test",
+        "destination": "/zh-cn/unit-test/",
+        "type": 301
+      },
+      {
+        "source": "/seven-habits/",
+        "destination": "/zh-cn/seven-habits/",
+        "type": 301
+      },
+      {
+        "source": "/seven-habits",
+        "destination": "/zh-cn/seven-habits/",
+        "type": 301
+      },
+      {
+        "source": "/client-dev/",
+        "destination": "/zh-cn/client-dev/",
+        "type": 301
+      },
+      {
+        "source": "/client-dev",
+        "destination": "/zh-cn/client-dev/",
+        "type": 301
+      },
+      {
+        "source": "/spm/",
+        "destination": "/zh-cn/spm/",
+        "type": 301
+      },
+      {
+        "source": "/spm",
+        "destination": "/zh-cn/spm/",
+        "type": 301
+      },
+      {
+        "source": "/ai-coding-tools-comparison-2026/",
+        "destination": "/zh-cn/ai-coding-tools-comparison-2026/",
+        "type": 301
+      },
+      {
+        "source": "/ai-coding-tools-comparison-2026",
+        "destination": "/zh-cn/ai-coding-tools-comparison-2026/",
+        "type": 301
+      },
+      {
+        "source": "/draft/",
+        "destination": "/zh-cn/draft/",
+        "type": 301
+      },
+      {
+        "source": "/draft",
+        "destination": "/zh-cn/draft/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-write-decorator/",
+        "destination": "/zh-cn/how-to-write-decorator/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-write-decorator",
+        "destination": "/zh-cn/how-to-write-decorator/",
+        "type": 301
+      },
+      {
+        "source": "/self-think/",
+        "destination": "/zh-cn/self-think/",
+        "type": 301
+      },
+      {
+        "source": "/self-think",
+        "destination": "/zh-cn/self-think/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-21/",
+        "destination": "/zh-cn/ai-news-digest-2026-04-21/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-21",
+        "destination": "/zh-cn/ai-news-digest-2026-04-21/",
+        "type": 301
+      },
+      {
+        "source": "/career3/",
+        "destination": "/zh-cn/career3/",
+        "type": 301
+      },
+      {
+        "source": "/career3",
+        "destination": "/zh-cn/career3/",
+        "type": 301
+      },
+      {
+        "source": "/uses/",
+        "destination": "/zh-cn/uses/",
+        "type": 301
+      },
+      {
+        "source": "/uses",
+        "destination": "/zh-cn/uses/",
+        "type": 301
+      },
+      {
+        "source": "/economic/",
+        "destination": "/zh-cn/economic/",
+        "type": 301
+      },
+      {
+        "source": "/economic",
+        "destination": "/zh-cn/economic/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest/",
+        "destination": "/zh-cn/ai-news-digest/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest",
+        "destination": "/zh-cn/ai-news-digest/",
+        "type": 301
+      },
+      {
+        "source": "/react-children-type-bug/",
+        "destination": "/zh-cn/react-children-type-bug/",
+        "type": 301
+      },
+      {
+        "source": "/react-children-type-bug",
+        "destination": "/zh-cn/react-children-type-bug/",
+        "type": 301
+      },
+      {
+        "source": "/tags/sharp-tools/",
+        "destination": "/zh-cn/tags/利器/",
+        "type": 301
+      },
+      {
+        "source": "/tags/sharp-tools",
+        "destination": "/zh-cn/tags/利器/",
+        "type": 301
+      },
+      {
+        "source": "/git1/",
+        "destination": "/zh-cn/git1/",
+        "type": 301
+      },
+      {
+        "source": "/git1",
+        "destination": "/zh-cn/git1/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ab-experiment/",
+        "destination": "/zh-cn/tags/ab实验/",
+        "type": 301
+      },
+      {
+        "source": "/tags/ab-experiment",
+        "destination": "/zh-cn/tags/ab实验/",
+        "type": 301
+      },
+      {
+        "source": "/ai/",
+        "destination": "/zh-cn/ai/",
+        "type": 301
+      },
+      {
+        "source": "/ai",
+        "destination": "/zh-cn/ai/",
+        "type": 301
+      },
+      {
+        "source": "/financial/",
+        "destination": "/zh-cn/financial/",
+        "type": 301
+      },
+      {
+        "source": "/financial",
+        "destination": "/zh-cn/financial/",
+        "type": 301
+      },
+      {
+        "source": "/hande-by-hande/",
+        "destination": "/zh-cn/hande-by-hande/",
+        "type": 301
+      },
+      {
+        "source": "/hande-by-hande",
+        "destination": "/zh-cn/hande-by-hande/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-3/",
+        "destination": "/zh-cn/nodejs-3/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-3",
+        "destination": "/zh-cn/nodejs-3/",
+        "type": 301
+      },
+      {
+        "source": "/tailwind/",
+        "destination": "/zh-cn/tailwind/",
+        "type": 301
+      },
+      {
+        "source": "/tailwind",
+        "destination": "/zh-cn/tailwind/",
+        "type": 301
+      },
+      {
+        "source": "/life-long-income/",
+        "destination": "/zh-cn/life-long-income/",
+        "type": 301
+      },
+      {
+        "source": "/life-long-income",
+        "destination": "/zh-cn/life-long-income/",
+        "type": 301
+      },
+      {
+        "source": "/i18n/",
+        "destination": "/zh-cn/i18n/",
+        "type": 301
+      },
+      {
+        "source": "/i18n",
+        "destination": "/zh-cn/i18n/",
+        "type": 301
+      },
+      {
+        "source": "/redux1/",
+        "destination": "/zh-cn/redux1/",
+        "type": 301
+      },
+      {
+        "source": "/redux1",
+        "destination": "/zh-cn/redux1/",
+        "type": 301
+      },
+      {
+        "source": "/tags/daily-life/",
+        "destination": "/zh-cn/tags/日常/",
+        "type": 301
+      },
+      {
+        "source": "/tags/daily-life",
+        "destination": "/zh-cn/tags/日常/",
+        "type": 301
+      },
+      {
+        "source": "/streams/",
+        "destination": "/zh-cn/streams/",
+        "type": 301
+      },
+      {
+        "source": "/streams",
+        "destination": "/zh-cn/streams/",
+        "type": 301
+      },
+      {
+        "source": "/code-computer/",
+        "destination": "/zh-cn/code-computer/",
+        "type": 301
+      },
+      {
+        "source": "/code-computer",
+        "destination": "/zh-cn/code-computer/",
+        "type": 301
+      },
+      {
+        "source": "/leadership/",
+        "destination": "/zh-cn/leadership/",
+        "type": 301
+      },
+      {
+        "source": "/leadership",
+        "destination": "/zh-cn/leadership/",
+        "type": 301
+      },
+      {
+        "source": "/engineer/",
+        "destination": "/zh-cn/engineer/",
+        "type": 301
+      },
+      {
+        "source": "/engineer",
+        "destination": "/zh-cn/engineer/",
+        "type": 301
+      },
+      {
+        "source": "/tags/web-development/",
+        "destination": "/zh-cn/tags/web-development/",
+        "type": 301
+      },
+      {
+        "source": "/tags/web-development",
+        "destination": "/zh-cn/tags/web-development/",
+        "type": 301
+      },
+      {
+        "source": "/javascript/",
+        "destination": "/zh-cn/javascript/",
+        "type": 301
+      },
+      {
+        "source": "/javascript",
+        "destination": "/zh-cn/javascript/",
+        "type": 301
+      },
+      {
+        "source": "/seo/",
+        "destination": "/zh-cn/seo/",
+        "type": 301
+      },
+      {
+        "source": "/seo",
+        "destination": "/zh-cn/seo/",
+        "type": 301
+      },
+      {
+        "source": "/tags/wealth-mindset/",
+        "destination": "/zh-cn/tags/财富思维/",
+        "type": 301
+      },
+      {
+        "source": "/tags/wealth-mindset",
+        "destination": "/zh-cn/tags/财富思维/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-7/",
+        "destination": "/zh-cn/nodejs-7/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-7",
+        "destination": "/zh-cn/nodejs-7/",
+        "type": 301
+      },
+      {
+        "source": "/movie/",
+        "destination": "/zh-cn/movie/",
+        "type": 301
+      },
+      {
+        "source": "/movie",
+        "destination": "/zh-cn/movie/",
+        "type": 301
+      },
+      {
+        "source": "/tags/felix-mao/",
+        "destination": "/zh-cn/tags/felix-mao/",
+        "type": 301
+      },
+      {
+        "source": "/tags/felix-mao",
+        "destination": "/zh-cn/tags/felix-mao/",
+        "type": 301
+      },
+      {
+        "source": "/react-4/",
+        "destination": "/zh-cn/react-4/",
+        "type": 301
+      },
+      {
+        "source": "/react-4",
+        "destination": "/zh-cn/react-4/",
+        "type": 301
+      },
+      {
+        "source": "/ai-agent-guide/",
+        "destination": "/zh-cn/ai-agent-guide/",
+        "type": 301
+      },
+      {
+        "source": "/ai-agent-guide",
+        "destination": "/zh-cn/ai-agent-guide/",
+        "type": 301
+      },
+      {
+        "source": "/javascript-dynamic-1/",
+        "destination": "/zh-cn/javascript-dynamic-1/",
+        "type": 301
+      },
+      {
+        "source": "/javascript-dynamic-1",
+        "destination": "/zh-cn/javascript-dynamic-1/",
+        "type": 301
+      },
+      {
+        "source": "/ai-coding-practice/",
+        "destination": "/zh-cn/ai-coding-practice/",
+        "type": 301
+      },
+      {
+        "source": "/ai-coding-practice",
+        "destination": "/zh-cn/ai-coding-practice/",
+        "type": 301
+      },
+      {
+        "source": "/tags/conversion-funnel/",
+        "destination": "/zh-cn/tags/转化漏斗/",
+        "type": 301
+      },
+      {
+        "source": "/tags/conversion-funnel",
+        "destination": "/zh-cn/tags/转化漏斗/",
+        "type": 301
+      },
+      {
+        "source": "/tags/streams/",
+        "destination": "/zh-cn/tags/流/",
+        "type": 301
+      },
+      {
+        "source": "/tags/streams",
+        "destination": "/zh-cn/tags/流/",
+        "type": 301
+      },
+      {
+        "source": "/tags/deployment/",
+        "destination": "/zh-cn/tags/部署/",
+        "type": 301
+      },
+      {
+        "source": "/tags/deployment",
+        "destination": "/zh-cn/tags/部署/",
+        "type": 301
+      },
+      {
+        "source": "/docker/",
+        "destination": "/zh-cn/docker/",
+        "type": 301
+      },
+      {
+        "source": "/docker",
+        "destination": "/zh-cn/docker/",
+        "type": 301
+      },
+      {
+        "source": "/service-worker-1/",
+        "destination": "/zh-cn/service-worker-1/",
+        "type": 301
+      },
+      {
+        "source": "/service-worker-1",
+        "destination": "/zh-cn/service-worker-1/",
+        "type": 301
+      },
+      {
+        "source": "/react/",
+        "destination": "/zh-cn/react/",
+        "type": 301
+      },
+      {
+        "source": "/react",
+        "destination": "/zh-cn/react/",
+        "type": 301
+      },
+      {
+        "source": "/choose-best-deploy/",
+        "destination": "/zh-cn/choose-best-deploy/",
+        "type": 301
+      },
+      {
+        "source": "/choose-best-deploy",
+        "destination": "/zh-cn/choose-best-deploy/",
+        "type": 301
+      },
+      {
+        "source": "/frontend-interview/",
+        "destination": "/zh-cn/frontend-interview/",
+        "type": 301
+      },
+      {
+        "source": "/frontend-interview",
+        "destination": "/zh-cn/frontend-interview/",
+        "type": 301
+      },
+      {
+        "source": "/writting2/",
+        "destination": "/zh-cn/writting2/",
+        "type": 301
+      },
+      {
+        "source": "/writting2",
+        "destination": "/zh-cn/writting2/",
+        "type": 301
+      },
+      {
+        "source": "/tags/developer-tools/",
+        "destination": "/zh-cn/tags/开发者工具/",
+        "type": 301
+      },
+      {
+        "source": "/tags/developer-tools",
+        "destination": "/zh-cn/tags/开发者工具/",
+        "type": 301
+      },
+      {
+        "source": "/cvr-concept/",
+        "destination": "/zh-cn/cvr-concept/",
+        "type": 301
+      },
+      {
+        "source": "/cvr-concept",
+        "destination": "/zh-cn/cvr-concept/",
+        "type": 301
+      },
+      {
+        "source": "/webpack/",
+        "destination": "/zh-cn/webpack/",
+        "type": 301
+      },
+      {
+        "source": "/webpack",
+        "destination": "/zh-cn/webpack/",
+        "type": 301
+      },
+      {
+        "source": "/perfomance/",
+        "destination": "/zh-cn/perfomance/",
+        "type": 301
+      },
+      {
+        "source": "/perfomance",
+        "destination": "/zh-cn/perfomance/",
+        "type": 301
+      },
+      {
+        "source": "/think/",
+        "destination": "/zh-cn/think/",
+        "type": 301
+      },
+      {
+        "source": "/think",
+        "destination": "/zh-cn/think/",
+        "type": 301
+      },
+      {
+        "source": "/css-height/",
+        "destination": "/zh-cn/css-height/",
+        "type": 301
+      },
+      {
+        "source": "/css-height",
+        "destination": "/zh-cn/css-height/",
+        "type": 301
+      },
+      {
+        "source": "/tags/prompt/",
+        "destination": "/zh-cn/tags/ai-提示词/",
+        "type": 301
+      },
+      {
+        "source": "/tags/prompt",
+        "destination": "/zh-cn/tags/ai-提示词/",
+        "type": 301
+      },
+      {
+        "source": "/ai-coding-workflow/",
+        "destination": "/zh-cn/ai-coding-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/ai-coding-workflow",
+        "destination": "/zh-cn/ai-coding-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/ssr-1/",
+        "destination": "/zh-cn/ssr-1/",
+        "type": 301
+      },
+      {
+        "source": "/ssr-1",
+        "destination": "/zh-cn/ssr-1/",
+        "type": 301
+      },
+      {
+        "source": "/react-2/",
+        "destination": "/zh-cn/react-2/",
+        "type": 301
+      },
+      {
+        "source": "/react-2",
+        "destination": "/zh-cn/react-2/",
+        "type": 301
+      },
+      {
+        "source": "/data-structure/",
+        "destination": "/zh-cn/data-structure/",
+        "type": 301
+      },
+      {
+        "source": "/data-structure",
+        "destination": "/zh-cn/data-structure/",
+        "type": 301
+      },
+      {
+        "source": "/tags/education/",
+        "destination": "/zh-cn/tags/教育/",
+        "type": 301
+      },
+      {
+        "source": "/tags/education",
+        "destination": "/zh-cn/tags/教育/",
+        "type": 301
+      },
+      {
+        "source": "/container/",
+        "destination": "/zh-cn/container/",
+        "type": 301
+      },
+      {
+        "source": "/container",
+        "destination": "/zh-cn/container/",
+        "type": 301
+      },
+      {
+        "source": "/tags/side-hustle/",
+        "destination": "/zh-cn/tags/副业/",
+        "type": 301
+      },
+      {
+        "source": "/tags/side-hustle",
+        "destination": "/zh-cn/tags/副业/",
+        "type": 301
+      },
+      {
+        "source": "/tags/claude/",
+        "destination": "/zh-cn/tags/claude/",
+        "type": 301
+      },
+      {
+        "source": "/tags/claude",
+        "destination": "/zh-cn/tags/claude/",
+        "type": 301
+      },
+      {
+        "source": "/tags/agent/",
+        "destination": "/zh-cn/tags/agent/",
+        "type": 301
+      },
+      {
+        "source": "/tags/agent",
+        "destination": "/zh-cn/tags/agent/",
+        "type": 301
+      },
+      {
+        "source": "/tags/coding/",
+        "destination": "/zh-cn/tags/coding/",
+        "type": 301
+      },
+      {
+        "source": "/tags/coding",
+        "destination": "/zh-cn/tags/coding/",
+        "type": 301
+      },
+      {
+        "source": "/gallery/",
+        "destination": "/zh-cn/gallery/",
+        "type": 301
+      },
+      {
+        "source": "/gallery",
+        "destination": "/zh-cn/gallery/",
+        "type": 301
+      },
+      {
+        "source": "/tags/solution/",
+        "destination": "/zh-cn/tags/solution/",
+        "type": 301
+      },
+      {
+        "source": "/tags/solution",
+        "destination": "/zh-cn/tags/solution/",
+        "type": 301
+      },
+      {
+        "source": "/lamb-in-his-bosom/",
+        "destination": "/zh-cn/lamb-in-his-bosom/",
+        "type": 301
+      },
+      {
+        "source": "/lamb-in-his-bosom",
+        "destination": "/zh-cn/lamb-in-his-bosom/",
+        "type": 301
+      },
+      {
+        "source": "/tags/dan-koe/",
+        "destination": "/zh-cn/tags/dan-koe/",
+        "type": 301
+      },
+      {
+        "source": "/tags/dan-koe",
+        "destination": "/zh-cn/tags/dan-koe/",
+        "type": 301
+      },
+      {
+        "source": "/tags/hugo/",
+        "destination": "/zh-cn/tags/hugo/",
+        "type": 301
+      },
+      {
+        "source": "/tags/hugo",
+        "destination": "/zh-cn/tags/hugo/",
+        "type": 301
+      },
+      {
+        "source": "/reactive-programming/",
+        "destination": "/zh-cn/reactive-programming/",
+        "type": 301
+      },
+      {
+        "source": "/reactive-programming",
+        "destination": "/zh-cn/reactive-programming/",
+        "type": 301
+      },
+      {
+        "source": "/option-learn/",
+        "destination": "/zh-cn/option-learn/",
+        "type": 301
+      },
+      {
+        "source": "/option-learn",
+        "destination": "/zh-cn/option-learn/",
+        "type": 301
+      },
+      {
+        "source": "/tags/pwa/",
+        "destination": "/zh-cn/tags/pwa/",
+        "type": 301
+      },
+      {
+        "source": "/tags/pwa",
+        "destination": "/zh-cn/tags/pwa/",
+        "type": 301
+      },
+      {
+        "source": "/project-manage/",
+        "destination": "/zh-cn/project-manage/",
+        "type": 301
+      },
+      {
+        "source": "/project-manage",
+        "destination": "/zh-cn/project-manage/",
+        "type": 301
+      },
+      {
+        "source": "/tags/openai/",
+        "destination": "/zh-cn/tags/openai/",
+        "type": 301
+      },
+      {
+        "source": "/tags/openai",
+        "destination": "/zh-cn/tags/openai/",
+        "type": 301
+      },
+      {
+        "source": "/colima/",
+        "destination": "/zh-cn/colima/",
+        "type": 301
+      },
+      {
+        "source": "/colima",
+        "destination": "/zh-cn/colima/",
+        "type": 301
+      },
+      {
+        "source": "/notes/",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/notes",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/creator-workflow/",
+        "destination": "/zh-cn/creator-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/creator-workflow",
+        "destination": "/zh-cn/creator-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/english/",
+        "destination": "/zh-cn/english/",
+        "type": 301
+      },
+      {
+        "source": "/english",
+        "destination": "/zh-cn/english/",
+        "type": 301
+      },
+      {
+        "source": "/chatgpt-plus-google-play/",
+        "destination": "/zh-cn/chatgpt-plus-google-play/",
+        "type": 301
+      },
+      {
+        "source": "/chatgpt-plus-google-play",
+        "destination": "/zh-cn/chatgpt-plus-google-play/",
+        "type": 301
+      },
+      {
+        "source": "/cdn/",
+        "destination": "/zh-cn/cdn/",
+        "type": 301
+      },
+      {
+        "source": "/cdn",
+        "destination": "/zh-cn/cdn/",
+        "type": 301
+      },
+      {
+        "source": "/tags/web-api/",
+        "destination": "/zh-cn/tags/web-api/",
+        "type": 301
+      },
+      {
+        "source": "/tags/web-api",
+        "destination": "/zh-cn/tags/web-api/",
+        "type": 301
+      },
+      {
+        "source": "/en/creator-workflow/",
+        "destination": "/zh-cn/creator-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/en/creator-workflow",
+        "destination": "/zh-cn/creator-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/en/ai-indie-hacking/",
+        "destination": "/zh-cn/ai-indie-hacking/",
+        "type": 301
+      },
+      {
+        "source": "/en/ai-indie-hacking",
+        "destination": "/zh-cn/ai-indie-hacking/",
+        "type": 301
+      },
+      {
+        "source": "/en/ai-coding-workflow/",
+        "destination": "/zh-cn/ai-coding-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/en/ai-coding-workflow",
+        "destination": "/zh-cn/ai-coding-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/tags/prompt/",
+        "destination": "/zh-cn/tags/ai-提示词/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/tags/prompt",
+        "destination": "/zh-cn/tags/ai-提示词/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/tags/方法论/",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/tags/方法论",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/prompt-library-prompts-i-actually-use/",
+        "destination": "/zh-cn/tags/prompt-库/",
+        "type": 301
+      },
+      {
+        "source": "/prompt-library-prompts-i-actually-use",
+        "destination": "/zh-cn/tags/prompt-库/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/notes/weekly16/",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/notes/weekly16",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/prompt-library-prompts-i-actually-use/",
+        "destination": "/zh-cn/tags/prompt-库/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/prompt-library-prompts-i-actually-use",
+        "destination": "/zh-cn/tags/prompt-库/",
+        "type": 301
+      },
+      {
+        "source": "/posts/page/6/",
+        "destination": "/zh-cn/posts/",
+        "type": 301
+      },
+      {
+        "source": "/posts/page/6",
+        "destination": "/zh-cn/posts/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/appleid-us-register/",
+        "destination": "/zh-cn/how-to-buy-codex/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/appleid-us-register",
+        "destination": "/zh-cn/how-to-buy-codex/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/posts/page/4/",
+        "destination": "/zh-cn/tags/page/4/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/posts/page/4",
+        "destination": "/zh-cn/tags/page/4/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/notes/weekly5/",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/notes/weekly5",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/notes/weekly11/",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/notes/weekly11",
+        "destination": "/zh-cn/notes/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/react3/",
+        "destination": "/zh-cn/react-3/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/react3",
+        "destination": "/zh-cn/react-3/",
+        "type": 301
+      },
+      {
+        "source": "/tags/integration/",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/integration",
+        "destination": "/zh-cn/tags/",
         "type": 301
       }
     ],

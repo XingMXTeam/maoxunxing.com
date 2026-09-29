@@ -56,7 +56,7 @@ It has a very good practice mode where you can pause the video and then practice
 The first tool I would recommend is: CallAnnie This is a speaking practice tutor app. because she is actually the big model behind her not a real person, so you don't have to worry about social phobia. You can communicate with her on any topic at:
 {{< img src="img.png" alt="call annie" maxWidth="960px" align="center" caption="Introducing call annie" >}}
 Currently there is only the ios version, you can go to [official website](https://callannie.ai/) to download it, because the Chinese app store is not on the shelves, you can read this blog post
-[How to register an App Store US account](/zh-cn/appleid-us-register/), the registration process is very simple 10 minutes to get it done.
+[How to register an App Store US account](/zh-cn/how-to-buy-codex/), the registration process is very simple 10 minutes to get it done.
 
 
 One bad thing about CallAnnie is that it won't communicate your grammar (or I haven't found out how to use it yet). If you have any left at home, check out this [Speak](https://www.speak.com/), another speaking practice tutor app.
