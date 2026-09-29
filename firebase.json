@@ -4,6 +4,11 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "redirects": [
       {
+        "source": "/",
+        "destination": "/zh-cn/",
+        "type": 301
+      },
+      {
         "source": "/feed.xml",
         "destination": "/posts/index.xml",
         "type": 301
