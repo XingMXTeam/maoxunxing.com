@@ -423,6 +423,8 @@ const settings = {
 https://forgemia.inra.fr/lisc/geopat/-/tree/master/web_application/node_modules/csso
 csso webpack plugin Selector can't has classes from different scopes
 Some classNames are not assigned to scopes.
+
+> Full write-up: ["Selector can't has classes from different scopes" — how to fix this csso error](/en/csso-selector-scopes-error/)
 ## import css
 `import styles from "./index.module.css"` needs to be after `js import`. If it's in the middle, it might cause the class name priority of the CSS build artifact to be different.
 

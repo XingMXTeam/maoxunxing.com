@@ -1,6 +1,6 @@
 ---
-title: "OpenAI Codex CLI guide: install, AGENTS.md, permissions, and automation workflows"
-description: "A practical Codex CLI guide for frontend engineers and AI coding practitioners, covering install, AGENTS.md, permissions, skills, subagents, and common pitfalls."
+title: "OpenAI Codex CLI Guide (2026): Install, AGENTS.md, Permissions & Real-World Pitfalls"
+description: "A practitioner's Codex CLI guide: install, AGENTS.md setup, permission boundaries, skills and subagents — plus the common mistakes I actually hit adopting it."
 date: 2026-05-27
 tags:
   - AI Coding

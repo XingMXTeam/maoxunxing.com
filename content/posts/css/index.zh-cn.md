@@ -497,6 +497,8 @@ https://forgemia.inra.fr/lisc/geopat/-/tree/master/web_application/node_modules/
 csso webpack plugin Selector can't has classes from different scopes
 有一些className没有被归到scopes里面。
 
+> 详细记录：[csso 报错 "Selector can't has classes from different scopes" 怎么修](/zh-cn/csso-selector-scopes-error/)
+
 ## import css
 
 `import styles  from "./index.module.css"`需要在`js import`之后，如果在中间，可能会导致CSS构建产物的 类名 优先级 不一样。
