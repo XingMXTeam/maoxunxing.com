@@ -1,0 +1,25 @@
+{{- /* Public URL for a page-bundle / section image used in SEO meta tags.
+     *
+     * Page-bundle resources are published ONCE, under the default language
+     * (zh-cn) path. An EN page that references them with its own /en/ prefix
+     * produces og:image / twitter:image URLs that 404 (found by the 2026-10-02
+     * full-site crawl: ~60 broken /en/... images). Always resolve to the
+     * zh-cn URL so both languages share the working file.
+     *
+     * Expects a dict: { "path": <image path or URL> }
+     *   - absolute http(s) URL  -> returned as-is
+     *   - "/..." site-root path -> "/en/..." prefix swapped to "/zh-cn/..."
+     *   - "a/b.png" bare path   -> treated as language-root-relative, prefixed with "/zh-cn/"
+     */ -}}
+{{- $img := .path -}}
+{{- if hasPrefix $img "http" -}}
+  {{- $img -}}
+{{- else -}}
+  {{- $rel := $img -}}
+  {{- if not (hasPrefix $rel "/") -}}
+    {{- $rel = printf "/zh-cn/%s" $rel -}}
+  {{- else -}}
+    {{- $rel = replaceRE `^/en/` "/zh-cn/" $rel -}}
+  {{- end -}}
+  {{- $rel | absURL -}}
+{{- end -}}

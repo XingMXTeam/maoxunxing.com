@@ -1,3 +1,12 @@
+---
+title: "AI Coding 选哪一家？2026 全面对比指南"
+date: 2026-09-29
+tags:
+  - AI 编程
+  - AI 工具
+description: "2026 年 AI Coding 工具全面对比：Cursor、Claude Code、GitHub Copilot、Windsurf 等工具盘点，从真实成本、使用场景、隐藏费用、封禁风险等维度分析。"
+---
+
 # AI Coding 选哪一家？2026 全面对比指南
 
 ## 引言：为什么我推荐 ChatGPT Pro / Gemini Advanced Pro

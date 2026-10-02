@@ -7,7 +7,7 @@ This page is more like a resource index. I keep links for development, frontend 
 
 ## Creator Tools
 
-- [Creator toolkit](/notes/creator-toolkit/) - Detailed notes on tools such as PixPin, PixelLab, Unsplash, screenshots, visual assets, and content production
+- [Creator toolkit](/en/creator-toolkit/) - Detailed notes on tools such as PixPin, PixelLab, Unsplash, screenshots, visual assets, and content production
 
 ## Development Tools
 

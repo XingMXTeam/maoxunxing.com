@@ -32,12 +32,12 @@
 {{ if and $.Params.hero_image (not $.Params.images) }}
   <meta
     property="og:image"
-    content="{{ printf "%s%s" .Permalink $.Params.hero_image }}"
+    content="{{ partial "seo-img-url.html" (dict "path" (printf "%s%s" .RelPermalink $.Params.hero_image)) }}"
   />
 {{ else if and .IsPage (eq .Type "book-reports") }}
   <meta
     property="og:image"
-    content="{{ printf "%s%s" .Permalink "cover.jpg" }}"
+    content="{{ partial "seo-img-url.html" (dict "path" (printf "%s%s" .RelPermalink "cover.jpg")) }}"
   />
 {{ else }}
   {{ with $.Params.images }}
@@ -46,8 +46,7 @@
       {{ if hasPrefix $img "http" }}
         <meta property="og:image" content="{{ $img }}" />
       {{ else }}
-        {{/* page-bundle relative path, e.g. "webpack/a.png" -> /zh-cn/webpack/a.png */}}
-        <meta property="og:image" content="{{ strings.TrimSuffix "/" $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}/{{ $img }}" />
+        <meta property="og:image" content="{{ partial "seo-img-url.html" (dict "path" $img) }}" />
       {{ end }}
     {{ end }}
   {{ else -}}
@@ -57,11 +56,11 @@
       {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}
     {{ end -}}
     {{- with $featured -}}
-      <meta property="og:image" content="{{ $featured.Permalink }}" />
+      <meta property="og:image" content="{{ partial "seo-img-url.html" (dict "path" $featured.RelPermalink) }}" />
     {{ else -}}
       {{- $ogImage := $images.GetMatch "*og-image*" -}}
       {{- with $ogImage -}}
-        <meta property="og:image" content="{{ $ogImage.Permalink }}" />
+        <meta property="og:image" content="{{ partial "seo-img-url.html" (dict "path" $ogImage.RelPermalink) }}" />
       {{ else -}}
         {{- with $.Site.Params.images -}}
           <meta property="og:image" content="{{ index . 0 | absURL }}" />

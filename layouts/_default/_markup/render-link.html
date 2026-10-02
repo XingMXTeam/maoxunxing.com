@@ -1,0 +1,14 @@
+{{- /* Rewrite relative link destinations on EN pages.
+     *
+     * Same root cause as render-image.html: bundle resources (sample code,
+     * downloads, ...) are published once under the zh-cn path, so a relative
+     * markdown link like [demo](./demo.js) on an EN page would resolve to
+     * /en/<slug>/demo.js which 404s (found by the 2026-10-02 full-site
+     * crawl). Absolute, anchor-only, and external URLs are left untouched.
+     */ -}}
+{{- $dest := .Destination -}}
+{{- if and (eq .Page.Lang "en") (not (findRE `^(https?://|/|#|mailto:)` $dest)) -}}
+  {{- $dest = strings.TrimPrefix "./" $dest -}}
+  {{- $dest = printf "/zh-cn%s%s" (strings.TrimPrefix "/en" .Page.RelPermalink) $dest -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

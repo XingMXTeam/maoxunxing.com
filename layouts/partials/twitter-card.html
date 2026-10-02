@@ -2,10 +2,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   {{- with $.Params.images -}}
     {{- $image := index . 0 -}}
-    <meta name="twitter:image" content="{{ strings.TrimSuffix "/" $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}/{{ $image }}">
+    <meta name="twitter:image" content="{{ partial "seo-img-url.html" (dict "path" $image) }}">
   {{- else -}}
     {{- with $.Params.hero_image -}}
-      <meta name="twitter:image" content="{{ strings.TrimSuffix "/" $.Site.BaseURL }}{{ $.Site.LanguagePrefix }}/{{ . }}">
+      <meta name="twitter:image" content="{{ partial "seo-img-url.html" (dict "path" .) }}">
     {{- end -}}
   {{- end -}}
 {{- else -}}
@@ -14,7 +14,7 @@
   {{- if not $featured }}{{ $featured = $images.GetMatch "*og-image*" }}{{ end -}}
   {{- with $featured }}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{ $featured.Permalink }}" />
+  <meta name="twitter:image" content="{{ partial "seo-img-url.html" (dict "path" $featured.RelPermalink) }}" />
   {{- else }}
   <meta name="twitter:card" content="summary" />
   {{- end -}}

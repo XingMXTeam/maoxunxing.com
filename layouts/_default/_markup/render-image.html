@@ -1,0 +1,15 @@
+{{- /* Rewrite relative image destinations on EN pages.
+     *
+     * Page-bundle resources are published ONCE, under the default language
+     * (zh-cn) path. Markdown like ![](a.png) on an EN page would otherwise
+     * resolve to /en/<slug>/a.png which 404s (found by the 2026-10-02
+     * full-site crawl). Swap the language prefix so both languages share
+     * the working zh-cn file. Absolute, anchor, data: and external URLs
+     * are left untouched.
+     */ -}}
+{{- $dest := .Destination -}}
+{{- if and (eq .Page.Lang "en") (not (findRE `^(https?://|/|#|data:|mailto:)` $dest)) -}}
+  {{- $dest = strings.TrimPrefix "./" $dest -}}
+  {{- $dest = printf "/zh-cn%s%s" (strings.TrimPrefix "/en" .Page.RelPermalink) $dest -}}
+{{- end -}}
+<img src="{{ $dest | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} />

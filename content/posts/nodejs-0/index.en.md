@@ -105,14 +105,14 @@ Common methods for Writable streams:
 - (...).pipe(stream)
 The data stream first goes to a resource pool. If writing is slow or paused, it will be buffered. If it's too fast, `write` will return `false`, triggering a `drain` event.
 Transform/Duplex streams can use all the methods mentioned above.
-## Creating a Readable Stream: [readable.js](./readable.js)
+## Creating a Readable Stream: [readable.js](/zh-cn/nodejs-0/readable.js)
 ```js
 const rs = new (require("stream").Readable)();
 rs.push("beep");
 rs.push(null); // null tells the consumer that the data has ended
 rs.pipe(process.stdout);
 ```
-## Creating a Writable Stream: [writable.js](./writable.js)
+## Creating a Writable Stream: [writable.js](/zh-cn/nodejs-0/writable.js)
 ```js
 const Stream = require("stream");
 const writableStream = new Stream.Writable({
@@ -125,7 +125,7 @@ const writableStream = new Stream.Writable({
 });
 process.stdin.pipe(writableStream);
 ```
-## Consuming a Readable Stream: [consume0.js](./consume0.js)
+## Consuming a Readable Stream: [consume0.js](/zh-cn/nodejs-0/consume0.js)
 ```js
 //(echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js
 process.stdin.on("readable", function () {
@@ -138,7 +138,7 @@ process.stdin.on("readable", function () {
 //<Buffer 64 65 66 0a> def\0
 //<Buffer 67 68 69 0a> ghi\0
 ```
-You can also buffer content when the consumer reads data: [read1.js](./read1.js)
+You can also buffer content when the consumer reads data: [read1.js](/zh-cn/nodejs-0/read1.js)
 ```js
 const rs = new (require("stream").Readable)();
 let c = 97;
@@ -152,7 +152,7 @@ process.on("exit", function () {
   console.error("\n_read() called " + (c - 97) + " times");
 });
 ```
-Reading data from a readable stream: [read2.js](./read2.js)
+Reading data from a readable stream: [read2.js](/zh-cn/nodejs-0/read2.js)
 ```js
 const Stream = require("stream");
 const readableStream = new Stream.Readable({
@@ -171,7 +171,7 @@ readableStream.pipe(writableStream);
 readableStream.push("hi!");
 readableStream.push("ho!");
 ```
-## Writing Data to a Writable Stream: [write1.js](./write1.js)
+## Writing Data to a Writable Stream: `write1.js`
 ```js
 const Stream = require("stream");
 const writableStream = new Stream.Writable();
@@ -179,7 +179,7 @@ const writableStream = new Stream.Writable();
 // var ws = fs.createWriteStream('message.txt');
 writableStream.write("hey!\n");
 ```
-## How to Close a Stream: [close1.js](./close1.js)
+## How to Close a Stream: [close1.js](/zh-cn/nodejs-0/close1.js)
 ```js
 const Stream = require("stream");
 const readableStream = new Stream.Readable({
@@ -203,7 +203,7 @@ readableStream.on("close", () => {
 writableStream.on("close", () => console.log("ended"));
 readableStream.destroy(); // Destroys the readable stream, triggering the 'close' event
 ```
-## How to Create a Transform Stream: [transform.js](./transform.js)
+## How to Create a Transform Stream: [transform.js](/zh-cn/nodejs-0/transform.js)
 ```js
 const { Transform } = require("stream");
 const TransformStream = new Transform({
@@ -229,7 +229,7 @@ function toUpper() {
   });
 }
 ```
-## How to Create a Duplex Stream: [duplex.js](./duplex.js)
+## How to Create a Duplex Stream: [duplex.js](/zh-cn/nodejs-0/duplex.js)
 ```js
 // nc localhost 8000
 const net = require("net"); // create tcp server
@@ -249,7 +249,7 @@ net
   })
   .listen(8001);
 ```
-## Object Streams [object.js](./object.js)
+## Object Streams [object.js](/zh-cn/nodejs-0/object.js)
 Normally, you can only read and write buffers (like text files) and strings. If you want to read objects, you need to enable object mode.
 ```js
 const through = require("through2");
@@ -292,10 +292,10 @@ tr.end();
 - pumpify
 - end-of-stream: Determines if a stream has ended, accepts a callback function
 ### collect-stream
-[collect.js](./collect.js)
+[collect.js](/zh-cn/nodejs-0/collect.js)
 It's the same thing as `concat-stream`, but it has error handling. It can be used for unit testing.
 ### duplexify
-[duplexify.js](./duplexify.js)
+`duplexify.js`
 ```js
 const duplexify = require("duplexify");
 const fs = require("fs");
@@ -399,7 +399,7 @@ pipeline(
 ```
 ### pumpify
 A combination of `pump` and `duplexify`. It returns a duplex stream.
-## How to Buffer a Stream to Read It All at Once: [concat.js](./concat.js)
+## How to Buffer a Stream to Read It All at Once: [concat.js](/zh-cn/nodejs-0/concat.js)
 ### concat-stream
 ```js
 const concat = require("concat-stream");
@@ -409,7 +409,7 @@ process.stdin.pipe(
   })
 );
 ```
-Complex scenarios. For example, we need to check the length of request parameters: [concat2.js](./concat2.js)
+Complex scenarios. For example, we need to check the length of request parameters: [concat2.js](/zh-cn/nodejs-0/concat2.js)
 ```js
 // curl -d msg=hello localhost:6000
 const concat = require("concat-stream");
@@ -438,7 +438,7 @@ server.listen(6000);
 ## rpc-stream
 RPC (Remote Procedure Call)
 It's essentially calling a function on another machine, usually based on TCP. For example, our group's HSF is a remote call. The source code is well worth reading to learn about how to design good interfaces.
-[rpc-server.js](./rpc-server.js)
+[rpc-server.js](/zh-cn/nodejs-0/rpc-server.js)
 ```js
 const rpc = require("rpc-stream");
 const net = require("net");
@@ -454,7 +454,7 @@ net
   })
   .listen(8001);
 ```
-[rpc-client.js](./rpc-client.js)
+[rpc-client.js](/zh-cn/nodejs-0/rpc-client.js)
 ```js
 const rpc = require("rpc-stream");
 const net = require("net");
@@ -505,23 +505,23 @@ yield new Promise((resolve, reject)=>{
 ```
 ### 3. VPN
 Too much code: Please open the files to view:
-[vpn-client.js](./vpn-client.js)
-[vpn-server.js](./vpn-server.js)
+[vpn-client.js](/zh-cn/nodejs-0/vpn-client.js)
+[vpn-server.js](/zh-cn/nodejs-0/vpn-server.js)
 ```shell
 node vpn-client.js
 node vpn-server.js
 node echo.js
 ```
 ### 4. Real-time Communication: WebSocket
-[websocket-client.js](./websocket-client.js)
-[websocket-server.js](./websocket-server.js)
+[websocket-client.js](/zh-cn/nodejs-0/websocket-client.js)
+[websocket-server.js](/zh-cn/nodejs-0/websocket-server.js)
 ```shell
 browserify websocket-client.js > public/bundle.js (or a Node.js client would also work)
 node websocket-server.js
 ```
 Question: What is the difference between WebSocket and [socket.io](https://github.com/socketio/socket.io/blob/master/lib/index.ts)?
 ### 5. P2P
-Peer-to-peer (P2P) service is a decentralized platform where two individuals interact directly without a third-party intermediary. [webrtc.js](./webrtc.js)
+Peer-to-peer (P2P) service is a decentralized platform where two individuals interact directly without a third-party intermediary. [webrtc.js](/zh-cn/nodejs-0/webrtc.js)
 ```shell
 tnpm run signalhub
 budo webrtc.js

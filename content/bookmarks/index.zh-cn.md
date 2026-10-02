@@ -12,7 +12,7 @@ description: "我会反复打开的工具、网站和资料入口"
 
 ## 创作工具
 
-- [内容创作者工具箱](/zh-cn/notes/creator-toolkit/) - PixPin、PixelLab、Unsplash 等内容生产、截图、素材和视觉工具的详细说明
+- [内容创作者工具箱](/zh-cn/creator-toolkit/) - PixPin、PixelLab、Unsplash 等内容生产、截图、素材和视觉工具的详细说明
 
 ## 开发工具
 

@@ -223,7 +223,7 @@ readableStream.push("hi!");
 readableStream.push("ho!");
 ```
 
-## 写入数据到可写的流： [write1.js](./write1.js)
+## 写入数据到可写的流： `write1.js`
 
 ```js
 const Stream = require("stream");

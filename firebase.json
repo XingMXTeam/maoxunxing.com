@@ -13,6 +13,56 @@
         "type": 301
       },
       {
+        "source": "/prompts/",
+        "destination": "/zh-cn/prompts/",
+        "type": 301
+      },
+      {
+        "source": "/prompts",
+        "destination": "/zh-cn/prompts/",
+        "type": 301
+      },
+      {
+        "source": "/projects/",
+        "destination": "/zh-cn/projects/",
+        "type": 301
+      },
+      {
+        "source": "/projects",
+        "destination": "/zh-cn/projects/",
+        "type": 301
+      },
+      {
+        "source": "/agent-workstation/",
+        "destination": "/zh-cn/agent-workstation/",
+        "type": 301
+      },
+      {
+        "source": "/agent-workstation",
+        "destination": "/zh-cn/agent-workstation/",
+        "type": 301
+      },
+      {
+        "source": "/ebook-factory/",
+        "destination": "/zh-cn/ebook-factory/",
+        "type": 301
+      },
+      {
+        "source": "/ebook-factory",
+        "destination": "/zh-cn/ebook-factory/",
+        "type": 301
+      },
+      {
+        "source": "/gemini-cli-antigravity-cli-migration-2026/",
+        "destination": "/zh-cn/gemini-cli-antigravity-cli-migration-2026/",
+        "type": 301
+      },
+      {
+        "source": "/gemini-cli-antigravity-cli-migration-2026",
+        "destination": "/zh-cn/gemini-cli-antigravity-cli-migration-2026/",
+        "type": 301
+      },
+      {
         "source": "/feed.xml",
         "destination": "/posts/index.xml",
         "type": 301
