@@ -68,16 +68,6 @@
         "type": 301
       },
       {
-        "source": "/en",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/en/",
-        "destination": "/",
-        "type": 301
-      },
-      {
         "source": "/ai-mindset-upgrade/",
         "destination": "/zh-cn/ai-mindset-upgrade/",
         "type": 301
