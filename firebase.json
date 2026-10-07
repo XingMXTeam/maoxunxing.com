@@ -64,7 +64,7 @@
       },
       {
         "source": "/feed.xml",
-        "destination": "/posts/index.xml",
+        "destination": "/zh-cn/index.xml",
         "type": 301
       },
       {
