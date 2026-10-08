@@ -108,8 +108,11 @@
     {{ partial "schema-breadcrumb.html" . }}
     {{ partial "schema-person.html" . }}
 
-    {{/* Keep every language version reciprocal; x-default matches the site default (root 301 -> /zh-cn/). */}}
-    {{- if .IsTranslated -}}
+    {{/* Keep every language version reciprocal; x-default matches the site default (root 301 -> /zh-cn/).
+        Paginated pages (/page/2/+) are excluded: their .AllTranslations resolve to page 1, so their
+        annotations would point at page 1 while page 1 never links back ("no return-tag"). Page 1
+        keeps its annotations, which stay fully reciprocal. */}}
+    {{- if and .IsTranslated (or (eq .Kind "page") (eq .Paginator.PageNumber 1)) -}}
       {{- $defaultPermalink := .Permalink -}}
       {{- range .AllTranslations -}}
         {{- if eq .Language.Lang "zh-cn" -}}
