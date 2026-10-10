@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#171916" media="(prefers-color-scheme: dark)" />
   <link rel="icon" href="data:," />
-  <title>填字即出图｜小红书图文/公众号封面批量生成（内测）</title>
-  <meta name="description" content="填入文案，批量生成小红书图文、小红书封面和公众号封面。首批免费内测招募中。" />
-  <meta property="og:title" content="填字即出图｜小红书图文/公众号封面批量生成（内测）" />
-  <meta property="og:description" content="填入文案，批量生成小红书图文、小红书封面和公众号封面。首批免费内测招募中。" />
+  <title>填字即出图｜小红书封面/图文卡一键生成（免费试用）</title>
+  <meta name="description" content="填几个字，一键生成小红书封面与图文卡。中文原生排版，中文字零错误，免费试用不用注册。" />
+  <meta property="og:title" content="填字即出图｜小红书封面/图文卡一键生成（免费试用）" />
+  <meta property="og:description" content="填几个字，一键生成小红书封面与图文卡。中文原生排版，中文字零错误，免费试用不用注册。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -219,6 +219,116 @@
       transform: rotate(3deg);
     }
 
+    /* ---- 生成器 ---- */
+    .try { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .try-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
+    .try-panel h3 { margin: 0 0 14px; font-size: 15px; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+    .tpl-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
+    .tpl { cursor: pointer; }
+    .tpl input { position: absolute; opacity: 0; pointer-events: none; }
+    .tpl-card {
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+      transition: border-color .15s ease, transform .15s ease;
+      background: var(--paper);
+    }
+    .tpl-card .sw { height: 64px; border-radius: 6px; margin-bottom: 10px; display: grid; place-items: center; font-weight: 900; font-size: 22px; }
+    .tpl-card .sw-dzb { background: #171916; color: #fff; }
+    .tpl-card .sw-mb { background: #FBF8F1; color: #0D3B2E; border: 1px solid #E4DED1; }
+    .tpl-card .sw-sz { background: #1677ff; color: #fff; }
+    .tpl-card strong { display: block; font-size: 14px; }
+    .tpl-card span { font-size: 12px; color: var(--muted); }
+    .tpl input:checked + .tpl-card { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px var(--shadow); }
+    .tpl input:focus-visible + .tpl-card { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .field { display: grid; gap: 8px; margin-bottom: 20px; }
+    .field label { font-size: 14px; font-weight: 700; }
+    .field .hint { font-size: 12px; color: var(--muted); font-weight: 400; }
+    .try-panel input[type="text"], .try-panel textarea {
+      width: 100%;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 13px 15px;
+      outline: none;
+      font-size: 15px;
+    }
+    .try-panel textarea { min-height: 76px; resize: vertical; line-height: 1.7; }
+    .try-panel input:focus, .try-panel textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .dl-btn {
+      width: 100%;
+      min-height: 58px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 color-mix(in srgb, var(--ink) 30%, transparent);
+      transition: transform .18s ease, box-shadow .18s ease;
+      margin-top: 6px;
+    }
+    .dl-btn:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 color-mix(in srgb, var(--ink) 30%, transparent); }
+    .dl-note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 12px; }
+
+    .cv-wrap {
+      position: sticky;
+      top: 24px;
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+    }
+    .cv-frame {
+      width: min(400px, 100%);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px var(--shadow), 0 0 0 1px var(--line);
+      background: #fff;
+    }
+    .cv-frame canvas { display: block; width: 100%; height: auto; }
+    .cv-meta { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 12px; }
+    .cv-meta .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+
+    .email-box {
+      width: min(400px, 100%);
+      background: var(--form-bg);
+      color: var(--form-ink);
+      border-radius: 12px;
+      padding: 26px 24px;
+      box-shadow: 6px 6px 0 var(--accent);
+    }
+    .email-box h4 { margin: 0 0 8px; font-size: 18px; }
+    .email-box p { margin: 0 0 16px; font-size: 13px; color: var(--form-muted); }
+    .email-box .row { display: grid; gap: 10px; }
+    .email-box input, .email-box select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid color-mix(in srgb, var(--form-ink) 36%, transparent);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--form-ink);
+      padding: 10px 13px;
+      outline: none;
+      font-size: 14px;
+    }
+    .email-box select option { color: #171916; background: #fff; }
+    .email-box input:focus, .email-box select:focus { border-color: var(--accent-dark); }
+    .email-box button {
+      min-height: 50px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .email-box .fine { font-size: 11px; color: var(--form-muted); margin: 10px 0 0; }
+    .honey { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+
     .pain {
       padding: 34px 0;
       border-bottom: 1px solid var(--line);
@@ -258,55 +368,6 @@
     .format-mark { width: 44px; height: 8px; background: currentColor; }
     .planned { margin-top: 22px; color: var(--muted); font-size: 13px; }
 
-    .join { padding-top: 120px; }
-    .join-panel {
-      background: var(--form-bg);
-      color: var(--form-ink);
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 72px;
-      padding: clamp(34px, 6vw, 76px);
-      box-shadow: 12px 12px 0 var(--accent);
-    }
-    .join-copy h2 { margin: 0 0 20px; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.1; letter-spacing: -.045em; }
-    .join-copy p { color: var(--form-muted); margin: 0 0 28px; }
-    .promise { list-style: none; margin: 0; padding: 0; }
-    .promise li { padding: 10px 0; border-top: 1px solid color-mix(in srgb, var(--form-ink) 20%, transparent); font-size: 14px; }
-    .promise li::before { content: "→"; color: var(--accent-dark); font-weight: 900; margin-right: 10px; }
-    form { display: grid; gap: 20px; }
-    .field { display: grid; gap: 8px; }
-    label, legend { font-size: 14px; font-weight: 700; }
-    input, select, textarea {
-      width: 100%;
-      min-height: 50px;
-      border: 1px solid color-mix(in srgb, var(--form-ink) 36%, transparent);
-      border-radius: 5px;
-      background: transparent;
-      color: var(--form-ink);
-      padding: 12px 14px;
-      outline: none;
-    }
-    textarea { min-height: 92px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { border-color: var(--accent-dark); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-dark) 25%, transparent); }
-    select option { color: #171916; background: #fff; }
-    ::placeholder { color: color-mix(in srgb, var(--form-muted) 70%, transparent); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .submit {
-      width: 100%;
-      min-height: 56px;
-      border: 0;
-      border-radius: 5px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 4px 4px 0 color-mix(in srgb, var(--form-ink) 35%, transparent);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .submit:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 color-mix(in srgb, var(--form-ink) 35%, transparent); }
-    .form-note { color: var(--form-muted); font-size: 12px; line-height: 1.6; margin: -6px 0 0; }
-    .honey { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
-
     .faq { padding-bottom: 90px; }
     .faq h2 { font-size: 30px; margin: 0 0 24px; }
     details { border-top: 1px solid var(--line); padding: 20px 0; }
@@ -322,6 +383,8 @@
       .hero { grid-template-columns: 1fr; padding-top: 54px; gap: 30px; }
       .hero-copy > p { font-size: 17px; }
       .preview { min-height: 530px; }
+      .try-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cv-wrap { position: static; }
       .pain-grid { grid-template-columns: 1fr; }
       .pain-item, .pain-item:first-child { padding: 18px 0; border-left:0; border-top:1px solid var(--line); }
       .pain-item:first-child { border-top:0; }
@@ -330,7 +393,6 @@
       .step p { grid-column: 2; }
       .format-grid { grid-template-columns: 1fr 1fr; }
       .format:nth-child(3) { grid-column: 1 / -1; }
-      .join-panel { grid-template-columns: 1fr; gap: 46px; }
     }
     @media (max-width: 620px) {
       .wrap { width: min(100% - 28px, 1180px); }
@@ -349,16 +411,17 @@
       .wide-title { font-size: 16px; }
       .wide-swatch { width: 46px; }
       .cursor-tag { right: 14px; top: 42px; }
-      section { padding: 78px 0; }
+      section, .try { padding: 78px 0; }
       .section-head { margin-bottom: 40px; }
       .step { grid-template-columns: 44px 1fr; gap: 14px; padding: 25px 0; }
       .step h3 { font-size: 21px; }
       .format-grid { grid-template-columns: 1fr; gap: 14px; }
       .format, .format:nth-child(1), .format:nth-child(2), .format:nth-child(3) { min-height: 250px; aspect-ratio: auto; }
       .format:nth-child(3) { grid-column: auto; }
-      .join { padding-top: 80px; }
-      .join-panel { padding: 32px 20px; margin-inline: -4px; box-shadow: 7px 7px 0 var(--accent); }
-      .form-row { grid-template-columns: 1fr; }
+      .field-row { grid-template-columns: 1fr; }
+      .tpl-cards { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .tpl-card { padding: 10px 6px; }
+      .tpl-card .sw { height: 48px; font-size: 18px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -371,12 +434,12 @@
     <div class="wrap">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="eyebrow">首批内测招募中</div>
+          <div class="eyebrow">免费试用 · 不用注册</div>
           <h1 id="hero-title">你只填字，<br><span class="highlight">版式自动长好。</span></h1>
-          <p>为中文内容创作者做的自动出图工具。填一次标题与正文，快速得到小红书图文、封面和公众号封面，不再从空白画布开始。</p>
+          <p>为中文内容创作者做的自动出图工具。下面就是第一版：填几个字，一键生成小红书封面，中文排版细节拉满，中文字零错误。</p>
           <div class="actions">
-            <a class="cta" href="#join">报名首批内测</a>
-            <span class="micro">免费报名 · 开放时邮件通知</span>
+            <a class="cta" href="#try">直接试用</a>
+            <span class="micro">纯前端生成 · 图片只在你的浏览器里</span>
           </div>
         </div>
         <div class="preview" aria-label="小红书图文与公众号封面版式预览">
@@ -403,11 +466,111 @@
       </section>
     </div>
 
+    <section class="try" id="try">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>第一版：<br>小红书封面生成器</h2>
+          <p>左边填字，右边实时出图。三种版式对应三种爆款公式，排版细节（行首禁则、标点挤压、字间距）全部自动处理好。满意就下载，不用注册。</p>
+        </div>
+        <div class="try-grid">
+          <div class="try-panel">
+            <h3>选一种版式</h3>
+            <div class="tpl-cards" role="radiogroup" aria-label="版式选择">
+              <label class="tpl">
+                <input type="radio" name="tpl" value="dazibao" checked />
+                <span class="tpl-card">
+                  <span class="sw sw-dzb">爆</span>
+                  <strong>大字报</strong>
+                  <span>冲突感标题</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="mibai" />
+                <span class="tpl-card">
+                  <span class="sw sw-mb">简</span>
+                  <strong>米白极简</strong>
+                  <span>干净信息流</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="shuzi" />
+                <span class="tpl-card">
+                  <span class="sw sw-sz">3</span>
+                  <strong>数字前置</strong>
+                  <span>清单体爆款</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="field">
+              <label for="in-title">标题 <span class="hint">核心冲突点放前面，字号会自动适配</span></label>
+              <textarea id="in-title" rows="2">10万存5年，大行给6500，小银行给10500</textarea>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="in-key">重点词 <span class="hint">自动高亮，可空</span></label>
+                <input type="text" id="in-key" value="10500" />
+              </div>
+              <div class="field">
+                <label for="in-num">数字 <span class="hint">仅数字版式用</span></label>
+                <input type="text" id="in-num" value="3" inputmode="numeric" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="in-sub">副标题 <span class="hint">一句话补充，可空</span></label>
+              <textarea id="in-sub" rows="2">11月存款利率实测：同一笔钱，换个地方多拿4000</textarea>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="in-tag">左上角标签</label>
+                <input type="text" id="in-tag" value="小红书封面" />
+              </div>
+              <div class="field">
+                <label for="in-sign">落款</label>
+                <input type="text" id="in-sign" value="毛毛星带你飞" />
+              </div>
+            </div>
+            <button class="dl-btn" id="dl" type="button">下载 PNG（1080 × 1440）</button>
+            <p class="dl-note">3:4 小红书原生比例 · 发笔记时选"原图"更清晰</p>
+          </div>
+
+          <div class="cv-wrap">
+            <div class="cv-frame">
+              <canvas id="cv" width="1080" height="1440" aria-label="封面预览"></canvas>
+            </div>
+            <div class="cv-meta"><span class="dot"></span><span id="cv-status">实时预览 · 改字即变</span></div>
+            <div class="email-box">
+              <h4>用着顺手？</h4>
+              <p>批量生成、公众号封面、更多版式正在排期。留下邮箱，开放时第一时间通知你——你的使用场景会决定先做什么。</p>
+              <form action="https://formsubmit.co/bff49359dd515840223b53fd5357c455" method="POST">
+                <input type="hidden" name="_subject" value="中文创作者自动出图工具｜试用后报名" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <div class="row">
+                  <input name="邮箱" type="email" inputmode="email" autocomplete="email" placeholder="你的邮箱 *" required />
+                  <select name="每周出图量" aria-label="每周大约做几张图">
+                    <option value="" selected>每周大约做几张图？（选填）</option>
+                    <option>1–5 张</option>
+                    <option>6–15 张</option>
+                    <option>16–30 张</option>
+                    <option>30 张以上</option>
+                  </select>
+                  <button type="submit">通知我 →</button>
+                </div>
+                <p class="fine">邮箱仅用于本产品的开放通知，不群发广告。</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="pain">
       <div class="wrap pain-grid">
         <div class="pain-item"><strong>不学拖拽</strong><span>用熟悉的表单填字，不研究图层和组件</span></div>
         <div class="pain-item"><strong>不改三遍</strong><span>同一份内容，自动适配不同平台尺寸</span></div>
-        <div class="pain-item"><strong>不怕中文挤坏</strong><span>围绕中文换行、标点和层级做排版</span></div>
+        <div class="pain-item"><strong>中文字零错误</strong><span>程序化排版，不是 AI 生图，不会出现乱码错字</span></div>
       </div>
     </div>
 
@@ -415,23 +578,23 @@
       <div class="wrap">
         <div class="section-head">
           <h2>从文案到成图，<br>只留三个动作</h2>
-          <p>它不是另一个让你“自己设计”的编辑器，而是把重复排版变成自动步骤。你保留内容判断，把时间花在选题和表达上。</p>
+          <p>它不是另一个让你"自己设计"的编辑器，而是把重复排版变成自动步骤。你保留内容判断，把时间花在选题和表达上。</p>
         </div>
         <div class="steps">
           <div class="step">
             <div class="step-no">01</div>
             <h3>填入内容</h3>
-            <p>粘贴标题、正文与重点句，选择你要发布的平台。</p>
+            <p>粘贴标题、重点词和副标题，选择一种版式气质。</p>
           </div>
           <div class="step">
             <div class="step-no">02</div>
-            <h3>挑一种气质</h3>
-            <p>换配色与版式方向，不用从几千个模板里反复筛。</p>
+            <h3>实时预览</h3>
+            <p>改字即变。中文换行、标点禁则、重点高亮全部自动处理。</p>
           </div>
           <div class="step">
             <div class="step-no">03</div>
-            <h3>拿走整套图</h3>
-            <p>预览后下载；多标题批量生成会优先邀请高频创作者试用。</p>
+            <h3>下载拿走</h3>
+            <p>1080 × 1440 PNG，小红书原生 3:4，直接发笔记。</p>
           </div>
         </div>
       </div>
@@ -440,18 +603,18 @@
     <section class="formats">
       <div class="wrap">
         <div class="section-head">
-          <h2>先把最常用的<br>三种尺寸做好</h2>
-          <p>首批内测计划覆盖小红书与公众号。每种版式围绕真实发布场景设计，不靠一张通用模板硬裁。</p>
+          <h2>排期中的<br>下一步</h2>
+          <p>第一版先把小红书封面做扎实。下面这些按试用者的真实出图量和反馈排优先级——你的报名选择会直接影响顺序。</p>
         </div>
         <div class="format-grid">
           <article class="format">
-            <span class="format-num">3 : 4</span>
-            <div><h3>小红书<br>图文卡片</h3><p>标题、论点、重点句，批量保持统一层级</p></div>
+            <span class="format-num">BATCH</span>
+            <div><h3>批量<br>生成</h3><p>粘贴多组标题，一次出多张差异图</p></div>
             <div class="format-mark"></div>
           </article>
           <article class="format">
-            <span class="format-num">COVER</span>
-            <div><h3>小红书<br>笔记封面</h3><p>冲突点突出，信息密度不挤成一团</p></div>
+            <span class="format-num">3 : 4</span>
+            <div><h3>图文<br>内容卡</h3><p>标题、论点、重点句，批量保持统一层级</p></div>
             <div class="format-mark"></div>
           </article>
           <article class="format">
@@ -460,87 +623,240 @@
             <div class="format-mark"></div>
           </article>
         </div>
-        <p class="planned">以上为首批内测计划范围，最终开放顺序会参考报名者最常用的平台。</p>
-      </div>
-    </section>
-
-    <section class="join" id="join">
-      <div class="wrap">
-        <div class="join-panel">
-          <div class="join-copy">
-            <h2>想少花时间<br>在重复排版上？</h2>
-            <p>留下邮箱和你的使用场景。我们会优先邀请真正高频做内容的人参与首批内测。</p>
-            <ul class="promise">
-              <li>开放时间与试用方式，用邮件通知</li>
-              <li>报名免费，不需要预付</li>
-              <li>你的选择会影响首批功能优先级</li>
-            </ul>
-          </div>
-
-          <form action="https://formsubmit.co/bff49359dd515840223b53fd5357c455" method="POST">
-            <input type="hidden" name="_subject" value="中文创作者自动出图工具｜新内测报名" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-            <div class="field">
-              <label for="email">你的邮箱 *</label>
-              <input id="email" name="邮箱" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" required />
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="platform">你主要做哪个平台？ *</label>
-                <select id="platform" name="主要平台" required>
-                  <option value="" selected disabled>请选择</option>
-                  <option>小红书</option>
-                  <option>微信公众号</option>
-                  <option>小红书 + 微信公众号</option>
-                  <option>其他内容平台</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="frequency">每周大约做几张图？</label>
-                <select id="frequency" name="每周出图量">
-                  <option value="" selected>暂不确定</option>
-                  <option>1–5 张</option>
-                  <option>6–15 张</option>
-                  <option>16–30 张</option>
-                  <option>30 张以上</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label for="problem">现在最费时间的出图环节是什么？</label>
-              <textarea id="problem" name="最费时间的环节" placeholder="例如：同一篇内容要改三种尺寸；中文标题总是排不好……"></textarea>
-            </div>
-            <button class="submit" type="submit">报名首批内测 →</button>
-            <p class="form-note">提交后会跳转至报名确认页。邮箱仅用于本产品的内测与开放通知。</p>
-          </form>
-        </div>
       </div>
     </section>
 
     <section class="faq">
       <div class="wrap">
-        <h2>报名之前，你可能还想知道</h2>
+        <h2>你可能还想知道</h2>
         <details>
           <summary>它和 Canva、稿定有什么不同？</summary>
-          <p>Canva、稿定更像“给你工具，自己设计”。这里更关注固定场景的自动排版：填字、选风格、直接出一套尺寸，不做复杂的拖拽编辑器。</p>
+          <p>Canva、稿定是"给你工具，自己设计"。这里是固定场景的自动排版：填字、选版式、直接出图，不做拖拽编辑器。目标也不是"好看"，是"有点击欲"。</p>
         </details>
         <details>
-          <summary>现在就能用吗？</summary>
-          <p>还在首批内测招募阶段。报名后，开放时间、试用入口与使用方式会通过邮件发送。</p>
+          <summary>和 AI 生图工具（如即梦）有什么区别？</summary>
+          <p>AI 生图擅长画面，短板是图中的中文字——有概率出现乱码或错字。这里是程序化排版，每个字都是精确渲染的，中文字零错误。</p>
         </details>
         <details>
-          <summary>会支持批量生成吗？</summary>
-          <p>批量是计划中的重点能力：粘贴多组标题或内容，一次生成多张差异图。首批实现顺序会根据报名者的出图量与反馈决定。</p>
+          <summary>我的文案会上传到服务器吗？</summary>
+          <p>不会。第一版是纯前端生成，图片在你的浏览器里画出来，不经过任何服务器。</p>
+        </details>
+        <details>
+          <summary>批量生成什么时候有？</summary>
+          <p>在排期中。试用后留下邮箱和你的出图量，开放时第一时间通知你，高频创作者会优先邀请。</p>
         </details>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">中文内容创作者自动出图工具 · 首批内测招募</div>
+    <div class="wrap">中文内容创作者自动出图工具 · 填字即出图</div>
   </footer>
+
+<script>
+(function () {
+  "use strict";
+  var W = 1080, H = 1440, PAD = 96, CW = W - PAD * 2;
+  var FONT = '"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif';
+
+  var STYLES = {
+    dazibao: { bg: "#171916", ink: "#ffffff", muted: "#b9bdb4", accent: "#ff4c32", mark: "#d9ff64", tagBg: "#ff4c32", tagInk: "#ffffff", footLine: "#3a3d37", sub: "#d8dcd4" },
+    mibai:   { bg: "#FBF8F1", ink: "#0D3B2E", muted: "#75857C", accent: "#B9F73D", mark: "#B9F73D", tagBg: "#0D3B2E", tagInk: "#ffffff", footLine: "#E4DED1", sub: "#3d5a4f" },
+    shuzi:   { bg: "#1677ff", ink: "#ffffff", muted: "#cfe0ff", accent: "#ffd44d", mark: "#ffd44d", tagBg: "#ffffff", tagInk: "#1677ff", footLine: "rgba(255,255,255,.4)", sub: "#e8f1ff" }
+  };
+
+  // 中文排版禁则：行首不能出现闭标点，行尾不能出现开标点
+  var NO_START = "，。！？；：、）】》～…—·";
+  var NO_END = "（【《「『〈〈";
+
+  function wrapText(ctx, text, maxW) {
+    var lines = [], cur = "", i, ch, t, w;
+    var chars = text.split("");
+    for (i = 0; i < chars.length; i++) {
+      ch = chars[i];
+      if (ch === "\n") { lines.push(cur); cur = ""; continue; }
+      t = cur + ch;
+      w = ctx.measureText(t).width;
+      if (w > maxW && cur.length > 0) {
+        if (NO_START.indexOf(ch) >= 0) {
+          // 闭标点跟上行（允许轻微溢出，不单独开新行）
+          cur = t; lines.push(cur); cur = "";
+        } else if (NO_END.indexOf(ch) >= 0) {
+          // 开标点不留在行尾，推到下一行开头
+          lines.push(cur); cur = ch;
+        } else {
+          lines.push(cur); cur = ch;
+        }
+      } else {
+        cur = t;
+      }
+    }
+    if (cur) lines.push(cur);
+    return lines;
+  }
+
+  function fitLines(ctx, text, maxW, maxLines, startSize, minSize, weight) {
+    var size = startSize, lines;
+    while (size >= minSize) {
+      ctx.font = weight + " " + size + "px " + FONT;
+      lines = wrapText(ctx, text, maxW);
+      if (lines.length <= maxLines) return { size: size, lines: lines };
+      size -= 8;
+    }
+    ctx.font = weight + " " + minSize + "px " + FONT;
+    lines = wrapText(ctx, text, maxW);
+    return { size: minSize, lines: lines.slice(0, maxLines) };
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function drawMarkBehind(ctx, lines, x, y, lineH, size, keyword, color) {
+    if (!keyword) return;
+    ctx.save();
+    ctx.fillStyle = color;
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i], from = 0, idx;
+      while ((idx = line.indexOf(keyword, from)) >= 0) {
+        var bx = x + ctx.measureText(line.slice(0, idx)).width;
+        var bw = ctx.measureText(keyword).width;
+        // 整块高亮：按连续词组整块涂，不逐字碎
+        ctx.fillRect(bx - 8, y + i * lineH - size * 0.92, bw + 16, size * 1.12);
+        from = idx + keyword.length;
+      }
+    }
+    ctx.restore();
+  }
+
+  function render() {
+    var canvas = document.getElementById("cv");
+    var ctx = canvas.getContext("2d");
+    var tpl = (document.querySelector('input[name="tpl"]:checked') || {}).value || "dazibao";
+    var S = STYLES[tpl] || STYLES.dazibao;
+
+    var title = (document.getElementById("in-title").value || "").trim() || "在这里输入标题";
+    var keyword = (document.getElementById("in-key").value || "").trim();
+    var num = (document.getElementById("in-num").value || "").trim();
+    var sub = (document.getElementById("in-sub").value || "").trim();
+    var tag = (document.getElementById("in-tag").value || "").trim() || "小红书封面";
+    var sign = (document.getElementById("in-sign").value || "").trim();
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = S.bg;
+    ctx.fillRect(0, 0, W, H);
+    ctx.textBaseline = "alphabetic";
+
+    // 标签胶囊
+    ctx.font = '800 30px "DM Sans",' + FONT;
+    var tagW = ctx.measureText(tag).width + 56;
+    var tagY = 96;
+    ctx.fillStyle = S.tagBg;
+    roundRect(ctx, PAD, tagY, tagW, 62, 31);
+    ctx.fill();
+    ctx.fillStyle = S.tagInk;
+    ctx.fillText(tag, PAD + 28, tagY + 43);
+
+    var cursorY = tagY + 62 + 90;
+
+    // 数字版式：巨大数字
+    if (tpl === "shuzi" && num) {
+      ctx.font = '700 340px "DM Sans",' + FONT;
+      ctx.fillStyle = S.ink;
+      ctx.globalAlpha = 0.95;
+      ctx.fillText(num, PAD, cursorY + 260);
+      ctx.globalAlpha = 1;
+      cursorY += 400;
+    }
+
+    // 标题（字号自适应，最多 5 行）
+    var t = fitLines(ctx, title, CW, 5, 132, 64, "900");
+    var lineH = t.size * 1.28;
+    // 高亮先画（在字下面）
+    drawMarkBehind(ctx, t.lines, PAD, cursorY, lineH, t.size, keyword, S.mark);
+    ctx.font = "900 " + t.size + "px " + FONT;
+    ctx.fillStyle = S.ink;
+    for (var i = 0; i < t.lines.length; i++) {
+      ctx.fillText(t.lines[i], PAD, cursorY + i * lineH);
+    }
+    cursorY += t.lines.length * lineH + 56;
+
+    // 副标题
+    if (sub) {
+      var s = fitLines(ctx, sub, CW, 3, 44, 32, "500");
+      ctx.font = "500 " + s.size + "px " + FONT;
+      ctx.fillStyle = S.sub;
+      var sLineH = s.size * 1.7;
+      for (var j = 0; j < s.lines.length; j++) {
+        ctx.fillText(s.lines[j], PAD, cursorY + j * sLineH);
+      }
+    }
+
+    // 页脚
+    var footY = H - 120;
+    ctx.strokeStyle = S.footLine;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(PAD, footY);
+    ctx.lineTo(W - PAD, footY);
+    ctx.stroke();
+    ctx.font = "500 28px " + FONT;
+    ctx.fillStyle = S.muted;
+    if (sign) ctx.fillText(sign, PAD, footY + 62);
+    var brand = "填字即出图";
+    var bw = ctx.measureText(brand).width;
+    ctx.fillText(brand, W - PAD - bw, footY + 62);
+
+    var st = document.getElementById("cv-status");
+    if (st) st.textContent = "实时预览 · 改字即变";
+  }
+
+  var timer = null;
+  function schedule() {
+    clearTimeout(timer);
+    timer = setTimeout(render, 120);
+  }
+
+  function download() {
+    var canvas = document.getElementById("cv");
+    render();
+    canvas.toBlob(function (blob) {
+      if (!blob) return;
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "chutu-" + Date.now() + ".png";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () {
+        URL.revokeObjectURL(a.href);
+        a.remove();
+      }, 4000);
+      var st = document.getElementById("cv-status");
+      if (st) st.textContent = "已下载 · 欢迎留下邮箱，第一时间拿新版式";
+    }, "image/png");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var inputs = document.querySelectorAll("#try input, #try textarea");
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener("input", schedule);
+      inputs[i].addEventListener("change", schedule);
+    }
+    document.getElementById("dl").addEventListener("click", download);
+    // 等字体就绪后再渲染一次，避免首屏回退字体
+    render();
+    if (document.fonts && document.fonts.load) {
+      document.fonts.load('900 100px "Noto Sans SC"').then(render).catch(function(){});
+      document.fonts.load('500 100px "Noto Sans SC"').then(render).catch(function(){});
+    }
+  });
+})();
+</script>
 </body>
 </html>
