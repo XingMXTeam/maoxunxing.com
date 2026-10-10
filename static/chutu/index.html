@@ -607,15 +607,19 @@
                 <input type="text" id="zr-key" value="看得开" />
               </div>
               <div class="field">
-                <label>背景图 <span class="hint">上传自己的人像照片，点选 mock 或上传替换</span></label>
+                <label>背景图 <span class="hint">点选 mock 或上传替换</span></label>
                 <div class="mockrow" data-tpl="zhenren">
-                  <img src="bg/mock-smile.jpg" data-url="bg/mock-smile.jpg" alt="微笑" />
                   <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
+                  <img src="bg/mock-smile.jpg" data-url="bg/mock-smile.jpg" alt="微笑" />
                   <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
                 </div>
                 <input type="file" id="bg-zr" accept="image/*" />
               </div>
-              <p class="fgroup-note">白色人物描边（抠图白边）代码做不出来，需要提前抠好图再上传；模板负责标题排版和装饰。</p>
+              <div class="field">
+                <label for="bg-zr-person">人物贴纸 <span class="hint">透明底 PNG，自动加白边；默认已内置</span></label>
+                <input type="file" id="bg-zr-person" accept="image/png" />
+              </div>
+              <p class="fgroup-note">人物白边已支持：上传透明底人物 PNG 会自动加一圈白边。默认内置贴纸人物，可直接用。</p>
             </div>
 
             <div class="fgroup" data-tpl="tiwen" hidden>
@@ -1206,11 +1210,81 @@
     footer(ctx, sign);
   }
 
+  // ---- 人物贴纸层：透明底 PNG 自动加白边 ----
+  var personImgs = {};
+  function hasTransparency(img) {
+    try {
+      var c = document.createElement("canvas");
+      c.width = 32; c.height = 32;
+      var x = c.getContext("2d");
+      x.drawImage(img, 0, 0, 32, 32);
+      var d = x.getImageData(0, 0, 32, 32).data;
+      for (var i = 3; i < d.length; i += 16) if (d[i] < 250) return true;
+    } catch (e) {}
+    return false;
+  }
+  function whiteOutline(img, px) {
+    var s = document.createElement("canvas");
+    s.width = img.width; s.height = img.height;
+    var sx = s.getContext("2d");
+    sx.drawImage(img, 0, 0);
+    sx.globalCompositeOperation = "source-in";
+    sx.fillStyle = "#ffffff";
+    sx.fillRect(0, 0, s.width, s.height);
+    var c = document.createElement("canvas");
+    c.width = img.width + px * 2;
+    c.height = img.height + px * 2;
+    var x = c.getContext("2d");
+    var steps = 20;
+    for (var i = 0; i < steps; i++) {
+      var a = Math.PI * 2 * i / steps;
+      x.drawImage(s, px + Math.cos(a) * px, px + Math.sin(a) * px);
+    }
+    x.drawImage(img, px, px);
+    return c;
+  }
+  function bindPerson(inputId, tplKey) {
+    var el = document.getElementById(inputId);
+    if (!el) return;
+    el.addEventListener("change", function () {
+      var f = el.files && el.files[0];
+      if (!f) { personImgs[tplKey] = null; render(); return; }
+      var img = new Image();
+      img.onload = function () {
+        URL.revokeObjectURL(img.src);
+        var out = hasTransparency(img)
+          ? whiteOutline(img, Math.max(8, Math.round(img.width * 0.012)))
+          : img;
+        personImgs[tplKey] = { img: img, outlined: out };
+        render();
+      };
+      img.src = URL.createObjectURL(f);
+    });
+  }
+  function loadDefaultPerson(tplKey, url) {
+    var img = new Image();
+    img.onload = function () {
+      personImgs[tplKey] = { img: img, outlined: img };
+      if (currentTpl() === tplKey) render();
+    };
+    img.src = url;
+  }
+  // 人物贴纸绘制：居中偏右，高度约 640
+  function drawPerson(ctx, tplKey) {
+    var p = personImgs[tplKey];
+    if (!p || !p.outlined) return;
+    var o = p.outlined;
+    var ph = 640, pw = o.width * ph / o.height;
+    var px = 660 - pw / 2, py = 490;
+    ctx.drawImage(o, px, py, pw, ph);
+  }
+
   // ---- 模板：真人出镜（复刻"停止内耗"：黄描边大标题+副标题+底部金句）----
   function renderZhenren(ctx) {
     var photo = bgImgs["zhenren"];
     if (photo) drawBgCover(ctx, photo);
     else { ctx.fillStyle = "#2b2b33"; ctx.fillRect(0, 0, W, H); }
+    drawPerson(ctx, "zhenren");
     ctx.textAlign = "left";
     var STROKE = "#4a3018", YEL = "#FFDD33";
 
@@ -1260,8 +1334,9 @@
       ctx.fillText("」", PAD + 40 + s2w + 10, sy);
       sy += a2 * 1.32;
     }
-    swoosh(ctx, W - PAD - 160, 560, 90, YEL);
-    star(ctx, W - PAD - 60, 700, 22, "#ffffff");
+    swoosh(ctx, W - PAD - 130, 360, 80, YEL);
+    star(ctx, PAD + 60, 1060, 22, "#ffffff");
+    star(ctx, W - PAD - 60, 980, 16, YEL);
 
     var bot = val("zr-bottom"), bkw = val("zr-key");
     if (bot) {
@@ -1533,6 +1608,7 @@
     bindPhoto("bg-mb", "miaobian");
     bindPhoto("bg-zs", "zhuangse");
     bindPhoto("bg-zr", "zhenren");
+    bindPerson("bg-zr-person", "zhenren");
     bindPhoto("bg-sp", "shipai");
     var thumbs = document.querySelectorAll(".mockrow img");
     for (var ti = 0; ti < thumbs.length; ti++) {
@@ -1547,8 +1623,9 @@
       document.querySelector('.mockrow[data-tpl="miaobian"] img'));
     setBgFromUrl("zhuangse", "bg/mock-person.jpg",
       document.querySelector('.mockrow[data-tpl="zhuangse"] img'));
-    setBgFromUrl("zhenren", "bg/mock-smile.jpg",
+    setBgFromUrl("zhenren", "bg/mock-cafe.jpg",
       document.querySelector('.mockrow[data-tpl="zhenren"] img'));
+    loadDefaultPerson("zhenren", "bg/mock-sticker.png");
     setBgFromUrl("shipai", "bg/mock-street.jpg",
       document.querySelector('.mockrow[data-tpl="shipai"] img'));
     var dzSw = document.querySelectorAll("#dz-colors span");
