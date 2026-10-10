@@ -236,7 +236,7 @@
       background: var(--paper);
     }
     .tpl-card .sw { height: 64px; border-radius: 6px; margin-bottom: 10px; display: grid; place-items: center; font-weight: 900; font-size: 22px; }
-    .tpl-card .sw-suanzhang { background: #FBF8F1; color: #0D3B2E; border: 1px solid #E4DED1; }
+    .tpl-card .sw-dzb { background: #ffffff; color: #111; border: 1px solid #E4DED1; }
     .tpl-card .sw-tiwen { background: #B9F73D; color: #0D3B2E; }
     .tpl-card .sw-miaobian { background: linear-gradient(180deg, #3a4666, #14141c); color: #fff; font-size: 18px; text-shadow: -2px 0 0 #0D3B2E, 2px 0 0 #0D3B2E, 0 -2px 0 #0D3B2E, 0 2px 0 #0D3B2E, -2px -2px 0 #0D3B2E, 2px 2px 0 #0D3B2E; }
     .tpl-card .sw-qingdan { background: #F4EFE4; color: #111; border: 1px solid #E4DED1; }
@@ -479,18 +479,18 @@
       <div class="wrap">
         <div class="section-head">
           <h2>第一版：<br>小红书封面生成器</h2>
-          <p>五套版式全部复刻自真实小红书封面：算账对比、提问悬念、清单条目、撞色标题块、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
+          <p>五套版式全部复刻自真实小红书封面：大字报、提问悬念、清单条目、撞色标题块、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
         </div>
         <div class="try-grid">
           <div class="try-panel">
             <h3>选一种版式</h3>
             <div class="tpl-cards" role="radiogroup" aria-label="版式选择">
               <label class="tpl">
-                <input type="radio" name="tpl" value="suanzhang" checked />
+                <input type="radio" name="tpl" value="dazibao" checked />
                 <span class="tpl-card">
-                  <span class="sw sw-suanzhang">账</span>
-                  <strong>算账对比</strong>
-                  <span>存款对比风</span>
+                  <span class="sw sw-dzb">报</span>
+                  <strong>大字报</strong>
+                  <span>纯文字大字风</span>
                 </span>
               </label>
               <label class="tpl">
@@ -527,42 +527,15 @@
               </label>
             </div>
 
-            <div class="fgroup" data-tpl="suanzhang">
+            <div class="fgroup" data-tpl="dazibao">
               <div class="field">
-                <label for="sz-title">标题</label>
-                <input type="text" id="sz-title" value="11月存款利率" />
-              </div>
-              <div class="field">
-                <label for="sz-scene">场景行 <span class="hint">大字，如"10万存5年"</span></label>
-                <input type="text" id="sz-scene" value="10万存5年" />
-              </div>
-              <div class="field-row">
-                <div class="field">
-                  <label for="sz-adesc">A组说明</label>
-                  <input type="text" id="sz-adesc" value="放在六大行" />
-                </div>
-                <div class="field">
-                  <label for="sz-aval">A组数值 <span class="hint">大字</span></label>
-                  <input type="text" id="sz-aval" value="6500元" />
-                </div>
-              </div>
-              <div class="field-row">
-                <div class="field">
-                  <label for="sz-bdesc">B组说明</label>
-                  <input type="text" id="sz-bdesc" value="放在小银行" />
-                </div>
-                <div class="field">
-                  <label for="sz-bval">B组数值 <span class="hint">荧光绿高亮</span></label>
-                  <input type="text" id="sz-bval" value="10500元" />
-                </div>
+                <label for="dz-title">标题 <span class="hint">字越大越好，最多4行</span></label>
+                <textarea id="dz-title" rows="3">35岁后才明白
+存钱比赚钱重要</textarea>
               </div>
               <div class="field">
-                <label for="sz-conc">结论行 <span class="hint">荧光绿高亮</span></label>
-                <input type="text" id="sz-conc" value="利息差 4000 块" />
-              </div>
-              <div class="field">
-                <label for="sz-hook">底部钩子 <span class="hint">可空</span></label>
-                <input type="text" id="sz-hook" value="左滑看完整对比表 →" />
+                <label for="dz-key">关键词标红 <span class="hint">可空，标题中的词会变红</span></label>
+                <input type="text" id="dz-key" value="存钱" />
               </div>
             </div>
 
@@ -617,6 +590,7 @@
               <div class="field">
                 <label>背景图 <span class="hint">点选内置 mock，或上传自己的（上传后替换当前选择）</span></label>
                 <div class="mockrow" data-tpl="zhuangse">
+                  <img src="bg/mock-person.jpg" data-url="bg/mock-person.jpg" alt="人像" />
                   <img src="bg/mock-dark.jpg" data-url="bg/mock-dark.jpg" alt="暗调" />
                   <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
                   <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
@@ -932,78 +906,61 @@
     ctx.fillRect(0, 0, W, h);
   }
 
-  // ---- 模板1：算账对比（复刻《11月存款利率》首图）----
-  function renderSuanzhang(ctx) {
-    ctx.fillStyle = BG;
-    ctx.fillRect(0, 0, W, H);
-    var tag = val("in-tag") || "普通人搞钱实验";
-    var sign = val("in-sign") || "毛毛星带你飞";
-    star(ctx, W - PAD - 40, 150, 44, HL);
-    ctx.fillStyle = INK;
-    ctx.font = "800 44px " + FONT;
-    ctx.fillText(tag, PAD, 175);
+  // ---- 混排换行：返回 token 数组的行（用于关键词变色）----
+  function wrapTokObjs(ctx, tokens, maxW) {
+    var lines = [], cur = [], curW = 0, k, tk, w, ch;
+    function push() { if (cur.length) lines.push(cur); cur = []; curW = 0; }
+    for (k = 0; k < tokens.length; k++) {
+      tk = tokens[k].t;
+      if (tk === "\n") { push(); continue; }
+      w = ctx.measureText(tk).width;
+      if (tokens[k].keep) {
+        if (curW + w > maxW && curW > 0) push();
+        cur.push(tokens[k]); curW += w;
+        continue;
+      }
+      ch = tk;
+      if (curW + w > maxW && curW > 0) {
+        if (NO_START.indexOf(ch) >= 0) { cur.push(tokens[k]); curW += w; push(); }
+        else if (NO_END.indexOf(ch) >= 0) { push(); cur.push(tokens[k]); curW = w; }
+        else { push(); cur.push(tokens[k]); curW = w; }
+      } else { cur.push(tokens[k]); curW += w; }
+    }
+    push();
+    return lines;
+  }
+  // 居中绘制一行，关键词红色
+  function drawMixedLine(ctx, lineToks, cx, y) {
+    var total = 0, i;
+    for (i = 0; i < lineToks.length; i++) total += ctx.measureText(lineToks[i].t).width;
+    var x = cx - total / 2;
+    for (i = 0; i < lineToks.length; i++) {
+      ctx.fillStyle = lineToks[i].keep ? "#E23B2E" : "#111111";
+      ctx.fillText(lineToks[i].t, x, y);
+      x += ctx.measureText(lineToks[i].t).width;
+    }
+  }
 
-    var title = val("sz-title");
-    if (title) {
-      var ts = fitSingle(ctx, title, CW, 116, "900");
-      ctx.font = "900 " + ts + "px " + FONT;
-      var twd = ctx.measureText(title).width;
-      ctx.fillStyle = INK;
-      ctx.fillText(title, PAD, 360);
-      ctx.fillStyle = HL;
-      ctx.fillRect(PAD, 374, twd, 16);
+  // ---- 模板0：大字报（纯文字超大字，关键词标红）----
+  function renderDazibao(ctx) {
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, W, H);
+    ctx.textAlign = "left";
+    var raw = val("dz-title") || "在这里输入标题";
+    var kw = val("dz-key");
+    var size = 170, lines;
+    while (size > 64) {
+      ctx.font = "900 " + size + "px " + FONT;
+      lines = wrapTokObjs(ctx, tokenize(raw, kw), CW);
+      if (lines.length <= 4) break;
+      size -= 10;
     }
-    var scene = val("sz-scene");
-    if (scene) {
-      var ss = fitSingle(ctx, scene, CW, 124, "900");
-      ctx.font = "900 " + ss + "px " + FONT;
-      ctx.fillStyle = INK;
-      ctx.fillText(scene, PAD, 545);
+    ctx.font = "900 " + size + "px " + FONT;
+    var lh = size * 1.28;
+    var y0 = 700 - ((lines.length - 1) * lh) / 2 + size * 0.36;
+    for (var di = 0; di < lines.length; di++) {
+      drawMixedLine(ctx, lines[di], W / 2, y0 + di * lh);
     }
-    var ad = val("sz-adesc"), av = val("sz-aval");
-    if (ad) {
-      ctx.font = "500 44px " + FONT;
-      ctx.fillStyle = MUT;
-      ctx.fillText(ad, PAD, 660);
-    }
-    if (av) {
-      var asz = fitSingle(ctx, av, CW, 150, "900");
-      ctx.font = "900 " + asz + "px " + FONT;
-      ctx.fillStyle = INK;
-      ctx.fillText(av, PAD, 815);
-    }
-    var bd = val("sz-bdesc"), bv = val("sz-bval");
-    if (bd) {
-      ctx.font = "500 44px " + FONT;
-      ctx.fillStyle = MUT;
-      ctx.fillText(bd, PAD, 930);
-    }
-    if (bv) {
-      var bsz = fitSingle(ctx, bv, CW - 56, 150, "900");
-      ctx.font = "900 " + bsz + "px " + FONT;
-      var bw = ctx.measureText(bv).width;
-      ctx.fillStyle = HL;
-      ctx.fillRect(PAD - 28, 1085 - bsz * 0.98, bw + 56, bsz * 1.18);
-      ctx.fillStyle = INK;
-      ctx.fillText(bv, PAD, 1085);
-    }
-    var conc = val("sz-conc");
-    if (conc) {
-      var csz = fitSingle(ctx, conc, CW - 56, 96, "900");
-      ctx.font = "900 " + csz + "px " + FONT;
-      var cw2 = ctx.measureText(conc).width;
-      ctx.fillStyle = HL;
-      ctx.fillRect(PAD - 28, 1230 - csz * 0.98, cw2 + 56, csz * 1.18);
-      ctx.fillStyle = INK;
-      ctx.fillText(conc, PAD, 1230);
-    }
-    var hook = val("sz-hook");
-    if (hook) {
-      ctx.font = "500 40px " + FONT;
-      ctx.fillStyle = MUT;
-      ctx.fillText(hook, PAD, 1308);
-    }
-    footer(ctx, sign);
   }
 
   // ---- 模板2：提问悬念（复刻《工资对比》封面）----
@@ -1203,7 +1160,7 @@
     else if (tpl === "qingdan") renderQingdan(ctx);
     else if (tpl === "zhuangse") renderZhuangse(ctx);
     else if (tpl === "miaobian") renderMiaobian(ctx);
-    else renderSuanzhang(ctx);
+    else renderDazibao(ctx);
     var st = document.getElementById("cv-status");
     if (st) st.textContent = "实时预览 · 改字即变";
   }
@@ -1261,7 +1218,7 @@
     }
     setBgFromUrl("miaobian", "bg/mock-street.jpg",
       document.querySelector('.mockrow[data-tpl="miaobian"] img'));
-    setBgFromUrl("zhuangse", "bg/mock-dark.jpg",
+    setBgFromUrl("zhuangse", "bg/mock-person.jpg",
       document.querySelector('.mockrow[data-tpl="zhuangse"] img'));
     syncGroups();
     render();
