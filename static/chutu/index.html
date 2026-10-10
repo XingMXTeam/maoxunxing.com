@@ -224,9 +224,10 @@
     .try-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
     .try-panel h3 { margin: 0 0 14px; font-size: 15px; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
     .tpl-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
-    .tpl { cursor: pointer; }
+    .tpl { cursor: pointer; position: relative; }
     .tpl input { position: absolute; opacity: 0; pointer-events: none; }
     .tpl-card {
+      display: block;
       border: 2px solid var(--line);
       border-radius: 10px;
       padding: 14px 12px;
@@ -669,43 +670,69 @@
   var NO_START = "，。！？；：、）】》～…—·";
   var NO_END = "（【《「『〈〈";
 
-  function wrapText(ctx, text, maxW) {
-    var lines = [], cur = "", i, ch, t, w;
-    var chars = text.split("");
-    for (i = 0; i < chars.length; i++) {
-      ch = chars[i];
-      if (ch === "\n") { lines.push(cur); cur = ""; continue; }
-      t = cur + ch;
-      w = ctx.measureText(t).width;
-      if (w > maxW && cur.length > 0) {
-        if (NO_START.indexOf(ch) >= 0) {
-          // 闭标点跟上行（允许轻微溢出，不单独开新行）
-          cur = t; lines.push(cur); cur = "";
-        } else if (NO_END.indexOf(ch) >= 0) {
-          // 开标点不留在行尾，推到下一行开头
-          lines.push(cur); cur = ch;
-        } else {
-          lines.push(cur); cur = ch;
-        }
-      } else {
-        cur = t;
-      }
+  // 把重点词当作不可拆分的整体（避免高亮词被换行切断），其余按字拆分；兼顾中文禁则
+  function tokenize(text, keyword) {
+    var toks = [], i = 0, cs;
+    if (!keyword) {
+      cs = text.split("");
+      for (i = 0; i < cs.length; i++) toks.push({ t: cs[i], keep: false });
+      return toks;
     }
-    if (cur) lines.push(cur);
+    while (i < text.length) {
+      if (text.indexOf(keyword, i) === i) { toks.push({ t: keyword, keep: true }); i += keyword.length; }
+      else { toks.push({ t: text[i], keep: false }); i++; }
+    }
+    return toks;
+  }
+
+  function wrapTokens(ctx, tokens, maxW) {
+    var lines = [], cur = "", curW = 0, k, tk, w, ch;
+    function push() { if (cur) lines.push(cur); cur = ""; curW = 0; }
+    for (k = 0; k < tokens.length; k++) {
+      tk = tokens[k].t;
+      if (tk === "\n") { push(); continue; }
+      w = ctx.measureText(tk).width;
+      if (tokens[k].keep) {
+        // 重点词整体换行，不拆散
+        if (curW + w > maxW && curW > 0) push();
+        cur += tk; curW += w;
+        continue;
+      }
+      ch = tk;
+      if (curW + w > maxW && curW > 0) {
+        if (NO_START.indexOf(ch) >= 0) {
+          // 闭标点跟上行，不单独开新行
+          cur += ch; curW += w; push();
+        } else if (NO_END.indexOf(ch) >= 0) {
+          // 开标点不留在行尾
+          push(); cur = ch; curW = w;
+        } else {
+          push(); cur = ch; curW = w;
+        }
+      } else { cur += ch; curW += w; }
+    }
+    push();
     return lines;
   }
 
-  function fitLines(ctx, text, maxW, maxLines, startSize, minSize, weight) {
-    var size = startSize, lines;
-    while (size >= minSize) {
-      ctx.font = weight + " " + size + "px " + FONT;
-      lines = wrapText(ctx, text, maxW);
-      if (lines.length <= maxLines) return { size: size, lines: lines };
-      size -= 8;
+  // 标题布局：字号自适应 + 纵向预算（不挤页脚）+ 末行孤字规避
+  function layoutTitle(ctx, title, keyword, maxW, availH, subH) {
+    var gap = 56, size, lines, lastW;
+    for (size = 132; size >= 64; size -= 8) {
+      ctx.font = "900 " + size + "px " + FONT;
+      lines = wrapTokens(ctx, tokenize(title, keyword), maxW);
+      if (lines.length > 4) continue;
+      if (lines.length > 1) {
+        lastW = ctx.measureText(lines[lines.length - 1]).width;
+        if (lastW < maxW * 0.3) continue; // 末行只剩一两个字就降一档字号
+      }
+      if (lines.length * size * 1.28 + gap + subH <= availH) {
+        return { size: size, lines: lines };
+      }
     }
-    ctx.font = weight + " " + minSize + "px " + FONT;
-    lines = wrapText(ctx, text, maxW);
-    return { size: minSize, lines: lines.slice(0, maxLines) };
+    ctx.font = "900 64px " + FONT;
+    lines = wrapTokens(ctx, tokenize(title, keyword), maxW).slice(0, 4);
+    return { size: 64, lines: lines };
   }
 
   function roundRect(ctx, x, y, w, h, r) {
@@ -767,16 +794,27 @@
 
     // 数字版式：巨大数字
     if (tpl === "shuzi" && num) {
-      ctx.font = '700 340px "DM Sans",' + FONT;
+      ctx.font = '700 300px "DM Sans",' + FONT;
       ctx.fillStyle = S.ink;
       ctx.globalAlpha = 0.95;
-      ctx.fillText(num, PAD, cursorY + 260);
+      ctx.fillText(num, PAD, cursorY + 230);
       ctx.globalAlpha = 1;
-      cursorY += 400;
+      cursorY += 350;
     }
 
-    // 标题（字号自适应，最多 5 行）
-    var t = fitLines(ctx, title, CW, 5, 132, 64, "900");
+    var footY = H - 120;
+    var availH = footY - 48 - cursorY;
+
+    // 副标题先量高度（标题布局需要预留纵向空间）
+    var subLines = [], subH = 0;
+    if (sub) {
+      ctx.font = "500 40px " + FONT;
+      subLines = wrapTokens(ctx, tokenize(sub, ""), CW).slice(0, 3);
+      subH = subLines.length * 40 * 1.7;
+    }
+
+    // 标题：字号自适应 + 纵向预算 + 孤字规避
+    var t = layoutTitle(ctx, title, keyword, CW, availH, subH);
     var lineH = t.size * 1.28;
     // 高亮先画（在字下面）
     drawMarkBehind(ctx, t.lines, PAD, cursorY, lineH, t.size, keyword, S.mark);
@@ -788,18 +826,15 @@
     cursorY += t.lines.length * lineH + 56;
 
     // 副标题
-    if (sub) {
-      var s = fitLines(ctx, sub, CW, 3, 44, 32, "500");
-      ctx.font = "500 " + s.size + "px " + FONT;
+    if (subLines.length) {
+      ctx.font = "500 40px " + FONT;
       ctx.fillStyle = S.sub;
-      var sLineH = s.size * 1.7;
-      for (var j = 0; j < s.lines.length; j++) {
-        ctx.fillText(s.lines[j], PAD, cursorY + j * sLineH);
+      for (var j = 0; j < subLines.length; j++) {
+        ctx.fillText(subLines[j], PAD, cursorY + j * 40 * 1.7);
       }
     }
 
     // 页脚
-    var footY = H - 120;
     ctx.strokeStyle = S.footLine;
     ctx.lineWidth = 2;
     ctx.beginPath();
