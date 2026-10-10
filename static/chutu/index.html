@@ -242,6 +242,8 @@
     .tpl-card .sw-qingdan { background: #F4EFE4; color: #111; border: 1px solid #E4DED1; }
     .tpl-card .sw-zhuangse { background: #FFD400; color: #111; }
     .tpl-card .sw-zhenren { background: #FFDD33; color: #111; }
+    .tpl-card .sw-shipai { background-image: url(bg/mock-street.jpg); background-size: cover; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
+    .tpl-card .sw-xilie { background: #FBF8F1; color: #0D3B2E; border: 1px solid #E4DED1; }
     .colorrow { display: flex; gap: 10px; margin: 4px 0 8px; align-items: center; }
     .colorrow span { width: 44px; height: 44px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd; flex: none; }
     .colorrow span.sel { border-color: var(--acc); outline: 2px solid var(--acc); }
@@ -483,7 +485,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>第一版：<br>小红书封面生成器</h2>
-          <p>六套版式全部复刻自真实小红书封面：大字报、真人出镜、提问悬念、清单条目、撞色标题块、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
+          <p>八套版式全部复刻自真实小红书封面：大字报、真人出镜、提问悬念、清单条目、撞色标题块、实拍描边、纯实拍、系列栏目。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
         </div>
         <div class="try-grid">
           <div class="try-panel">
@@ -535,6 +537,22 @@
                   <span class="sw sw-miaobian">标题</span>
                   <strong>实拍描边</strong>
                   <span>街景标题风</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="shipai" />
+                <span class="tpl-card">
+                  <span class="sw sw-shipai">拍</span>
+                  <strong>纯实拍</strong>
+                  <span>记录生活风</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="xilie" />
+                <span class="tpl-card">
+                  <span class="sw sw-xilie">栏</span>
+                  <strong>系列栏目</strong>
+                  <span>品牌栏目风</span>
                 </span>
               </label>
             </div>
@@ -678,7 +696,43 @@
               </div>
             </div>
 
-            <div class="field-row">
+                        <div class="fgroup" data-tpl="shipai" hidden>
+              <div class="field">
+                <label for="sp-title">标题小字 <span class="hint">可空，空就是纯照片</span></label>
+                <input type="text" id="sp-title" value="" placeholder="如：硅谷傍晚的天空" />
+              </div>
+              <div class="field">
+                <label>照片 <span class="hint">点选 mock 或上传自己的实拍</span></label>
+                <div class="mockrow" data-tpl="shipai">
+                  <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
+                  <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
+                  <img src="bg/mock-smile.jpg" data-url="bg/mock-smile.jpg" alt="微笑" />
+                  <img src="bg/mock-dark.jpg" data-url="bg/mock-dark.jpg" alt="暗调" />
+                  <img src="bg/mock-person.jpg" data-url="bg/mock-person.jpg" alt="人像" />
+                </div>
+                <input type="file" id="bg-sp" accept="image/*" />
+              </div>
+              <p class="fgroup-note">vlog/记录类封面：照片铺满，标题只放底部小字或不放。</p>
+            </div>
+
+            <div class="fgroup" data-tpl="xilie" hidden>
+              <div class="field">
+                <label for="xl-col">栏目名 <span class="hint">固定栏目，大字展示</span></label>
+                <input type="text" id="xl-col" value="普通人搞钱实验" />
+              </div>
+              <div class="field">
+                <label for="xl-title">本期标题 <span class="hint">最多3行</span></label>
+                <textarea id="xl-title" rows="2">10万存5年
+小银行多拿4000块</textarea>
+              </div>
+              <div class="field">
+                <label for="xl-num">期数 <span class="hint">可空，如：第 12 期</span></label>
+                <input type="text" id="xl-num" value="" placeholder="第 12 期" />
+              </div>
+            </div>
+
+
+<div class="field-row">
               <div class="field">
                 <label for="in-tag">标签</label>
                 <input type="text" id="in-tag" value="普通人搞钱实验" />
@@ -1085,6 +1139,73 @@
     }
   }
 
+  // ---- 模板：纯实拍（照片铺满，标题只放底部小字或不放）----
+  function renderShipai(ctx) {
+    var photo = bgImgs["shipai"];
+    if (photo) drawBgCover(ctx, photo);
+    else { ctx.fillStyle = "#2b2b33"; ctx.fillRect(0, 0, W, H); }
+    ctx.textAlign = "left";
+    var t = val("sp-title");
+    if (!t) return;
+    var g = ctx.createLinearGradient(0, H - 440, 0, H);
+    g.addColorStop(0, "rgba(0,0,0,0)");
+    g.addColorStop(1, "rgba(0,0,0,0.65)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, H - 440, W, 440);
+    var tsz = fitSingle(ctx, t, CW, 64, "700");
+    ctx.font = "700 " + tsz + "px " + FONT;
+    ctx.fillStyle = "#ffffff";
+    var lines = wrapTokens(ctx, tokenize(t, ""), CW).slice(0, 2);
+    var lh = tsz * 1.35;
+    var y0 = H - 150 - (lines.length - 1) * lh;
+    for (var i = 0; i < lines.length; i++) ctx.fillText(lines[i], PAD, y0 + i * lh);
+  }
+
+  // ---- 模板：系列栏目（栏目名超大字 + 本期标题）----
+  function renderXilie(ctx) {
+    ctx.fillStyle = "#FBF8F1";
+    ctx.fillRect(0, 0, W, H);
+    ctx.textAlign = "left";
+    var sign = val("in-sign") || "毛毛星带你飞";
+    star(ctx, W - PAD - 40, 150, 40, HL);
+
+    var col = val("xl-col") || "普通人搞钱实验";
+    var csz = fitSingle(ctx, col, CW, 128, "900");
+    ctx.font = "900 " + csz + "px " + FONT;
+    ctx.fillStyle = "#0D3B2E";
+    var clines = wrapTokens(ctx, tokenize(col, ""), CW).slice(0, 2);
+    var clh = csz * 1.25;
+    var cy0 = 320;
+    for (var ci2 = 0; ci2 < clines.length; ci2++) ctx.fillText(clines[ci2], PAD, cy0 + ci2 * clh);
+
+    var divY = cy0 + clines.length * clh + 44;
+    ctx.fillStyle = "#E4DED1";
+    ctx.fillRect(PAD, divY, CW, 6);
+
+    var title = val("xl-title") || "在这里输入本期标题";
+    var tsz = 104, tlines;
+    while (tsz > 56) {
+      ctx.font = "900 " + tsz + "px " + FONT;
+      tlines = wrapTokens(ctx, tokenize(title, ""), CW);
+      if (tlines.length <= 3) break;
+      tsz -= 8;
+    }
+    ctx.font = "900 " + tsz + "px " + FONT;
+    ctx.fillStyle = "#111111";
+    var tlh = tsz * 1.3;
+    var ty0 = divY + 116;
+    for (var ti2 = 0; ti2 < tlines.length; ti2++) ctx.fillText(tlines[ti2], PAD, ty0 + ti2 * tlh);
+
+    var num = val("xl-num");
+    if (num) {
+      var nsz = fitSingle(ctx, num, CW, 54, "700");
+      ctx.font = "700 " + nsz + "px " + FONT;
+      ctx.fillStyle = "#75857C";
+      ctx.fillText(num, PAD, H - 170);
+    }
+    footer(ctx, sign);
+  }
+
   // ---- 模板：真人出镜（复刻"停止内耗"：黄描边大标题+副标题+底部金句）----
   function renderZhenren(ctx) {
     var photo = bgImgs["zhenren"];
@@ -1358,6 +1479,8 @@
     ctx.textBaseline = "alphabetic";
     var tpl = currentTpl();
     if (tpl === "zhenren") renderZhenren(ctx);
+    else if (tpl === "shipai") renderShipai(ctx);
+    else if (tpl === "xilie") renderXilie(ctx);
     else if (tpl === "tiwen") renderTiwen(ctx);
     else if (tpl === "qingdan") renderQingdan(ctx);
     else if (tpl === "zhuangse") renderZhuangse(ctx);
@@ -1410,6 +1533,7 @@
     bindPhoto("bg-mb", "miaobian");
     bindPhoto("bg-zs", "zhuangse");
     bindPhoto("bg-zr", "zhenren");
+    bindPhoto("bg-sp", "shipai");
     var thumbs = document.querySelectorAll(".mockrow img");
     for (var ti = 0; ti < thumbs.length; ti++) {
       (function (el) {
@@ -1425,6 +1549,8 @@
       document.querySelector('.mockrow[data-tpl="zhuangse"] img'));
     setBgFromUrl("zhenren", "bg/mock-smile.jpg",
       document.querySelector('.mockrow[data-tpl="zhenren"] img'));
+    setBgFromUrl("shipai", "bg/mock-street.jpg",
+      document.querySelector('.mockrow[data-tpl="shipai"] img'));
     var dzSw = document.querySelectorAll("#dz-colors span");
     for (var ci = 0; ci < dzSw.length; ci++) {
       (function (el) {
