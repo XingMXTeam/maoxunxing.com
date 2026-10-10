@@ -253,6 +253,10 @@
     .mockrow img.sel { border-color: var(--acc); }
     .fgroup[hidden] { display: none; }
     .fgroup-note { font-size: 12px; color: var(--muted); margin: -6px 0 20px; line-height: 1.7; }
+    #cutout-row { margin-top: 10px; display: flex; align-items: center; gap: 10px; }
+    #cutout-row[hidden] { display: none; }
+    #btn-cutout { padding: 10px 18px; border-radius: 10px; border: 1px solid var(--ink); background: var(--ink); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; }
+    #btn-cutout:disabled { opacity: .5; cursor: wait; }
     .tpl-card strong { display: block; font-size: 14px; }
     .tpl-card span { font-size: 12px; color: var(--muted); }
     .tpl input:checked + .tpl-card { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px var(--shadow); }
@@ -616,10 +620,14 @@
                 <input type="file" id="bg-zr" accept="image/*" />
               </div>
               <div class="field">
-                <label for="bg-zr-person">人物贴纸 <span class="hint">透明底 PNG，自动加白边；默认已内置</span></label>
-                <input type="file" id="bg-zr-person" accept="image/png" />
+                <label for="bg-zr-person">人物贴纸 <span class="hint">透明底 PNG 直接加白边；普通照片点"一键抠图"</span></label>
+                <input type="file" id="bg-zr-person" accept="image/*" />
+                <div id="cutout-row" hidden>
+                  <button type="button" id="btn-cutout">一键抠图（AI）</button>
+                  <span id="cutout-status" class="hint"></span>
+                </div>
               </div>
-              <p class="fgroup-note">人物白边已支持：上传透明底人物 PNG 会自动加一圈白边。默认内置贴纸人物，可直接用。</p>
+              <p class="fgroup-note">人物白边已支持：透明底 PNG 自动加白边；普通照片点「一键抠图」，AI 在浏览器里直接抠出人物（首次需下载约 40MB 模型）。</p>
             </div>
 
             <div class="fgroup" data-tpl="tiwen" hidden>
@@ -1212,6 +1220,7 @@
 
   // ---- 人物贴纸层：透明底 PNG 自动加白边 ----
   var personImgs = {};
+  var personFile = null;
   function hasTransparency(img) {
     try {
       var c = document.createElement("canvas");
@@ -1252,10 +1261,16 @@
       var img = new Image();
       img.onload = function () {
         URL.revokeObjectURL(img.src);
-        var out = hasTransparency(img)
+        personFile = f;
+        var trans = hasTransparency(img);
+        var out = trans
           ? whiteOutline(img, Math.max(8, Math.round(img.width * 0.012)))
           : img;
         personImgs[tplKey] = { img: img, outlined: out };
+        var row = document.getElementById("cutout-row");
+        if (row) row.hidden = trans;
+        var st = document.getElementById("cutout-status");
+        if (st) st.textContent = "";
         render();
       };
       img.src = URL.createObjectURL(f);
@@ -1649,6 +1664,54 @@
     if (document.fonts && document.fonts.load) {
       document.fonts.load('900 100px "Noto Sans SC"').then(render).catch(function () {});
       document.fonts.load('500 100px "Noto Sans SC"').then(render).catch(function () {});
+    }
+  });
+})();
+</script>
+
+<script type="importmap">
+{ "imports": { "@imgly/background-removal": "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm" } }
+</script>
+<script type="module">
+(function () {
+  var btn = document.getElementById("btn-cutout");
+  var statusEl = document.getElementById("cutout-status");
+  if (!btn) return;
+  btn.addEventListener("click", async function () {
+    var f = window.personFile;
+    if (!f) { if (statusEl) statusEl.textContent = "请先上传人物照片"; return; }
+    btn.disabled = true;
+    if (statusEl) statusEl.textContent = "AI 模型加载中（首次约 40MB，请稍候）…";
+    try {
+      var mod = await import("@imgly/background-removal");
+      var removeBackground = mod.default || mod.removeBackground || mod.imglyRemoveBackground;
+      var blob = await removeBackground(f, {
+        model: "isnet_quint8",
+        progress: function (key, current, total) {
+          if (statusEl && total) statusEl.textContent = "处理中 " + Math.round(current / total * 100) + "%";
+        }
+      });
+      if (statusEl) statusEl.textContent = "抠图中…";
+      var url = URL.createObjectURL(blob);
+      var img = new Image();
+      img.onload = function () {
+        var out = window.whiteOutline(img, Math.max(8, Math.round(img.width * 0.012)));
+        window.personImgs["zhenren"] = { img: img, outlined: out };
+        var row = document.getElementById("cutout-row");
+        if (row) row.hidden = true;
+        if (statusEl) statusEl.textContent = "";
+        btn.disabled = false;
+        window.render();
+      };
+      img.onerror = function () {
+        if (statusEl) statusEl.textContent = "抠图结果加载失败，请重试";
+        btn.disabled = false;
+      };
+      img.src = url;
+    } catch (e) {
+      console.error(e);
+      if (statusEl) statusEl.textContent = "抠图失败（可能是网络问题），请重试或先用其他工具抠图再上传";
+      btn.disabled = false;
     }
   });
 })();
