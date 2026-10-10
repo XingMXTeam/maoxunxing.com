@@ -242,6 +242,9 @@
     .tpl-card .sw-qingdan { background: #F4EFE4; color: #111; border: 1px solid #E4DED1; }
     .tpl-card .sw-zhuangse { background: #FFD400; color: #111; }
     input[type="file"] { font-size: 14px; padding: 10px 0; }
+    .mockrow { display: flex; gap: 10px; margin: 4px 0 8px; }
+    .mockrow img { width: 76px; height: 100px; object-fit: cover; border-radius: 10px; cursor: pointer; border: 2px solid transparent; }
+    .mockrow img.sel { border-color: var(--acc); }
     .fgroup[hidden] { display: none; }
     .fgroup-note { font-size: 12px; color: var(--muted); margin: -6px 0 20px; line-height: 1.7; }
     .tpl-card strong { display: block; font-size: 14px; }
@@ -612,7 +615,12 @@
                 <input type="text" id="zs-main" value="这期视频" />
               </div>
               <div class="field">
-                <label for="bg-zs">背景实拍图 <span class="hint">可选，不传用深色底</span></label>
+                <label>背景图 <span class="hint">点选内置 mock，或上传自己的（上传后替换当前选择）</span></label>
+                <div class="mockrow" data-tpl="zhuangse">
+                  <img src="bg/mock-dark.jpg" data-url="bg/mock-dark.jpg" alt="暗调" />
+                  <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
+                  <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
+                </div>
                 <input type="file" id="bg-zs" accept="image/*" />
               </div>
             </div>
@@ -623,9 +631,14 @@
                 <textarea id="mb-title" rows="3">拿住比亚迪23年的人
 说AI热潮还要崩不止一轮</textarea>
               </div>
-              <p class="fgroup-note">白字深绿描边，适合观点冲突强的选题。上传实拍图可做背景，不传用暖色渐变。</p>
+              <p class="fgroup-note">白字深绿描边，适合观点冲突强的选题。默认黄昏街景 mock，可点选替换或上传实拍图。</p>
               <div class="field">
-                <label for="bg-mb">背景实拍图 <span class="hint">可选</span></label>
+                <label>背景图 <span class="hint">点选内置 mock，或上传自己的（上传后替换当前选择）</span></label>
+                <div class="mockrow" data-tpl="miaobian">
+                  <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
+                  <img src="bg/mock-dark.jpg" data-url="bg/mock-dark.jpg" alt="暗调" />
+                  <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
+                </div>
                 <input type="file" id="bg-mb" accept="image/*" />
               </div>
             </div>
@@ -875,11 +888,35 @@
       img.onload = function () {
         bgImgs[tplKey] = img;
         URL.revokeObjectURL(img.src);
+        markSelected(tplKey, null);
         render();
       };
       img.src = URL.createObjectURL(f);
     });
   }
+  // ---- 内置 mock 背景（点选即用，上传替换）----
+  var mockCache = {};
+  function markSelected(tplKey, thumbEl) {
+    var row = document.querySelector('.mockrow[data-tpl="' + tplKey + '"]');
+    if (!row) return;
+    var imgs = row.querySelectorAll("img");
+    for (var mi2 = 0; mi2 < imgs.length; mi2++) {
+      imgs[mi2].classList.toggle("sel", imgs[mi2] === thumbEl);
+    }
+  }
+  function setBgFromUrl(tplKey, url, thumbEl) {
+    function apply(im) {
+      bgImgs[tplKey] = im;
+      markSelected(tplKey, thumbEl || null);
+      render();
+    }
+    var cached = mockCache[url];
+    if (cached && cached.complete && cached.naturalWidth) { apply(cached); return; }
+    var img = new Image();
+    img.onload = function () { mockCache[url] = img; apply(img); };
+    img.src = url;
+  }
+
   // cover 模式铺满画布
   function drawBgCover(ctx, img) {
     var s = Math.max(W / img.width, H / img.height);
@@ -1213,6 +1250,19 @@
     document.getElementById("dl").addEventListener("click", download);
     bindPhoto("bg-mb", "miaobian");
     bindPhoto("bg-zs", "zhuangse");
+    var thumbs = document.querySelectorAll(".mockrow img");
+    for (var ti = 0; ti < thumbs.length; ti++) {
+      (function (el) {
+        el.addEventListener("click", function () {
+          var row = el.closest(".mockrow");
+          setBgFromUrl(row.getAttribute("data-tpl"), el.getAttribute("data-url"), el);
+        });
+      })(thumbs[ti]);
+    }
+    setBgFromUrl("miaobian", "bg/mock-street.jpg",
+      document.querySelector('.mockrow[data-tpl="miaobian"] img'));
+    setBgFromUrl("zhuangse", "bg/mock-dark.jpg",
+      document.querySelector('.mockrow[data-tpl="zhuangse"] img'));
     syncGroups();
     render();
     if (document.fonts && document.fonts.load) {
