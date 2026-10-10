@@ -236,9 +236,9 @@
       background: var(--paper);
     }
     .tpl-card .sw { height: 64px; border-radius: 6px; margin-bottom: 10px; display: grid; place-items: center; font-weight: 900; font-size: 22px; }
-    .tpl-card .sw-dzb { background: #171916; color: #fff; }
-    .tpl-card .sw-mb { background: #FBF8F1; color: #0D3B2E; border: 1px solid #E4DED1; }
-    .tpl-card .sw-sz { background: #1677ff; color: #fff; }
+    .tpl-card .sw-dzb { background: #FFD400; color: #141414; }
+    .tpl-card .sw-mb2 { background: linear-gradient(180deg, #33333f, #0e0e14); color: #fff; font-size: 18px; text-shadow: -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px -2px 0 #000, 2px 2px 0 #000; }
+    .tpl-card .sw-sz { background: #111; color: #FFD400; }
     .tpl-card strong { display: block; font-size: 14px; }
     .tpl-card span { font-size: 12px; color: var(--muted); }
     .tpl input:checked + .tpl-card { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px var(--shadow); }
@@ -471,7 +471,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>第一版：<br>小红书封面生成器</h2>
-          <p>左边填字，右边实时出图。三种版式对应三种爆款公式，排版细节（行首禁则、标点挤压、字间距）全部自动处理好。满意就下载，不用注册。</p>
+          <p>左边填字，右边实时出图。三种版式复刻小红书爆款封面流派——撞色大字报、描边标题、数字冲击，排版细节（行首禁则、标点挤压、字间距）全部自动处理好。满意就下载，不用注册。</p>
         </div>
         <div class="try-grid">
           <div class="try-panel">
@@ -481,24 +481,24 @@
                 <input type="radio" name="tpl" value="dazibao" checked />
                 <span class="tpl-card">
                   <span class="sw sw-dzb">爆</span>
-                  <strong>大字报</strong>
-                  <span>冲突感标题</span>
+                  <strong>撞色大字报</strong>
+                  <span>电商促销风</span>
                 </span>
               </label>
               <label class="tpl">
-                <input type="radio" name="tpl" value="mibai" />
+                <input type="radio" name="tpl" value="miaobian" />
                 <span class="tpl-card">
-                  <span class="sw sw-mb">简</span>
-                  <strong>米白极简</strong>
-                  <span>干净信息流</span>
+                  <span class="sw sw-mb2">标题</span>
+                  <strong>描边标题</strong>
+                  <span>博主口播风</span>
                 </span>
               </label>
               <label class="tpl">
                 <input type="radio" name="tpl" value="shuzi" />
                 <span class="tpl-card">
                   <span class="sw sw-sz">3</span>
-                  <strong>数字前置</strong>
-                  <span>清单体爆款</span>
+                  <strong>数字冲击</strong>
+                  <span>清单干货风</span>
                 </span>
               </label>
             </div>
@@ -661,9 +661,23 @@
   var FONT = '"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif';
 
   var STYLES = {
-    dazibao: { bg: "#171916", ink: "#ffffff", muted: "#b9bdb4", accent: "#ff4c32", mark: "#d9ff64", tagBg: "#ff4c32", tagInk: "#ffffff", footLine: "#3a3d37", sub: "#d8dcd4" },
-    mibai:   { bg: "#FBF8F1", ink: "#0D3B2E", muted: "#75857C", accent: "#B9F73D", mark: "#B9F73D", tagBg: "#0D3B2E", tagInk: "#ffffff", footLine: "#E4DED1", sub: "#3d5a4f" },
-    shuzi:   { bg: "#1677ff", ink: "#ffffff", muted: "#cfe0ff", accent: "#ffd44d", mark: "#ffd44d", tagBg: "#ffffff", tagInk: "#1677ff", footLine: "rgba(255,255,255,.4)", sub: "#e8f1ff" }
+    // 黄底黑字撞色大字报：电商/促销爆款风
+    dazibao: { bg: "#FFD400", ink: "#141414", muted: "#6b5a00", sub: "#3a3a3a",
+               mark: "#E63B2E", markInk: "#ffffff",
+               tagBg: "#E63B2E", tagInk: "#ffffff",
+               footLine: "rgba(0,0,0,.28)", stroke: null },
+    // 描边标题：深色底 + 白字粗黑描边，博主口播爆款风
+    miaobian: { bgGrad: ["#33333f", "#0e0e14"], ink: "#ffffff", muted: "#c6c6d2", sub: "#e6e6ef",
+               mark: "#FFD400", markInk: "#141414",
+               tagBg: "#E63B2E", tagInk: "#ffffff",
+               footLine: "rgba(255,255,255,.3)",
+               stroke: "#0a0a0a", strokeRatio: 0.13 },
+    // 数字冲击：黑底 + 巨黄数字，清单干货风
+    shuzi:   { bg: "#111111", ink: "#ffffff", muted: "#9a9aa5", sub: "#d9d9e2",
+               mark: "#FFD400", markInk: "#141414",
+               tagBg: "#FFD400", tagInk: "#141414",
+               footLine: "rgba(255,255,255,.25)",
+               stroke: null, numInk: "#FFD400" }
   };
 
   // 中文排版禁则：行首不能出现闭标点，行尾不能出现开标点
@@ -762,6 +776,34 @@
     ctx.restore();
   }
 
+  // 富文本行：重点词用 markInk 颜色；整行可选描边（爆款封面描边字）
+  function drawRichLine(ctx, line, x, y, S, keyword, size) {
+    var segs = [], idx = 0, k;
+    if (keyword) {
+      while ((k = line.indexOf(keyword, idx)) >= 0) {
+        if (k > idx) segs.push({ t: line.slice(idx, k), key: false });
+        segs.push({ t: keyword, key: true });
+        idx = k + keyword.length;
+      }
+    }
+    if (idx < line.length) segs.push({ t: line.slice(idx), key: false });
+    if (!segs.length) return;
+    var s, cx;
+    if (S.stroke) {
+      ctx.lineWidth = size * (S.strokeRatio || 0.12);
+      ctx.strokeStyle = S.stroke;
+      ctx.lineJoin = "round";
+      cx = x;
+      for (s = 0; s < segs.length; s++) { ctx.strokeText(segs[s].t, cx, y); cx += ctx.measureText(segs[s].t).width; }
+    }
+    cx = x;
+    for (s = 0; s < segs.length; s++) {
+      ctx.fillStyle = segs[s].key ? S.markInk : S.ink;
+      ctx.fillText(segs[s].t, cx, y);
+      cx += ctx.measureText(segs[s].t).width;
+    }
+  }
+
   function render() {
     var canvas = document.getElementById("cv");
     var ctx = canvas.getContext("2d");
@@ -776,7 +818,14 @@
     var sign = (document.getElementById("in-sign").value || "").trim();
 
     ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = S.bg;
+    if (S.bgGrad) {
+      var gr = ctx.createLinearGradient(0, 0, 0, H);
+      gr.addColorStop(0, S.bgGrad[0]);
+      gr.addColorStop(1, S.bgGrad[1]);
+      ctx.fillStyle = gr;
+    } else {
+      ctx.fillStyle = S.bg;
+    }
     ctx.fillRect(0, 0, W, H);
     ctx.textBaseline = "alphabetic";
 
@@ -795,7 +844,7 @@
     // 数字版式：巨大数字
     if (tpl === "shuzi" && num) {
       ctx.font = '700 300px "DM Sans",' + FONT;
-      ctx.fillStyle = S.ink;
+      ctx.fillStyle = S.numInk || S.ink;
       ctx.globalAlpha = 0.95;
       ctx.fillText(num, PAD, cursorY + 230);
       ctx.globalAlpha = 1;
@@ -816,12 +865,11 @@
     // 标题：字号自适应 + 纵向预算 + 孤字规避
     var t = layoutTitle(ctx, title, keyword, CW, availH, subH);
     var lineH = t.size * 1.28;
-    // 高亮先画（在字下面）
+    // 高亮先画（在字下面），再画富文本（重点词换色、可选描边）
     drawMarkBehind(ctx, t.lines, PAD, cursorY, lineH, t.size, keyword, S.mark);
     ctx.font = "900 " + t.size + "px " + FONT;
-    ctx.fillStyle = S.ink;
     for (var i = 0; i < t.lines.length; i++) {
-      ctx.fillText(t.lines[i], PAD, cursorY + i * lineH);
+      drawRichLine(ctx, t.lines[i], PAD, cursorY + i * lineH, S, keyword, t.size);
     }
     cursorY += t.lines.length * lineH + 56;
 
