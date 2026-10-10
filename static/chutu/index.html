@@ -1257,11 +1257,11 @@
     if (!el) return;
     el.addEventListener("change", function () {
       var f = el.files && el.files[0];
+      personFile = f || null;
       if (!f) { personImgs[tplKey] = null; render(); return; }
       var img = new Image();
       img.onload = function () {
         URL.revokeObjectURL(img.src);
-        personFile = f;
         var trans = hasTransparency(img);
         var out = trans
           ? whiteOutline(img, Math.max(8, Math.round(img.width * 0.012)))
@@ -1678,7 +1678,8 @@
   var statusEl = document.getElementById("cutout-status");
   if (!btn) return;
   btn.addEventListener("click", async function () {
-    var f = window.personFile;
+    var input = document.getElementById("bg-zr-person");
+    var f = (input && input.files && input.files[0]) || window.personFile;
     if (!f) { if (statusEl) statusEl.textContent = "请先上传人物照片"; return; }
     btn.disabled = true;
     if (statusEl) statusEl.textContent = "AI 模型加载中（首次约 40MB，请稍候）…";
