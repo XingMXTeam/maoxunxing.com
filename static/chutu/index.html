@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#171916" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="data:," />
+  <title>填字即出图｜小红书图文/公众号封面批量生成（内测）</title>
+  <meta name="description" content="填入文案，批量生成小红书图文、小红书封面和公众号封面。首批免费内测招募中。" />
+  <meta property="og:title" content="填字即出图｜小红书图文/公众号封面批量生成（内测）" />
+  <meta property="og:description" content="填入文案，批量生成小红书图文、小红书封面和公众号封面。首批免费内测招募中。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f1ea;
+      --paper: #fffdf8;
+      --ink: #171916;
+      --muted: #5d625b;
+      --line: #cbc8be;
+      --line-strong: #8b8f87;
+      --accent: #ff4c32;
+      --accent-dark: #d92e19;
+      --blue: #1677ff;
+      --lime: #d9ff64;
+      --yellow: #ffd44d;
+      --form-bg: #20231f;
+      --form-ink: #f7f4ec;
+      --form-muted: #b9bdb4;
+      --shadow: rgba(23,25,22,.15);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171916;
+        --paper: #20231f;
+        --ink: #f6f3ea;
+        --muted: #b7bbb2;
+        --line: #42463f;
+        --line-strong: #6f746c;
+        --accent: #ff684f;
+        --accent-dark: #ff856f;
+        --blue: #69a9ff;
+        --lime: #bce84b;
+        --yellow: #eac34d;
+        --form-bg: #f0ede4;
+        --form-ink: #171916;
+        --form-muted: #5f645d;
+        --shadow: rgba(0,0,0,.38);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans SC", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select, textarea { font: inherit; }
+    a { color: inherit; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .hero {
+      min-height: 720px;
+      padding: 76px 0 70px;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 64px;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(45px, 6.1vw, 78px);
+      line-height: 1.05;
+      letter-spacing: -.055em;
+      font-weight: 900;
+      max-width: 720px;
+    }
+    .highlight {
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+    }
+    .highlight::after {
+      content: "";
+      position: absolute;
+      left: -.04em;
+      right: -.08em;
+      bottom: .05em;
+      height: .25em;
+      background: var(--lime);
+      z-index: -1;
+      transform: rotate(-1.5deg);
+    }
+    .hero-copy > p {
+      margin: 26px 0 30px;
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.85;
+    }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+    .cta {
+      display: inline-flex;
+      min-height: 52px;
+      padding: 0 24px;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: var(--ink);
+      color: var(--bg);
+      font-weight: 800;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 5px 5px 0 var(--accent); }
+    .micro { color: var(--muted); font-size: 13px; }
+
+    .preview {
+      position: relative;
+      min-height: 585px;
+      display: grid;
+      place-items: center;
+    }
+    .preview::before {
+      content: "";
+      position: absolute;
+      inset: 18px 0 0 48px;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: .42;
+      mask-image: linear-gradient(to bottom, transparent 0, black 16%, black 85%, transparent 100%);
+    }
+    .sheet {
+      position: absolute;
+      background: #fffdf8;
+      color: #171916;
+      border: 1px solid #b9b6ad;
+      box-shadow: 14px 18px 0 rgba(23,25,22,.12), 0 22px 56px var(--shadow);
+      overflow: hidden;
+    }
+    .sheet-main {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      z-index: 3;
+      transform: rotate(-2.2deg) translate(-22px, -10px);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sheet-back {
+      width: min(310px, 68vw);
+      aspect-ratio: 3/4;
+      z-index: 1;
+      transform: rotate(7deg) translate(72px, 36px);
+      background: #1677ff;
+      color: #fff;
+      padding: 28px;
+    }
+    .sheet-wide {
+      width: min(370px, 74vw);
+      aspect-ratio: 900/383;
+      z-index: 4;
+      transform: rotate(2deg) translate(25px, 198px);
+      background: #23251f;
+      color: #fff;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .tiny-label { font-family: "DM Sans", sans-serif; font-size: 11px; letter-spacing: .12em; font-weight: 700; color: #6c7068; }
+    .sheet-title { font-size: 37px; line-height: 1.22; letter-spacing: -.045em; font-weight: 900; margin: auto 0 12px; }
+    .sheet-title strong { color: #ff4c32; }
+    .bar { width: 46px; height: 7px; background: #ff4c32; margin-bottom: 18px; }
+    .sheet-foot { display: flex; justify-content: space-between; border-top: 1px solid #c9c6bd; padding-top: 12px; font-size: 12px; }
+    .back-num { font-family: "DM Sans", sans-serif; font-size: 88px; line-height: 1; font-weight: 700; opacity: .22; }
+    .back-title { font-size: 27px; font-weight: 800; line-height: 1.4; margin-top: 26px; }
+    .back-pill { margin-top: 24px; display: inline-block; background: #d9ff64; color: #171916; padding: 5px 10px; font-size: 12px; font-weight: 800; }
+    .wide-kicker { color: #d9ff64; font-size: 11px; font-weight: 800; }
+    .wide-title { font-size: 21px; line-height: 1.38; font-weight: 800; margin-top: 6px; }
+    .wide-swatch { width: 58px; aspect-ratio: 1; flex: 0 0 auto; background: #ffd44d; border-radius: 50%; position: relative; }
+    .wide-swatch::after { content: "文"; position: absolute; inset: 0; display:grid; place-items:center; color:#171916; font-size:24px; font-weight:900; }
+    .cursor-tag {
+      position: absolute;
+      z-index: 6;
+      right: 8px;
+      top: 54px;
+      background: var(--accent);
+      color: white;
+      padding: 7px 11px;
+      border-radius: 4px 4px 4px 0;
+      font-size: 12px;
+      font-weight: 800;
+      transform: rotate(3deg);
+    }
+
+    .pain {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .pain-item { padding: 8px 30px; border-left: 1px solid var(--line); }
+    .pain-item:first-child { border-left: 0; padding-left: 0; }
+    .pain-item strong { display: block; font-size: 16px; margin-bottom: 4px; }
+    .pain-item span { color: var(--muted); font-size: 14px; }
+
+    section { padding: 112px 0; }
+    .section-head { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 50px; margin-bottom: 64px; }
+    .section-head h2 { margin: 0; font-size: clamp(34px, 4.2vw, 56px); line-height: 1.14; letter-spacing: -.045em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 17px; max-width: 540px; }
+    .steps { border-top: 2px solid var(--ink); }
+    .step {
+      display: grid;
+      grid-template-columns: 90px 1fr 1.2fr;
+      gap: 30px;
+      align-items: center;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .step-no { font-family: "DM Sans", sans-serif; color: var(--accent); font-weight: 700; font-size: 15px; }
+    .step h3 { margin: 0; font-size: 25px; letter-spacing: -.025em; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .formats { background: var(--paper); border-block: 1px solid var(--line); }
+    .format-grid { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 18px; align-items: end; }
+    .format { min-height: 390px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line-strong); }
+    .format:nth-child(1) { aspect-ratio: 3/4; background: #ffd44d; color:#171916; }
+    .format:nth-child(2) { aspect-ratio: 3/4; background: #ff664e; color:#171916; }
+    .format:nth-child(3) { min-height: 260px; aspect-ratio: 900/383; background: #1677ff; color:white; }
+    .format-num { font-family:"DM Sans", sans-serif; font-size: 13px; font-weight: 700; opacity: .7; }
+    .format h3 { margin: 0 0 8px; font-size: clamp(27px, 3vw, 43px); letter-spacing: -.04em; line-height: 1.12; }
+    .format p { margin: 0; font-size: 14px; opacity: .78; }
+    .format-mark { width: 44px; height: 8px; background: currentColor; }
+    .planned { margin-top: 22px; color: var(--muted); font-size: 13px; }
+
+    .join { padding-top: 120px; }
+    .join-panel {
+      background: var(--form-bg);
+      color: var(--form-ink);
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 72px;
+      padding: clamp(34px, 6vw, 76px);
+      box-shadow: 12px 12px 0 var(--accent);
+    }
+    .join-copy h2 { margin: 0 0 20px; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.1; letter-spacing: -.045em; }
+    .join-copy p { color: var(--form-muted); margin: 0 0 28px; }
+    .promise { list-style: none; margin: 0; padding: 0; }
+    .promise li { padding: 10px 0; border-top: 1px solid color-mix(in srgb, var(--form-ink) 20%, transparent); font-size: 14px; }
+    .promise li::before { content: "→"; color: var(--accent-dark); font-weight: 900; margin-right: 10px; }
+    form { display: grid; gap: 20px; }
+    .field { display: grid; gap: 8px; }
+    label, legend { font-size: 14px; font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid color-mix(in srgb, var(--form-ink) 36%, transparent);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--form-ink);
+      padding: 12px 14px;
+      outline: none;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent-dark); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-dark) 25%, transparent); }
+    select option { color: #171916; background: #fff; }
+    ::placeholder { color: color-mix(in srgb, var(--form-muted) 70%, transparent); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .submit {
+      width: 100%;
+      min-height: 56px;
+      border: 0;
+      border-radius: 5px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 color-mix(in srgb, var(--form-ink) 35%, transparent);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .submit:hover { transform: translate(-1px,-1px); box-shadow: 6px 6px 0 color-mix(in srgb, var(--form-ink) 35%, transparent); }
+    .form-note { color: var(--form-muted); font-size: 12px; line-height: 1.6; margin: -6px 0 0; }
+    .honey { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+
+    .faq { padding-bottom: 90px; }
+    .faq h2 { font-size: 30px; margin: 0 0 24px; }
+    details { border-top: 1px solid var(--line); padding: 20px 0; }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 700; list-style: none; display:flex; justify-content:space-between; gap:20px; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"＋"; color:var(--accent); }
+    details[open] summary::after { content:"－"; }
+    details p { color: var(--muted); margin: 12px 34px 0 0; max-width: 800px; }
+    footer { padding: 30px 0 calc(30px + env(safe-area-inset-bottom)); color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 54px; gap: 30px; }
+      .hero-copy > p { font-size: 17px; }
+      .preview { min-height: 530px; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .pain-item, .pain-item:first-child { padding: 18px 0; border-left:0; border-top:1px solid var(--line); }
+      .pain-item:first-child { border-top:0; }
+      .section-head { grid-template-columns: 1fr; gap: 20px; }
+      .step { grid-template-columns: 60px 1fr; }
+      .step p { grid-column: 2; }
+      .format-grid { grid-template-columns: 1fr 1fr; }
+      .format:nth-child(3) { grid-column: 1 / -1; }
+      .join-panel { grid-template-columns: 1fr; gap: 46px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .hero { min-height: auto; padding: 40px 0 28px; }
+      h1 { font-size: clamp(42px, 13vw, 60px); }
+      .hero-copy > p { margin-top: 20px; }
+      .actions { align-items: flex-start; flex-direction: column; }
+      .cta { width: 100%; }
+      .preview { min-height: 445px; overflow: hidden; margin-inline: -14px; }
+      .sheet-main { width: 266px; padding: 23px; transform: rotate(-2.2deg) translate(-26px, -8px); }
+      .sheet-back { width: 240px; padding: 22px; transform: rotate(7deg) translate(56px, 28px); }
+      .sheet-wide { width: 300px; padding: 18px 21px; transform: rotate(2deg) translate(15px, 150px); }
+      .sheet-title { font-size: 29px; }
+      .back-title { font-size: 21px; }
+      .back-num { font-size: 64px; }
+      .wide-title { font-size: 16px; }
+      .wide-swatch { width: 46px; }
+      .cursor-tag { right: 14px; top: 42px; }
+      section { padding: 78px 0; }
+      .section-head { margin-bottom: 40px; }
+      .step { grid-template-columns: 44px 1fr; gap: 14px; padding: 25px 0; }
+      .step h3 { font-size: 21px; }
+      .format-grid { grid-template-columns: 1fr; gap: 14px; }
+      .format, .format:nth-child(1), .format:nth-child(2), .format:nth-child(3) { min-height: 250px; aspect-ratio: auto; }
+      .format:nth-child(3) { grid-column: auto; }
+      .join { padding-top: 80px; }
+      .join-panel { padding: 32px 20px; margin-inline: -4px; box-shadow: 7px 7px 0 var(--accent); }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">首批内测招募中</div>
+          <h1 id="hero-title">你只填字，<br><span class="highlight">版式自动长好。</span></h1>
+          <p>为中文内容创作者做的自动出图工具。填一次标题与正文，快速得到小红书图文、封面和公众号封面，不再从空白画布开始。</p>
+          <div class="actions">
+            <a class="cta" href="#join">报名首批内测</a>
+            <span class="micro">免费报名 · 开放时邮件通知</span>
+          </div>
+        </div>
+        <div class="preview" aria-label="小红书图文与公众号封面版式预览">
+          <div class="sheet sheet-back">
+            <div class="back-num">02</div>
+            <div class="back-title">同一套内容<br>不用重复排版</div>
+            <span class="back-pill">批量生成</span>
+          </div>
+          <div class="sheet sheet-main">
+            <div class="tiny-label">CONTENT → DESIGN</div>
+            <div class="sheet-title">一句标题，<br>自动变成<br><strong>整套图文</strong></div>
+            <div class="bar"></div>
+            <div class="sheet-foot"><span>中文原生排版</span><span>01 / 07</span></div>
+          </div>
+          <div class="sheet sheet-wide">
+            <div>
+              <div class="wide-kicker">公众号封面 900 × 383</div>
+              <div class="wide-title">同一篇内容，多平台尺寸一次备齐</div>
+            </div>
+            <div class="wide-swatch" aria-hidden="true"></div>
+          </div>
+          <div class="cursor-tag">一键生成</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="pain">
+      <div class="wrap pain-grid">
+        <div class="pain-item"><strong>不学拖拽</strong><span>用熟悉的表单填字，不研究图层和组件</span></div>
+        <div class="pain-item"><strong>不改三遍</strong><span>同一份内容，自动适配不同平台尺寸</span></div>
+        <div class="pain-item"><strong>不怕中文挤坏</strong><span>围绕中文换行、标点和层级做排版</span></div>
+      </div>
+    </div>
+
+    <section class="how">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>从文案到成图，<br>只留三个动作</h2>
+          <p>它不是另一个让你“自己设计”的编辑器，而是把重复排版变成自动步骤。你保留内容判断，把时间花在选题和表达上。</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-no">01</div>
+            <h3>填入内容</h3>
+            <p>粘贴标题、正文与重点句，选择你要发布的平台。</p>
+          </div>
+          <div class="step">
+            <div class="step-no">02</div>
+            <h3>挑一种气质</h3>
+            <p>换配色与版式方向，不用从几千个模板里反复筛。</p>
+          </div>
+          <div class="step">
+            <div class="step-no">03</div>
+            <h3>拿走整套图</h3>
+            <p>预览后下载；多标题批量生成会优先邀请高频创作者试用。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="formats">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>先把最常用的<br>三种尺寸做好</h2>
+          <p>首批内测计划覆盖小红书与公众号。每种版式围绕真实发布场景设计，不靠一张通用模板硬裁。</p>
+        </div>
+        <div class="format-grid">
+          <article class="format">
+            <span class="format-num">3 : 4</span>
+            <div><h3>小红书<br>图文卡片</h3><p>标题、论点、重点句，批量保持统一层级</p></div>
+            <div class="format-mark"></div>
+          </article>
+          <article class="format">
+            <span class="format-num">COVER</span>
+            <div><h3>小红书<br>笔记封面</h3><p>冲突点突出，信息密度不挤成一团</p></div>
+            <div class="format-mark"></div>
+          </article>
+          <article class="format">
+            <span class="format-num">900 × 383 / 500 × 500</span>
+            <div><h3>公众号封面</h3><p>横版与分享卡同步准备，发布前少返工一次</p></div>
+            <div class="format-mark"></div>
+          </article>
+        </div>
+        <p class="planned">以上为首批内测计划范围，最终开放顺序会参考报名者最常用的平台。</p>
+      </div>
+    </section>
+
+    <section class="join" id="join">
+      <div class="wrap">
+        <div class="join-panel">
+          <div class="join-copy">
+            <h2>想少花时间<br>在重复排版上？</h2>
+            <p>留下邮箱和你的使用场景。我们会优先邀请真正高频做内容的人参与首批内测。</p>
+            <ul class="promise">
+              <li>开放时间与试用方式，用邮件通知</li>
+              <li>报名免费，不需要预付</li>
+              <li>你的选择会影响首批功能优先级</li>
+            </ul>
+          </div>
+
+          <form action="https://formsubmit.co/bff49359dd515840223b53fd5357c455" method="POST">
+            <input type="hidden" name="_subject" value="中文创作者自动出图工具｜新内测报名" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <div class="field">
+              <label for="email">你的邮箱 *</label>
+              <input id="email" name="邮箱" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" required />
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="platform">你主要做哪个平台？ *</label>
+                <select id="platform" name="主要平台" required>
+                  <option value="" selected disabled>请选择</option>
+                  <option>小红书</option>
+                  <option>微信公众号</option>
+                  <option>小红书 + 微信公众号</option>
+                  <option>其他内容平台</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="frequency">每周大约做几张图？</label>
+                <select id="frequency" name="每周出图量">
+                  <option value="" selected>暂不确定</option>
+                  <option>1–5 张</option>
+                  <option>6–15 张</option>
+                  <option>16–30 张</option>
+                  <option>30 张以上</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="problem">现在最费时间的出图环节是什么？</label>
+              <textarea id="problem" name="最费时间的环节" placeholder="例如：同一篇内容要改三种尺寸；中文标题总是排不好……"></textarea>
+            </div>
+            <button class="submit" type="submit">报名首批内测 →</button>
+            <p class="form-note">提交后会跳转至报名确认页。邮箱仅用于本产品的内测与开放通知。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap">
+        <h2>报名之前，你可能还想知道</h2>
+        <details>
+          <summary>它和 Canva、稿定有什么不同？</summary>
+          <p>Canva、稿定更像“给你工具，自己设计”。这里更关注固定场景的自动排版：填字、选风格、直接出一套尺寸，不做复杂的拖拽编辑器。</p>
+        </details>
+        <details>
+          <summary>现在就能用吗？</summary>
+          <p>还在首批内测招募阶段。报名后，开放时间、试用入口与使用方式会通过邮件发送。</p>
+        </details>
+        <details>
+          <summary>会支持批量生成吗？</summary>
+          <p>批量是计划中的重点能力：粘贴多组标题或内容，一次生成多张差异图。首批实现顺序会根据报名者的出图量与反馈决定。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">中文内容创作者自动出图工具 · 首批内测招募</div>
+  </footer>
+</body>
+</html>
