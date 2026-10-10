@@ -241,6 +241,10 @@
     .tpl-card .sw-miaobian { background: linear-gradient(180deg, #3a4666, #14141c); color: #fff; font-size: 18px; text-shadow: -2px 0 0 #0D3B2E, 2px 0 0 #0D3B2E, 0 -2px 0 #0D3B2E, 0 2px 0 #0D3B2E, -2px -2px 0 #0D3B2E, 2px 2px 0 #0D3B2E; }
     .tpl-card .sw-qingdan { background: #F4EFE4; color: #111; border: 1px solid #E4DED1; }
     .tpl-card .sw-zhuangse { background: #FFD400; color: #111; }
+    .tpl-card .sw-zhenren { background: #FFDD33; color: #111; }
+    .colorrow { display: flex; gap: 10px; margin: 4px 0 8px; align-items: center; }
+    .colorrow span { width: 44px; height: 44px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd; flex: none; }
+    .colorrow span.sel { border-color: var(--acc); outline: 2px solid var(--acc); }
     input[type="file"] { font-size: 14px; padding: 10px 0; }
     .mockrow { display: flex; gap: 10px; margin: 4px 0 8px; }
     .mockrow img { width: 76px; height: 100px; object-fit: cover; border-radius: 10px; cursor: pointer; border: 2px solid transparent; }
@@ -479,7 +483,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>第一版：<br>小红书封面生成器</h2>
-          <p>五套版式全部复刻自真实小红书封面：大字报、提问悬念、清单条目、撞色标题块、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
+          <p>六套版式全部复刻自真实小红书封面：大字报、真人出镜、提问悬念、清单条目、撞色标题块、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
         </div>
         <div class="try-grid">
           <div class="try-panel">
@@ -491,6 +495,14 @@
                   <span class="sw sw-dzb">报</span>
                   <strong>大字报</strong>
                   <span>纯文字大字风</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="zhenren" />
+                <span class="tpl-card">
+                  <span class="sw sw-zhenren">像</span>
+                  <strong>真人出镜</strong>
+                  <span>口播封面风</span>
                 </span>
               </label>
               <label class="tpl">
@@ -537,6 +549,55 @@
                 <label for="dz-key">关键词标红 <span class="hint">可空，标题中的词会变红</span></label>
                 <input type="text" id="dz-key" value="存钱" />
               </div>
+              <div class="field">
+                <label>背景色</label>
+                <div class="colorrow" id="dz-colors">
+                  <span data-c="#ffffff" style="background:#ffffff" class="sel"></span>
+                  <span data-c="#FBF8F1" style="background:#FBF8F1"></span>
+                  <span data-c="#FFD400" style="background:#FFD400"></span>
+                  <span data-c="#0D3B2E" style="background:#0D3B2E"></span>
+                  <span data-c="#111111" style="background:#111111"></span>
+                </div>
+                <div class="field-row" style="margin-top:4px">
+                  <input type="color" id="dz-custom" value="#ffffff" style="width:56px;height:38px;padding:2px;flex:none" />
+                  <span class="hint" style="align-self:center">自定义颜色（深色底时文字自动变白）</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fgroup" data-tpl="zhenren" hidden>
+              <div class="field">
+                <label for="zr-title">顶部大标题 <span class="hint">黄字描边</span></label>
+                <input type="text" id="zr-title" value="停止内耗" />
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="zr-sub1">副标题1 <span class="hint">黄字</span></label>
+                  <input type="text" id="zr-sub1" value="3个秘诀" />
+                </div>
+                <div class="field">
+                  <label for="zr-sub2">副标题2 <span class="hint">白字</span></label>
+                  <input type="text" id="zr-sub2" value="恢复好状态" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="zr-bottom">底部金句</label>
+                <input type="text" id="zr-bottom" value="凡事看得开生活才能嗨" />
+              </div>
+              <div class="field">
+                <label for="zr-key">金句关键词 <span class="hint">变黄，可空</span></label>
+                <input type="text" id="zr-key" value="看得开" />
+              </div>
+              <div class="field">
+                <label>背景图 <span class="hint">上传自己的人像照片，点选 mock 或上传替换</span></label>
+                <div class="mockrow" data-tpl="zhenren">
+                  <img src="bg/mock-smile.jpg" data-url="bg/mock-smile.jpg" alt="微笑" />
+                  <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
+                  <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
+                </div>
+                <input type="file" id="bg-zr" accept="image/*" />
+              </div>
+              <p class="fgroup-note">白色人物描边（抠图白边）代码做不出来，需要提前抠好图再上传；模板负责标题排版和装饰。</p>
             </div>
 
             <div class="fgroup" data-tpl="tiwen" hidden>
@@ -930,22 +991,31 @@
     return lines;
   }
   // 居中绘制一行，关键词红色
-  function drawMixedLine(ctx, lineToks, cx, y) {
+  function drawMixedLine(ctx, lineToks, cx, y, base) {
     var total = 0, i;
     for (i = 0; i < lineToks.length; i++) total += ctx.measureText(lineToks[i].t).width;
     var x = cx - total / 2;
     for (i = 0; i < lineToks.length; i++) {
-      ctx.fillStyle = lineToks[i].keep ? "#E23B2E" : "#111111";
+      ctx.fillStyle = lineToks[i].keep ? "#E23B2E" : (base || "#111111");
       ctx.fillText(lineToks[i].t, x, y);
       x += ctx.measureText(lineToks[i].t).width;
     }
   }
 
+  var dzBg = "#ffffff";
+  function isDark(hex) {
+    var h = hex.replace("#", "");
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    var r = parseInt(h.substr(0, 2), 16), g = parseInt(h.substr(2, 2), 16), b = parseInt(h.substr(4, 2), 16);
+    return ((0.299 * r + 0.587 * g + 0.114 * b) / 255) < 0.45;
+  }
+
   // ---- 模板0：大字报（纯文字超大字，关键词标红）----
   function renderDazibao(ctx) {
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = dzBg;
     ctx.fillRect(0, 0, W, H);
     ctx.textAlign = "left";
+    var dzBase = isDark(dzBg) ? "#ffffff" : "#111111";
     var raw = val("dz-title") || "在这里输入标题";
     var kw = val("dz-key");
     var size = 170, lines;
@@ -959,7 +1029,138 @@
     var lh = size * 1.28;
     var y0 = 700 - ((lines.length - 1) * lh) / 2 + size * 0.36;
     for (var di = 0; di < lines.length; di++) {
-      drawMixedLine(ctx, lines[di], W / 2, y0 + di * lh);
+      drawMixedLine(ctx, lines[di], W / 2, y0 + di * lh, dzBase);
+    }
+  }
+
+  // ---- 手绘装饰：波浪下划线 / 箭头 ----
+  function wavyLine(ctx, x1, x2, y, amp, color, lw) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lw;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    var steps = 24, i, x, yy;
+    for (i = 0; i <= steps; i++) {
+      x = x1 + (x2 - x1) * i / steps;
+      yy = y + Math.sin(i / steps * Math.PI * 3) * amp;
+      if (i === 0) ctx.moveTo(x, yy); else ctx.lineTo(x, yy);
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
+  function swoosh(ctx, x, y, s, color) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 10;
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.quadraticCurveTo(x + s * 0.7, y - s * 0.55, x + s * 1.25, y - s * 0.1);
+    ctx.stroke();
+    var hx = x + s * 1.25, hy = y - s * 0.1;
+    ctx.beginPath();
+    ctx.moveTo(hx, hy); ctx.lineTo(hx - 30, hy - 6);
+    ctx.moveTo(hx, hy); ctx.lineTo(hx - 12, hy - 32);
+    ctx.stroke();
+    ctx.restore();
+  }
+  // 描边混排行：整行先描边再填色，关键词变色
+  function drawMixedStrokeLine(ctx, lineToks, cx, y, baseFill, kwFill, stroke, lw) {
+    var total = 0, i, x;
+    for (i = 0; i < lineToks.length; i++) total += ctx.measureText(lineToks[i].t).width;
+    ctx.lineWidth = lw;
+    ctx.strokeStyle = stroke;
+    ctx.lineJoin = "round";
+    x = cx - total / 2;
+    for (i = 0; i < lineToks.length; i++) {
+      ctx.strokeText(lineToks[i].t, x, y);
+      x += ctx.measureText(lineToks[i].t).width;
+    }
+    x = cx - total / 2;
+    for (i = 0; i < lineToks.length; i++) {
+      ctx.fillStyle = lineToks[i].keep ? kwFill : baseFill;
+      ctx.fillText(lineToks[i].t, x, y);
+      x += ctx.measureText(lineToks[i].t).width;
+    }
+  }
+
+  // ---- 模板：真人出镜（复刻"停止内耗"：黄描边大标题+副标题+底部金句）----
+  function renderZhenren(ctx) {
+    var photo = bgImgs["zhenren"];
+    if (photo) drawBgCover(ctx, photo);
+    else { ctx.fillStyle = "#2b2b33"; ctx.fillRect(0, 0, W, H); }
+    ctx.textAlign = "left";
+    var STROKE = "#4a3018", YEL = "#FFDD33";
+
+    var title = val("zr-title");
+    if (title) {
+      var tsz = fitSingle(ctx, title, CW, 168, "900");
+      ctx.font = "900 " + tsz + "px " + FONT;
+      ctx.lineWidth = tsz * 0.16;
+      ctx.strokeStyle = STROKE;
+      ctx.lineJoin = "round";
+      var tw = ctx.measureText(title).width;
+      var tx = (W - tw) / 2;
+      ctx.strokeText(title, tx, 235);
+      ctx.fillStyle = YEL;
+      ctx.fillText(title, tx, 235);
+    }
+    var s1 = val("zr-sub1"), s2 = val("zr-sub2");
+    var sy = 470;
+    if (s1 || s2) {
+      ctx.font = "900 84px " + FONT;
+      ctx.fillStyle = YEL;
+      ctx.fillText("「", PAD - 10, sy - 60);
+    }
+    if (s1) {
+      var a1 = fitSingle(ctx, s1, CW * 0.62, 84, "900");
+      ctx.font = "900 " + a1 + "px " + FONT;
+      ctx.lineWidth = a1 * 0.14;
+      ctx.strokeStyle = STROKE;
+      ctx.lineJoin = "round";
+      ctx.strokeText(s1, PAD + 40, sy);
+      ctx.fillStyle = YEL;
+      ctx.fillText(s1, PAD + 40, sy);
+      sy += a1 * 1.32;
+    }
+    if (s2) {
+      var a2 = fitSingle(ctx, s2, CW * 0.62, 84, "900");
+      ctx.font = "900 " + a2 + "px " + FONT;
+      ctx.lineWidth = a2 * 0.14;
+      ctx.strokeStyle = STROKE;
+      ctx.lineJoin = "round";
+      ctx.strokeText(s2, PAD + 40, sy);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(s2, PAD + 40, sy);
+      var s2w = ctx.measureText(s2).width;
+      ctx.font = "900 84px " + FONT;
+      ctx.fillStyle = YEL;
+      ctx.fillText("」", PAD + 40 + s2w + 10, sy);
+      sy += a2 * 1.32;
+    }
+    swoosh(ctx, W - PAD - 160, 560, 90, YEL);
+    star(ctx, W - PAD - 60, 700, 22, "#ffffff");
+
+    var bot = val("zr-bottom"), bkw = val("zr-key");
+    if (bot) {
+      var bsz = 88, blines;
+      while (bsz > 48) {
+        ctx.font = "900 " + bsz + "px " + FONT;
+        blines = wrapTokObjs(ctx, tokenize(bot, bkw), CW);
+        if (blines.length <= 2) break;
+        bsz -= 8;
+      }
+      ctx.font = "900 " + bsz + "px " + FONT;
+      var lh = bsz * 1.3;
+      var y0 = 1170;
+      for (var bi = 0; bi < blines.length; bi++) {
+        drawMixedStrokeLine(ctx, blines[bi], W / 2, y0 + bi * lh, "#ffffff", YEL, STROKE, bsz * 0.14);
+      }
+      var lastW = 0, li;
+      var lastLine = blines[blines.length - 1];
+      for (li = 0; li < lastLine.length; li++) lastW += ctx.measureText(lastLine[li].t).width;
+      wavyLine(ctx, (W - lastW) / 2, (W + lastW) / 2, y0 + (blines.length - 1) * lh + bsz * 0.42, 10, YEL, 9);
     }
   }
 
@@ -1156,7 +1357,8 @@
     var ctx = canvas.getContext("2d");
     ctx.textBaseline = "alphabetic";
     var tpl = currentTpl();
-    if (tpl === "tiwen") renderTiwen(ctx);
+    if (tpl === "zhenren") renderZhenren(ctx);
+    else if (tpl === "tiwen") renderTiwen(ctx);
     else if (tpl === "qingdan") renderQingdan(ctx);
     else if (tpl === "zhuangse") renderZhuangse(ctx);
     else if (tpl === "miaobian") renderMiaobian(ctx);
@@ -1207,6 +1409,7 @@
     document.getElementById("dl").addEventListener("click", download);
     bindPhoto("bg-mb", "miaobian");
     bindPhoto("bg-zs", "zhuangse");
+    bindPhoto("bg-zr", "zhenren");
     var thumbs = document.querySelectorAll(".mockrow img");
     for (var ti = 0; ti < thumbs.length; ti++) {
       (function (el) {
@@ -1220,6 +1423,24 @@
       document.querySelector('.mockrow[data-tpl="miaobian"] img'));
     setBgFromUrl("zhuangse", "bg/mock-person.jpg",
       document.querySelector('.mockrow[data-tpl="zhuangse"] img'));
+    setBgFromUrl("zhenren", "bg/mock-smile.jpg",
+      document.querySelector('.mockrow[data-tpl="zhenren"] img'));
+    var dzSw = document.querySelectorAll("#dz-colors span");
+    for (var ci = 0; ci < dzSw.length; ci++) {
+      (function (el) {
+        el.addEventListener("click", function () {
+          dzBg = el.getAttribute("data-c");
+          for (var cj = 0; cj < dzSw.length; cj++) dzSw[cj].classList.toggle("sel", dzSw[cj] === el);
+          render();
+        });
+      })(dzSw[ci]);
+    }
+    var dzCustom = document.getElementById("dz-custom");
+    if (dzCustom) dzCustom.addEventListener("input", function () {
+      dzBg = dzCustom.value;
+      for (var ck = 0; ck < dzSw.length; ck++) dzSw[ck].classList.remove("sel");
+      render();
+    });
     syncGroups();
     render();
     if (document.fonts && document.fonts.load) {
