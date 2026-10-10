@@ -236,9 +236,11 @@
       background: var(--paper);
     }
     .tpl-card .sw { height: 64px; border-radius: 6px; margin-bottom: 10px; display: grid; place-items: center; font-weight: 900; font-size: 22px; }
-    .tpl-card .sw-dzb { background: #FFD400; color: #141414; }
-    .tpl-card .sw-mb2 { background: linear-gradient(180deg, #33333f, #0e0e14); color: #fff; font-size: 18px; text-shadow: -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px -2px 0 #000, 2px 2px 0 #000; }
-    .tpl-card .sw-sz { background: #111; color: #FFD400; }
+    .tpl-card .sw-suanzhang { background: #FBF8F1; color: #0D3B2E; border: 1px solid #E4DED1; }
+    .tpl-card .sw-tiwen { background: #B9F73D; color: #0D3B2E; }
+    .tpl-card .sw-miaobian { background: linear-gradient(180deg, #3a4666, #14141c); color: #fff; font-size: 18px; text-shadow: -2px 0 0 #0D3B2E, 2px 0 0 #0D3B2E, 0 -2px 0 #0D3B2E, 0 2px 0 #0D3B2E, -2px -2px 0 #0D3B2E, 2px 2px 0 #0D3B2E; }
+    .fgroup[hidden] { display: none; }
+    .fgroup-note { font-size: 12px; color: var(--muted); margin: -6px 0 20px; line-height: 1.7; }
     .tpl-card strong { display: block; font-size: 14px; }
     .tpl-card span { font-size: 12px; color: var(--muted); }
     .tpl input:checked + .tpl-card { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 20px var(--shadow); }
@@ -437,7 +439,7 @@
         <div class="hero-copy">
           <div class="eyebrow">免费试用 · 不用注册</div>
           <h1 id="hero-title">你只填字，<br><span class="highlight">版式自动长好。</span></h1>
-          <p>为中文内容创作者做的自动出图工具。下面就是第一版：填几个字，一键生成小红书封面，中文排版细节拉满，中文字零错误。</p>
+          <p>为中文内容创作者做的自动出图工具。下面就是第一版：填几个字，一键生成小红书封面——版式复刻自真实爆款笔记，中文排版细节拉满，中文字零错误。</p>
           <div class="actions">
             <a class="cta" href="#try">直接试用</a>
             <span class="micro">纯前端生成 · 图片只在你的浏览器里</span>
@@ -471,60 +473,109 @@
       <div class="wrap">
         <div class="section-head">
           <h2>第一版：<br>小红书封面生成器</h2>
-          <p>左边填字，右边实时出图。三种版式复刻小红书爆款封面流派——撞色大字报、描边标题、数字冲击，排版细节（行首禁则、标点挤压、字间距）全部自动处理好。满意就下载，不用注册。</p>
+          <p>三套版式复刻自真实爆款笔记封面：算账对比、提问悬念、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。</p>
         </div>
         <div class="try-grid">
           <div class="try-panel">
             <h3>选一种版式</h3>
             <div class="tpl-cards" role="radiogroup" aria-label="版式选择">
               <label class="tpl">
-                <input type="radio" name="tpl" value="dazibao" checked />
+                <input type="radio" name="tpl" value="suanzhang" checked />
                 <span class="tpl-card">
-                  <span class="sw sw-dzb">爆</span>
-                  <strong>撞色大字报</strong>
-                  <span>电商促销风</span>
+                  <span class="sw sw-suanzhang">账</span>
+                  <strong>算账对比</strong>
+                  <span>存款对比风</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="tiwen" />
+                <span class="tpl-card">
+                  <span class="sw sw-tiwen">？</span>
+                  <strong>提问悬念</strong>
+                  <span>荧光问句风</span>
                 </span>
               </label>
               <label class="tpl">
                 <input type="radio" name="tpl" value="miaobian" />
                 <span class="tpl-card">
-                  <span class="sw sw-mb2">标题</span>
-                  <strong>描边标题</strong>
-                  <span>博主口播风</span>
-                </span>
-              </label>
-              <label class="tpl">
-                <input type="radio" name="tpl" value="shuzi" />
-                <span class="tpl-card">
-                  <span class="sw sw-sz">3</span>
-                  <strong>数字冲击</strong>
-                  <span>清单干货风</span>
+                  <span class="sw sw-miaobian">标题</span>
+                  <strong>实拍描边</strong>
+                  <span>街景标题风</span>
                 </span>
               </label>
             </div>
 
-            <div class="field">
-              <label for="in-title">标题 <span class="hint">核心冲突点放前面，字号会自动适配</span></label>
-              <textarea id="in-title" rows="2">10万存5年，大行给6500，小银行给10500</textarea>
-            </div>
-            <div class="field-row">
+            <div class="fgroup" data-tpl="suanzhang">
               <div class="field">
-                <label for="in-key">重点词 <span class="hint">自动高亮，可空</span></label>
-                <input type="text" id="in-key" value="10500" />
+                <label for="sz-title">标题</label>
+                <input type="text" id="sz-title" value="11月存款利率" />
               </div>
               <div class="field">
-                <label for="in-num">数字 <span class="hint">仅数字版式用</span></label>
-                <input type="text" id="in-num" value="3" inputmode="numeric" />
+                <label for="sz-scene">场景行 <span class="hint">大字，如"10万存5年"</span></label>
+                <input type="text" id="sz-scene" value="10万存5年" />
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="sz-adesc">A组说明</label>
+                  <input type="text" id="sz-adesc" value="放在六大行" />
+                </div>
+                <div class="field">
+                  <label for="sz-aval">A组数值 <span class="hint">大字</span></label>
+                  <input type="text" id="sz-aval" value="6500元" />
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="sz-bdesc">B组说明</label>
+                  <input type="text" id="sz-bdesc" value="放在小银行" />
+                </div>
+                <div class="field">
+                  <label for="sz-bval">B组数值 <span class="hint">荧光绿高亮</span></label>
+                  <input type="text" id="sz-bval" value="10500元" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="sz-conc">结论行 <span class="hint">荧光绿高亮</span></label>
+                <input type="text" id="sz-conc" value="利息差 4000 块" />
+              </div>
+              <div class="field">
+                <label for="sz-hook">底部钩子 <span class="hint">可空</span></label>
+                <input type="text" id="sz-hook" value="左滑看完整对比表 →" />
               </div>
             </div>
-            <div class="field">
-              <label for="in-sub">副标题 <span class="hint">一句话补充，可空</span></label>
-              <textarea id="in-sub" rows="2">11月存款利率实测：同一笔钱，换个地方多拿4000</textarea>
+
+            <div class="fgroup" data-tpl="tiwen" hidden>
+              <div class="field">
+                <label for="tw-title">大标题 <span class="hint">对比数字放前面</span></label>
+                <input type="text" id="tw-title" value="工资 5000 vs 50000" />
+              </div>
+              <div class="field">
+                <label for="tw-q">悬念问句 <span class="hint">荧光绿整块高亮</span></label>
+                <input type="text" id="tw-q" value="理财方式有什么不同？" />
+              </div>
+              <div class="field">
+                <label for="tw-sub">副标题</label>
+                <input type="text" id="tw-sub" value="同一张表，两种活法" />
+              </div>
+              <div class="field">
+                <label for="tw-small">小字说明 <span class="hint">可空</span></label>
+                <input type="text" id="tw-small" value="看完就知道你该干嘛" />
+              </div>
             </div>
+
+            <div class="fgroup" data-tpl="miaobian" hidden>
+              <div class="field">
+                <label for="mb-title">标题 <span class="hint">可换行，最多3行</span></label>
+                <textarea id="mb-title" rows="3">拿住比亚迪23年的人
+说AI热潮还要崩不止一轮</textarea>
+              </div>
+              <p class="fgroup-note">白字深绿描边，适合观点冲突强的选题。背景用暖色渐变代替实拍图。</p>
+            </div>
+
             <div class="field-row">
               <div class="field">
-                <label for="in-tag">左上角标签</label>
-                <input type="text" id="in-tag" value="小红书封面" />
+                <label for="in-tag">标签</label>
+                <input type="text" id="in-tag" value="普通人搞钱实验" />
               </div>
               <div class="field">
                 <label for="in-sign">落款</label>
@@ -659,32 +710,22 @@
   "use strict";
   var W = 1080, H = 1440, PAD = 96, CW = W - PAD * 2;
   var FONT = '"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif';
+  // 复刻自用户已发布爆款封面的视觉系统（v22）
+  var INK = "#0D3B2E", MUT = "#75857C", HL = "#B9F73D", BG = "#FBF8F1";
 
-  var STYLES = {
-    // 黄底黑字撞色大字报：电商/促销爆款风
-    dazibao: { bg: "#FFD400", ink: "#141414", muted: "#6b5a00", sub: "#3a3a3a",
-               mark: "#E63B2E", markInk: "#ffffff",
-               tagBg: "#E63B2E", tagInk: "#ffffff",
-               footLine: "rgba(0,0,0,.28)", stroke: null },
-    // 描边标题：深色底 + 白字粗黑描边，博主口播爆款风
-    miaobian: { bgGrad: ["#33333f", "#0e0e14"], ink: "#ffffff", muted: "#c6c6d2", sub: "#e6e6ef",
-               mark: "#FFD400", markInk: "#141414",
-               tagBg: "#E63B2E", tagInk: "#ffffff",
-               footLine: "rgba(255,255,255,.3)",
-               stroke: "#0a0a0a", strokeRatio: 0.13 },
-    // 数字冲击：黑底 + 巨黄数字，清单干货风
-    shuzi:   { bg: "#111111", ink: "#ffffff", muted: "#9a9aa5", sub: "#d9d9e2",
-               mark: "#FFD400", markInk: "#141414",
-               tagBg: "#FFD400", tagInk: "#141414",
-               footLine: "rgba(255,255,255,.25)",
-               stroke: null, numInk: "#FFD400" }
-  };
-
-  // 中文排版禁则：行首不能出现闭标点，行尾不能出现开标点
   var NO_START = "，。！？；：、）】》～…—·";
   var NO_END = "（【《「『〈〈";
 
-  // 把重点词当作不可拆分的整体（避免高亮词被换行切断），其余按字拆分；兼顾中文禁则
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
   function tokenize(text, keyword) {
     var toks = [], i = 0, cs;
     if (!keyword) {
@@ -707,197 +748,256 @@
       if (tk === "\n") { push(); continue; }
       w = ctx.measureText(tk).width;
       if (tokens[k].keep) {
-        // 重点词整体换行，不拆散
         if (curW + w > maxW && curW > 0) push();
         cur += tk; curW += w;
         continue;
       }
       ch = tk;
       if (curW + w > maxW && curW > 0) {
-        if (NO_START.indexOf(ch) >= 0) {
-          // 闭标点跟上行，不单独开新行
-          cur += ch; curW += w; push();
-        } else if (NO_END.indexOf(ch) >= 0) {
-          // 开标点不留在行尾
-          push(); cur = ch; curW = w;
-        } else {
-          push(); cur = ch; curW = w;
-        }
+        if (NO_START.indexOf(ch) >= 0) { cur += ch; curW += w; push(); }
+        else if (NO_END.indexOf(ch) >= 0) { push(); cur = ch; curW = w; }
+        else { push(); cur = ch; curW = w; }
       } else { cur += ch; curW += w; }
     }
     push();
     return lines;
   }
 
-  // 标题布局：字号自适应 + 纵向预算（不挤页脚）+ 末行孤字规避
-  function layoutTitle(ctx, title, keyword, maxW, availH, subH) {
-    var gap = 56, size, lines, lastW;
-    for (size = 132; size >= 64; size -= 8) {
-      ctx.font = "900 " + size + "px " + FONT;
-      lines = wrapTokens(ctx, tokenize(title, keyword), maxW);
-      if (lines.length > 4) continue;
-      if (lines.length > 1) {
-        lastW = ctx.measureText(lines[lines.length - 1]).width;
-        if (lastW < maxW * 0.3) continue; // 末行只剩一两个字就降一档字号
-      }
-      if (lines.length * size * 1.28 + gap + subH <= availH) {
-        return { size: size, lines: lines };
-      }
-    }
-    ctx.font = "900 64px " + FONT;
-    lines = wrapTokens(ctx, tokenize(title, keyword), maxW).slice(0, 4);
-    return { size: 64, lines: lines };
-  }
-
-  function roundRect(ctx, x, y, w, h, r) {
-    ctx.beginPath();
-    ctx.moveTo(x + r, y);
-    ctx.arcTo(x + w, y, x + w, y + h, r);
-    ctx.arcTo(x + w, y + h, x, y + h, r);
-    ctx.arcTo(x, y + h, x, y, r);
-    ctx.arcTo(x, y, x + w, y, r);
-    ctx.closePath();
-  }
-
-  function drawMarkBehind(ctx, lines, x, y, lineH, size, keyword, color) {
-    if (!keyword) return;
+  // 荧光绿四角星（复刻封面右上角装饰）
+  function star(ctx, cx, cy, r, color) {
     ctx.save();
     ctx.fillStyle = color;
-    for (var i = 0; i < lines.length; i++) {
-      var line = lines[i], from = 0, idx;
-      while ((idx = line.indexOf(keyword, from)) >= 0) {
-        var bx = x + ctx.measureText(line.slice(0, idx)).width;
-        var bw = ctx.measureText(keyword).width;
-        // 整块高亮：按连续词组整块涂，不逐字碎
-        ctx.fillRect(bx - 8, y + i * lineH - size * 0.92, bw + 16, size * 1.12);
-        from = idx + keyword.length;
-      }
+    ctx.beginPath();
+    for (var i = 0; i < 8; i++) {
+      var a = Math.PI / 4 * i - Math.PI / 2;
+      var rr = (i % 2 === 0) ? r : r * 0.30;
+      var x = cx + Math.cos(a) * rr, y = cy + Math.sin(a) * rr;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
+    ctx.closePath();
+    ctx.fill();
     ctx.restore();
   }
 
-  // 富文本行：重点词用 markInk 颜色；整行可选描边（爆款封面描边字）
-  function drawRichLine(ctx, line, x, y, S, keyword, size) {
-    var segs = [], idx = 0, k;
-    if (keyword) {
-      while ((k = line.indexOf(keyword, idx)) >= 0) {
-        if (k > idx) segs.push({ t: line.slice(idx, k), key: false });
-        segs.push({ t: keyword, key: true });
-        idx = k + keyword.length;
+  // 单行字号自适应（超出宽度就缩小）
+  function fitSingle(ctx, text, maxW, startSize, weight) {
+    var size = startSize;
+    while (size > 24) {
+      ctx.font = weight + " " + size + "px " + FONT;
+      if (ctx.measureText(text).width <= maxW) break;
+      size -= 6;
+    }
+    return size;
+  }
+
+  function footer(ctx, sign) {
+    var y = H - 70;
+    ctx.font = "500 30px " + FONT;
+    ctx.fillStyle = MUT;
+    ctx.fillText(sign, PAD, y);
+    var disc = "个人学习记录 · 不构成投资建议";
+    var dw = ctx.measureText(disc).width;
+    ctx.fillText(disc, (W - dw) / 2, y);
+  }
+
+  function val(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : "";
+  }
+
+  // ---- 模板1：算账对比（复刻《11月存款利率》首图）----
+  function renderSuanzhang(ctx) {
+    ctx.fillStyle = BG;
+    ctx.fillRect(0, 0, W, H);
+    var tag = val("in-tag") || "普通人搞钱实验";
+    var sign = val("in-sign") || "毛毛星带你飞";
+    star(ctx, W - PAD - 40, 150, 44, HL);
+    ctx.fillStyle = INK;
+    ctx.font = "800 44px " + FONT;
+    ctx.fillText(tag, PAD, 175);
+
+    var title = val("sz-title");
+    if (title) {
+      var ts = fitSingle(ctx, title, CW, 116, "900");
+      ctx.font = "900 " + ts + "px " + FONT;
+      var twd = ctx.measureText(title).width;
+      ctx.fillStyle = INK;
+      ctx.fillText(title, PAD, 360);
+      ctx.fillStyle = HL;
+      ctx.fillRect(PAD, 374, twd, 16);
+    }
+    var scene = val("sz-scene");
+    if (scene) {
+      var ss = fitSingle(ctx, scene, CW, 124, "900");
+      ctx.font = "900 " + ss + "px " + FONT;
+      ctx.fillStyle = INK;
+      ctx.fillText(scene, PAD, 545);
+    }
+    var ad = val("sz-adesc"), av = val("sz-aval");
+    if (ad) {
+      ctx.font = "500 44px " + FONT;
+      ctx.fillStyle = MUT;
+      ctx.fillText(ad, PAD, 660);
+    }
+    if (av) {
+      var asz = fitSingle(ctx, av, CW, 150, "900");
+      ctx.font = "900 " + asz + "px " + FONT;
+      ctx.fillStyle = INK;
+      ctx.fillText(av, PAD, 815);
+    }
+    var bd = val("sz-bdesc"), bv = val("sz-bval");
+    if (bd) {
+      ctx.font = "500 44px " + FONT;
+      ctx.fillStyle = MUT;
+      ctx.fillText(bd, PAD, 930);
+    }
+    if (bv) {
+      var bsz = fitSingle(ctx, bv, CW - 56, 150, "900");
+      ctx.font = "900 " + bsz + "px " + FONT;
+      var bw = ctx.measureText(bv).width;
+      ctx.fillStyle = HL;
+      ctx.fillRect(PAD - 28, 1085 - bsz * 0.98, bw + 56, bsz * 1.18);
+      ctx.fillStyle = INK;
+      ctx.fillText(bv, PAD, 1085);
+    }
+    var conc = val("sz-conc");
+    if (conc) {
+      var csz = fitSingle(ctx, conc, CW - 56, 96, "900");
+      ctx.font = "900 " + csz + "px " + FONT;
+      var cw2 = ctx.measureText(conc).width;
+      ctx.fillStyle = HL;
+      ctx.fillRect(PAD - 28, 1230 - csz * 0.98, cw2 + 56, csz * 1.18);
+      ctx.fillStyle = INK;
+      ctx.fillText(conc, PAD, 1230);
+    }
+    var hook = val("sz-hook");
+    if (hook) {
+      ctx.font = "500 40px " + FONT;
+      ctx.fillStyle = MUT;
+      ctx.fillText(hook, PAD, 1308);
+    }
+    footer(ctx, sign);
+  }
+
+  // ---- 模板2：提问悬念（复刻《工资对比》封面）----
+  function renderTiwen(ctx) {
+    ctx.fillStyle = BG;
+    ctx.fillRect(0, 0, W, H);
+    var tag = val("in-tag") || "普通人搞钱实验";
+    var sign = val("in-sign") || "毛毛星带你飞";
+    star(ctx, W - PAD - 40, 150, 44, HL);
+    ctx.fillStyle = INK;
+    ctx.font = "800 44px " + FONT;
+    ctx.fillText(tag, PAD, 175);
+
+    var title = val("tw-title");
+    if (title) {
+      var ts = fitSingle(ctx, title, CW, 148, "900");
+      ctx.font = "900 " + ts + "px " + FONT;
+      ctx.fillStyle = INK;
+      ctx.fillText(title, PAD, 480);
+    }
+    var q = val("tw-q");
+    if (q) {
+      var qs = fitSingle(ctx, q, CW - 56, 92, "900");
+      ctx.font = "900 " + qs + "px " + FONT;
+      var qw = ctx.measureText(q).width;
+      ctx.fillStyle = HL;
+      ctx.fillRect(PAD - 28, 650 - qs * 0.98, qw + 56, qs * 1.18);
+      ctx.fillStyle = INK;
+      ctx.fillText(q, PAD, 650);
+    }
+    var sub = val("tw-sub");
+    if (sub) {
+      var ss = fitSingle(ctx, sub, CW, 72, "700");
+      ctx.font = "700 " + ss + "px " + FONT;
+      ctx.fillStyle = INK;
+      ctx.fillText(sub, PAD, 830);
+    }
+    var small = val("tw-small");
+    if (small) {
+      ctx.font = "500 44px " + FONT;
+      ctx.fillStyle = MUT;
+      ctx.fillText(small, PAD, 920);
+    }
+    star(ctx, W - PAD - 60, 1080, 30, HL);
+    footer(ctx, sign);
+  }
+
+  // ---- 模板3：实拍描边（复刻《李录哥大》封面，暖色渐变代替实拍图）----
+  function renderMiaobian(ctx) {
+    var gr = ctx.createLinearGradient(0, 0, 0, H);
+    gr.addColorStop(0, "#3a4666");
+    gr.addColorStop(0.55, "#8a5f4d");
+    gr.addColorStop(1, "#14141c");
+    ctx.fillStyle = gr;
+    ctx.fillRect(0, 0, W, H);
+    var tag = val("in-tag") || "普通人搞钱实验";
+    ctx.font = "800 36px " + FONT;
+    var pw = ctx.measureText(tag).width + 64;
+    ctx.fillStyle = "#0D3B2E";
+    roundRect(ctx, PAD, 96, pw, 72, 36);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(tag, PAD + 32, 146);
+
+    var raw = val("mb-title") || "在这里输入标题";
+    // 优先复刻真封面的 2 行大字，实在排不下才允许 3 行
+    var size = 120, lines, best = null, target;
+    for (target = 2; target <= 3 && !best; target++) {
+      size = 120;
+      while (size > 48) {
+        ctx.font = "900 " + size + "px " + FONT;
+        lines = wrapTokens(ctx, tokenize(raw, ""), CW);
+        if (lines.length <= target) { best = { size: size, lines: lines }; break; }
+        size -= 8;
       }
     }
-    if (idx < line.length) segs.push({ t: line.slice(idx), key: false });
-    if (!segs.length) return;
-    var s, cx;
-    if (S.stroke) {
-      ctx.lineWidth = size * (S.strokeRatio || 0.12);
-      ctx.strokeStyle = S.stroke;
-      ctx.lineJoin = "round";
-      cx = x;
-      for (s = 0; s < segs.length; s++) { ctx.strokeText(segs[s].t, cx, y); cx += ctx.measureText(segs[s].t).width; }
+    if (!best) {
+      size = 48;
+      ctx.font = "900 48px " + FONT;
+      best = { size: 48, lines: wrapTokens(ctx, tokenize(raw, ""), CW).slice(0, 3) };
     }
-    cx = x;
-    for (s = 0; s < segs.length; s++) {
-      ctx.fillStyle = segs[s].key ? S.markInk : S.ink;
-      ctx.fillText(segs[s].t, cx, y);
-      cx += ctx.measureText(segs[s].t).width;
+    size = best.size;
+    lines = best.lines;
+    var lh = size * 1.32;
+    var y0 = (H - lines.length * lh) / 2 + size * 0.95;
+    ctx.font = "900 " + size + "px " + FONT;
+    ctx.lineWidth = size * 0.13;
+    ctx.strokeStyle = "#0D3B2E";
+    ctx.lineJoin = "round";
+    for (var mi = 0; mi < lines.length; mi++) {
+      var y = y0 + mi * lh;
+      ctx.strokeText(lines[mi], PAD, y);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(lines[mi], PAD, y);
     }
+  }
+
+  function currentTpl() {
+    var el = document.querySelector('input[name="tpl"]:checked');
+    return el ? el.value : "suanzhang";
   }
 
   function render() {
     var canvas = document.getElementById("cv");
+    if (!canvas) return;
     var ctx = canvas.getContext("2d");
-    var tpl = (document.querySelector('input[name="tpl"]:checked') || {}).value || "dazibao";
-    var S = STYLES[tpl] || STYLES.dazibao;
-
-    var title = (document.getElementById("in-title").value || "").trim() || "在这里输入标题";
-    var keyword = (document.getElementById("in-key").value || "").trim();
-    var num = (document.getElementById("in-num").value || "").trim();
-    var sub = (document.getElementById("in-sub").value || "").trim();
-    var tag = (document.getElementById("in-tag").value || "").trim() || "小红书封面";
-    var sign = (document.getElementById("in-sign").value || "").trim();
-
-    ctx.clearRect(0, 0, W, H);
-    if (S.bgGrad) {
-      var gr = ctx.createLinearGradient(0, 0, 0, H);
-      gr.addColorStop(0, S.bgGrad[0]);
-      gr.addColorStop(1, S.bgGrad[1]);
-      ctx.fillStyle = gr;
-    } else {
-      ctx.fillStyle = S.bg;
-    }
-    ctx.fillRect(0, 0, W, H);
     ctx.textBaseline = "alphabetic";
-
-    // 标签胶囊
-    ctx.font = '800 30px "DM Sans",' + FONT;
-    var tagW = ctx.measureText(tag).width + 56;
-    var tagY = 96;
-    ctx.fillStyle = S.tagBg;
-    roundRect(ctx, PAD, tagY, tagW, 62, 31);
-    ctx.fill();
-    ctx.fillStyle = S.tagInk;
-    ctx.fillText(tag, PAD + 28, tagY + 43);
-
-    var cursorY = tagY + 62 + 90;
-
-    // 数字版式：巨大数字
-    if (tpl === "shuzi" && num) {
-      ctx.font = '700 300px "DM Sans",' + FONT;
-      ctx.fillStyle = S.numInk || S.ink;
-      ctx.globalAlpha = 0.95;
-      ctx.fillText(num, PAD, cursorY + 230);
-      ctx.globalAlpha = 1;
-      cursorY += 350;
-    }
-
-    var footY = H - 120;
-    var availH = footY - 48 - cursorY;
-
-    // 副标题先量高度（标题布局需要预留纵向空间）
-    var subLines = [], subH = 0;
-    if (sub) {
-      ctx.font = "500 40px " + FONT;
-      subLines = wrapTokens(ctx, tokenize(sub, ""), CW).slice(0, 3);
-      subH = subLines.length * 40 * 1.7;
-    }
-
-    // 标题：字号自适应 + 纵向预算 + 孤字规避
-    var t = layoutTitle(ctx, title, keyword, CW, availH, subH);
-    var lineH = t.size * 1.28;
-    // 高亮先画（在字下面），再画富文本（重点词换色、可选描边）
-    drawMarkBehind(ctx, t.lines, PAD, cursorY, lineH, t.size, keyword, S.mark);
-    ctx.font = "900 " + t.size + "px " + FONT;
-    for (var i = 0; i < t.lines.length; i++) {
-      drawRichLine(ctx, t.lines[i], PAD, cursorY + i * lineH, S, keyword, t.size);
-    }
-    cursorY += t.lines.length * lineH + 56;
-
-    // 副标题
-    if (subLines.length) {
-      ctx.font = "500 40px " + FONT;
-      ctx.fillStyle = S.sub;
-      for (var j = 0; j < subLines.length; j++) {
-        ctx.fillText(subLines[j], PAD, cursorY + j * 40 * 1.7);
-      }
-    }
-
-    // 页脚
-    ctx.strokeStyle = S.footLine;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(PAD, footY);
-    ctx.lineTo(W - PAD, footY);
-    ctx.stroke();
-    ctx.font = "500 28px " + FONT;
-    ctx.fillStyle = S.muted;
-    if (sign) ctx.fillText(sign, PAD, footY + 62);
-    var brand = "填字即出图";
-    var bw = ctx.measureText(brand).width;
-    ctx.fillText(brand, W - PAD - bw, footY + 62);
-
+    var tpl = currentTpl();
+    if (tpl === "tiwen") renderTiwen(ctx);
+    else if (tpl === "miaobian") renderMiaobian(ctx);
+    else renderSuanzhang(ctx);
     var st = document.getElementById("cv-status");
     if (st) st.textContent = "实时预览 · 改字即变";
+  }
+
+  function syncGroups() {
+    var tpl = currentTpl();
+    var gs = document.querySelectorAll('.fgroup[data-tpl]');
+    for (var i = 0; i < gs.length; i++) {
+      gs[i].hidden = gs[i].getAttribute("data-tpl") !== tpl;
+    }
   }
 
   var timer = null;
@@ -929,14 +1029,14 @@
     var inputs = document.querySelectorAll("#try input, #try textarea");
     for (var i = 0; i < inputs.length; i++) {
       inputs[i].addEventListener("input", schedule);
-      inputs[i].addEventListener("change", schedule);
+      inputs[i].addEventListener("change", function () { syncGroups(); schedule(); });
     }
     document.getElementById("dl").addEventListener("click", download);
-    // 等字体就绪后再渲染一次，避免首屏回退字体
+    syncGroups();
     render();
     if (document.fonts && document.fonts.load) {
-      document.fonts.load('900 100px "Noto Sans SC"').then(render).catch(function(){});
-      document.fonts.load('500 100px "Noto Sans SC"').then(render).catch(function(){});
+      document.fonts.load('900 100px "Noto Sans SC"').then(render).catch(function () {});
+      document.fonts.load('500 100px "Noto Sans SC"').then(render).catch(function () {});
     }
   });
 })();
