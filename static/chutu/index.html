@@ -239,6 +239,9 @@
     .tpl-card .sw-suanzhang { background: #FBF8F1; color: #0D3B2E; border: 1px solid #E4DED1; }
     .tpl-card .sw-tiwen { background: #B9F73D; color: #0D3B2E; }
     .tpl-card .sw-miaobian { background: linear-gradient(180deg, #3a4666, #14141c); color: #fff; font-size: 18px; text-shadow: -2px 0 0 #0D3B2E, 2px 0 0 #0D3B2E, 0 -2px 0 #0D3B2E, 0 2px 0 #0D3B2E, -2px -2px 0 #0D3B2E, 2px 2px 0 #0D3B2E; }
+    .tpl-card .sw-qingdan { background: #F4EFE4; color: #111; border: 1px solid #E4DED1; }
+    .tpl-card .sw-zhuangse { background: #FFD400; color: #111; }
+    input[type="file"] { font-size: 14px; padding: 10px 0; }
     .fgroup[hidden] { display: none; }
     .fgroup-note { font-size: 12px; color: var(--muted); margin: -6px 0 20px; line-height: 1.7; }
     .tpl-card strong { display: block; font-size: 14px; }
@@ -473,7 +476,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>第一版：<br>小红书封面生成器</h2>
-          <p>三套版式复刻自真实爆款笔记封面：算账对比、提问悬念、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。</p>
+          <p>五套版式全部复刻自真实小红书封面：算账对比、提问悬念、清单条目、撞色标题块、实拍描边。左边填字，右边实时出图，满意就下载，不用注册。看到喜欢的小红书封面，直接发截图给我，我帮你复刻成新模板。</p>
         </div>
         <div class="try-grid">
           <div class="try-panel">
@@ -493,6 +496,22 @@
                   <span class="sw sw-tiwen">？</span>
                   <strong>提问悬念</strong>
                   <span>荧光问句风</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="qingdan" />
+                <span class="tpl-card">
+                  <span class="sw sw-qingdan">1、</span>
+                  <strong>清单条目</strong>
+                  <span>极简干货风</span>
+                </span>
+              </label>
+              <label class="tpl">
+                <input type="radio" name="tpl" value="zhuangse" />
+                <span class="tpl-card">
+                  <span class="sw sw-zhuangse">撞</span>
+                  <strong>撞色标题块</strong>
+                  <span>黄黑情绪风</span>
                 </span>
               </label>
               <label class="tpl">
@@ -563,13 +582,52 @@
               </div>
             </div>
 
+            <div class="fgroup" data-tpl="qingdan" hidden>
+              <div class="field">
+                <label for="qd-title">标题 <span class="hint">可换行，最多2行</span></label>
+                <textarea id="qd-title" rows="2">面试次数多了
+什么都能倒背如流</textarea>
+              </div>
+              <div class="field">
+                <label for="qd-i1">条目 1</label>
+                <input type="text" id="qd-i1" value="1、你的职业规划是什么" />
+              </div>
+              <div class="field">
+                <label for="qd-i2">条目 2 <span class="hint">可空</span></label>
+                <input type="text" id="qd-i2" value="" />
+              </div>
+              <div class="field">
+                <label for="qd-i3">条目 3 <span class="hint">可空</span></label>
+                <input type="text" id="qd-i3" value="" />
+              </div>
+            </div>
+
+            <div class="fgroup" data-tpl="zhuangse" hidden>
+              <div class="field">
+                <label for="zs-top">顶部小标题 <span class="hint">白字黑描边</span></label>
+                <input type="text" id="zs-top" value="我真不该做" />
+              </div>
+              <div class="field">
+                <label for="zs-main">主标题 <span class="hint">黄底黑字块</span></label>
+                <input type="text" id="zs-main" value="这期视频" />
+              </div>
+              <div class="field">
+                <label for="bg-zs">背景实拍图 <span class="hint">可选，不传用深色底</span></label>
+                <input type="file" id="bg-zs" accept="image/*" />
+              </div>
+            </div>
+
             <div class="fgroup" data-tpl="miaobian" hidden>
               <div class="field">
                 <label for="mb-title">标题 <span class="hint">可换行，最多3行</span></label>
                 <textarea id="mb-title" rows="3">拿住比亚迪23年的人
 说AI热潮还要崩不止一轮</textarea>
               </div>
-              <p class="fgroup-note">白字深绿描边，适合观点冲突强的选题。背景用暖色渐变代替实拍图。</p>
+              <p class="fgroup-note">白字深绿描边，适合观点冲突强的选题。上传实拍图可做背景，不传用暖色渐变。</p>
+              <div class="field">
+                <label for="bg-mb">背景实拍图 <span class="hint">可选</span></label>
+                <input type="file" id="bg-mb" accept="image/*" />
+              </div>
             </div>
 
             <div class="field-row">
@@ -805,6 +863,38 @@
     return el ? el.value.trim() : "";
   }
 
+  // ---- 背景实拍图（按模板分别保存）----
+  var bgImgs = {};
+  function bindPhoto(inputId, tplKey) {
+    var el = document.getElementById(inputId);
+    if (!el) return;
+    el.addEventListener("change", function () {
+      var f = el.files && el.files[0];
+      if (!f) { bgImgs[tplKey] = null; render(); return; }
+      var img = new Image();
+      img.onload = function () {
+        bgImgs[tplKey] = img;
+        URL.revokeObjectURL(img.src);
+        render();
+      };
+      img.src = URL.createObjectURL(f);
+    });
+  }
+  // cover 模式铺满画布
+  function drawBgCover(ctx, img) {
+    var s = Math.max(W / img.width, H / img.height);
+    var dw = img.width * s, dh = img.height * s;
+    ctx.drawImage(img, (W - dw) / 2, (H - dh) / 2, dw, dh);
+  }
+  // 顶部压暗，保证标题可读
+  function topScrim(ctx, h, a) {
+    var g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, "rgba(0,0,0," + (a || 0.65) + ")");
+    g.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, h);
+  }
+
   // ---- 模板1：算账对比（复刻《11月存款利率》首图）----
   function renderSuanzhang(ctx) {
     ctx.fillStyle = BG;
@@ -924,14 +1014,101 @@
     footer(ctx, sign);
   }
 
+  // ---- 模板4：清单条目（复刻面试/茶杯封面：米白底+黑字大标题+底部条目）----
+  function renderQingdan(ctx) {
+    ctx.fillStyle = "#F4EFE4";
+    ctx.fillRect(0, 0, W, H);
+    var sign = val("in-sign") || "毛毛星带你飞";
+    star(ctx, W - PAD - 40, 150, 40, HL);
+
+    var raw = val("qd-title") || "在这里输入标题";
+    var size = 118, lines, best = null, target;
+    for (target = 2; target <= 3 && !best; target++) {
+      size = 118;
+      while (size > 56) {
+        ctx.font = "900 " + size + "px " + FONT;
+        lines = wrapTokens(ctx, tokenize(raw, ""), CW);
+        if (lines.length <= target) { best = { size: size, lines: lines }; break; }
+        size -= 8;
+      }
+    }
+    if (!best) {
+      size = 56;
+      ctx.font = "900 56px " + FONT;
+      best = { size: 56, lines: wrapTokens(ctx, tokenize(raw, ""), CW).slice(0, 3) };
+    }
+    ctx.font = "900 " + best.size + "px " + FONT;
+    ctx.fillStyle = "#111111";
+    ctx.textAlign = "center";
+    var lh = best.size * 1.3;
+    var y0 = 400;
+    for (var qi = 0; qi < best.lines.length; qi++) {
+      ctx.fillText(best.lines[qi], W / 2, y0 + qi * lh);
+    }
+    // 中央装饰星（插画位留白）
+    star(ctx, W / 2, 780, 34, HL);
+
+    var items = [val("qd-i1"), val("qd-i2"), val("qd-i3")];
+    var yy = 980;
+    ctx.fillStyle = "#111111";
+    for (var ii = 0; ii < items.length; ii++) {
+      if (!items[ii]) continue;
+      var isz = fitSingle(ctx, items[ii], CW, 62, "700");
+      ctx.font = "700 " + isz + "px " + FONT;
+      ctx.fillText(items[ii], W / 2, yy);
+      yy += 112;
+    }
+    ctx.textAlign = "left";
+    footer(ctx, sign);
+  }
+
+  // ---- 模板5：撞色标题块（复刻"我真不该做/这期视频"：白描边小标题+黄底黑字块）----
+  function renderZhuangse(ctx) {
+    var photo = bgImgs["zhuangse"];
+    if (photo) {
+      drawBgCover(ctx, photo);
+      topScrim(ctx, 760, 0.7);
+    } else {
+      ctx.fillStyle = "#141414";
+      ctx.fillRect(0, 0, W, H);
+    }
+    var top = val("zs-top"), main = val("zs-main");
+    if (top) {
+      var tsz = fitSingle(ctx, top, CW, 110, "900");
+      ctx.font = "900 " + tsz + "px " + FONT;
+      ctx.lineWidth = tsz * 0.14;
+      ctx.strokeStyle = "#000000";
+      ctx.lineJoin = "round";
+      ctx.strokeText(top, PAD, 280);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(top, PAD, 280);
+    }
+    if (main) {
+      var msz = fitSingle(ctx, main, CW - 56, 150, "900");
+      ctx.font = "900 " + msz + "px " + FONT;
+      var mw = ctx.measureText(main).width;
+      var btop = 350, bh = msz * 1.3;
+      ctx.fillStyle = "#FFD400";
+      ctx.fillRect(PAD - 28, btop, mw + 56, bh);
+      ctx.fillStyle = "#111111";
+      ctx.fillText(main, PAD, btop + msz * 1.02);
+    }
+  }
+
   // ---- 模板3：实拍描边（复刻《李录哥大》封面，暖色渐变代替实拍图）----
   function renderMiaobian(ctx) {
-    var gr = ctx.createLinearGradient(0, 0, 0, H);
-    gr.addColorStop(0, "#3a4666");
-    gr.addColorStop(0.55, "#8a5f4d");
-    gr.addColorStop(1, "#14141c");
-    ctx.fillStyle = gr;
-    ctx.fillRect(0, 0, W, H);
+    var photoMb = bgImgs["miaobian"];
+    if (photoMb) {
+      drawBgCover(ctx, photoMb);
+      topScrim(ctx, 420, 0.55);
+    } else {
+      var gr = ctx.createLinearGradient(0, 0, 0, H);
+      gr.addColorStop(0, "#3a4666");
+      gr.addColorStop(0.55, "#8a5f4d");
+      gr.addColorStop(1, "#14141c");
+      ctx.fillStyle = gr;
+      ctx.fillRect(0, 0, W, H);
+    }
     var tag = val("in-tag") || "普通人搞钱实验";
     ctx.font = "800 36px " + FONT;
     var pw = ctx.measureText(tag).width + 64;
@@ -986,6 +1163,8 @@
     ctx.textBaseline = "alphabetic";
     var tpl = currentTpl();
     if (tpl === "tiwen") renderTiwen(ctx);
+    else if (tpl === "qingdan") renderQingdan(ctx);
+    else if (tpl === "zhuangse") renderZhuangse(ctx);
     else if (tpl === "miaobian") renderMiaobian(ctx);
     else renderSuanzhang(ctx);
     var st = document.getElementById("cv-status");
@@ -1032,6 +1211,8 @@
       inputs[i].addEventListener("change", function () { syncGroups(); schedule(); });
     }
     document.getElementById("dl").addEventListener("click", download);
+    bindPhoto("bg-mb", "miaobian");
+    bindPhoto("bg-zs", "zhuangse");
     syncGroups();
     render();
     if (document.fonts && document.fonts.load) {
