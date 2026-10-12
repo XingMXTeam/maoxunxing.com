@@ -787,17 +787,50 @@
 
             <div class="fgroup" data-tpl="xilie" hidden>
               <div class="field">
-                <label for="xl-col">栏目名 <span class="hint">固定栏目，大字展示</span></label>
+                <label for="xl-col">系列名 <span class="hint">显示在顶部徽章右侧</span></label>
                 <input type="text" id="xl-col" value="普通人搞钱实验" />
               </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="xl-num">期数 <span class="hint">顶部黑色徽章</span></label>
+                  <input type="text" id="xl-num" value="第 12 期" placeholder="第 12 期" />
+                </div>
+                <div class="field">
+                  <label for="xl-key">关键词标红 <span class="hint">可空，标题中的词会变红</span></label>
+                  <input type="text" id="xl-key" value="4000块" />
+                </div>
+              </div>
               <div class="field">
-                <label for="xl-title">本期标题 <span class="hint">最多3行</span></label>
+                <label for="xl-title">本期标题 <span class="hint">最多3行，字越大越好</span></label>
                 <textarea id="xl-title" rows="2">10万存5年
 小银行多拿4000块</textarea>
               </div>
               <div class="field">
-                <label for="xl-num">期数 <span class="hint">可空，如：第 12 期</span></label>
-                <input type="text" id="xl-num" value="" placeholder="第 12 期" />
+                <label for="xl-sub">副标题小字 <span class="hint">可空，如：2026年版</span></label>
+                <input type="text" id="xl-sub" value="" placeholder="如：2026年版 · 含教程" />
+              </div>
+              <div class="field">
+                <label>背景图 <span class="hint">点选或上传，不选则用纯色</span></label>
+                <div class="mockrow" data-tpl="xilie">
+                  <img src="bg/mock-dark.jpg" data-url="bg/mock-dark.jpg" alt="暗调" />
+                  <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
+                  <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
+                </div>
+                <input type="file" id="bg-xl" accept="image/*" />
+              </div>
+              <div class="field">
+                <label>背景色</label>
+                <div class="colorrow" id="xl-colors">
+                  <span data-c="#1B2A5E" style="background:#1B2A5E" class="sel"></span>
+                  <span data-c="#111111" style="background:#111111"></span>
+                  <span data-c="#B3122E" style="background:#B3122E"></span>
+                  <span data-c="#FFD400" style="background:#FFD400"></span>
+                  <span data-c="#FBF8F1" style="background:#FBF8F1"></span>
+                </div>
+                <div class="field-row" style="margin-top:4px">
+                  <input type="color" id="xl-custom" value="#1B2A5E" style="width:56px;height:38px;padding:2px;flex:none" />
+                  <span class="hint" style="align-self:center">自定义颜色（深色底时文字自动变白；有背景图时以图为准）</span>
+                </div>
               </div>
             </div>
 
@@ -1327,48 +1360,75 @@
   }
 
   // ---- 模板：系列栏目（栏目名超大字 + 本期标题）----
+  // ---- 模板：系列栏目 v2（复刻小红书真实爆款：深蓝底+顶部期数徽章+白色巨字标题，关键词红色）
+  var xlBg = "#1B2A5E";
   function renderXilie(ctx) {
-    ctx.fillStyle = "#FBF8F1";
-    ctx.fillRect(0, 0, W, H);
+    var photo = bgImgs["xilie"];
+    var dark = !photo && isDark(xlBg);
+    if (photo) {
+      drawBgCover(ctx, photo);
+      topScrim(ctx, 900, 0.62);
+    } else {
+      ctx.fillStyle = xlBg;
+      ctx.fillRect(0, 0, W, H);
+    }
+    var light = dark || photo;
+    var XINK = light ? "#ffffff" : "#0D3B2E";
+    var XMUT = light ? "rgba(255,255,255,0.65)" : MUT;
     ctx.textAlign = "left";
     var sign = val("in-sign") || "毛毛星带你飞";
+
+    // 顶部：黑色期数徽章 + 系列名
+    var num = val("xl-num") || "第1期";
+    ctx.font = "800 40px " + FONT;
+    var badgeW = ctx.measureText(num).width + 72;
+    ctx.fillStyle = "#0a0a0a";
+    roundRect(ctx, PAD, 96, badgeW, 76, 38);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(num, PAD + 36, 147);
+    var col = val("xl-col") || "普通人搞钱实验";
+    ctx.font = "700 40px " + FONT;
+    ctx.fillStyle = XMUT;
+    ctx.fillText(col, PAD + badgeW + 28, 147);
     star(ctx, W - PAD - 40, 150, 40, HL);
 
-    var col = val("xl-col") || "普通人搞钱实验";
-    var csz = fitSingle(ctx, col, CW, 128, "900");
-    ctx.font = "900 " + csz + "px " + FONT;
-    ctx.fillStyle = "#0D3B2E";
-    var clines = wrapTokens(ctx, tokenize(col, ""), CW).slice(0, 2);
-    var clh = csz * 1.25;
-    var cy0 = 320;
-    for (var ci2 = 0; ci2 < clines.length; ci2++) ctx.fillText(clines[ci2], PAD, cy0 + ci2 * clh);
-
-    var divY = cy0 + clines.length * clh + 44;
-    ctx.fillStyle = "#E4DED1";
-    ctx.fillRect(PAD, divY, CW, 6);
-
+    // 主标题：2-3行巨字，关键词变红
     var title = val("xl-title") || "在这里输入本期标题";
-    var tsz = 104, tlines;
-    while (tsz > 56) {
+    var key = val("xl-key");
+    var tsz = 150, tlines;
+    while (tsz > 64) {
       ctx.font = "900 " + tsz + "px " + FONT;
-      tlines = wrapTokens(ctx, tokenize(title, ""), CW);
+      tlines = wrapTokObjs(ctx, tokenize(title, key), CW);
       if (tlines.length <= 3) break;
       tsz -= 8;
     }
     ctx.font = "900 " + tsz + "px " + FONT;
-    ctx.fillStyle = "#111111";
-    var tlh = tsz * 1.3;
-    var ty0 = divY + 116;
-    for (var ti2 = 0; ti2 < tlines.length; ti2++) ctx.fillText(tlines[ti2], PAD, ty0 + ti2 * tlh);
-
-    var num = val("xl-num");
-    if (num) {
-      var nsz = fitSingle(ctx, num, CW, 54, "700");
-      ctx.font = "700 " + nsz + "px " + FONT;
-      ctx.fillStyle = "#75857C";
-      ctx.fillText(num, PAD, H - 170);
+    var tlh = tsz * 1.28;
+    var ty0 = 430;
+    for (var xi = 0; xi < tlines.length; xi++) {
+      var xx = PAD;
+      for (var xj = 0; xj < tlines[xi].length; xj++) {
+        ctx.fillStyle = tlines[xi][xj].keep ? "#E23B2E" : XINK;
+        ctx.fillText(tlines[xi][xj].t, xx, ty0 + xi * tlh);
+        xx += ctx.measureText(tlines[xi][xj].t).width;
+      }
     }
-    footer(ctx, sign);
+    // 黄色横幅条（取末行宽度，装饰）
+    var xlw = 0, xll = tlines[tlines.length - 1], xlk;
+    for (xlk = 0; xlk < xll.length; xlk++) xlw += ctx.measureText(xll[xlk].t).width;
+    ctx.fillStyle = HL;
+    ctx.fillRect(PAD, ty0 + (tlines.length - 1) * tlh + tsz * 0.38, Math.min(xlw, CW * 0.55), 16);
+
+    // 副标题小字
+    var xsub = val("xl-sub");
+    if (xsub) {
+      var ssz = fitSingle(ctx, xsub, CW, 46, "500");
+      ctx.font = "500 " + ssz + "px " + FONT;
+      ctx.fillStyle = XMUT;
+      ctx.fillText(xsub, PAD, ty0 + tlines.length * tlh + 100);
+    }
+    footer(ctx, sign, light ? "rgba(255,255,255,0.7)" : undefined);
   }
 
   // ---- 人物贴纸层：透明底 PNG 自动加白边 ----
@@ -1841,8 +1901,10 @@
     bindPhoto("bg-sp", "shipai");
     bindPhoto("bg-tw", "tiwen");
     bindPhoto("bg-qd", "qingdan");
+    bindPhoto("bg-xl", "xilie");
     bindColors("tw-colors", "tw-custom", function (c) { twBg = c; });
     bindColors("qd-colors", "qd-custom", function (c) { qdBg = c; });
+    bindColors("xl-colors", "xl-custom", function (c) { xlBg = c; });
     var thumbs = document.querySelectorAll(".mockrow img");
     for (var ti = 0; ti < thumbs.length; ti++) {
       (function (el) {
