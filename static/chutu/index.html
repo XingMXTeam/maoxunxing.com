@@ -1497,7 +1497,10 @@
   function loadDefaultPerson(tplKey, url) {
     var img = new Image();
     img.onload = function () {
-      personImgs[tplKey] = { img: img, outlined: img };
+      var out = hasTransparency(img)
+        ? whiteOutline(img, Math.max(8, Math.round(img.width * 0.012)))
+        : img;
+      personImgs[tplKey] = { img: img, outlined: out };
       if (currentTpl() === tplKey) render();
     };
     img.src = url;
