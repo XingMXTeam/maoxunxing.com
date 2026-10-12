@@ -1060,7 +1060,7 @@
     var y = H - 70;
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = color || MUT;
-    ctx.fillText(sign, PAD, y);
+    if (sign) ctx.fillText(sign, PAD, y);
     var disc = val("in-disc");
     if (disc) {
       var dw = ctx.measureText(disc).width;
@@ -1215,19 +1215,21 @@
       drawMixedLine(ctx, lines[di], W / 2, y0 + di * lh, dzBase);
     }
     // 系列标签（左上）+ 落款（底部，随底色自适应）
-    var dztag = val("in-tag") || "普通人搞钱实验";
-    var dzsign = val("in-sign") || "毛毛星带你飞";
+    var dztag = val("in-tag");
+    var dzsign = val("in-sign");
     ctx.textAlign = "left";
-    ctx.font = "800 36px " + FONT;
-    var dztpw = ctx.measureText(dztag).width + 64;
-    ctx.fillStyle = "#0D3B2E";
-    roundRect(ctx, PAD, 88, dztpw, 68, 34);
-    ctx.fill();
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(dztag, PAD + 32, 136);
+    if (dztag) {
+      ctx.font = "800 36px " + FONT;
+      var dztpw = ctx.measureText(dztag).width + 64;
+      ctx.fillStyle = "#0D3B2E";
+      roundRect(ctx, PAD, 88, dztpw, 68, 34);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(dztag, PAD + 32, 136);
+    }
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = dzBase;
-    ctx.fillText(dzsign, PAD, H - 70);
+    if (dzsign) ctx.fillText(dzsign, PAD, H - 70);
     var dzdesc = val("in-disc");
     if (dzdesc) {
       ctx.globalAlpha = 0.6;
@@ -1299,23 +1301,27 @@
     else { ctx.fillStyle = "#2b2b33"; ctx.fillRect(0, 0, W, H); }
     ctx.textAlign = "left";
     // 系列标签（左上）+ 落款（右上白字，投影保证实拍图上可读）
-    var sptag = val("in-tag") || "普通人搞钱实验";
-    var spsign = val("in-sign") || "毛毛星带你飞";
-    ctx.font = "800 36px " + FONT;
-    var sptpw = ctx.measureText(sptag).width + 64;
-    ctx.fillStyle = "#0D3B2E";
-    roundRect(ctx, PAD, 88, sptpw, 68, 34);
-    ctx.fill();
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(sptag, PAD + 32, 136);
-    ctx.save();
-    ctx.shadowColor = "rgba(0,0,0,0.65)";
-    ctx.shadowBlur = 10;
-    ctx.font = "500 30px " + FONT;
-    ctx.textAlign = "right";
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(spsign, W - PAD, 134);
-    ctx.restore();
+    var sptag = val("in-tag");
+    var spsign = val("in-sign");
+    if (sptag) {
+      ctx.font = "800 36px " + FONT;
+      var sptpw = ctx.measureText(sptag).width + 64;
+      ctx.fillStyle = "#0D3B2E";
+      roundRect(ctx, PAD, 88, sptpw, 68, 34);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(sptag, PAD + 32, 136);
+    }
+    if (spsign) {
+      ctx.save();
+      ctx.shadowColor = "rgba(0,0,0,0.65)";
+      ctx.shadowBlur = 10;
+      ctx.font = "500 30px " + FONT;
+      ctx.textAlign = "right";
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(spsign, W - PAD, 134);
+      ctx.restore();
+    }
     ctx.textAlign = "left";
     var t = val("sp-title");
     if (!t) return;
@@ -1375,7 +1381,7 @@
     var XINK = light ? "#ffffff" : "#0D3B2E";
     var XMUT = light ? "rgba(255,255,255,0.65)" : MUT;
     ctx.textAlign = "left";
-    var sign = val("in-sign") || "毛毛星带你飞";
+    var sign = val("in-sign");
 
     // 顶部：黑色期数徽章 + 系列名
     var num = val("xl-num") || "第1期";
@@ -1514,16 +1520,18 @@
     drawPerson(ctx, "zhenren");
     ctx.textAlign = "left";
     var STROKE = "#4a3018", YEL = "#FFDD33";
-    var tag = val("in-tag") || "普通人搞钱实验";
-    var sign = val("in-sign") || "毛毛星带你飞";
+    var tag = val("in-tag");
+    var sign = val("in-sign");
     // 系列标签胶囊（左上，深绿底白字）
-    ctx.font = "800 36px " + FONT;
-    var ztpw = ctx.measureText(tag).width + 64;
-    ctx.fillStyle = "#0D3B2E";
-    roundRect(ctx, PAD, 88, ztpw, 68, 34);
-    ctx.fill();
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(tag, PAD + 32, 136);
+    if (tag) {
+      ctx.font = "800 36px " + FONT;
+      var ztpw = ctx.measureText(tag).width + 64;
+      ctx.fillStyle = "#0D3B2E";
+      roundRect(ctx, PAD, 88, ztpw, 68, 34);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(tag, PAD + 32, 136);
+    }
 
     var title = val("zr-title");
     if (title) {
@@ -1599,7 +1607,7 @@
     ctx.textAlign = "left";
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = "rgba(255,255,255,0.85)";
-    ctx.fillText(sign, PAD, H - 70);
+    if (sign) ctx.fillText(sign, PAD, H - 70);
     var zdisc = val("in-disc");
     if (zdisc) {
       var zdw = ctx.measureText(zdisc).width;
@@ -1623,8 +1631,8 @@
     var TINK = twDark ? "#ffffff" : INK;
     var TMUT = twDark ? "rgba(255,255,255,0.65)" : MUT;
     ctx.textAlign = "left";
-    var tag = val("in-tag") || "普通人搞钱实验";
-    var sign = val("in-sign") || "毛毛星带你飞";
+    var tag = val("in-tag");
+    var sign = val("in-sign");
     star(ctx, W - PAD - 40, 150, 44, HL);
     ctx.fillStyle = TINK;
     ctx.font = "800 44px " + FONT;
@@ -1677,7 +1685,7 @@
       ctx.fillRect(0, 0, W, H);
     }
     var QINK = qdDark ? "#ffffff" : "#111111";
-    var sign = val("in-sign") || "毛毛星带你飞";
+    var sign = val("in-sign");
     star(ctx, W - PAD - 40, 150, 40, HL);
 
     var raw = val("qd-title") || "在这里输入标题";
@@ -1733,16 +1741,18 @@
     }
     var top = val("zs-top"), main = val("zs-main");
     // 系列标签（左上）+ 落款（底部浅字，适配深色底）
-    var zstag = val("in-tag") || "普通人搞钱实验";
-    var zssign = val("in-sign") || "毛毛星带你飞";
+    var zstag = val("in-tag");
+    var zssign = val("in-sign");
     ctx.textAlign = "left";
-    ctx.font = "800 36px " + FONT;
-    var zstpw = ctx.measureText(zstag).width + 64;
-    ctx.fillStyle = "#0D3B2E";
-    roundRect(ctx, PAD, 88, zstpw, 68, 34);
-    ctx.fill();
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(zstag, PAD + 32, 136);
+    if (zstag) {
+      ctx.font = "800 36px " + FONT;
+      var zstpw = ctx.measureText(zstag).width + 64;
+      ctx.fillStyle = "#0D3B2E";
+      roundRect(ctx, PAD, 88, zstpw, 68, 34);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(zstag, PAD + 32, 136);
+    }
     if (top) {
       var tsz = fitSingle(ctx, top, CW, 110, "900");
       ctx.font = "900 " + tsz + "px " + FONT;
@@ -1766,7 +1776,7 @@
     ctx.textAlign = "left";
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = "rgba(255,255,255,0.85)";
-    ctx.fillText(zssign, PAD, H - 70);
+    if (zssign) ctx.fillText(zssign, PAD, H - 70);
     var zsdesc = val("in-disc");
     if (zsdesc) {
       ctx.fillStyle = "rgba(255,255,255,0.5)";
@@ -1788,14 +1798,16 @@
       ctx.fillStyle = gr;
       ctx.fillRect(0, 0, W, H);
     }
-    var tag = val("in-tag") || "普通人搞钱实验";
-    ctx.font = "800 36px " + FONT;
-    var pw = ctx.measureText(tag).width + 64;
-    ctx.fillStyle = "#0D3B2E";
-    roundRect(ctx, PAD, 96, pw, 72, 36);
-    ctx.fill();
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(tag, PAD + 32, 146);
+    var tag = val("in-tag");
+    if (tag) {
+      ctx.font = "800 36px " + FONT;
+      var pw = ctx.measureText(tag).width + 64;
+      ctx.fillStyle = "#0D3B2E";
+      roundRect(ctx, PAD, 96, pw, 72, 36);
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(tag, PAD + 32, 146);
+    }
 
     var raw = val("mb-title") || "在这里输入标题";
     // 优先复刻真封面的 2 行大字，实在排不下才允许 3 行
