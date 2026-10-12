@@ -311,6 +311,7 @@
     .cv-frame canvas { display: block; width: 100%; height: auto; }
     .cv-meta { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 12px; }
     .cv-meta .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+    .cv-fb a, .foot-fb a { text-decoration: underline; text-underline-offset: 3px; }
 
     .email-box {
       width: min(400px, 100%);
@@ -753,6 +754,10 @@
                 <label for="in-sign">落款</label>
                 <input type="text" id="in-sign" value="毛毛星带你飞" />
               </div>
+              <div class="field" style="grid-column: 1 / -1;">
+                <label for="in-disc">免责声明 <span class="hint">留空则图片上不显示</span></label>
+                <input type="text" id="in-disc" value="个人学习记录 · 不构成投资建议" />
+              </div>
             </div>
             <button class="dl-btn" id="dl" type="button">下载 PNG（1080 × 1440）</button>
             <p class="dl-note">3:4 小红书原生比例 · 发笔记时选"原图"更清晰</p>
@@ -762,7 +767,7 @@
             <div class="cv-frame">
               <canvas id="cv" width="1080" height="1440" aria-label="封面预览"></canvas>
             </div>
-            <div class="cv-meta"><span class="dot"></span><span id="cv-status">实时预览 · 改字即变</span></div>
+            <div class="cv-meta"><span class="dot"></span><span id="cv-status">实时预览 · 改字即变</span><span class="cv-fb"> · <a href="https://github.com/XingMXTeam/maoxunxing.com/issues/new?title=%5Bchutu%E5%8F%8D%E9%A6%88%5D+&labels=chutu&body=%2A%2A%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0%2A%2A%0A%0A%2A%2A%E5%A4%8D%E7%8E%B0%E6%AD%A5%E9%AA%A4%2A%2A%0A1.+%0A%0A%2A%2A%E6%9C%9F%E6%9C%9B%E6%95%88%E6%9E%9C%2A%2A%0A%0A%2A%2A%E6%88%AA%E5%9B%BE%2A%2A%EF%BC%88%E5%A6%82%E6%9C%89%EF%BC%89%0A" target="_blank" rel="noopener">反馈问题</a></span></div>
             <div class="email-box">
               <h4>用着顺手？</h4>
               <p>批量生成、公众号封面、更多版式正在排期。留下邮箱，开放时第一时间通知你——你的使用场景会决定先做什么。</p>
@@ -874,7 +879,7 @@
   </main>
 
   <footer>
-    <div class="wrap">中文内容创作者自动出图工具 · 填字即出图</div>
+    <div class="wrap">中文内容创作者自动出图工具 · 填字即出图<span class="foot-fb"> · <a href="https://github.com/XingMXTeam/maoxunxing.com/issues/new?title=%5Bchutu%E5%8F%8D%E9%A6%88%5D+&labels=chutu&body=%2A%2A%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0%2A%2A%0A%0A%2A%2A%E5%A4%8D%E7%8E%B0%E6%AD%A5%E9%AA%A4%2A%2A%0A1.+%0A%0A%2A%2A%E6%9C%9F%E6%9C%9B%E6%95%88%E6%9E%9C%2A%2A%0A%0A%2A%2A%E6%88%AA%E5%9B%BE%2A%2A%EF%BC%88%E5%A6%82%E6%9C%89%EF%BC%89%0A" target="_blank" rel="noopener">遇到问题？提个反馈</a></span></div>
   </footer>
 
 <script>
@@ -967,9 +972,11 @@
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = MUT;
     ctx.fillText(sign, PAD, y);
-    var disc = "个人学习记录 · 不构成投资建议";
-    var dw = ctx.measureText(disc).width;
-    ctx.fillText(disc, (W - dw) / 2, y);
+    var disc = val("in-disc");
+    if (disc) {
+      var dw = ctx.measureText(disc).width;
+      ctx.fillText(disc, (W - dw) / 2, y);
+    }
   }
 
   function val(id) {
@@ -1111,10 +1118,12 @@
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = dzBase;
     ctx.fillText(dzsign, PAD, H - 70);
-    var dzdesc = "个人学习记录 · 不构成投资建议";
-    ctx.globalAlpha = 0.6;
-    ctx.fillText(dzdesc, (W - ctx.measureText(dzdesc).width) / 2, H - 70);
-    ctx.globalAlpha = 1;
+    var dzdesc = val("in-disc");
+    if (dzdesc) {
+      ctx.globalAlpha = 0.6;
+      ctx.fillText(dzdesc, (W - ctx.measureText(dzdesc).width) / 2, H - 70);
+      ctx.globalAlpha = 1;
+    }
   }
 
   // ---- 手绘装饰：波浪下划线 / 箭头 ----
@@ -1425,10 +1434,12 @@
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = "rgba(255,255,255,0.85)";
     ctx.fillText(sign, PAD, H - 70);
-    var zdisc = "个人学习记录 · 不构成投资建议";
-    var zdw = ctx.measureText(zdisc).width;
-    ctx.fillStyle = "rgba(255,255,255,0.5)";
-    ctx.fillText(zdisc, (W - zdw) / 2, H - 70);
+    var zdisc = val("in-disc");
+    if (zdisc) {
+      var zdw = ctx.measureText(zdisc).width;
+      ctx.fillStyle = "rgba(255,255,255,0.5)";
+      ctx.fillText(zdisc, (W - zdw) / 2, H - 70);
+    }
   }
 
   // ---- 模板2：提问悬念（复刻《工资对比》封面）----
@@ -1570,9 +1581,11 @@
     ctx.font = "500 30px " + FONT;
     ctx.fillStyle = "rgba(255,255,255,0.85)";
     ctx.fillText(zssign, PAD, H - 70);
-    var zsdesc = "个人学习记录 · 不构成投资建议";
-    ctx.fillStyle = "rgba(255,255,255,0.5)";
-    ctx.fillText(zsdesc, (W - ctx.measureText(zsdesc).width) / 2, H - 70);
+    var zsdesc = val("in-disc");
+    if (zsdesc) {
+      ctx.fillStyle = "rgba(255,255,255,0.5)";
+      ctx.fillText(zsdesc, (W - ctx.measureText(zsdesc).width) / 2, H - 70);
+    }
   }
 
   // ---- 模板3：实拍描边（复刻《李录哥大》封面，暖色渐变代替实拍图）----
