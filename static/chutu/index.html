@@ -1097,6 +1097,24 @@
     for (var di = 0; di < lines.length; di++) {
       drawMixedLine(ctx, lines[di], W / 2, y0 + di * lh, dzBase);
     }
+    // 系列标签（左上）+ 落款（底部，随底色自适应）
+    var dztag = val("in-tag") || "普通人搞钱实验";
+    var dzsign = val("in-sign") || "毛毛星带你飞";
+    ctx.textAlign = "left";
+    ctx.font = "800 36px " + FONT;
+    var dztpw = ctx.measureText(dztag).width + 64;
+    ctx.fillStyle = "#0D3B2E";
+    roundRect(ctx, PAD, 88, dztpw, 68, 34);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(dztag, PAD + 32, 136);
+    ctx.font = "500 30px " + FONT;
+    ctx.fillStyle = dzBase;
+    ctx.fillText(dzsign, PAD, H - 70);
+    var dzdesc = "个人学习记录 · 不构成投资建议";
+    ctx.globalAlpha = 0.6;
+    ctx.fillText(dzdesc, (W - ctx.measureText(dzdesc).width) / 2, H - 70);
+    ctx.globalAlpha = 1;
   }
 
   // ---- 手绘装饰：波浪下划线 / 箭头 ----
@@ -1156,6 +1174,25 @@
     var photo = bgImgs["shipai"];
     if (photo) drawBgCover(ctx, photo);
     else { ctx.fillStyle = "#2b2b33"; ctx.fillRect(0, 0, W, H); }
+    ctx.textAlign = "left";
+    // 系列标签（左上）+ 落款（右上白字，投影保证实拍图上可读）
+    var sptag = val("in-tag") || "普通人搞钱实验";
+    var spsign = val("in-sign") || "毛毛星带你飞";
+    ctx.font = "800 36px " + FONT;
+    var sptpw = ctx.measureText(sptag).width + 64;
+    ctx.fillStyle = "#0D3B2E";
+    roundRect(ctx, PAD, 88, sptpw, 68, 34);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(sptag, PAD + 32, 136);
+    ctx.save();
+    ctx.shadowColor = "rgba(0,0,0,0.65)";
+    ctx.shadowBlur = 10;
+    ctx.font = "500 30px " + FONT;
+    ctx.textAlign = "right";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(spsign, W - PAD, 134);
+    ctx.restore();
     ctx.textAlign = "left";
     var t = val("sp-title");
     if (!t) return;
@@ -1284,13 +1321,13 @@
     };
     img.src = url;
   }
-  // 人物贴纸绘制：居中偏右，高度约 640
+  // 人物贴纸绘制：居中偏右，高度约 800，底部对齐在 1130（给底部金句留空）
   function drawPerson(ctx, tplKey) {
     var p = personImgs[tplKey];
     if (!p || !p.outlined) return;
     var o = p.outlined;
-    var ph = 640, pw = o.width * ph / o.height;
-    var px = 660 - pw / 2, py = 490;
+    var ph = 800, pw = o.width * ph / o.height;
+    var px = 660 - pw / 2, py = 1130 - ph;
     ctx.drawImage(o, px, py, pw, ph);
   }
 
@@ -1302,6 +1339,16 @@
     drawPerson(ctx, "zhenren");
     ctx.textAlign = "left";
     var STROKE = "#4a3018", YEL = "#FFDD33";
+    var tag = val("in-tag") || "普通人搞钱实验";
+    var sign = val("in-sign") || "毛毛星带你飞";
+    // 系列标签胶囊（左上，深绿底白字）
+    ctx.font = "800 36px " + FONT;
+    var ztpw = ctx.measureText(tag).width + 64;
+    ctx.fillStyle = "#0D3B2E";
+    roundRect(ctx, PAD, 88, ztpw, 68, 34);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(tag, PAD + 32, 136);
 
     var title = val("zr-title");
     if (title) {
@@ -1312,9 +1359,9 @@
       ctx.lineJoin = "round";
       var tw = ctx.measureText(title).width;
       var tx = (W - tw) / 2;
-      ctx.strokeText(title, tx, 235);
+      ctx.strokeText(title, tx, 285);
       ctx.fillStyle = YEL;
-      ctx.fillText(title, tx, 235);
+      ctx.fillText(title, tx, 285);
     }
     var s1 = val("zr-sub1"), s2 = val("zr-sub2");
     var sy = 470;
@@ -1373,6 +1420,15 @@
       for (li = 0; li < lastLine.length; li++) lastW += ctx.measureText(lastLine[li].t).width;
       wavyLine(ctx, (W - lastW) / 2, (W + lastW) / 2, y0 + (blines.length - 1) * lh + bsz * 0.42, 10, YEL, 9);
     }
+    // 落款（底部浅字，适配深色底）
+    ctx.textAlign = "left";
+    ctx.font = "500 30px " + FONT;
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    ctx.fillText(sign, PAD, H - 70);
+    var zdisc = "个人学习记录 · 不构成投资建议";
+    var zdw = ctx.measureText(zdisc).width;
+    ctx.fillStyle = "rgba(255,255,255,0.5)";
+    ctx.fillText(zdisc, (W - zdw) / 2, H - 70);
   }
 
   // ---- 模板2：提问悬念（复刻《工资对比》封面）----
@@ -1479,6 +1535,17 @@
       ctx.fillRect(0, 0, W, H);
     }
     var top = val("zs-top"), main = val("zs-main");
+    // 系列标签（左上）+ 落款（底部浅字，适配深色底）
+    var zstag = val("in-tag") || "普通人搞钱实验";
+    var zssign = val("in-sign") || "毛毛星带你飞";
+    ctx.textAlign = "left";
+    ctx.font = "800 36px " + FONT;
+    var zstpw = ctx.measureText(zstag).width + 64;
+    ctx.fillStyle = "#0D3B2E";
+    roundRect(ctx, PAD, 88, zstpw, 68, 34);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(zstag, PAD + 32, 136);
     if (top) {
       var tsz = fitSingle(ctx, top, CW, 110, "900");
       ctx.font = "900 " + tsz + "px " + FONT;
@@ -1499,6 +1566,13 @@
       ctx.fillStyle = "#111111";
       ctx.fillText(main, PAD, btop + msz * 1.02);
     }
+    ctx.textAlign = "left";
+    ctx.font = "500 30px " + FONT;
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    ctx.fillText(zssign, PAD, H - 70);
+    var zsdesc = "个人学习记录 · 不构成投资建议";
+    ctx.fillStyle = "rgba(255,255,255,0.5)";
+    ctx.fillText(zsdesc, (W - ctx.measureText(zsdesc).width) / 2, H - 70);
   }
 
   // ---- 模板3：实拍描边（复刻《李录哥大》封面，暖色渐变代替实拍图）----
