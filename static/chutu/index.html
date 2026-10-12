@@ -731,7 +731,6 @@
               <div class="field">
                 <label>背景图 <span class="hint">点选内置 mock，或上传自己的（上传后替换当前选择）</span></label>
                 <div class="mockrow" data-tpl="zhuangse">
-                  <img src="bg/mock-person.jpg" data-url="bg/mock-person.jpg" alt="人像" />
                   <img src="bg/mock-dark.jpg" data-url="bg/mock-dark.jpg" alt="暗调" />
                   <img src="bg/mock-street.jpg" data-url="bg/mock-street.jpg" alt="街景" />
                   <img src="bg/mock-cafe.jpg" data-url="bg/mock-cafe.jpg" alt="暖调" />
@@ -1916,8 +1915,6 @@
     }
     setBgFromUrl("miaobian", "bg/mock-street.jpg",
       document.querySelector('.mockrow[data-tpl="miaobian"] img'));
-    setBgFromUrl("zhuangse", "bg/mock-person.jpg",
-      document.querySelector('.mockrow[data-tpl="zhuangse"] img'));
     setBgFromUrl("zhenren", "bg/mock-cafe.jpg",
       document.querySelector('.mockrow[data-tpl="zhenren"] img'));
     loadDefaultPerson("zhenren", "bg/mock-sticker.png");
