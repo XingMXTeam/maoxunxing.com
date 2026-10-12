@@ -247,6 +247,9 @@
     .colorrow { display: flex; gap: 10px; margin: 4px 0 8px; align-items: center; }
     .colorrow span { width: 44px; height: 44px; border-radius: 50%; cursor: pointer; border: 2px solid #ddd; flex: none; }
     .colorrow span.sel { border-color: var(--acc); outline: 2px solid var(--acc); }
+    .posrow { display: flex; gap: 18px; margin: 4px 0 8px; }
+    .posrow label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+    .posrow input { accent-color: var(--accent); }
     input[type="file"] { font-size: 14px; padding: 10px 0; }
     .mockrow { display: flex; gap: 10px; margin: 4px 0 8px; }
     .mockrow img { width: 76px; height: 100px; object-fit: cover; border-radius: 10px; cursor: pointer; border: 2px solid transparent; }
@@ -771,6 +774,14 @@
                 </div>
                 <input type="file" id="bg-sp" accept="image/*" />
               </div>
+              <div class="field">
+                <label>文字位置 <span class="hint">渐隐罩跟着文字走</span></label>
+                <div class="posrow">
+                  <label><input type="radio" name="sp-pos" value="bottom" checked /> 底部</label>
+                  <label><input type="radio" name="sp-pos" value="top" /> 顶部</label>
+                  <label><input type="radio" name="sp-pos" value="center" /> 中部</label>
+                </div>
+              </div>
               <p class="fgroup-note">vlog/记录类封面：照片铺满，标题只放底部小字或不放。</p>
             </div>
 
@@ -1245,7 +1256,11 @@
     }
   }
 
-  // ---- 模板：纯实拍（照片铺满，标题只放底部小字或不放）----
+  // ---- 模板：纯实拍（照片铺满，标题位置可选：底部/顶部/中部）----
+  function spPos() {
+    var el = document.querySelector('input[name="sp-pos"]:checked');
+    return el ? el.value : "bottom";
+  }
   function renderShipai(ctx) {
     var photo = bgImgs["shipai"];
     if (photo) drawBgCover(ctx, photo);
@@ -1272,18 +1287,43 @@
     ctx.textAlign = "left";
     var t = val("sp-title");
     if (!t) return;
-    var g = ctx.createLinearGradient(0, H - 440, 0, H);
-    g.addColorStop(0, "rgba(0,0,0,0)");
-    g.addColorStop(1, "rgba(0,0,0,0.65)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0, H - 440, W, 440);
+    var pos = spPos();
     var tsz = fitSingle(ctx, t, CW, 64, "700");
     ctx.font = "700 " + tsz + "px " + FONT;
     ctx.fillStyle = "#ffffff";
     var lines = wrapTokens(ctx, tokenize(t, ""), CW).slice(0, 2);
     var lh = tsz * 1.35;
-    var y0 = H - 150 - (lines.length - 1) * lh;
-    for (var i = 0; i < lines.length; i++) ctx.fillText(lines[i], PAD, y0 + i * lh);
+    if (pos === "top") {
+      var gTop = ctx.createLinearGradient(0, 0, 0, 440);
+      gTop.addColorStop(0, "rgba(0,0,0,0.65)");
+      gTop.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = gTop;
+      ctx.fillRect(0, 0, W, 440);
+      ctx.fillStyle = "#ffffff";
+      for (var i2 = 0; i2 < lines.length; i2++) ctx.fillText(lines[i2], PAD, 250 + i2 * lh);
+    } else if (pos === "center") {
+      var gMid = ctx.createLinearGradient(0, H / 2 - 260, 0, H / 2 + 260);
+      gMid.addColorStop(0, "rgba(0,0,0,0)");
+      gMid.addColorStop(0.35, "rgba(0,0,0,0.55)");
+      gMid.addColorStop(0.65, "rgba(0,0,0,0.55)");
+      gMid.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = gMid;
+      ctx.fillRect(0, H / 2 - 260, W, 520);
+      ctx.fillStyle = "#ffffff";
+      ctx.textAlign = "center";
+      var yC = H / 2 - ((lines.length - 1) * lh) / 2 + tsz * 0.35;
+      for (var j2 = 0; j2 < lines.length; j2++) ctx.fillText(lines[j2], W / 2, yC + j2 * lh);
+      ctx.textAlign = "left";
+    } else {
+      var gBot = ctx.createLinearGradient(0, H - 440, 0, H);
+      gBot.addColorStop(0, "rgba(0,0,0,0)");
+      gBot.addColorStop(1, "rgba(0,0,0,0.65)");
+      ctx.fillStyle = gBot;
+      ctx.fillRect(0, H - 440, W, 440);
+      ctx.fillStyle = "#ffffff";
+      var y0 = H - 150 - (lines.length - 1) * lh;
+      for (var k2 = 0; k2 < lines.length; k2++) ctx.fillText(lines[k2], PAD, y0 + k2 * lh);
+    }
   }
 
   // ---- 模板：系列栏目（栏目名超大字 + 本期标题）----
