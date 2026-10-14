@@ -277,7 +277,9 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
 
     {{ hugo.Generator }}
-    {{ if not .IsHome }}
+    {{/* Skip ads on the home page and on every page in the projects section (listing and detail). */}}
+    {{ $showAds := and (not .IsHome) (ne .Section "projects") }}
+    {{ if $showAds }}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
     {{ end }}
   </head>
@@ -303,7 +305,7 @@
       {{ partial "header.html" . }}
 
       <article class="content">
-        {{ if not .IsHome }}
+        {{ if $showAds }}
           <!-- google adsense -->
           <div id="adsense-container" style="min-height: 90px; margin: 20px 0; text-align: center;">
             <ins class="adsbygoogle"
