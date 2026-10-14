@@ -1,4 +1,11 @@
 <footer class="footer">
+  <nav class="footer-secondary" aria-label="{{ i18n "footerSecondaryLabel" }}">
+    <p class="footer-secondary-label">{{ i18n "footerSecondaryLabel" }}</p>
+    <div class="footer-secondary-links">
+      <a href="{{ "long-term-investing/" | relLangURL }}">{{ i18n "footerInvesting" }}</a>
+      <a href="https://leanpub.com/optionsmadesimple" target="_blank" rel="noopener noreferrer">{{ i18n "footerBook" }}</a>
+    </div>
+  </nav>
   <div class="footer-inner">
   {{ if not .Site.Params.hideCopyright }}
     <a

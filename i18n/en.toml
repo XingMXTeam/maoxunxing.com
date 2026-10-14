@@ -14,13 +14,34 @@ other = """Currently focused on LEARN, BUILD and GROW with AGI. Exploring two ar
 other = """Outside of coding, I also keep notes on reading, drawing, tools, media, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">books & media</a> notes."""
 
 [homeEyebrow]
-other = "Felix Mao · public notebook"
+other = "Felix Mao"
 
 [homeHeroTitle]
-other = "Hi, I'm Felix Mao"
+other = "AI full-stack, harness, and indie products"
 
 [homeHeroDesc]
-other = "I spent a decade writing frontend code. Recently, I have been learning AI seriously, building small personal products, and keeping notes on long-term investing and family cash flow. I keep writing down the things I actually used, thought about, and struggled with here."
+other = "This is my hub. Small tools open from here. CrossAgent Lab is the vertical product."
+
+[homeToolsCTA]
+other = "Tools"
+
+[homeToolsHint]
+other = "Small tools you can open"
+
+[homeCrossAgentCTA]
+other = "CrossAgent Lab"
+
+[homeCrossAgentHint]
+other = "Vertical product"
+
+[footerSecondaryLabel]
+other = "Also on this site"
+
+[footerInvesting]
+other = "Long-term investing"
+
+[footerBook]
+other = "Options ebook"
 
 [homePrimaryCTA]
 other = "Start with the blog"

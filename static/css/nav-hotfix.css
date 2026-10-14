@@ -132,6 +132,74 @@ body.colorscheme-dark #home-art-canvas[data-art="dots"] {
   }
 }
 
+.nav-mobile-shortcuts {
+  display: none;
+}
+
+@media only screen and (min-width: 769px) {
+  .navigation .navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: calc(100% - 6.4rem);
+    row-gap: 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    position: relative;
+  }
+
+  .navigation .nav-container {
+    flex-wrap: wrap;
+    row-gap: 0.6rem;
+  }
+
+  .nav-mobile-shortcuts {
+    display: flex;
+    flex: 1 0 100%;
+    order: 3;
+    align-items: stretch;
+    gap: 0.6rem;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .navigation .nav-shortcut {
+    display: inline-flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 4.4rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    box-sizing: border-box;
+    background: color-mix(in srgb, var(--c-bg) 94%, transparent);
+    color: var(--c-fg-deeper);
+    font-size: 1.6rem;
+    font-weight: 750;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  #menu-toggle.menu-button {
+    float: none !important;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
+  html[lang] .navigation .nav-primary-item > .navigation-link {
+    font-size: 1.7rem;
+    color: var(--c-fg-deeper);
+    opacity: 1;
+  }
+}
+
 /* The theme toggle is a standalone final navigation item on desktop. */
 .navigation .nav-theme {
   display: flex;
@@ -262,6 +330,13 @@ body.colorscheme-dark #home-art-canvas[data-art="dots"] {
   .navigation .nav-primary-item > .navigation-link:focus {
     background: rgba(125, 125, 125, 0.09);
     color: var(--c-fg-deeper);
+  }
+
+  .navigation .nav-priority > .navigation-link {
+    background: rgba(125, 125, 125, 0.1);
+    color: var(--c-fg-deeper);
+    font-weight: 750;
+    opacity: 1;
   }
 
   .navigation .nav-utilities {
