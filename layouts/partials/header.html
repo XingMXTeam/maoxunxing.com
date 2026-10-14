@@ -1,5 +1,5 @@
 {{- $galleryURL := "/gallery/" | relLangURL -}}
-{{- $isZh := eq .Site.Language.Lang "zh-CN" -}}
+{{- $isZh := eq (lower .Site.Language.Lang) "zh-cn" -}}
 <nav class="navigation" aria-label="Main navigation">
   <section class="nav-container">
     <!-- Animated M signature logo -->
@@ -17,6 +17,11 @@
       </svg>
     </a>
 
+    <nav class="nav-mobile-shortcuts" aria-label="{{ if $isZh }}快捷入口{{ else }}Shortcuts{{ end }}">
+      <a class="nav-shortcut" href="{{ "tools/" | relLangURL }}"{{ if eq .Section "tools" }} aria-current="page"{{ end }}>{{ if $isZh }}工具{{ else }}Tools{{ end }}</a>
+      <a class="nav-shortcut nav-shortcut-product" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener noreferrer">CrossAgent Lab</a>
+    </nav>
+
     <button
       type="button"
       id="menu-toggle"
@@ -31,10 +36,16 @@
 
     <ul class="navigation-list" id="site-navigation" aria-hidden="true">
       {{ with .Site.Menus.main }}
-        {{ range sort . }}
+        {{ range sort . "Weight" }}
           {{ if not .Parent }}
-          <li class="navigation-item nav-primary-item">
-            <a class="navigation-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+          {{- $href := .URL -}}
+          {{- $external := or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
+          {{- if not $external -}}
+            {{- $href = $href | absLangURL -}}
+          {{- end -}}
+          {{- $priority := or (in $href "crossagent.maoxunxing.com") (in $href "/tools") -}}
+          <li class="navigation-item nav-primary-item{{ if $priority }} nav-priority{{ end }}">
+            <a class="navigation-link" href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a>
           </li>
           {{ end }}
         {{ end }}

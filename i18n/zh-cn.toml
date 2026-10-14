@@ -14,13 +14,34 @@ other = """目前专注于 Learn、Build and Grow with AGI。探索两个方向�
 other = """编程之外，我也会记录阅读、绘画、工具、影音和内容创作。你可以看看我的<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">书影音</a>。"""
 
 [homeEyebrow]
-other = "Felix Mao / 毛毛星 · 个人公开笔记本"
+other = "Felix Mao / 毛毛星"
 
 [homeHeroTitle]
-other = "Hi，我是毛毛星"
+other = "AI 全栈、harness 与独立产品"
 
 [homeHeroDesc]
-other = "写了十年前端，最近在认真学习 AI、做个人产品，也记录长期投资和家庭现金流。我会把自己真正用过、想过、踩过坑的东西，慢慢写在这里。"
+other = "这里是我的个人枢纽。小工具从这里点开，CrossAgent Lab 是垂直产品。"
+
+[homeToolsCTA]
+other = "工具"
+
+[homeToolsHint]
+other = "点开即用的小工具"
+
+[homeCrossAgentCTA]
+other = "CrossAgent Lab"
+
+[homeCrossAgentHint]
+other = "垂直产品"
+
+[footerSecondaryLabel]
+other = "其他内容"
+
+[footerInvesting]
+other = "长期投资"
+
+[footerBook]
+other = "期权电子书"
 
 [homeQuickLinks]
 other = """你可以读我的<a href="/zh-cn/notes/">随笔</a>、看看<a href="/zh-cn/gallery/">画廊</a>、我使用的<a href="/zh-cn/uses/">软硬件装备</a>、我整理的<a href="/zh-cn/bookmarks/">书签收藏</a>，以及我的<a href="/zh-cn/media/">书影音</a>。"""
@@ -143,7 +164,7 @@ other = "我做过和正在做的小东西"
 other = "/zh-cn/projects/"
 
 [homeBrowse5Title]
-other = "工具箱"
+other = "在用"
 
 [homeBrowse5Desc]
 other = "我正在用的软件、硬件和工具"

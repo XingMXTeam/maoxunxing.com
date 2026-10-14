@@ -1,0 +1,31 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+
+{{ define "content" }}
+<section class="container tools-page">
+  <header class="tools-hero">
+    <h1 class="tools-title">{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="tools-intro">{{ . }}</p>{{ end }}
+  </header>
+
+  <ul class="tools-list">
+    {{ range .Params.entries }}
+      {{- $external := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
+      <li>
+        <a class="tool-entry" href="{{ .url }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+          <strong>{{ .name }}</strong>
+          <span>{{ .desc }}</span>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+
+  {{ with .Params.product }}
+    <p class="tools-product-note">
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+      — {{ .desc }}
+    </p>
+  {{ end }}
+</section>
+{{ end }}

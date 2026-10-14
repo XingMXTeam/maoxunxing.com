@@ -2,7 +2,7 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20260821-simple-home" />
+<link rel="stylesheet" href="/css/home.css?v=20261014-hub" />
 <style>
   #home-art-canvas {
     position: fixed !important;
@@ -39,9 +39,19 @@
 <section class="container home-prose">
 
   <section class="home-hero" aria-labelledby="home-hero-title">
-    <p class="home-eyebrow">{{ i18n "homeEyebrow" | safeHTML }}</p>
-    <h1 id="home-hero-title" class="home-hero-title">{{ i18n "homeHeroTitle" | safeHTML }}</h1>
-    <p class="home-hero-desc">{{ i18n "homeHeroDesc" | safeHTML }}</p>
+    <p class="home-eyebrow">{{ i18n "homeEyebrow" }}</p>
+    <h1 id="home-hero-title" class="home-hero-title">{{ i18n "homeHeroTitle" }}</h1>
+    <p class="home-hero-desc">{{ i18n "homeHeroDesc" }}</p>
+    <div class="home-cta-row">
+      <a class="home-action-primary" href="{{ "tools/" | relLangURL }}">
+        <strong>{{ i18n "homeToolsCTA" }}</strong>
+        <span>{{ i18n "homeToolsHint" }}</span>
+      </a>
+      <a class="home-action-secondary" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener noreferrer">
+        <strong>{{ i18n "homeCrossAgentCTA" }}</strong>
+        <span>{{ i18n "homeCrossAgentHint" }}</span>
+      </a>
+    </div>
   </section>
 
   <section class="home-section-block">
@@ -56,14 +66,6 @@
       <a class="home-browse-link" href="{{ i18n "homeBrowse6Href" }}"><strong>{{ i18n "homeBrowse6Title" }}</strong><span>{{ i18n "homeBrowse6Desc" }}</span></a>
       <a class="home-browse-link" href="{{ i18n "homeBrowse7Href" }}"><strong>{{ i18n "homeBrowse7Title" }}</strong><span>{{ i18n "homeBrowse7Desc" }}</span></a>
       <a class="home-browse-link" href="{{ i18n "homeBrowse8Href" }}"><strong>{{ i18n "homeBrowse8Title" }}</strong><span>{{ i18n "homeBrowse8Desc" }}</span></a>
-    </div>
-  </section>
-
-  <section class="home-section-block">
-    <h2 class="home-section-title">{{ i18n "homeBookTitle" }}</h2>
-    <div class="home-book-card">
-      <p>{{ i18n "homeBookDesc" | safeHTML }}</p>
-      <p><a class="home-action-secondary" href="https://leanpub.com/optionsmadesimple" target="_blank" rel="noopener">{{ i18n "homeBookCTA" }}</a></p>
     </div>
   </section>
 

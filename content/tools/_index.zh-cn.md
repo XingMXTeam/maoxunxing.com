@@ -1,0 +1,19 @@
+---
+title: "工具"
+description: "能点开就用的小工具：Sayo、Prompt 库，以及正在做的小产品。"
+intro: "这些是现在就能点开的小工具和小产品。垂直产品单独放在 CrossAgent Lab。"
+entries:
+  - name: "Sayo"
+    url: "https://gosayo.cc/"
+    desc: "英语口语练习。先自己说，卡住了再看提示。"
+  - name: "Prompt 库"
+    url: "/zh-cn/prompts/"
+    desc: "编程、写作和研究时留下来、还会再用的提示词。"
+  - name: "项目"
+    url: "/zh-cn/projects/"
+    desc: "做过和正在做的小产品、插件和实验。"
+product:
+  name: "CrossAgent Lab"
+  url: "https://crossagent.maoxunxing.com"
+  desc: "垂直产品，从这里去。"
+---
