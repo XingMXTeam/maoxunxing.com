@@ -238,7 +238,26 @@ body.colorscheme-dark .code-copy-button {
   --notice-accent: #c2413b;
 }
 
+/* Keep the AdSense slot, but don't let its reserved margin open a hole above titles. */
+#adsense-container {
+  margin: 0.4rem 0 1.2rem !important;
+}
+
+.wrapper:has(.projects-page) .footer,
+.wrapper:has(.projects-page) .footer-secondary {
+  max-width: 1180px;
+}
+
+.reader-article > article > header {
+  margin-top: 0.2rem;
+}
+
 @media only screen and (max-width: 768px) {
+  body:not(.reader-mode) .reader-toggle {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
   .article-flow {
     margin: 2em 0;
   }

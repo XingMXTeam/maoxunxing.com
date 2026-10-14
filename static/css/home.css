@@ -2,8 +2,8 @@
 /* Focus: personal first impression, clear reading paths, and lightweight conversion. */
 
 .home-hero {
-  margin-top: 1rem;
-  margin-bottom: 1.8rem;
+  margin-top: 0.4rem;
+  margin-bottom: 2.8rem;
 }
 
 .home-eyebrow {
@@ -159,7 +159,11 @@
 }
 
 .home-section-block {
-  margin: 2.6rem 0;
+  margin: 3.2rem 0;
+}
+
+body.page-home .home-divider {
+  margin: 2.8rem 0;
 }
 
 .home-section-block h2 {
@@ -201,8 +205,8 @@
 
 .home-browse-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .home-browse-link {
@@ -227,14 +231,14 @@
   display: block;
   margin-bottom: 0.45rem;
   color: var(--c-fg-deeper);
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   line-height: 1.35;
 }
 
 .home-browse-link span {
   display: block;
   color: var(--c-fg-light);
-  font-size: 1.18rem;
+  font-size: 1.32rem;
   line-height: 1.5;
 }
 
@@ -294,12 +298,14 @@ body.page-home .home-prose .article-section-tag {
 
 body.colorscheme-dark .home-start-card,
 body.colorscheme-dark .home-browse-link,
-body.colorscheme-dark .home-book-card {
+body.colorscheme-dark .home-book-card,
+body.colorscheme-dark .tool-entry {
   background: rgba(255, 255, 255, 0.035);
 }
 
 body.colorscheme-dark .home-start-card:hover,
-body.colorscheme-dark .home-browse-link:hover {
+body.colorscheme-dark .home-browse-link:hover,
+body.colorscheme-dark .tool-entry:hover {
   background: rgba(255, 255, 255, 0.055);
 }
 
@@ -316,12 +322,14 @@ body.colorscheme-dark .home-action-secondary {
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .home-start-card,
   body.colorscheme-auto .home-browse-link,
-  body.colorscheme-auto .home-book-card {
+  body.colorscheme-auto .home-book-card,
+  body.colorscheme-auto .tool-entry {
     background: rgba(255, 255, 255, 0.035);
   }
 
   body.colorscheme-auto .home-start-card:hover,
-  body.colorscheme-auto .home-browse-link:hover {
+  body.colorscheme-auto .home-browse-link:hover,
+  body.colorscheme-auto .tool-entry:hover {
     background: rgba(255, 255, 255, 0.055);
   }
 
@@ -333,12 +341,6 @@ body.colorscheme-dark .home-action-secondary {
 
   body.colorscheme-auto .home-action-secondary {
     color: var(--c-fg-deeper) !important;
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  .home-browse-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -409,6 +411,11 @@ body.colorscheme-dark .home-action-secondary {
     grid-template-columns: 1fr;
   }
 
+  .find-me-link {
+    min-height: 4.4rem;
+    padding: 0.2rem 0.1rem;
+  }
+
   .home-browse-link {
     min-height: auto;
   }
@@ -458,7 +465,7 @@ body.colorscheme-dark .home-action-secondary {
 .tools-page {
   max-width: 65ch;
   margin: 0 auto;
-  padding-top: 0.6rem;
+  padding-top: 0;
 }
 
 .tools-title {
@@ -496,9 +503,16 @@ body.colorscheme-dark .home-action-secondary {
   padding: 1.1rem 1.2rem;
   border: 1px solid var(--c-border) !important;
   border-radius: 16px;
-  background: var(--c-bg);
+  background: rgba(125, 125, 125, 0.035);
   color: inherit !important;
   text-decoration: none !important;
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.tool-entry:hover {
+  transform: translateY(-1px);
+  border-color: var(--c-border-hover) !important;
+  background: rgba(125, 125, 125, 0.06);
 }
 
 .tool-entry strong {
@@ -514,7 +528,11 @@ body.colorscheme-dark .home-action-secondary {
 }
 
 .tools-product-note {
-  margin: 1.6rem 0 0;
+  margin: 1.2rem 0 0;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  background: transparent;
   color: var(--c-fg);
   font-size: 1.45rem;
   line-height: 1.6;
