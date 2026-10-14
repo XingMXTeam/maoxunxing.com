@@ -2,13 +2,13 @@
 title: Projects
 layout: projects
 kicker: Build log
-intro: I build small systems that turn messy workflows into repeatable products — from AI coding and creator operations to frontend infrastructure and personal publishing.
+intro: "What you can open sits at the top. Below that are private-repo write-ups, GitHub experiments, and books that are already published."
 project_links:
   - label: GitHub
     url: https://github.com/XingMXTeam
     icon: fab fa-github
   - label: Writing
-    url: https://maoxunxing.com/
+    url: /en/
     icon: fas fa-pen
   - label: Contact
     url: https://twitter.com/maoxunxing/
@@ -17,43 +17,77 @@ project_sections:
   - title: Current Focus
     id: current-focus
     featured: true
-    lead: The projects that best represent what I am building now — AI products, creator workflows, personal publishing, and repeatable AI workstations.
+    lead: "What you can open now: the browser tools, Sayo, CrossAgent Lab, and this site."
     items:
       - name: Sayo
         link: https://gosayo.cc/
-        desc: An English speaking product built around core verbs, real-life scenes, and repeatable practice. It helps learners stop translating word by word and start speaking through reusable structures.
+        desc: Spoken English practice built around core verbs, real-life scenes, and another try in a new scene. Say it yourself first, then look at the hint if you get stuck.
         icon: fas fa-language
         status: Live
         visual: core verbs → scenes → practice
         tags: [English Learning, AI Tutor, Product]
         featured: true
-      - name: Xiaohongshu AI Operator
-        link: https://github.com/XingMXTeam/xiaohongshushipfast
-        desc: An AI content operation system for creators, personal brands, local businesses, and small teams. The goal is not one generated note, but a repeatable workflow for topics, competitors, drafts, plans, and review loops.
-        icon: fas fa-pen-nib
-        status: Building
-        visual: topics → drafts → publishing
-        tags: [AI, Content Ops, Xiaohongshu]
+      - name: Whistle transcription
+        link: /ai/whistle-transcription/
+        desc: A browser tool that transcribes a whistle. Open it and use it; there is no repo to clone.
+        icon: fas fa-music
+        status: Live
+        visual: whistle → transcription
+        tags: [Browser tool, Transcription]
+        featured: true
+      - name: Xiaohongshu cover maker
+        link: /ai/xiaohongshu-cover-maker/
+        desc: Make a Xiaohongshu cover in the browser. This is the tool you can open. The operator repo further down is still being built.
+        icon: fas fa-image
+        status: Live
+        visual: open → cover
+        tags: [Browser tool, Xiaohongshu, Cover]
+        featured: true
+      - name: Speaker diarization
+        link: /ai/speaker-diarization/
+        desc: Mark who is speaking, and when, in a recording. Open it in the browser.
+        icon: fas fa-users
+        status: Live
+        visual: recording → speakers
+        tags: [Browser tool, Audio]
+        featured: true
+      - name: CrossAgent Lab
+        link: https://crossagent.maoxunxing.com
+        desc: The vertical product. Leave this site and open CrossAgent Lab.
+        icon: fas fa-project-diagram
+        status: Live
+        visual: vertical product
+        tags: [CrossAgent, Product]
         featured: true
       - name: maoxunxing.com
-        link: https://github.com/XingMXTeam/maoxunxing.com
-        desc: My personal publishing system for AI coding, creator workflows, systems thinking, investing, and long-form technical writing. It is not just a blog; it is a public operating system for ideas.
-        icon: fab fa-github
+        link: /en/
+        desc: This site. It is the public archive for writing, AI coding, and product experiments. The site is live, and the source repo is public.
+        icon: fas fa-globe
         status: Active
         visual: notes → essays → systems
         tags: [Personal Site, Writing, SEO/GEO]
         featured: true
+  - title: Docs & in progress
+    id: docs-in-progress
+    lead: "These pages explain the idea. The repos are still private, so you get a write-up, not a demo you can run."
+    items:
       - name: Agent Workstation
-        link: https://maoxunxing.com/agent-workstation/
-        desc: A reusable multi-agent orchestration framework for task-specific AI workstations. The experiment is about turning repeated AI work into structured workstations.
+        link: /en/agent-workstation/
+        desc: A write-up of a multi-agent workflow. The repo is still private. This page explains the design; it is not a public demo.
         icon: fas fa-robot
-        status: In Progress
-        visual: user → agents → tools → output
-        tags: [Agent Workflow, AI Engineering, Systems]
-        featured: true
+        status: Private docs
+        visual: write-up, private repo
+        tags: [Agent Workflow, Docs, Private repo]
+      - name: Ebook Factory
+        link: /en/ebook-factory/
+        desc: A write-up of a Markdown-to-ebook pipeline. The repo is still private because it may contain real book material.
+        icon: fas fa-book
+        status: Private docs
+        visual: write-up, private repo
+        tags: [Publishing, Docs, Private repo]
   - title: AI / Agent Engineering
     id: ai-agent-engineering
-    lead: Small experiments around tool calling, browser automation, RAG, and AI-assisted research workflows.
+    lead: GitHub experiments around tool calling, browser automation, RAG, and research workflows. You can open the repos. They are not products you can use.
     items:
       - name: MCP Screenshot Inverter
         link: https://github.com/XingMXTeam/a-simple-mcp
@@ -103,8 +137,15 @@ project_sections:
         tags: [Engineering, Components, Build Tools]
   - title: Creator & Media Tools
     id: creator-media-tools
-    lead: Workflow tools for creators, video editing, and content production.
+    lead: Experiments for content production and video editing. The cover tool you can open is above. These are repos, not finished products.
     items:
+      - name: Xiaohongshu AI Operator
+        link: https://github.com/XingMXTeam/xiaohongshushipfast
+        desc: A GitHub experiment for creator content operations. It is still being built. The thing you can open today is the Xiaohongshu cover maker above, not this repo.
+        icon: fas fa-pen-nib
+        status: Building
+        visual: topics → drafts → publishing
+        tags: [AI, Content Ops, Xiaohongshu]
       - name: CapCut Audio Subtitle Align
         link: https://github.com/XingMXTeam/capcut_audio_subtitle_align
         desc: A creator-workflow experiment for aligning audio and subtitles in editing pipelines, especially useful when turning AI-generated or edited media into short-form content.
@@ -114,17 +155,10 @@ project_sections:
         tags: [Video Workflow, Creator Tool, Automation]
   - title: Publishing & Knowledge Systems
     id: publishing-knowledge-systems
-    lead: Projects that turn writing, prompts, and domain knowledge into reusable assets.
+    lead: The prompt library you can open, plus books that are already published.
     items:
-      - name: Ebook Factory
-        link: https://maoxunxing.com/ebook-factory/
-        desc: A Markdown-to-ebook production pipeline based on Pandoc, Make, Docker, and TypeScript. The goal is to make writing, packaging, and publishing more repeatable.
-        icon: fas fa-book
-        status: Building
-        visual: markdown → epub → kindle
-        tags: [Publishing, Markdown, Pandoc]
       - name: Prompt Library
-        link: https://maoxunxing.com/prompts/
+        link: /en/prompts/
         desc: A curated collection of prompts used for coding, creation, writing, research, and workflows — not prompt snippets, but working patterns from real tasks.
         icon: fas fa-lightbulb
         status: Active
