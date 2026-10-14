@@ -173,13 +173,16 @@ other = "Computer Fundamentals"
 other = "Share on"
 
 [subscribe]
-other = "Subscribe Now!"
+other = "Subscribe"
 
 [subscribe1]
-other = "Be the first to know when I post cool stuff"
+other = "New articles on AI agents, full-stack engineering, and a one-person company"
 
 [subscribe2]
-other = "Subscribe to get my latest articles. No spam, unsubscribe anytime."
+other = "I email new writing about AI and agents, full-stack engineering, and building a one-person company. No spam, and you can unsubscribe anytime."
+
+[subscribePlaceholder]
+other = "Email address"
 
 [emailAddress]
 other = "Email Address"
