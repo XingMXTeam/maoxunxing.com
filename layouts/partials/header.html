@@ -1,6 +1,7 @@
 {{- $galleryURL := "/gallery/" | relLangURL -}}
 {{- $isZh := eq (lower .Site.Language.Lang) "zh-cn" -}}
-<nav class="navigation" aria-label="Main navigation">
+{{- $aiToolsURL := "https://maoxunxing.com/ai/" -}}
+<nav class="navigation nav-hub" aria-label="Main navigation">
   <section class="nav-container">
     <!-- Animated M signature logo -->
     <a class="nav-logo" href="{{ .Site.BaseURL | relLangURL }}" aria-label="Felix Mao home">
@@ -18,8 +19,9 @@
     </a>
 
     <nav class="nav-mobile-shortcuts" aria-label="{{ if $isZh }}快捷入口{{ else }}Shortcuts{{ end }}">
-      <a class="nav-shortcut" href="{{ "tools/" | relLangURL }}"{{ if eq .Section "tools" }} aria-current="page"{{ end }}>{{ if $isZh }}工具{{ else }}Tools{{ end }}</a>
-      <a class="nav-shortcut nav-shortcut-product" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener noreferrer">CrossAgent Lab</a>
+      <a class="nav-shortcut nav-shortcut-ai" href="{{ $aiToolsURL }}">{{ if $isZh }}AI 工具{{ else }}AI Tools{{ end }}</a>
+      <a class="nav-shortcut nav-shortcut-product" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener noreferrer">CrossAgent</a>
+      <a class="nav-shortcut" href="{{ "posts/" | relLangURL }}"{{ if eq .Section "posts" }} aria-current="page"{{ end }}>{{ if $isZh }}写作{{ else }}Writing{{ end }}</a>
     </nav>
 
     <button
@@ -39,11 +41,13 @@
         {{ range sort . "Weight" }}
           {{ if not .Parent }}
           {{- $href := .URL -}}
-          {{- $external := or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
-          {{- if not $external -}}
+          {{- $absolute := or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
+          {{- if not $absolute -}}
             {{- $href = $href | absLangURL -}}
           {{- end -}}
-          {{- $priority := or (in $href "crossagent.maoxunxing.com") (in $href "/tools") -}}
+          {{- /* /ai/ lives on the same domain (separate app), so it opens in the same tab. */ -}}
+          {{- $external := and $absolute (not (hasPrefix $href "https://maoxunxing.com/")) -}}
+          {{- $priority := or (in $href "crossagent.maoxunxing.com") (in $href "maoxunxing.com/ai/") -}}
           <li class="navigation-item nav-primary-item{{ if $priority }} nav-priority{{ end }}">
             <a class="navigation-link" href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a>
           </li>

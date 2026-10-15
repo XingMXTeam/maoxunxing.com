@@ -9,23 +9,16 @@
     {{ with .Params.intro }}<p class="tools-intro">{{ . }}</p>{{ end }}
   </header>
 
-  <ul class="tools-list">
+  <div class="hub-card-grid tools-grid">
     {{ range .Params.entries }}
-      {{- $external := or (hasPrefix .url "http://") (hasPrefix .url "https://") -}}
-      <li>
-        <a class="tool-entry" href="{{ .url }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
-          <strong>{{ .name }}</strong>
-          <span>{{ .desc }}</span>
-        </a>
-      </li>
+      {{ partial "hub-card.html" (dict "name" .name "url" .url "desc" .desc "tags" .tags) }}
     {{ end }}
-  </ul>
+  </div>
 
   {{ with .Params.product }}
-    <p class="tools-product-note">
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
-      — {{ .desc }}
-    </p>
+    <div class="hub-card-grid tools-product">
+      {{ partial "hub-card.html" (dict "name" .name "url" .url "desc" .desc "tags" .tags "status" "Live" "class" "hub-card-product") }}
+    </div>
   {{ end }}
 </section>
 {{ end }}

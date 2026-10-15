@@ -17,10 +17,10 @@ other = """编程之外，我也会记录阅读、绘画、工具、影音和内
 other = "Felix Mao / 毛毛星"
 
 [homeHeroTitle]
-other = "AI 全栈、harness 与独立产品"
+other = "AI 全栈 · 独立开发者"
 
 [homeHeroDesc]
-other = "这里是我的个人枢纽。小工具从这里点开，CrossAgent Lab 是垂直产品。"
+other = "做浏览器里点开即用的 AI 小工具和一个垂直产品，也写工程、AI 编程和创作笔记。"
 
 [homeToolsCTA]
 other = "工具"
@@ -308,3 +308,45 @@ other = "书评"
 
 [homeOutro]
 other = "希望你能在这里找到一些灵感"
+
+[homeCurrentlyLabel]
+other = "正在做"
+
+[homeProductToolsTitle]
+other = "AI 工具"
+
+[homeProductToolsDesc]
+other = "口哨转写、小红书封面、说话人分离，浏览器里点开即用。"
+
+[homeProductToolsTag1]
+other = "浏览器"
+
+[homeProductToolsTag2]
+other = "在线"
+
+[homeProductCATitle]
+other = "CrossAgent Lab"
+
+[homeProductCADesc]
+other = "垂直产品，单独的站。从这里进入。"
+
+[homeProductCATag1]
+other = "垂直产品"
+
+[homeProductCATag2]
+other = "CrossAgent"
+
+[homeToolsGridTitle]
+other = "小工具与项目"
+
+[homeToolsGridMore]
+other = "全部工具"
+
+[footerAICoding]
+other = "AI 编程"
+
+[footerAIStartup]
+other = "AI 创业"
+
+[footerCreator]
+other = "创作系统"

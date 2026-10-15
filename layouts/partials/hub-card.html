@@ -1,0 +1,27 @@
+{{- /*
+  Unified Hub B project card: title + one-line description + tags.
+  Used by the homepage grid, /tools/ and /projects/.
+  Pass a dict with: name, url (optional), desc, tags (optional), status (optional), class (optional).
+*/ -}}
+{{- $c := . -}}
+{{- $url := $c.url -}}
+{{- $external := and $url (or (hasPrefix $url "http://") (hasPrefix $url "https://")) (not (hasPrefix $url "https://maoxunxing.com/")) -}}
+{{- $tag := cond (gt (len (string $url)) 0) "a" "div" -}}
+{{- $class := printf "hub-card%s%s" (cond (eq $tag "div") " hub-card-static" "") (cond (isset $c "class") (printf " %s" $c.class) "") -}}
+{{- if eq $tag "a" -}}
+<a class="{{ $class }}" href="{{ $url }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+{{- else -}}
+<div class="{{ $class }}">
+{{- end }}
+  <span class="hub-card-head">
+    <strong class="hub-card-title">{{ $c.name }}</strong>
+    {{- with $c.status }}<span class="hub-card-status">{{ . }}</span>{{ end }}
+    {{- if eq $tag "a" }}<span class="hub-card-arrow" aria-hidden="true">{{ if $external }}↗&#xFE0E;{{ else }}→{{ end }}</span>{{ end }}
+  </span>
+  {{- with $c.desc }}
+  <span class="hub-card-desc" title="{{ . }}">{{ . }}</span>
+  {{- end }}
+  {{- with $c.tags }}
+  <span class="hub-card-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</span>
+  {{- end }}
+{{ if eq $tag "a" }}</a>{{ else }}</div>{{ end }}
