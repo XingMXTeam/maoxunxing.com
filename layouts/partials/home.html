@@ -2,8 +2,8 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20261015-hubb" />
-<link rel="stylesheet" href="/css/hub-b.css?v=20261015-hubb" />
+<link rel="stylesheet" href="/css/home.css?v=20261017-rss" />
+<link rel="stylesheet" href="/css/hub-b.css?v=20261017-rss" />
 <style>
   #home-art-canvas {
     position: fixed !important;
@@ -104,7 +104,7 @@
   <p class="home-find-me-label">{{ i18n "homeFindMe" | default "Find me on" }}</p>
 
   <p class="home-find-me">
-    {{ range sort .Site.Params.social }}
+    {{ range sort .Site.Params.social "weight" }}
       <a href="{{ .url }}" target="_blank" rel="noopener" class="find-me-link">
         {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
         {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="find-me-img" />

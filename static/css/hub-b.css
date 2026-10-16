@@ -56,7 +56,7 @@ body.page-home {
     padding: 0 1.1rem;
     border: 1px solid var(--c-border);
     border-radius: 999px;
-    min-height: 3.8rem;
+    min-height: var(--hub-touch);
   }
 
   .navigation.nav-hub .navigation-list .nav-priority > .navigation-link:hover {
@@ -102,6 +102,7 @@ body.page-home {
 
   .navigation.nav-hub .nav-shortcut {
     flex: 1 1 auto;
+    min-width: var(--hub-touch);
     min-height: var(--hub-touch);
     padding: 0 0.6rem;
     border-radius: 12px;
@@ -131,6 +132,34 @@ body.page-home {
     background: var(--c-bg) !important;
     max-height: calc(100vh - 8rem);
     overflow-y: auto;
+  }
+
+  /* Socials share one grid (RSS included). The older .nav-socials { display:none }
+     loses to .navigation-item.nav-section { display:block }, which used to drop a
+     solo RSS <li> onto its own row. Keep one nowrap row of 44px targets. */
+  .navigation.nav-hub .navigation-list .nav-socials {
+    display: block !important;
+    width: 100%;
+    margin-top: 0.4rem;
+  }
+
+  .navigation.nav-hub .nav-social-grid {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    width: 100%;
+  }
+
+  .navigation.nav-hub .nav-social-grid > .nav-icon-link {
+    flex: 0 0 4.4rem;
+    width: 4.4rem !important;
+    min-width: 4.4rem !important;
+    height: 4.4rem !important;
+    min-height: 4.4rem !important;
+    padding: 0 !important;
+    opacity: 0.72;
   }
 }
 
@@ -268,7 +297,12 @@ body.page-home .find-me-link {
 body.page-home .home-find-me {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   column-gap: 1.2rem;
+}
+
+body.page-home .find-me-link {
+  white-space: nowrap;
 }
 
 .footer .footer-inner a {
@@ -447,6 +481,28 @@ a.hub-card:hover {
 
   .hub-card {
     padding: 1.3rem 1.4rem;
+  }
+
+  /* Find-me: keep each icon+label together. Tighter gap so ~390px stays one row. */
+  body.page-home .home-find-me {
+    column-gap: 0.55rem;
+    row-gap: 0;
+  }
+
+  body.page-home .find-me-link {
+    gap: 0.28rem;
+    font-size: 1.38rem;
+  }
+}
+
+/* ~320px: a 3+2 grid reads cleaner than one leftover link. */
+@media only screen and (max-width: 360px) {
+  body.page-home .home-find-me {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: start;
+    column-gap: 0.8rem;
+    row-gap: 0;
   }
 }
 
