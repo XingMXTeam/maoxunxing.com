@@ -2,7 +2,8 @@
      The stylesheet is also loaded from config.toml, but this explicit versioned
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
-<link rel="stylesheet" href="/css/home.css?v=20261014-polish" />
+<link rel="stylesheet" href="/css/home.css?v=20261017-rss" />
+<link rel="stylesheet" href="/css/hub-b.css?v=20261017-rss" />
 <style>
   #home-art-canvas {
     position: fixed !important;
@@ -38,24 +39,53 @@
 
 <section class="container home-prose">
 
+  {{- $aiToolsURL := "https://maoxunxing.com/ai/" -}}
+  {{- $crossAgentURL := "https://crossagent.maoxunxing.com" -}}
+
+  <!-- 1. Positioning line (Hub B) -->
   <section class="home-hero" aria-labelledby="home-hero-title">
     <p class="home-eyebrow">{{ i18n "homeEyebrow" }}</p>
     <h1 id="home-hero-title" class="home-hero-title">{{ i18n "homeHeroTitle" }}</h1>
     <p class="home-hero-desc">{{ i18n "homeHeroDesc" }}</p>
-    <div class="home-cta-row">
-      <a class="home-action-primary" href="{{ "tools/" | relLangURL }}">
-        <strong>{{ i18n "homeToolsCTA" }}</strong>
-        <span>{{ i18n "homeToolsHint" }}</span>
+  </section>
+
+  <!-- 2. Product branch: "currently" block (after swyx.io) -->
+  <section class="home-currently" aria-labelledby="home-currently-title">
+    <h2 id="home-currently-title" class="home-kicker">{{ i18n "homeCurrentlyLabel" }}</h2>
+    <div class="home-product-grid">
+      <a class="home-product-card home-product-card-tools" href="{{ $aiToolsURL }}">
+        <span class="home-product-top"><span class="hub-card-status">Live</span><span class="hub-card-arrow" aria-hidden="true">→</span></span>
+        <strong class="home-product-title">{{ i18n "homeProductToolsTitle" }}</strong>
+        <span class="home-product-desc">{{ i18n "homeProductToolsDesc" }}</span>
+        <span class="hub-card-tags"><span>{{ i18n "homeProductToolsTag1" }}</span><span>{{ i18n "homeProductToolsTag2" }}</span></span>
       </a>
-      <a class="home-action-secondary" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener noreferrer">
-        <strong>{{ i18n "homeCrossAgentCTA" }}</strong>
-        <span>{{ i18n "homeCrossAgentHint" }}</span>
+      <a class="home-product-card home-product-card-crossagent" href="{{ $crossAgentURL }}" target="_blank" rel="noopener noreferrer">
+        <span class="home-product-top"><span class="hub-card-status">Live</span><span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span></span>
+        <strong class="home-product-title">{{ i18n "homeProductCATitle" }}</strong>
+        <span class="home-product-desc">{{ i18n "homeProductCADesc" }}</span>
+        <span class="hub-card-tags"><span>{{ i18n "homeProductCATag1" }}</span><span>{{ i18n "homeProductCATag2" }}</span></span>
       </a>
     </div>
   </section>
 
-  <section class="home-section-block">
-    <h2 class="home-section-title">{{ i18n "homeBrowseTitle" }}</h2>
+  <!-- 3. Small tool / project card grid (same card as /tools/ and /projects/) -->
+  {{ with site.GetPage "/tools" }}
+  <section class="home-section-block home-tools" aria-labelledby="home-tools-title">
+    <div class="home-section-head">
+      <h2 id="home-tools-title" class="home-section-title">{{ i18n "homeToolsGridTitle" }}</h2>
+      <a class="home-section-more" href="{{ .RelPermalink }}">{{ i18n "homeToolsGridMore" }} →</a>
+    </div>
+    <div class="hub-card-grid">
+      {{ range .Params.entries }}
+        {{ partial "hub-card.html" (dict "name" .name "url" .url "desc" .desc "tags" .tags) }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 4. Explore (逛逛) -->
+  <section id="explore" class="home-section-block home-explore" aria-labelledby="home-explore-title">
+    <h2 id="home-explore-title" class="home-section-title">{{ i18n "homeBrowseTitle" }}</h2>
     <p class="home-browse-desc">{{ i18n "homeBrowseDesc" }}</p>
     <div class="home-browse-grid">
       <a class="home-browse-link" href="{{ i18n "homeBrowse1Href" }}"><strong>{{ i18n "homeBrowse1Title" }}</strong><span>{{ i18n "homeBrowse1Desc" }}</span></a>
@@ -74,7 +104,7 @@
   <p class="home-find-me-label">{{ i18n "homeFindMe" | default "Find me on" }}</p>
 
   <p class="home-find-me">
-    {{ range sort .Site.Params.social }}
+    {{ range sort .Site.Params.social "weight" }}
       <a href="{{ .url }}" target="_blank" rel="noopener" class="find-me-link">
         {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
         {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="find-me-img" />

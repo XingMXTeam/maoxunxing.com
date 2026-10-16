@@ -6,23 +6,30 @@ entries:
   - name: "口哨转写"
     url: "/ai/whistle-transcription/"
     desc: "在浏览器里把口哨转写出来。打开就能用。"
+    tags: ["音频", "浏览器"]
   - name: "小红书封面"
     url: "/ai/xiaohongshu-cover-maker/"
     desc: "在浏览器里做小红书封面。打开就能用。"
+    tags: ["设计", "浏览器"]
   - name: "说话人分离"
     url: "/ai/speaker-diarization/"
     desc: "在浏览器里标出录音里谁在说话、什么时候说。"
+    tags: ["音频", "浏览器"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "英语口语练习。先自己说，卡住了再看提示。"
+    tags: ["英语学习", "AI Tutor"]
   - name: "Prompt 库"
     url: "/zh-cn/prompts/"
     desc: "编程、写作和研究时留下来、还会再用的提示词。"
+    tags: ["Prompt", "写作"]
   - name: "项目"
     url: "/zh-cn/projects/"
     desc: "做过和正在做的小产品、插件和实验。"
+    tags: ["产品", "实验"]
 product:
   name: "CrossAgent Lab"
   url: "https://crossagent.maoxunxing.com"
+  tags: ["垂直产品"]
   desc: "垂直产品，从这里去。"
 ---

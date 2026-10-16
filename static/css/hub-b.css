@@ -1,0 +1,512 @@
+/* ========== Hub B first cut (2026-10-15) ==========
+   Layout/nav after brianlovin.com, product-branch block after swyx.io.
+   Loaded last so it can refine main/home/nav-hotfix/projects without touching the theme engine.
+   Colours only use existing theme tokens (--c-bg, --c-fg*, --c-border*), so light/dark keep working. */
+
+:root {
+  --hub-fs-xs: 1.2rem;
+  --hub-fs-sm: 1.4rem;
+  --hub-fs-md: 1.6rem;
+  --hub-fs-lg: 2.2rem;
+  --hub-fs-xl: 4rem;
+  --hub-space-1: 0.8rem;
+  --hub-space-2: 1.2rem;
+  --hub-space-3: 2rem;
+  --hub-space-4: 4rem;
+  --hub-radius: 16px;
+  --hub-touch: 4.4rem; /* 44px */
+}
+
+/* ---------- Sticky, mobile-first main nav ---------- */
+/* overflow-x: hidden on these ancestors turns them into scroll containers and breaks
+   position: sticky. clip keeps the same no-horizontal-scroll result without that side effect. */
+.wrapper,
+body.page-home {
+  overflow-x: clip !important;
+}
+
+.navigation.nav-hub {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--c-bg) 86%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid color-mix(in srgb, var(--c-border) 60%, transparent);
+}
+
+@media only screen and (min-width: 769px) {
+  .navigation.nav-hub .nav-container {
+    padding: 0.8rem 2rem;
+    min-height: 6rem;
+  }
+
+  .navigation.nav-hub .nav-logo {
+    top: 1.2rem;
+  }
+
+  .navigation.nav-hub .navigation-list .nav-primary-item > .navigation-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--hub-touch);
+    font-size: 1.5rem;
+  }
+
+  .navigation.nav-hub .navigation-list .nav-priority > .navigation-link {
+    padding: 0 1.1rem;
+    border: 1px solid var(--c-border);
+    border-radius: 999px;
+    min-height: var(--hub-touch);
+  }
+
+  .navigation.nav-hub .navigation-list .nav-priority > .navigation-link:hover {
+    border-color: var(--c-border-hover);
+  }
+
+  .navigation.nav-hub .nav-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.6rem;
+    min-height: var(--hub-touch);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation.nav-hub .nav-container {
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+    width: calc(100% - 2.4rem);
+    margin: 0 auto;
+    padding: 0.8rem 0;
+  }
+
+  .navigation.nav-hub .nav-logo {
+    position: static;
+    flex: 0 0 auto;
+    width: var(--hub-touch);
+    height: var(--hub-touch);
+    justify-content: center;
+  }
+
+  .navigation.nav-hub .logo-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navigation.nav-hub .nav-mobile-shortcuts {
+    flex: 1 1 auto;
+    order: 0;
+    gap: 0.5rem;
+  }
+
+  .navigation.nav-hub .nav-shortcut {
+    flex: 1 1 auto;
+    min-width: var(--hub-touch);
+    min-height: var(--hub-touch);
+    padding: 0 0.6rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .navigation.nav-hub .nav-shortcut-ai {
+    background: var(--c-fg-deeper);
+    border-color: var(--c-fg-deeper);
+    color: var(--c-bg);
+  }
+
+  .navigation.nav-hub .nav-shortcut-product {
+    flex: 1.3 1 auto;
+  }
+
+  .navigation.nav-hub #menu-toggle.menu-button {
+    margin-left: 0;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+
+  .navigation.nav-hub .navigation-list {
+    top: calc(100% + 0.4rem) !important;
+    /* Nested backdrop-filter does not render inside the blurred sticky bar, so use a solid panel. */
+    background: var(--c-bg) !important;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+  }
+
+  /* Socials share one grid (RSS included). The older .nav-socials { display:none }
+     loses to .navigation-item.nav-section { display:block }, which used to drop a
+     solo RSS <li> onto its own row. Keep one nowrap row of 44px targets. */
+  .navigation.nav-hub .navigation-list .nav-socials {
+    display: block !important;
+    width: 100%;
+    margin-top: 0.4rem;
+  }
+
+  .navigation.nav-hub .nav-social-grid {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    width: 100%;
+  }
+
+  .navigation.nav-hub .nav-social-grid > .nav-icon-link {
+    flex: 0 0 4.4rem;
+    width: 4.4rem !important;
+    min-width: 4.4rem !important;
+    height: 4.4rem !important;
+    min-height: 4.4rem !important;
+    padding: 0 !important;
+    opacity: 0.72;
+  }
+}
+
+/* ---------- Homepage: positioning → product branch → card grid → explore ---------- */
+body.page-home .home-hero {
+  margin-bottom: var(--hub-space-3);
+}
+
+body.page-home .home-hero-title {
+  font-size: var(--hub-fs-xl);
+  margin-bottom: 1rem;
+}
+
+body.page-home .home-hero-desc {
+  font-size: 1.65rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.home-kicker {
+  margin: 0 0 var(--hub-space-2);
+  color: var(--c-fg-light);
+  font-size: var(--hub-fs-xs);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-currently {
+  margin: 0 0 var(--hub-space-4);
+}
+
+.home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hub-space-2);
+}
+
+.home-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 15rem;
+  padding: 1.8rem;
+  border: 1px solid var(--c-border) !important;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background: color-mix(in srgb, var(--c-bg) 95%, var(--c-fg-deeper));
+  color: var(--c-fg-deeper) !important;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.home-product-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-border-hover) !important;
+}
+
+.home-product-card-tools {
+  background: var(--c-fg-deeper);
+  border-color: var(--c-fg-deeper) !important;
+  color: var(--c-bg) !important;
+}
+
+.home-product-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-product-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.home-product-desc {
+  flex: 1 1 auto;
+  font-size: var(--hub-fs-sm);
+  line-height: 1.6;
+  opacity: 0.86;
+}
+
+body.page-home .home-section-block {
+  margin: 0 0 var(--hub-space-4);
+}
+
+.home-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: var(--hub-space-2);
+}
+
+body.page-home .home-section-title {
+  margin: 0;
+  color: var(--c-fg-deeper);
+  font-size: var(--hub-fs-lg);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.home-explore .home-section-title {
+  margin-bottom: 0.4rem !important;
+}
+
+.home-section-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hub-touch);
+  padding: 0 0.4rem;
+  color: var(--c-fg) !important;
+  font-size: var(--hub-fs-sm);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+body.page-home .home-browse-link {
+  min-height: var(--hub-touch);
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--hub-radius);
+}
+
+body.page-home .home-muted-note a,
+body.page-home .find-me-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hub-touch);
+}
+
+body.page-home .home-find-me {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.2rem;
+}
+
+body.page-home .find-me-link {
+  white-space: nowrap;
+}
+
+.footer .footer-inner a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hub-touch);
+}
+
+/* ---------- Unified project card (home grid, /tools/, /projects/) ---------- */
+.hub-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  gap: var(--hub-space-2);
+  margin: 0;
+  padding: 0;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: var(--hub-touch);
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--c-border) !important;
+  border-radius: var(--hub-radius);
+  box-sizing: border-box;
+  background: color-mix(in srgb, var(--c-bg) 97.5%, var(--c-fg-deeper));
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+a.hub-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--c-border-hover) !important;
+  background: color-mix(in srgb, var(--c-bg) 95%, var(--c-fg-deeper));
+}
+
+.hub-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hub-card-title {
+  flex: 0 1 auto;
+  min-width: 0;
+  color: var(--c-fg-deeper);
+  font-size: 1.65rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.hub-card-arrow {
+  margin-left: auto;
+  font-variant-emoji: text;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--c-fg-light);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.home-product-card .hub-card-arrow {
+  color: inherit;
+  opacity: 0.7;
+  font-size: 1.8rem;
+}
+
+.hub-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.15rem 0.7rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.hub-card .hub-card-status {
+  color: var(--c-fg-light);
+}
+
+.hub-card-status::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.hub-card-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: var(--c-fg);
+  font-size: var(--hub-fs-sm);
+  line-height: 1.55;
+}
+
+.hub-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.hub-card-tags > span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.75rem;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 999px;
+  color: inherit;
+  font-size: var(--hub-fs-xs);
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.hub-card .hub-card-tags > span {
+  color: var(--c-fg-light);
+}
+
+.hub-card-product,
+.hub-card-featured {
+  border-color: var(--c-border-hover) !important;
+}
+
+/* /tools/ */
+.tools-page .tools-grid {
+  margin-top: var(--hub-space-2);
+}
+
+.tools-page .tools-product {
+  margin-top: var(--hub-space-3);
+}
+
+/* /projects/: keep the page shell, swap in the unified card */
+.projects-page .hub-card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --hub-fs-xl: 3.2rem;
+    --hub-fs-lg: 2rem;
+    --hub-space-4: 3.2rem;
+  }
+
+  body.page-home .home-hero-desc {
+    font-size: 1.6rem;
+  }
+
+  .home-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-product-card {
+    min-height: 0;
+    padding: 1.6rem;
+  }
+
+  .home-product-title {
+    font-size: 2.2rem;
+  }
+
+  .hub-card-grid,
+  .projects-page .hub-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-card {
+    padding: 1.3rem 1.4rem;
+  }
+
+  /* Find-me: keep each icon+label together. Tighter gap so ~390px stays one row. */
+  body.page-home .home-find-me {
+    column-gap: 0.55rem;
+    row-gap: 0;
+  }
+
+  body.page-home .find-me-link {
+    gap: 0.28rem;
+    font-size: 1.38rem;
+  }
+}
+
+/* ~320px: a 3+2 grid reads cleaner than one leftover link. */
+@media only screen and (max-width: 360px) {
+  body.page-home .home-find-me {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: start;
+    column-gap: 0.8rem;
+    row-gap: 0;
+  }
+}
+
+/* Keep in-page anchors (e.g. 逛逛 / Explore → #explore) clear of the sticky nav. */
+[id] {
+  scroll-margin-top: 8rem;
+}

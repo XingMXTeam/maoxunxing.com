@@ -26,7 +26,7 @@ pygmentscodefencesguesssyntax = true
       icon = "1"
       description = "毛毛星的个人枢纽：AI 全栈、harness 与独立产品。小工具从这里进入，CrossAgent Lab 是垂直产品。"
       keywords = "毛毛星,Felix Mao,maoxunxing,AI全栈,harness,独立产品,AI创作者,AI编程,独立开发,小工具,CrossAgent,长期投资"
-      custom_css = ["/css/main.css?v=20261014-polish", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261014-polish", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261014-polish", "/css/projects.css?v=20261014-polish", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261014-polish"]
+      custom_css = ["/css/main.css?v=20261017-rss", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261017-rss", "/css/hub-b.css?v=20261017-rss"]
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20260713a"]
   [languages.en]
     languageName = "EN"
@@ -35,7 +35,7 @@ pygmentscodefencesguesssyntax = true
     [languages.en.params]
       description = "Felix Mao's hub for AI full-stack work, harnesses, and indie products. Open small tools here. CrossAgent Lab is the vertical product."
       keywords = "Felix Mao,maoxunxing,AI full-stack,harness,indie products,AI creator,AI coding,indie hacker,small tools,CrossAgent,long-term investing"
-      custom_css = ["/css/main.css?v=20261014-polish", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261014-polish", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261014-polish", "/css/projects.css?v=20261014-polish", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261014-polish"]
+      custom_css = ["/css/main.css?v=20261017-rss", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261017-rss", "/css/hub-b.css?v=20261017-rss"]
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20260713a"]
 
 [markup]
@@ -96,7 +96,7 @@ long-term-investing = "/:slugorfilename/"
   hidecredits = false
   hidecopyright = false
   rtl = false
-  custom_css = ["/css/main.css?v=20261014-polish", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261014-polish", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261014-polish", "/css/projects.css?v=20261014-polish", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261014-polish"]
+  custom_css = ["/css/main.css?v=20261017-rss", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261017-rss", "/css/hub-b.css?v=20261017-rss"]
   custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20260713a"]
   photoWidths = [300, 600, 800, 1200]
   colorscheme = "auto"
@@ -140,66 +140,50 @@ resampleFilter = "Lanczos"
   url = "https://maoxunxing.com/zh-cn/index.xml"
 
 [[languages.en.menu.main]]
-  name = "Tools"
-  pageRef = "/tools"
+  name = "AI Tools"
+  url = "https://maoxunxing.com/ai/"
   weight = 1
 [[languages.en.menu.main]]
   name = "CrossAgent Lab"
   url = "https://crossagent.maoxunxing.com"
   weight = 2
 [[languages.en.menu.main]]
-  name = "Blog"
+  name = "Writing"
   pageRef = "/posts"
   weight = 3
 [[languages.en.menu.main]]
-  name = "AI Startup"
-  pageRef = "/ai-indie-hacking"
+  name = "Explore"
+  url = "/en/#explore"
   weight = 4
-[[languages.en.menu.main]]
-  name = "AI Coding"
-  pageRef = "/ai-coding-workflow"
-  weight = 5
-[[languages.en.menu.main]]
-  name = "Creator"
-  pageRef = "/creator-workflow"
-  weight = 6
 [[languages.en.menu.main]]
   name = "Projects"
   pageRef = "/projects"
-  weight = 7
+  weight = 5
 [[languages.en.menu.main]]
   name = "About"
   pageRef = "/about"
-  weight = 8
+  weight = 6
 [[languages.zh-CN.menu.main]]
-  name = "工具"
-  pageRef = "/tools"
+  name = "AI 工具"
+  url = "https://maoxunxing.com/ai/"
   weight = 1
 [[languages.zh-CN.menu.main]]
   name = "CrossAgent Lab"
   url = "https://crossagent.maoxunxing.com"
   weight = 2
 [[languages.zh-CN.menu.main]]
-  name = "博客"
+  name = "写作"
   pageRef = "/posts"
   weight = 3
 [[languages.zh-CN.menu.main]]
-  name = "AI创业"
-  pageRef = "/ai-indie-hacking"
+  name = "逛逛"
+  url = "/zh-cn/#explore"
   weight = 4
-[[languages.zh-CN.menu.main]]
-  name = "AI编程"
-  pageRef = "/ai-coding-workflow"
-  weight = 5
-[[languages.zh-CN.menu.main]]
-  name = "创作系统"
-  pageRef = "/creator-workflow"
-  weight = 6
 [[languages.zh-CN.menu.main]]
   name = "项目"
   pageRef = "/projects"
-  weight = 7
+  weight = 5
 [[languages.zh-CN.menu.main]]
   name = "关于"
   pageRef = "/about"
-  weight = 8
+  weight = 6

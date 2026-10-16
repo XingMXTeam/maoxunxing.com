@@ -17,10 +17,10 @@ other = """Outside of coding, I also keep notes on reading, drawing, tools, medi
 other = "Felix Mao"
 
 [homeHeroTitle]
-other = "AI full-stack, harness, and indie products"
+other = "AI full-stack · indie developer"
 
 [homeHeroDesc]
-other = "This is my hub. Small tools open from here. CrossAgent Lab is the vertical product."
+other = "I build small AI tools you can open in the browser and one vertical product, and I write about engineering, AI coding, and making things."
 
 [homeToolsCTA]
 other = "Tools"
@@ -246,3 +246,45 @@ other = "Notes"
 
 [navBooks]
 other = "Book Reports"
+
+[homeCurrentlyLabel]
+other = "Currently building"
+
+[homeProductToolsTitle]
+other = "AI Tools"
+
+[homeProductToolsDesc]
+other = "Whistle transcription, Xiaohongshu covers, speaker diarization. Open them in the browser."
+
+[homeProductToolsTag1]
+other = "Browser"
+
+[homeProductToolsTag2]
+other = "Live"
+
+[homeProductCATitle]
+other = "CrossAgent Lab"
+
+[homeProductCADesc]
+other = "The vertical product, on its own site. Start here."
+
+[homeProductCATag1]
+other = "Vertical product"
+
+[homeProductCATag2]
+other = "CrossAgent"
+
+[homeToolsGridTitle]
+other = "Tools and projects"
+
+[homeToolsGridMore]
+other = "All tools"
+
+[footerAICoding]
+other = "AI Coding"
+
+[footerAIStartup]
+other = "AI Startup"
+
+[footerCreator]
+other = "Creator"
