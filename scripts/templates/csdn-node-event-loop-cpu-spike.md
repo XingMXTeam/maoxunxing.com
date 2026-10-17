@@ -290,7 +290,7 @@ Node.js 在请求挂起时的 CPU 飙升是反直觉但可以解释的：
 
 ---
 
-**作者**: Felix Mao (毛毛星)
+**作者**: Momo (毛毛星)
 **博客**: [maoxunxing.com](https://maoxunxing.com)
 **GitHub**: [github.com/XingMXTeam](https://github.com/XingMXTeam/)
 **Twitter**: [@maoxunxing](https://twitter.com/maoxunxing)

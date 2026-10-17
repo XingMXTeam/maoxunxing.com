@@ -16,7 +16,7 @@ custom_toc:
   - title: "Frequently asked questions"
 ---
 
-*By Felix Mao — maker of [Sayo](https://gosayo.cc), an AI speaking coach · Updated September 30, 2026 · 6 min read*
+*By Momo — maker of [Sayo](https://gosayo.cc), an AI speaking coach · Updated September 30, 2026 · 6 min read*
 
 > **Short answer:** **Yes — ChatGPT is a surprisingly good free speaking partner** for fluency practice, roleplay scenarios, and instant corrections. But it has **three hard limits**: it can't score your pronunciation, it won't build you a structured learning plan, and it never forces you to speak before handing you the answer. This guide shows you exactly how to use it well — and what to pair it with for each gap.
 

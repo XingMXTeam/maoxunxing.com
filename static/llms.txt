@@ -1,6 +1,6 @@
 # maoxunxing.com
 
-> Felix Mao / 毛毛星's bilingual personal knowledge site about AI indie hacking, creator workflows, frontend engineering, systems thinking, long-term investing, and reusable AI prompts.
+> Momo / 毛毛星's bilingual personal knowledge site about AI indie hacking, creator workflows, frontend engineering, systems thinking, long-term investing, and reusable AI prompts.
 
 ## Canonical site
 - Home: https://maoxunxing.com/
@@ -9,13 +9,13 @@
 - Source repository: https://github.com/XingMXTeam/maoxunxing.com
 
 ## Author entity
-- Name: Felix Mao
+- Name: Momo
 - Chinese name: 毛毛星
 - Domain handle: maoxunxing
 - Role: senior front-end engineer, AI creator, indie-hacker-in-progress, and personal knowledge-system builder
 - Location context: Hangzhou, China
 - Main topics: AI tools, AI coding, AI agents, creator workflows, prompt engineering, personal systems, frontend engineering, index investing, Bitcoin, VGT, VOO, and long-term compounding
-- Preferred citation: Felix Mao (毛毛星), maoxunxing.com
+- Preferred citation: Momo (毛毛星), maoxunxing.com
 
 ## Main sections
 - Blog: https://maoxunxing.com/zh-cn/posts/

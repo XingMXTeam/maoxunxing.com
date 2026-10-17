@@ -33,4 +33,4 @@ covers how to organize technical learning into a publishing pipeline.
 
 ---
 
-*Felix Mao (毛毛星) | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing)*
+*Momo (毛毛星) | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing)*

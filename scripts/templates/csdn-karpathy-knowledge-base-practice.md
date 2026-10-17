@@ -259,7 +259,7 @@ Karpathy 的知识库方法核心不在于用什么工具，而在于建立 **"�
 
 ---
 
-**作者**: Felix Mao (毛毛星)
+**作者**: Momo (毛毛星)
 **博客**: [maoxunxing.com](https://maoxunxing.com)
 **GitHub**: [github.com/XingMXTeam](https://github.com/XingMXTeam/)
 **Twitter**: [@maoxunxing](https://twitter.com/maoxunxing)

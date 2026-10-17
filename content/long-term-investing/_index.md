@@ -2,7 +2,7 @@
 title: "Long-Term Investing & Family Cash Flow"
 date: 2026-07-09
 url: "/long-term-investing/"
-description: "Felix Mao's notes on long-term investing, asset allocation, family cash flow, mortgages, index funds, gold, and crypto assets. The focus is not on predicting markets, but on building a more resilient household financial system."
+description: "Momo's notes on long-term investing, asset allocation, family cash flow, mortgages, index funds, gold, and crypto assets. The focus is not on predicting markets, but on building a more resilient household financial system."
 tags:
   - Long-Term Investing
   - Family Cash Flow

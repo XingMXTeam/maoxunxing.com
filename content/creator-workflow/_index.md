@@ -1,7 +1,7 @@
 ---
 title: "Creator Workflow: From Raw Materials, Articles, Covers, and Video to Multi-platform Distribution"
 date: 2026-05-24
-description: "This is Felix Mao's pillar page on creator workflows, covering how to use AI and code for material collection, writing, cover generation, video production, and distribution across Xiaohongshu, WeChat Official Accounts, YouTube, Substack, and personal websites."
+description: "This is Momo's pillar page on creator workflows, covering how to use AI and code for material collection, writing, cover generation, video production, and distribution across Xiaohongshu, WeChat Official Accounts, YouTube, Substack, and personal websites."
 tags:
   - Creator Workflow
   - Content System

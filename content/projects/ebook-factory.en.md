@@ -2,7 +2,7 @@
 title: "Ebook Factory"
 date: 2026-06-25
 description: "A case study for Ebook Factory, a repeatable Markdown-to-ebook publishing pipeline."
-keywords: "Ebook Factory,Markdown ebook,Pandoc,personal publishing,EPUB,MOBI,PDF,Felix Mao"
+keywords: "Ebook Factory,Markdown ebook,Pandoc,personal publishing,EPUB,MOBI,PDF,Momo"
 tags:
   - Publishing
   - Project

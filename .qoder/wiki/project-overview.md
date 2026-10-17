@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This is the personal blog of Felix Mao (maoxunxing), a bilingual (English/Chinese) Hugo static site focused on tech innovation and investment insights.
+This is the personal blog of Momo (maoxunxing), a bilingual (English/Chinese) Hugo static site focused on tech innovation and investment insights.
 
 - **Live Site**: https://maoxunxing.com
 - **Repository**: https://github.com/XingMXTeam/maoxunxing.com
-- **Author**: Felix Mao (毛毛星)
+- **Author**: Momo (毛毛星)
 
 ## Content Focus
 

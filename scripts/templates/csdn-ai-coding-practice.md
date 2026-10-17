@@ -191,7 +191,7 @@ UI/UX 设计师专家的角色设计是为了帮助用户在视觉设计和用�
 
 ---
 
-**作者**: Felix Mao (毛毛星)
+**作者**: Momo (毛毛星)
 **博客**: [maoxunxing.com](https://maoxunxing.com)
 **GitHub**: [github.com/XingMXTeam](https://github.com/XingMXTeam/)
 **Twitter**: [@maoxunxing](https://twitter.com/maoxunxing)

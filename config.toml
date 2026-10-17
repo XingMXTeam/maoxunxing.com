@@ -21,20 +21,20 @@ pygmentscodefencesguesssyntax = true
   [languages.zh-CN]
     weight = 1
     languageName = "CN"
-    title = "毛毛星 Felix Mao - AI 全栈、harness 与独立产品"
+    title = "毛毛星 Momo - AI 全栈、harness 与独立产品"
     [languages.zh-CN.params]
       icon = "1"
       description = "毛毛星的个人枢纽：AI 全栈、harness 与独立产品。小工具从这里进入，CrossAgent Lab 是垂直产品。"
-      keywords = "毛毛星,Felix Mao,maoxunxing,AI全栈,harness,独立产品,AI创作者,AI编程,独立开发,小工具,CrossAgent,长期投资"
+      keywords = "毛毛星,Momo,maoxunxing,AI全栈,harness,独立产品,AI创作者,AI编程,独立开发,小工具,CrossAgent,长期投资"
       custom_css = ["/css/main.css?v=20261017-rss", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261017-rss", "/css/hub-b.css?v=20261017-rss"]
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20260713a"]
   [languages.en]
     languageName = "EN"
     weight = 2
-    title = "Felix Mao - AI Full-Stack, Harness, and Indie Products"
+    title = "Momo - AI Full-Stack, Harness, and Indie Products"
     [languages.en.params]
-      description = "Felix Mao's hub for AI full-stack work, harnesses, and indie products. Open small tools here. CrossAgent Lab is the vertical product."
-      keywords = "Felix Mao,maoxunxing,AI full-stack,harness,indie products,AI creator,AI coding,indie hacker,small tools,CrossAgent,long-term investing"
+      description = "Momo's hub for AI full-stack work, harnesses, and indie products. Open small tools here. CrossAgent Lab is the vertical product."
+      keywords = "Momo,maoxunxing,AI full-stack,harness,indie products,AI creator,AI coding,indie hacker,small tools,CrossAgent,long-term investing"
       custom_css = ["/css/main.css?v=20261017-rss", "/css/code-dark.css?v=20260626a", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261017-rss", "/css/hub-b.css?v=20261017-rss"]
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20260713a"]
 
@@ -83,13 +83,13 @@ prompts = "/:slugorfilename/"
 long-term-investing = "/:slugorfilename/"
 
 [params]
-  author = "Felix Mao (毛毛星)"
+  author = "Momo (毛毛星)"
   twitter = "maoxunxing"
   github_repo = "XingMXTeam/maoxunxing.com"
   github_branch = "master"
   info = "AI full-stack, harness, and indie products | AI 全栈、harness 与独立产品"
-  description = "Felix Mao's hub for AI full-stack work, harnesses, and indie products. Open small tools here. CrossAgent Lab is the vertical product."
-  keywords = "Felix Mao,毛毛星,maoxunxing,AI full-stack,harness,indie products,AI creator,AI coding,small tools,CrossAgent,long-term investing"
+  description = "Momo's hub for AI full-stack work, harnesses, and indie products. Open small tools here. CrossAgent Lab is the vertical product."
+  keywords = "Momo,毛毛星,maoxunxing,AI full-stack,harness,indie products,AI creator,AI coding,small tools,CrossAgent,long-term investing"
   avatarurl = "images/avatar.avif"
   favicon_32 = "/images/favicon/favicon-32x32.png"
   favicon_16 = "/images/favicon/favicon-16x16.png"

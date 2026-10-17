@@ -1,7 +1,7 @@
 ---
 title: "Goal-driven AI Coding Workflow: From Copilot and Cursor to Codex and Qoder"
 date: 2026-05-24
-description: "Felix Mao's practical notes on a goal-driven AI coding workflow: from Copilot-style assistance to Cursor Plan Mode, and then to a workflow built with Skills, Rules, Qoder, Codex, MCP, Browser Use, and frontend engineering practice."
+description: "Momo's practical notes on a goal-driven AI coding workflow: from Copilot-style assistance to Cursor Plan Mode, and then to a workflow built with Skills, Rules, Qoder, Codex, MCP, Browser Use, and frontend engineering practice."
 tags:
   - AI Coding
   - Cursor
