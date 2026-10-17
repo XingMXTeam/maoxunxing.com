@@ -53,6 +53,6 @@ tags:
 - X / Twitter：[@maoxunxing](https://twitter.com/maoxunxing)
 - GitHub：[XingMXTeam](https://github.com/XingMXTeam)
 - Newsletter：[Maodi's AI Newsletter](https://maodi.substack.com/)
-- Email：[xunxing1989@gmail.com](mailto:xunxing1989@gmail.com)
+- Email：[me@maoxunxing.com](mailto:me@maoxunxing.com)
 
 欢迎订阅我的博客和 Newsletter。我会持续记录自己在 AI、代码、内容和投资上的实践。
