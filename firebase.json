@@ -1259,12 +1259,32 @@
       },
       {
         "source": "/tags/felix-mao/",
-        "destination": "/zh-cn/tags/felix-mao/",
+        "destination": "/zh-cn/tags/momo/",
         "type": 301
       },
       {
         "source": "/tags/felix-mao",
-        "destination": "/zh-cn/tags/felix-mao/",
+        "destination": "/zh-cn/tags/momo/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/tags/felix-mao/",
+        "destination": "/zh-cn/tags/momo/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/tags/felix-mao",
+        "destination": "/zh-cn/tags/momo/",
+        "type": 301
+      },
+      {
+        "source": "/en/tags/felix-mao/",
+        "destination": "/en/tags/momo/",
+        "type": 301
+      },
+      {
+        "source": "/en/tags/felix-mao",
+        "destination": "/en/tags/momo/",
         "type": 301
       },
       {

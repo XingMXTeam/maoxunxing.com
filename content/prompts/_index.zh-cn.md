@@ -2,7 +2,7 @@
 title: "Prompt 库：我常用的 AI 提示词"
 date: 2026-06-03
 description: "我整理的一些真实用过、值得长期留下来的 Prompt，覆盖 AI 编程、图片生成、视频创作、写作、产品设计、研究分析和个人工作流。"
-keywords: "Prompt库,提示词库,AI提示词,AI编程Prompt,AI绘图Prompt,AI视频Prompt,内容创作Prompt,Claude Prompt,ChatGPT Prompt,Codex Prompt,Cursor Prompt,毛毛星,Felix Mao,maoxunxing"
+keywords: "Prompt库,提示词库,AI提示词,AI编程Prompt,AI绘图Prompt,AI视频Prompt,内容创作Prompt,Claude Prompt,ChatGPT Prompt,Codex Prompt,Cursor Prompt,毛毛星,Momo,maoxunxing"
 tags:
   - Prompt 库
   - AI 提示词
@@ -21,7 +21,7 @@ tags:
 
 <div class="prompt-hero-card">
   <div>
-    <p class="prompt-eyebrow">Felix Mao / 毛毛星</p>
+    <p class="prompt-eyebrow">Momo / 毛毛星</p>
     <h2>我常用的 Prompt</h2>
     <p>这些 Prompt 有些是为了提高工作效率，有些是为了稳定创作风格，有些只是帮我把脑子里零散的想法整理清楚。这个页面会慢慢更新。</p>
   </div>

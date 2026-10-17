@@ -1,18 +1,18 @@
 ---
-title: "About Felix Mao / maoxunxing"
+title: "About Momo / maoxunxing"
 date: 2021-06-15T22:49:06+08:00
-description: "About Felix Mao: senior front-end engineer, AI creator, indie hacker in progress, and writer about AI workflows, frontend engineering, creator systems, and long-term investing."
+description: "About Momo: senior front-end engineer, AI creator, indie hacker in progress, and writer about AI workflows, frontend engineering, creator systems, and long-term investing."
 tags:
   - About
-  - Felix Mao
+  - Momo
   - maoxunxing
   - AI indie hacking
   - frontend engineering
 ---
 
-{{< img src="author-photo.jpg" alt="Felix Mao / maoxunxing author photo" maxWidth="350px" align="right" >}}
+{{< img src="author-photo.jpg" alt="Momo / maoxunxing author photo" maxWidth="350px" align="right" >}}
 
-I am Felix Mao, also known online as maoxunxing and 毛毛星.
+I am Momo, also known online as maoxunxing and 毛毛星.
 
 I am a senior front-end engineer with more than 10 years of experience in big tech companies including NetEase and Alibaba. I write about AI tools, AI coding, indie hacking, creator workflows, personal knowledge systems, and long-term investing.
 
@@ -46,7 +46,7 @@ I will keep organizing notes and resources about AI indie hacking, AI coding, co
 
 Preferred citation:
 
-> Felix Mao (maoxunxing), maoxunxing.com
+> Momo (maoxunxing), maoxunxing.com
 
 You can also find me here:
 

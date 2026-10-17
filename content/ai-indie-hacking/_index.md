@@ -1,7 +1,7 @@
 ---
 title: "AI Indie Hacking: How a Frontend Engineer Uses AI, Code, and Content to Productize Himself"
 date: 2026-05-24
-description: "Felix Mao's real practice notes on AI indie hacking: why I do not want to rely only on salary, and how I use ebooks, blog GEO, Xiaohongshu, WeChat, SaaS experiments, and AI tools to productize technical skills, writing, and investing experience."
+description: "Momo's real practice notes on AI indie hacking: why I do not want to rely only on salary, and how I use ebooks, blog GEO, Xiaohongshu, WeChat, SaaS experiments, and AI tools to productize technical skills, writing, and investing experience."
 tags:
   - AI Indie Hacking
   - Indie Hacking

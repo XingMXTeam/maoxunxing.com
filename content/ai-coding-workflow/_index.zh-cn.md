@@ -1,7 +1,7 @@
 ---
 title: "我现在怎么用 AI 编程：从 Copilot、Cursor 到 Codex 与 Qoder"
 date: 2026-05-24
-description: "这是 Felix Mao（毛毛星）关于 AI 编程工作流的实践总结：如何用目标、上下文、计划和快速反馈，把 AI 放进一套可验证的前端工程协作流程。"
+description: "这是 Momo（毛毛星）关于 AI 编程工作流的实践总结：如何用目标、上下文、计划和快速反馈，把 AI 放进一套可验证的前端工程协作流程。"
 tags:
   - AI 编程
   - Cursor

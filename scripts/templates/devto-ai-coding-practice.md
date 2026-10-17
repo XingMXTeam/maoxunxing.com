@@ -204,4 +204,4 @@ If you want to systematize your learning the way Karpathy does, my [Git-based Kn
 
 ---
 
-*Felix Mao | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing) | [GitHub](https://github.com/XingMXTeam/)*
+*Momo | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing) | [GitHub](https://github.com/XingMXTeam/)*

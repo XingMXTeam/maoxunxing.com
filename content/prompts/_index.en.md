@@ -2,7 +2,7 @@
 title: "Prompt Library: Prompts I Actually Use"
 date: 2026-06-03
 description: "A small collection of prompts I actually use for coding, image generation, video creation, writing, product design, research, and personal workflows."
-keywords: "prompt library,AI prompts,AI coding prompts,image generation prompts,video prompts,writing prompts,Claude prompts,ChatGPT prompts,Codex prompts,Cursor prompts,Felix Mao,maoxunxing"
+keywords: "prompt library,AI prompts,AI coding prompts,image generation prompts,video prompts,writing prompts,Claude prompts,ChatGPT prompts,Codex prompts,Cursor prompts,Momo,maoxunxing"
 tags:
   - Prompt Library
   - AI Prompts
@@ -21,7 +21,7 @@ This page is where I keep prompts that I have actually used and want to keep aro
 
 <div class="prompt-hero-card">
   <div>
-    <p class="prompt-eyebrow">Felix Mao / 毛毛星</p>
+    <p class="prompt-eyebrow">Momo / 毛毛星</p>
     <h2>Prompts I keep coming back to</h2>
     <p>Some of these prompts help me work faster. Some help me keep a creative style stable. Some simply help me organize messy thoughts. I will update this page slowly.</p>
   </div>

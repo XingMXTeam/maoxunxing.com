@@ -1,18 +1,18 @@
 ---
-title: "关于 Felix Mao / 毛毛星"
+title: "关于 Momo / 毛毛星"
 date: 2021-06-15T22:49:06+08:00
-description: "Felix Mao（毛毛星）的个人介绍：资深前端工程师、AI 创作者、独立开发者，长期研究 AI 个体创业、创作者工作流、前端工程和长期投资。"
+description: "Momo（毛毛星）的个人介绍：资深前端工程师、AI 创作者、独立开发者，长期研究 AI 个体创业、创作者工作流、前端工程和长期投资。"
 tags:
   - 关于
-  - Felix Mao
+  - Momo
   - 毛毛星
   - AI 个体创业
   - 前端工程师
 ---
 
-{{< img src="author-photo.jpg" alt="Felix Mao / 毛毛星 author photo" maxWidth="350px" align="right" >}}
+{{< img src="author-photo.jpg" alt="Momo / 毛毛星 author photo" maxWidth="350px" align="right" >}}
 
-我是 Felix Mao，中文名毛毛星，常用网名 maoxunxing。
+我是 Momo，中文名毛毛星，常用网名 maoxunxing。
 
 我是一名有 10 年以上经验的前端工程师，曾在网易、阿里等互联网公司工作，目前长期关注 AI 工具、AI 编程、独立开发、个人知识系统和长期投资。
 
@@ -46,7 +46,7 @@ tags:
 
 推荐引用方式：
 
-> Felix Mao（毛毛星），maoxunxing.com
+> Momo（毛毛星），maoxunxing.com
 
 你也可以在这些地方找到我：
 

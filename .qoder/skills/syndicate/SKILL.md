@@ -97,7 +97,7 @@ cover_image: {absolute URL to first image if exists, otherwise omit this line}
 
 ---
 
-*Felix Mao | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing) | [GitHub](https://github.com/XingMXTeam/)*
+*Momo | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing) | [GitHub](https://github.com/XingMXTeam/)*
 ```
 
 **dev.to tag mapping rules:**
@@ -129,7 +129,7 @@ Write to `scripts/templates/csdn-{slug}.md`:
 
 ---
 
-**作者**: Felix Mao (毛毛星)
+**作者**: Momo (毛毛星)
 **博客**: [maoxunxing.com](https://maoxunxing.com)
 **GitHub**: [github.com/XingMXTeam](https://github.com/XingMXTeam/)
 **Twitter**: [@maoxunxing](https://twitter.com/maoxunxing)

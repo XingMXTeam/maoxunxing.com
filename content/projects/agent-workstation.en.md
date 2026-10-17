@@ -2,7 +2,7 @@
 title: "Agent Workstation"
 date: 2026-06-25
 description: "A case study for Agent Workstation, a reusable multi-agent orchestration framework for task-specific AI workflows."
-keywords: "Agent Workstation,AI agent workflow,multi-agent orchestration,AI coding,Codex workflow,Felix Mao"
+keywords: "Agent Workstation,AI agent workflow,multi-agent orchestration,AI coding,Codex workflow,Momo"
 tags:
   - AI Coding
   - Agent Workflow

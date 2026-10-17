@@ -267,4 +267,4 @@ I also wrote [AI Rewriting Workflow](https://maoxunxing.com/ai-rewriting-workflo
 
 ---
 
-*Felix Mao | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing)*
+*Momo | [maoxunxing.com](https://maoxunxing.com) | [@maoxunxing](https://twitter.com/maoxunxing)*

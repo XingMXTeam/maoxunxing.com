@@ -1,5 +1,5 @@
 ---
-title: "毛训星 / Felix Mao - 公开版简历草稿"
+title: "毛训星 / Momo - 公开版简历草稿"
 status: draft
 draft: true
 publish: false
@@ -8,7 +8,7 @@ updated: 2026-06-12
 description: "AI 应用工程师 / Web 全栈工程师公开版简历草稿，已脱敏。"
 ---
 
-# 毛训星 / Felix Mao
+# 毛训星 / Momo
 
 在职 · 求职意向：AI 应用工程师 / Web 全栈工程师 · 杭州
 
