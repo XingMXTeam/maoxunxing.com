@@ -53,6 +53,6 @@ You can also find me here:
 - X / Twitter: [@maoxunxing](https://twitter.com/maoxunxing)
 - GitHub: [XingMXTeam](https://github.com/XingMXTeam)
 - Newsletter: [Maodi's AI Newsletter](https://maodi.substack.com/)
-- Email: [xunxing1989@gmail.com](mailto:xunxing1989@gmail.com)
+- Email: [me@maoxunxing.com](mailto:me@maoxunxing.com)
 
 Subscribe to the blog or newsletter if you want ongoing notes about my practice in AI, code, content, and investing.
