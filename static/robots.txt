@@ -1,3 +1,4 @@
 User-agent: *
 
 Sitemap: https://maoxunxing.com/sitemap.xml
+Sitemap: https://maoxunxing.com/ai/sitemap.xml
