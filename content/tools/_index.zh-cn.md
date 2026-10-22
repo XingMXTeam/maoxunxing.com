@@ -15,6 +15,14 @@ entries:
     url: "/ai/speaker-diarization/"
     desc: "在浏览器里标出录音里谁在说话、什么时候说。"
     tags: ["音频", "浏览器"]
+  - name: "派对筹备清单"
+    url: "/ai/party-planning-checklist/"
+    desc: "在浏览器里用互动清单筹备派对，带预算和时间线。打开就能用。"
+    tags: ["计划", "浏览器"]
+  - name: "习惯打卡表"
+    url: "/ai/habit-tracker-printable/"
+    desc: "按周或按月打卡记录习惯、看连续天数，还能打印成干净的一页。"
+    tags: ["效率", "浏览器"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "英语口语练习。先自己说，卡住了再看提示。"

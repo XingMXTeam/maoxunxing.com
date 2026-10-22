@@ -15,6 +15,14 @@ entries:
     url: "/ai/speaker-diarization/"
     desc: "Mark who is speaking, and when, in a recording. Open it in the browser."
     tags: ["Audio", "Browser"]
+  - name: "Party planning checklist"
+    url: "/ai/party-planning-checklist/"
+    desc: "Plan a party with an interactive checklist, budget, and timeline. Open it and use it now."
+    tags: ["Planning", "Browser"]
+  - name: "Habit tracker printable"
+    url: "/ai/habit-tracker-printable/"
+    desc: "Track habits on weekly or monthly grids with streaks, then print a clean sheet."
+    tags: ["Productivity", "Browser"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "Spoken English practice. Say it yourself first, then look at the hint if you get stuck."
