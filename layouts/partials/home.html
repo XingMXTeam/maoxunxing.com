@@ -104,8 +104,9 @@
   <p class="home-find-me-label">{{ i18n "homeFindMe" | default "Find me on" }}</p>
 
   <p class="home-find-me">
+    {{- $rssURL := "index.xml" | absLangURL -}}
     {{ range sort .Site.Params.social "weight" }}
-      <a href="{{ .url }}" target="_blank" rel="noopener" class="find-me-link">
+      <a href="{{ if eq .name "RSS" }}{{ $rssURL }}{{ else }}{{ .url }}{{ end }}" target="_blank" rel="noopener" class="find-me-link">
         {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
         {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="find-me-img" />
         {{ end }}

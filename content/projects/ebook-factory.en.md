@@ -72,4 +72,4 @@ Before publishing a clean template, I need to:
 ## Related
 
 - GitHub profile: <https://github.com/XingMXTeam>
-- Projects page: <https://maoxunxing.com/projects/>
+- Projects page: <https://maoxunxing.com/en/projects/>

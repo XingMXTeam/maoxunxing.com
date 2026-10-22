@@ -5,13 +5,13 @@ other = "Momo"
 other = "A frontend engineer with 10+ years of building software, formerly at NetEase and Alibaba. These days I organize notes on AI coding, personal products, creator workflows, and long-term investing."
 
 [homePara1]
-other = """I write <a href="/posts/">blog posts</a> and <a href="/notes/">notes</a> about frontend development, AI applications, career choices, and investing reviews. I also keep <a href="/media/">books & media</a> notes and longer <a href="/book-reports/">book reports</a> to preserve ideas that may stay useful over time."""
+other = """I write <a href="/en/posts/">blog posts</a> and <a href="/en/notes/">notes</a> about frontend development, AI applications, career choices, and investing reviews. I also keep <a href="/en/media/">books & media</a> notes and longer <a href="/en/book-reports/">book reports</a> to preserve ideas that may stay useful over time."""
 
 [homePara2]
 other = """Currently focused on LEARN, BUILD and GROW with AGI. Exploring two areas: Tech (AI &amp; Frontend Innovation) and Investment (BTC, VGT &amp; VOO). Weekly updates with fresh perspectives on tech and investment."""
 
 [homePara3]
-other = """Outside of coding, I also keep notes on reading, drawing, tools, media, and content creation. Check out my <a href="/gallery/">visual gallery</a>, the <a href="/uses/">hardware/software I use</a>, my <a href="/bookmarks/">curated bookmarks</a>, and my <a href="/media/">books & media</a> notes."""
+other = """Outside of coding, I also keep notes on reading, drawing, tools, media, and content creation. Check out my <a href="/en/gallery/">visual gallery</a>, the <a href="/en/uses/">hardware/software I use</a>, my <a href="/en/bookmarks/">curated bookmarks</a>, and my <a href="/en/media/">books & media</a> notes."""
 
 [homeEyebrow]
 other = "Momo"
@@ -47,13 +47,13 @@ other = "Options ebook"
 other = "Start with the blog"
 
 [homePrimaryHref]
-other = "/posts/"
+other = "/en/posts/"
 
 [homeSecondaryCTA]
 other = "About me"
 
 [homeSecondaryHref]
-other = "/about/"
+other = "/en/about/"
 
 [homeIntroLabel]
 other = "Personal introduction"
@@ -71,7 +71,7 @@ other = "Blog"
 other = "Engineering, AI, frontend, and practice"
 
 [homeBrowse1Href]
-other = "/posts/"
+other = "/en/posts/"
 
 [homeBrowse2Title]
 other = "Notes"
@@ -80,7 +80,7 @@ other = "Notes"
 other = "Thoughts, observations, and unfinished judgments"
 
 [homeBrowse2Href]
-other = "/notes/"
+other = "/en/notes/"
 
 [homeBrowse3Title]
 other = "Books & Media"
@@ -89,7 +89,7 @@ other = "Books & Media"
 other = "Books, films, anime, and longer notes"
 
 [homeBrowse3Href]
-other = "/media/"
+other = "/en/media/"
 
 [homeBrowse4Title]
 other = "Projects"
@@ -98,7 +98,7 @@ other = "Projects"
 other = "Small things I built or am building"
 
 [homeBrowse4Href]
-other = "/projects/"
+other = "/en/projects/"
 
 [homeBrowse5Title]
 other = "Uses"
@@ -107,7 +107,7 @@ other = "Uses"
 other = "Software, hardware, and tools I use"
 
 [homeBrowse5Href]
-other = "/uses/"
+other = "/en/uses/"
 
 [homeBrowse6Title]
 other = "Bookmarks"
@@ -116,7 +116,7 @@ other = "Bookmarks"
 other = "Links worth opening again"
 
 [homeBrowse6Href]
-other = "/bookmarks/"
+other = "/en/bookmarks/"
 
 [homeBrowse7Title]
 other = "Demos"
@@ -125,7 +125,7 @@ other = "Demos"
 other = "Interactive experiments and technical demos"
 
 [homeBrowse7Href]
-other = "/demos/"
+other = "/en/demos/"
 
 [homeBrowse8Title]
 other = "Gallery"
@@ -134,7 +134,7 @@ other = "Gallery"
 other = "Images, visual experiments, and interests"
 
 [homeBrowse8Href]
-other = "/gallery/"
+other = "/en/gallery/"
 
 [homeBookTitle]
 other = "An options ebook I wrote"

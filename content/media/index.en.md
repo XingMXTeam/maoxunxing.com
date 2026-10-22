@@ -29,7 +29,7 @@ This page collects books, films, anime, and other things I still want to remembe
 
 When a book changes how I think, or when its ideas are worth revisiting, I write a longer book report.
 
-- [View all book reports](/book-reports/)
+- [View all book reports](/en/book-reports/)
 
 ## Books
 

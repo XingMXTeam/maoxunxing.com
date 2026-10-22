@@ -113,4 +113,4 @@ Before making it public, I want to add:
 ## Related
 
 - GitHub profile: <https://github.com/XingMXTeam>
-- Projects page: <https://maoxunxing.com/projects/>
+- Projects page: <https://maoxunxing.com/en/projects/>

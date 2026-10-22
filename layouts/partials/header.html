@@ -101,11 +101,12 @@
       </li>
 
       {{ with .Site.Params.social }}
+      {{- $rssURL := "index.xml" | absLangURL -}}
       <li class="navigation-item nav-section nav-socials" aria-label="Social links">
         <span class="mobile-menu-section-label sr-only">Follow</span>
         <div class="nav-social-grid">
           {{- range sort . "weight" -}}
-          <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
+          <a href="{{ if eq .name "RSS" }}{{ $rssURL }}{{ else }}{{ .url }}{{ end }}" target="_blank" rel="noopener" title="{{ .name }}" aria-label="{{ .name }}" class="nav-icon-link">
             {{ if .icon }}<i class="{{ .icon | replaceRE `fa-2x` `` }}" aria-hidden="true"></i>
             {{ else if .link }}<img src="{{ .link }}" alt="{{ .name }}" class="nav-icon-img" />
             {{ end }}

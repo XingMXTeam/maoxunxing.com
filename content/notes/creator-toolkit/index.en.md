@@ -8,7 +8,7 @@ tags:
   - content workflow
 ---
 
-This page is not a general bookmarks list. General links live in [Bookmarks](/bookmarks/). This page is for tools and templates I use when making content: writing, screenshots, covers, visual assets, and lightweight creative workflows.
+This page is not a general bookmarks list. General links live in [Bookmarks](/en/bookmarks/). This page is for tools and templates I use when making content: writing, screenshots, covers, visual assets, and lightweight creative workflows.
 
 I care less about collecting links and more about where each tool fits in the creative process.
 
@@ -110,7 +110,7 @@ Usage notes:
 
 ## How this page differs from Bookmarks
 
-- [Bookmarks](/bookmarks/): general links I open repeatedly
+- [Bookmarks](/en/bookmarks/): general links I open repeatedly
 - This page: creator tools with use cases, context, and workflow notes
 
 If you just want a quick link, go to Bookmarks. If you want to know why a tool is worth using and where it fits in the content workflow, this page is the better place.

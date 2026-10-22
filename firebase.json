@@ -1068,16 +1068,6 @@
         "type": 301
       },
       {
-        "source": "/ai/",
-        "destination": "/zh-cn/ai/",
-        "type": 301
-      },
-      {
-        "source": "/ai",
-        "destination": "/zh-cn/ai/",
-        "type": 301
-      },
-      {
         "source": "/financial/",
         "destination": "/zh-cn/financial/",
         "type": 301
@@ -1755,36 +1745,6 @@
       {
         "source": "/tags/web-api",
         "destination": "/zh-cn/tags/web-api/",
-        "type": 301
-      },
-      {
-        "source": "/en/creator-workflow/",
-        "destination": "/zh-cn/creator-workflow/",
-        "type": 301
-      },
-      {
-        "source": "/en/creator-workflow",
-        "destination": "/zh-cn/creator-workflow/",
-        "type": 301
-      },
-      {
-        "source": "/en/ai-indie-hacking/",
-        "destination": "/zh-cn/ai-indie-hacking/",
-        "type": 301
-      },
-      {
-        "source": "/en/ai-indie-hacking",
-        "destination": "/zh-cn/ai-indie-hacking/",
-        "type": 301
-      },
-      {
-        "source": "/en/ai-coding-workflow/",
-        "destination": "/zh-cn/ai-coding-workflow/",
-        "type": 301
-      },
-      {
-        "source": "/en/ai-coding-workflow",
-        "destination": "/zh-cn/ai-coding-workflow/",
         "type": 301
       },
       {

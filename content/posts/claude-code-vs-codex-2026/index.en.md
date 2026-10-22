@@ -255,8 +255,8 @@ Switch if you tried the broader platform and realized your real daily need is a 
 
 ## Related reading
 
-- [Which AI Coding Tool Should You Choose? 2026 Comprehensive Comparison Guide](/ai-coding-tools-comparison-2026/)
-- [AI Coding Workflow](/ai-coding-workflow/)
+- [Which AI Coding Tool Should You Choose? 2026 Comprehensive Comparison Guide](/en/ai-coding-tools-comparison-2026/)
+- [AI Coding Workflow](/en/ai-coding-workflow/)
 
 ## References
 

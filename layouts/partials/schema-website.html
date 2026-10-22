@@ -1,10 +1,7 @@
 {{- if .IsHome -}}
-  {{- $searchUrl := printf "%s%s" .Site.BaseURL "search/?q={search_term_string}" -}}
-  {{- $searchAction := dict
-      "@type" "SearchAction"
-      "target" $searchUrl
-      "query-input" "required name=search_term_string"
-  -}}
+  {{- /* No SearchAction: the site has no /search/ results page (search is an
+         Algolia overlay widget), and the old target https://maoxunxing.com/search/?q=
+         returned 404. Structured data must not point at a dead URL. */ -}}
   {{- $schema := dict
       "@context" "https://schema.org"
       "@type" "WebSite"
@@ -12,7 +9,6 @@
       "url" .Site.BaseURL
       "description" (.Site.Language.Params.description | default .Site.Params.description)
       "inLanguage" .Language.Lang
-      "potentialAction" $searchAction
   -}}
 <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
 {{- end -}}

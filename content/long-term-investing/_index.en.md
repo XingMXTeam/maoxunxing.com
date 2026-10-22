@@ -1,7 +1,7 @@
 ---
 title: "Long-Term Investing & Family Cash Flow"
 date: 2026-07-09
-url: "/long-term-investing/"
+url: "/en/long-term-investing/"
 description: "Momo's notes on long-term investing, asset allocation, family cash flow, mortgages, index funds, gold, and crypto assets. The focus is not on predicting markets, but on building a more resilient household financial system."
 tags:
   - Long-Term Investing
@@ -99,5 +99,5 @@ It will discuss specific assets, accounts, and allocation methods, but the focus
 
 ## Related topics
 
-- [AI Indie Hacking](/ai-indie-hacking/)
-- [Creator Workflow](/creator-workflow/)
+- [AI Indie Hacking](/en/ai-indie-hacking/)
+- [Creator Workflow](/en/creator-workflow/)

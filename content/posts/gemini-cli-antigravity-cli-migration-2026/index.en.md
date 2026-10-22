@@ -23,7 +23,7 @@ If you are still using Gemini CLI, the most important thing right now is not twe
 
 This is not a vague future possibility. It is a dated migration notice from Google. If your workflow depends on CLI-based writing, coding, scripting, or automation, your priority is simple: **migrate before your workflow breaks.**
 
-If you originally followed my earlier [`Gemini CLI Configuration Tutorial`](/ai-gemini-cli/), treat that article as an archive of the old setup. Going forward, the more useful question is: **how do you move from Gemini CLI to Antigravity CLI cleanly?**
+If you originally followed my earlier [`Gemini CLI Configuration Tutorial`](/en/ai-gemini-cli/), treat that article as an archive of the old setup. Going forward, the more useful question is: **how do you move from Gemini CLI to Antigravity CLI cleanly?**
 
 ---
 
