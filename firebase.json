@@ -2141,6 +2141,56 @@
         "source": "/book-reports/index.xml",
         "destination": "https://maoxunxing.com/zh-cn/book-reports/index.xml",
         "type": 301
+      },
+      {
+        "source": "/posts/",
+        "destination": "/zh-cn/posts/",
+        "type": 301
+      },
+      {
+        "source": "/posts",
+        "destination": "/zh-cn/posts/",
+        "type": 301
+      },
+      {
+        "source": "/demos/",
+        "destination": "/zh-cn/demos/",
+        "type": 301
+      },
+      {
+        "source": "/demos",
+        "destination": "/zh-cn/demos/",
+        "type": 301
+      },
+      {
+        "source": "/about/",
+        "destination": "/zh-cn/about/",
+        "type": 301
+      },
+      {
+        "source": "/about",
+        "destination": "/zh-cn/about/",
+        "type": 301
+      },
+      {
+        "source": "/tools/",
+        "destination": "/zh-cn/tools/",
+        "type": 301
+      },
+      {
+        "source": "/tools",
+        "destination": "/zh-cn/tools/",
+        "type": 301
+      },
+      {
+        "source": "/ai-indie-hacking/",
+        "destination": "/zh-cn/ai-indie-hacking/",
+        "type": 301
+      },
+      {
+        "source": "/ai-indie-hacking",
+        "destination": "/zh-cn/ai-indie-hacking/",
+        "type": 301
       }
     ],
     "headers": [
