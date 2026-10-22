@@ -34,7 +34,7 @@ If a family needs RMB 120,000 per year, a 4% initial withdrawal rate implies a b
 
 The useful step is not memorizing “RMB 3 million.” It is putting current principal, annual contributions, return scenarios, and target annual spending into one model so the path can be tracked over time.
 
-[Read the full article: Freedom is not just a dream. It is a number that can be calculated.](/zh-cn/wealth-freedom-calculation/)
+[Read the full article: Freedom is not just a dream. It is a number that can be calculated.](/en/wealth-freedom-calculation/)
 
 ## Core assets and growth assets: I no longer ask only which one has the higher return
 
@@ -68,12 +68,12 @@ Family cash flow is not merely a lifestyle issue outside the portfolio. It is pa
 
 ## Recommended reading
 
-- [Freedom is not just a dream. It is a number that can be calculated.](/zh-cn/wealth-freedom-calculation/)
-- [My asset-allocation checklist: putting every holding into eight baskets](/zh-cn/asset-allocation-library/)
-- [RWA: can the problem of gold having no cash flow be solved?](/zh-cn/rwa-gold-defi/)
-- [My crypto-asset watchlist: ETH, BNB, and AI Agent tokens](/zh-cn/crypto-assets-watchlist/)
-- [How options should be understood within an investment system](/zh-cn/options-basics/)
-- [My investment journey](/zh-cn/invest/)
+- [Freedom is not just a dream. It is a number that can be calculated.](/en/wealth-freedom-calculation/)
+- [My asset-allocation checklist: putting every holding into eight baskets](/en/asset-allocation-library/)
+- [RWA: can the problem of gold having no cash flow be solved?](/en/rwa-gold-defi/)
+- [My crypto-asset watchlist: ETH, BNB, and AI Agent tokens](/en/crypto-assets-watchlist/)
+- [How options should be understood within an investment system](/en/options-basics/)
+- [My investment journey](/en/invest/)
 
 ## FAQ
 
