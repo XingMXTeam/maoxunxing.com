@@ -1254,3 +1254,4 @@ for(const i of [1,2,3]) {
 - [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) — Comprehensive JavaScript language reference from Mozilla
 - [JavaScript.info](https://javascript.info/) — Modern JavaScript tutorial covering fundamentals to advanced topics
 - [You Don't Know JS — Kyle Simpson](https://github.com/getify/You-Dont-Know-JS) — Deep dive book series into JavaScript language mechanisms
+- [Webpack Complete Guide: Loaders, Chunk Splitting, Tree Shaking, Module Federation & Common Errors](/en/webpack/) — This blog's systematic Webpack walkthrough, including fixes for runtime errors such as "webpackJsonp is not defined"

@@ -1653,3 +1653,4 @@ location.href 会触发onload事件，场景：unload事件中触发埋点的事
 - [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) — Comprehensive JavaScript language reference from Mozilla
 - [JavaScript.info](https://javascript.info/) — Modern JavaScript tutorial covering fundamentals to advanced topics
 - [You Don't Know JS — Kyle Simpson](https://github.com/getify/You-Dont-Know-JS) — Deep dive book series into JavaScript language mechanisms
+- [Webpack 完全指南：Loader、Chunk 分包、Tree Shaking、Module Federation 与常见报错](/zh-cn/webpack/) — 本站的 Webpack 系统梳理，含 webpackJsonp is not defined 等运行时报错的排查方法

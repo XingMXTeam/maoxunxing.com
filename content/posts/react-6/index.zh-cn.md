@@ -266,3 +266,4 @@ https://react.dev/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2
 - [React Error Boundaries Documentation](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) — Official documentation for Error Boundaries in React
 - [Common React Mistakes — Josh W. Comeau](https://www.joshwcomeau.com/react/common-beginner-mistakes/) — Guide to common React pitfalls and how to avoid them
 - [React Re-renders Guide — Developer Way](https://www.developerway.com/posts/react-re-renders-guide) — Understanding when and why React components re-render
+- [React children 类型判断陷阱：函数型 children 为什么不渲染](/zh-cn/react-children-type-bug/) — 本站实战笔记：children 混写时从函数变数组、typeof 判断失效的完整排查与三种修法

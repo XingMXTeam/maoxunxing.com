@@ -1,7 +1,8 @@
 ---
-title: "前端构建，你需要知道的"
-description: "前端构建工具详解：Webpack loader、chunk splitting、tree shaking、Module Federation、Rollup 和 Vite。"
+title: "Webpack 完全指南：Loader、Chunk 分包、Tree Shaking、Module Federation 与常见报错"
+description: "Webpack 完全指南：loader 原理、Webpack-Chain 与 chunk 分包、Externals、Module Federation、Tree Shaking，对比 Rollup 与 Vite，并附 webpackJsonp is not defined、Can't resolve 'fs' 等常见报错的原因与修复方法。"
 date: 2025-02-06
+lastmod: 2026-10-23
 tags:
   - Webpack
   - Web开发
@@ -878,6 +879,28 @@ bootstrap:27 Uncaught Error: Cannot find module 'core-js-pure/features/global-th
     at universalModuleDefinition:10:1
 ```
 
+
+## 报错修复：webpackJsonp is not defined
+
+Webpack 项目另一个高频报错：
+
+```text
+Uncaught ReferenceError: webpackJsonp is not defined
+```
+
+### 原因
+
+`webpackJsonp` 是 Webpack 4 运行时定义的全局回调函数，异步 chunk 加载时靠它把模块注册进运行时。出现这个报错，本质是：**业务 chunk 先执行了，但定义 `webpackJsonp` 的 runtime 还没加载，或者被另一份 runtime 覆盖了**。常见场景：
+
+1. 同一个页面里跑了两份 Webpack 构建产物（微前端、Module Federation、多应用共存），两份 runtime 共用同一个全局名，互相覆盖；
+2. runtime 文件没有先于业务 chunk 加载，或它在 CDN 上 404、加载顺序被打乱；
+3. `publicPath` 配置错误，chunk 请求回来的不是 JS 文件（比如被重定向到了 HTML 错误页）。
+
+### 修复
+
+1. **给每个应用起唯一的全局名**：Webpack 4 用 `output.jsonpFunction: 'webpackJsonp_你的应用名'`；Webpack 5 对应的是 `output.uniqueName: '你的应用名'`（全局名变成 `webpackChunk你的应用名`，报错形式类似）。
+2. **保证 runtime 先加载**：用 `optimization.runtimeChunk: 'single'` 抽出单独的 runtime 文件，并让它在 HTML 里排在所有业务 chunk 之前；上线后检查它的请求不是 404。
+3. **检查 publicPath**：确保异步 chunk 的 URL 指向真实的 JS 文件，而不是站点首页或错误页。
 
 ## References
 

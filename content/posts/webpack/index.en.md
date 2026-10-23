@@ -1,7 +1,8 @@
 ---
-title: "What You Need to Know About Frontend Build"
-description: "Frontend build tools: Webpack loaders, chunk splitting, tree shaking, Module Federation, Rollup, Vite, and advanced patterns."
+title: "Webpack Complete Guide: Loaders, Chunk Splitting, Tree Shaking, Module Federation & Common Errors"
+description: "A complete Webpack guide: how loaders work, Webpack-Chain and chunk splitting, Externals, Module Federation, Tree Shaking, how Webpack compares with Rollup and Vite — plus causes and fixes for common errors like \"webpackJsonp is not defined\" and \"Can't resolve 'fs'\"."
 date: 2025-02-06
+lastmod: 2026-10-23
 tags:
   - Webpack
   - Web Development
@@ -646,6 +647,28 @@ bootstrap:27 Uncaught Error: Cannot find module 'core-js-pure/features/global-th
     at universalModuleDefinition:10:1
 ```
 
+
+## Error Fix: webpackJsonp is not defined
+
+Another very common Webpack runtime error:
+
+```text
+Uncaught ReferenceError: webpackJsonp is not defined
+```
+
+### Cause
+
+`webpackJsonp` is the global callback the Webpack 4 runtime defines so asynchronously loaded chunks can register their modules. This error means, in essence: **a chunk executed before the runtime that defines `webpackJsonp` had loaded — or another runtime overwrote it**. Typical scenarios:
+
+1. Two separate Webpack builds run on the same page (micro-frontends, Module Federation, multiple embedded apps), and their runtimes share the same global name and overwrite each other;
+2. The runtime file is not loaded before the application chunks, or it returns 404 from the CDN, or script ordering gets scrambled;
+3. `publicPath` is misconfigured, so a chunk request returns something that is not JavaScript (for example, an HTML error page).
+
+### Fix
+
+1. **Give every app a unique global name**: on Webpack 4 use `output.jsonpFunction: 'webpackJsonp_yourAppName'`; on Webpack 5 the equivalent is `output.uniqueName: 'yourAppName'` (the global becomes `webpackChunkyourAppName`, with a similar error shape).
+2. **Load the runtime first**: extract it with `optimization.runtimeChunk: 'single'` and place it before all application chunks in the HTML; after deploying, verify its request does not 404.
+3. **Check publicPath**: make sure async chunk URLs point at real JS files, not at your homepage or an error page.
 
 ## References
 
