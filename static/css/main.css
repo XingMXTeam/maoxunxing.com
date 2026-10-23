@@ -268,7 +268,9 @@ h1 {
 h2 {
   font-size: 2.4rem;
   font-weight: 700;
-  line-height: 1.3333333;
+  /* 1.5, not the old 1.333: CJK glyphs fill the em box, so at 1.333
+     multi-line headings (common on mobile) read cramped. */
+  line-height: 1.5;
   margin: 2em 0 1em 0;
   color: var(--c-fg-deep);
   clear: both;
@@ -1032,7 +1034,7 @@ body.colorscheme-dark .find-me-img {
 .content .post > article > div h1 {
   font-size: 2.4rem;
   font-weight: 700;
-  line-height: 1.3333333;
+  line-height: 1.5;
   margin: 2em 0 1em 0;
 }
 
