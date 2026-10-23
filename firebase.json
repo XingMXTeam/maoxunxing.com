@@ -2201,6 +2201,336 @@
         "source": "/ai-indie-hacking",
         "destination": "/zh-cn/ai-indie-hacking/",
         "type": 301
+      },
+      {
+        "source": "/how-to-define-question/",
+        "destination": "/zh-cn/how-to-define-question/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-define-question",
+        "destination": "/zh-cn/how-to-define-question/",
+        "type": 301
+      },
+      {
+        "source": "/react-3/",
+        "destination": "/zh-cn/react-3/",
+        "type": 301
+      },
+      {
+        "source": "/react-3",
+        "destination": "/zh-cn/react-3/",
+        "type": 301
+      },
+      {
+        "source": "/creator-toolkit/",
+        "destination": "/zh-cn/creator-toolkit/",
+        "type": 301
+      },
+      {
+        "source": "/creator-toolkit",
+        "destination": "/zh-cn/creator-toolkit/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-17/",
+        "destination": "/zh-cn/ai-news-digest-2026-04-17/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-17",
+        "destination": "/zh-cn/ai-news-digest-2026-04-17/",
+        "type": 301
+      },
+      {
+        "source": "/work2/",
+        "destination": "/zh-cn/work2/",
+        "type": 301
+      },
+      {
+        "source": "/work2",
+        "destination": "/zh-cn/work2/",
+        "type": 301
+      },
+      {
+        "source": "/tool/",
+        "destination": "/zh-cn/tool/",
+        "type": 301
+      },
+      {
+        "source": "/tool",
+        "destination": "/zh-cn/tool/",
+        "type": 301
+      },
+      {
+        "source": "/read-financial-report/",
+        "destination": "/zh-cn/read-financial-report/",
+        "type": 301
+      },
+      {
+        "source": "/read-financial-report",
+        "destination": "/zh-cn/read-financial-report/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-16/",
+        "destination": "/zh-cn/ai-news-digest-2026-04-16/",
+        "type": 301
+      },
+      {
+        "source": "/ai-news-digest-2026-04-16",
+        "destination": "/zh-cn/ai-news-digest-2026-04-16/",
+        "type": 301
+      },
+      {
+        "source": "/open-source-value/",
+        "destination": "/zh-cn/open-source-value/",
+        "type": 301
+      },
+      {
+        "source": "/open-source-value",
+        "destination": "/zh-cn/open-source-value/",
+        "type": 301
+      },
+      {
+        "source": "/wealth-mindset/",
+        "destination": "/zh-cn/wealth-mindset/",
+        "type": 301
+      },
+      {
+        "source": "/wealth-mindset",
+        "destination": "/zh-cn/wealth-mindset/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-work-hard/",
+        "destination": "/zh-cn/how-to-work-hard/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-work-hard",
+        "destination": "/zh-cn/how-to-work-hard/",
+        "type": 301
+      },
+      {
+        "source": "/career1/",
+        "destination": "/zh-cn/career1/",
+        "type": 301
+      },
+      {
+        "source": "/career1",
+        "destination": "/zh-cn/career1/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-4/",
+        "destination": "/zh-cn/nodejs-4/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-4",
+        "destination": "/zh-cn/nodejs-4/",
+        "type": 301
+      },
+      {
+        "source": "/career/",
+        "destination": "/zh-cn/career/",
+        "type": 301
+      },
+      {
+        "source": "/career",
+        "destination": "/zh-cn/career/",
+        "type": 301
+      },
+      {
+        "source": "/redux/",
+        "destination": "/zh-cn/redux/",
+        "type": 301
+      },
+      {
+        "source": "/redux",
+        "destination": "/zh-cn/redux/",
+        "type": 301
+      },
+      {
+        "source": "/ip/",
+        "destination": "/zh-cn/ip/",
+        "type": 301
+      },
+      {
+        "source": "/ip",
+        "destination": "/zh-cn/ip/",
+        "type": 301
+      },
+      {
+        "source": "/father/",
+        "destination": "/zh-cn/father/",
+        "type": 301
+      },
+      {
+        "source": "/father",
+        "destination": "/zh-cn/father/",
+        "type": 301
+      },
+      {
+        "source": "/career-model/",
+        "destination": "/zh-cn/career-model/",
+        "type": 301
+      },
+      {
+        "source": "/career-model",
+        "destination": "/zh-cn/career-model/",
+        "type": 301
+      },
+      {
+        "source": "/ebook-make/",
+        "destination": "/zh-cn/ebook-make/",
+        "type": 301
+      },
+      {
+        "source": "/ebook-make",
+        "destination": "/zh-cn/ebook-make/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-make/",
+        "destination": "/zh-cn/how-to-make/",
+        "type": 301
+      },
+      {
+        "source": "/how-to-make",
+        "destination": "/zh-cn/how-to-make/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-5/",
+        "destination": "/zh-cn/nodejs-5/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-5",
+        "destination": "/zh-cn/nodejs-5/",
+        "type": 301
+      },
+      {
+        "source": "/sql/",
+        "destination": "/zh-cn/sql/",
+        "type": 301
+      },
+      {
+        "source": "/sql",
+        "destination": "/zh-cn/sql/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-6/",
+        "destination": "/zh-cn/nodejs-6/",
+        "type": 301
+      },
+      {
+        "source": "/nodejs-6",
+        "destination": "/zh-cn/nodejs-6/",
+        "type": 301
+      },
+      {
+        "source": "/nginx/",
+        "destination": "/zh-cn/nginx/",
+        "type": 301
+      },
+      {
+        "source": "/nginx",
+        "destination": "/zh-cn/nginx/",
+        "type": 301
+      },
+      {
+        "source": "/writting3/",
+        "destination": "/zh-cn/writting3/",
+        "type": 301
+      },
+      {
+        "source": "/writting3",
+        "destination": "/zh-cn/writting3/",
+        "type": 301
+      },
+      {
+        "source": "/grow/",
+        "destination": "/zh-cn/grow/",
+        "type": 301
+      },
+      {
+        "source": "/grow",
+        "destination": "/zh-cn/grow/",
+        "type": 301
+      },
+      {
+        "source": "/front-end-engineer-future/",
+        "destination": "/zh-cn/front-end-engineer-future/",
+        "type": 301
+      },
+      {
+        "source": "/front-end-engineer-future",
+        "destination": "/zh-cn/front-end-engineer-future/",
+        "type": 301
+      },
+      {
+        "source": "/fast-learn/",
+        "destination": "/zh-cn/fast-learn/",
+        "type": 301
+      },
+      {
+        "source": "/fast-learn",
+        "destination": "/zh-cn/fast-learn/",
+        "type": 301
+      },
+      {
+        "source": "/mcp/",
+        "destination": "/zh-cn/mcp/",
+        "type": 301
+      },
+      {
+        "source": "/mcp",
+        "destination": "/zh-cn/mcp/",
+        "type": 301
+      },
+      {
+        "source": "/css-background-size/",
+        "destination": "/zh-cn/css-background-size/",
+        "type": 301
+      },
+      {
+        "source": "/css-background-size",
+        "destination": "/zh-cn/css-background-size/",
+        "type": 301
+      },
+      {
+        "source": "/pdd-store-guide/",
+        "destination": "/zh-cn/pdd-store-guide/",
+        "type": 301
+      },
+      {
+        "source": "/pdd-store-guide",
+        "destination": "/zh-cn/pdd-store-guide/",
+        "type": 301
+      },
+      {
+        "source": "/cplusplus/",
+        "destination": "/zh-cn/cplusplus/",
+        "type": 301
+      },
+      {
+        "source": "/cplusplus",
+        "destination": "/zh-cn/cplusplus/",
+        "type": 301
+      },
+      {
+        "source": "/react-0/",
+        "destination": "/zh-cn/react-0/",
+        "type": 301
+      },
+      {
+        "source": "/react-0",
+        "destination": "/zh-cn/react-0/",
+        "type": 301
       }
     ],
     "headers": [
