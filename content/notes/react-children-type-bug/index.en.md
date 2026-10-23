@@ -6,6 +6,13 @@ draft: false
 description: "A common reason a React component renders nothing: when JSX mixes a function with a string, props.children silently turns from a function into an array, and a typeof check fails. This post explains why, with three fixes — array checks, React.Children utilities, and a cleaner component API."
 tags: ["React", "JavaScript", "Frontend Development", "Component Design"]
 categories: ["Technical Notes"]
+faq:
+  - q: "Why is my React component not rendering its children?"
+    a: "Check any type check on children first. If the component branches on typeof props.children to tell function children from regular children, mixing a string, a space, or a second element into the JSX turns children into an array. The branch goes the wrong way, the function is never called, and nothing renders."
+  - q: "How do I check whether React children is a function?"
+    a: "Don't rely on typeof props.children === 'function' alone. Flatten with React.Children.toArray(props.children) first, then use .some(child => typeof child === 'function'); to render it, .find() the function and call it."
+  - q: "What is the difference between children as a function and regular children?"
+    a: "Regular children are React elements the component renders directly. Function children (the render-props pattern) are callbacks: the component must call them with arguments, and only the returned elements render. Because mixing the two changes the runtime type, a dedicated render prop is usually the cleaner API."
 ---
 
 # The Pitfall of React Children Type Checking: Why Your Component Isn't Rendering

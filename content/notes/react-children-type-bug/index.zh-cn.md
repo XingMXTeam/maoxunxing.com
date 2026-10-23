@@ -6,6 +6,13 @@ draft: false
 description: "React 组件不渲染的常见元凶：JSX 里函数与字符串混写时，props.children 会从函数变成数组，typeof 判断直接失效。本文拆解原因，并给出检查数组、React.Children 工具和重构接口三种正确写法。"
 tags: ["React", "JavaScript", "前端开发", "组件设计"]
 categories: ["技术笔记"]
+faq:
+  - q: "React 组件为什么不渲染 children？"
+    a: "先查 children 的类型判断：如果组件用 typeof props.children 区分「函数型 children」和「普通 children」，一旦 JSX 里混入字符串、空格或第二个元素，children 就会变成数组，判断走错分支，函数永远不会被调用，页面自然什么都不渲染。"
+  - q: "如何判断 React children 是不是函数？"
+    a: "不要只写 typeof props.children === 'function'。先用 React.Children.toArray(props.children) 摊平成数组，再用 .some(child => typeof child === 'function') 检查；需要调用时用 .find() 取出函数再执行。"
+  - q: "children as a function（render props）和普通 children 有什么区别？"
+    a: "普通 children 是 React 元素，组件直接渲染即可；函数型 children 是「渲染回调」，组件必须主动调用它并传入参数，它返回的元素才会被渲染。混写时类型会变，所以接口设计上更推荐用独立的 render prop 把两种用法分开。"
 ---
 
 # React 组件中 children 类型判断的陷阱：为什么你的组件不渲染？

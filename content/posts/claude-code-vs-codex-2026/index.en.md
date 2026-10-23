@@ -9,6 +9,19 @@ tags:
   - Comparison
   - Tutorial
 draft: false
+faq:
+  - q: "Is Claude Code better than Codex?"
+    a: "Not universally. Claude Code is often a better fit for local terminal-centric work. Codex is often a better fit for cloud delegation and multi-agent workflows."
+  - q: "Is Codex better than Claude Code for teams?"
+    a: "Often yes, especially if your team wants GitHub-connected delegation, multiple surfaces, and parallel background work. But that is a workflow judgment, not a universal quality verdict."
+  - q: "Which is easier to install?"
+    a: "Both are straightforward. Claude Code has the more minimal mental model. Codex has more surfaces and therefore more paths after installation."
+  - q: "Which is cheaper?"
+    a: "There is no stable universal answer. OpenAI changed Codex pricing on April 2, 2026, and Anthropic's docs explicitly note that Claude Code team costs vary a lot with automation and session length. Compare against your own usage pattern, not just the headline plan."
+  - q: "Should I switch from Claude Code to Codex?"
+    a: "Switch if your bottleneck is no longer better prompting in the terminal and is now more delegation, more surfaces, and more parallelism."
+  - q: "Should I switch from Codex to Claude Code?"
+    a: "Switch if you tried the broader platform and realized your real daily need is a tighter local loop with less product surface to manage."
 custom_toc:
   - title: "The Short Answer"
   - title: "What Changed in 2026"

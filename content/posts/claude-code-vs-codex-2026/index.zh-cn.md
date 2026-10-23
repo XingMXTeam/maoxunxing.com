@@ -9,6 +9,15 @@ tags:
   - 工具对比
   - 教程
 draft: false
+faq:
+  - q: "Claude Code 一定比 Codex 强吗？"
+    a: "不一定。Claude Code 在终端本地工作流里通常更自然；Codex 在云端委托和多 agent 工作流里通常更顺。"
+  - q: "Codex 更适合团队吗？"
+    a: "很多情况下是的，尤其是团队希望围绕 GitHub 做委托、并行跑后台任务、同时覆盖 CLI/IDE/App/Web 时。但这依然是工作流判断，不是绝对结论。"
+  - q: "哪个更容易安装？"
+    a: "两者都不难。Claude Code 的心智模型更短。Codex 安装后可走的路线更多，所以后续扩展面也更大。"
+  - q: "哪个更便宜？"
+    a: "没有稳定的统一答案。OpenAI 在 2026 年 4 月 2 日改了 Codex 计费方式；Anthropic 文档也明确写了 Claude Code 团队成本会随自动化和会话长度波动。别只比套餐名，要对照自己的真实使用方式看。"
 custom_toc:
   - title: "先说结论"
   - title: "2026 年发生了什么变化"
