@@ -1,0 +1,21 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{/* Slim sitemap (2026-10-23): only real content pages — home, sections and
+       regular pages. Taxonomy/term pages (tags, categories) are excluded:
+       they made up >50% of the sitemap and dominate GSC's
+       "Discovered/Crawled - currently not indexed" buckets. The pages stay
+       live and crawlable via internal links; they just leave the sitemap. */}}
+  {{ range where .Pages "Kind" "in" (slice "home" "section" "page") }}
+    {{ if not .Sitemap.Disable }}
+  <url>
+    <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML (.Lastmod.Format "2006-01-02T15:04:05-07:00") }}</lastmod>{{ end }}{{ with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .Translations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />{{ end }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />{{ end }}
+  </url>
+    {{ end }}
+  {{ end }}
+</urlset>
