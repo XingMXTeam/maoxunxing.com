@@ -1449,10 +1449,15 @@ body.colorscheme-dark {
   text-decoration: none;
 }
 
-@media (min-width: 320px) and (max-width: 1025px) {
-  .aa-ItemContentDescription {
-    overflow-x: visible !important;
-  }
+/* Algolia theme sets only overflow-x: hidden on the description; per CSS spec
+   that forces overflow-y to compute to auto, turning every search result's
+   description into its own scroll container. Its text overflows the box by
+   ~1px (tight line-height), so macOS/Safari paints a classic scrollbar
+   (white thumb on #eaeaea track, inherited via scrollbar-color) per item.
+   The description is meant to wrap to two lines here, not truncate, so
+   force overflow visible on both axes at all widths. */
+.aa-ItemContentDescription {
+  overflow: visible !important;
 }
 
 /* ========== Content Source Actions ========== */
