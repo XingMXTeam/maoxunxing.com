@@ -78,7 +78,7 @@ Here is a complete MobX example showing how to use `@observable`, `@computed`, a
 
 ```js
 
-import { observable, computed, observer } from “mobx”;
+import { observable, computed, observer } from "mobx";
 import { observer as observerReact } from "mobx-react";
 class TodoList {
 

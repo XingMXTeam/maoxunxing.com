@@ -1,98 +1,352 @@
-/* ========== Dark Mode Code Blocks ========== */
+/* ========== Code Blocks (light + dark, class-based Chroma) ========== */
 /*
- * Fix low-contrast code blocks in dark mode.
- *
- * main.css currently uses filter-based inversion for Hugo highlight blocks:
- *   filter: invert(0.88) hue-rotate(180deg)
- * That makes backgrounds and text turn gray together, lowering contrast.
- * This file is loaded after main.css and overrides that behavior with
- * explicit dark-mode colors.
+ * Design (2026-10-23 redesign):
+ * - Hugo now renders Chroma with classes (markup.highlight.noClasses=false),
+ *   so colors live here instead of inline styles. One surface, two themes:
+ *   GitHub Light on a soft canvas in light mode, GitHub Dark in dark mode,
+ *   tuned to the site's antfu-style neutrals.
+ * - Single surface: the .highlight wrapper carries bg/border/radius and the
+ *   inner <pre> has margin:0. The old setup painted the wrapper grey and the
+ *   <pre> white with a 2rem margin, producing grey bars above/below the code.
+ * - .err is NEVER painted with a background. Chroma's github-light Err token
+ *   is white-on-maroon (#82071e); any lexer hiccup (smart quotes in code,
+ *   HTML inside a JS fence, config files, error logs) used to explode into
+ *   maroon blocks across ~286 spots site-wide. Errors now render as plain
+ *   text (light) or a soft red foreground (dark).
  */
 
+/* ---- Theme variables ---- */
+:root,
+body.colorscheme-light {
+  --code-bg: #f6f8fa;
+  --code-fg: #24292f;
+  --code-border: rgba(31, 35, 40, 0.1);
+  --code-k: #cf222e; /* keyword */
+  --code-const: #0550ae; /* constant / number / operator / tag */
+  --code-func: #6639ba; /* function / builtin */
+  --code-str: #0a3069; /* string */
+  --code-comment: #6e7781;
+  --code-var: #953800; /* variable */
+  --code-class: #1f2328;
+  --code-err: inherit;
+  --code-hl: rgba(21, 101, 192, 0.08);
+  --code-del-bg: #ffebe9;
+  --code-del-fg: #82071e;
+  --code-ins-bg: #dafbe1;
+  --code-ins-fg: #116329;
+  --code-selection: rgba(21, 101, 192, 0.16);
+}
+
+body.colorscheme-dark {
+  --code-bg: #0d1117;
+  --code-fg: #e6edf3;
+  --code-border: rgba(240, 246, 252, 0.1);
+  --code-k: #ff7b72;
+  --code-const: #79c0ff;
+  --code-func: #d2a8ff;
+  --code-str: #a5d6ff;
+  --code-comment: #8b949e;
+  --code-var: #79c0ff;
+  --code-class: #f0883e;
+  --code-err: inherit;
+  --code-hl: rgba(177, 186, 196, 0.16);
+  --code-del-bg: rgba(248, 81, 73, 0.14);
+  --code-del-fg: #ffa198;
+  --code-ins-bg: rgba(63, 185, 80, 0.14);
+  --code-ins-fg: #7ee787;
+  --code-selection: rgba(121, 192, 255, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    --code-bg: #0d1117;
+    --code-fg: #e6edf3;
+    --code-border: rgba(240, 246, 252, 0.1);
+    --code-k: #ff7b72;
+    --code-const: #79c0ff;
+    --code-func: #d2a8ff;
+    --code-str: #a5d6ff;
+    --code-comment: #8b949e;
+    --code-var: #79c0ff;
+    --code-class: #f0883e;
+    --code-err: inherit;
+    --code-hl: rgba(177, 186, 196, 0.16);
+    --code-del-bg: rgba(248, 81, 73, 0.14);
+    --code-del-fg: #ffa198;
+    --code-ins-bg: rgba(63, 185, 80, 0.14);
+    --code-ins-fg: #7ee787;
+    --code-selection: rgba(121, 192, 255, 0.28);
+  }
+}
+
+/* ---- Container: one surface, no sandwich ---- */
+.highlight,
+.code-block-shell {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Neutralize the legacy filter-inversion hack in main.css. */
 body.colorscheme-dark .highlight,
 body.colorscheme-dark .chroma {
   filter: none !important;
-  background: #111418 !important;
-  color: #e8e8e8 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  overflow-x: auto;
+  background: var(--code-bg) !important;
+  color: var(--code-fg) !important;
 }
 
-body.colorscheme-dark .highlight pre,
-body.colorscheme-dark .highlight code,
-body.colorscheme-dark pre code,
-body.colorscheme-dark .chroma code {
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .highlight,
+  body.colorscheme-auto .chroma {
+    filter: none !important;
+    background: var(--code-bg) !important;
+    color: var(--code-fg) !important;
+  }
+}
+
+.highlight pre,
+.code-block-shell > pre,
+.chroma {
   background: transparent !important;
-  color: #e8e8e8 !important;
-  font-weight: 500;
-  line-height: 1.9;
+  color: var(--code-fg);
 }
 
-/* Keep plain-text code fences readable even when Hugo emits nested spans. */
-body.colorscheme-dark .highlight span,
-body.colorscheme-dark .chroma span {
-  opacity: 1;
+.highlight pre,
+.code-block-shell > pre {
+  margin: 0 !important;
+  padding: 1.6rem 1.8rem;
+  overflow-x: auto;
+  font-size: 1.35rem;
+  line-height: 1.75;
 }
 
-/* Chroma token colors for better contrast on dark background. */
-body.colorscheme-dark .chroma .k,
-body.colorscheme-dark .chroma .kc,
-body.colorscheme-dark .chroma .kd,
-body.colorscheme-dark .chroma .kn,
-body.colorscheme-dark .chroma .kp,
-body.colorscheme-dark .chroma .kr,
-body.colorscheme-dark .chroma .kt,
-body.colorscheme-dark .highlight .k,
-body.colorscheme-dark .highlight .kc,
-body.colorscheme-dark .highlight .kd,
-body.colorscheme-dark .highlight .kn,
-body.colorscheme-dark .highlight .kp,
-body.colorscheme-dark .highlight .kr,
-body.colorscheme-dark .highlight .kt {
-  color: #c792ea !important;
+/* Plain (non-highlighted) pre blocks get the same surface. */
+.content article > pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 12px;
+  color: var(--code-fg);
 }
 
-body.colorscheme-dark .chroma .s,
-body.colorscheme-dark .chroma .s1,
-body.colorscheme-dark .chroma .s2,
-body.colorscheme-dark .chroma .sb,
-body.colorscheme-dark .chroma .sc,
-body.colorscheme-dark .chroma .sd,
-body.colorscheme-dark .highlight .s,
-body.colorscheme-dark .highlight .s1,
-body.colorscheme-dark .highlight .s2,
-body.colorscheme-dark .highlight .sb,
-body.colorscheme-dark .highlight .sc,
-body.colorscheme-dark .highlight .sd {
-  color: #c3e88d !important;
+.highlight pre code,
+.code-block-shell pre code,
+.chroma code {
+  background: transparent !important;
+  color: inherit !important;
+  font-size: inherit;
+  font-weight: 450;
+  white-space: pre;
 }
 
+.highlight ::selection,
+.code-block-shell ::selection {
+  background: var(--code-selection);
+}
+
+/* Slim, quiet scrollbar for long lines. */
+.highlight pre::-webkit-scrollbar,
+.code-block-shell > pre::-webkit-scrollbar {
+  height: 8px;
+}
+.highlight pre::-webkit-scrollbar-thumb,
+.code-block-shell > pre::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--code-fg) 18%, transparent);
+  border-radius: 4px;
+}
+.highlight pre::-webkit-scrollbar-track,
+.code-block-shell > pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Room for the language label + copy button on the first line. */
+.content article .highlight.has-code-copy pre,
+.content article .code-block-shell pre {
+  padding-right: 11rem;
+}
+
+/* Language label (injected by code-copy.js next to the copy button). */
+.code-lang {
+  position: absolute;
+  top: 0.9rem;
+  right: 5.4rem;
+  display: flex;
+  align-items: center;
+  height: 3.2rem;
+  font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--c-fg-light);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .code-lang {
+    display: none;
+  }
+  .content article .highlight.has-code-copy pre,
+  .content article .code-block-shell pre {
+    padding-right: 5.2rem;
+  }
+}
+
+/* ---- Chroma structure ---- */
+.chroma .line {
+  display: flex;
+}
+.chroma .lnlinks {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .hl {
+  background-color: var(--code-hl);
+}
+.chroma .lnt,
+.chroma .ln {
+  white-space: pre;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0 0.4em;
+  color: var(--code-comment);
+  opacity: 0.7;
+}
+
+/* ---- Tokens ---- */
+/* Error: never a painted background (see header note). */
+.chroma .err {
+  color: var(--code-err);
+  background-color: transparent !important;
+}
+
+.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt {
+  color: var(--code-k);
+}
+.chroma .kc,
+.chroma .no,
+.chroma .nd,
+.chroma .o,
+.chroma .ow,
+.chroma .nt {
+  color: var(--code-const);
+}
+.chroma .nb,
+.chroma .ni,
+.chroma .nf,
+.chroma .fm {
+  color: var(--code-func);
+}
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+  color: var(--code-str);
+}
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf,
+.chroma .bp {
+  color: var(--code-comment);
+}
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  color: var(--code-const);
+}
+.chroma .nc,
+.chroma .ne {
+  color: var(--code-class);
+}
+.chroma .na,
+.chroma .nx,
+.chroma .py {
+  color: var(--code-fg);
+}
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm {
+  color: var(--code-var);
+}
+.chroma .nn {
+  color: var(--code-k);
+}
+.chroma .nl {
+  color: var(--code-fg);
+  font-weight: 600;
+}
+.chroma .gd {
+  color: var(--code-del-fg);
+  background-color: var(--code-del-bg);
+}
+.chroma .gi {
+  color: var(--code-ins-fg);
+  background-color: var(--code-ins-bg);
+}
+.chroma .ge {
+  font-style: italic;
+}
+.chroma .gs {
+  font-weight: 600;
+}
+
+/* Dark-mode weight trim: GitHub Dark bolds functions/classes; keep it light. */
 body.colorscheme-dark .chroma .nf,
-body.colorscheme-dark .chroma .na,
-body.colorscheme-dark .chroma .nx,
-body.colorscheme-dark .highlight .nf,
-body.colorscheme-dark .highlight .na,
-body.colorscheme-dark .highlight .nx {
-  color: #82aaff !important;
+body.colorscheme-dark .chroma .nc,
+body.colorscheme-dark .chroma .nd,
+body.colorscheme-dark .chroma .ne,
+body.colorscheme-dark .chroma .no,
+body.colorscheme-dark .chroma .nl {
+  font-weight: 500;
 }
-
-body.colorscheme-dark .chroma .c,
-body.colorscheme-dark .chroma .c1,
-body.colorscheme-dark .chroma .cm,
-body.colorscheme-dark .highlight .c,
-body.colorscheme-dark .highlight .c1,
-body.colorscheme-dark .highlight .cm {
-  color: #8b949e !important;
-}
-
-body.colorscheme-dark .chroma .m,
-body.colorscheme-dark .chroma .mi,
-body.colorscheme-dark .chroma .mf,
-body.colorscheme-dark .highlight .m,
-body.colorscheme-dark .highlight .mi,
-body.colorscheme-dark .highlight .mf {
-  color: #f78c6c !important;
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .chroma .nf,
+  body.colorscheme-auto .chroma .nc,
+  body.colorscheme-auto .chroma .nd,
+  body.colorscheme-auto .chroma .ne,
+  body.colorscheme-auto .chroma .no,
+  body.colorscheme-auto .chroma .nl {
+    font-weight: 500;
+  }
 }
 
 /* Inline code in dark mode. */
@@ -101,92 +355,7 @@ body.colorscheme-dark :not(pre) > code {
   color: #f3f4f6 !important;
   border-radius: 6px;
 }
-
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .highlight,
-  body.colorscheme-auto .chroma {
-    filter: none !important;
-    background: #111418 !important;
-    color: #e8e8e8 !important;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    overflow-x: auto;
-  }
-
-  body.colorscheme-auto .highlight pre,
-  body.colorscheme-auto .highlight code,
-  body.colorscheme-auto pre code,
-  body.colorscheme-auto .chroma code {
-    background: transparent !important;
-    color: #e8e8e8 !important;
-    font-weight: 500;
-    line-height: 1.9;
-  }
-
-  body.colorscheme-auto .highlight span,
-  body.colorscheme-auto .chroma span {
-    opacity: 1;
-  }
-
-  body.colorscheme-auto .chroma .k,
-  body.colorscheme-auto .chroma .kc,
-  body.colorscheme-auto .chroma .kd,
-  body.colorscheme-auto .chroma .kn,
-  body.colorscheme-auto .chroma .kp,
-  body.colorscheme-auto .chroma .kr,
-  body.colorscheme-auto .chroma .kt,
-  body.colorscheme-auto .highlight .k,
-  body.colorscheme-auto .highlight .kc,
-  body.colorscheme-auto .highlight .kd,
-  body.colorscheme-auto .highlight .kn,
-  body.colorscheme-auto .highlight .kp,
-  body.colorscheme-auto .highlight .kr,
-  body.colorscheme-auto .highlight .kt {
-    color: #c792ea !important;
-  }
-
-  body.colorscheme-auto .chroma .s,
-  body.colorscheme-auto .chroma .s1,
-  body.colorscheme-auto .chroma .s2,
-  body.colorscheme-auto .chroma .sb,
-  body.colorscheme-auto .chroma .sc,
-  body.colorscheme-auto .chroma .sd,
-  body.colorscheme-auto .highlight .s,
-  body.colorscheme-auto .highlight .s1,
-  body.colorscheme-auto .highlight .s2,
-  body.colorscheme-auto .highlight .sb,
-  body.colorscheme-auto .highlight .sc,
-  body.colorscheme-auto .highlight .sd {
-    color: #c3e88d !important;
-  }
-
-  body.colorscheme-auto .chroma .nf,
-  body.colorscheme-auto .chroma .na,
-  body.colorscheme-auto .chroma .nx,
-  body.colorscheme-auto .highlight .nf,
-  body.colorscheme-auto .highlight .na,
-  body.colorscheme-auto .highlight .nx {
-    color: #82aaff !important;
-  }
-
-  body.colorscheme-auto .chroma .c,
-  body.colorscheme-auto .chroma .c1,
-  body.colorscheme-auto .chroma .cm,
-  body.colorscheme-auto .highlight .c,
-  body.colorscheme-auto .highlight .c1,
-  body.colorscheme-auto .highlight .cm {
-    color: #8b949e !important;
-  }
-
-  body.colorscheme-auto .chroma .m,
-  body.colorscheme-auto .chroma .mi,
-  body.colorscheme-auto .chroma .mf,
-  body.colorscheme-auto .highlight .m,
-  body.colorscheme-auto .highlight .mi,
-  body.colorscheme-auto .highlight .mf {
-    color: #f78c6c !important;
-  }
-
   body.colorscheme-auto :not(pre) > code {
     background: rgba(255, 255, 255, 0.08) !important;
     color: #f3f4f6 !important;

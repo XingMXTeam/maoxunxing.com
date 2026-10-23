@@ -35,15 +35,15 @@ Change the `jsx` configuration in `tsconfig.json` from `“react-jsx”` to `“
 
 ```json
 {
-  “compilerOptions”: {
-    “baseUrl”: “.”,
-    “outDir”: “./lib”,
-    “module”: “esnext”,
-    “target”: “es6”,
-    “lib”: [‘esnext’, “dom”],
-    “sourceMap”: true,
-    “allowJs”: false,
-    “jsx”: ‘react’ // Change “react-jsx” to “react”
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./lib",
+    "module": "esnext",
+    "target": "es6",
+    "lib": ['esnext', "dom"],
+    "sourceMap": true,
+    "allowJs": false,
+    "jsx": 'react' // Change "react-jsx" to "react"
   }
 }
 ```

@@ -25,8 +25,8 @@ A2A: Agent2Agent was proposed by Google. The Google Agent Development Kit (ADK) 
 
 ```javascript
 const server = new McpServer({
-    name: “ping-pong”,
-    version: “1.0.0”,
+    name: "ping-pong",
+    version: "1.0.0",
     capabilities: {
         resources: {
             subscribe: true,
@@ -40,16 +40,16 @@ const server = new McpServer({
 
 ```javascript
 server.resource(
-    “echo”,                          // Resource name
+    "echo",                          // Resource name
     new ResourceTemplate(
-        “echo://{message}”,          // URI template
+        "echo://{message}",          // URI template
         {
             list: () => ({           // List callback
                 resources: [{        // Must return an array of resources
-                    uri: “echo://hello”,
-                    name: “Echo Resource”,           // Required
-                    description: “...”,              // Required
-                    mimeType: “text/plain”          // Required
+                    uri: "echo://hello",
+                    name: "Echo Resource",           // Required
+                    description: "...",              // Required
+                    mimeType: "text/plain"          // Required
                 }]
             })
         }
@@ -57,7 +57,7 @@ server.resource(
     async (uri, { message }) => ({   // Read callback
         contents: [{
             uri: uri.href,
-            mimeType: “text/plain”,
+            mimeType: "text/plain",
             text: `Resource echo: ${message}`
         }]
     })

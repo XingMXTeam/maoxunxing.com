@@ -154,9 +154,9 @@ class ImmutableMap {
 
 // Test code
 const map = new ImmutableMap();
-const updatedMap = map.set(“a”, 1).set(“b”, 2);
-console.log(updatedMap.get(“a”)); // Output: 1
-console.log(updatedMap.get(“b”)); // Output: 2
+const updatedMap = map.set("a", 1).set("b", 2);
+console.log(updatedMap.get("a")); // Output: 1
+console.log(updatedMap.get("b")); // Output: 2
 ```
 
 ### Key points

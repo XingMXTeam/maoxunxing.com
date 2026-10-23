@@ -86,34 +86,10 @@
   margin-bottom: 0;
 }
 
-/* Light code surfaces should read as tools, not opaque white sheets. */
-body.colorscheme-light .content article .highlight,
-body.colorscheme-light .content article > pre,
-body.colorscheme-light .content article .code-block-shell > pre {
-  background: color-mix(
-    in srgb,
-    var(--c-bg) 82%,
-    var(--c-fg-light) 18%
-  ) !important;
-  border: 1px solid color-mix(in srgb, var(--c-border) 68%, transparent);
-  border-radius: 10px;
-  overflow-x: auto;
-}
-
-@media (prefers-color-scheme: light) {
-  body.colorscheme-auto .content article .highlight,
-  body.colorscheme-auto .content article > pre,
-  body.colorscheme-auto .content article .code-block-shell > pre {
-    background: color-mix(
-      in srgb,
-      var(--c-bg) 82%,
-      var(--c-fg-light) 18%
-    ) !important;
-    border: 1px solid color-mix(in srgb, var(--c-border) 68%, transparent);
-    border-radius: 10px;
-    overflow-x: auto;
-  }
-}
+/* Code surfaces (bg/border/radius for light + dark) live in code-dark.css
+   since the 2026-10-23 redesign. Do not re-add background overrides here:
+   painting the .highlight wrapper a different color than the inner <pre>
+   is what produced the grey bars above/below code blocks. */
 
 /* Code blocks are actionable content: keep copy within easy reach. */
 .content article .highlight.has-code-copy,
@@ -127,7 +103,8 @@ body.colorscheme-light .content article .code-block-shell > pre {
 
 .content article .has-code-copy pre,
 .content article .code-block-shell pre {
-  padding-right: 5.2rem;
+  /* 11rem leaves room for the language label + copy button (code-dark.css). */
+  padding-right: 11rem;
 }
 
 .code-copy-button {

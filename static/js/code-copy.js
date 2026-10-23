@@ -96,6 +96,22 @@
         host.appendChild(pre);
       }
 
+      if (!host.querySelector(":scope > .code-lang")) {
+        var codeEl = pre.querySelector("code");
+        var lang =
+          (codeEl && codeEl.getAttribute("data-lang")) ||
+          (codeEl &&
+            (codeEl.className.match(/language-([\w-]+)/) || [])[1]) ||
+          "";
+        if (lang && lang !== "text" && lang !== "fallback") {
+          var label = document.createElement("span");
+          label.className = "code-lang";
+          label.textContent = lang;
+          label.setAttribute("aria-hidden", "true");
+          host.appendChild(label);
+        }
+      }
+
       if (!host.querySelector(":scope > .code-copy-button")) {
         host.appendChild(createButton(pre));
       }

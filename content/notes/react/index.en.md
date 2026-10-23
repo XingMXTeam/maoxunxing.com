@@ -51,7 +51,7 @@ tags:
 
 - **Implementation**  
   ```javascript
-  import PropTypes from ‘prop-types’;
+  import PropTypes from 'prop-types';
 
   MyComponent.propTypes = {
     name: PropTypes.string.isRequired,
