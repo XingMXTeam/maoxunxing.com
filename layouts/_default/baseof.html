@@ -356,7 +356,6 @@
 
       <!-- 在其他脚本之前添加 -->
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
-      <script src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
 
       <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -372,24 +371,9 @@
               events: true, // 启用事件
             });
           }
-
-          // 初始化 Headroom - 添加空值检查
-          var header = document.querySelector("header");
-          var toc = document.querySelector(".toc-wrapper");
-
-          if (header) {
-            var headroom = new Headroom(header, {
-              offset: 100,
-              tolerance: 5,
-              onPin: function() {
-                if(toc) toc.style.top = "150px";
-              },
-              onUnpin: function() {
-                if(toc) toc.style.top = "0px";
-              }
-            });
-            headroom.init();
-          }
+          // 右侧目录 (.toc-wrapper) 的位置由 CSS 固定 (top: 120px)，不要在滚动时改它的 top：
+          // 旧代码用 Headroom 在 unpin 时把 top 改成 0px，目录会顶进顶部导航区域与之重叠；
+          // 且 Headroom 绑定的 document.querySelector("header") 是文章标题 header，并非顶部导航。
         });
       </script>
 
