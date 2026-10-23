@@ -4,6 +4,8 @@ date: 2025-04-11
 description: ""
 tags:
   - Project Management
+sitemap:
+  disable: true
 ---
 
 ## UAT

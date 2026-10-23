@@ -4,6 +4,7 @@ date: 2019-11-25
 tags:
   - JavaScript
   - Data Structures
+slug: "javascript-immutable"
 ---
 
 ## Table of Contents

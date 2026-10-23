@@ -5,6 +5,7 @@ description: “”
 tags:
   - AI
   - MCP
+slug: "mcp-server-guide"
 ---
 
 ## MCP History

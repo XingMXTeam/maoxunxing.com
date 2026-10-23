@@ -1,10 +1,18 @@
 ---
-title: "CSS 你需要知道的"
-description: "网格布局；动画：animation，animation-play-state，:checked，transform的使用；CSS编写准则、案例"
+title: "CSS 实战手册：动画、Grid 网格布局、Flexbox、平滑阴影与编写准则"
+description: "CSS 实战技巧手册：带暂停的滚动动画与翻转动画、Grid 网格布局、Flexbox 等宽与间距处理、多层 box-shadow 平滑阴影、选择器与溢出处理，外加一套 CSS 编写准则与避坑清单，全部带可运行代码。"
 date: 2024-09-10
+lastmod: 2026-10-23
 tags:
   - CSS
   - Web开发
+faq:
+  - q: "CSS 滚动动画怎么实现暂停和继续？"
+    a: "不用 JavaScript：放一个隐藏的 checkbox，用 :checked 状态切换滚动元素的 animation-play-state（paused 暂停、running 继续），label 做暂停/播放按钮。本文滚动动画一节有完整可运行代码。"
+  - q: "卡片阴影怎么做才平滑、不生硬？"
+    a: "用多层 box-shadow 叠加代替单层：几层偏移和模糊半径递增、透明度递减的阴影叠在一起，过渡接近真实光影。本文「更平滑的阴影」一节对比了基础阴影和分层阴影两种卡片效果。"
+  - q: "Flexbox 里怎么让子元素等宽？"
+    a: "给子元素同时设置 flex-grow: 1 和 flex-basis: 0：basis 归零后每个子元素按相同比例瓜分剩余空间，即可严格等宽。本文「Flexbox 与 Grid」一节有代码与滑动容器间距处理。"
 images:
   - css/a.png
 custom_toc:
@@ -20,7 +28,9 @@ custom_toc:
   - title: "响应式"
 ---
 
-css推荐用原生`css + postcss`  方案， less/sass 预编译会增加复杂性/学习成本， 通过PostCSS Preset Env 支持现代css写法；  Autoprefixer 自动增加前缀
+> **一句话结论**：这是一份按场景组织的 CSS 实战手册——动画（滚动暂停、翻转）、布局（Grid、Flexbox 等宽与间距）、质感（多层阴影）、文本溢出、选择器，再加一套编写准则。不用从头读，遇到具体问题直接跳到对应小节抄代码。
+
+css推荐用原生`css + postcss` 方案，less/sass 预编译会增加复杂性/学习成本，通过 PostCSS Preset Env 支持现代 css 写法；Autoprefixer 自动增加前缀
 
 vscode插件： PostCSS Language Support
 
@@ -1041,6 +1051,20 @@ function HomePage() {
    - 将浏览器屏幕宽度设置为750px时，检查卡片数量是否符合预期（例如，此时应显示5张卡片）。
    - 确保间距和卡片宽度的比例与设计稿一致。
 
+
+## 常见问题
+
+### CSS 滚动动画怎么实现暂停和继续？
+
+不用 JavaScript：放一个隐藏的 checkbox，用 :checked 状态切换滚动元素的 animation-play-state（paused 暂停、running 继续），label 做暂停/播放按钮。本文滚动动画一节有完整可运行代码。
+
+### 卡片阴影怎么做才平滑、不生硬？
+
+用多层 box-shadow 叠加代替单层：几层偏移和模糊半径递增、透明度递减的阴影叠在一起，过渡接近真实光影。本文「更平滑的阴影」一节对比了基础阴影和分层阴影两种卡片效果。
+
+### Flexbox 里怎么让子元素等宽？
+
+给子元素同时设置 flex-grow: 1 和 flex-basis: 0：basis 归零后每个子元素按相同比例瓜分剩余空间，即可严格等宽。本文「Flexbox 与 Grid」一节有代码与滑动容器间距处理。
 
 ## References
 

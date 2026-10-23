@@ -1,13 +1,15 @@
 ---
-title: "python入门笔记"
+title: "Python 入门笔记：语法速查手册（数据类型、列表字典、函数、类与常用片段）"
 date: 2019-11-25
+lastmod: 2026-10-23
+description: "一名前端工程师的 Python 入门速查笔记：数据类型、列表与字典的常用操作与排序、字符串格式化、迭代器、函数参数与解构、类与继承、collections 常用容器，全部是可直接抄用的代码片段，适合有 JavaScript 基础的人快速对照上手。"
 tags:
   - Python
 ---
 
-#python #编程语言
+> **一句话结论**：这不是教程，是一份速查手册——按「遇到问题查片段」组织：数据类型 → 列表/字典操作与排序 → 字符串格式化 → 迭代器 → 函数（参数、注解、解构）→ 类与继承 → collections 容器。有 JavaScript 基础的人对照着看，很多写法一一对应。
 
-https://github.com/jackfrued/Python-100-Days
+参考来源：[Python-100-Days](https://github.com/jackfrued/Python-100-Days)（骆昊）
 
 ## 引子
 作为一名前端工程师，刷题了。 用Python刷题，代码十分简洁。 

@@ -3,6 +3,8 @@ title: "Nginx"
 date: 2025-03-03
 tags:
   - Nginx
+sitemap:
+  disable: true
 ---
 
 ## rewrite reverse proxy

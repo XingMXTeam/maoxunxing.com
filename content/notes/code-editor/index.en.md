@@ -5,6 +5,8 @@ Description: “”
 Draft: true
 Tags:
   - AI
+sitemap:
+  disable: true
 ---
 
 ## VS Code Forward/Backward

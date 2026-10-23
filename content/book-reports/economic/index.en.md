@@ -2,6 +2,7 @@
 title: "China's New Economic Journey"
 date: 2023-08-28
 rating: 5
+slug: "economic-new-journey"
 ---
 Professor Li Wei shares seven major models of macroeconomics. These models not only help us understand core concepts like GDP calculation, the relationship between savings and investment, and arbitrage mechanisms, but also reveal the logic behind money supply, exchange rate fluctuations, and capital flows. Through these models, ordinary people can also gain a basic understanding similar to that of an economist and comprehend the deep-seated reasons behind economic phenomena.
 <!--more-->

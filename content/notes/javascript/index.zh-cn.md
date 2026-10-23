@@ -1,10 +1,15 @@
 ---
-title: "Immutable 数据结构实现原理与实践"
+title: "JavaScript Immutable 不可变数据结构：实现原理（Trie 与结构共享）与手写实践"
 date: 2019-11-25
+lastmod: 2026-10-23
+description: "JavaScript 里 Immutable（不可变）数据结构为什么快：核心靠结构共享与 Trie（Bitmapped Vector Trie），而不是深拷贝。本文拆 Immutable.js 的实现原理，并动手实现一个简单的 Immutable 库，适合理解 React/Redux 状态更新背后的数据结构。"
 tags:
   - JavaScript
   - 数据结构
+slug: "javascript-immutable"
 ---
+
+> **一句话结论**：Immutable 数据结构解决的是「每次修改都深拷贝太贵」的问题——靠结构共享（只复制被改路径上的节点）和 Trie 索引，修改成本从 O(n) 拷贝降到约 O(log n)。这也是 Immutable.js 能支撑 React/Redux 高频状态更新的原因。
 
 ## 目录
 

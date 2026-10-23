@@ -4,6 +4,8 @@ date: 2025-04-10
 description: ""
 tags:
   - Self-Reflection
+sitemap:
+  disable: true
 ---
 
 
