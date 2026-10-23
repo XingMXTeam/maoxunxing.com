@@ -166,6 +166,8 @@ AI 编程的下一阶段，不是问得更巧，而是系统搭得更好。
 
 只有系统搭好了，AI 才不是在回答问题，而是在完成工作。
 
+下篇把这套现场的完整设计写了出来：《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》。
+
 ## 参考资料
 
 - Vercel: [AGENTS.md outperforms skills in our agent evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
