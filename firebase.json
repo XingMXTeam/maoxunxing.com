@@ -1818,6 +1818,16 @@
         "type": 301
       },
       {
+        "source": "/pinduoduo-store-guide/",
+        "destination": "/zh-cn/pinduoduo-store-guide/",
+        "type": 301
+      },
+      {
+        "source": "/pinduoduo-store-guide",
+        "destination": "/zh-cn/pinduoduo-store-guide/",
+        "type": 301
+      },
+      {
         "source": "/zh-cn/appleid-us-register/",
         "destination": "/zh-cn/how-to-buy-codex/",
         "type": 301
