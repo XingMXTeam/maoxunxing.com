@@ -1808,6 +1808,16 @@
         "type": 301
       },
       {
+        "source": "/ai-rewriting-workflow/",
+        "destination": "/zh-cn/ai-coding-workflow/",
+        "type": 301
+      },
+      {
+        "source": "/ai-rewriting-workflow",
+        "destination": "/zh-cn/ai-coding-workflow/",
+        "type": 301
+      },
+      {
         "source": "/zh-cn/appleid-us-register/",
         "destination": "/zh-cn/how-to-buy-codex/",
         "type": 301
@@ -1815,16 +1825,6 @@
       {
         "source": "/zh-cn/appleid-us-register",
         "destination": "/zh-cn/how-to-buy-codex/",
-        "type": 301
-      },
-      {
-        "source": "/zh-cn/posts/page/4/",
-        "destination": "/zh-cn/tags/page/4/",
-        "type": 301
-      },
-      {
-        "source": "/zh-cn/posts/page/4",
-        "destination": "/zh-cn/tags/page/4/",
         "type": 301
       },
       {
