@@ -1,4 +1,12 @@
 User-agent: *
+Disallow: /tags/
+Disallow: /zh-cn/tags/
+Disallow: /en/tags/
+Disallow: /categories/
+Disallow: /zh-cn/categories/
+Disallow: /en/categories/
+Disallow: /index.xml
+Disallow: /*/index.xml
 
 Sitemap: https://maoxunxing.com/sitemap.xml
 Sitemap: https://maoxunxing.com/ai/sitemap.xml

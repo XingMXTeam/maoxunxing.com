@@ -2,6 +2,7 @@
 title: "数据结构特点分析"
 description: "数据结构核心特点深入分析，涵盖线性表、非线性表、红黑树、堆、跳表、Trie 树等关键结构的原理与应用。"
 date: 2025-03-03
+lastmod: 2026-10-23
 tags:
   - 数据结构
   - 算法
@@ -20,6 +21,8 @@ custom_toc:
 images:
   - data-structure/cover.png
 ---
+
+> **数据结构与算法系列**（三篇互为配套，建议连着读）：**数据结构特点分析** · [数据结构刷题实战](/zh-cn/data-structure-practise/) · [算法分析](/zh-cn/algo/)
 
 基础的数据结构有： 数据、链表、栈、队列、树、图。
 

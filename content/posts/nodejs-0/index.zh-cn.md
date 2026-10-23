@@ -1,6 +1,7 @@
 ---
 title: "Nodejs中Stream的理解"
 date: 2021-10-19T14:28:57+08:00
+lastmod: 2026-10-23
 tags:
   - nodejs
   - 流
@@ -752,6 +753,30 @@ Readable.prototype.pipe = function (writable, options) {
 
 需要用clone()方法先克隆后再处理。比如serviceworker里面的response。
 
+
+## 补充：网络基础与流类型速览
+
+> 本节并自原《Node Stream Complete Guide Notes》（2025-02-04），两篇 Stream 笔记自此合并为一篇。
+
+### 网络通信为什么要分块
+
+联网的计算机都可以作为服务器或客户端。网络通信中，数据通常会被分割成小块（tiny chunks）以数据包（packets）的形式传输——这正是流要处理的对象：数据不是一次性到齐的，而是分块陆续到达。
+
+### TCP 与 UDP
+
+- **TCP（传输控制协议）**：可靠传输，数据包未被接收方确认（ACK）会重发；用于网页浏览、文件传输等大多数场景。
+- **UDP（用户数据报协议）**：不保证送达；用于实时性优先的场景，如流媒体、在线游戏。
+
+常见协议速记：HTTP/HTTPS（网页，HTTPS 为加密版）、SMTP 与 IMAP/POP3（邮件）、FTP（文件传输）、SSH（加密远程操作）、SSL（低层安全传输，被 HTTPS 使用）。
+
+### 流类型速览
+
+- **可读流（Readable）**：生产数据的一端，如 `fs.createReadStream('file.txt')`，可 `.pipe()` 到下游。
+- **可写流（Writable）**：消费数据的一端，如 `fs.createWriteStream()`，用 `.write()` 写入、`.end()` 收尾。
+- **转换流（Transform）**：边消费边生产，`A.pipe(transform).pipe(B)`。
+- **双工流（Duplex）**：读写独立的双向通道。
+
+可读流有两种模式：**暂停模式**（默认，自带背压）与**流动模式**（挂上 `data` 监听或调用 `.resume()` 后开启，数据到即消费、无背压）。HTTP 是最常见的核心流：服务端视角 req 是可读流、res 是可写流；客户端视角正好相反。
 
 ## References
 

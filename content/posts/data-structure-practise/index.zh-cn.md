@@ -2,6 +2,7 @@
 title: "数据结构刷题实战"
 description: "数据结构刷题实战完整指南，系统涵盖数组、栈、二分查找、链表、树、堆等核心数据结构与经典算法题解分析。"
 date: 2025-03-03
+lastmod: 2026-10-23
 tags:
   - 数据结构
   - 算法
@@ -22,6 +23,8 @@ custom_toc:
 images:
   - data-structure-practise/cover.png
 ---
+
+> **数据结构与算法系列**（三篇互为配套，建议连着读）：[数据结构特点分析](/zh-cn/data-structure/) · **数据结构刷题实战** · [算法分析](/zh-cn/algo/)
 
 ## 核心直觉
 

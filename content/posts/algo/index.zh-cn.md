@@ -2,6 +2,7 @@
 title: "算法分析"
 description: "深入讲解算法核心思想，涵盖复杂度分析、排序算法、二分查找、贪心策略、分治、回溯、动态规划等经典算法与实践。"
 date: 2025-03-03
+lastmod: 2026-10-23
 tags:
   - 算法
   - 数据结构
@@ -20,6 +21,8 @@ custom_toc:
 images:
   - algo/cover.png
 ---
+
+> **数据结构与算法系列**（三篇互为配套，建议连着读）：[数据结构特点分析](/zh-cn/data-structure/) · [数据结构刷题实战](/zh-cn/data-structure-practise/) · **算法分析**
 
 常见的算法思想： 二分法、动态规划：1 暴力 2 缓存 3 递推公式 解决问题： 找极值 找零钱 重点、回溯、递归和迭代的思想，层级遍历，比如；虚拟dom，最长递增子序列（vue的renderer.ts getSequence keepAlive(LRU Cache 基于链表的缓存结构)
 
