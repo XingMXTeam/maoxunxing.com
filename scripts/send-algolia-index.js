@@ -24,6 +24,14 @@ if (!Array.isArray(objects)) {
   process.exit(2);
 }
 
+// hugo-algolia emits one record with an empty objectID: the homepage
+// (content/_index.<lang>.md has uri ""). saveObjects rejects empty
+// objectIDs, so repair it here instead of dropping the record — its
+// search link resolves to the language homepage, which is correct.
+for (const obj of objects) {
+  if (!obj.objectID) obj.objectID = obj.uri || 'home';
+}
+
 (async () => {
   const client = algoliasearch('D7NQ3RODEC', key);
   const tmp = client.initIndex(`${indexName}-temp`);
