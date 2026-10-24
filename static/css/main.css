@@ -1656,6 +1656,23 @@ body .aa-DetachedContainer--modal {
   margin-left: 1.5rem;
 }
 
+/* ========== Article Title Breakout ==========
+   Post titles use a wider measure than the body column so long titles
+   can stay on one line on desktop. Same 118rem breakout the section
+   tabs already use: centered on the page, capped by the viewport
+   (100vw - 4rem), so below ~1220px it collapses to exactly the body
+   column width and never overflows horizontally.
+   Balance wrapping is off for these titles (see the h1 rule in
+   _content.scss): when a title still has to wrap, the first line
+   fills instead of both lines being equalized to half width.
+   Reader (focus) mode keeps its own narrow 74rem balanced title. */
+body:not(.reader-mode) .content .post > article > header .post-title {
+  width: min(118rem, calc(100vw - 4rem));
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 /* ========== Table of Contents ========== */
 .toc-wrapper {
   position: fixed;

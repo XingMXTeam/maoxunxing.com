@@ -26,7 +26,7 @@ pygmentscodefencesguesssyntax = true
       icon = "1"
       description = "毛毛星的个人枢纽：AI 全栈、harness 与独立产品。小工具从这里进入，CrossAgent Lab 是垂直产品。"
       keywords = "毛毛星,Momo,maoxunxing,AI全栈,harness,独立产品,AI创作者,AI编程,独立开发,小工具,CrossAgent,长期投资"
-      custom_css = ["/css/main.css?v=20261024-searchfix", "/css/code-dark.css?v=20261023-code2", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261023-code2", "/css/hub-b.css?v=20261017-rss"]
+      custom_css = ["/css/main.css?v=20261024-titlewidth", "/css/code-dark.css?v=20261023-code2", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261023-code2", "/css/hub-b.css?v=20261017-rss"]
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20261023-code2"]
   [languages.en]
     languageName = "EN"
@@ -35,7 +35,7 @@ pygmentscodefencesguesssyntax = true
     [languages.en.params]
       description = "Momo's hub for AI full-stack work, harnesses, and indie products. Open small tools here. CrossAgent Lab is the vertical product."
       keywords = "Momo,maoxunxing,AI full-stack,harness,indie products,AI creator,AI coding,indie hacker,small tools,CrossAgent,long-term investing"
-      custom_css = ["/css/main.css?v=20261024-searchfix", "/css/code-dark.css?v=20261023-code2", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261023-code2", "/css/hub-b.css?v=20261017-rss"]
+      custom_css = ["/css/main.css?v=20261024-titlewidth", "/css/code-dark.css?v=20261023-code2", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261023-code2", "/css/hub-b.css?v=20261017-rss"]
       custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20261023-code2"]
 
 [markup]
@@ -97,7 +97,7 @@ long-term-investing = "/:slugorfilename/"
   hidecredits = false
   hidecopyright = false
   rtl = false
-  custom_css = ["/css/main.css?v=20261024-searchfix", "/css/code-dark.css?v=20261023-code2", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261023-code2", "/css/hub-b.css?v=20261017-rss"]
+  custom_css = ["/css/main.css?v=20261024-titlewidth", "/css/code-dark.css?v=20261023-code2", "/css/home.css?v=20261017-rss", "/css/prompts.css?v=20260626a", "/css/p0-fixes.css?v=20260626a", "/css/nav-hotfix.css?v=20261017-rss", "/css/projects.css?v=20261017-rss", "/css/series.css?v=20260709a", "/css/article-blocks.css?v=20261023-code2", "/css/hub-b.css?v=20261017-rss"]
   custom_js = ["/js/home-dots-simplex.js?v=20260710b", "/js/code-copy.js?v=20261023-code2"]
   photoWidths = [300, 600, 800, 1200]
   colorscheme = "auto"
