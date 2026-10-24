@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260711-2";
+const CACHE_VERSION = "20261024-1";
 
 const CACHE_NAMES = {
   assets: `assets-${CACHE_VERSION}`,
@@ -13,10 +13,10 @@ const PRECACHE_FILES = [
   "/css/font.css",
   "/css/main.css",
   "/images/avatar.avif",
-  "/en/404.html",
+  "/offline.html",
 ];
 
-const OFFLINE_PAGE = "/en/404.html";
+const OFFLINE_PAGE = "/offline.html";
 
 async function precacheFiles() {
   const cache = await caches.open(CACHE_NAMES.assets);
