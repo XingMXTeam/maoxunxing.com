@@ -12,6 +12,32 @@
   // They were never used (autocomplete renders via createElement below), and the literal
   // triple-brace permalink hrefs were flagged as broken links by site crawlers.
 
+  // Algolia URIs keep the Hugo section prefix (and sometimes a .zh-cn/.en
+  // filename suffix), but the site's permalinks drop both — without this
+  // normalization most result links 404 (audited 2026-10-24: 117 of 223
+  // indexed records were broken). Sections NOT in the permalink config
+  // (e.g. ai-coding-workflow) keep their prefix and are left untouched.
+  const SECTION_PREFIXES = ['notes', 'posts', 'projects', 'book-reports', 'prompts', 'long-term-investing', 'about', 'uses', 'bookmarks', 'media', 'streams', 'demos', 'gallery', 'raw', 'pages'];
+  function buildResultUrl(item) {
+    const lang = location.pathname.split('/')[1];
+    const parts = item.uri.split('/').filter(Boolean);
+    if (parts.length > 1 && SECTION_PREFIXES.includes(parts[0])) parts.shift();
+    if (parts.length) {
+      parts[parts.length - 1] = parts[parts.length - 1].replace(/\.(zh-cn|en)$/, '');
+    }
+    return `${location.protocol}//${location.host}/${lang}/${parts.join('/')}`;
+  }
+
+  // Keyboard-hint footer inside the detached search modal (DocSearch-style).
+  function ensureSearchFooter() {
+    const container = document.querySelector('.aa-DetachedContainer');
+    if (!container || container.querySelector('.aa-DetachedFooter')) return;
+    const footer = document.createElement('div');
+    footer.className = 'aa-DetachedFooter';
+    footer.innerHTML = {{ if hasPrefix .Site.Language.Lang "zh" }}'<span><kbd>↵</kbd> 选择</span><span><kbd>↑</kbd><kbd>↓</kbd> 导航</span><span><kbd>Esc</kbd> 关闭</span>'{{ else }}'<span><kbd>↵</kbd> to select</span><span><kbd>↑</kbd><kbd>↓</kbd> to navigate</span><span><kbd>Esc</kbd> to close</span>'{{ end }};
+    container.appendChild(footer);
+  }
+
   autocomplete({
     container: '#docsearch',
     detachedMediaQuery: '',
@@ -20,6 +46,9 @@
       detachedCancelButtonText: {{ if hasPrefix .Site.Language.Lang "zh" }}'取消'{{ else }}'Cancel'{{ end }},
       clearButtonTitle: {{ if hasPrefix .Site.Language.Lang "zh" }}'清除'{{ else }}'Clear'{{ end }},
       submitButtonTitle: {{ if hasPrefix .Site.Language.Lang "zh" }}'搜索'{{ else }}'Submit'{{ end }},
+    },
+    onStateChange({ state }) {
+      if (state.isOpen) ensureSearchFooter();
     },
     // openOnFocus: true,
     // debug: true,
@@ -79,13 +108,9 @@
             //     "__autocomplete_indexName": "my-blog-index",
             //     "__autocomplete_id": 0
             // }
-              const lang = location.pathname.split("/")[1];
-              item.uri = item.uri.replace(/posts\//g, '');
-              // if(item.uri =='projects.zh-cn') return ''
-
               return createElement(
                 'a',
-                { className: 'aa-ItemLink', href: `${location.protocol}\/\/${location.host}/${lang}/${item.uri}` },
+                { className: 'aa-ItemLink', href: buildResultUrl(item) },
                 createElement(
                   'div',
                   {
@@ -153,7 +178,7 @@
             },
           },
           getItemUrl({ item }) {
-            return item.url;
+            return buildResultUrl(item);
           },
         },
       ];

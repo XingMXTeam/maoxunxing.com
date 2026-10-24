@@ -1514,6 +1514,74 @@ body.colorscheme-dark {
   overflow: visible !important;
 }
 
+/* ========== Search Modal Polish ========== */
+/* Light mode: replace Algolia's default purple with the site palette
+   (link blue for focus/primary, neutral grey for the selected row).
+   The dark-mode overrides above have higher specificity and still win. */
+body {
+  --aa-primary-color-rgb: 21, 101, 192;
+  --aa-selected-color-rgb: 125, 125, 125;
+  --aa-selected-color-alpha: 0.12;
+}
+
+body .aa-DetachedContainer--modal {
+  border-radius: 12px;
+}
+
+/* The form row can squeeze this flex item below its content width; Latin
+   "Cancel" has no break opportunity so it silently overflowed, but CJK
+   text breaks between any two characters — hence 取消 wrapping onto two
+   lines. Pin the button to its content size and never wrap. */
+.aa-DetachedContainer .aa-DetachedCancelButton {
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--c-fg);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin: 0 0 0 0.8rem;
+}
+
+.aa-DetachedContainer .aa-DetachedCancelButton:hover {
+  background: rgba(125, 125, 125, 0.08);
+  color: var(--c-fg-deeper);
+}
+
+/* Keyboard hints footer (element injected by search.html). The flex
+   order pins it below the results panel even though the library
+   re-appends the panel after the injected node on re-renders. */
+.aa-DetachedFooter {
+  order: 10;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  flex-shrink: 0;
+  padding: 0.9rem 1.4rem;
+  border-top: 1px solid var(--c-border);
+  font-size: 1.15rem;
+  color: var(--c-fg-light);
+}
+
+.aa-DetachedFooter span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.aa-DetachedFooter kbd {
+  font-family: inherit;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--c-fg);
+  background: rgba(125, 125, 125, 0.07);
+  border: 1px solid var(--c-border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 0.25rem 0.4rem;
+}
+
 /* ========== Content Source Actions ========== */
 .content-source-actions {
   display: flex;
