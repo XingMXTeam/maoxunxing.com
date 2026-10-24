@@ -2621,6 +2621,46 @@
         "source": "/zh-cn/nodejs-3",
         "destination": "/zh-cn/nodejs-0/",
         "type": 301
+      },
+      {
+        "source": "/search",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/tags/cpu",
+        "destination": "/zh-cn/tags/cpu/",
+        "type": 301
+      },
+      {
+        "source": "/tags/health-check",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/pinduoduo",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/performance-optimization",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/money-skills",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/load-balancer",
+        "destination": "/zh-cn/tags/",
+        "type": 301
+      },
+      {
+        "source": "/tags/workplace",
+        "destination": "/zh-cn/tags/",
+        "type": 301
       }
     ],
     "headers": [
