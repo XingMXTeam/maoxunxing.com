@@ -1,9 +1,9 @@
 ---
-Title: “Common Code Editor Tips”
-Date: 2025-04-09
-Description: “”
-Draft: true
-Tags:
+title: “Common Code Editor Tips”
+date: 2025-04-09
+description: “”
+draft: true
+tags:
   - AI
 sitemap:
   disable: true
