@@ -9,8 +9,6 @@ tags:
   - Project
 ---
 
-# Agent Workstation
-
 Agent Workstation is a reusable multi-agent orchestration framework for building task-specific AI workstations.
 
 The repository is currently private while I clean up examples, remove project-specific residue, and prepare a public template. This page explains the idea and the design direction.

@@ -9,8 +9,6 @@ tags:
   - Creator Tools
 ---
 
-# Ebook Factory
-
 Ebook Factory is a personal publishing pipeline for turning Markdown-based book projects into ebook artifacts.
 
 The working repository is currently private because it may contain real book material. A clean public template should be extracted later.

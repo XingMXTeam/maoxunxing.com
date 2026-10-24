@@ -15,8 +15,6 @@ faq:
     a: "Regular children are React elements the component renders directly. Function children (the render-props pattern) are callbacks: the component must call them with arguments, and only the returned elements render. Because mixing the two changes the runtime type, a dedicated render prop is usually the cleaner API."
 ---
 
-# The Pitfall of React Children Type Checking: Why Your Component Isn't Rendering
-
 Have you ever encountered a situation where you wrote a React component that looks completely correct but renders nothing? Today, let's talk about this headache-inducing problem that countless developers face.
 
 > **TL;DR**: When JSX mixes a function with a string (like a stray `{' '}`), `props.children` turns from a function into an array — `[function, ' ']` — and any `typeof props.children === 'function'` check silently fails. Flatten first with `React.Children.toArray()`, then look for the function inside the array. Three full fixes are below.
