@@ -16,6 +16,11 @@
     container: '#docsearch',
     detachedMediaQuery: '',
     placeholder: {{ if hasPrefix .Site.Language.Lang "zh" }}'搜索'{{ else }}'Search'{{ end }},
+    translations: {
+      detachedCancelButtonText: {{ if hasPrefix .Site.Language.Lang "zh" }}'取消'{{ else }}'Cancel'{{ end }},
+      clearButtonTitle: {{ if hasPrefix .Site.Language.Lang "zh" }}'清除'{{ else }}'Clear'{{ end }},
+      submitButtonTitle: {{ if hasPrefix .Site.Language.Lang "zh" }}'搜索'{{ else }}'Submit'{{ end }},
+    },
     // openOnFocus: true,
     // debug: true,
     navigator: {
@@ -144,7 +149,7 @@
               );
             },
             noResults() {
-              return 'No results';
+              return {{ if hasPrefix .Site.Language.Lang "zh" }}'未找到相关结果'{{ else }}'No results'{{ end }};
             },
           },
           getItemUrl({ item }) {
