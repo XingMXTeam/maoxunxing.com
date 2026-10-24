@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20261024-1";
+const CACHE_VERSION = "20261024-2";
 
 const CACHE_NAMES = {
   assets: `assets-${CACHE_VERSION}`,

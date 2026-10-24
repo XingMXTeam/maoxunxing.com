@@ -510,3 +510,28 @@ a.hub-card:hover {
 [id] {
   scroll-margin-top: 8rem;
 }
+
+/* ---------- Mobile sticky-nav scroll jitter fix (2026-10-24) ----------
+   On phones the sticky bar visibly shook while scrolling. Two things
+   forced it to repaint on every scroll frame:
+   1) backdrop-filter blur: the bar re-samples and re-blurs whatever
+      scrolls underneath it, frame by frame (worst on iOS Safari, and
+      worse again on home/section pages where a 60fps full-screen canvas
+      animates behind the bar);
+   2) the logo's infinite draw/erase animation inside the bar, which
+      invalidates the bar's layer non-stop.
+   Mobile therefore gets a near-opaque solid bar with no backdrop blur
+   and a fully drawn, static logo. Desktop keeps the blurred glass bar
+   and the animated signature. */
+@media only screen and (max-width: 768px) {
+  .navigation.nav-hub {
+    background: color-mix(in srgb, var(--c-bg) 97%, transparent);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .navigation.nav-hub .logo-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
