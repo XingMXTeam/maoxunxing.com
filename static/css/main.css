@@ -1665,12 +1665,30 @@ body .aa-DetachedContainer--modal {
    Balance wrapping is off for these titles (see the h1 rule in
    _content.scss): when a title still has to wrap, the first line
    fills instead of both lines being equalized to half width.
-   Reader (focus) mode keeps its own narrow 74rem balanced title. */
+   Reader (focus) mode keeps its own narrow 74rem balanced title.
+   The TEXT must be centered inside the widened box, not just the box
+   itself: with left-aligned text the glyphs pin to the box's left edge
+   and sit up to ~450px left of the body column's center on short
+   titles (measured 2026-10-27: this page's title text center was
+   242px left of the column center at 1349px and 1920px viewports). */
 body:not(.reader-mode) .content .post > article > header .post-title {
   width: min(118rem, calc(100vw - 4rem));
   max-width: none;
   margin-left: 50%;
   transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Same centering for the other single-page title blocks: reader mode
+   uses its own narrow balanced title box (already centered as a box),
+   and note pages never got the breakout width — both still left-aligned
+   their text inside a centered box. */
+body.reader-mode .reader-article .post-title h1 {
+  text-align: center;
+}
+
+.content .note > article > header .post-title {
+  text-align: center;
 }
 
 /* ========== Table of Contents ========== */
