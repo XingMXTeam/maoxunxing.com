@@ -1657,40 +1657,30 @@ body .aa-DetachedContainer--modal {
 }
 
 /* ========== Article Title ==========
-   Titles live in the body column and center their text; long titles
-   wrap inside the column (owner, 2026-10-27: wrapping is fine, a
-   title does not have to stay on one line). This replaces the
-   2026-10-24 breakout that stretched the title box to 118rem to keep
-   long titles on one line — the widened box centered, but with
-   left-aligned text the glyphs pinned to its left edge and sat up to
-   ~450px left of the column center on short titles (measured
-   2026-10-27); centering the text in the wide box then left long
-   titles spanning far wider than the body they head.
-   Balanced wrapping keeps a wrapped title's lines even instead of a
-   full first line plus a short orphan. Reader (focus) mode keeps its
-   own narrow 74rem title box. */
+   Final spec (owner, 2026-10-27, after three rounds of feedback):
+   the title block sits in the body column — the column is what is
+   centered on the page — the TEXT is left-aligned with the body, and
+   long titles wrap naturally inside the column. No breakout width,
+   no centered text, no balanced wrapping for post titles.
+   History: the 2026-10-24 breakout (7e21d56) stretched the box to
+   118rem to keep titles on one line, which displaced the text up to
+   ~450px left of the column; 778dbbb centered the text in that wide
+   box and e0f92dc dropped the breakout but kept centered text —
+   both missed that the text itself was always meant to be
+   left-aligned. Reader (focus) mode keeps its own pre-existing
+   narrow balanced title, also left-aligned. */
 body:not(.reader-mode) .content .post > article > header .post-title {
-  text-align: center;
+  text-align: left;
 }
 
-body:not(.reader-mode) .content .post > article > header .post-title h1 {
-  text-wrap: balance;
-}
-
-/* Same centering for the other single-page title blocks: reader mode
-   uses its own narrow balanced title box (already centered as a box),
-   and note pages never got the breakout width — both still left-aligned
-   their text inside a centered box. */
-body.reader-mode .reader-article .post-title h1 {
-  text-align: center;
-}
-
-.content .note > article > header .post-title {
-  text-align: center;
-}
-
-.content .note > article > header .post-title h1 {
-  text-wrap: balance;
+/* Posts pages float the 36px reader-mode toggle at the top-right of
+   the header band, in the first title line's row. A left-aligned
+   first line fills the column and would run under it (measured:
+   text ended at 940px, toggle starts at 931px), so posts titles
+   keep 4.8rem of right clearance. Other post-type pages have no
+   toggle and keep the full column width. */
+body:not(.reader-mode) .content .post.reader-article > article > header .post-title {
+  padding-right: 4.8rem;
 }
 
 /* ========== Table of Contents ========== */
