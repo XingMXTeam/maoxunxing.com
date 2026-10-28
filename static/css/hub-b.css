@@ -128,7 +128,7 @@ body.page-home {
 
   .navigation.nav-hub .navigation-list {
     top: calc(100% + 0.4rem) !important;
-    /* Nested backdrop-filter does not render inside the blurred sticky bar, so use a solid panel. */
+    /* The sticky bar is fully opaque with no backdrop blur (see the jitter fix at the end of this file); the panel is solid too. */
     background: var(--c-bg) !important;
     max-height: calc(100vh - 8rem);
     overflow-y: auto;
@@ -511,27 +511,55 @@ a.hub-card:hover {
   scroll-margin-top: 8rem;
 }
 
-/* ---------- Mobile sticky-nav scroll jitter fix (2026-10-24) ----------
-   On phones the sticky bar visibly shook while scrolling. Two things
-   forced it to repaint on every scroll frame:
-   1) backdrop-filter blur: the bar re-samples and re-blurs whatever
-      scrolls underneath it, frame by frame (worst on iOS Safari, and
-      worse again on home/section pages where a 60fps full-screen canvas
-      animates behind the bar);
-   2) the logo's infinite draw/erase animation inside the bar, which
-      invalidates the bar's layer non-stop.
-   Mobile therefore gets a near-opaque solid bar with no backdrop blur
-   and a fully drawn, static logo. Desktop keeps the blurred glass bar
-   and the animated signature. */
-@media only screen and (max-width: 768px) {
-  .navigation.nav-hub {
-    background: color-mix(in srgb, var(--c-bg) 97%, transparent);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
+/* ---------- Sticky-nav scroll jitter fix v2 (2026-10-28) ----------
+   v1 (2026-10-24) only patched phones (<=768px) and the bar still shook.
+   Audit of what v1 left behind:
+   1) Desktop/tablet kept everything that causes the shake: the bar's
+      backdrop-filter blur re-samples and re-blurs whatever scrolls
+      underneath it on every frame (worst on home/section pages, where a
+      60fps full-screen canvas animates behind the bar), and the logo's
+      infinite draw/erase animation invalidates the bar's layer non-stop.
+   2) The phone bar was left at 97% opacity, so the compositor still had
+      to blend the content scrolling beneath it into the bar each frame.
+   3) The mobile menu panel (.navigation-list, styled in nav-hotfix.css)
+      still carried backdrop-filter: blur(16px) from nav-hotfix — v1 only
+      replaced its background, never cleared the filter.
+   4) The sticky bar had no compositing layer of its own, so iOS Safari
+      repainted it on the main thread during momentum scrolling (the
+      classic sticky lag/jitter).
+   Fix, all viewports: fully opaque bar with no backdrop blur anywhere
+   inside it, its own GPU layer via translateZ(0), and a logo that draws
+   itself once on load and then stays static. The old 86% glass look was
+   near-solid anyway, so the visual change is minimal. */
+.navigation.nav-hub {
+  background: var(--c-bg);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
 
+.navigation.nav-hub .navigation-list {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.navigation.nav-hub .logo-path {
+  stroke-dashoffset: 0;
+  animation: draw-signature-once 1.6s ease-out 1;
+}
+
+@keyframes draw-signature-once {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   .navigation.nav-hub .logo-path {
     animation: none;
-    stroke-dashoffset: 0;
   }
 }

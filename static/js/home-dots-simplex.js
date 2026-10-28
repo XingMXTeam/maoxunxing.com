@@ -33,7 +33,10 @@
     var SCALE = 200;
     var LENGTH = 5;
     var SPACING = 15;
-    var FRAME_INTERVAL = 1000 / 60;
+    // Phones get 30fps: a full-screen canvas at 60fps saturates the main
+    // thread and makes the sticky nav stutter while scrolling. The dot
+    // drift is slow (t = Date.now()/10000), so 30fps looks identical.
+    var FRAME_INTERVAL = (window.innerWidth || 0) <= 768 ? 1000 / 30 : 1000 / 60;
     var DOT_COLOR = '#cccccc';
     var reducedMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 
@@ -151,10 +154,27 @@
       };
     }
 
+    var lastWidth = 0;
+    var maxHeight = 0;
+
     function resize() {
-      var dpr = window.devicePixelRatio || 1;
-      width = window.innerWidth || document.documentElement.clientWidth || 0;
-      height = window.innerHeight || document.documentElement.clientHeight || 0;
+      // iOS Safari fires resize mid-scroll when its URL bar collapses or
+      // expands: innerHeight changes while innerWidth stays put. Rebuilding
+      // the canvas then (new backing store + full point grid) blocks the
+      // main thread during the fling and the sticky nav visibly shakes.
+      // Only a width change (rotation / real window resize) rebuilds; the
+      // canvas keeps the tallest height seen so no unpainted strip appears
+      // when the URL bar hides.
+      var newWidth = window.innerWidth || document.documentElement.clientWidth || 0;
+      var newHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+      if (lastWidth !== 0 && newWidth === lastWidth) return false;
+      lastWidth = newWidth;
+      maxHeight = Math.max(maxHeight, newHeight);
+      // Cap DPR at 2: at DPR 3 the full-screen backing store is 9x the CSS
+      // pixels to fill every frame, for no visible gain on 1px dots.
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = newWidth;
+      height = maxHeight;
       canvas.style.width = width + 'px';
       canvas.style.height = height + 'px';
       canvas.width = Math.floor(width * dpr);
