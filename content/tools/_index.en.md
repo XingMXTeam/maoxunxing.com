@@ -1,8 +1,12 @@
 ---
 title: "Tools"
-description: "Small tools you can open now: whistle transcription, Xiaohongshu covers, speaker diarization, Sayo, and the prompt library."
+description: "Small tools you can open now: AI code health check, whistle transcription, Xiaohongshu covers, speaker diarization, Sayo, and the prompt library."
 intro: "These are the browser tools and small products you can open today. The vertical product lives at CrossAgent Lab."
 entries:
+  - name: "AI Code Health Check"
+    url: "/ai/ai-code-health-check/"
+    desc: "Paste a public GitHub repo and get a five-dimension health score for AI-written frontend code. Open it and use it now."
+    tags: ["Code", "Browser"]
   - name: "Whistle transcription"
     url: "/ai/whistle-transcription/"
     desc: "Transcribe a whistle in the browser. Open it and use it now."
@@ -23,6 +27,10 @@ entries:
     url: "/ai/habit-tracker-printable/"
     desc: "Track habits on weekly or monthly grids with streaks, then print a clean sheet."
     tags: ["Productivity", "Browser"]
+  - name: "Free LLM Models"
+    url: "/ai/free-llm-models/"
+    desc: "Genuinely free AI models that can call tools, re-checked daily with live probes."
+    tags: ["AI", "Browser"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "Spoken English practice. Say it yourself first, then look at the hint if you get stuck."
