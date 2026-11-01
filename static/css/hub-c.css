@@ -1,4 +1,4 @@
-/* ========== Hub B first cut (2026-10-15) ==========
+/* ========== Hub B first cut (2026-10-15); renamed hub-b.css -> hub-c.css on 2026-11-01 because this zone's Cloudflare cache key ignores query strings, so ?v= bumps never busted the edge cache ==========
    Layout/nav after brianlovin.com, product-branch block after swyx.io.
    Loaded last so it can refine main/home/nav-hotfix/projects without touching the theme engine.
    Colours only use existing theme tokens (--c-bg, --c-fg*, --c-border*), so light/dark keep working. */
