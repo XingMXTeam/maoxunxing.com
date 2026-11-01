@@ -20,7 +20,7 @@ other = "Momo"
 other = "AI full-stack · indie developer"
 
 [homeHeroDesc]
-other = "I build small AI tools you can open in the browser and one vertical product, and I write about engineering, AI coding, and making things."
+other = "I build small AI tools you can open in the browser and two vertical products, and I write about engineering, AI coding, and making things."
 
 [homeToolsCTA]
 other = "Tools"
@@ -273,6 +273,18 @@ other = "Vertical product"
 
 [homeProductCATag2]
 other = "CrossAgent"
+
+[homeProductBRTitle]
+other = "Browserly"
+
+[homeProductBRDesc]
+other = "17 browser agents, checked and compared entry by entry, on its own site. Start here."
+
+[homeProductBRTag1]
+other = "Vertical product"
+
+[homeProductBRTag2]
+other = "Browserly"
 
 [homeToolsGridTitle]
 other = "Tools and projects"

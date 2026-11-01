@@ -199,6 +199,10 @@ body.page-home .home-hero-desc {
   gap: var(--hub-space-2);
 }
 
+.home-product-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .home-product-card {
   display: flex;
   flex-direction: column;

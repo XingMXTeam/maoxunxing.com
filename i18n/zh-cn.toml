@@ -20,7 +20,7 @@ other = "Momo / 毛毛星"
 other = "AI 全栈 · 独立开发者"
 
 [homeHeroDesc]
-other = "做浏览器里点开即用的 AI 小工具和一个垂直产品，也写工程、AI 编程和创作笔记。"
+other = "做浏览器里点开即用的 AI 小工具和两个垂直产品，也写工程、AI 编程和创作笔记。"
 
 [homeToolsCTA]
 other = "工具"
@@ -335,6 +335,18 @@ other = "垂直产品"
 
 [homeProductCATag2]
 other = "CrossAgent"
+
+[homeProductBRTitle]
+other = "Browserly"
+
+[homeProductBRDesc]
+other = "17 个浏览器智能体逐条实测对比，单独的站。从这里进入。"
+
+[homeProductBRTag1]
+other = "垂直产品"
+
+[homeProductBRTag2]
+other = "Browserly"
 
 [homeToolsGridTitle]
 other = "小工具与项目"
