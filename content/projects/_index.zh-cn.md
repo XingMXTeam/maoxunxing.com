@@ -17,7 +17,7 @@ project_sections:
   - title: 当前重点
     id: current-focus
     featured: true
-    lead: "现在就能打开的东西：浏览器小工具、Sayo、CrossAgent Lab，以及这个站本身。"
+    lead: "现在就能打开的东西：浏览器小工具、Sayo、CrossAgent Lab、Browserly，以及这个站本身。"
     items:
       - name: Sayo
         link: https://gosayo.cc/
@@ -58,6 +58,14 @@ project_sections:
         status: Live
         visual: 垂直产品
         tags: [CrossAgent, 产品]
+        featured: true
+      - name: Browserly
+        link: https://browserly.maoxunxing.com
+        desc: "浏览器智能体对比索引。17 个能自己操作浏览器的 AI 智能体逐项对比，每条带实测判断和核查日期。从这里离开本站，直接打开 Browserly。"
+        icon: fas fa-table
+        status: Live
+        visual: 17 个智能体 → 对比
+        tags: [浏览器智能体, AI, 产品]
         featured: true
       - name: maoxunxing.com
         link: /zh-cn/

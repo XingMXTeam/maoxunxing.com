@@ -17,7 +17,7 @@ project_sections:
   - title: Current Focus
     id: current-focus
     featured: true
-    lead: "What you can open now: the browser tools, Sayo, CrossAgent Lab, and this site."
+    lead: "What you can open now: the browser tools, Sayo, CrossAgent Lab, Browserly, and this site."
     items:
       - name: Sayo
         link: https://gosayo.cc/
@@ -58,6 +58,14 @@ project_sections:
         status: Live
         visual: vertical product
         tags: [CrossAgent, Product]
+        featured: true
+      - name: Browserly
+        link: https://browserly.maoxunxing.com
+        desc: "A live index comparing 17 browser-driving AI agents side by side, each with a hands-on verdict and a verification date. Leave this site and open Browserly."
+        icon: fas fa-table
+        status: Live
+        visual: 17 agents → compared
+        tags: [Browser agents, AI, Product]
         featured: true
       - name: maoxunxing.com
         link: /en/

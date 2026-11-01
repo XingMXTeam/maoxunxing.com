@@ -1,6 +1,6 @@
 ---
 title: "工具"
-description: "能点开就用的小工具：AI 代码体检、口哨转写、小红书封面、说话人分离、Sayo 和 Prompt 库。"
+description: "能点开就用的小工具：AI 代码体检、Browserly 浏览器智能体索引、口哨转写、小红书封面、说话人分离、Sayo 和 Prompt 库。"
 intro: "这些是现在就能点开的浏览器小工具和小产品。垂直产品单独放在 CrossAgent Lab。"
 entries:
   - name: "AI 代码体检"
@@ -31,6 +31,10 @@ entries:
     url: "/ai/free-llm-models/"
     desc: "真实能用的免费大模型清单，每天实测探活更新。"
     tags: ["AI", "浏览器"]
+  - name: "Browserly"
+    url: "https://browserly.maoxunxing.com"
+    desc: "17 个浏览器智能体的实时对比索引：按感知方式、托管、MCP 与凭证模型逐项对比，每条带实测判断和核查日期。"
+    tags: ["AI", "智能体"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "英语口语练习。先自己说，卡住了再看提示。"
