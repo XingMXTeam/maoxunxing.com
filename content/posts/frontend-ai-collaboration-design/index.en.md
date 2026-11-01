@@ -1,6 +1,6 @@
 ---
 title: "From “It Runs” to Deliverable: Design Notes on a Frontend AI Collaboration System"
-description: "The previous post covered why AI-written code needs a scene where mistakes surface; this one describes how I built that scene: five layers of constraints, an eight-stage pipeline, three ways to expose a Skill, and an evaluation system that never lets the model grade its own work."
+description: "The previous post covered why AI-written code needs a scene where mistakes surface; this one describes how I built that scene: five layers of constraints, a five-phase state machine with three roles, an evaluation system that never lets the model grade its own work, and a kernel that runs long workflows on a file-based state machine. The system is open source (frontend-harness-cli), and every mechanism described here can be found in the repository."
 date: 2026-10-23
 tags:
   - AI
@@ -9,12 +9,12 @@ tags:
 draft: false
 custom_toc:
   - title: "1. Five Layers of Constraints: Lay the Tracks First"
-  - title: "2. An Eight-Stage Pipeline: Split One Job into Eight Verifiable Steps"
-  - title: "3. Three Ways to Expose a Skill: Put It in the Wrong Place and Even a Good Skill Gets Lost"
+  - title: "2. Five Phases, Three Roles: The Workflow Is a State Machine, Not a Document"
+  - title: "3. Skills Named After Artifacts: Phases Belong to the Kernel, Skills to the Roles"
   - title: "4. Evaluation Must Be Deterministic: Never Let the Model Grade Itself"
-  - title: "5. The Orchestrator: A Long Workflow Cannot Rely on the Model “Remembering”"
+  - title: "5. The Kernel: A Long Workflow Cannot Rely on the Model “Remembering”"
   - title: "6. Four Pits I Fell Into"
-  - title: "7. A Four-Week Rollout Path"
+  - title: "7. Adoption: Three Steps Now"
   - title: "8. Limitations: I Know Exactly What It Cannot Measure"
   - title: "Closing Thoughts"
   - title: "References"
@@ -24,248 +24,232 @@ In my [previous post](/zh-cn/harness-engineering-ai-frontend/) (in Chinese), I c
 
 This post covers the "how".
 
-Over the past stretch of time, I turned that idea into a working system: a frontend AI collaboration system. It is not a longer prompt. It is a set of interlocking designs: five layers of constraints govern where code may go, eight stages govern how a task gets carried through, evaluation governs what counts as correct, and an orchestrator governs how a long workflow avoids losing its memory halfway through.
+Over the past stretch of time, I turned that idea into a working system: a frontend AI collaboration system. It is not a longer prompt. It is a set of interlocking designs: five layers of constraints govern where code may go, a five-phase state machine governs how a task gets carried through, evaluation governs what counts as correct, and a kernel governs how a long workflow avoids losing its memory halfway through.
+
+> **Revision note (Nov 2026)**: This post was first published in October 2026 and described an early shape of the method — eight stages, one Skill per stage. Since then I rewrote the whole system as the open-source tool [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli) and kept iterating. The workflow changed shape: stages became kernel states, skills are now named after the artifacts they produce, and acceptance is a rubric with veto power. This revision replaces every mechanism with the open-source version's current form; the design thinking, the measured data, and the post-mortems remain as they were. Every mechanism described below now has a corresponding implementation in the repository.
 
 The conclusion first, then the details. LangChain ran an experiment on Terminal Bench 2.0: with the model unchanged and only the surrounding Harness modified, the score rose from 52.8% to 66.5% — a gain of 13.7 percentage points, moving from outside the top thirty into the top five.
 
-My own experience matches. The model did not get smarter. The room it has to make mistakes shrank, and the speed at which mistakes get caught went up.
+My own experience matches. The model did not get smarter; the space in which it can go wrong got smaller, and mistakes surface faster.
 
-What follows is organized as: the five layers of constraints, the eight-stage pipeline, how Skills are placed, how evaluation works, how the orchestrator runs, the pits I fell into, how to build it from zero, and where its boundaries are.
+What follows, in order: the five layers of constraints; the five phases and three roles; how the Skills are organized; how evaluation works; how the kernel runs; the pits I fell into; how to adopt it; and where its boundaries are.
 
 ## 1. Five Layers of Constraints: Lay the Tracks First
 
-I divide frontend constraints into five layers. From bottom to top: language, style, state, engineering, aesthetics.
+I divide frontend constraints into five layers. From the bottom up: language, styling, state, engineering, aesthetics.
 
-Each layer answers one question. The language layer asks whether it is wrong. The style layer asks whether it is stable. The state layer asks whether it is accurate. The engineering layer asks whether it goes through. The aesthetics layer asks whether it is right. The order matters. If the code doesn't even compile, talking about visual fidelity is meaningless.
+Each layer answers one question. The language layer asks: is it wrong? The styling layer: is it stable? The state layer: is it accurate? The engineering layer: does it connect? The aesthetics layer: is it right? The order is not negotiable. If the code does not compile, talking about visual fidelity is meaningless.
 
-**Layer one: language constraints.** Pin everything down with TypeScript strict mode: explicit types, no slipping past with `any`, no silencing errors with type-ignoring comments. Types are documentation — a function signature should let a caller see at a glance what it returns and what can go wrong.
+**Layer one, language constraints.** TypeScript strict mode, nailed down: explicit types, no escaping through `any`, no type-suppression comments papering over errors. Types are documentation — a function signature should tell the caller at a glance what it returns and what can go wrong.
 
-I think of this layer as a ruler with markings. Write something wrong and the ruler stops you on the spot; you don't have to wait until runtime to find out.
+I think of this layer as a ruler with markings. Write something wrong and the ruler stops you on the spot; you don't need to wait until runtime to find out.
 
-**Layer two: style constraints.** Colors, spacing, and font sizes all go through design tokens — no hard-coded values. Component styles are scope-isolated with CSS Modules. These rules don't live in reviewers' verbal reminders; they live in Stylelint and ESLint, and a violation turns red.
+**Layer two, styling constraints.** Colors, spacing, and font sizes all go through design tokens — no hard-coded values; component styles are scope-isolated with CSS Modules. These rules don't live in code-review reminders; they live in Stylelint and ESLint, and violating them turns the build red.
 
-This layer is like a palette with only eight colors. The AI cannot pick a wrong color, because the wrong colors are not on the palette.
+This layer is a palette with only eight colors. The AI cannot pick the wrong color, because the wrong colors are not on the palette.
 
-**Layer three: state constraints.** State gets an explicit structural definition: fields, types, initial values, and which fields are optional — all written down. Client state and server data are kept apart, with a single source of truth. Local storage keys must be namespaced, so you can tell at a glance which page and which kind of data a key belongs to, instead of an ad-hoc name shared across the whole site.
+**Layer three, state constraints.** State needs an explicit structural definition: fields, types, initial values, which fields may be absent — all written down. Client state and server data stay separate; one source of truth. Local-storage keys must be namespaced, so you can tell at a glance which page and which kind of data a key belongs to, instead of an improvised name shared by the whole site.
 
-This layer is like a city with a single highway running from the water plant to every home. You never have to guess where the water comes from — turn on the tap and it's there — and when something breaks, you know which road to trace.
+This layer is a city with a single road from the water plant to every house. You never guess where the water comes from; turn on the tap and it's there, and when something breaks you know exactly which road to inspect.
 
-**Layer four: engineering constraints.** Directory structure and which modules may import each other are enforced by an architecture lint. File size and function length have caps — say, no source file over 300 lines, and functions kept to a readable length; exceed the cap and the code must be split. On top of that, pre-commit hooks and CI chain type checking, lint, build, and tests into one pipeline; fail anything and the change doesn't get in.
+**Layer four, engineering constraints.** Directory structure and which modules may import which are enforced by an architecture lint; file size and function length have caps — a source file stays under roughly 300 lines, functions within readable length, and anything over gets split. On top of that, pre-commit hooks and CI chain type checking, lint, build, and tests into one pipeline; nothing gets in unless the pipeline passes.
 
-This layer is traffic rules plus traffic lights. It doesn't suggest that you not run the light — the intersection is designed so you can't.
+This layer is traffic rules plus traffic lights. Not advice against running a red light — an intersection designed so you can't.
 
-**Layer five: aesthetics constraints.** Design tokens go one level up: colors, spacing, corner radius, shadows, and motion are all settled into tokens, high-frequency interface patterns are packaged as components, and screenshots are compared for visual regression.
+**Layer five, aesthetics constraints.** One step above design tokens: colors, spacing, radii, shadows, and motion are all distilled into tokens, high-frequency interface patterns are packaged as components, and screenshot comparison provides visual regression.
 
-This layer is Lego. Bricks of the wrong size simply don't exist, so there is little room to assemble it wrong.
+This layer is Lego. Bricks of the wrong size simply do not exist, so the room to assemble something wrong is small.
 
-One frontend-specific judgment deserves calling out here.
+One frontend-specific judgment is worth calling out.
 
-LangChain's general-purpose Harness has six layers: filesystem, sandbox, code execution, memory, context management, and orchestration. Mapped onto the frontend, I compressed several of them: filesystem, sandbox, and code execution are essentially absorbed by the engineering layer — a failed build is a failed sandbox, and passing lint means the code executes. Memory, on the frontend, is state, so it belongs to the state layer. Orchestration I pulled out entirely; it becomes the pipeline in the next section.
+LangChain's general-purpose Harness has six layers: file system, sandbox, code execution, memory, context management, orchestration. Mapped onto the frontend, I compressed the first few: file system, sandbox, and code execution are effectively absorbed by the engineering layer — a failed build is a failed sandbox, passing lint means the code executes; memory, on the frontend, is state, so it belongs to the state layer; orchestration comes out on its own and becomes the state machine below.
 
-That compression frees up one layer, and I gave it to aesthetics.
+The compression freed one layer, and I gave it to aesthetics.
 
-This is not padding. The general Harness literature rarely discusses aesthetics, because for most tasks correctness is binary. The frontend is different. In image-to-code benchmarks such as Omni-I2C, the strongest current models reach visual fidelity in the seventy-percent range, while parameter-level precision sits at only around forty percent — and entity and layout errors account for more than sixty percent of all errors (source: the Omni-I2C benchmark, 2026). In other words, the functionality can be right while the page is still wrong. Whether users will use it depends, to a large degree, on this layer.
+That is not padding. The general Harness literature rarely discusses aesthetics, because in most tasks correctness is binary. The frontend is different. In image-to-code benchmarks such as Omni-I2C, the strongest current models reach seventy-some percent on visual fidelity, only about forty percent on parameter-level precision, and entity and layout errors account for more than sixty percent of all errors (source: the Omni-I2C benchmark, 2026). In other words, the feature can work and the page can still be wrong — and whether people will use it depends largely on this layer.
 
-## 2. An Eight-Stage Pipeline: Split One Job into Eight Verifiable Steps
+In the open-source version, these five layers land in two places: the rules and stack packs that `harness init` installs into your project per stack (Next.js, React, Vue, Node), and the five-dimension scan in evaluation that checks them back, item by item. Writing a constraint down and having someone verify it are two different things; you need both. Next, how a task flows.
 
-Tracks alone are not enough. You also need a timetable.
+## 2. Five Phases, Three Roles: The Workflow Is a State Machine, Not a Document
 
-I split the full life of a requirement into eight stages: initialization → requirements clarification → code generation → documentation → evaluation → acceptance → release → evolution.
+Tracks laid, you need a timetable. The early version split a request into eight stages, each written as a Skill for the model to follow. When I rewrote the system as open source, I overturned exactly that: **a phase should not be a document; it should be a state in code.** A document relies on the model remembering to obey it; a state is enforced by a program. This was the single most important change of shape in the whole system.
 
-Initialization registers the task and creates a state record. Requirements clarification translates the requirement documents and design annotations into an executable plan. Code generation writes the code according to the plan. Documentation, after the code is written, works backward from the code to document what the feature does and what conventions it carries. Evaluation and acceptance are two layers of checking, which I'll detail below. Release follows the normal branch-and-merge flow. Evolution writes this round's failures and fixes back into the rules and Skills, so the next round avoids the same pit.
+A feature now lives through five phases, driven by the kernel's state machine:
 
-Placing documentation after code generation and before evaluation is deliberate. It can run in parallel with evaluation: evaluation reads code, not documents. And some problems — a missing text resource, say — are far faster to fix right there in the documentation stage than to send back through clarification and generation again.
+**Clarify → Implement → Evaluate → Verify → Done**, plus a **Paused** state it can enter at any time.
 
-The pipeline runs on three principles. All three were learned the hard way.
+The work is not done by "the model in the main conversation" but by three roles, each with its own context, input packet, and permission boundary:
+
+- **The planner** appears only in Clarify. It interviews a one-line request until open questions hit zero, then produces the contract files in a fixed order: `prd.md` (every requirement numbered), `vision.md`, `tech-design.md`, `pages.json`, `tasks.json`, `rubric.json`, `e2e-cases.json`. If you already have a finished PRD, that works too: `harness new <feature> --prd <file>` imports it verbatim — not one requirement number changed — and clarifying shrinks to confirming and filling gaps.
+- **The developer** works in Implement, one task at a time: implement it, run its checks, make one precise commit. It has one deliberate permission design — **it never sees the rubric**. It builds from the plan, not to the test.
+- **The evaluator** appears in Evaluate and again in Verify, and the two appearances must be **different fresh contexts**. It scores the work against the rubric, item by item, handing over evidence only — it is never allowed to fix code on the side.
+
+The pipeline follows three principles, all learned the hard way.
 
 **Principle one: define what "done" looks like before writing any code.**
 
-The plan produced by the clarification stage must contain a testable list of functional points. Not "build a to-do page," but broken down to this granularity: "Add a to-do — the user enters text, the input is validated as non-empty, the item is added to the pending list, the input box is cleared." Every item can be verified on its own: done or not, done right or not.
+Clarify ends with a coverage gate: every numbered requirement must have at least one essential check, one quality item anchored to something concrete (or a written waiver), and end-to-end cases across six categories. Coverage incomplete, the state machine does not release the feature — not one line of code gets written.
 
-Anthropic has a finding I strongly agree with: the wording of the grading criteria doesn't just judge the output — it actively shapes the direction the generator moves in. Write "done" clearly, and the AI converges toward it as it writes.
+Why so strict? Anthropic has a finding I strongly agree with: the wording of a rubric does not merely judge the output, it actively shapes what the generator produces. Write "done" clearly and the AI converges toward it as it writes. The counterexample is the most common instruction of all — "finish the homepage." The AI improvises for six hours, and at acceptance time you discover the direction was wrong. A vague instruction is never executed; it is amplified.
 
-The counterexample is the most common instruction of all: "Finish the homepage." The AI improvises freely for six hours; at acceptance time you discover the direction was wrong, and changing one sentence costs half a day of rework. Vague instructions are never executed. They are amplified.
+**Principle two: detection and repair must be separate.**
 
-**Principle two: detection and repair must be separated.**
+Evaluation only reports problems; it never fixes code as it goes. Fixes happen back in Implement, and only for the open items the evaluation report listed.
 
-The evaluation stage only reports problems. It is never allowed to fix code on the side. Repairs may only happen by retrying the code generation stage, or by following the acceptance stage's routing.
+The reason is practical. A fix inevitably introduces new problems: evaluation patches a style and breaks a type; fixes the type and drops a copy string. Worse, once evaluation has touched the code, that evaluation can no longer be reproduced — you can't tell which version of the code the report describes. Separated, every evaluation corresponds to one fixed report, and every failure's retry path is on record.
 
-The reason is practical. Repair inevitably introduces new problems: evaluation fixes a style issue and breaks a type; fixes the type and drops a piece of copy. Worse, once evaluation touches the code, that evaluation can no longer be reproduced — you can't tell which version of the code the report was describing.
+**Principle three: vetoes outrank totals, and stability outranks a single pass.**
 
-Once the two are separated, every evaluation corresponds to one fixed report, and every failure's retry path is on record.
+Rubric items come in three kinds: command (run for real), judge (scored from evidence), manual. Two kinds carry veto power: **an essential item scoring 0 fails the whole feature outright; a triggered pitfall item (say, a type-suppression comment used to bypass a check) fails it too — no matter how high the total score is.**
 
-**Principle three: acceptance uses four gates, short-circuited in order.**
+Passing evaluation is still not the end. In Verify, a second, independent evaluator regenerates every judge item's evidence **from scratch** — evidence older than the previous evaluation scores 0 — and the feature must pass a configured number of consecutive rounds. One pass can be luck; a different person, fresh evidence, several rounds in a row — that is stability.
 
-The acceptance stage has four gates: canRun (does it run), dataReady (is the data complete), usageRight (is everything used correctly), and featureWorks (does the feature work end to end). Behind each gate sit evaluation scores from several dimensions, and every dimension has its own passing line.
+One more hard check, tied to tasks: when the developer claims a task is done, it must report the commit SHA, and the kernel verifies with `git rev-parse` that the commit actually exists. A SHA that doesn't resolve means the task is not done. This rule sounds funny until you know why it exists: models do "claim" commits they never made.
 
-The key is the short circuit: if the first gate fails, the remaining three don't run at all. The work goes straight back for a retry.
+For readers of the earlier version, a translation table — where did the eight stages go? Init became the `harness init` command. The docs stage disappeared: the contract files are written during Clarify, the artifacts are the docs, and at Done, sync-overview folds the stable conclusions into the project overview. Publish became the delivery gate (your own build, tests, and lint must all pass). Evolution split into two guarded loops, covered in section 5. The remediation loop lives between Evaluate and Implement. The stages did not disappear; they went from "a process to memorize" to "states you never have to think about."
 
-This is not about saving time. The order itself carries the logic. If the code doesn't compile, checking whether the copy is complete or the components are used correctly yields nothing but noise. Confirm it runs first, and the later checks mean something. And if the first gate fails repeatedly, the problem is most likely not the code but the plan — that's the moment to stop and bring in a human, not to let it keep retrying.
+## 3. Skills Named After Artifacts: Phases Belong to the Kernel, Skills to the Roles
 
-A word on rhythm. The pipeline has three feedback loops. While code is being written, compiler and lint errors flow back in seconds — one line written, one line checked. When a feature is finished, a minutes-level loop opens the browser, looks at the result, and compares screenshots. At commit time, CI runs the full sweep — types, unit tests, end-to-end tests, visual regression — on a longer cycle. The earlier a loop, the cheaper it is. Whatever can be caught in seconds should never be left until commit time.
+If the phases went to the kernel, what is left for Skills? The answer: **skills belong to the roles, and they are named after what they produce.**
 
-## 3. Three Ways to Expose a Skill: Put It in the Wrong Place and Even a Good Skill Gets Lost
+The open-source version ships 21 Skills, and not one of them is named after a phase. Clarify is an authoring chain: `clarify-requirements` gets the requirements clear, then `write-prd`, `write-quality-vision`, `write-tech-design`, `write-dev-plan`, and `write-acceptance-criteria` each produce one contract file. Implement has `implement-task` and `systematic-debugging`. Evaluate has `e2e-testing`, `api-testing`, `deterministic-eval`, and `fix-from-report` for repairs. Delivery has `ship-checklist` and `sync-overview`. Plus a set of general skills (component reconstruction, state-schema-first, i18n extraction, and so on).
 
-In this system, each stage's capability is written as a Skill document: when to use it, the steps to follow, and the anti-patterns that are not allowed.
+Naming them this way has a direct benefit: **every Skill's output is verifiable.** "Run the clarify phase" cannot be accepted or rejected; "produce a prd.md with numbered requirements" can. Complicated work is composed by orchestration, not by writing a single Skill longer — on average each stays under a hundred lines.
 
-After writing more than twenty of them, I found a problem more fatal than content: **where a Skill sits, and how it gets loaded, decides whether it survives until the moment it is needed.**
+At `harness init`, the Skill pack is installed into the project per role: whichever skills a role needs at its phase are exactly what shows up in that role's task packet. This design was forced by context compression. In a long conversation, context is periodically compacted into summaries, and different carriers fare very differently: I measured that a long document pulled into context by invocation retains single-digit percentages after one compaction and is gone after the second. So process detail is not allowed to live only in the conversation — it must be files on disk (Skills, contracts, state) or states in code. The conversation is responsible only for the current step.
 
-The reason is context compaction. In a long conversation, the context is periodically compressed into a summary to free up space. Different carriers fare very differently under compression.
+My rules for writing a Skill itself have not changed: one job per Skill, step-by-step, every step with a verifiable output, and at least three counterexamples drawn from real failures. Not "don't write bad code" — that is noise — but "if the requirements don't specify an error code, never invent one": a prohibition concrete enough to execute against.
 
-A Skill's name and one-line description are periodically re-injected, so they basically never get lost. But once a Skill's full text is pulled into the context, compression folds it into the summary, and the critical steps get sanded away. I measured this: a Skill injected on demand retains only a single-digit percentage of its full text after one compaction, and nothing after the second.
-
-Content read directly from files does better: after the first compaction it survives almost intact, but the second compaction wipes it out just the same. Only what lives in project-level instruction files is reloaded every turn, untouched by compaction — but those files have to stay short, and process detail doesn't fit.
-
-So I use three exposure modes, split by a Skill's size and frequency of use:
-
-- **Direct embedding**: short and high-frequency, kept within two hundred lines. It sits closest to the model and triggers most reliably; the cost is the space it occupies.
-- **Subagent reading**: medium-length Skills stay out of the main conversation. An independent subagent reads the full text in its own context and runs the whole process; the main conversation receives only the result.
-- **Pre-read precise injection**: for long, low-frequency Skills, only the key sections marked "must-read" are pre-read into the main context, and the full text is left for a subagent to run.
-
-There is also one hard cap: **no more than 12 globally registered Skills.**
-
-The number 12 was found by trial. Every name and description in the global list is a fixed cost paid on every turn. Past a certain count, two things happen: the signal-to-noise ratio of each turn drops, and the model is more likely to pick the wrong name from a long list; and the total length swells, which makes compaction arrive earlier and more often — so the Skills you meant to make easier to use die faster instead. Once you're past a dozen or so, it's time to talk about demotion: a new Skill defaults to project level, and only one that users have directly triggered several times earns promotion to global.
-
-A note on how the Skills themselves are written. Each does exactly one thing, in steps, and every step must have a verifiable output — "write a plan" is not a step; "produce a plan with a functional-point list" is. Each also carries at least three anti-patterns drawn from real failures. Not filler like "don't write bad code," but enforceable prohibitions like "when the requirements never mention an error code, never invent one." They average under a hundred lines each. Complex jobs are composed by the orchestrator, not by letting a single Skill grow long.
+Finally, Skills need evaluating too. The system keeps a golden set: `harness skills eval` scores the Skills themselves against a battery of standard tasks, and a regression raises an alarm. That is the first of the evolution loops — rules and skills are not enshrined once written; like code, they get regression tests.
 
 ## 4. Evaluation Must Be Deterministic: Never Let the Model Grade Itself
 
-The one rule I hold most firmly in this whole system: **after the code is written, judging right from wrong must be done by code, not by a model.**
+The one rule I hold hardest in the whole system: **after code is written, judge correctness with code wherever possible, not with a model.**
 
-Anthropic said it bluntly in their work on harness design for long-running applications: an out-of-the-box Claude is a terrible QA agent. It can see a real problem, then talk itself into believing "it's not a big deal," and approve its own work anyway.
+Anthropic puts it bluntly in their work on long-running harnesses: out of the box, Claude is a poor QA agent. It can see real problems, talk itself into "these are not a big deal," and approve its own work anyway.
 
-This is not a defect of any particular model. It is decided by position. Make the generator double as the reviewer, and it will naturally be lenient with itself.
+That is not a defect of any particular model; it is a property of the position. Make the generator its own reviewer and it will be lenient with itself by construction. So evaluation is split into two layers:
 
-So my evaluation is split into five dimensions, every one of them judged deterministically:
+**Layer one, rubric evaluation — did this feature get built right?** It is part of the contract, written during Clarify. Items run two ways: command items are deterministic — compiler, grep, tests, the five-dimension scan below — and exit codes do the talking; judge items genuinely need judgment (say, "does the empty-state copy explain what to do next"), and those are scored by the evaluator from **fresh evidence** — live Playwright screenshots, real API probe responses — never from "I read the code and it looks fine." Every check must produce evidence: which file, which line, which screenshot. No evidence, no pass.
 
-- Structure: does the code type-check and compile, is anything bypassing checks with ignore rules, do imports respect the architecture constraints, are files and functions within length limits. This uses compiler exit codes and syntax-tree scans.
-- Data: are all text keys present, is the state structure closed, do local storage keys follow the namespacing convention. This compares the keys used in code against the key set in the resource files.
-- Logic: walk the functional-point list from the clarification stage, item by item, and check that the code contains the corresponding implementation and key branches. This is why functional points must be written before the code — they are the exam paper for evaluation, and writing the questions after the exam would be pointless.
-- UI: do styles go through component scoping, are colors and spacing using variables rather than hard-coded values, is responsive behavior covered.
-- End-to-end: actually run the tests, count passes and failures, and check whether the main flows are covered.
+**Layer two, the five-dimension scan — how healthy is this codebase?** It is a standalone instrument (`harness scan`, usable without the full workflow), across five dimensions:
 
-Every check must produce evidence: exactly which file, which line. Without evidence, it does not count as a pass. I do not accept "looks fine" in an evaluation report — that is precisely the thing this whole system exists to eliminate.
+- Structure: does the type check compile, is anything bypassing checks with suppression comments, do imports respect the architecture constraints, are files and functions within length caps;
+- Data: are copy keys complete, is the state structure closed, are local-storage keys namespaced as required; if the project provides a data spec, a field-by-field diff against it;
+- Logic: the feature checklist from Clarify, verified item by item against implementations and key branches in the code — which is exactly why the checklist must be written before the code; it is the exam paper, and writing the exam after the test is pointless;
+- UI: do styles go through component scoping, are colors and spacing tokenized rather than hard-coded; if a design file is provided, a pixel-level fidelity comparison against screenshots;
+- End-to-end: the tests actually run, pass/fail counts come back, and the main flows' coverage is visible.
 
-Each dimension runs alone, in its own independent subagent context. The one running structure cannot see the conclusions of the one running data, so nothing primes the judgment — a problem found earlier should not sway how a later dimension is scored.
+One caveat has to be stated plainly, or the numbers lie: **the scan has two modes.** With full project configuration, the structure dimension really runs `tsc`, the end-to-end dimension really runs your test command, the data dimension diffs field by field against the spec — that is measurement. With zero configuration, those inputs are unavailable and the scan falls back to static checks; in that case the report must state openly which dimensions were "not measured," instead of dressing static numbers up as real runs. The confidence level of a score belongs in the report, not hidden under it.
 
-Finally, the rule for reports: once an evaluation report is written, it is never modified. If code is regenerated and re-evaluated, that produces a new report; the old one stays. That is what makes a post-mortem able to answer one crucial question: was the cause of this failure already flagged in the previous report? If it was, the problem is in routing and repair. If it wasn't, the problem is in the evaluation itself. Without the archive, that account can never be settled.
+And the report rule: once written, an evaluation report is never edited. Regenerate code, re-evaluate, write a new report; the old one stays. That is what lets a post-mortem answer a crucial question: did the previous report already warn about the thing that just broke? If it did, the problem is routing and repair; if it didn't, the problem is evaluation itself. Without the archive, that account can never be settled.
 
-## 5. The Orchestrator: A Long Workflow Cannot Rely on the Model “Remembering”
+## 5. The Kernel: A Long Workflow Cannot Rely on the Model "Remembering"
 
-What happens if all eight stages run inside a single main conversation?
+What happens if all five phases run inside one main conversation?
 
-Entering each stage means loading that stage's full Skill text into the context. Eight of them add up to over a thousand lines, and by the fifth stage the context inevitably triggers compaction. And once compaction hits, the constraints and conclusions of the first four stages are sanded down into a few sentences in a summary — the more critical the detail, the cleaner it is lost.
+Each phase loads its instructions into context. Somewhere in the second half, compaction inevitably fires — and the moment it does, the earlier phases' constraints and conclusions are ground down to a few lines in a summary. The more critical the detail, the cleaner it disappears.
 
-I measured this with a probe method: at the start of the workflow, plant a set of key rules as probes, and at the end of each stage, spot-check how many of those rules are still remembered. In main-conversation mode, by the fifth stage the information retention rate is down to around 40%.
+I measured this with probes: a set of key rules planted at the start of the workflow, audited at the end of each phase for how much is still remembered. In main-conversation mode, by the fifth phase only about 40% of the information survived.
 
-The fix is to move the workflow out of the conversation and hand it to an orchestrator: a deterministic program with very plain logic.
+The fix is to move the workflow out of the conversation and into a deterministic kernel. It is a zero-dependency Node program, and its logic is plain:
 
-Each stage is dispatched to an independent subagent. The subagent gets a brand-new context, loads only its own stage's Skill, and takes only the inputs its stage needs. When it finishes, it writes its results into a state file and exits.
+Every feature has a state file (`.harness/tasks/<feature>/state.json`) that is the single source of truth for the whole pipeline: current phase, per-phase history, the task list, where the contract files live, the evaluation verdict. **Nobody — including the model itself — may edit this file by hand**; every state change goes through a kernel command. It looks like this (simplified):
 
-Stages don't pass information by "remembering." They pass it through the state file. The state file is the pipeline's single source of truth: the orchestrator reads it to decide the next step, and each stage writes to it only at its own boundaries, never midway. It looks like this (simplified):
-
-```json
+```
 {
   "feature": "todo-app",
-  "phase": "evaluation",
-  "history": [{ "phase": "code generation", "status": "passed" }],
-  "artifacts": { "plan": "...", "evalReport": "..." },
-  "verdict": { "passed": false, "firstFailGate": "canRun", "retryCount": 1 }
+  "phase": "evaluate",
+  "history": [
+    { "event": "clarify-done", "at": "…" },
+    { "event": "task-done", "task": "add-todo", "commit": "a1b2c3d" }
+  ],
+  "prd": { "source": "imported", "numberingComplete": true },
+  "verdict": { "passed": false, "openItems": ["REQ-3"] }
 }
 ```
 
-When acceptance fails, the orchestrator routes by which gate failed: it can't run, so back to code generation; data is incomplete, so back to code generation with the resources filled in; the feature doesn't work but the code itself is fine, so it may be an environment problem — hand it to a human. Retries have a cap too; exceed it and everything stops, rather than letting it spin forever in a dead end.
+Roles talk to the kernel through **task packets**: for the current phase the kernel generates a scoped input packet — the evaluator at Evaluate gets the rubric and the code entry points, and the developer's packet contains no rubric at all. A role does its work, writes its outputs back to files, and exits; what happens next is decided by the kernel reading state, never by a model "recalling."
 
-In this mode, the main conversation sees only whether each stage passed or failed, and its context stays far cleaner. Measured with the same probe method, by the fifth stage the information retention rate reaches around 95%.
+There are two ways to drive it. Interactively: you work inside Claude Code or Codex, and the first command for any feature is `harness next <feature>` — it tells you only what the current step is; finish it, ask again. A single-step protocol, and a human can take over at any point. Unattended: `harness run <feature>` drives the whole pipeline by the same protocol and only comes to you at the clarify confirmation and if the workflow pauses.
 
-The difference is not in the model. It is in where the information lives. Put it in the conversation, and it gets compacted along with the conversation. Put it in files and program variables, and it doesn't.
+When evaluation fails, the kernel routes by the verdict: open items send the feature back to Implement to fix exactly those items; if the evaluator has suggestions for the rubric itself, the planner answers them first — that is evolution's second loop, and its direction is locked: **a rubric may only be tightened automatically; loosening one requires a human.** Every loop has a budget cap; exhaust it and the state machine enters Paused and waits for a person. Nothing loops forever.
+
+Measured the same way, this mode keeps about 95% of the information alive at the fifth phase. The difference is not the model; it is where the information lives. In the conversation, it gets compacted along with everything else. In files and program variables, it doesn't.
 
 ## 6. Four Pits I Fell Into
 
 **Pit one: evaluation started out as model judgment.**
 
-The first version of evaluation had the model read the code and write conclusions. It gave itself full marks — a claimed 100 — while in reality only about thirty percent of the code was usable when actually run, and the end-to-end tests were wiped out entirely.
+The first evaluation had the model read the code and write conclusions. It awarded itself full marks — 100 out of 100 by its own account — while in reality only about thirty percent of the code actually worked, and the end-to-end tests were wiped out.
 
-The root cause is the self-leniency described in section four. The fix was to rewrite all five dimensions as deterministic checks, every one of them landing on a concrete command and a file line number.
+The root cause is the self-leniency of section 4. The fix was to convert everything convertible into commands and evidence: compiler exit codes, test pass counts, line-level evidence. One lesson worth keeping: a lint error is not just an error — it is also the model's repair instruction. The more specific the report, the more precisely it fixes.
 
-The lesson in one sentence: a lint error is not just an error — it is simultaneously a repair instruction for the model. The more specific the report, the more precisely it fixes things.
+**Pit two: writing the workflow as documents for the model to follow.**
 
-**Pit two: registering every Skill globally.**
+The early version's eight stages were eight Skill documents, executed in order by the model's good behavior. The first end-to-end run executed only four of the eight: several stages were silently skipped, while the workflow reported everything as normal.
 
-The thinking at the time was convenience — put them all up in one go. The result was that no task could run for long: once the global list swelled, compaction arrived earlier and more often, and after two compactions the evaluation stage dropped straight to zero across the board.
-
-The root cause is in section three: global registration carries a fixed cost. The fix was to press the global set strictly back under the cap and move the rest back to project level, where the orchestrator invokes them when needed.
-
-The lesson in one sentence: global slots are a hard constraint, not a directory. Before adding a new one, think about which one gets demoted.
+The root cause sat in the "what runs next" judgment. Judging from documents, and later judging with buggy code, produced the same class of error — no hard check at the seams. A phase that had never run, with an empty history, was misjudged as "already passed, move on." The fix came in two steps: first, split the judgment into three explicit checks (is there a failure with retries left; has it never run; only then, has it passed); then, one step further, move the entire workflow out of documents and into a code state machine. One lesson: unit tests cannot catch this class of bug. Every phase tests correctly on its own; the error lives between phases. It only becomes trustworthy after a real end-to-end run.
 
 **Pit three: running the whole pipeline in the main conversation.**
 
-The symptom is the first half of section five: by the fifth stage, the rules established in the earlier stages had mostly been eaten by compaction, and the later stages were effectively working from gut feeling inside an amnesiac context.
+The symptoms are the first half of section 5: by the later phases, the rules laid down earlier have been eaten by compaction, and the remaining phases are run by an amnesiac context on vibes.
 
-The fix was to write the orchestrator and move the stages into independent subagents.
+The fix was splitting the phases across independent roles and moving state into files. One lesson: never pile workflow content into the main context. Any design that "runs a long workflow inside one long conversation" collapses somewhere in the middle; the only question is when.
 
-The lesson in one sentence: never stack workflow content in the main context. Any design that runs a long workflow inside one long conversation will collapse somewhere in the middle — it is only a question of when.
+**Pit four: static scores dressed up as measured scores.**
 
-**Pit four: a bug in the orchestrator's state machine skipped several stages outright.**
+The scanner had an insidious early problem: a zero-configuration static-check score and a fully configured score — real compilation, real test runs — looked identical. Both are a number between 0 and 100. Reporting the former as "I measured it" was false: the most important dimensions had never been measured at all.
 
-On the first end-to-end run, only four of the eight stages actually ran; initialization, code generation, and evaluation were mysteriously skipped, while the workflow reported that everything was fine.
+The fix was to label every dimension with its provenance — measured, or statically inferred; a dimension whose inputs are unavailable says "not verified" in the report, with the caveat next to the score. One lesson: **if you cannot measure it, write "cannot be assessed" — never a number that merely looks real.** For an evaluation system this is a matter of honesty, not precision.
 
-The root cause was the "which stage runs next" logic: when a stage had never run and its history was empty, the code misjudged that as "already passed, advance" — and skipped its way forward.
+## 7. Adoption: Three Steps Now
 
-The fix was to split the decision into three explicit steps: first, check whether the stage failed and still has retries left — if so, stay on this stage; then check whether it has never run — if so, run this stage; only then check whether it passed — and only advance if it did.
+The system is open source, so "adoption" is no longer building it yourself. It is three steps:
 
-The lesson in one sentence: unit tests cannot catch this kind of state-machine bug. Each stage tests fine in isolation; what is wrong is the handoff between stages. It only becomes trustworthy after a real end-to-end run.
+1. **Install**: `git clone` the repository — or paste a single prompt into the Claude Code or Codex you already use and let the agent install the CLI and initialize your project itself. On the [health-check page](https://maoxunxing.com/ai/ai-code-health-check/) I keep a ready-made copy of that one-prompt setup.
+2. **Run**: `harness init` installs the rules and the skill pack for your stack (Next.js / React / Vue / Node). Then `harness new <feature>` starts your first feature — add `--prd` if you have a finished PRD to import. Drive it interactively with `harness next`, or unattended with `harness run`.
+3. **Scan before you commit to the whole workflow**: if you are not sure it is worth it, run `harness scan` on an existing repository first — or paste a public repository link into the health-check page above for an online report. Ten minutes gets you an evidence-backed report to decide with.
 
-## 7. A Four-Week Rollout Path
+If what you want to copy is the design rather than the tool, my advice is unchanged: take the smallest piece first — **the language and engineering layers.** Strict mode plus two lints will, this afternoon, remove an entire class of mistakes your AI makes in your project. Constraints do not need the whole system to start working; that is true whether the path is four weeks or three steps.
 
-None of this needs to land all at once. My own order took four weeks, each week addressing one class of problem:
-
-| Week | Goal | Key deliverables |
-|---|---|---|
-| Week 1 | Nail down the language and engineering layers | Turn on type strict mode and ban the bypass patterns; write the architecture lint and the size lint; wire all checks into pre-commit hooks. When the AI writes code, errors are intercepted within seconds, with repair hints attached |
-| Week 2 | Write Skills for the key stages | Three core stages embedded globally, a few long workflows placed at project level. Say "build a new feature" and it can walk from clarification through generation |
-| Week 3 | Bring up evaluation and acceptance | Land the five dimensions one by one; once aggregated, connect the four-gate short-circuit acceptance. Generation is no longer the finish line — passing the gates is |
-| Week 4 | Bring up the orchestrator | Write the state file and stage routing; fill in the release and evolution stages; give the orchestrator a smoke mode that doesn't depend on the conversation environment. Take one small feature and run all eight stages end to end |
-
-The state after four weeks: the net addition of code is actually small — a little over a thousand lines of rules, Skills, and orchestration logic — in exchange for a noticeably shorter development time on every feature after that. The slow part is the one-time system building. The fast part is everything that follows.
-
-If you only take one thing, take week one. Constraints don't need a complete system to start working: strict mode plus two lints can, this very afternoon, make the AI commit one whole category of mistakes less often in your project.
+As for build order, my own experience: pin the constraints first (a week), then write the skills for clarify and implement, then evaluation, and only then is a kernel worth building. Reversing the order — orchestration first, evaluation later — is the most common way this dies: the smoother the pipeline runs, the faster it produces garbage.
 
 ## 8. Limitations: I Know Exactly What It Cannot Measure
 
-**First, the aesthetics layer can only be half measured.**
+**First, the aesthetics layer is only half measurable.**
 
-What automation can check: whether variables are used, whether scoping is right, how far a screenshot has drifted from the baseline. But "is this color pairing tasteful," "does the spacing have rhythm," "is the type hierarchy clear" — automation currently covers only about half of those judgments. The other half still takes screenshots plus human review, or a score from an independent reviewing agent — and that score must be deliberately calibrated toward suspicion, or it repeats the self-leniency mistake.
+Automation can check: whether tokens are used, whether scoping is correct, how far a screenshot sits from the design in pixels. But "does this color pairing work," "does this spacing have rhythm," "is the type hierarchy clear" — automation covers roughly half of those judgments today. The other half still needs screenshots plus human review, or a separate reviewing agent whose score is deliberately calibrated toward suspicion, so it does not repeat the self-leniency mistake.
 
-This is also why I call aesthetics the frontend-specific layer and, at the same time, the weakest of the five. Admitting it is weak matters more than pretending it is solved.
+That is why I call aesthetics the frontend-specific layer and, at the same time, the weakest of the five. Admitting it is weak matters more than pretending it is solved.
 
-**Second, orchestration is limited by the tool platform.**
+**Second, "general-purpose" is not fully verified yet.**
 
-The pattern of independent subagents plus scripted orchestration can currently run in full mainly inside one tool; most other common AI coding environments don't yet support the same orchestration primitives. My compromise is to write the orchestrator as a standalone command-line program: in environments that support it, it connects to subagents and runs in real mode; in environments that don't, it falls back to simulation mode, so at least the state-file structure and stage routing can be validated without locking the design to one tool. But the experience gap is real, and there is no glossing over it.
+The system is verified deepest on Next.js projects. The stack packs for Vue and other stacks are in place, but my own acceptance line is: one real feature driven end-to-end on two heterogeneous projects, Next.js and Vue — until then I will not claim "generality verified" in public. The tool is usable now; the conclusion may not run ahead of the evidence.
 
 **Third, constraints have a shelf life.**
 
-This system is not build-it-once-and-forget-it. Every time the model is upgraded, you should run an ablation: remove one constraint and watch whether results get better or worse. Some constraints patch a model's current shortcomings; once the model closes the gap, the guardrail becomes an obstacle. There is also a subtler effect — a model overfits to the tools and harness it has used for a long time, so swapping out one part of the workflow can make results worse rather than better. That, too, can only be found by measurement, never by reasoning about it.
+This system is not build-once-and-forget. Every model upgrade deserves an ablation pass: remove a constraint and watch whether results improve or degrade. Some constraints compensate for a model's current weaknesses; once the model fixes the weakness, the guardrail becomes an obstacle. There is a subtler effect, too: a model can overfit to the tools and harness it has long been used with, so swapping one component can make results worse — something you can only discover by measuring, never by reasoning about it.
 
-The broader industry background is not encouraging either: one survey found that among heavy users of AI coding tools, close to seventy percent report that AI-generated code carries at least a fifty-percent chance of causing a deployment problem, and around half feel code quality is declining. Speed arrived first; the delivery system didn't keep up. This harness addresses the share inside my own projects — it is not some universal remedy.
+The industry backdrop is not cheerful either: surveys report that among heavy users of AI coding tools, close to seventy percent say AI-generated code has at least a fifty-percent chance of causing deployment problems, and about half feel code quality is declining. Speed arrived first; the delivery system has not caught up. This harness solves the share of that problem inside my own projects. It is not a universal remedy.
 
 ## Closing Thoughts
 
-Back to the line from the beginning: don't look for a smarter horse; build a better track.
+Back to the line at the start: don't ask for a smarter horse; build a better track.
 
-Models will change, and change fast. But looking back, the real core of this system is not any particular number or tool. It is five compensating designs: define "done" before starting, separate detection from repair, hand over context passively wherever possible, split long workflows into independent contexts, and trust only deterministic evidence for evaluation.
+Models will change, quickly. But looking back, the real core of this system is not any particular number or tool. It is five compensating designs: define "done" before starting; separate detection from repair; feed context passively wherever possible; split long workflows across independent contexts; and let evaluation trust only deterministic evidence.
 
-What they compensate for is not the model's intelligence but its structural shortcomings: it doesn't know what it doesn't know, it will talk itself into believing everything is fine, it cannot remember long workflows, and it can be drowned by context. Those shortcomings won't disappear just because the model gets one size bigger, so this design won't expire quickly either. What expires is individual constraints — and that is exactly what regular ablation is for.
+They compensate not for the model's intelligence, but for its structural weaknesses: it does not know what it doesn't know, it talks itself into believing its work is fine, it cannot remember a long workflow, and it drowns in its own context. Those weaknesses will not disappear because the model got one size bigger — which is why this design will not expire quickly either. What expires is individual constraints, and that is precisely what the ablation pass is for.
 
-I extracted the evaluation piece of this and turned it into a small open-source tool, ai-code-gate (github.com/XingMXTeam/ai-code-gate): five-dimension scoring plus four-gate short-circuiting — a simplified version of the evaluation and acceptance sections of this post. It runs directly in your own projects; if you want to read the code, it's there.
+The system is fully open source: [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli) — kernel, three roles, 21 Skills, and the five-dimension scan are all in there (the scan began life as the earlier ai-code-gate tool, now folded in as the sensor layer). If you only want to see one report, paste a public repository link into the [health-check page](https://maoxunxing.com/ai/ai-code-health-check/); if you want your own agent to use it directly, the same page carries a copy-and-paste prompt for that.
 
-The previous post was about why a scene is needed; this one is about how the scene is built. If there is a next one, I want to write about the evolution stage: how a system turns every failure into one of its own rules, instead of relying on a human writing up a post-mortem that ends up filed away in a document.
+The previous post was about why the scene is needed; this one is about how the scene is built. If there is a next post, I want it to be about the evolution loops: how a system turns every failure into one of its own rules — which parts are automated already, and which must stay with humans.
 
 ## References
 
-- LangChain, "The Anatomy of an Agent Harness" — the six-layer anatomy of Agent = Model + Harness, and the Terminal Bench 2.0 numbers
-- Vercel, "AGENTS.md outperforms skills in our agent evals" — the controlled experiment on passive injection vs. active retrieval
-- OpenAI, "Harness engineering: engineering in the agent-first world," and the Codex team's zero-handwritten-code internal practice (as surveyed by Yage.ai)
+- LangChain, "The Anatomy of an Agent Harness" — the six-layer anatomy of Agent = Model + Harness, and the Terminal Bench 2.0 data
+- Vercel, "AGENTS.md outperforms skills in our agent evals" — the controlled comparison of passive injection vs. active retrieval
+- OpenAI, "Harness engineering: engineering in the agent-first world," and the Codex team's zero-handwritten-code internal practice (compiled via Yage.ai research)
 - Anthropic, "Harness design for long-running application development" — harness design for long-running applications, and the reviewer self-leniency problem
 - The Omni-I2C benchmark (2026) — visual fidelity and parameter precision of mainstream models on image-to-code tasks
-- Fred Brooks, "No Silver Bullet" (1986) — the distinction between essential and accidental complexity
+- Fred Brooks, "No Silver Bullet" (1986) — essential vs. accidental complexity
