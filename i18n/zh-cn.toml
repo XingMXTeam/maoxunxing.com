@@ -20,7 +20,7 @@ other = "Momo / 毛毛星"
 other = "AI 全栈 · 独立开发者"
 
 [homeHeroDesc]
-other = "做浏览器里点开即用的 AI 小工具和两个垂直产品，也写工程、AI 编程和创作笔记。"
+other = "做浏览器里点开即用的 AI 小工具和三个垂直产品，也写工程、AI 编程和创作笔记。"
 
 [homeToolsCTA]
 other = "工具"
@@ -328,16 +328,19 @@ other = "在线"
 other = "垂直产品"
 
 [homeProductVerticalCount]
-other = "2 个独立站"
+other = "3 个独立站"
 
 [homeProductVerticalDesc]
-other = "两个独立站合成一个入口：一个看跨境电商 Agent 如何落地，一个逐项对比浏览器智能体。"
+other = "三个独立站，合成一个入口。"
 
 [homeProductCrossAgentDesc]
-other = "跨境电商 Agent 用例库与卖家 MCP 情报"
+other = "跨境电商 Agent · MCP 情报"
 
 [homeProductBrowserlyDesc]
-other = "17 个浏览器智能体逐条实测对比"
+other = "17 个浏览器智能体对比"
+
+[homeProductSayoDesc]
+other = "AI 英语口语练习"
 
 [homeToolsGridTitle]
 other = "小工具与项目"

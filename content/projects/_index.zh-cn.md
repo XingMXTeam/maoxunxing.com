@@ -17,15 +17,15 @@ project_sections:
   - title: 当前重点
     id: current-focus
     featured: true
-    lead: "现在就能打开的东西：浏览器小工具、Sayo、CrossAgent Lab、Browserly，以及这个站本身。"
+    lead: "现在就能打开的东西：浏览器小工具、三个垂直产品（Sayo、CrossAgent Lab、Browserly），以及这个站本身。"
     items:
       - name: Sayo
         link: https://gosayo.cc/
-        desc: "英语口语练习。先自己说，卡住了再看提示，然后换个场景再试一次。"
+        desc: "垂直产品站。英语口语练习：先自己说，卡住了再看提示，然后换个场景再试一次。"
         icon: fas fa-language
         status: Live
         visual: 核心动词 → 场景 → 练习
-        tags: [英语学习, AI Tutor, 产品]
+        tags: [垂直产品, 英语学习, AI Tutor]
         featured: true
       - name: 口哨转写
         link: /ai/whistle-transcription/

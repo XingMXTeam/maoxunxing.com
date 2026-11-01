@@ -1,7 +1,7 @@
 ---
 title: "工具"
-description: "能点开就用的小工具：AI 代码体检、Browserly 浏览器智能体索引、口哨转写、小红书封面、说话人分离、Sayo 和 Prompt 库。"
-intro: "这些是现在就能点开的浏览器小工具和小产品。CrossAgent Lab 和 Browserly 共用一个垂直产品入口。"
+description: "能点开就用的小工具：AI 代码体检、口哨转写、小红书封面、说话人分离和 Prompt 库；Sayo、CrossAgent Lab、Browserly 是垂直产品。"
+intro: "这些是现在就能点开的浏览器小工具和小产品。Sayo、CrossAgent Lab 和 Browserly 共用一个垂直产品入口。"
 entries:
   - name: "AI 代码体检"
     url: "/ai/ai-code-health-check/"
@@ -31,10 +31,6 @@ entries:
     url: "/ai/free-llm-models/"
     desc: "真实能用的免费大模型清单，每天实测探活更新。"
     tags: ["AI", "浏览器"]
-  - name: "Sayo"
-    url: "https://gosayo.cc/"
-    desc: "英语口语练习。先自己说，卡住了再看提示。"
-    tags: ["英语学习", "AI Tutor"]
   - name: "Prompt 库"
     url: "/zh-cn/prompts/"
     desc: "编程、写作和研究时留下来、还会再用的提示词。"
@@ -46,6 +42,6 @@ entries:
 products:
   - name: "垂直产品"
     url: "/zh-cn/products/"
-    tags: ["CrossAgent Lab", "Browserly"]
-    desc: "两个独立站共用一个入口：CrossAgent Lab 看跨境电商 Agent 用例与卖家 MCP 情报，Browserly 对比 17 个浏览器智能体。"
+    tags: ["Sayo", "CrossAgent Lab", "Browserly"]
+    desc: "三个独立站共用一个入口：Sayo 练 AI 英语口语，CrossAgent Lab 看跨境电商 Agent 用例与卖家 MCP 情报，Browserly 对比 17 个浏览器智能体。"
 ---

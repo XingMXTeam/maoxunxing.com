@@ -17,15 +17,15 @@ project_sections:
   - title: Current Focus
     id: current-focus
     featured: true
-    lead: "What you can open now: the browser tools, Sayo, CrossAgent Lab, Browserly, and this site."
+    lead: "What you can open now: the browser tools, three vertical products (Sayo, CrossAgent Lab, Browserly), and this site."
     items:
       - name: Sayo
         link: https://gosayo.cc/
-        desc: Spoken English practice built around core verbs, real-life scenes, and another try in a new scene. Say it yourself first, then look at the hint if you get stuck.
+        desc: A vertical product site. Spoken English practice built around core verbs, real-life scenes, and another try in a new scene. Say it yourself first, then look at the hint if you get stuck.
         icon: fas fa-language
         status: Live
         visual: core verbs → scenes → practice
-        tags: [English Learning, AI Tutor, Product]
+        tags: [Vertical Product, English Learning, AI Tutor]
         featured: true
       - name: Whistle transcription
         link: /ai/whistle-transcription/

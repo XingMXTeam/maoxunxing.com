@@ -3,7 +3,7 @@ title: Vertical Products
 type: projects
 layout: projects
 kicker: Indie products
-intro: "CrossAgent Lab and Browserly are two standalone sites. This page gives them one entry point; choose the topic you want once you are here."
+intro: "Sayo, CrossAgent Lab, and Browserly are three standalone sites. This page gives them one entry point; choose the topic you want once you are here."
 project_links:
   - label: CrossAgent Lab
     url: https://crossagent.maoxunxing.com
@@ -11,11 +11,14 @@ project_links:
   - label: Browserly
     url: https://browserly.maoxunxing.com
     icon: fas fa-table
+  - label: Sayo
+    url: https://gosayo.cc
+    icon: fas fa-language
 project_sections:
-  - title: Two standalone sites
+  - title: Three standalone sites
     id: vertical-products
     featured: true
-    lead: "One tracks how cross-border commerce agents are used in practice. The other checks browser agents entry by entry. Each site is updated independently."
+    lead: "One tracks how cross-border commerce agents are used in practice, one checks browser agents entry by entry, and one is AI spoken-English practice. Each site is updated independently."
     items:
       - name: CrossAgent Lab
         link: https://crossagent.maoxunxing.com
@@ -32,5 +35,13 @@ project_sections:
         status: Live
         visual: browser agents → comparison index
         tags: [Browserly, Browser Agents, Comparison]
+        featured: true
+      - name: Sayo
+        link: https://gosayo.cc
+        desc: "AI spoken-English practice. Say it yourself first, look at the hint if you get stuck, then try again in a new scene."
+        icon: fas fa-language
+        status: Live
+        visual: core verbs → scenes → practice
+        tags: [Sayo, English, AI Tutor]
         featured: true
 ---

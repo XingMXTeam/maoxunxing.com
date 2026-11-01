@@ -20,7 +20,7 @@ other = "Momo"
 other = "AI full-stack · indie developer"
 
 [homeHeroDesc]
-other = "I build small AI tools you can open in the browser and two vertical products, and I write about engineering, AI coding, and making things."
+other = "I build small AI tools you can open in the browser and three vertical products, and I write about engineering, AI coding, and making things."
 
 [homeToolsCTA]
 other = "Tools"
@@ -266,16 +266,19 @@ other = "Live"
 other = "Vertical Products"
 
 [homeProductVerticalCount]
-other = "2 standalone sites"
+other = "3 standalone sites"
 
 [homeProductVerticalDesc]
-other = "Two standalone sites behind one entry: one tracks how cross-border commerce agents are used, the other compares browser agents entry by entry."
+other = "Three standalone sites, one entry."
 
 [homeProductCrossAgentDesc]
-other = "Cross-border commerce agent use cases and seller MCP intelligence"
+other = "Commerce agents · MCP"
 
 [homeProductBrowserlyDesc]
-other = "17 browser agents, checked and compared entry by entry"
+other = "Browser agents, compared"
+
+[homeProductSayoDesc]
+other = "AI spoken-English practice"
 
 [homeToolsGridTitle]
 other = "Tools and projects"

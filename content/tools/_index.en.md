@@ -1,7 +1,7 @@
 ---
 title: "Tools"
-description: "Small tools you can open now: AI code health check, the Browserly browser-agent index, whistle transcription, Xiaohongshu covers, speaker diarization, Sayo, and the prompt library."
-intro: "These are the browser tools and small products you can open today. CrossAgent Lab and Browserly share one vertical-products entry."
+description: "Small tools you can open now: AI code health check, whistle transcription, Xiaohongshu covers, speaker diarization, and the prompt library. Sayo, CrossAgent Lab, and Browserly are the vertical products."
+intro: "These are the browser tools and small products you can open today. Sayo, CrossAgent Lab, and Browserly share one vertical-products entry."
 entries:
   - name: "AI Code Health Check"
     url: "/ai/ai-code-health-check/"
@@ -31,10 +31,6 @@ entries:
     url: "/ai/free-llm-models/"
     desc: "Genuinely free AI models that can call tools, re-checked daily with live probes."
     tags: ["AI", "Browser"]
-  - name: "Sayo"
-    url: "https://gosayo.cc/"
-    desc: "Spoken English practice. Say it yourself first, then look at the hint if you get stuck."
-    tags: ["English", "AI tutor"]
   - name: "Prompt library"
     url: "/en/prompts/"
     desc: "Prompts I still reuse for coding, writing, and research."
@@ -46,6 +42,6 @@ entries:
 products:
   - name: "Vertical Products"
     url: "/en/products/"
-    tags: ["CrossAgent Lab", "Browserly"]
-    desc: "Two standalone sites behind one entry: CrossAgent Lab tracks cross-border commerce agent use cases and seller MCP intelligence; Browserly compares 17 browser agents."
+    tags: ["Sayo", "CrossAgent Lab", "Browserly"]
+    desc: "Three standalone sites behind one entry: Sayo is AI spoken-English practice, CrossAgent Lab tracks cross-border commerce agent use cases and seller MCP intelligence, and Browserly compares 17 browser agents."
 ---
