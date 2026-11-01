@@ -1,7 +1,7 @@
 ---
 title: "Tools"
 description: "Small tools you can open now: AI code health check, the Browserly browser-agent index, whistle transcription, Xiaohongshu covers, speaker diarization, Sayo, and the prompt library."
-intro: "These are the browser tools and small products you can open today. The vertical product lives at CrossAgent Lab."
+intro: "These are the browser tools and small products you can open today. The vertical products live at CrossAgent Lab and Browserly."
 entries:
   - name: "AI Code Health Check"
     url: "/ai/ai-code-health-check/"
@@ -31,10 +31,6 @@ entries:
     url: "/ai/free-llm-models/"
     desc: "Genuinely free AI models that can call tools, re-checked daily with live probes."
     tags: ["AI", "Browser"]
-  - name: "Browserly"
-    url: "https://browserly.maoxunxing.com"
-    desc: "A live index of 17 browser-driving AI agents compared on perception, hosting, MCP and credential models, each with a hands-on verdict and a verification date."
-    tags: ["AI", "Agents"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "Spoken English practice. Say it yourself first, then look at the hint if you get stuck."
@@ -47,9 +43,13 @@ entries:
     url: "/en/projects/"
     desc: "Small products, extensions, and experiments I have built or am still building."
     tags: ["Products", "Experiments"]
-product:
-  name: "CrossAgent Lab"
-  url: "https://crossagent.maoxunxing.com"
-  tags: ["Vertical product"]
-  desc: "The vertical product. Leave this site from here."
+products:
+  - name: "CrossAgent Lab"
+    url: "https://crossagent.maoxunxing.com"
+    tags: ["Vertical product"]
+    desc: "The vertical product. Leave this site from here."
+  - name: "Browserly"
+    url: "https://browserly.maoxunxing.com"
+    tags: ["Vertical product"]
+    desc: "The vertical product: a browser-agent index, 17 entries checked one by one with verification dates. Leave this site from here."
 ---

@@ -61,11 +61,11 @@ project_sections:
         featured: true
       - name: Browserly
         link: https://browserly.maoxunxing.com
-        desc: "A live index comparing 17 browser-driving AI agents side by side, each with a hands-on verdict and a verification date. Leave this site and open Browserly."
+        desc: "The vertical product site. A browser-agent index with 17 entries checked one by one, each with a verification date. Leave this site and open Browserly."
         icon: fas fa-table
         status: Live
-        visual: 17 agents → compared
-        tags: [Browser agents, AI, Product]
+        visual: vertical product
+        tags: [Browserly, Product]
         featured: true
       - name: maoxunxing.com
         link: /en/

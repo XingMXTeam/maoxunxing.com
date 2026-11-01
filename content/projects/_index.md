@@ -61,11 +61,11 @@ project_sections:
         featured: true
       - name: Browserly
         link: https://browserly.maoxunxing.com
-        desc: "浏览器智能体对比索引。17 个能自己操作浏览器的 AI 智能体逐项对比，每条带实测判断和核查日期。从这里离开本站，直接打开 Browserly。"
+        desc: "垂直产品站。浏览器智能体对比索引，17 个条目逐项核查、标注日期。从这里离开本站，直接打开 Browserly。"
         icon: fas fa-table
         status: Live
-        visual: 17 个智能体 → 对比
-        tags: [浏览器智能体, AI, 产品]
+        visual: 垂直产品
+        tags: [Browserly, 产品]
         featured: true
       - name: maoxunxing.com
         link: /zh-cn/

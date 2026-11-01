@@ -1,7 +1,7 @@
 ---
 title: "工具"
 description: "能点开就用的小工具：AI 代码体检、Browserly 浏览器智能体索引、口哨转写、小红书封面、说话人分离、Sayo 和 Prompt 库。"
-intro: "这些是现在就能点开的浏览器小工具和小产品。垂直产品单独放在 CrossAgent Lab。"
+intro: "这些是现在就能点开的浏览器小工具和小产品。垂直产品单独放在 CrossAgent Lab 和 Browserly。"
 entries:
   - name: "AI 代码体检"
     url: "/ai/ai-code-health-check/"
@@ -31,10 +31,6 @@ entries:
     url: "/ai/free-llm-models/"
     desc: "真实能用的免费大模型清单，每天实测探活更新。"
     tags: ["AI", "浏览器"]
-  - name: "Browserly"
-    url: "https://browserly.maoxunxing.com"
-    desc: "17 个浏览器智能体的实时对比索引：按感知方式、托管、MCP 与凭证模型逐项对比，每条带实测判断和核查日期。"
-    tags: ["AI", "智能体"]
   - name: "Sayo"
     url: "https://gosayo.cc/"
     desc: "英语口语练习。先自己说，卡住了再看提示。"
@@ -47,9 +43,13 @@ entries:
     url: "/zh-cn/projects/"
     desc: "做过和正在做的小产品、插件和实验。"
     tags: ["产品", "实验"]
-product:
-  name: "CrossAgent Lab"
-  url: "https://crossagent.maoxunxing.com"
-  tags: ["垂直产品"]
-  desc: "垂直产品，从这里去。"
+products:
+  - name: "CrossAgent Lab"
+    url: "https://crossagent.maoxunxing.com"
+    tags: ["垂直产品"]
+    desc: "垂直产品，从这里去。"
+  - name: "Browserly"
+    url: "https://browserly.maoxunxing.com"
+    tags: ["垂直产品"]
+    desc: "垂直产品：浏览器智能体对比索引，17 个条目逐项核查、标注日期。从这里去。"
 ---

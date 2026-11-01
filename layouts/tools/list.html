@@ -15,9 +15,11 @@
     {{ end }}
   </div>
 
-  {{ with .Params.product }}
+  {{ with .Params.products }}
     <div class="hub-card-grid tools-product">
-      {{ partial "hub-card.html" (dict "name" .name "url" .url "desc" .desc "tags" .tags "status" "Live" "class" "hub-card-product") }}
+      {{ range . }}
+        {{ partial "hub-card.html" (dict "name" .name "url" .url "desc" .desc "tags" .tags "status" "Live" "class" "hub-card-product") }}
+      {{ end }}
     </div>
   {{ end }}
 </section>
