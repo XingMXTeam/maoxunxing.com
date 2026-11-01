@@ -1,7 +1,7 @@
 ---
 title: "工具"
 description: "能点开就用的小工具：AI 代码体检、Browserly 浏览器智能体索引、口哨转写、小红书封面、说话人分离、Sayo 和 Prompt 库。"
-intro: "这些是现在就能点开的浏览器小工具和小产品。垂直产品单独放在 CrossAgent Lab 和 Browserly。"
+intro: "这些是现在就能点开的浏览器小工具和小产品。CrossAgent Lab 和 Browserly 共用一个垂直产品入口。"
 entries:
   - name: "AI 代码体检"
     url: "/ai/ai-code-health-check/"
@@ -44,12 +44,8 @@ entries:
     desc: "做过和正在做的小产品、插件和实验。"
     tags: ["产品", "实验"]
 products:
-  - name: "CrossAgent Lab"
-    url: "https://crossagent.maoxunxing.com"
-    tags: ["垂直产品"]
-    desc: "垂直产品，从这里去。"
-  - name: "Browserly"
-    url: "https://browserly.maoxunxing.com"
-    tags: ["垂直产品"]
-    desc: "垂直产品：浏览器智能体对比索引，17 个条目逐项核查、标注日期。从这里去。"
+  - name: "垂直产品"
+    url: "/zh-cn/products/"
+    tags: ["CrossAgent Lab", "Browserly"]
+    desc: "两个独立站共用一个入口：CrossAgent Lab 看跨境电商 Agent 用例与卖家 MCP 情报，Browserly 对比 17 个浏览器智能体。"
 ---

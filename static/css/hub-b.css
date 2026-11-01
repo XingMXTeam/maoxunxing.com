@@ -199,10 +199,6 @@ body.page-home .home-hero-desc {
   gap: var(--hub-space-2);
 }
 
-.home-product-grid-three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .home-product-card {
   display: flex;
   flex-direction: column;
@@ -247,6 +243,71 @@ body.page-home .home-hero-desc {
   font-size: var(--hub-fs-sm);
   line-height: 1.6;
   opacity: 0.86;
+}
+
+.home-product-count {
+  color: var(--c-fg-light);
+  font-size: var(--hub-fs-xs);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.home-product-card-vertical .home-product-desc {
+  flex: 0 1 auto;
+}
+
+.home-product-links {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: auto;
+}
+
+.home-product-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--hub-touch);
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--c-bg) 72%, transparent);
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.home-product-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--c-border-hover);
+  background: color-mix(in srgb, var(--c-bg) 88%, transparent);
+}
+
+.home-product-link-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.home-product-link-name {
+  font-size: 1.55rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.home-product-link-desc {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  opacity: 0.78;
+}
+
+.home-product-link .hub-card-arrow {
+  flex: 0 0 auto;
+  margin-left: 0;
+  color: inherit;
+  opacity: 0.7;
+  font-size: 1.7rem;
 }
 
 body.page-home .home-section-block {

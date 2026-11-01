@@ -1,6 +1,7 @@
 {{- $galleryURL := "/gallery/" | relLangURL -}}
 {{- $isZh := eq (lower .Site.Language.Lang) "zh-cn" -}}
 {{- $aiToolsURL := "https://maoxunxing.com/ai/" -}}
+{{- $productsURL := "products/" | relLangURL -}}
 <nav class="navigation nav-hub" aria-label="Main navigation">
   <section class="nav-container">
     <!-- Animated M signature logo -->
@@ -20,7 +21,7 @@
 
     <nav class="nav-mobile-shortcuts" aria-label="{{ if $isZh }}快捷入口{{ else }}Shortcuts{{ end }}">
       <a class="nav-shortcut nav-shortcut-ai" href="{{ $aiToolsURL }}">{{ if $isZh }}AI 工具{{ else }}AI Tools{{ end }}</a>
-      <a class="nav-shortcut nav-shortcut-product" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener noreferrer">CrossAgent</a>
+      <a class="nav-shortcut nav-shortcut-product" href="{{ $productsURL }}">{{ if $isZh }}垂直产品{{ else }}Vertical Products{{ end }}</a>
       <a class="nav-shortcut" href="{{ "posts/" | relLangURL }}"{{ if eq .Section "posts" }} aria-current="page"{{ end }}>{{ if $isZh }}写作{{ else }}Writing{{ end }}</a>
     </nav>
 
@@ -47,7 +48,7 @@
           {{- end -}}
           {{- /* /ai/ lives on the same domain (separate app), so it opens in the same tab. */ -}}
           {{- $external := and $absolute (not (hasPrefix $href "https://maoxunxing.com/")) -}}
-          {{- $priority := or (in $href "crossagent.maoxunxing.com") (in $href "maoxunxing.com/ai/") -}}
+          {{- $priority := or (in $href "maoxunxing.com/ai/") (in $href "/products/") -}}
           <li class="navigation-item nav-primary-item{{ if $priority }} nav-priority{{ end }}">
             <a class="navigation-link" href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a>
           </li>

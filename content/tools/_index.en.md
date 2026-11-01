@@ -1,7 +1,7 @@
 ---
 title: "Tools"
 description: "Small tools you can open now: AI code health check, the Browserly browser-agent index, whistle transcription, Xiaohongshu covers, speaker diarization, Sayo, and the prompt library."
-intro: "These are the browser tools and small products you can open today. The vertical products live at CrossAgent Lab and Browserly."
+intro: "These are the browser tools and small products you can open today. CrossAgent Lab and Browserly share one vertical-products entry."
 entries:
   - name: "AI Code Health Check"
     url: "/ai/ai-code-health-check/"
@@ -44,12 +44,8 @@ entries:
     desc: "Small products, extensions, and experiments I have built or am still building."
     tags: ["Products", "Experiments"]
 products:
-  - name: "CrossAgent Lab"
-    url: "https://crossagent.maoxunxing.com"
-    tags: ["Vertical product"]
-    desc: "The vertical product. Leave this site from here."
-  - name: "Browserly"
-    url: "https://browserly.maoxunxing.com"
-    tags: ["Vertical product"]
-    desc: "The vertical product: a browser-agent index, 17 entries checked one by one with verification dates. Leave this site from here."
+  - name: "Vertical Products"
+    url: "/en/products/"
+    tags: ["CrossAgent Lab", "Browserly"]
+    desc: "Two standalone sites behind one entry: CrossAgent Lab tracks cross-border commerce agent use cases and seller MCP intelligence; Browserly compares 17 browser agents."
 ---

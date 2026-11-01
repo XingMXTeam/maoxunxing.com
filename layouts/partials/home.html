@@ -3,7 +3,7 @@
      link prevents stale language-specific pages from rendering the new homepage
      structure without the matching CSS. -->
 <link rel="stylesheet" href="/css/home.css?v=20261017-rss" />
-<link rel="stylesheet" href="/css/hub-b.css?v=20261028-navfix2" />
+<link rel="stylesheet" href="/css/hub-b.css?v=20261101-vertical-products" />
 <style>
   #home-art-canvas {
     position: fixed !important;
@@ -53,25 +53,28 @@
   <!-- 2. Product branch: "currently" block (after swyx.io) -->
   <section class="home-currently" aria-labelledby="home-currently-title">
     <h2 id="home-currently-title" class="home-kicker">{{ i18n "homeCurrentlyLabel" }}</h2>
-    <div class="home-product-grid home-product-grid-three">
+    <div class="home-product-grid">
       <a class="home-product-card home-product-card-tools" href="{{ $aiToolsURL }}">
         <span class="home-product-top"><span class="hub-card-status">Live</span><span class="hub-card-arrow" aria-hidden="true">→</span></span>
         <strong class="home-product-title">{{ i18n "homeProductToolsTitle" }}</strong>
         <span class="home-product-desc">{{ i18n "homeProductToolsDesc" }}</span>
         <span class="hub-card-tags"><span>{{ i18n "homeProductToolsTag1" }}</span><span>{{ i18n "homeProductToolsTag2" }}</span></span>
       </a>
-      <a class="home-product-card home-product-card-crossagent" href="{{ $crossAgentURL }}" target="_blank" rel="noopener noreferrer">
-        <span class="home-product-top"><span class="hub-card-status">Live</span><span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span></span>
-        <strong class="home-product-title">{{ i18n "homeProductCATitle" }}</strong>
-        <span class="home-product-desc">{{ i18n "homeProductCADesc" }}</span>
-        <span class="hub-card-tags"><span>{{ i18n "homeProductCATag1" }}</span><span>{{ i18n "homeProductCATag2" }}</span></span>
-      </a>
-      <a class="home-product-card home-product-card-browserly" href="{{ $browserlyURL }}" target="_blank" rel="noopener noreferrer">
-        <span class="home-product-top"><span class="hub-card-status">Live</span><span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span></span>
-        <strong class="home-product-title">{{ i18n "homeProductBRTitle" }}</strong>
-        <span class="home-product-desc">{{ i18n "homeProductBRDesc" }}</span>
-        <span class="hub-card-tags"><span>{{ i18n "homeProductBRTag1" }}</span><span>{{ i18n "homeProductBRTag2" }}</span></span>
-      </a>
+      <article class="home-product-card home-product-card-vertical" aria-labelledby="home-vertical-products-title">
+        <span class="home-product-top"><span class="hub-card-status">Live</span><span class="home-product-count">{{ i18n "homeProductVerticalCount" }}</span></span>
+        <strong id="home-vertical-products-title" class="home-product-title">{{ i18n "homeProductVerticalTitle" }}</strong>
+        <span class="home-product-desc">{{ i18n "homeProductVerticalDesc" }}</span>
+        <span class="home-product-links">
+          <a class="home-product-link" href="{{ $crossAgentURL }}" target="_blank" rel="noopener noreferrer">
+            <span class="home-product-link-copy"><span class="home-product-link-name">CrossAgent Lab</span><span class="home-product-link-desc">{{ i18n "homeProductCrossAgentDesc" }}</span></span>
+            <span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span>
+          </a>
+          <a class="home-product-link" href="{{ $browserlyURL }}" target="_blank" rel="noopener noreferrer">
+            <span class="home-product-link-copy"><span class="home-product-link-name">Browserly</span><span class="home-product-link-desc">{{ i18n "homeProductBrowserlyDesc" }}</span></span>
+            <span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span>
+          </a>
+        </span>
+      </article>
     </div>
   </section>
 

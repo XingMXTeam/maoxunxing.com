@@ -324,29 +324,20 @@ other = "浏览器"
 [homeProductToolsTag2]
 other = "在线"
 
-[homeProductCATitle]
-other = "CrossAgent Lab"
-
-[homeProductCADesc]
-other = "垂直产品，单独的站。从这里进入。"
-
-[homeProductCATag1]
+[homeProductVerticalTitle]
 other = "垂直产品"
 
-[homeProductCATag2]
-other = "CrossAgent"
+[homeProductVerticalCount]
+other = "2 个独立站"
 
-[homeProductBRTitle]
-other = "Browserly"
+[homeProductVerticalDesc]
+other = "两个独立站合成一个入口：一个看跨境电商 Agent 如何落地，一个逐项对比浏览器智能体。"
 
-[homeProductBRDesc]
-other = "17 个浏览器智能体逐条实测对比，单独的站。从这里进入。"
+[homeProductCrossAgentDesc]
+other = "跨境电商 Agent 用例库与卖家 MCP 情报"
 
-[homeProductBRTag1]
-other = "垂直产品"
-
-[homeProductBRTag2]
-other = "Browserly"
+[homeProductBrowserlyDesc]
+other = "17 个浏览器智能体逐条实测对比"
 
 [homeToolsGridTitle]
 other = "小工具与项目"

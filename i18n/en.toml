@@ -262,29 +262,20 @@ other = "Browser"
 [homeProductToolsTag2]
 other = "Live"
 
-[homeProductCATitle]
-other = "CrossAgent Lab"
+[homeProductVerticalTitle]
+other = "Vertical Products"
 
-[homeProductCADesc]
-other = "The vertical product, on its own site. Start here."
+[homeProductVerticalCount]
+other = "2 standalone sites"
 
-[homeProductCATag1]
-other = "Vertical product"
+[homeProductVerticalDesc]
+other = "Two standalone sites behind one entry: one tracks how cross-border commerce agents are used, the other compares browser agents entry by entry."
 
-[homeProductCATag2]
-other = "CrossAgent"
+[homeProductCrossAgentDesc]
+other = "Cross-border commerce agent use cases and seller MCP intelligence"
 
-[homeProductBRTitle]
-other = "Browserly"
-
-[homeProductBRDesc]
-other = "17 browser agents, checked and compared entry by entry, on its own site. Start here."
-
-[homeProductBRTag1]
-other = "Vertical product"
-
-[homeProductBRTag2]
-other = "Browserly"
+[homeProductBrowserlyDesc]
+other = "17 browser agents, checked and compared entry by entry"
 
 [homeToolsGridTitle]
 other = "Tools and projects"
