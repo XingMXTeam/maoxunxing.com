@@ -10,7 +10,7 @@ draft: false
 custom_toc:
   - title: "1. Five Layers of Constraints: Lay the Tracks First"
   - title: "2. Five Phases, Three Roles: The Workflow Is a State Machine, Not a Document"
-  - title: "3. Skills Named After Artifacts: Phases Belong to the Kernel, Skills to the Roles"
+  - title: "3. Designing the Skills: From Stage Documents to Artifact Contracts"
   - title: "4. Evaluation Must Be Deterministic: Never Let the Model Grade Itself"
   - title: "5. The Kernel: A Long Workflow Cannot Rely on the Model “Remembering”"
   - title: "6. Four Pits I Fell Into"
@@ -108,19 +108,56 @@ One more hard check, tied to tasks: when the developer claims a task is done, it
 
 For readers of the earlier version, a translation table — where did the eight stages go? Init became the `harness init` command. The docs stage disappeared: the contract files are written during Clarify, the artifacts are the docs, and at Done, sync-overview folds the stable conclusions into the project overview. Publish became the delivery gate (your own build, tests, and lint must all pass). Evolution split into two guarded loops, covered in section 5. The remediation loop lives between Evaluate and Implement. The stages did not disappear; they went from "a process to memorize" to "states you never have to think about."
 
-## 3. Skills Named After Artifacts: Phases Belong to the Kernel, Skills to the Roles
+## 3. Designing the Skills: From Stage Documents to Artifact Contracts
 
-If the phases went to the kernel, what is left for Skills? The answer: **skills belong to the roles, and they are named after what they produce.**
+This section gets extra room, because the Skills are where the system changed the most — enough that it deserves saying out loud: **from the classic eight stages to the current CLI, the stages disappeared, yet the Skills grew from 14 to 21, and every one of them got shorter.** That is not a numbers game; the division of labor changed. In the early shape, one Skill was one stage — `ait-clarify`, `ait-generate`, `ait-evaluation` — each 100 to 230 lines, carrying its own triggers ("use me when the user says 'make a plan'"), remembering who ran before it, and conducting an entire stretch of the workflow. It was both the manual and the process itself.
 
-The open-source version ships 21 Skills, and not one of them is named after a phase. Clarify is an authoring chain: `clarify-requirements` gets the requirements clear, then `write-prd`, `write-quality-vision`, `write-tech-design`, `write-dev-plan`, and `write-acceptance-criteria` each produce one contract file. Implement has `implement-task` and `systematic-debugging`. Evaluate has `e2e-testing`, `api-testing`, `deterministic-eval`, and `fix-from-report` for repairs. Delivery has `ship-checklist` and `sync-overview`. Plus a set of general skills (component reconstruction, state-schema-first, i18n extraction, and so on).
+In the new design, two of the Skill's powers were taken away: **sequencing belongs to the kernel, judgment belongs to evaluation, and a Skill keeps exactly one thing — the craft of producing one artifact.** None of the 21 Skills is named after a phase. Clarify is an authoring chain (`clarify-requirements` → `write-prd` → `write-quality-vision` → `write-tech-design` → `write-dev-plan` → `write-acceptance-criteria`); Implement has `implement-task` and `systematic-debugging`; Evaluate has `e2e-testing`, `api-testing`, `deterministic-eval`, `fix-from-report`; Delivery has `ship-checklist` and `sync-overview`; plus a set of general crafts (`component-from-design`, `state-schema-first`, `i18n-extract`, and more). The average is around 70 lines; the shortest is under 40.
 
-Naming them this way has a direct benefit: **every Skill's output is verifiable.** "Run the clarify phase" cannot be accepted or rejected; "produce a prd.md with numbered requirements" can. Complicated work is composed by orchestration, not by writing a single Skill longer — on average each stays under a hundred lines.
+### Anatomy of a Skill
 
-At `harness init`, the Skill pack is installed into the project per role: whichever skills a role needs at its phase are exactly what shows up in that role's task packet. This design was forced by context compression. In a long conversation, context is periodically compacted into summaries, and different carriers fare very differently: I measured that a long document pulled into context by invocation retains single-digit percentages after one compaction and is gone after the second. So process detail is not allowed to live only in the conversation — it must be files on disk (Skills, contracts, state) or states in code. The conversation is responsible only for the current step.
+Take `write-prd` as the specimen. A new Skill has five parts, and every part has a contractual flavor:
 
-My rules for writing a Skill itself have not changed: one job per Skill, step-by-step, every step with a verifiable output, and at least three counterexamples drawn from real failures. Not "don't write bad code" — that is noise — but "if the requirements don't specify an error code, never invent one": a prohibition concrete enough to execute against.
+**The description line is an interface declaration.** It reads: "Harness planner, authoring step 1. Use only after clarify-requirements finished with confirmed-by-user: yes and zero open questions." Role, position, precondition — one sentence, written for the kernel and the roles to read, not as advertising copy for humans.
 
-Finally, Skills need evaluating too. The system keeps a golden set: `harness skills eval` scores the Skills themselves against a battery of standard tasks, and a regression raises an alarm. That is the first of the evolution loops — rules and skills are not enshrined once written; like code, they get regression tests.
+**A Gate.** Before entering the Skill, check the files: does the confirmed clarification summary exist? Are its markers right? Has the project overview been read? If a condition fails, stop and return to the previous Skill. The old shape triggered when the model "felt it was time"; the new preconditions are facts that can be checked one by one.
+
+**An artifact structure (the output contract).** The nine sections of `prd.md` are fixed: problem, users and scenarios, user stories, numbered requirements, non-functional requirements, "what good looks like," non-goals, success measures, overview deltas. The critical line: the requirement ids `REQ-n` are **copied verbatim into rubric.json** and become the denominator of evaluation. A Skill's output is no longer "a document for the next person to read" — it is "a contract for machines to consume." Write it vaguely and the coverage gate stops you on the spot.
+
+**A mode check.** A capability the old Skills simply did not have: the same Skill first reads the state, then decides how to work. If `state.json` marks this feature's PRD as user-imported, `write-prd` switches to normalize-only mode — fill numbering gaps, report missing sections, **never renumber, never reword**. Different entry, different discipline, same file.
+
+**Rules and Done Criteria.** The Rules are concrete prohibitions ("one requirement, one testable sentence"; "no implementation detail in the PRD"). The Done Criteria are checkable exit conditions ("all nine sections present, numbering continuous, no TODOs"), and the last line names the next Skill — as a hint only. The real order is decided by the kernel's state; the Skill does not get a vote.
+
+### Why it is designed this way
+
+Five decisions, with their reasons.
+
+**One: split by artifact, not by phase.** A phase is a process concept, and a unit cut that way cannot be accepted: has "run the clarify phase" been done? Nobody can judge that. An artifact is a physical thing: "prd.md, nine sections, continuous numbering" can be judged. Small grain buys two more things — when something fails you can locate which craft failed, and composition gets flexible: `implement-task` is reused by every feature, `fix-from-report` is reused across phases, instead of a copied variant living inside every stage document.
+
+**Two: strip process knowledge out of the Skills.** The old shape's biggest lesson is pit two in section 6: order written in documents, executed by the model's good behavior, fails at the seams — inevitably. In the new shape a Skill declares only its own gate and its done criteria; "what runs next" is ruled by the state machine. It is moving the traffic rules out of the driver's handbook and into the signal system: the handbook still states the rules, but what makes you stop is no longer your memory.
+
+**Three: make the output contractual, so downstream can verify it mechanically.** A `REQ-3` is born in the PRD, becomes a check item in the rubric, a line of evidence in the evaluation report, and part of the denominator in the coverage gate. The chain only lines up if the source Skill's output is structured enough. Good prose is useless in a Skill; being consumable is everything. That is the deepest difference between documentation written for AI and documentation written for humans.
+
+**Four: package by role — visibility is permission.** At `harness init`, Skills are packed into each role's task packet: the planner gets the authoring chain, the evaluator gets the evaluation Skills, and **the developer's packet contains no evaluation Skills at all** — the same design as its never seeing the rubric. The old shape was a global registry: every Skill visible to everyone, every turn of conversation paying context cost for the whole list — I even had to impose a hard "no more than 12 global Skills" cap to rescue it. The new shape turns that problem from quota management into packaging: there is no global list; each role simply has its few Skills at hand while it works.
+
+**Five: Skills get evaluated too.** The system keeps a golden set (the cases behind `harness skills eval`): standard tasks that periodically score the Skills, with regressions raising alarms. In the old shape, Skill quality was judged by feel, and "evolution" meant a human editing documents after a post-mortem. The new shape manages Skills like code — contracts, gates, regression tests. Rules expire as models improve (section 8 covers ablation); without regression tests you would not even notice when a Skill started holding you back.
+
+One more problem solved along the way: **host portability.** The old Skills were bound to one tool's ecosystem — triggers and question tools were that vendor's conventions. The new Skills reference only files and state — which path the summary lives at, which field in the state file — never a host-specific capability. The same Skill therefore installs into Claude Code, Codex, or any runtime that can read files, with `init` rendering the host's shell around it. Each Skill also ships a Chinese reading copy (`SKILL.zh-CN.md`): humans review in Chinese, the English file is the one that executes — the human-facing and machine-facing versions, formally separated.
+
+Side by side, the difference is plain:
+
+| | Classic eight stages (ait) | The CLI now |
+| --- | --- | --- |
+| Count and grain | 14 Skills, 100–230 lines each | 21 Skills, 38–134 lines each |
+| Named after | Phases (ait-clarify) | Artifacts (write-prd) |
+| Who sets the order | The Skill documents, executed by the model | The kernel state machine |
+| Trigger | User phrasing / events, global registry | Loaded per role task packet |
+| Output | A document for the next phase to read | A contract consumed by rubric and gates |
+| Visibility | Global, with a count cap | Packaged per role; the unneeded is invisible |
+| Quality assurance | Manual post-mortems, hand-edited evolution | Golden-set regression evaluation |
+| Host | Bound to one tool's ecosystem | References only files and state; cross-runtime |
+
+One old lesson survives, relocated rather than refuted: context gets compacted, and process detail that lives in the conversation dies. So a Skill must be a file on disk, handed back to the role by its task packet at every step — never something anyone, model included, is expected to "remember." The previous version of this post titled this section "put it in the wrong place and even a good Skill gets lost." The new design simply concedes the point, and makes "putting it in the right place" the installer's job instead of the user's virtue.
 
 ## 4. Evaluation Must Be Deterministic: Never Let the Model Grade Itself
 
