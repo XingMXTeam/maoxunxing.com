@@ -2661,6 +2661,36 @@
         "source": "/tags/workplace",
         "destination": "/zh-cn/tags/",
         "type": 301
+      },
+      {
+        "source": "/ai/",
+        "destination": "/zh-cn/ai/",
+        "type": 301
+      },
+      {
+        "source": "/ai",
+        "destination": "/zh-cn/ai/",
+        "type": 301
+      },
+      {
+        "source": "/algo/",
+        "destination": "/zh-cn/algo/",
+        "type": 301
+      },
+      {
+        "source": "/algo",
+        "destination": "/zh-cn/algo/",
+        "type": 301
+      },
+      {
+        "source": "/apple-ai-apps-guide/",
+        "destination": "/zh-cn/apple-ai-apps-guide/",
+        "type": 301
+      },
+      {
+        "source": "/apple-ai-apps-guide",
+        "destination": "/zh-cn/apple-ai-apps-guide/",
+        "type": 301
       }
     ],
     "headers": [
