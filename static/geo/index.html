@@ -97,6 +97,150 @@ window.__GEO_DATA__ = {"/api/overview": {"as_of": "2026-11-02", "sites": [{"id":
   key 配置后 collectors（GSC / citations / 日志）接入同一数据库，本面板自动更新。</footer>
 </div>
 <script>
+/* 取数双模式（本脚本先于主脚本运行）：
+   1) window.__GEO_CONFIG__ = { supabaseUrl, anonKey } 存在时：直查 Supabase PostgREST，
+      在前端拼出与本地 /api/* 完全相同的数据结构渲染（活数据）；
+   2) 配置缺失、或活数据任一查询失败：不接管 / 回退到下一层 fetch
+      （静态版是 export_static.py 注入的 __GEO_DATA__ 快照垫片，本地版是 FastAPI 真实 /api）。 */
+(function () {
+  var cfg = window.__GEO_CONFIG__ || {};
+  if (!cfg.supabaseUrl || !cfg.anonKey) return;
+  var nativeFetch = window.fetch.bind(window);
+  var H = { apikey: cfg.anonKey, Authorization: 'Bearer ' + cfg.anonKey };
+  var base = cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/';
+  function sb(table, qs) {
+    return nativeFetch(base + table + '?' + qs, { headers: H }).then(function (r) {
+      if (!r.ok) throw new Error('supabase ' + table + ' ' + r.status);
+      return r.json();
+    });
+  }
+  var allP = null;
+  function loadAll() {
+    if (!allP) {
+      allP = Promise.all([
+        sb('sites', 'select=*&order=id.asc'),
+        sb('audits', 'select=*&order=id.asc'),
+        sb('baseline_snapshots', 'select=*&order=engine.asc,metric.asc'),
+        sb('findings', 'select=*&order=layer.asc,id.asc'),
+        sb('hypotheses', 'select=*&order=code.asc'),
+        sb('prompts', 'select=*&order=site_id.asc,seq.asc'),
+        sb('source_status', 'select=*&order=id.asc'),
+        sb('rules', 'select=*&order=id.asc')
+      ]).then(function (a) {
+        return { sites: a[0], audits: a[1], baselines: a[2], findings: a[3],
+                 hypotheses: a[4], prompts: a[5], sources: a[6], rules: a[7] };
+      });
+    }
+    return allP;
+  }
+  function jparse(v) {
+    if (typeof v === 'string') { try { return JSON.parse(v); } catch (e) { return v; } }
+    return v;
+  }
+  function sitePayload(D, site) {
+    var audit = null;
+    D.audits.forEach(function (a) { if (a.site_id === site.id) audit = a; }); // id 升序，最后一个即最新
+    if (audit) {
+      audit = Object.assign({}, audit);
+      audit.breakdown = jparse(audit.breakdown_json) || {};
+      audit.priorities = jparse(audit.priorities_json) || [];
+      audit.failures = jparse(audit.failures_json) || [];
+      delete audit.breakdown_json; delete audit.priorities_json; delete audit.failures_json;
+    }
+    var nb = D.baselines.filter(function (b) { return b.site_id === site.id; }).length;
+    var out = Object.assign({}, site);
+    out.audit = audit;
+    out.baseline_count = nb;
+    out.baseline_status = nb ? '有快照' : '尚无采样';
+    out.findings_count = D.findings.filter(function (f) { return f.site_id === site.id; }).length;
+    out.unconnected_sources = D.sources.filter(function (s) { return s.status !== '已接入'; }).length;
+    return out;
+  }
+  var FUNNEL_DEFS = [
+    ['L1', '可达', 'robots / CDN 放行、404 与重定向、sitemap、llms.txt、Schema 卫生'],
+    ['L2', '被抓取', '三类 bot 是否真来过（日志）'],
+    ['L3', '被收录', 'GSC 已索引数、URL Inspection'],
+    ['L4', '被检索 / 曝光', 'GSC 曝光与排名、prompt 采样中被 retrieval 到'],
+    ['L5', '被引用', 'Mention / Citation / Position / SoV（采样）'],
+    ['L6', '点击', 'GSC 点击 / CTR、AI referral 会话'],
+    ['L7', '转化', '北极星（产品埋点）']
+  ];
+  var FUNNEL_STATUS = {
+    L1: ['有问题待修', '审计已接入，有实测数据；findings 为审计实锤'],
+    L2: ['未接入', '日志未接入，无 bot 到访数据（不拿 robots allowed 冒充来过）'],
+    L3: ['未接入', 'GSC 未接入，无收录数据'],
+    L4: ['未接入', '依赖 GSC + 采样，均未常态化'],
+    L5: ['部分有数据', '仅 CrossAgent 有 2026-10-29 单次快照；采样未常态化'],
+    L6: ['未接入', '依赖 GSC / Analytics，未接入'],
+    L7: ['未接入', '北极星已定义，产品埋点未接入，无转化数据']
+  };
+  function buildOverview(D) {
+    return {
+      as_of: '2026-11-02',
+      sites: D.sites.map(function (s) { return sitePayload(D, s); }),
+      sources: D.sources,
+      funnel: FUNNEL_DEFS.map(function (fd) {
+        var st = FUNNEL_STATUS[fd[0]];
+        return { layer: fd[0], name: fd[1], desc: fd[2], status: st[0], note: st[1],
+                 findings_count: D.findings.filter(function (f) { return f.layer === fd[0]; }).length };
+      }),
+      counts: {
+        prompts: D.prompts.length,
+        findings: D.findings.length,
+        hypotheses_draft: D.hypotheses.filter(function (h) { return h.status === 'draft'; }).length,
+        baselines: D.baselines.length,
+        rules: D.rules.length
+      },
+      rules: D.rules
+    };
+  }
+  function route(path) {
+    return loadAll().then(function (D) {
+      var domainOf = {};
+      D.sites.forEach(function (s) { domainOf[s.id] = s.domain; });
+      var withDomain = function (row) {
+        return Object.assign({}, row, { site_domain: domainOf[row.site_id] || null });
+      };
+      if (path === '/api/overview') return buildOverview(D);
+      if (path === '/api/findings') return D.findings.map(withDomain);
+      if (path === '/api/hypotheses') return D.hypotheses.map(withDomain);
+      if (path === '/api/prompts') {
+        var out = {};
+        D.sites.forEach(function (s) {
+          out[s.domain] = D.prompts.filter(function (p) { return p.site_id === s.id; });
+        });
+        return out;
+      }
+      var m = path.match(/^\/api\/sites\/(\d+)$/);
+      if (m) {
+        var site = null;
+        D.sites.forEach(function (s) { if (s.id === Number(m[1])) site = s; });
+        if (!site) return undefined;
+        var p = sitePayload(D, site);
+        p.baselines = D.baselines.filter(function (b) { return b.site_id === site.id; });
+        p.findings = D.findings.filter(function (f) { return f.site_id === site.id || f.site_id === null; });
+        p.hypotheses = D.hypotheses.filter(function (h) { return h.site_id === site.id || h.site_id === null; });
+        p.prompts_count = D.prompts.filter(function (x) { return x.site_id === site.id; }).length;
+        return p;
+      }
+      return undefined;
+    });
+  }
+  window.fetch = function (input, init) {
+    var url = typeof input === 'string' ? input : (input && input.url) || '';
+    var path = url;
+    try { path = new URL(url, window.location.href).pathname; } catch (e) {}
+    if (path.indexOf('/api/') !== 0) return nativeFetch(input, init);
+    return route(path).then(function (data) {
+      if (data === undefined) return nativeFetch(input, init);
+      return new Response(JSON.stringify(data), {
+        status: 200, headers: { 'Content-Type': 'application/json' }
+      });
+    }).catch(function () { return nativeFetch(input, init); }); // 活数据失败 → 回退快照/后端
+  };
+})();
+</script>
+<script>
 const $ = id => document.getElementById(id);
 const esc = s => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const stTag = s => s === '已接入' ? '<span class="tag ok">已接入</span>'
