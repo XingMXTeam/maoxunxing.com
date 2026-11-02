@@ -1,0 +1,13 @@
+{{- /* Sitewide Organization entity (GEO H-003): gives AI/search engines one
+       canonical publisher entity. sameAs entries are the accounts linked from
+       the site footer in config.toml (GitHub org + X account). */ -}}
+{{- $schema := dict
+    "@context" "https://schema.org"
+    "@type" "Organization"
+    "name" "毛毛星"
+    "alternateName" "Momo"
+    "url" "https://maoxunxing.com/"
+    "logo" "https://maoxunxing.com/avatar.jpg"
+    "sameAs" (slice "https://github.com/XingMXTeam" "https://x.com/maoxunxing")
+-}}
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
