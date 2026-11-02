@@ -16,7 +16,7 @@ custom_toc:
   - title: "Frequently asked questions"
 ---
 
-*By Momo — maker of [Sayo](https://gosayo.cc), an AI speaking coach · Updated September 30, 2026 · 6 min read*
+*By Momo — maker of [Sayo](/go/sayo), an AI speaking coach · Updated September 30, 2026 · 6 min read*
 
 > **Short answer:** **Yes — ChatGPT is a surprisingly good free speaking partner** for fluency practice, roleplay scenarios, and instant corrections. But it has **three hard limits**: it can't score your pronunciation, it won't build you a structured learning plan, and it never forces you to speak before handing you the answer. This guide shows you exactly how to use it well — and what to pair it with for each gap.
 
@@ -93,7 +93,7 @@ I'll paste sentences I tried to say today. For each one, tell me:
 
 ChatGPT is the best *free* speaking partner most learners have ever had — use it for daily fluency reps and roleplay. But if your real problem is "I understand English but freeze when I need to speak" — the classic word-by-word translation trap — you need something that forces output and trains reusable patterns, not something that hands you answers.
 
-> **Built for the "I understand but can't speak" problem.** [Sayo](https://gosayo.cc) trains Chinese speakers out of the translation trap with a core-verb method: 3 minutes a day, one real-life scenario, forced output before answers, and transfer tests that prove you can reuse each pattern. ¥9/month, 7-day refund, no questions asked. → [Try Sayo free](https://gosayo.cc)
+> **Built for the "I understand but can't speak" problem.** [Sayo](/go/sayo) trains Chinese speakers out of the translation trap with a core-verb method: 3 minutes a day, one real-life scenario, forced output before answers, and transfer tests that prove you can reuse each pattern. ¥9/month, 7-day refund, no questions asked. → [Try Sayo free](/go/sayo)
 
 ## Frequently asked questions
 

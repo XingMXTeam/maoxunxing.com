@@ -2691,6 +2691,36 @@
         "source": "/apple-ai-apps-guide",
         "destination": "/zh-cn/apple-ai-apps-guide/",
         "type": 301
+      },
+      {
+        "source": "/go/crossagent",
+        "destination": "https://crossagent.maoxunxing.com/",
+        "type": 302
+      },
+      {
+        "source": "/go/crossagent/",
+        "destination": "https://crossagent.maoxunxing.com/",
+        "type": 302
+      },
+      {
+        "source": "/go/browserly",
+        "destination": "https://browserly.maoxunxing.com/",
+        "type": 302
+      },
+      {
+        "source": "/go/browserly/",
+        "destination": "https://browserly.maoxunxing.com/",
+        "type": 302
+      },
+      {
+        "source": "/go/sayo",
+        "destination": "https://gosayo.cc/",
+        "type": 302
+      },
+      {
+        "source": "/go/sayo/",
+        "destination": "https://gosayo.cc/",
+        "type": 302
       }
     ],
     "headers": [

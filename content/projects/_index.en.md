@@ -20,7 +20,7 @@ project_sections:
     lead: "What you can open now: the browser tools, three vertical products (Sayo, CrossAgent Lab, Browserly), and this site."
     items:
       - name: Sayo
-        link: https://gosayo.cc/
+        link: /go/sayo
         desc: A vertical product site. Spoken English practice built around core verbs, real-life scenes, and another try in a new scene. Say it yourself first, then look at the hint if you get stuck.
         icon: fas fa-language
         status: Live
@@ -52,7 +52,7 @@ project_sections:
         tags: [Browser tool, Audio]
         featured: true
       - name: CrossAgent Lab
-        link: https://crossagent.maoxunxing.com
+        link: /go/crossagent
         desc: The vertical product. Leave this site and open CrossAgent Lab.
         icon: fas fa-project-diagram
         status: Live
@@ -60,7 +60,7 @@ project_sections:
         tags: [CrossAgent, Product]
         featured: true
       - name: Browserly
-        link: https://browserly.maoxunxing.com
+        link: /go/browserly
         desc: "The vertical product site. A browser-agent index with 17 entries checked one by one, each with a verification date. Leave this site and open Browserly."
         icon: fas fa-table
         status: Live

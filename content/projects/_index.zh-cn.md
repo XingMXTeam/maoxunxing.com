@@ -20,7 +20,7 @@ project_sections:
     lead: "现在就能打开的东西：浏览器小工具、三个垂直产品（Sayo、CrossAgent Lab、Browserly），以及这个站本身。"
     items:
       - name: Sayo
-        link: https://gosayo.cc/
+        link: /go/sayo
         desc: "垂直产品站。英语口语练习：先自己说，卡住了再看提示，然后换个场景再试一次。"
         icon: fas fa-language
         status: Live
@@ -52,7 +52,7 @@ project_sections:
         tags: [浏览器工具, 音频]
         featured: true
       - name: CrossAgent Lab
-        link: https://crossagent.maoxunxing.com
+        link: /go/crossagent
         desc: "垂直产品站。从这里离开本站，直接打开 CrossAgent Lab。"
         icon: fas fa-project-diagram
         status: Live
@@ -60,7 +60,7 @@ project_sections:
         tags: [CrossAgent, 产品]
         featured: true
       - name: Browserly
-        link: https://browserly.maoxunxing.com
+        link: /go/browserly
         desc: "垂直产品站。浏览器智能体对比索引，17 个条目逐项核查、标注日期。从这里离开本站，直接打开 Browserly。"
         icon: fas fa-table
         status: Live
