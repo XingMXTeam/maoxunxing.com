@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-bs-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>fx-geo · GEO 闭环系统</title>
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23206bc4"/><path d="M14 40 L26 40 L31 24 L36 48 L41 40 L50 40" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%235e6ad2"/><path d="M14 40 L26 40 L31 24 L36 48 L41 40 L50 40" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
 <style>
 @charset "UTF-8";
 /*!
@@ -21,24 +21,26 @@
   :root { --tblr-font-sans-serif: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
   .fx-section { scroll-margin-top: 16px; }
-  .fx-h { font-size: 1.05rem; font-weight: 700; margin: 1.75rem 0 .75rem;
-          border-left: 3px solid var(--tblr-primary, #206bc4); padding-left: .55rem; }
+  .page-title { margin-bottom: .75rem; }
+  .fx-h, .fx-sub { font-weight: 700; border-left: 3px solid var(--tblr-primary, #206bc4); padding-left: .55rem; }
+  .fx-h { font-size: 1rem; margin: 1.15rem 0 .45rem; }
+  .fx-sub { font-size: .95rem; margin: 1rem 0 .4rem; }
   .fx-brand { display: flex; align-items: center; gap: .6rem; padding: .35rem 0; }
   .fx-brand-name { font-size: 1.3rem; font-weight: 700; line-height: 1.15; }
   .fx-brand-sub { font-size: .78rem; opacity: .65; }
-  .fx-sb-foot { padding: 1rem .25rem .25rem; font-size: .75rem; opacity: .6; line-height: 1.6; }
-  @media (min-width: 992px) {
-    #sidebar-menu { display: flex !important; flex-direction: column; min-height: calc(100vh - 120px); }
-    .fx-sb-foot { margin-top: auto; }
-  }
-  .funnel-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1rem; }
-  @media (max-width: 1200px) { .funnel-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 700px) { .funnel-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 460px) { .funnel-grid { grid-template-columns: 1fr; } }
-  .bd-row { display: flex; align-items: center; gap: .5rem; margin-top: .32rem; font-size: .78rem; }
-  .bd-label { width: 78px; flex: none; }
-  .bd-bar { flex: 1; height: 5px; }
-  .bd-val { width: 40px; flex: none; text-align: right; }
+  .fx-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .75rem; }
+  .fx-kpis > .card { min-width: 0; }
+  .fx-kpis .card-body { padding: .9rem 1rem; }
+  .fx-kpis .h1 { font-size: 1.75rem; line-height: 1.15; font-variant-numeric: tabular-nums; }
+  .fx-kpis .subheader { text-transform: none; letter-spacing: 0; font-size: .8rem; }
+  .fx-kpis .text-muted { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fx-badges { display: flex; flex-wrap: wrap; gap: .35rem .85rem; align-items: center; margin: 0 0 .5rem; }
+  .fx-count { font-weight: 650; font-variant-numeric: tabular-nums; }
+  .fx-meta { font-size: .8125rem; }
+  .table thead th { font-size: .75rem; text-transform: none; letter-spacing: 0; }
+  .table td, .table th { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tr.fx-empty td { text-align: center; padding: .9rem 1rem; }
+  .table td.fx-wrap, .table th.fx-wrap { white-space: normal; overflow-wrap: anywhere; }
   details.fx-hyp { overflow: hidden; }
   details.fx-hyp summary { cursor: pointer; padding: .8rem 1.25rem; font-weight: 600; list-style: none; }
   details.fx-hyp summary::-webkit-details-marker { display: none; }
@@ -48,6 +50,107 @@
   .fx-cat { color: var(--tblr-primary, #206bc4); font-weight: 600; margin: 14px 0 4px; }
   ol.fx-prompts { margin: 0; padding-left: 22px; }
   ol.fx-prompts li { margin: 3px 0; }
+
+  /* ============ fx-geo 深色驾驶舱（Linear 风令牌）+ 玻璃分牌签名区 ============ */
+  :root {
+    --fx-bg: #07080b; --fx-panel: #0c0d11; --fx-card: #101117;
+    --fx-line: rgba(255,255,255,.075); --fx-line-soft: rgba(255,255,255,.05);
+    --fx-ink: #eef0f6; --fx-sub: #9aa1b1; --fx-mut: #6f7587;
+    --fx-acc: #6d7cff; --fx-acc2: #38bdf8;
+  }
+  html[data-bs-theme="dark"] {
+    --tblr-body-bg: var(--fx-bg);
+    --tblr-bg-surface: var(--fx-card);
+    --tblr-bg-surface-secondary: #14151d;
+    --tblr-bg-surface-tertiary: #17181f;
+    --tblr-border-color: var(--fx-line);
+    --tblr-border-color-translucent: var(--fx-line-soft);
+    --tblr-body-color: #d7dae3;
+    --tblr-primary: var(--fx-acc);
+    --tblr-link-color: #93a0ff;
+  }
+  body { background: var(--fx-bg); color: #d7dae3; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, .page-title, .h1, .h2, .h3 { color: var(--fx-ink); letter-spacing: -.01em; }
+  .subheader { color: var(--fx-mut); letter-spacing: .08em; }
+  .fx-kpis .subheader { letter-spacing: 0; }
+  .text-muted { color: var(--fx-sub) !important; }
+  .page-body { position: relative; }
+  .page-body::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 430px; pointer-events: none;
+    background:
+      radial-gradient(560px 260px at 16% -60px, rgba(109,124,255,.17), transparent 70%),
+      radial-gradient(660px 300px at 84% -90px, rgba(56,189,248,.10), transparent 70%); }
+  .page-body > .container-xl { position: relative; }
+
+  /* 侧栏与顶栏 */
+  .navbar-vertical { background: #090a0e !important; border-right: 1px solid var(--fx-line-soft); box-shadow: none !important; }
+  .navbar-vertical .nav-link { color: var(--fx-sub); border-radius: 8px; margin: 1px 10px; padding: .45rem .7rem; }
+  .navbar-vertical .nav-link:hover { color: var(--fx-ink); background: rgba(255,255,255,.045); }
+  .navbar-vertical .nav-link.active { color: #fff; background: rgba(109,124,255,.15); box-shadow: inset 2px 0 0 var(--fx-acc); }
+  .fx-brand-name { color: #fff; }
+  .page-wrapper > .navbar { background: rgba(7,8,11,.78); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--fx-line-soft); }
+
+  /* 卡片与表格 */
+  .card { background: linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.008));
+    border: 1px solid var(--fx-line); border-radius: 14px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.02), 0 14px 34px -26px rgba(0,0,0,.85); }
+  .table { color: #c9cdd8; }
+  .table > :not(caption) > * > * { background: transparent !important; box-shadow: none !important;
+    border-bottom: 1px solid var(--fx-line-soft); }
+  .table thead th { color: var(--fx-mut); }
+  .table tbody tr:hover > * { background: rgba(255,255,255,.02) !important; }
+  details.fx-hyp summary { color: var(--fx-ink); }
+  details.fx-hyp th { color: var(--fx-mut); font-weight: 500; }
+
+  /* 章节标题：渐变短横代替蓝竖条 */
+  .fx-h, .fx-sub { border-left: none; padding-left: 0; color: var(--fx-ink);
+    display: flex; align-items: center; gap: .55rem; }
+  .fx-h::before, .fx-sub::before { content: ""; width: 16px; height: 2px; border-radius: 2px; flex: none;
+    background: linear-gradient(90deg, var(--fx-acc), var(--fx-acc2)); }
+  .fx-cat { color: #a5aeff; }
+
+  /* 徽章：实色改半透明着色 */
+  .badge { font-weight: 600; border-radius: 999px; padding: .3em .62em; }
+  .badge.bg-green { background: rgba(62,207,142,.14) !important; color: #4ade9e !important; }
+  .badge.bg-red { background: rgba(242,109,109,.13) !important; color: #ff8f8f !important; }
+  .badge.bg-orange { background: rgba(232,163,60,.14) !important; color: #f2c14e !important; }
+  .badge.bg-yellow { background: rgba(232,177,60,.14) !important; color: #f0c35c !important; }
+  .badge.bg-blue { background: rgba(109,124,255,.16) !important; color: #a5aeff !important; }
+  .badge.bg-secondary { background: rgba(255,255,255,.08) !important; color: #a7adbd !important; }
+  .badge.bg-blue-lt { background: rgba(56,189,248,.12) !important; color: #7dd3fc !important; }
+
+  /* Prompt 页签 */
+  .nav-pills .nav-link { color: var(--fx-sub); border-radius: 8px; }
+  .nav-pills .nav-link:hover { color: var(--fx-ink); background: rgba(255,255,255,.04); }
+  .nav-pills .nav-link.active { background: rgba(109,124,255,.18); color: #fff; }
+
+  /* 玻璃分牌（签名区）：指针高光 + 周期扫光 + 微倾斜 */
+  .fx-kpis { perspective: 1100px; }
+  .fx-glass { position: relative; overflow: hidden; border-radius: 18px; isolation: isolate;
+    background: linear-gradient(150deg, rgba(109,124,255,.17), rgba(56,189,248,.05) 42%, rgba(255,255,255,.02) 78%);
+    border: 1px solid rgba(255,255,255,.13);
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform .35s ease; will-change: transform; }
+  .fx-glass::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(480px circle at var(--mx, 50%) var(--my, -20%), rgba(255,255,255,.16), transparent 45%); }
+  .fx-glass::after { content: ""; position: absolute; inset: -40%; z-index: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 42%, rgba(255,255,255,.07) 50%, transparent 58%);
+    transform: translateX(-65%); animation: fx-sheen 7s ease-in-out infinite; }
+  @keyframes fx-sheen { 0%, 55% { transform: translateX(-65%); } 85%, 100% { transform: translateX(65%); } }
+  .fx-glass .card-body { position: relative; z-index: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .fx-glass::after { animation: none; } .fx-glass { transition: none; }
+  }
+
+  /* 分数环 */
+  .fx-gauge { position: relative; width: 118px; height: 118px; margin: .35rem auto .1rem; }
+  .fx-gauge svg { display: block; transform: rotate(-90deg); }
+  .fx-ring-bg { stroke: rgba(255,255,255,.09); }
+  .fx-ring-fg { stroke: #7d8bff; stroke-linecap: round; filter: drop-shadow(0 0 5px rgba(109,124,255,.5)); }
+  .fx-gauge-num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .fx-gauge-num .n { font-size: 2.35rem; font-weight: 800; letter-spacing: -.03em; color: #fff; line-height: 1;
+    font-variant-numeric: tabular-nums; }
+  .fx-gauge-num .u { font-size: .68rem; color: var(--fx-sub); margin-top: .18rem; }
 </style>
 <script>window.__GEO_CONFIG__ = {"supabaseUrl": "https://vtweulckdesznhmhgaob.supabase.co", "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0d2V1bGNrZGVzem5obWhnYW9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM1NTgyODQsImV4cCI6MjEwOTEzNDI4NH0.Ai6mXmzRWKt0aUEl2DLqqPZp9PZf-h55nQMG0D0oqKE"};</script>
 
@@ -78,7 +181,7 @@ window.__GEO_DATA__ = {"/api/overview": {"as_of": "2026-11-02", "sites": [{"id":
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="fx-brand">
-        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#206bc4"/><path d="M14 40 L26 40 L31 24 L36 48 L41 40 L50 40" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#5e6ad2"/><path d="M14 40 L26 40 L31 24 L36 48 L41 40 L50 40" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div>
           <div class="fx-brand-name">fx-geo <span class="badge bg-blue-lt align-middle">v0.1</span></div>
           <div class="fx-brand-sub">GEO 闭环系统</div>
@@ -95,7 +198,6 @@ window.__GEO_DATA__ = {"/api/overview": {"as_of": "2026-11-02", "sites": [{"id":
           <li class="nav-item"><a class="nav-link" href="#prompts"><span class="nav-link-title">Prompt 集</span></a></li>
           <li class="nav-item"><a class="nav-link" href="#rules"><span class="nav-link-title">规则库</span></a></li>
         </ul>
-        <div class="fx-sb-foot">数据截至 <span id="sb-asof">2026-11-02</span><br>审计分是卫生分，不预测引用</div>
       </div>
     </div>
   </aside>
@@ -103,82 +205,65 @@ window.__GEO_DATA__ = {"/api/overview": {"as_of": "2026-11-02", "sites": [{"id":
   <div class="page-wrapper">
     <header class="navbar navbar-expand-md d-print-none">
       <div class="container-xl">
-        <div class="navbar-nav flex-row">
-          <span class="nav-link px-0 fw-bold">总览</span>
+        <div class="d-flex align-items-center gap-3 me-auto">
+          <span class="text-muted fx-meta" id="asof" hidden>截至 <time id="asof-date"></time></span>
+          <span class="text-muted fx-meta" id="last-updated"></span>
         </div>
-        <div class="navbar-nav flex-row ms-auto align-items-center">
-          <span class="nav-link px-2 text-muted" id="last-updated"></span>
-          <span id="mode-badge" class="badge bg-secondary">数据模式：检测中</span>
+        <div class="navbar-nav flex-row align-items-center">
+          <span id="mode-badge" class="badge bg-secondary">检测中</span>
         </div>
       </div>
     </header>
 
     <div class="page-body">
       <div class="container-xl">
-        <div class="page-header mb-3">
-          <h2 class="page-title">总览</h2>
-          <div class="text-muted mt-1">没有数据就不许动手：测量 → 诊断 → 假设卡 → 闸门 → 实验 → 复测归因。未接入的数据源如实标「未接入」，不显示假数字。</div>
-        </div>
-
-        <section id="overview" class="fx-section">
-          <div class="row row-cards" id="kpi-row"></div>
-          <h3 class="fx-h">站点总览</h3>
-          <div class="row row-cards" id="sites"></div>
+        <section id="overview" class="fx-section" data-entity="overview">
+          <h1 class="page-title">总览</h1>
+          <div class="fx-kpis" id="kpi-row"></div>
+          <h3 class="fx-sub" id="sites-h">站点</h3>
+          <div id="sites"></div>
+          <h3 class="fx-sub" id="scores-h">卫生分</h3>
+          <div id="scores"></div>
         </section>
 
-        <section id="sources" class="fx-section">
-          <h3 class="fx-h">数据源接入状态</h3>
-          <div class="card"><div class="table-responsive">
-            <table class="table table-vcenter card-table"><thead><tr><th>数据源</th><th>状态</th><th>说明</th><th>下一步</th></tr></thead>
-            <tbody id="sources-body"></tbody></table>
-          </div></div>
+        <section id="sources" class="fx-section" data-entity="source_status">
+          <h2 class="fx-h" id="sources-h">数据源</h2>
+          <div class="fx-badges" id="source-counts"></div>
+          <div id="sources-table"></div>
         </section>
 
-        <section id="funnel" class="fx-section">
-          <h3 class="fx-h">L1–L7 漏斗</h3>
-          <div class="funnel-grid" id="funnel-grid"></div>
+        <section id="funnel" class="fx-section" data-entity="funnel">
+          <h2 class="fx-h" id="funnel-h">L1–L7 漏斗</h2>
+          <div id="funnel-table"></div>
         </section>
 
-        <section id="findings" class="fx-section">
-          <h3 class="fx-h">诊断问题清单（findings）</h3>
-          <div class="card"><div class="table-responsive">
-            <table class="table table-vcenter card-table"><thead><tr><th>站</th><th>层</th><th>问题</th><th>证据</th></tr></thead>
-            <tbody id="findings-body"></tbody></table>
-          </div></div>
+        <section id="findings" class="fx-section" data-entity="findings">
+          <h2 class="fx-h" id="findings-h">问题清单</h2>
+          <div id="findings-table"></div>
         </section>
 
-        <section id="hypotheses" class="fx-section">
-          <h3 class="fx-h">假设卡（draft · 未过闸门不排期）</h3>
+        <section id="hypotheses" class="fx-section" data-entity="hypotheses">
+          <h2 class="fx-h" id="hypotheses-h">假设卡</h2>
           <div id="hyps"></div>
         </section>
 
-        <section id="baselines" class="fx-section">
-          <h3 class="fx-h">基线快照</h3>
+        <section id="baselines" class="fx-section" data-entity="baseline_snapshots">
+          <h2 class="fx-h" id="baselines-h">基线快照</h2>
           <div id="baselines-body"></div>
         </section>
 
-        <section id="prompts" class="fx-section">
-          <h3 class="fx-h">Prompt 集（冻结 v1）</h3>
+        <section id="prompts" class="fx-section" data-entity="prompts">
+          <h2 class="fx-h" id="prompts-h">Prompt 集</h2>
           <ul class="nav nav-pills mb-3" id="ptabs"></ul>
           <div class="card"><div class="card-body" id="plist"></div></div>
         </section>
 
-        <section id="rules" class="fx-section">
-          <h3 class="fx-h">规则库</h3>
-          <div class="card"><div class="table-responsive">
-            <table class="table table-vcenter card-table"><thead><tr><th>规则</th><th>内容</th><th>证据等级</th><th>来源</th></tr></thead>
-            <tbody id="rules-body"></tbody></table>
-          </div></div>
+        <section id="rules" class="fx-section" data-entity="rules">
+          <h2 class="fx-h" id="rules-h">规则库</h2>
+          <div id="rules-table"></div>
         </section>
       </div>
     </div>
-
-    <footer class="footer footer-transparent d-print-none">
-      <div class="container-xl">
-        <div class="text-muted">数据截至 2026-11-02（审计与基线均为该日前的实测留档）。审计分是<b>卫生分，不预测引用</b>。
-        key 配置后 collectors（GSC / citations / 日志）接入同一数据库，本面板自动更新。</div>
-      </div>
-    </footer>
   </div>
 </div>
 <script>
@@ -333,14 +418,27 @@ window.__GEO_DATA__ = {"/api/overview": {"as_of": "2026-11-02", "sites": [{"id":
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => (s ?? '').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const stBadge = s => s === '已接入' ? '<span class="badge bg-green">已接入</span>'
-  : s === '未接入' ? '<span class="badge bg-red">未接入</span>'
-  : s === '未配置' ? '<span class="badge bg-yellow">未配置</span>'
-  : '<span class="badge bg-secondary">' + esc(s) + '</span>';
-const fBadge = s => s === '未接入' ? '<span class="badge bg-red">未接入</span>'
-  : s === '有问题待修' ? '<span class="badge bg-orange">有问题待修</span>'
-  : '<span class="badge bg-yellow">' + esc(s) + '</span>';
-let PROMPTS = {};
+const STATUS_CLASS = {
+  '已接入': 'bg-green', '有快照': 'bg-green', '未接入': 'bg-red',
+  '有问题待修': 'bg-orange', '未配置': 'bg-yellow', '部分有数据': 'bg-yellow'
+};
+const stBadge = s => {
+  if (s === null || s === undefined || s === '') return '—';
+  return `<span class="badge ${STATUS_CLASS[s] || 'bg-secondary'}">${esc(s)}</span>`;
+};
+const textCell = v => (v === null || v === undefined || v === '') ? '—' : esc(v);
+const numCell = v => typeof v === 'number' ? String(v) : textCell(v);
+const emptyRow = (n, status) =>
+  `<tr class="fx-empty"><td colspan="${n}" role="status">${stBadge(status)}</td></tr>`;
+const tableHtml = (labelledby, headers, bodyHtml) => {
+  const th = headers.map(([field, label]) =>
+    `<th scope="col" data-field="${esc(field)}">${esc(label)}</th>`).join('');
+  return `<div class="card"><div class="table-responsive"><table class="table table-sm table-vcenter card-table" aria-labelledby="${esc(labelledby)}"><thead><tr>${th}</tr></thead><tbody>${bodyHtml}</tbody></table></div></div>`;
+};
+const load = url => fetch(url).then(r => {
+  if (!r.ok) throw new Error(String(r.status));
+  return r.json();
+});
 
 /* 边栏：移动端折叠 + 导航高亮（纯原生 JS，不依赖 Tabler JS） */
 $('sb-toggle').addEventListener('click', () => $('sidebar-menu').classList.toggle('show'));
@@ -358,8 +456,8 @@ document.querySelectorAll('#sidebar-menu .nav-link').forEach(a =>
   if (cfg.supabaseUrl && cfg.anonKey) {
     const url = cfg.supabaseUrl.replace(/\/$/, '') + '/rest/v1/sites?select=id&limit=1';
     fetch(url, { headers: { apikey: cfg.anonKey, Authorization: 'Bearer ' + cfg.anonKey } })
-      .then(r => set(r.ok ? '活数据 · Supabase' : '快照（活数据不可达，已回退）', r.ok ? 'bg-green' : 'bg-yellow'))
-      .catch(() => set('快照（活数据不可达，已回退）', 'bg-yellow'));
+      .then(r => set(r.ok ? '活数据 · Supabase' : '快照 · 已回退', r.ok ? 'bg-green' : 'bg-yellow'))
+      .catch(() => set('快照 · 已回退', 'bg-yellow'));
   } else if (window.__GEO_DATA__) {
     set('快照', 'bg-secondary');
   } else {
@@ -367,122 +465,216 @@ document.querySelectorAll('#sidebar-menu .nav-link').forEach(a =>
   }
 })();
 
-const BD_KEYS = [['robots','robots'],['llms','llms.txt'],['schema','Schema'],['meta','Meta'],
-  ['content','内容'],['signals','信号'],['ai_discovery','AI 发现'],['brand_entity','品牌实体']];
-const bdBars = a => {
-  if (!a || !a.breakdown) return '';
-  const bd = a.breakdown;
-  let h = BD_KEYS.filter(([k]) => bd[k] && typeof bd[k].score === 'number').map(([k, label]) => {
-    const pct = bd[k].max ? Math.round(bd[k].score / bd[k].max * 100) : 0;
-    return `<div class="bd-row"><span class="bd-label text-muted">${label}</span>
-      <div class="progress bd-bar"><div class="progress-bar ${pct === 0 ? 'bg-danger' : pct < 50 ? 'bg-yellow' : ''}" style="width:${pct}%"></div></div>
-      <span class="bd-val">${bd[k].score}/${bd[k].max}</span></div>`;
-  }).join('');
-  if (typeof bd.negative_penalty === 'number')
-    h += `<div class="text-muted mt-2">扣分项 ${bd.negative_penalty}</div>`;
-  return h;
+const BD_FIELDS = ['robots', 'llms', 'schema', 'meta', 'content', 'signals', 'ai_discovery', 'brand_entity'];
+const SCORE_HEADERS = [['domain', 'domain'], ['score', 'score'], ['band', 'band']]
+  .concat(BD_FIELDS.map(k => [k, k]), [['negative_penalty', 'negative_penalty']]);
+const SITE_HEADERS = [['domain', 'domain'], ['name', 'name'], ['role', 'role'],
+  ['baseline_status', 'baseline_status'], ['baseline_count', 'baseline_count'],
+  ['findings_count', 'findings_count'], ['north_star', 'north_star']];
+const SOURCE_HEADERS = [['source', 'source'], ['label', 'label'], ['status', 'status'], ['updated_at', 'updated_at']];
+const FUNNEL_HEADERS = [['layer', 'layer'], ['name', 'name'], ['status', 'status'], ['findings_count', 'findings_count']];
+const FINDING_HEADERS = [['site', 'site'], ['layer', 'layer'], ['severity', 'severity'], ['title', 'title'], ['evidence', 'evidence']];
+const RULE_HEADERS = [['name', 'name'], ['statement', 'statement'], ['evidence_level', 'evidence_level'], ['source', 'source']];
+const BL_HEADERS = [['snapshot_date', 'snapshot_date'], ['engine', 'engine'], ['metric', 'metric'],
+  ['subject', 'subject'], ['value', 'value'], ['unit', 'unit'], ['caliber', 'caliber'], ['source', 'source']];
+const HROWS = [['假设', 'hypothesis'], ['主指标', 'primary_metric'], ['基线值', 'baseline_value'], ['目标', 'target'],
+  ['护栏', 'guardrail'], ['成功阈值', 'threshold'], ['对照组', 'control_group'], ['成本', 'cost'], ['停止条件', 'stop_condition']];
+const STATUS_ORDER = ['已接入', '未接入', '未配置', '未部署'];
+
+const BD_MAX = { robots: 18, llms: 18, schema: 16, meta: 14, content: 12, signals: 6, ai_discovery: 6, brand_entity: 10 };
+const bdCell = (bd, key) => {
+  const cell = bd && bd[key];
+  if (typeof cell === 'number') return BD_MAX[key] ? `${cell}/${BD_MAX[key]}` : String(cell);
+  if (!cell || typeof cell.score !== 'number') return '—';
+  return typeof cell.max === 'number' ? `${cell.score}/${cell.max}` : String(cell.score);
 };
-const scoreKpi = s => `
-  <div class="col-12 col-md-6 col-xl-3"><div class="card h-100"><div class="card-body">
-    <div class="subheader">${esc(s.domain)}</div>
-    <div class="d-flex align-items-baseline mt-1">
-      <div class="h1 mb-0 me-2">${s.audit ? s.audit.score : '—'}</div>
-      <div class="text-muted">/ 100（${s.audit ? esc(s.audit.band) : ''}）</div>
+const scoreKpi = s => {
+  const a = s.audit;
+  const has = !!(a && typeof a.score === 'number');
+  const C = 326.7;
+  const off = has ? (C * (1 - Math.max(0, Math.min(100, a.score)) / 100)).toFixed(1) : C;
+  return `<div class="card fx-glass"><div class="card-body">
+    <div class="subheader" style="text-align:center">卫生分</div>
+    <div class="fx-gauge">
+      <svg width="118" height="118" viewBox="0 0 118 118" aria-hidden="true">
+        <circle class="fx-ring-bg" cx="59" cy="59" r="52" fill="none" stroke-width="7"/>
+        <circle class="fx-ring-fg" cx="59" cy="59" r="52" fill="none" stroke-width="7"
+          stroke-dasharray="${C}" stroke-dashoffset="${off}"/>
+      </svg>
+      <div class="fx-gauge-num"><div class="n">${has ? a.score : '—'}</div><div class="u">/ 100</div></div>
     </div>
-    <div class="text-muted mt-1">审计卫生分 · 卫生分，不预测引用</div>
-    <div class="mt-2">${bdBars(s.audit)}</div>
-  </div></div></div>`;
-const statKpi = (label, num, unit, sub) => `
-  <div class="col-12 col-md-4 col-xl-2"><div class="card h-100"><div class="card-body">
-    <div class="subheader">${label}</div>
-    <div class="h1 mt-1 mb-1">${num}<span class="text-muted fs-4"> ${unit}</span></div>
-    <div class="text-muted">${sub}</div>
-  </div></div></div>`;
+    ${has && a.band ? `<div class="text-muted" style="text-align:center">${esc(a.band)}</div>` : ''}
+    <div class="text-muted mt-1" style="text-align:center" title="${esc(s.domain)}">${esc(s.domain)}</div>
+  </div></div>`;
+};
+const statKpi = (label, num, unit) => {
+  const value = (num === '—' || num === null || num === undefined)
+    ? '—'
+    : `${num}<span class="text-muted fs-4"> ${esc(unit)}</span>`;
+  return `<div class="card"><div class="card-body">
+    <div class="subheader">${esc(label)}</div>
+    <div class="h1 mb-0 mt-1">${value}</div>
+  </div></div>`;
+};
+const siteRow = s => `<tr>
+  <td>${textCell(s.domain)}</td><td>${textCell(s.name)}</td><td>${textCell(s.role)}</td>
+  <td>${s.baseline_status ? stBadge(s.baseline_status) : '—'}</td>
+  <td>${numCell(s.baseline_count)}</td><td>${numCell(s.findings_count)}</td>
+  <td class="fx-wrap">${textCell(s.north_star)}</td></tr>`;
+const scoreRow = s => {
+  const a = s.audit || {};
+  const bd = a.breakdown || {};
+  const score = typeof a.score === 'number' ? String(a.score) : '—';
+  const cells = BD_FIELDS.map(k => `<td>${bdCell(bd, k)}</td>`).join('');
+  const pen = typeof bd.negative_penalty === 'number' ? String(bd.negative_penalty) : '—';
+  return `<tr><td>${textCell(s.domain)}</td><td>${score}</td><td>${textCell(a.band)}</td>${cells}<td>${pen}</td></tr>`;
+};
+const sourceRow = x => `<tr data-source="${esc(x.source || '')}" data-status="${esc(x.status || '')}" data-detail="${esc(x.detail || '')}" data-next-step="${esc(x.next_step || '')}">
+  <td>${textCell(x.source)}</td><td>${textCell(x.label)}</td><td>${stBadge(x.status)}</td><td>${textCell(x.updated_at)}</td></tr>`;
+const sourceBody = sources => (!sources || !sources.length)
+  ? emptyRow(SOURCE_HEADERS.length, '未接入')
+  : sources.map(sourceRow).join('');
+const funnelRow = f => `<tr data-layer="${esc(f.layer || '')}" data-status="${esc(f.status || '')}" data-note="${esc(f.note || '')}">
+  <td>${textCell(f.layer)}</td><td>${textCell(f.name)}</td><td>${stBadge(f.status)}</td><td>${numCell(f.findings_count)}</td></tr>`;
+const findingRow = f => `<tr data-detail="${esc(f.detail || '')}" data-source="${esc(f.source || '')}" data-severity="${esc(f.severity || '')}">
+  <td>${textCell(f.site_domain || f.scope)}</td><td>${textCell(f.layer)}</td>
+  <td>${f.severity ? stBadge(f.severity) : '—'}</td>
+  <td class="fx-wrap">${textCell(f.title)}</td><td class="fx-wrap">${textCell(f.evidence)}</td></tr>`;
+const ruleRow = r => `<tr>
+  <td class="fx-wrap">${textCell(r.name)}</td><td class="fx-wrap">${textCell(r.statement)}</td>
+  <td>${textCell(r.evidence_level)}</td><td class="fx-wrap">${textCell(r.source)}</td></tr>`;
+const renderSourceCounts = sources => {
+  const el = $('source-counts');
+  if (!sources || !sources.length) { el.innerHTML = ''; return; }
+  const counts = {};
+  sources.forEach(s => { const k = s.status || '—'; counts[k] = (counts[k] || 0) + 1; });
+  const keys = STATUS_ORDER.filter(k => counts[k]).concat(Object.keys(counts).filter(k => !STATUS_ORDER.includes(k) && k !== '—'));
+  el.innerHTML = keys.map(k =>
+    `<span class="fx-stat" data-status="${esc(k)}" data-count="${counts[k]}">${stBadge(k)} <span class="fx-count">${counts[k]}</span></span>`).join('');
+};
 
-fetch('/api/overview').then(r => r.json()).then(o => {
-  if (o.as_of) $('sb-asof').textContent = o.as_of;
-  const runs = o.sites.map(s => s.audit && s.audit.run_at).filter(Boolean).sort();
-  if (runs.length) $('last-updated').textContent = '最后更新 ' + runs[runs.length - 1].slice(0, 10);
-  const okN = o.sources.filter(x => x.status === '已接入').length;
-  const l1 = (o.funnel.find(f => f.layer === 'L1') || {}).findings_count ?? 0;
-  $('kpi-row').innerHTML = o.sites.map(scoreKpi).join('')
-    + statKpi('未接入数据源', o.sources.length - okN, '个', `共 ${o.sources.length} 个 · 已接入 ${okN} 个`)
-    + statKpi('待修 findings', o.counts.findings, '条', `其中 L1 层 ${l1} 条`)
-    + statKpi('draft 假设卡', o.counts.hypotheses_draft, '张', '未过闸门不排期');
-  $('sites').innerHTML = o.sites.map(s => `
-    <div class="col-12 col-lg-6"><div class="card h-100"><div class="card-body">
-      <div class="h3 mb-1">${esc(s.name)} <span class="text-muted fs-5">${esc(s.domain)}</span></div>
-      <div class="mt-2">审计卫生分 <span class="h2 mb-0">${s.audit ? s.audit.score : '—'}</span>
-        <span class="text-muted">/ 100（${s.audit ? esc(s.audit.band) : ''}）· 卫生分，不预测引用</span></div>
-      <div class="text-muted mt-2">基线状态：${esc(s.baseline_status)}${s.baseline_count ? `（${s.baseline_count} 条快照）` : ''}
-        · 本站 findings ${s.findings_count} 条 · 未接入数据源 ${s.unconnected_sources} 个</div>
-      <div class="mt-2">北极星：${esc(s.north_star)}</div>
-    </div></div></div>`).join('');
-  $('sources-body').innerHTML = o.sources.map(x => `<tr><td>${esc(x.label)}</td><td>${stBadge(x.status)}</td>
-    <td>${esc(x.detail)}</td><td>${esc(x.next_step)}</td></tr>`).join('');
-  $('funnel-grid').innerHTML = o.funnel.map(f => `
-    <div class="card h-100"><div class="card-body">
-      <div class="fw-bold">${f.layer} ${esc(f.name)}</div>
-      <div class="mt-2">${fBadge(f.status)} <span class="text-muted">· findings ${f.findings_count}</span></div>
-      <div class="text-muted mt-2">${esc(f.note)}</div>
-    </div></div>`).join('');
-  $('rules-body').innerHTML = o.rules.map(r => `<tr><td>${esc(r.name)}</td><td>${esc(r.statement)}</td>
-    <td>${esc(r.evidence_level)}</td><td>${esc(r.source)}</td></tr>`).join('');
-});
+const renderOverview = o => {
+  const failed = !o || typeof o !== 'object';
+  const sites = !failed && Array.isArray(o.sites) ? o.sites : [];
+  const sources = !failed && Array.isArray(o.sources) ? o.sources : null;
+  const funnel = !failed && Array.isArray(o.funnel) ? o.funnel : null;
+  const rules = !failed && Array.isArray(o.rules) ? o.rules : null;
+  const counts = !failed && o.counts && typeof o.counts === 'object' ? o.counts : null;
+  const asof = $('asof');
+  if (!failed && o.as_of) {
+    const t = $('asof-date');
+    t.textContent = o.as_of;
+    t.setAttribute('datetime', String(o.as_of));
+    asof.hidden = false;
+  } else asof.hidden = true;
+  const runs = sites.map(s => s.audit && s.audit.run_at).filter(Boolean).sort();
+  $('last-updated').textContent = runs.length ? '审计 ' + String(runs[runs.length - 1]).slice(0, 10) : '';
+  $('kpi-row').innerHTML = sites.map(scoreKpi).join('')
+    + statKpi('findings', counts && typeof counts.findings === 'number' ? counts.findings : '—', '条')
+    + statKpi('draft', counts && typeof counts.hypotheses_draft === 'number' ? counts.hypotheses_draft : '—', '张');
+  $('sites').innerHTML = tableHtml('sites-h', SITE_HEADERS,
+    sites.length ? sites.map(siteRow).join('') : emptyRow(SITE_HEADERS.length, '无记录'));
+  $('scores').innerHTML = tableHtml('scores-h', SCORE_HEADERS,
+    sites.length ? sites.map(scoreRow).join('') : emptyRow(SCORE_HEADERS.length, '无记录'));
+  renderSourceCounts(sources);
+  $('sources-table').innerHTML = tableHtml('sources-h', SOURCE_HEADERS, sourceBody(sources));
+  $('funnel-table').innerHTML = tableHtml('funnel-h', FUNNEL_HEADERS,
+    funnel && funnel.length ? funnel.map(funnelRow).join('') : emptyRow(FUNNEL_HEADERS.length, '无记录'));
+  $('rules-table').innerHTML = tableHtml('rules-h', RULE_HEADERS,
+    rules && rules.length ? rules.map(ruleRow).join('') : emptyRow(RULE_HEADERS.length, '无记录'));
+};
 
-fetch('/api/findings').then(r => r.json()).then(fs => {
-  $('findings-body').innerHTML = fs.map(f => `<tr>
-    <td>${esc(f.site_domain || f.scope || '—')}</td><td><span class="badge bg-blue-lt">${esc(f.layer)}</span></td>
-    <td><b>${esc(f.title)}</b><div class="text-muted">${esc(f.detail || '')}</div></td>
-    <td class="text-muted">${esc(f.evidence)}</td></tr>`).join('');
-});
-
-const HROWS = [['假设','hypothesis'],['主指标','primary_metric'],['基线值','baseline_value'],['目标','target'],
-  ['护栏','guardrail'],['成功阈值','threshold'],['对照组','control_group'],['成本','cost'],['停止条件','stop_condition'],['卫生复核备注','hygiene_note']];
-fetch('/api/hypotheses').then(r => r.json()).then(hs => {
-  $('hyps').innerHTML = hs.map(h => `<details class="card fx-hyp mb-3">
-    <summary>${esc(h.code)} · ${esc(h.title)} <span class="badge bg-secondary">${esc(h.status)}</span>
-      <span class="text-muted">${esc(h.layer)} · ${esc(h.scope || '')}</span></summary>
-    <div class="table-responsive"><table class="table table-vcenter card-table mb-0">${HROWS.map(([k, f]) => `<tr><th>${k}</th><td>${esc(h[f])}</td></tr>`).join('')}</table></div>
-  </details>`).join('');
-});
-
-Promise.all([
-  fetch('/api/sites/1').then(r => r.json()).catch(() => null),
-  fetch('/api/prompts').then(r => r.json())
-]).then(([ , all]) => {
-  PROMPTS = all;
-  const domains = Object.keys(all);
+const renderFindings = fs => {
+  const body = Array.isArray(fs) && fs.length ? fs.map(findingRow).join('') : emptyRow(FINDING_HEADERS.length, '无记录');
+  $('findings-table').innerHTML = tableHtml('findings-h', FINDING_HEADERS, body);
+};
+const renderHyps = hs => {
+  if (!Array.isArray(hs) || !hs.length) {
+    $('hyps').innerHTML = `<div class="card"><div class="card-body" role="status">${stBadge('无记录')}</div></div>`;
+    return;
+  }
+  $('hyps').innerHTML = hs.map(h => {
+    const scope = h.scope ? ` · ${esc(h.scope)}` : '';
+    return `<details class="card fx-hyp mb-3" data-code="${esc(h.code)}" data-status="${esc(h.status || '')}" data-layer="${esc(h.layer || '')}">
+      <summary>${esc(h.code)} · ${esc(h.title)} ${stBadge(h.status)}
+        <span class="text-muted">${esc(h.layer || '')}${scope}</span></summary>
+      <div class="table-responsive"><table class="table table-sm table-vcenter card-table mb-0">${HROWS.map(([label, field]) =>
+        `<tr><th scope="row" data-field="${esc(field)}">${esc(label)}</th><td class="fx-wrap">${textCell(h[field])}</td></tr>`).join('')}</table></div>
+    </details>`;
+  }).join('');
+};
+const baselineTable = (rows, labelId) => {
+  const body = Array.isArray(rows) && rows.length ? rows.map(b => `<tr>
+      <td>${textCell(b.snapshot_date)}</td><td>${textCell(b.engine)}</td><td>${textCell(b.metric)}</td>
+      <td>${textCell(b.subject)}</td><td>${numCell(b.value)}</td><td>${textCell(b.unit)}</td>
+      <td class="fx-wrap">${textCell(b.caliber)}</td><td class="fx-wrap">${textCell(b.source)}</td></tr>`).join('')
+    : emptyRow(BL_HEADERS.length, Array.isArray(rows) ? '尚无采样' : '无记录');
+  return tableHtml(labelId, BL_HEADERS, body);
+};
+const renderBaselines = (lab, main) => {
+  const sites = [lab, main].filter(s => s && s.domain);
+  $('baselines-body').innerHTML = sites.length ? sites.map(s => {
+    const hid = 'bl-' + s.id;
+    return `<h3 class="fx-sub" id="${esc(hid)}">${esc(s.name)} <span class="text-muted fw-normal">${esc(s.domain)}</span></h3>`
+      + baselineTable(Array.isArray(s.baselines) ? s.baselines : [], hid);
+  }).join('') : baselineTable(null, 'baselines-h');
+};
+const renderPrompts = all => {
+  const domains = all && typeof all === 'object' && !Array.isArray(all)
+    ? Object.keys(all).filter(d => Array.isArray(all[d])) : [];
+  if (!domains.length) {
+    $('ptabs').innerHTML = '';
+    $('plist').innerHTML = stBadge('无记录');
+    return;
+  }
+  const tabLabel = (d, rows) => {
+    const vers = [...new Set(rows.map(p => p.set_version).filter(Boolean))];
+    return vers.length === 1 ? `${d} · ${vers[0]} · ${rows.length}` : `${d} · ${rows.length}`;
+  };
   $('ptabs').innerHTML = domains.map((d, i) =>
-    `<li class="nav-item"><button data-d="${esc(d)}" class="nav-link ${i === 0 ? 'active' : ''}">${esc(d)}（${all[d].length} 题）</button></li>`).join('');
+    `<li class="nav-item"><button type="button" data-d="${esc(d)}" class="nav-link ${i === 0 ? 'active' : ''}">${esc(tabLabel(d, all[d]))}</button></li>`).join('');
   const show = d => {
     const cats = {};
     all[d].forEach(p => { (cats[p.category] = cats[p.category] || []).push(p); });
     $('plist').innerHTML = Object.entries(cats).map(([c, ps]) =>
-      `<div class="fx-cat">${esc(c)}（${ps.length}）</div><ol class="fx-prompts">` +
-      ps.map(p => `<li>${esc(p.text)}</li>`).join('') + '</ol>').join('');
-    document.querySelectorAll('#ptabs button').forEach(b =>
-      b.classList.toggle('active', b.dataset.d === d));
+      `<div class="fx-cat">${esc(c)} · ${ps.length}</div><ol class="fx-prompts">` +
+      ps.map(p => `<li data-seq="${esc(p.seq)}">${esc(p.text)}</li>`).join('') + '</ol>').join('');
+    document.querySelectorAll('#ptabs button').forEach(b => b.classList.toggle('active', b.dataset.d === d));
   };
-  document.querySelectorAll('#ptabs button').forEach(b =>
-    b.onclick = () => show(b.dataset.d));
-  if (domains.length) show(domains[0]);
-});
+  document.querySelectorAll('#ptabs button').forEach(b => { b.onclick = () => show(b.dataset.d); });
+  show(domains[0]);
+};
 
+load('/api/overview').then(renderOverview).catch(() => renderOverview(null));
+load('/api/findings').then(renderFindings).catch(() => renderFindings(null));
+load('/api/hypotheses').then(renderHyps).catch(() => renderHyps(null));
+load('/api/prompts').then(renderPrompts).catch(() => renderPrompts(null));
 Promise.all([
-  fetch('/api/sites/2').then(r => r.json()),
-  fetch('/api/sites/1').then(r => r.json())
-]).then(([lab, main]) => {
-  const tbl = s => s.baselines && s.baselines.length ? `
-    <div class="card"><div class="table-responsive"><table class="table table-vcenter card-table"><thead><tr><th>日期</th><th>引擎</th><th>指标</th><th>对象</th><th>值</th><th>口径</th></tr></thead>
-    <tbody>${s.baselines.map(b => `<tr><td>${esc(b.snapshot_date)}</td><td>${esc(b.engine)}</td>
-      <td>${esc(b.metric)}</td><td>${esc(b.subject)}</td><td><b>${b.value}</b> ${esc(b.unit || '')}</td>
-      <td class="text-muted">${esc(b.caliber)}</td></tr>`).join('')}</tbody></table></div></div>`
-    : '<div class="card"><div class="card-body">尚无采样——该站还没有任何一轮 AI 可见度采样数据。</div></div>';
-  $('baselines-body').innerHTML =
-    `<div class="text-muted" style="margin:6px 0">CrossAgent Lab（${esc(lab.domain)}）· 来源 ${esc((lab.baselines[0] || {}).source || '')}</div>` + tbl(lab) +
-    `<div class="text-muted" style="margin:12px 0 6px">主站（${esc(main.domain)}）</div>` + tbl(main);
-});
+  load('/api/sites/2').catch(() => null),
+  load('/api/sites/1').catch(() => null)
+]).then(([lab, main]) => renderBaselines(lab, main));
+</script>
+<script>
+/* 玻璃分牌：指针追随高光 + 微倾斜（纯增强；减动效偏好时不启用） */
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var row = document.getElementById('kpi-row');
+  if (!row) return;
+  row.addEventListener('pointermove', function (e) {
+    var card = e.target && e.target.closest ? e.target.closest('.fx-glass') : null;
+    if (!card) return;
+    var r = card.getBoundingClientRect();
+    var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    card.style.setProperty('--mx', (x * 100) + '%');
+    card.style.setProperty('--my', (y * 100) + '%');
+    card.style.setProperty('--ry', ((x - .5) * 5).toFixed(2) + 'deg');
+    card.style.setProperty('--rx', ((.5 - y) * 5).toFixed(2) + 'deg');
+  });
+  row.addEventListener('pointerout', function (e) {
+    var card = e.target && e.target.closest ? e.target.closest('.fx-glass') : null;
+    if (card) { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); }
+  });
+})();
 </script>
 </body>
 </html>
