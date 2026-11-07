@@ -9,6 +9,19 @@
       <a href="https://leanpub.com/optionsmadesimple" target="_blank" rel="noopener noreferrer">{{ i18n "footerBook" }}</a>
     </div>
   </nav>
+  <div class="footer-contact">
+    <p class="footer-contact-label">{{ i18n "footerContactLabel" }}</p>
+    <div class="footer-contact-body">
+      <div class="footer-contact-lines">
+        <p>{{ i18n "footerContactWechat" }}<span class="footer-contact-id">maoxunxing</span></p>
+        <p>{{ i18n "footerContactAccount" }}</p>
+      </div>
+      <figure class="footer-contact-qr">
+        <img src="{{ "images/wechat-qr.jpg" | relURL }}" alt="{{ i18n "footerContactQrAlt" }}" width="110" height="110" loading="lazy">
+        <figcaption>{{ i18n "footerContactScan" }}</figcaption>
+      </figure>
+    </div>
+  </div>
   <div class="footer-inner">
   {{ if not .Site.Params.hideCopyright }}
     <a

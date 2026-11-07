@@ -37,6 +37,21 @@ other = "Vertical product"
 [footerSecondaryLabel]
 other = "Also on this site"
 
+[footerContactLabel]
+other = "Contact"
+
+[footerContactWechat]
+other = "WeChat: "
+
+[footerContactAccount]
+other = "WeChat Official Account \u201c毛毛星\u201d \u2014 search for it in WeChat to follow."
+
+[footerContactQrAlt]
+other = "Maoxunxing's personal WeChat QR code"
+
+[footerContactScan]
+other = "Scan to add me"
+
 [footerInvesting]
 other = "Long-term investing"
 

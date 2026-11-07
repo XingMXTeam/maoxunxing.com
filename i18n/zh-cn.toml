@@ -37,6 +37,21 @@ other = "垂直产品"
 [footerSecondaryLabel]
 other = "其他内容"
 
+[footerContactLabel]
+other = "联系我"
+
+[footerContactWechat]
+other = "微信号："
+
+[footerContactAccount]
+other = "微信公众号「毛毛星」，在微信里搜索即可关注。"
+
+[footerContactQrAlt]
+other = "毛毛星的个人微信二维码"
+
+[footerContactScan]
+other = "扫码加微信"
+
 [footerInvesting]
 other = "长期投资"
 
