@@ -3,7 +3,7 @@ title: 垂直产品
 type: projects
 layout: projects
 kicker: 独立产品
-intro: "Sayo、CrossAgent Lab 和 Browserly 是三个独立站。这里把它们合成一个入口，进来以后再按你要看的主题选。"
+intro: "Sayo、CrossAgent Lab、Browserly 和 HackHub 是四个独立站。这里把它们合成一个入口，进来以后再按你要看的主题选。"
 project_links:
   - label: CrossAgent Lab
     url: /go/crossagent
@@ -14,11 +14,14 @@ project_links:
   - label: Sayo
     url: /go/sayo
     icon: fas fa-language
+  - label: HackHub
+    url: /go/hackhub
+    icon: fas fa-trophy
 project_sections:
-  - title: 三个独立站
+  - title: 四个独立站
     id: vertical-products
     featured: true
-    lead: "一个看跨境电商 Agent 如何落地，一个逐项核查浏览器智能体，一个练 AI 英语口语。三个站各自独立更新。"
+    lead: "一个看跨境电商 Agent 如何落地，一个逐项核查浏览器智能体，一个练 AI 英语口语，一个聚合全球黑客松。四个站各自独立更新。"
     items:
       - name: CrossAgent Lab
         link: /go/crossagent
@@ -43,5 +46,13 @@ project_sections:
         status: Live
         visual: 核心动词 → 场景 → 练习
         tags: [Sayo, 英语学习, AI Tutor]
+        featured: true
+      - name: HackHub
+        link: /go/hackhub
+        desc: "全球 AI、Web3 黑客松聚合。按城市、主题、人群和奖金筛选，每日更新，附每周周刊。"
+        icon: fas fa-trophy
+        status: Live
+        visual: 全球赛事 → 按条件筛选
+        tags: [HackHub, 黑客松, 赛事聚合]
         featured: true
 ---

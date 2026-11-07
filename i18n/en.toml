@@ -266,10 +266,10 @@ other = "Live"
 other = "Vertical Products"
 
 [homeProductVerticalCount]
-other = "3 standalone sites"
+other = "4 standalone sites"
 
 [homeProductVerticalDesc]
-other = "Three standalone sites, one entry."
+other = "Four standalone sites, one entry."
 
 [homeProductCrossAgentDesc]
 other = "Commerce agents · MCP"
@@ -279,6 +279,9 @@ other = "Browser agents, compared"
 
 [homeProductSayoDesc]
 other = "AI spoken-English practice"
+
+[homeProductHackHubDesc]
+other = "AI & Web3 hackathons, one index"
 
 [homeToolsGridTitle]
 other = "Tools and projects"

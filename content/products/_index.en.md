@@ -3,7 +3,7 @@ title: Vertical Products
 type: projects
 layout: projects
 kicker: Indie products
-intro: "Sayo, CrossAgent Lab, and Browserly are three standalone sites. This page gives them one entry point; choose the topic you want once you are here."
+intro: "Sayo, CrossAgent Lab, Browserly, and HackHub are four standalone sites. This page gives them one entry point; choose the topic you want once you are here."
 project_links:
   - label: CrossAgent Lab
     url: /go/crossagent
@@ -14,11 +14,14 @@ project_links:
   - label: Sayo
     url: /go/sayo
     icon: fas fa-language
+  - label: HackHub
+    url: /go/hackhub
+    icon: fas fa-trophy
 project_sections:
-  - title: Three standalone sites
+  - title: Four standalone sites
     id: vertical-products
     featured: true
-    lead: "One tracks how cross-border commerce agents are used in practice, one checks browser agents entry by entry, and one is AI spoken-English practice. Each site is updated independently."
+    lead: "One tracks how cross-border commerce agents are used in practice, one checks browser agents entry by entry, one is AI spoken-English practice, and one aggregates AI & Web3 hackathons worldwide. Each site is updated independently."
     items:
       - name: CrossAgent Lab
         link: /go/crossagent
@@ -43,5 +46,13 @@ project_sections:
         status: Live
         visual: core verbs → scenes → practice
         tags: [Sayo, English, AI Tutor]
+        featured: true
+      - name: HackHub
+        link: /go/hackhub
+        desc: "A global AI & Web3 hackathon aggregator. Filter by city, topic, audience, and prize pool; updated daily, with a weekly digest."
+        icon: fas fa-trophy
+        status: Live
+        visual: global hackathons → filtered picks
+        tags: [HackHub, Hackathons, AI & Web3]
         featured: true
 ---

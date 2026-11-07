@@ -328,10 +328,10 @@ other = "在线"
 other = "垂直产品"
 
 [homeProductVerticalCount]
-other = "3 个独立站"
+other = "4 个独立站"
 
 [homeProductVerticalDesc]
-other = "三个独立站，合成一个入口。"
+other = "四个独立站，合成一个入口。"
 
 [homeProductCrossAgentDesc]
 other = "跨境电商 Agent · MCP 情报"
@@ -341,6 +341,9 @@ other = "17 个浏览器智能体对比"
 
 [homeProductSayoDesc]
 other = "AI 英语口语练习"
+
+[homeProductHackHubDesc]
+other = "全球 AI、Web3 黑客松聚合"
 
 [homeToolsGridTitle]
 other = "小工具与项目"

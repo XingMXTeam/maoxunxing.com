@@ -43,6 +43,7 @@
   {{- $crossAgentURL := "/go/crossagent" -}}
   {{- $browserlyURL := "/go/browserly" -}}
   {{- $sayoURL := "/go/sayo" -}}
+  {{- $hackhubURL := "/go/hackhub" -}}
 
   <!-- 1. Positioning line (Hub B) -->
   <section class="home-hero" aria-labelledby="home-hero-title">
@@ -76,6 +77,10 @@
           </a>
           <a class="home-product-link" href="{{ $sayoURL }}" target="_blank" rel="noopener noreferrer">
             <span class="home-product-link-copy"><span class="home-product-link-name">Sayo</span><span class="home-product-link-desc">{{ i18n "homeProductSayoDesc" }}</span></span>
+            <span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span>
+          </a>
+          <a class="home-product-link" href="{{ $hackhubURL }}" target="_blank" rel="noopener noreferrer">
+            <span class="home-product-link-copy"><span class="home-product-link-name">HackHub</span><span class="home-product-link-desc">{{ i18n "homeProductHackHubDesc" }}</span></span>
             <span class="hub-card-arrow" aria-hidden="true">↗&#xFE0E;</span>
           </a>
         </span>

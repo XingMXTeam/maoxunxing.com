@@ -2721,6 +2721,16 @@
         "source": "/go/sayo/",
         "destination": "https://gosayo.cc/",
         "type": 302
+      },
+      {
+        "source": "/go/hackhub",
+        "destination": "https://hackhub.maoxunxing.com/",
+        "type": 302
+      },
+      {
+        "source": "/go/hackhub/",
+        "destination": "https://hackhub.maoxunxing.com/",
+        "type": 302
       }
     ],
     "headers": [
