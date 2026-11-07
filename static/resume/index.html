@@ -128,6 +128,38 @@ footer.cta p{margin:0 0 24px;color:var(--ink2);line-height:1.9;font-size:14.5px;
 footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
 .fineprint{margin-top:52px;font-size:12px;color:var(--ink3);line-height:1.8;letter-spacing:.03em}
 
+@media(max-width:760px){
+  .wrap{padding:0 18px 64px}
+  .topbar{flex-wrap:wrap;gap:10px;padding:20px 0 16px}
+  .status{margin-left:0;width:100%}
+  .stage{margin-top:26px}
+  .stage-actions{flex-wrap:wrap;gap:14px}
+  .stage-actions .hint{margin-left:0;width:100%;line-height:1.7}
+  .intro{margin-top:38px}
+  .lede{font-size:15.5px;line-height:1.95}
+  section.block{margin-top:58px}
+  .sec-head{gap:12px;margin-bottom:22px}
+  .sec-head h2{font-size:22px}
+  .sec-head .en{display:none}
+  .work{margin-top:44px}
+  .work .term{padding:20px 18px 22px}
+  .work .term pre{font-size:12.5px;line-height:1.95}
+  .w-meta{gap:10px;margin-top:16px}
+  .w-meta h3{font-size:20px}
+  .w-meta p{min-width:0;flex-basis:100%;font-size:14px}
+  .w-meta .rlink{flex-basis:100%}
+  body.hic-off #card-glass .strip .v{font-size:28px}
+  body.hic-off #card-glass .strip .m{min-width:130px;flex:1 1 40%}
+  body.hic-off #card-glass .strip .m + .m{border-left:none;padding-left:0}
+  body.hic-off #card-glass .role{font-size:16px;letter-spacing:.24em}
+  body.hic-off #card-glass .en-name{font-size:11px;letter-spacing:.36em}
+  body.hic-off #card-glass .pos{font-size:14.5px}
+  .job-head .when{margin-left:0;width:100%}
+  .earlier .when{width:100%}
+  .proj li,.proj p{font-size:14px}
+  footer.cta h2{font-size:32px}
+  footer.cta .row{gap:16px}
+}
 @media print{
   body{background:#fff;color:#111}
   :root{--ink:#111;--ink2:#333;--ink3:#666;--line:#bbb;--line2:#ddd;--accent:#8a6d1f}
@@ -205,7 +237,7 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
 <span class="g">93 passed</span> · planner / developer / evaluator 三角色 Agent 层</pre>
       </div>
       <div class="w-meta"><div class="w-head"><h3>frontend-harness-cli</h3><span class="st">OPEN SOURCE</span></div>
-        <p>把阿里内部 Harness 的方法论做成开源 CLI：文件状态机 + per-feature rubric（含 essential / pitfall 一票否决与覆盖门禁）+ 逐任务 SHA 校验，<i>harness new --prd</i> 可原文导入现成 PRD。<span class="metric">v0.9.0 · 测试 93 / 93 · 21 个产物命名 Skill</span></p>
+        <p>把在复杂中后台场景验证过的 AI 研发工程化方法（分层约束 / 确定性评测 / 多阶段 Agent 编排）独立实现为开源 CLI：文件状态机 + per-feature rubric（含 essential / pitfall 一票否决与覆盖门禁）+ 逐任务 SHA 校验，<i>harness new --prd</i> 可原文导入现成 PRD。<span class="metric">v0.9.0 · 测试 93 / 93 · 21 个产物命名 Skill</span></p>
         <a class="rlink" href="https://github.com/XingMXTeam/frontend-harness-cli" target="_blank" rel="noopener">GitHub →</a></div>
     </article>
 
