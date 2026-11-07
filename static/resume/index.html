@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>毛训星 · AI 全栈工程师 — 简历 | maoxunxing.com</title>
+<meta name="description" content="毛训星（毛毛星）的简历：11 年工程经验、阿里 7 年跨境电商复杂平台，近两年主攻 AI 研发工程化（AI Coding Harness / MCP / Agent 编排），以及 frontend-harness-cli、HackHub、CrossAgent、Browserly、Sayo 等最近项目。">
+<style>
+:root{
+  --bg:#0B0C0E; --bg2:#101114; --panel:rgba(255,255,255,.045);
+  --ink:#ECECE6; --ink2:#A7ABB3; --ink3:#6E7278;
+  --line:rgba(236,236,230,.14); --line2:rgba(236,236,230,.08);
+  --accent:#E3C57C;
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration-color:rgba(227,197,124,.55);text-underline-offset:4px}
+a:hover{color:var(--accent)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px 90px}
+
+/* ---------- top bar ---------- */
+.topbar{display:flex;align-items:center;gap:16px;padding:26px 0 20px;border-bottom:1px solid var(--line2)}
+.topbar .home{font-size:14px;letter-spacing:.04em;text-decoration:none;color:var(--ink2)}
+.topbar .home:hover{color:var(--ink)}
+.topbar .here{font-size:14px;letter-spacing:.28em;color:var(--ink)}
+.status{margin-left:auto;font-size:12px;letter-spacing:.08em;color:var(--ink3);display:flex;align-items:center;gap:8px}
+.status i{width:7px;height:7px;border-radius:50%;background:#5A5E63;display:inline-block}
+.status.on{color:var(--ink2)} .status.on i{background:#7FB069;box-shadow:0 0 10px rgba(127,176,105,.8)}
+
+/* ---------- HIC glass stage ---------- */
+.stage{margin-top:44px;position:relative}
+#hic{display:block;width:100%;height:600px}
+#card-glass{position:absolute;top:0;left:0;width:1020px;height:452px;border-radius:26px;
+  background:linear-gradient(155deg, rgba(255,255,255,.105), rgba(255,255,255,.028) 55%, rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.20);
+  padding:52px 60px 0;color:var(--ink);overflow:hidden}
+#card-glass .en-name{font-size:13px;letter-spacing:.52em;color:var(--ink2);font-weight:600}
+#card-glass h1{font-family:var(--serif);font-size:118px;line-height:1.12;margin:16px 0 0;font-weight:600;letter-spacing:.06em}
+#card-glass .role{margin-top:14px;font-size:19px;letter-spacing:.34em;color:var(--accent);font-weight:600}
+#card-glass .pos{margin-top:20px;font-size:15.5px;line-height:1.8;color:var(--ink2);max-width:640px}
+#card-glass .strip{position:absolute;left:60px;right:60px;bottom:0;border-top:1px solid rgba(236,236,230,.16);
+  display:flex;padding:22px 0 26px;gap:0}
+#card-glass .strip .m{flex:1}
+#card-glass .strip .m + .m{border-left:1px solid rgba(236,236,230,.12);padding-left:26px}
+#card-glass .strip .v{font-size:34px;font-weight:700;letter-spacing:.01em}
+#card-glass .strip .v em{font-style:normal;color:var(--accent)}
+#card-glass .strip .l{font-size:12.5px;color:var(--ink2);margin-top:5px;line-height:1.55;letter-spacing:.04em}
+.stage-actions{display:flex;gap:26px;margin-top:18px;align-items:center}
+.linkbtn{appearance:none;background:none;border:none;color:var(--ink2);font-size:13px;letter-spacing:.14em;
+  cursor:pointer;padding:4px 0;border-bottom:1px solid rgba(236,236,230,.3);font-family:var(--sans)}
+.linkbtn:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.linkbtn[disabled]{opacity:.35;cursor:default}
+.stage-actions .hint{margin-left:auto;font-size:12px;color:var(--ink3);letter-spacing:.06em}
+
+/* fallback */
+.hic-fallback{display:none}
+body.hic-off #hic{display:none}
+body.hic-off .hic-fallback{display:block}
+body.hic-off #card-glass{position:relative;width:auto;height:auto;padding:44px 40px 0}
+body.hic-off #card-glass h1{font-size:72px}
+body.hic-off #card-glass .strip{position:relative;left:0;right:0;margin-top:36px;flex-wrap:wrap;gap:18px}
+body.hic-off #card-glass .strip .m{min-width:180px}
+@media(max-width:760px){ body.hic-off #card-glass h1{font-size:54px} body.hic-off #card-glass{padding:34px 26px 0} }
+
+/* ---------- sections ---------- */
+section.block{margin-top:84px}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:30px}
+.sec-head .no{font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700}
+.sec-head h2{font-size:27px;margin:0;font-weight:600;letter-spacing:.14em}
+.sec-head .rule{flex:1;border-top:1px solid var(--line2);transform:translateY(-4px)}
+.sec-head .en{font-size:11px;letter-spacing:.3em;color:var(--ink3)}
+.lede{font-size:16.5px;line-height:2.0;color:var(--ink2);max-width:880px;margin:0}
+.lede b{color:var(--ink);font-weight:600}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px}
+.skill h3{font-size:12px;letter-spacing:.3em;color:var(--accent);margin:0 0 12px;font-weight:700}
+.skill p{margin:0;font-size:13.5px;line-height:1.95;color:var(--ink2)}
+
+.job-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.job-head h3{font-size:21px;margin:0;font-weight:600;letter-spacing:.04em}
+.job-head .when{margin-left:auto;font-size:13px;color:var(--ink2);letter-spacing:.1em}
+.role-line{color:var(--ink3);font-size:13px;margin-top:8px;letter-spacing:.06em}
+.proj{margin-top:38px}
+.proj h4{font-size:16.5px;margin:0 0 10px;font-weight:600}
+.proj h4 .who{color:var(--accent);font-size:12.5px;letter-spacing:.12em;margin-left:12px;font-weight:600}
+.proj p{margin:0 0 10px;font-size:14.5px;line-height:1.95;color:var(--ink2);max-width:900px}
+.proj ul{margin:0;padding:0;list-style:none;max-width:920px}
+.proj li{font-size:14.5px;line-height:1.95;color:var(--ink2);padding-left:20px;position:relative;margin-top:4px}
+.proj li::before{content:"";position:absolute;left:0;top:14px;width:8px;border-top:1px solid var(--accent)}
+.proj li b{color:var(--ink);font-weight:600}
+.earlier{margin-top:44px;border-top:1px solid var(--line2)}
+.earlier .row{display:flex;gap:22px;padding:20px 0;border-bottom:1px solid var(--line2);flex-wrap:wrap}
+.earlier .when{width:170px;flex:none;font-size:13px;color:var(--accent);letter-spacing:.06em;padding-top:2px}
+.earlier h3{font-size:15.5px;margin:0 0 6px;font-weight:600}
+.earlier p{margin:0;font-size:13.5px;line-height:1.85;color:var(--ink2);max-width:700px}
+
+/* works exhibits */
+.intro{margin-top:56px}
+.work{margin-top:64px}
+.work:first-of-type{margin-top:8px}
+.work .shot{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg2)}
+.work .shot img{display:block;width:100%;height:auto}
+.work .term{border:1px solid var(--line);border-radius:14px;background:#0E0F11;padding:26px 30px 30px;overflow:hidden}
+.work .term .tbar{display:flex;gap:7px;margin-bottom:20px}
+.work .term .tbar i{width:10px;height:10px;border-radius:50%;background:#2C2E33;display:inline-block}
+.work .term pre{margin:0;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:14px;line-height:2.05;color:var(--ink2);white-space:pre-wrap}
+.work .term pre b{color:var(--ink);font-weight:600}
+.work .term pre .g{color:var(--accent)}
+.w-meta{margin-top:20px;display:flex;gap:26px;align-items:baseline;flex-wrap:wrap}
+.w-meta .w-head{display:flex;align-items:baseline;gap:16px;flex:none}
+.w-meta h3{margin:0;font-size:23px;font-weight:600;letter-spacing:.03em}
+.w-meta .st{font-size:11px;letter-spacing:.24em;color:var(--accent)}
+.w-meta p{flex:1;min-width:300px;margin:0;font-size:14.5px;line-height:1.9;color:var(--ink2)}
+.w-meta p .metric{display:block;color:var(--ink);margin-top:6px;font-size:13.5px}
+.w-meta .rlink{flex:none;font-size:13px;letter-spacing:.1em;text-decoration:none;color:var(--ink2)}
+.w-meta .rlink:hover{color:var(--accent)}
+
+.edu{display:flex;gap:40px;flex-wrap:wrap}
+.edu .e{flex:1;min-width:250px;font-size:14px;line-height:1.95;color:var(--ink2)}
+.edu .e b{color:var(--ink);font-weight:600;display:block;margin-bottom:6px;font-size:14.5px}
+
+footer.cta{margin-top:96px;border-top:1px solid var(--line);padding-top:44px}
+footer.cta h2{font-family:var(--serif);font-size:40px;margin:0 0 12px;font-weight:600;letter-spacing:.08em}
+footer.cta p{margin:0 0 24px;color:var(--ink2);line-height:1.9;font-size:14.5px;max-width:640px}
+footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
+.fineprint{margin-top:52px;font-size:12px;color:var(--ink3);line-height:1.8;letter-spacing:.03em}
+
+@media print{
+  body{background:#fff;color:#111}
+  :root{--ink:#111;--ink2:#333;--ink3:#666;--line:#bbb;--line2:#ddd;--accent:#8a6d1f}
+  .stage,.stage-actions,.status{display:none!important}
+  #card-glass{background:none;border-color:#999;color:#111}
+  a{color:#111}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="home" href="https://maoxunxing.com/">maoxunxing.com</a>
+    <span class="here">简 历</span>
+    <span class="status" id="hic-pill"><i></i><span id="hic-pill-text">HTML-in-Canvas 检测中</span></span>
+  </div>
+
+  <!-- ============ Glass signature ============ -->
+  <div class="stage" id="stage">
+    <canvas id="hic" width="1060" height="600" layoutsubtree content="drawable" aria-label="毛训星，AI 全栈工程师">
+      <div id="card-glass" drawable>
+        <div class="en-name">MAO XUNXING · MOMO</div>
+        <h1>毛训星</h1>
+        <div class="role">AI 全栈工程师</div>
+        <p class="pos">11 年工程经验，阿里 7 年跨境电商复杂平台。近两年主攻 AI 研发工程化——把 AI 生成代码的不确定性，收进可执行的工程门禁里。</p>
+        <div class="strip">
+          <div class="m"><div class="v">85<em>%</em></div><div class="l">本人 AI 编码占比（插件采集）<br>团队约 60%</div></div>
+          <div class="m"><div class="v">20<em>×</em></div><div class="l">楼层批量发布提速<br>约 200 分钟 → 10 分钟</div></div>
+          <div class="m"><div class="v">−24<em>%</em></div><div class="l">首页 LCP<br>2722ms → 2070ms</div></div>
+          <div class="m"><div class="v">668</div><div class="l">大促巡检覆盖页面<br>漏配率 约 8% → 2% 以下</div></div>
+        </div>
+      </div>
+    </canvas>
+    <div class="hic-fallback" id="hic-fallback" aria-hidden="true"></div>
+  </div>
+  <div class="stage-actions">
+    <button class="linkbtn" id="btn-export" type="button">导出为图片</button>
+    <span class="hint">Chrome 157+ 首屏为 HTML-in-Canvas 玻璃展品 · 其余浏览器同内容静态呈现</span>
+  </div>
+
+  <!-- ============ intro ============ -->
+  <div class="intro">
+    <p class="lede">11 年工程经验，阿里 7 年深耕跨境电商复杂平台。近两年主攻 <b>AI 研发工程化</b>：在商业化广告业务落地 AI Coding Harness（分层约束 / 确定性评测 / 多阶段 Agent 编排）；在全球首页运营平台落地大促巡检平台与投放 Agent，把平台能力经 <b>MCP</b> 封装为 Agent 可调用工具。此前作为主 Owner 重构全球首页运营平台（协议驱动、多端多国家），建设导购页面搭建平台核心模块，主导商业化广告前端由低代码迁移至源码体系。善用 Schema 契约、角色分层、发布卡口与实时校验，让复杂平台可演进、可稳定交付。后端以 Node.js Middleware / RPC / Serverless SSR 为主。</p>
+  </div>
+
+  <!-- ============ 01 作品 ============ -->
+  <section class="block">
+    <div class="sec-head"><span class="no">01</span><h2>作品</h2><span class="rule"></span><span class="en">SELECTED WORKS</span></div>
+
+    <article class="work">
+      <a class="shot" href="https://hackhub.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/hackhub.jpg" alt="HackHub 首页：发现下一个黑客松" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>HackHub</h3><span class="st">LIVE</span></div>
+        <p>全球 AI &amp; Web3 黑客松聚合站。多源爬虫每日更新，按城市、主题、受众、奖金筛选，配每周精选周刊；订阅走自家链路（Supabase），不依赖第三方邮件平台。<span class="metric">收录活动 398 场（2026-11 线上实时）</span></p>
+        <a class="rlink" href="https://hackhub.maoxunxing.com" target="_blank" rel="noopener">hackhub.maoxunxing.com →</a></div>
+    </article>
+
+    <article class="work">
+      <a class="shot" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/crossagent.jpg" alt="CrossAgent Lab 用例库首页" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>CrossAgent Lab</h3><span class="st">LIVE</span></div>
+        <p>跨境电商 Agent 用例库与卖家 MCP 情报站，整理别人正在用的跨境 Agent 做法。其 Skills 业务按第一方自研模式做：首个 Skill「评论挖掘 → Listing 改写」用 415 条真实评论实跑出样例，已上架开卖。<span class="metric">用例 81 条 · 首个 Skill $49 在售 · 实跑分诊抽查一致率 94.4%</span></p>
+        <a class="rlink" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener">crossagent.maoxunxing.com →</a></div>
+    </article>
+
+    <article class="work">
+      <div class="term" aria-label="frontend-harness-cli 终端示意">
+        <div class="tbar"><i></i><i></i><i></i></div>
+        <pre><b>$ harness --version</b>
+frontend-harness-cli <span class="g">0.9.0</span>
+<b>$ harness new --prd ./PRD.md</b>
+原文导入 · 内核只验 REQ 编号契约，缺号报告、永不重编
+<b>$ harness scan ./repo</b>
+structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
+<b>$ npm test</b>
+<span class="g">93 passed</span> · planner / developer / evaluator 三角色 Agent 层</pre>
+      </div>
+      <div class="w-meta"><div class="w-head"><h3>frontend-harness-cli</h3><span class="st">OPEN SOURCE</span></div>
+        <p>把阿里内部 Harness 的方法论做成开源 CLI：文件状态机 + per-feature rubric（含 essential / pitfall 一票否决与覆盖门禁）+ 逐任务 SHA 校验，<i>harness new --prd</i> 可原文导入现成 PRD。<span class="metric">v0.9.0 · 测试 93 / 93 · 21 个产物命名 Skill</span></p>
+        <a class="rlink" href="https://github.com/XingMXTeam/frontend-harness-cli" target="_blank" rel="noopener">GitHub →</a></div>
+    </article>
+
+    <article class="work">
+      <a class="shot" href="https://browserly.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/browserly.jpg" alt="Browserly 首页：Browser-driving agents" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>Browserly</h3><span class="st">LIVE</span></div>
+        <p>浏览器智能体对比索引，中英双语。逐条核查每个 Browser Agent 的能力与定价，每条都有独立详情页与核查日期，未知条目真 404，不堆假数据。<span class="metric">17 条 · 每条独立详情页 /agent/&lt;id&gt;</span></p>
+        <a class="rlink" href="https://browserly.maoxunxing.com" target="_blank" rel="noopener">browserly.maoxunxing.com →</a></div>
+    </article>
+
+    <article class="work">
+      <a class="shot" href="https://gosayo.cc" target="_blank" rel="noopener"><img src="./works/sayo.jpg" alt="Sayo 首页：您的免费私人 AI 口语教练" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>Sayo</h3><span class="st">LIVE</span></div>
+        <p>AI 英语口语练习产品：先自己开口说，卡住再看提示，然后换一个场景重新练。围绕核心动词与真实场景组织练习，而不是背单词表。<span class="metric">gosayo.cc · AI 口语教练</span></p>
+        <a class="rlink" href="https://gosayo.cc" target="_blank" rel="noopener">gosayo.cc →</a></div>
+    </article>
+
+    <article class="work">
+      <a class="shot" href="https://maoxunxing.com/ai/geo-health-check/" target="_blank" rel="noopener"><img src="./works/geo.jpg" alt="GEO Health Check 工具页" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>GEO 体检</h3><span class="st">LIVE</span></div>
+        <p>放在主站的对外工具：输入网址，自动分析 AI 搜索可见度并出报告（八维卫生分 + 按可挽回分排序的修复清单），评分引擎与内部 fx-geo 闭环面板同源。<span class="metric">maoxunxing.com/ai/geo-health-check/</span></p>
+        <a class="rlink" href="https://maoxunxing.com/ai/geo-health-check/" target="_blank" rel="noopener">打开工具 →</a></div>
+    </article>
+  </section>
+
+  <!-- ============ 02 经历 ============ -->
+  <section class="block">
+    <div class="sec-head"><span class="no">02</span><h2>公司经历</h2><span class="rule"></span><span class="en">EXPERIENCE</span></div>
+
+    <div class="job-head"><h3>阿里巴巴 · 跨境速卖通</h3><span class="when">2021.09 — 2026.07</span></div>
+    <div class="role-line">AI 研发提效 / 全球首页运营平台主 Owner / 导购搭建平台核心模块 Owner / 商家中后台</div>
+
+    <div class="proj">
+      <h4>AI Coding Harness — 商业化广告业务 AI 研发提效体系<span class="who">核心建设者</span></h4>
+      <p>针对 AI 生成代码在复杂中后台场景「生成快、交付不稳定」的问题，依托 Claude Code 云端 Agent + MCP + Skill，构建从需求澄清到发布复盘的 AI 协作工作流，把质量约束从人工 Review 的主观判断，转为编译、Lint 与评测门禁可执行的工程规则。</p>
+      <ul>
+        <li><b>5 层约束体系：</b>按类型、样式、状态、工程、美学五层收敛 AI 解空间；Lint 报错同时作为修复指令注入 Agent 上下文，错误在生成阶段即被拦截并定向修复。</li>
+        <li><b>8 阶段 Pipeline 与 Sprint Contract：</b>init → clarify → generate → docs → evaluation → verify → publish → evolve；写代码前先把需求协商为可测试的功能点（FP）清单。</li>
+        <li><b>确定性评测与 4-Gate 门禁：</b>structure / data / logic / ui / e2e 五维评测全部用 tsc、AST、规则扫描与真实测试（不用 LLM 自评），每条检查带 file:line 证据；canRun → dataReady → usageRight → featureWorks 四道 Gate 短路放行。</li>
+        <li><b>上下文治理：</b>每阶段独立 subagent + 独立上下文，state.json 为唯一状态源；内部实测第 5 阶段关键信息保留率由约 40% 提升至约 95%。</li>
+        <li><b>落地效果：</b>AI 编码占比团队约 60%、本人约 85%（编码插件采集），交付由人工编码与人工 Review 转为 AI 生成与门禁自动验收。</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <h4>全球首页运营平台（GOP）<span class="who">主 Owner</span></h4>
+      <p>速卖通 C 端首页运营平台：覆盖 Native 首页、MyAE 页与端外 PC / M 站首页，按「场景 → 方案 → 页面 → 楼层 → 模块」协议驱动生产页面，支撑多国家配置、排期与投放。</p>
+      <ul>
+        <li><b>大促巡检（平台侧，已落地）：</b>巡检任务创建、审批 / 截图 / 虚机调度、状态聚合与报告、失败重试、自动建缺陷与复测闭环，支撑大促前约 668 个页面线上验收，大促漏配率由约 8% 降至 2% 以下。</li>
+        <li><b>投放 Agent（MCP Server）：</b>把样式包创建与发布、活动创建、楼层发布、提报与排期同步等平台能力封装为 MCP 工具，Route → Plan → Execute → Review 四阶段编排（离职前完成开发，未上线）。</li>
+        <li><b>平台能力 Agent 化：</b>排期查询、发布 Diff、历史变更 Diff、楼层查询、SLS 日志查询共 10 个 MCP 工具，工具白名单 + 错误用法反例 + 查空逐级降级重查。</li>
+        <li><b>楼层批量发布：</b>多楼层跨页面一次走完流程，发布耗时由约 200 分钟降至约 10 分钟（约 20 倍）。</li>
+        <li><b>稳定性与性能：</b>100+ 运营页面收敛至 20+，配置实时校验、发布卡口与 diff 识别，核心楼层丢失事故降为 0；Service Worker 快照 + SSR 瘦身，PC / M 站首页 LCP 2722ms → 2070ms（−24%）。</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <h4>导购页面搭建平台<span class="who">核心模块 Owner</span></h4>
+      <ul>
+        <li><b>模型中心与数据标准化：</b>VO Schema + 业务 Process + DO Mapping 三层数据契约，UI 与数据解耦；发布前 DTO 绑定与模板兼容校验，存量模块白名单逐步切流。</li>
+        <li><b>主题中心与 Agent 可调用资产：</b>Design Token / Theme Token / Theme Plan 三层拆分，四环境发布与回滚；主题查询等 3 个 MCP 工具暴露给大促 Agent 调用。</li>
+        <li><b>发布链路（0 → 1）：</b>发布即时生效，批量发布、灰度、回滚与三级验证，单模块可回滚至任意历史版本。</li>
+        <li><b>运行时性能：</b>预请求减少首屏约 200ms，链路统一消除无线端域名跳转约 700ms。</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <h4>商家中后台（CHC）<span class="who">框架共建 · 研发平台 Owner · 广告前端主导</span></h4>
+      <ul>
+        <li><b>主子应用框架重构：</b>与一位同学共建新一代中后台主子应用框架（纯源码 + 飞冰插件体系），替换原 DADA 低代码工作台及 loader。</li>
+        <li><b>前端研发平台 Owner：</b>统一商家端与小二端研发入口，新应用接入周期由 1 周压缩至 2 天，累计支撑 100+ 页面。</li>
+        <li><b>商业化广告一站式推广升级：</b>主导广告前端由低代码平台迁移至新源码体系，推动业务与技术架构同步升级。</li>
+        <li><b>运费模板国家差异化：</b>抽象共性内核、配置化驱动 UI；Immer 局部更新 + 组件缓存 + 本地 State + Debounce，典型输入 Long Task 约 1193ms → 180ms，编辑场景提交成功率提升约 20.6%。</li>
+      </ul>
+    </div>
+
+    <div class="earlier">
+      <div class="row"><div class="when">2019.07 — 2021.09</div><div><h3>阿里巴巴 · 国际化中台 — DADA 低代码平台</h3>
+        <p>商家教育系统一号位（从 0 到 1，覆盖 AliExpress / Lazada / Daraz 多业务多国家站点）；基于 qiankun 的微前端改造，Combo 按需加载，微应用 LCP 约 2.5s。DADA 累计产出 1100+ 页面、100+ 使用者。</p></div></div>
+      <div class="row"><div class="when">2016.07 — 2019.03</div><div><h3>网易杭研院 · 教育事业部 — 高级前端工程师</h3>
+        <p>网易云课堂多端核心功能负责人（3-2 晋升 3-3）；会员与支付体系（包月 / 包年 / 自动续费统一支付组件）；主导 HTTPS 与 HTTP/2 升级，落地页 FCP 优化约 30%。</p></div></div>
+      <div class="row"><div class="when">2014 — 2019</div><div><h3>国铁吉讯 · 浙江核新同花顺</h3>
+        <p>国铁吉讯高级前端工程师（2019）；同花顺券商资讯组前端工程师（2014.07 — 2016.06）：外派北京证券客户总部，独立完成网上营业厅、基金商城等站点上线，贡献表格配置、PDF 等核心组件。</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 技能与教育 ============ -->
+  <section class="block">
+    <div class="sec-head"><span class="no">03</span><h2>技能与教育</h2><span class="rule"></span><span class="en">SKILLS &amp; EDUCATION</span></div>
+    <div class="skills">
+      <div class="skill"><h3>AI 工程</h3><p>Claude Code · Cursor / Qoder · MCP Server 开发 · Skill 体系设计 · Agent 编排（多阶段 Pipeline / 工具白名单 / 上下文治理）· AI Coding Harness（分层约束 / 架构 Lint / 确定性评测 / Code Review）</p></div>
+      <div class="skill"><h3>全栈开发</h3><p>TypeScript · React 18 · Node.js（Middleware / BFF）· RPC / REST · Serverless / FaaS · SSR / Hydration</p></div>
+      <div class="skill"><h3>平台工程</h3><p>中后台框架（qiankun 微前端 / 飞冰插件）· 前端研发平台 · 低代码平台（Schema / 双引擎 / 多语言）· 运营搭建平台（协议驱动 / 模块生产 / 模型与主题中心 / 发布回滚）</p></div>
+      <div class="skill"><h3>性能治理</h3><p>C 端首页（SSR 瘦身 / Service Worker / LCP）· 商家端复杂页面（渲染优化 / Long Task）</p></div>
+    </div>
+    <div class="edu" style="margin-top:44px">
+      <div class="e"><b>南昌大学</b>计算机科学与技术本科（卓越工程班）· 2010 — 2014<br>CET-6 · 优秀毕业生 · 多次特等奖学金、国家励志奖学金</div>
+      <div class="e"><b>写作与出版</b>参与翻译出版《写给大忙人的 JavaScript》<br>自著期权电子书，Amazon Kindle 上架</div>
+      <div class="e"><b>内容</b>微信公众号「毛毛星」（科技 / AI 解读）<br>小红书「毛毛星带你飞」· X @maoxunxing</div>
+    </div>
+  </section>
+
+  <footer class="cta">
+    <h2>联系我</h2>
+    <p>AI 全栈 / Agent Harness / 平台工程方向的机会，或想聊聊上面这些项目，都欢迎。公开页面不放手机号，邮件或微信都能找到我；需要带完整联系方式的 PDF 版简历，邮件说一声即可。</p>
+    <div class="row">
+      <a href="mailto:xunxing1989@gmail.com">xunxing1989@gmail.com</a>
+      <a href="https://github.com/XingMXTeam" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://twitter.com/maoxunxing" target="_blank" rel="noopener">X · @maoxunxing</a>
+      <a href="https://maoxunxing.com/about/">微信 maoxunxing</a>
+    </div>
+  </footer>
+  <p class="fineprint">首屏使用 Chrome 157 的 HTML-in-Canvas API（WICG 提案，2026-10-26 正式发布）：一整块 HTML 玻璃面板被原生画进 Canvas，保留可访问性与可选中文本，并叠加跟随鼠标的折射高光；其余浏览器走 DOM 回退，内容一致。作品区截图为各站 2026-11-07 线上真实页面；简历事实以本人投递版简历为准，项目数据为各站线上可查状态（2026-11）。</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var canvas = document.getElementById('hic');
+  var pill = document.getElementById('hic-pill');
+  var pillText = document.getElementById('hic-pill-text');
+  var btnExport = document.getElementById('btn-export');
+  var stage = document.getElementById('stage');
+  var panel = document.getElementById('card-glass');
+
+  function supportsHIC(){
+    try{
+      if (typeof CanvasRenderingContext2D === 'undefined') return false;
+      return 'drawElementImage' in CanvasRenderingContext2D.prototype;
+    }catch(e){ return false; }
+  }
+
+  var smallScreen = window.innerWidth < 760;
+  if (!supportsHIC() || smallScreen){
+    document.body.classList.add('hic-off');
+    var fb = document.getElementById('hic-fallback');
+    fb.setAttribute('aria-hidden','false');
+    fb.appendChild(panel);
+    if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
+    pillText.textContent = smallScreen && supportsHIC() ? '小屏静态呈现 · 桌面 Chrome 157+ 为 Canvas 版' : '静态呈现 · Chrome 157+ 为 Canvas 版';
+    btnExport.disabled = true;
+    return;
+  }
+
+  pill.classList.add('on');
+  pillText.textContent = 'HTML-in-Canvas 已启用';
+  var ctx = canvas.getContext('2d');
+  var W=0, DPR=1, S=1, H=600;
+  var tx=0, ty=0, mx=0, my=0, sheen=0.35, sheenT=0.35;
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var inView = true, rafId = null, t0 = performance.now();
+
+  function resize(){
+    var rect = stage.getBoundingClientRect();
+    DPR = Math.min(window.devicePixelRatio||1, 2);
+    W = Math.max(320, Math.floor(rect.width));
+    S = Math.min(1, W/1060);
+    H = Math.round(600*S);
+    canvas.style.height = H+'px';
+    canvas.width = Math.floor(W*DPR);
+    canvas.height = Math.floor(H*DPR);
+    if (canvas.requestPaint) canvas.requestPaint();
+  }
+
+  function draw(){
+    if (!ctx) return;
+    ctx.reset ? ctx.reset() : ctx.setTransform(1,0,0,1,0,0);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.scale(DPR*S, DPR*S);
+    var DW = W/S, DH = 600, t = (performance.now()-t0)/1000;
+
+    // gallery backdrop: near-black + spotlight following the mouse
+    ctx.fillStyle = '#0B0C0E'; ctx.fillRect(0,0,DW,DH);
+    var cx = DW/2 + mx*130, cy = 240 + my*60;
+    var g = ctx.createRadialGradient(cx, cy, 60, cx, cy, 620);
+    g.addColorStop(0,'rgba(236,230,205,.13)'); g.addColorStop(.55,'rgba(236,230,205,.045)'); g.addColorStop(1,'rgba(236,230,205,0)');
+    ctx.fillStyle = g; ctx.fillRect(0,0,DW,DH);
+    // faint horizon hairline
+    ctx.fillStyle = 'rgba(236,236,230,.05)'; ctx.fillRect(0, 452+54, DW, 1);
+
+    var w = panel.offsetWidth||1020, h = panel.offsetHeight||452;
+    var px = (DW-w)/2 + mx*10, py = 64 + my*7 + (reduced?0:Math.sin(t*.7)*3);
+    var rot = mx*0.010;
+
+    // soft shadow
+    ctx.save();
+    ctx.translate(px+w/2, py+h/2+22); ctx.rotate(rot);
+    ctx.fillStyle = 'rgba(0,0,0,.55)';
+    ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(-w/2, -h/2, w, h, 26); else ctx.rect(-w/2,-h/2,w,h);
+    ctx.fill(); ctx.restore();
+
+    // the glass panel itself (live HTML)
+    ctx.save();
+    ctx.translate(px+w/2, py+h/2); ctx.rotate(rot);
+    try{
+      var tr = ctx.drawElementImage(panel, -w/2, -h/2);
+      if (tr && typeof tr.toString==='function'){ try{ panel.style.transform = tr.toString(); }catch(e){} }
+    }catch(e){}
+    // glass sheen: diagonal light band whose position follows the mouse
+    ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(-w/2, -h/2, w, h, 26); else ctx.rect(-w/2,-h/2,w,h);
+    ctx.clip();
+    var sx = -w/2 + (sheen+0.5)*w*1.15;
+    var lg = ctx.createLinearGradient(sx-190, -h/2, sx+190, h/2);
+    lg.addColorStop(0,'rgba(255,255,255,0)');
+    lg.addColorStop(.5,'rgba(255,252,240,.13)');
+    lg.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle = lg; ctx.fillRect(-w/2,-h/2,w,h);
+    // top edge highlight
+    ctx.fillStyle = 'rgba(255,255,255,.20)'; ctx.fillRect(-w/2, -h/2, w, 1);
+    ctx.restore();
+  }
+
+  canvas.onpaint = draw;
+  if (!('onpaint' in canvas)) canvas.addEventListener('paint', draw);
+
+  function loop(){
+    mx += (tx-mx)*.055; my += (ty-my)*.055; sheen += (sheenT-sheen)*.06;
+    if (inView && canvas.requestPaint) canvas.requestPaint();
+    rafId = requestAnimationFrame(loop);
+  }
+  function start(){ if (!rafId && !reduced) rafId = requestAnimationFrame(loop); else if (canvas.requestPaint) canvas.requestPaint(); }
+  stage.addEventListener('mousemove', function(e){
+    var r = stage.getBoundingClientRect();
+    tx = ((e.clientX-r.left)/r.width-.5)*2;
+    ty = ((e.clientY-r.top)/r.height-.5)*2;
+    sheenT = tx*0.5;
+  });
+  stage.addEventListener('mouseleave', function(){ tx=0; ty=0; sheenT=0.35; });
+  btnExport.addEventListener('click', function(){
+    if (canvas.requestPaint) canvas.requestPaint();
+    setTimeout(function(){
+      canvas.toBlob(function(blob){
+        if (!blob) return;
+        var a=document.createElement('a');
+        a.href=URL.createObjectURL(blob); a.download='maoxunxing-resume.png'; a.click();
+        setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+      },'image/png');
+    }, 80);
+  });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(en){ inView = en.isIntersecting; }); }, {threshold:.05}).observe(stage);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ if (canvas.requestPaint) canvas.requestPaint(); });
+  start();
+})();
+</script>
+</body>
+</html>

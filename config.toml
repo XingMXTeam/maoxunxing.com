@@ -164,6 +164,10 @@ resampleFilter = "Lanczos"
   name = "About"
   pageRef = "/about"
   weight = 6
+[[languages.en.menu.main]]
+  name = "Resume"
+  url = "https://maoxunxing.com/resume/"
+  weight = 7
 [[languages.zh-CN.menu.main]]
   name = "AI 工具"
   url = "https://maoxunxing.com/ai/"
@@ -188,3 +192,7 @@ resampleFilter = "Lanczos"
   name = "关于"
   pageRef = "/about"
   weight = 6
+[[languages.zh-CN.menu.main]]
+  name = "简历"
+  url = "https://maoxunxing.com/resume/"
+  weight = 7
