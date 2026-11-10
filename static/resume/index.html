@@ -26,48 +26,10 @@ a:hover{color:var(--accent)}
 .topbar .home{font-size:14px;letter-spacing:.04em;text-decoration:none;color:var(--ink2)}
 .topbar .home:hover{color:var(--ink)}
 .topbar .here{font-size:14px;letter-spacing:.28em;color:var(--ink)}
-.status{margin-left:auto;font-size:12px;letter-spacing:.08em;color:var(--ink3);display:flex;align-items:center;gap:8px}
-.status[hidden]{display:none}
-.status i{width:7px;height:7px;border-radius:50%;background:#5A5E63;display:inline-block}
-.status.on{color:var(--ink2)} .status.on i{background:#7FB069;box-shadow:0 0 10px rgba(127,176,105,.8)}
-
-/* ---------- HIC glass stage ---------- */
-.stage{margin-top:44px;position:relative}
-#hic{display:block;width:100%;height:600px}
-#card-glass{position:absolute;top:0;left:0;width:1020px;height:452px;border-radius:26px;
-  background:linear-gradient(155deg, rgba(255,255,255,.105), rgba(255,255,255,.028) 55%, rgba(255,255,255,.05));
-  border:1px solid rgba(255,255,255,.20);
-  padding:52px 60px 0;color:var(--ink);overflow:hidden}
-#card-glass .en-name{font-size:13px;letter-spacing:.52em;color:var(--ink2);font-weight:600}
-#card-glass h1{font-family:var(--serif);font-size:118px;line-height:1.12;margin:16px 0 0;font-weight:600;letter-spacing:.06em}
-#card-glass .role{margin-top:14px;font-size:19px;letter-spacing:.34em;color:var(--accent);font-weight:600}
-#card-glass .pos{margin-top:20px;font-size:15.5px;line-height:1.8;color:var(--ink2);max-width:640px}
-#card-glass .strip{position:absolute;left:60px;right:60px;bottom:0;border-top:1px solid rgba(236,236,230,.16);
-  display:flex;padding:22px 0 26px;gap:0}
-#card-glass .strip .m{flex:1}
-#card-glass .strip .m + .m{border-left:1px solid rgba(236,236,230,.12);padding-left:26px}
-#card-glass .strip .v{font-size:34px;font-weight:700;letter-spacing:.01em}
-#card-glass .strip .v em{font-style:normal;color:var(--accent)}
-#card-glass .strip .l{font-size:12.5px;color:var(--ink2);margin-top:5px;line-height:1.55;letter-spacing:.04em}
-.stage-actions{display:flex;gap:26px;margin-top:18px;align-items:center}
-.linkbtn{appearance:none;background:none;border:none;color:var(--ink2);font-size:13px;letter-spacing:.14em;
-  cursor:pointer;padding:4px 0;border-bottom:1px solid rgba(236,236,230,.3);font-family:var(--sans)}
-.linkbtn:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.linkbtn[disabled]{opacity:.35;cursor:default}
-
-/* fallback */
-.hic-fallback{display:none}
-body.hic-off #hic{display:none}
-body.hic-off .hic-fallback{display:block}
-body.hic-off #card-glass{position:relative;width:auto;height:auto;padding:44px 40px 0}
-body.hic-off #card-glass h1{font-size:72px}
-body.hic-off #card-glass .strip{position:relative;left:0;right:0;margin-top:36px;flex-wrap:wrap;gap:18px}
-body.hic-off #card-glass .strip .m{min-width:180px}
-@media(max-width:760px){ body.hic-off #card-glass h1{font-size:54px} body.hic-off #card-glass{padding:34px 26px 0} }
 
 /* ---------- sections ---------- */
 section.block{margin-top:84px}
-section.block:first-of-type{margin-top:40px}
+section.block:first-of-type{margin-top:22px}
 .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:30px}
 .sec-head .no{font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700}
 .sec-head h2{font-size:27px;margin:0;font-weight:600;letter-spacing:.14em}
@@ -120,6 +82,19 @@ section.block:first-of-type{margin-top:40px}
 .edu .e{flex:1;min-width:250px;font-size:14px;line-height:1.95;color:var(--ink2)}
 .edu .e b{color:var(--ink);font-weight:600;display:block;margin-bottom:6px;font-size:14.5px}
 
+/* identity sits after works: name, role, one line, four facts — no card */
+.identity{margin-top:72px;padding-top:28px;border-top:1px solid var(--line2)}
+.identity .id-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.identity h2{margin:0;font-size:22px;font-weight:600;letter-spacing:.12em}
+.identity .en{font-size:11px;letter-spacing:.22em;color:var(--ink3)}
+.identity .role{margin-top:8px;font-size:13px;letter-spacing:.16em;color:var(--accent)}
+.identity p{margin:12px 0 0;max-width:680px;font-size:13.5px;line-height:1.85;color:var(--ink2)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 22px;margin-top:22px}
+.metrics .m{min-width:0}
+.metrics .v{font-size:18px;font-weight:600;letter-spacing:.01em;color:var(--ink)}
+.metrics .v em{font-style:normal;color:var(--accent)}
+.metrics .l{margin-top:4px;font-size:12px;line-height:1.55;color:var(--ink3)}
+
 footer.cta{margin-top:96px;border-top:1px solid var(--line);padding-top:44px}
 footer.cta h2{font-family:var(--serif);font-size:40px;margin:0 0 12px;font-weight:600;letter-spacing:.08em}
 footer.cta p{margin:0 0 24px;color:var(--ink2);line-height:1.9;font-size:14.5px;max-width:640px}
@@ -129,11 +104,8 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
 @media(max-width:760px){
   .wrap{padding:0 18px 64px}
   .topbar{flex-wrap:wrap;gap:10px;padding:20px 0 16px}
-  .status{margin-left:0;width:100%}
-  .stage{margin-top:26px}
-  .stage-actions{flex-wrap:wrap;gap:14px}
   section.block{margin-top:58px}
-  section.block:first-of-type{margin-top:28px}
+  section.block:first-of-type{margin-top:14px}
   .sec-head{gap:12px;margin-bottom:22px}
   .sec-head h2{font-size:22px}
   .sec-head .en{display:none}
@@ -144,12 +116,9 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
   .w-meta h3{font-size:20px}
   .w-meta p{min-width:0;flex-basis:100%;font-size:14px}
   .w-meta .rlink{flex-basis:100%}
-  body.hic-off #card-glass .strip .v{font-size:28px}
-  body.hic-off #card-glass .strip .m{min-width:130px;flex:1 1 40%}
-  body.hic-off #card-glass .strip .m + .m{border-left:none;padding-left:0}
-  body.hic-off #card-glass .role{font-size:16px;letter-spacing:.24em}
-  body.hic-off #card-glass .en-name{font-size:11px;letter-spacing:.36em}
-  body.hic-off #card-glass .pos{font-size:14.5px}
+  .identity{margin-top:48px;padding-top:22px}
+  .identity h2{font-size:20px}
+  .metrics{grid-template-columns:1fr 1fr;gap:16px 18px}
   .job-head .when{margin-left:0;width:100%}
   .earlier .when{width:100%}
   .proj li,.proj p{font-size:14px}
@@ -159,9 +128,8 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
 @media print{
   body{background:#fff;color:#111}
   :root{--ink:#111;--ink2:#333;--ink3:#666;--line:#bbb;--line2:#ddd;--accent:#8a6d1f}
-  .stage,.stage-actions,.status{display:none!important}
-  #card-glass{background:none;border-color:#999;color:#111}
   a{color:#111}
+  .identity{break-inside:avoid}
 }
 </style>
 </head>
@@ -171,29 +139,6 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
   <div class="topbar">
     <a class="home" href="https://maoxunxing.com/">maoxunxing.com</a>
     <span class="here">简 历</span>
-    <span class="status" id="hic-pill" hidden><i></i><span id="hic-pill-text"></span></span>
-  </div>
-
-  <!-- ============ Glass signature ============ -->
-  <div class="stage" id="stage">
-    <canvas id="hic" width="1060" height="600" layoutsubtree content="drawable" aria-label="毛训星，AI 全栈工程师">
-      <div id="card-glass" drawable>
-        <div class="en-name">MAO XUNXING · MOMO</div>
-        <h1>毛训星</h1>
-        <div class="role">AI 全栈工程师</div>
-        <p class="pos">11 年工程经验，阿里 7 年跨境电商复杂平台。近两年主攻 AI 研发工程化——把 AI 生成代码的不确定性，收进可执行的工程门禁里。</p>
-        <div class="strip">
-          <div class="m"><div class="v">85<em>%</em></div><div class="l">本人 AI 编码占比（插件采集）<br>团队约 60%</div></div>
-          <div class="m"><div class="v">20<em>×</em></div><div class="l">楼层批量发布提速<br>约 200 分钟 → 10 分钟</div></div>
-          <div class="m"><div class="v">−24<em>%</em></div><div class="l">首页 LCP<br>2722ms → 2070ms</div></div>
-          <div class="m"><div class="v">668</div><div class="l">大促巡检覆盖页面<br>漏配率 约 8% → 2% 以下</div></div>
-        </div>
-      </div>
-    </canvas>
-    <div class="hic-fallback" id="hic-fallback" aria-hidden="true"></div>
-  </div>
-  <div class="stage-actions">
-    <button class="linkbtn" id="btn-export" type="button">导出为图片</button>
   </div>
 
   <!-- ============ 01 作品 ============ -->
@@ -251,6 +196,22 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
         <p>放在主站的对外工具：输入网址，自动分析 AI 搜索可见度并出报告（八维卫生分 + 按可挽回分排序的修复清单），评分引擎与内部 fx-geo 闭环面板同源。<span class="metric">maoxunxing.com/ai/geo-health-check/</span></p>
         <a class="rlink" href="https://maoxunxing.com/ai/geo-health-check/" target="_blank" rel="noopener">打开工具 →</a></div>
     </article>
+  </section>
+
+  <!-- ============ 基本信息（原玻璃卡事实，放在作品之后） ============ -->
+  <section class="identity" aria-label="基本信息">
+    <div class="id-head">
+      <h2>毛训星</h2>
+      <span class="en">MAO XUNXING · MOMO</span>
+    </div>
+    <div class="role">AI 全栈工程师</div>
+    <p>11 年工程经验，阿里 7 年跨境电商复杂平台。近两年主攻 AI 研发工程化——把 AI 生成代码的不确定性，收进可执行的工程门禁里。</p>
+    <div class="metrics">
+      <div class="m"><div class="v">85<em>%</em></div><div class="l">本人 AI 编码占比（插件采集）<br>团队约 60%</div></div>
+      <div class="m"><div class="v">20<em>×</em></div><div class="l">楼层批量发布提速<br>约 200 分钟 → 10 分钟</div></div>
+      <div class="m"><div class="v">−24<em>%</em></div><div class="l">首页 LCP<br>2722ms → 2070ms</div></div>
+      <div class="m"><div class="v">668</div><div class="l">大促巡检覆盖页面<br>漏配率 约 8% → 2% 以下</div></div>
+    </div>
   </section>
 
   <!-- ============ 02 经历 ============ -->
@@ -342,141 +303,5 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
   </footer>
   <p class="fineprint">作品区截图为各站线上真实页面；简历事实以本人投递版简历为准。</p>
 </div>
-
-<script>
-(function(){
-  "use strict";
-  var canvas = document.getElementById('hic');
-  var pill = document.getElementById('hic-pill');
-  var pillText = document.getElementById('hic-pill-text');
-  var btnExport = document.getElementById('btn-export');
-  var stage = document.getElementById('stage');
-  var panel = document.getElementById('card-glass');
-
-  function supportsHIC(){
-    try{
-      if (typeof CanvasRenderingContext2D === 'undefined') return false;
-      return 'drawElementImage' in CanvasRenderingContext2D.prototype;
-    }catch(e){ return false; }
-  }
-
-  var smallScreen = window.innerWidth < 760;
-  if (!supportsHIC() || smallScreen){
-    document.body.classList.add('hic-off');
-    var fb = document.getElementById('hic-fallback');
-    fb.setAttribute('aria-hidden','false');
-    fb.appendChild(panel);
-    if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
-    btnExport.disabled = true;
-    return;
-  }
-
-  pill.hidden = false;
-  pill.classList.add('on');
-  pillText.textContent = 'HTML-in-Canvas 已启用';
-  var ctx = canvas.getContext('2d');
-  var W=0, DPR=1, S=1, H=600;
-  var tx=0, ty=0, mx=0, my=0, sheen=0.35, sheenT=0.35;
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var inView = true, rafId = null, t0 = performance.now();
-
-  function resize(){
-    var rect = stage.getBoundingClientRect();
-    DPR = Math.min(window.devicePixelRatio||1, 2);
-    W = Math.max(320, Math.floor(rect.width));
-    S = Math.min(1, W/1060);
-    H = Math.round(600*S);
-    canvas.style.height = H+'px';
-    canvas.width = Math.floor(W*DPR);
-    canvas.height = Math.floor(H*DPR);
-    if (canvas.requestPaint) canvas.requestPaint();
-  }
-
-  function draw(){
-    if (!ctx) return;
-    ctx.reset ? ctx.reset() : ctx.setTransform(1,0,0,1,0,0);
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.scale(DPR*S, DPR*S);
-    var DW = W/S, DH = 600, t = (performance.now()-t0)/1000;
-
-    // gallery backdrop: near-black + spotlight following the mouse
-    ctx.fillStyle = '#0B0C0E'; ctx.fillRect(0,0,DW,DH);
-    var cx = DW/2 + mx*130, cy = 240 + my*60;
-    var g = ctx.createRadialGradient(cx, cy, 60, cx, cy, 620);
-    g.addColorStop(0,'rgba(236,230,205,.13)'); g.addColorStop(.55,'rgba(236,230,205,.045)'); g.addColorStop(1,'rgba(236,230,205,0)');
-    ctx.fillStyle = g; ctx.fillRect(0,0,DW,DH);
-    // faint horizon hairline
-    ctx.fillStyle = 'rgba(236,236,230,.05)'; ctx.fillRect(0, 452+54, DW, 1);
-
-    var w = panel.offsetWidth||1020, h = panel.offsetHeight||452;
-    var px = (DW-w)/2 + mx*10, py = 64 + my*7 + (reduced?0:Math.sin(t*.7)*3);
-    var rot = mx*0.010;
-
-    // soft shadow
-    ctx.save();
-    ctx.translate(px+w/2, py+h/2+22); ctx.rotate(rot);
-    ctx.fillStyle = 'rgba(0,0,0,.55)';
-    ctx.beginPath();
-    if (ctx.roundRect) ctx.roundRect(-w/2, -h/2, w, h, 26); else ctx.rect(-w/2,-h/2,w,h);
-    ctx.fill(); ctx.restore();
-
-    // the glass panel itself (live HTML)
-    ctx.save();
-    ctx.translate(px+w/2, py+h/2); ctx.rotate(rot);
-    try{
-      var tr = ctx.drawElementImage(panel, -w/2, -h/2);
-      if (tr && typeof tr.toString==='function'){ try{ panel.style.transform = tr.toString(); }catch(e){} }
-    }catch(e){}
-    // glass sheen: diagonal light band whose position follows the mouse
-    ctx.beginPath();
-    if (ctx.roundRect) ctx.roundRect(-w/2, -h/2, w, h, 26); else ctx.rect(-w/2,-h/2,w,h);
-    ctx.clip();
-    var sx = -w/2 + (sheen+0.5)*w*1.15;
-    var lg = ctx.createLinearGradient(sx-190, -h/2, sx+190, h/2);
-    lg.addColorStop(0,'rgba(255,255,255,0)');
-    lg.addColorStop(.5,'rgba(255,252,240,.13)');
-    lg.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle = lg; ctx.fillRect(-w/2,-h/2,w,h);
-    // top edge highlight
-    ctx.fillStyle = 'rgba(255,255,255,.20)'; ctx.fillRect(-w/2, -h/2, w, 1);
-    ctx.restore();
-  }
-
-  canvas.onpaint = draw;
-  if (!('onpaint' in canvas)) canvas.addEventListener('paint', draw);
-
-  function loop(){
-    mx += (tx-mx)*.055; my += (ty-my)*.055; sheen += (sheenT-sheen)*.06;
-    if (inView && canvas.requestPaint) canvas.requestPaint();
-    rafId = requestAnimationFrame(loop);
-  }
-  function start(){ if (!rafId && !reduced) rafId = requestAnimationFrame(loop); else if (canvas.requestPaint) canvas.requestPaint(); }
-  stage.addEventListener('mousemove', function(e){
-    var r = stage.getBoundingClientRect();
-    tx = ((e.clientX-r.left)/r.width-.5)*2;
-    ty = ((e.clientY-r.top)/r.height-.5)*2;
-    sheenT = tx*0.5;
-  });
-  stage.addEventListener('mouseleave', function(){ tx=0; ty=0; sheenT=0.35; });
-  btnExport.addEventListener('click', function(){
-    if (canvas.requestPaint) canvas.requestPaint();
-    setTimeout(function(){
-      canvas.toBlob(function(blob){
-        if (!blob) return;
-        var a=document.createElement('a');
-        a.href=URL.createObjectURL(blob); a.download='maoxunxing-resume.png'; a.click();
-        setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
-      },'image/png');
-    }, 80);
-  });
-  if ('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){ es.forEach(function(en){ inView = en.isIntersecting; }); }, {threshold:.05}).observe(stage);
-  }
-  window.addEventListener('resize', resize);
-  resize();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ if (canvas.requestPaint) canvas.requestPaint(); });
-  start();
-})();
-</script>
 </body>
 </html>
