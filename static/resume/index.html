@@ -27,6 +27,7 @@ a:hover{color:var(--accent)}
 .topbar .home:hover{color:var(--ink)}
 .topbar .here{font-size:14px;letter-spacing:.28em;color:var(--ink)}
 .status{margin-left:auto;font-size:12px;letter-spacing:.08em;color:var(--ink3);display:flex;align-items:center;gap:8px}
+.status[hidden]{display:none}
 .status i{width:7px;height:7px;border-radius:50%;background:#5A5E63;display:inline-block}
 .status.on{color:var(--ink2)} .status.on i{background:#7FB069;box-shadow:0 0 10px rgba(127,176,105,.8)}
 
@@ -53,7 +54,6 @@ a:hover{color:var(--accent)}
   cursor:pointer;padding:4px 0;border-bottom:1px solid rgba(236,236,230,.3);font-family:var(--sans)}
 .linkbtn:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .linkbtn[disabled]{opacity:.35;cursor:default}
-.stage-actions .hint{margin-left:auto;font-size:12px;color:var(--ink3);letter-spacing:.06em}
 
 /* fallback */
 .hic-fallback{display:none}
@@ -67,13 +67,12 @@ body.hic-off #card-glass .strip .m{min-width:180px}
 
 /* ---------- sections ---------- */
 section.block{margin-top:84px}
+section.block:first-of-type{margin-top:40px}
 .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:30px}
 .sec-head .no{font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700}
 .sec-head h2{font-size:27px;margin:0;font-weight:600;letter-spacing:.14em}
 .sec-head .rule{flex:1;border-top:1px solid var(--line2);transform:translateY(-4px)}
 .sec-head .en{font-size:11px;letter-spacing:.3em;color:var(--ink3)}
-.lede{font-size:16.5px;line-height:2.0;color:var(--ink2);max-width:880px;margin:0}
-.lede b{color:var(--ink);font-weight:600}
 
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px}
 .skill h3{font-size:12px;letter-spacing:.3em;color:var(--accent);margin:0 0 12px;font-weight:700}
@@ -98,7 +97,6 @@ section.block{margin-top:84px}
 .earlier p{margin:0;font-size:13.5px;line-height:1.85;color:var(--ink2);max-width:700px}
 
 /* works exhibits */
-.intro{margin-top:56px}
 .work{margin-top:64px}
 .work:first-of-type{margin-top:8px}
 .work .shot{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg2)}
@@ -134,10 +132,8 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
   .status{margin-left:0;width:100%}
   .stage{margin-top:26px}
   .stage-actions{flex-wrap:wrap;gap:14px}
-  .stage-actions .hint{margin-left:0;width:100%;line-height:1.7}
-  .intro{margin-top:38px}
-  .lede{font-size:15.5px;line-height:1.95}
   section.block{margin-top:58px}
+  section.block:first-of-type{margin-top:28px}
   .sec-head{gap:12px;margin-bottom:22px}
   .sec-head h2{font-size:22px}
   .sec-head .en{display:none}
@@ -175,7 +171,7 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
   <div class="topbar">
     <a class="home" href="https://maoxunxing.com/">maoxunxing.com</a>
     <span class="here">简 历</span>
-    <span class="status" id="hic-pill"><i></i><span id="hic-pill-text">HTML-in-Canvas 检测中</span></span>
+    <span class="status" id="hic-pill" hidden><i></i><span id="hic-pill-text"></span></span>
   </div>
 
   <!-- ============ Glass signature ============ -->
@@ -198,12 +194,6 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
   </div>
   <div class="stage-actions">
     <button class="linkbtn" id="btn-export" type="button">导出为图片</button>
-    <span class="hint">Chrome 157+ 首屏为 HTML-in-Canvas 玻璃展品 · 其余浏览器同内容静态呈现</span>
-  </div>
-
-  <!-- ============ intro ============ -->
-  <div class="intro">
-    <p class="lede">11 年工程经验，阿里 7 年深耕跨境电商复杂平台。近两年主攻 <b>AI 研发工程化</b>：在商业化广告业务落地 AI Coding Harness（分层约束 / 确定性评测 / 多阶段 Agent 编排）；在全球首页运营平台落地大促巡检平台与投放 Agent，把平台能力经 <b>MCP</b> 封装为 Agent 可调用工具。此前作为主 Owner 重构全球首页运营平台（协议驱动、多端多国家），建设导购页面搭建平台核心模块，主导商业化广告前端由低代码迁移至源码体系。善用 Schema 契约、角色分层、发布卡口与实时校验，让复杂平台可演进、可稳定交付。后端以 Node.js Middleware / RPC / Serverless SSR 为主。</p>
   </div>
 
   <!-- ============ 01 作品 ============ -->
@@ -220,7 +210,7 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
     <article class="work">
       <a class="shot" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/crossagent.jpg" alt="CrossAgent Lab 用例库首页" loading="lazy"></a>
       <div class="w-meta"><div class="w-head"><h3>CrossAgent Lab</h3><span class="st">LIVE</span></div>
-        <p>跨境电商 Agent 用例库与卖家 MCP 情报站，整理别人正在用的跨境 Agent 做法。其 Skills 业务按第一方自研模式做：首个 Skill「评论挖掘 → Listing 改写」用 415 条真实评论实跑出样例，已上架开卖。<span class="metric">用例 81 条 · 首个 Skill $49 在售 · 实跑分诊抽查一致率 94.4%</span></p>
+        <p>跨境电商 Agent 用例库与卖家 MCP 情报站，整理别人正在用的跨境 Agent 做法。其 Skills 按第一方自研：评论挖掘 → Listing 改写用 415 条真实评论实跑出样例，技能目录仍标草稿试价。<span class="metric">用例 81 条 · 实跑分诊抽查一致率 94.4%</span></p>
         <a class="rlink" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener">crossagent.maoxunxing.com →</a></div>
     </article>
 
@@ -350,7 +340,7 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
       <a href="https://maoxunxing.com/about/">微信 maoxunxing</a>
     </div>
   </footer>
-  <p class="fineprint">首屏使用 Chrome 157 的 HTML-in-Canvas API（WICG 提案，2026-10-26 正式发布）：一整块 HTML 玻璃面板被原生画进 Canvas，保留可访问性与可选中文本，并叠加跟随鼠标的折射高光；其余浏览器走 DOM 回退，内容一致。作品区截图为各站 2026-11-07 线上真实页面；简历事实以本人投递版简历为准，项目数据为各站线上可查状态（2026-11）。</p>
+  <p class="fineprint">作品区截图为各站线上真实页面；简历事实以本人投递版简历为准。</p>
 </div>
 
 <script>
@@ -377,11 +367,11 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
     fb.setAttribute('aria-hidden','false');
     fb.appendChild(panel);
     if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
-    pillText.textContent = smallScreen && supportsHIC() ? '小屏静态呈现 · 桌面 Chrome 157+ 为 Canvas 版' : '静态呈现 · Chrome 157+ 为 Canvas 版';
     btnExport.disabled = true;
     return;
   }
 
+  pill.hidden = false;
   pill.classList.add('on');
   pillText.textContent = 'HTML-in-Canvas 已启用';
   var ctx = canvas.getContext('2d');
