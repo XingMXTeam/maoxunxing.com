@@ -77,6 +77,12 @@ section.block:first-of-type{margin-top:22px}
 .w-meta p .metric{display:block;color:var(--ink);margin-top:6px;font-size:13.5px}
 .w-meta .rlink{flex:none;font-size:13px;letter-spacing:.1em;text-decoration:none;color:var(--ink2)}
 .w-meta .rlink:hover{color:var(--accent)}
+.w-meta .w-links{flex:none;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.work-sub{margin-top:72px;display:flex;align-items:baseline;gap:16px}
+.work-sub .k{flex:none;font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:700}
+.work-sub .rule{flex:1;border-top:1px solid var(--line2);transform:translateY(-4px)}
+.work-sub .d{flex:none;font-size:12px;letter-spacing:.06em;color:var(--ink3)}
+.work-sub + .work{margin-top:26px}
 
 .edu{display:flex;gap:40px;flex-wrap:wrap}
 .edu .e{flex:1;min-width:250px;font-size:14px;line-height:1.95;color:var(--ink2)}
@@ -116,6 +122,10 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
   .w-meta h3{font-size:20px}
   .w-meta p{min-width:0;flex-basis:100%;font-size:14px}
   .w-meta .rlink{flex-basis:100%}
+  .w-meta .w-head{flex-wrap:wrap;gap:6px 12px}
+  .w-meta .w-links{flex-basis:100%;align-items:flex-start}
+  .work-sub{margin-top:48px;flex-wrap:wrap;gap:8px 12px}
+  .work-sub .rule{display:none}
   .identity{margin-top:48px;padding-top:22px}
   .identity h2{font-size:20px}
   .metrics{grid-template-columns:1fr 1fr;gap:16px 18px}
@@ -196,6 +206,38 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
         <p>放在主站的对外工具：输入网址，自动分析 AI 搜索可见度并出报告（八维卫生分 + 按可挽回分排序的修复清单），评分引擎与内部 fx-geo 闭环面板同源。<span class="metric">maoxunxing.com/ai/geo-health-check/</span></p>
         <a class="rlink" href="https://maoxunxing.com/ai/geo-health-check/" target="_blank" rel="noopener">打开工具 →</a></div>
     </article>
+
+    <div class="work-sub">
+      <span class="k">公司内作品</span>
+      <span class="rule"></span>
+      <span class="d">公开可访问的任职站点</span>
+    </div>
+
+    <article class="work">
+      <a class="shot" href="https://university.lazada.com/" target="_blank" rel="noopener"><img src="./works/lazada-university.jpg" alt="Lazada 知识库首页：Lazada 2026 Q4 大促日历" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>国际化商家教育系统</h3><span class="st">公司内作品</span></div>
+        <p>阿里巴巴·国际化中台，2019.07 — 2021.09。一号位，从 0 到 1。面向商家的公开站点：业务层覆盖 AliExpress、Lazada、Daraz，各业务内再覆盖多个国家站。与 Daraz 产品直接协作，在 AE、Lazada 负责技术方案和部分产品设计。基于 DADA Schema 低代码与可复用组件。<span class="metric">qiankun 微前端 · Combo 按需加载 · 微应用 LCP 约 2.5s</span></p>
+        <div class="w-links">
+          <a class="rlink" href="https://university.lazada.com/" target="_blank" rel="noopener">university.lazada.com →</a>
+          <a class="rlink" href="https://university.daraz.pk/" target="_blank" rel="noopener">university.daraz.pk →</a>
+          <a class="rlink" href="https://learning.aliexpress.com/" target="_blank" rel="noopener">learning.aliexpress.com →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <a class="shot" href="https://study.163.com/" target="_blank" rel="noopener"><img src="./works/study163.jpg" alt="网易云课堂首页：超级学习节" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>网易云课堂</h3><span class="st">公司内作品</span></div>
+        <p>网易杭研院·教育事业部，2016.07 — 2019.03。多端核心功能负责人，覆盖 Web、M 站与移动端。负责包月、包年与自动续费下单，产出统一支付组件；主导 HTTPS 与 HTTP/2 升级，落地页 FCP 优化约 30%。</p>
+        <a class="rlink" href="https://study.163.com/" target="_blank" rel="noopener">study.163.com →</a></div>
+    </article>
+
+    <article class="work">
+      <a class="shot" href="https://service1.dxzq.net/" target="_blank" rel="noopener"><img src="./works/dxzq.jpg" alt="东兴证券网上营业厅首页：自助开户与业务办理" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>东兴证券网上营业厅</h3><span class="st">公司内作品</span></div>
+        <p>浙江核新同花顺，2014.07 — 2016.06。外派北京证券客户总部，独立上线网上营业厅与基金商城。</p>
+        <a class="rlink" href="https://service1.dxzq.net/" target="_blank" rel="noopener">service1.dxzq.net →</a></div>
+    </article>
   </section>
 
   <!-- ============ 基本信息（原玻璃卡事实，放在作品之后） ============ -->
@@ -267,11 +309,11 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
 
     <div class="earlier">
       <div class="row"><div class="when">2019.07 — 2021.09</div><div><h3>阿里巴巴 · 国际化中台 — DADA 低代码平台</h3>
-        <p>商家教育系统一号位（从 0 到 1，覆盖 AliExpress / Lazada / Daraz 多业务多国家站点）；基于 qiankun 的微前端改造，Combo 按需加载，微应用 LCP 约 2.5s。DADA 累计产出 1100+ 页面、100+ 使用者。</p></div></div>
+        <p>商家教育系统一号位（从 0 到 1，覆盖 AliExpress / Lazada / Daraz 多业务多国家站点，<a href="https://university.lazada.com/" target="_blank" rel="noopener">university.lazada.com</a>、<a href="https://university.daraz.pk/" target="_blank" rel="noopener">university.daraz.pk</a>、<a href="https://learning.aliexpress.com/" target="_blank" rel="noopener">learning.aliexpress.com</a>）；基于 qiankun 的微前端改造，Combo 按需加载，微应用 LCP 约 2.5s。DADA 累计产出 1100+ 页面、100+ 使用者。</p></div></div>
       <div class="row"><div class="when">2016.07 — 2019.03</div><div><h3>网易杭研院 · 教育事业部 — 高级前端工程师</h3>
-        <p>网易云课堂多端核心功能负责人（3-2 晋升 3-3）；会员与支付体系（包月 / 包年 / 自动续费统一支付组件）；主导 HTTPS 与 HTTP/2 升级，落地页 FCP 优化约 30%。</p></div></div>
+        <p>网易云课堂（<a href="https://study.163.com/" target="_blank" rel="noopener">study.163.com</a>）多端核心功能负责人（3-2 晋升 3-3）；会员与支付体系（包月 / 包年 / 自动续费统一支付组件）；主导 HTTPS 与 HTTP/2 升级，落地页 FCP 优化约 30%。</p></div></div>
       <div class="row"><div class="when">2014 — 2019</div><div><h3>国铁吉讯 · 浙江核新同花顺</h3>
-        <p>国铁吉讯高级前端工程师（2019）；同花顺券商资讯组前端工程师（2014.07 — 2016.06）：外派北京证券客户总部，独立完成网上营业厅、基金商城等站点上线，贡献表格配置、PDF 等核心组件。</p></div></div>
+        <p>国铁吉讯高级前端工程师（2019）；同花顺券商资讯组前端工程师（2014.07 — 2016.06）：外派北京证券客户总部，独立完成网上营业厅（<a href="https://service1.dxzq.net/" target="_blank" rel="noopener">东兴证券 service1.dxzq.net</a>）、基金商城等站点上线，贡献表格配置、PDF 等核心组件。</p></div></div>
     </div>
   </section>
 
