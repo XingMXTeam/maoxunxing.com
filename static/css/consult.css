@@ -20,29 +20,28 @@
   margin: 0 0 0.8rem;
 }
 
-.consult-facts {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.consult-price {
+  margin: 0.2rem 0 0.6rem;
+  color: var(--c-fg-deep);
+  font-size: 1.8rem;
+  font-weight: 650;
+  line-height: 1.4;
 }
 
-.consult-facts li {
-  margin: 0;
-  padding: 0.28rem 0;
+.consult-flagship > .consult-terms {
+  margin: 0 0 0.8rem;
+  max-width: 36em;
+  color: var(--c-fg);
+  font-size: 1.6rem;
+  line-height: 1.55;
+}
+
+.consult-ready {
+  margin: 0 0 1.2rem;
   color: var(--c-fg-deep);
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.45;
-}
-
-.consult-pending {
-  margin: 1rem 0 1.2rem;
-  padding: 0.75rem 0.9rem;
-  border: 1px dashed var(--c-border-hover);
-  border-radius: 12px;
-  color: var(--c-fg);
-  font-size: 1.4rem;
-  line-height: 1.5;
 }
 
 .consult-contact {
@@ -119,10 +118,9 @@
   line-height: 1.4;
 }
 
-.consult-more-note {
-  margin: 0.8rem 0 0;
-  color: var(--c-fg-light);
-  font-size: 1.3rem;
+.consult-rows .consult-terms {
+  color: var(--c-fg);
+  font-size: 1.35rem;
   line-height: 1.45;
 }
 
