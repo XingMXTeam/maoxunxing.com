@@ -54,7 +54,8 @@ Amazon 商品页没有目录。仓库里没有正文。下面的章节全部是�
 
 ## Amazon CTA
 
-- 中文目录和锁章的购买链接只用 `https://www.amazon.com/dp/B0F6NSTGPQ`，新窗口，`rel="noopener noreferrer"`。中文目录不放英文版 ASIN。
+- 中文目录、免费章和锁章的购买链接只用 `https://www.amazon.com/dp/B0F6NSTGPQ`，新窗口，`rel="noopener noreferrer"`。这些中文页不放英文版 ASIN。
+- 中文目录上有一个次级链接「英文版」，只指向站内 `/en/options-dabaihua/`，不直接去亚马逊。
 - 英文入口页 `/en/options-dabaihua/` 使用 `https://www.amazon.com/dp/B0FQ32FWGM`，同样新窗口。
 - 没有站内支付，没有 Stripe，没有「全书免费读」。
 
