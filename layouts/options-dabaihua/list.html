@@ -1,0 +1,152 @@
+{{ define "title" }}
+  {{ .Title }} ·
+  {{ .Site.Title }}
+{{ end }}
+
+{{ define "content" }}
+  {{ partial "options-reader/assets.html" . }}
+  {{ $book := site.Data.optionsDabaihua }}
+  {{ $total := len $book.chapters }}
+  {{ $isZh := hasPrefix (lower .Site.Language.Lang) "zh" }}
+
+  {{ if $isZh }}
+    <section
+      class="container options-reader"
+      data-options-reader
+      data-total="{{ $total }}"
+      data-base="{{ "options-dabaihua/" | relLangURL }}"
+    >
+      <p class="options-banner">
+        阅读预览，尚未上线。下面的章名是占位，不是官方目录。此分界为预览机制演示，正式免费章待
+        TT 定。
+      </p>
+
+      <div class="options-cover">
+        <p class="options-cover-edition">{{ $book.editionNote }}</p>
+        <h1>{{ $book.titleZh }}</h1>
+        <p class="options-cover-by">{{ $book.author }}</p>
+      </div>
+
+      <dl class="options-facts">
+        <div>
+          <dt>页数</dt>
+          <dd>约 {{ $book.pageCount }} 页</dd>
+        </div>
+        <div>
+          <dt>出版日期</dt>
+          <dd>{{ $book.published }}</dd>
+        </div>
+        <div>
+          <dt>ASIN</dt>
+          <dd>{{ $book.asinZh }}</dd>
+        </div>
+      </dl>
+
+      <p class="options-lead">
+        本页是中文版的站内阅读预览。Amazon
+        商品页没有目录，正文也还没放进来，所以下面不是正式目录。
+      </p>
+
+      <div class="options-actions">
+        {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买中文版") }}
+        <a class="options-quiet" href="/en/options-dabaihua/">英文版入口</a>
+      </div>
+
+      <p class="options-resume" data-options-resume hidden>
+        <a href="{{ "options-dabaihua/01/" | relLangURL }}"></a>
+      </p>
+
+      <h2 class="options-toc-heading">目录</h2>
+      <p class="options-note">
+        共 {{ $total }}
+        个占位条目，只为演示目录、阅读进度，以及免费和锁定怎么分开。这不是本书的章数。前
+        {{ $book.demoFreeThrough }}
+        章可以打开阅读版式，从第
+        {{ add $book.demoFreeThrough 1 }}
+        章起只显示章名和购买引导。
+      </p>
+
+      <ol class="options-toc">
+        {{ range $book.chapters }}
+          {{ $n := . }}
+          {{ $locked := gt $n $book.demoFreeThrough }}
+          {{ if eq $n (add $book.demoFreeThrough 1) }}
+            <li class="options-boundary">
+              此分界为预览机制演示，正式免费章待 TT 定。
+            </li>
+          {{ end }}
+          <li>
+            <a href="{{ printf "options-dabaihua/%02d/" $n | relLangURL }}">
+              <span class="options-toc-num">{{ printf "%02d" $n }}</span>
+              <span class="options-toc-title">第 {{ $n }} 章（占位，待正文）</span>
+              {{ if $locked }}
+                <span class="options-badge is-locked">锁定</span>
+              {{ else }}
+                <span class="options-badge is-free">免费预览</span>
+              {{ end }}
+            </a>
+          </li>
+        {{ end }}
+      </ol>
+
+      <aside class="options-en-card" aria-labelledby="options-en-title">
+        <p class="options-kicker">英文版 · 只留入口</p>
+        <h2 id="options-en-title">{{ $book.titleEn }}</h2>
+        <p>{{ $book.author }} · ASIN {{ $book.asinEn }}</p>
+        <p>本预览不提供英文全文。</p>
+        {{ partial "options-reader/amazon.html" (dict "edition" "en" "label" "在亚马逊查看英文版") }}
+      </aside>
+    </section>
+  {{ else }}
+    <section class="container options-reader" data-options-reader>
+      <p class="options-banner">
+        In-site reading is the Chinese edition only. This page does not contain
+        the English book. The free-chapter line in the Chinese preview is a
+        demo, not a final decision.
+      </p>
+
+      <div class="options-cover">
+        <p class="options-cover-edition">English edition · entry only</p>
+        <h1>{{ $book.titleEn }}</h1>
+        <p class="options-cover-by">{{ $book.author }}</p>
+      </div>
+
+      <dl class="options-facts">
+        <div>
+          <dt>ASIN</dt>
+          <dd>{{ $book.asinEn }}</dd>
+        </div>
+        <div>
+          <dt>Reading preview</dt>
+          <dd>Chinese edition</dd>
+        </div>
+      </dl>
+
+      <p class="options-lead">
+        《{{ $book.titleZh }}》 is the book this preview actually pages
+        through. Chapter titles there are placeholders. There is no English
+        chapter text in this pass.
+      </p>
+
+      <div class="options-actions">
+        {{ partial "options-reader/amazon.html" (dict "edition" "en" "label" "Buy the English edition on Amazon") }}
+        <a class="options-quiet" href="/zh-cn/options-dabaihua/"
+          >Open the Chinese reading preview</a
+        >
+      </div>
+
+      <aside class="options-en-card">
+        <p class="options-kicker">中文版购买</p>
+        <h2>{{ $book.titleZh }}</h2>
+        <p>
+          {{ $book.editionNote }} · {{ $book.author }} · ASIN
+          {{ $book.asinZh }} · 约 {{ $book.pageCount }} 页 ·
+          {{ $book.published }}
+        </p>
+        {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买中文版") }}
+      </aside>
+    </section>
+  {{ end }}
+
+  <script src="/js/options-reader.js?v=20261111-1"></script>
+{{ end }}

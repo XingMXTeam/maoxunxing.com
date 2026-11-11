@@ -35,6 +35,44 @@
     position: relative !important;
     z-index: 1 !important;
   }
+
+  .home-options-card {
+    margin: 1.6rem 0 0;
+  }
+
+  .home-options-card a {
+    display: block;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .home-options-kicker {
+    margin: 0 0 0.5rem;
+    color: var(--c-fg-light);
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .home-options-card h2 {
+    margin: 0 0 0.7rem;
+    color: var(--c-fg-deeper);
+    font-size: 2rem;
+    font-weight: 750;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  .home-options-card p {
+    margin: 0;
+  }
+
+  .home-options-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--c-link);
+    font-size: 1.45rem;
+    font-weight: 650;
+  }
 </style>
 
 <section class="container home-prose">
@@ -117,6 +155,22 @@
       <a class="home-browse-link" href="{{ i18n "homeBrowse7Href" }}"><strong>{{ i18n "homeBrowse7Title" }}</strong><span>{{ i18n "homeBrowse7Desc" }}</span></a>
       <a class="home-browse-link" href="{{ i18n "homeBrowse8Href" }}"><strong>{{ i18n "homeBrowse8Title" }}</strong><span>{{ i18n "homeBrowse8Desc" }}</span></a>
     </div>
+    <aside class="home-book-card home-options-card" aria-labelledby="home-options-preview-title">
+      <a id="home-options-preview-link" href="{{ i18n "homeOptionsPreviewHref" }}">
+        <p class="home-options-kicker">{{ i18n "homeOptionsPreviewKicker" }}</p>
+        <h2 id="home-options-preview-title">{{ i18n "homeOptionsPreviewTitle" }}</h2>
+        <p>{{ i18n "homeOptionsPreviewDesc" }}</p>
+        <p class="home-options-cta">{{ i18n "homeOptionsPreviewCTA" }} →</p>
+      </a>
+    </aside>
+    <script>
+      (function () {
+        var link = document.getElementById("home-options-preview-link");
+        if (!link) return;
+        var path = link.getAttribute("href");
+        if (path && path.charAt(0) === "/") link.href = location.origin + path;
+      })();
+    </script>
   </section>
 
   <hr class="home-divider" />

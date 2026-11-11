@@ -100,6 +100,9 @@
     {{ with .Site.Params.keywords }}
       <meta name="keywords" content="{{ . }}" />
     {{ end }}
+    {{ if eq .Section "options-dabaihua" }}
+      <meta name="robots" content="noindex, nofollow" />
+    {{ end }}
 
     {{ partial "twitter-card.html" . }}
     {{ partial "opengraph.html" . }}
@@ -125,7 +128,10 @@
     <link rel="alternate" hreflang="x-default" href="{{ $defaultPermalink }}" />
     {{- end -}}
 
-    {{ if .Permalink }}
+    {{/* Reader pages omit <base>. The site base is the production permalink, so a
+         preview host would send /css and /zh-cn/options-dabaihua/* back to
+         maoxunxing.com, where these files do not exist yet. */}}
+    {{ if and .Permalink (ne .Section "options-dabaihua") }}
       <base href="{{ .Permalink }}" />
     {{ end }}
     <title>{{ block "title" . }}{{- .Site.Title -}}{{ end }}</title>
@@ -280,7 +286,7 @@
 
     {{ hugo.Generator }}
     {{/* Skip ads on the home page and on every page in the projects section (listing and detail). */}}
-    {{ $showAds := and (not .IsHome) (ne .Section "projects") }}
+    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Section "options-dabaihua") }}
     {{ if $showAds }}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
     {{ end }}

@@ -1,0 +1,24 @@
+# Preview mechanism only. Not the official table of contents, and not TT's
+# decision about which chapters are free. Amazon does not publish a TOC, and
+# the manuscript is not in this repo. Change demoFreeThrough only after TT
+# names the real free chapters.
+demoFreeThrough: 2
+amazonZh: https://www.amazon.com/dp/B0F6NSTGPQ
+amazonEn: https://www.amazon.com/dp/B0FQ32FWGM
+asinZh: B0F6NSTGPQ
+asinEn: B0FQ32FWGM
+pageCount: 84
+published: "2025-04-28"
+titleZh: "期权大白话: 告别投机，建立你的第一套交易系统"
+titleEn: "Options Trading Made Simple: Build Your First Options Trading System Without Speculation"
+editionNote: "Traditional Chinese Edition"
+author: Momo
+chapters:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8

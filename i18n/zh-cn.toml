@@ -214,6 +214,21 @@ other = "图像、视觉实验和兴趣记录"
 [homeBrowse8Href]
 other = "/zh-cn/gallery/"
 
+[homeOptionsPreviewKicker]
+other = "阅读预览"
+
+[homeOptionsPreviewTitle]
+other = "期权大白话"
+
+[homeOptionsPreviewDesc]
+other = "站内翻页预览。部分占位章可以打开，其余上锁，购买去亚马逊。免费章还没定，这也不是正式目录。"
+
+[homeOptionsPreviewCTA]
+other = "打开阅读预览"
+
+[homeOptionsPreviewHref]
+other = "/zh-cn/options-dabaihua/"
+
 [homeBookTitle]
 other = "我写的一本期权电子书"
 
