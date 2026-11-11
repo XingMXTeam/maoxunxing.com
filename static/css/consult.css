@@ -1,0 +1,139 @@
+/* Consult landing. Reuses home/hub type and the primary pill.
+   Flagship stays on a ~375px first screen; secondary rows stay quiet. */
+
+.consult-page {
+  width: 100%;
+  padding-top: 0.4rem;
+  padding-bottom: 1.6rem;
+}
+
+.consult-flagship {
+  margin: 0;
+}
+
+.consult-page .home-eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.consult-page .home-hero-title {
+  max-width: 12em;
+  margin: 0 0 0.8rem;
+}
+
+.consult-facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.consult-facts li {
+  margin: 0;
+  padding: 0.28rem 0;
+  color: var(--c-fg-deep);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.consult-pending {
+  margin: 1rem 0 1.2rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px dashed var(--c-border-hover);
+  border-radius: 12px;
+  color: var(--c-fg);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.consult-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.consult-primary {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 4.4rem;
+  text-decoration: none;
+}
+
+.consult-primary:hover {
+  text-decoration: none;
+}
+
+.consult-wechat {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--c-fg-light);
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.consult-wechat p {
+  margin: 0;
+}
+
+.consult-wechat img {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  cursor: default;
+}
+
+.consult-more {
+  margin-top: 2.4rem;
+}
+
+.consult-rows {
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.consult-rows li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.consult-rows li:last-child {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.consult-rows strong {
+  color: var(--c-fg);
+  font-size: 1.45rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.consult-rows span {
+  color: var(--c-fg-light);
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.consult-more-note {
+  margin: 0.8rem 0 0;
+  color: var(--c-fg-light);
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+@media only screen and (min-width: 769px) {
+  .consult-contact {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .consult-primary {
+    width: auto;
+  }
+}

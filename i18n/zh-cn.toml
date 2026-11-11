@@ -374,3 +374,63 @@ other = "AI 创业"
 
 [footerCreator]
 other = "创作系统"
+
+[homeConsultKicker]
+other = "可以找我"
+
+[homeConsultTitle]
+other = "海外账号与 AI 接入"
+
+[homeConsultDesc]
+other = "美区 ChatGPT / Claude，购买 Gemini 并接入账号。价格与时长待定。"
+
+[consultEyebrow]
+other = "Momo / 毛毛星 · AI 全栈 · 独立开发者"
+
+[consultFlagshipTitle]
+other = "海外账号申请与 AI 接入"
+
+[consultFactChatgpt]
+other = "申请美区 ChatGPT 和 Claude。"
+
+[consultFactGemini]
+other = "购买 Gemini，并接入账号。"
+
+[consultFactReady]
+other = "已有成熟方案。"
+
+[consultPending]
+other = "价格与时长待定，先来信说明需求。是否包含代操，也待定。"
+
+[consultCta]
+other = "来信说明需求"
+
+[consultWechatLabel]
+other = "微信："
+
+[consultMoreLabel]
+other = "其他也可以做"
+
+[consultMore1]
+other = "亚马逊电子书制作与发布"
+
+[consultMore2Title]
+other = "AI 工具使用"
+
+[consultMore2Detail]
+other = "MiniMax、Grok、Claude Code、ChatGPT、Gemini"
+
+[consultMore3Title]
+other = "前端与独立建站"
+
+[consultMore3Detail]
+other = "已搭过多站，偏聚合站，含 GEO、生图与系统接入"
+
+[consultMore4Title]
+other = "出海支付与海外卡"
+
+[consultMore4Detail]
+other = "Stripe、国外虚拟卡、民生香港卡"
+
+[consultMoreNote]
+other = "这几项的价格、时长和是否代操，同样待定。"

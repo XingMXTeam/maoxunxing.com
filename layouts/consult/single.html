@@ -1,0 +1,61 @@
+{{ define "title" }}
+  {{ i18n "consultFlagshipTitle" }} ·
+  {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <link rel="stylesheet" href="/css/consult.css?v=20261111-consult" />
+  <section class="container consult-page">
+    <header class="consult-flagship">
+      <p class="home-eyebrow">{{ i18n "consultEyebrow" }}</p>
+      <h1 class="home-hero-title">{{ i18n "consultFlagshipTitle" }}</h1>
+      <ul class="consult-facts">
+        <li>{{ i18n "consultFactChatgpt" }}</li>
+        <li>{{ i18n "consultFactGemini" }}</li>
+        <li>{{ i18n "consultFactReady" }}</li>
+      </ul>
+      <p class="consult-pending">{{ i18n "consultPending" }}</p>
+      <div class="consult-contact">
+        <a
+          class="home-action-primary consult-primary"
+          href="mailto:me@maoxunxing.com"
+          >{{ i18n "consultCta" }}</a
+        >
+        <div class="consult-wechat">
+          <p>
+            {{ i18n "consultWechatLabel" }}<span class="footer-contact-id"
+              >maoxunxing</span
+            >
+          </p>
+          <img
+            src="{{ "images/wechat-qr.jpg" | relURL }}"
+            alt="{{ i18n "footerContactQrAlt" }}"
+            width="72"
+            height="72"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section class="consult-more" aria-labelledby="consult-more-title">
+      <h2 id="consult-more-title" class="home-kicker">
+        {{ i18n "consultMoreLabel" }}
+      </h2>
+      <ul class="consult-rows">
+        <li><strong>{{ i18n "consultMore1" }}</strong></li>
+        <li>
+          <strong>{{ i18n "consultMore2Title" }}</strong>
+          <span>{{ i18n "consultMore2Detail" }}</span>
+        </li>
+        <li>
+          <strong>{{ i18n "consultMore3Title" }}</strong>
+          <span>{{ i18n "consultMore3Detail" }}</span>
+        </li>
+        <li>
+          <strong>{{ i18n "consultMore4Title" }}</strong>
+          <span>{{ i18n "consultMore4Detail" }}</span>
+        </li>
+      </ul>
+      <p class="consult-more-note">{{ i18n "consultMoreNote" }}</p>
+    </section>
+  </section>
+{{ end }}
