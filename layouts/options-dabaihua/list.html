@@ -88,14 +88,6 @@
           </li>
         {{ end }}
       </ol>
-
-      <aside class="options-en-card" aria-labelledby="options-en-title">
-        <p class="options-kicker">英文版 · 只留入口</p>
-        <h2 id="options-en-title">{{ $book.titleEn }}</h2>
-        <p>{{ $book.author }} · ASIN {{ $book.asinEn }}</p>
-        <p>本预览不提供英文全文。</p>
-        {{ partial "options-reader/amazon.html" (dict "edition" "en" "label" "在亚马逊查看英文版") }}
-      </aside>
     </section>
   {{ else }}
     <section class="container options-reader" data-options-reader>
