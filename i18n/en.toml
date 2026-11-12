@@ -151,6 +151,21 @@ other = "Images, visual experiments, and interests"
 [homeBrowse8Href]
 other = "/en/gallery/"
 
+[homeOptionsPreviewKicker]
+other = "Reading preview"
+
+[homeOptionsPreviewTitle]
+other = "期权大白话"
+
+[homeOptionsPreviewDesc]
+other = "Read chapters 1 and 2 of the Chinese edition here. Chapters 3–7 stay locked and go to Amazon."
+
+[homeOptionsPreviewCTA]
+other = "Open the reading preview"
+
+[homeOptionsPreviewHref]
+other = "/en/options-dabaihua/"
+
 [homeBookTitle]
 other = "An options ebook I wrote"
 
