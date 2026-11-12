@@ -285,8 +285,8 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
 
     {{ hugo.Generator }}
-    {{/* Skip ads on the home page and on every page in the projects section (listing and detail). */}}
-    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Section "options-dabaihua") }}
+    {{/* Skip ads on the home page, projects, the consult landing, and the book preview. */}}
+    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Type "consult") (ne .Section "options-dabaihua") }}
     {{ if $showAds }}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
     {{ end }}

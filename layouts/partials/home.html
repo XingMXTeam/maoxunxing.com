@@ -126,6 +126,35 @@
     </div>
   </section>
 
+  {{- /* One Chinese entry card. English homepage stays as it is. */ -}}
+  {{- if eq (lower .Site.Language.Lang) "zh-cn" -}}
+  <style>
+    .home-currently:has(+ .home-consult-entry) {
+      margin-bottom: var(--hub-space-2);
+    }
+
+    .home-consult-entry {
+      margin: 0 0 var(--hub-space-4);
+    }
+
+    @media only screen and (min-width: 769px) {
+      .home-consult-entry .home-product-card {
+        max-width: calc(50% - (var(--hub-space-2) / 2));
+      }
+    }
+  </style>
+  <div class="home-consult-entry">
+    <a class="home-product-card" href="{{ "consult/" | relLangURL }}">
+      <span class="home-product-top">
+        <span class="home-product-count">{{ i18n "homeConsultKicker" }}</span>
+        <span class="hub-card-arrow" aria-hidden="true">→</span>
+      </span>
+      <strong class="home-product-title">{{ i18n "homeConsultTitle" }}</strong>
+      <span class="home-product-desc">{{ i18n "homeConsultDesc" }}</span>
+    </a>
+  </div>
+  {{- end -}}
+
   <!-- 3. Small tool / project card grid (same card as /tools/ and /projects/) -->
   {{ with site.GetPage "/tools" }}
   <section class="home-section-block home-tools" aria-labelledby="home-tools-title">

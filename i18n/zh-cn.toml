@@ -389,3 +389,69 @@ other = "AI 创业"
 
 [footerCreator]
 other = "创作系统"
+
+[homeConsultKicker]
+other = "可以找我"
+
+[homeConsultTitle]
+other = "海外账号与 AI 接入"
+
+[homeConsultDesc]
+other = "美区 ChatGPT / Claude，购买 Gemini 并接入账号。¥3,980 / 次，含代操，约 5 个工作日交付。"
+
+[consultEyebrow]
+other = "Momo / 毛毛星 · AI 全栈 · 独立开发者"
+
+[consultFlagshipTitle]
+other = "海外账号申请与 AI 接入"
+
+[consultPrice]
+other = "¥3,980 / 次，含代操，约 5 个工作日交付。"
+
+[consultTerms]
+other = "含美区 ChatGPT、Claude 申请，以及 Gemini 购买与接入。账号归客户。不含按月代充，不卖共享号。平台订阅费和购买费用客户自付。"
+
+[consultFactReady]
+other = "已有成熟方案。"
+
+[consultCta]
+other = "来信说明需求"
+
+[consultWechatLabel]
+other = "微信："
+
+[consultMoreLabel]
+other = "其他也可以做"
+
+[consultMore1]
+other = "亚马逊电子书制作与发布"
+
+[consultMore1Terms]
+other = "¥3,980 起，含制作与上架辅导，广告另计"
+
+[consultMore2Title]
+other = "AI 工具使用"
+
+[consultMore2Terms]
+other = "¥1,980 / 90 分钟，一对一，不含代开账号"
+
+[consultMore2Detail]
+other = "MiniMax、Grok、Claude Code、ChatGPT、Gemini"
+
+[consultMore3Title]
+other = "前端与独立建站"
+
+[consultMore3Terms]
+other = "¥8,000 起，范围先对齐再开工"
+
+[consultMore3Detail]
+other = "已搭过多站，偏聚合站，含 GEO、生图与系统接入"
+
+[consultMore4Title]
+other = "出海支付与海外卡"
+
+[consultMore4Terms]
+other = "¥2,980 / 次，含路径说明与协助申请，年费和押金自付，周期视银行审核，约 5–10 个工作日"
+
+[consultMore4Detail]
+other = "Stripe、国外虚拟卡、民生香港卡"
