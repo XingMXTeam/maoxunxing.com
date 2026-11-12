@@ -1,6 +1,6 @@
 ---
 title: "Options Trading Made Simple"
-description: "Entry for the English edition only. The in-site reading preview is the Chinese edition. This page has no English chapter text."
+description: "English edition entry for Options Trading Made Simple. In-site reading is the Chinese edition: chapters 1–2 are open, chapters 3–7 are locked."
 translationKey: options-dabaihua
 date: 2025-04-28
 index: false

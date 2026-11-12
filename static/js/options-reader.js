@@ -24,7 +24,7 @@
       var base = root.getAttribute("data-base") || "";
       if (link) {
         link.href = base + slug + "/";
-        link.textContent = "继续阅读：第 " + n + " 章（占位，待正文）";
+        link.textContent = "继续阅读";
       }
       resume.hidden = false;
     }

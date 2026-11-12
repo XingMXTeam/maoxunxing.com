@@ -6,7 +6,15 @@
       <a href="{{ "ai-indie-hacking/" | relLangURL }}">{{ i18n "footerAIStartup" }}</a>
       <a href="{{ "creator-workflow/" | relLangURL }}">{{ i18n "footerCreator" }}</a>
       <a href="{{ "long-term-investing/" | relLangURL }}">{{ i18n "footerInvesting" }}</a>
-      <a href="https://leanpub.com/optionsmadesimple" target="_blank" rel="noopener noreferrer">{{ i18n "footerBook" }}</a>
+      <a id="footer-options-book" href="{{ "options-dabaihua/" | relLangURL }}">{{ i18n "footerBook" }}</a>
+      <script>
+        (function () {
+          var link = document.getElementById("footer-options-book");
+          if (!link) return;
+          var path = link.getAttribute("href");
+          if (path && path.charAt(0) === "/") link.href = location.origin + path;
+        })();
+      </script>
     </div>
   </nav>
   <div class="footer-contact">

@@ -8,7 +8,8 @@
   {{ $book := site.Data.optionsDabaihua }}
   {{ $n := .Params.chapter }}
   {{ $total := len $book.chapters }}
-  {{ $free := le $n $book.demoFreeThrough }}
+  {{ $chapter := index $book.chapters (sub $n 1) }}
+  {{ $free := le $n $book.freeThrough }}
   {{ $pct := 0 }}
   {{ if gt $total 0 }}
     {{ $pct = div (mul $n 100) $total }}
@@ -27,11 +28,6 @@
     data-total="{{ $total }}"
     data-base="{{ "options-dabaihua/" | relLangURL }}"
   >
-    <p class="options-banner">
-      阅读预览，尚未上线。章名是占位，不是官方目录。此分界为预览机制演示，正式免费章待
-      TT 定。
-    </p>
-
     <p class="options-bookline">
       <a href="{{ "options-dabaihua/" | relLangURL }}">{{ $book.titleZh }}</a>
     </p>
@@ -39,7 +35,7 @@
     <div class="options-progress-row">
       <p class="options-position">第 {{ $n }} / {{ $total }} 章</p>
       {{ if $free }}
-        <span class="options-badge is-free">免费预览</span>
+        <span class="options-badge is-free">免费</span>
       {{ else }}
         <span class="options-badge is-locked">锁定</span>
       {{ end }}
@@ -59,25 +55,23 @@
     <h1>{{ .Title }}</h1>
 
     {{ if $free }}
-      <p class="options-note">占位说明，不是书稿。</p>
       <div class="options-prose">
-        {{ with .Content }}
-          {{ . }}
-        {{ else }}
-          <p>此处待放入原稿。</p>
-        {{ end }}
+        {{ .Content }}
       </div>
-      {{ if eq $n $book.demoFreeThrough }}
+      {{ if eq $n $book.freeThrough }}
         <aside class="options-boundary">
-          <p>下一章起是锁定演示，页面只有章名和购买引导，没有正文。</p>
-          <p>此分界为预览机制演示，正式免费章待 TT 定。</p>
+          <p>下一章起需要购买后阅读。</p>
+          {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买本书") }}
         </aside>
       {{ end }}
     {{ else }}
+      <ol class="options-lock-sections">
+        {{ range $chapter.sections }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ol>
       <aside class="options-lock" aria-labelledby="options-lock-title">
-        <h2 id="options-lock-title">这一章在预览里是锁定的</h2>
-        <p>正文不在此页。这里只保留章名和购买引导。</p>
-        <p>此分界为预览机制演示，正式免费章待 TT 定。</p>
+        <h2 id="options-lock-title">购买后继续阅读</h2>
         {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买本书") }}
       </aside>
     {{ end }}
@@ -90,7 +84,7 @@
           href="{{ printf "options-dabaihua/%02d/" $prev | relLangURL }}"
         >
           <span>上一章</span>
-          {{ if gt $prev $book.demoFreeThrough }}
+          {{ if gt $prev $book.freeThrough }}
             <span class="options-badge is-locked">锁定</span>
           {{ end }}
         </a>
@@ -114,7 +108,7 @@
           href="{{ printf "options-dabaihua/%02d/" $next | relLangURL }}"
         >
           <span>下一章</span>
-          {{ if gt $next $book.demoFreeThrough }}
+          {{ if gt $next $book.freeThrough }}
             <span class="options-badge is-locked">锁定</span>
           {{ end }}
         </a>
@@ -127,5 +121,5 @@
     </nav>
   </section>
 
-  <script src="/js/options-reader.js?v=20261111-1"></script>
+  <script src="/js/options-reader.js?v=20261112-1"></script>
 {{ end }}
