@@ -7,6 +7,7 @@
     "newnotes": "hugo new --kind notes",
     "newbook": "hugo new --kind book-reports",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:huang": "node scripts/test-jensen-huang.mjs",
     "gallery:generate": "node scripts/generate-gallery-images.mjs",
     "build": "npm run gallery:generate && hugo --minify",
     "index": "hugo-algolia",
@@ -31,14 +32,14 @@
     "gray-matter": "^4.0.3",
     "hugo-algolia": "^1.2.14",
     "node-static": "^0.7.11",
-    "prettier": "2.8.7",
+    "prettier": "^2.8.7",
     "prettier-plugin-go-template": "0.0.13",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
     "axios": "^1.7.9",
     "node-fetch": "^3.3.2",
-    "puppeteer": "^24.2.1"
+    "puppeteer": "^24.43.1"
   },
   "repository": "https://github.com/XingMXTeam/maoxunxing.com.git"
 }

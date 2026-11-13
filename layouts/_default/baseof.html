@@ -130,8 +130,10 @@
 
     {{/* Reader pages omit <base>. The site base is the production permalink, so a
          preview host would send /css and /zh-cn/options-dabaihua/* back to
-         maoxunxing.com, where these files do not exist yet. */}}
-    {{ if and .Permalink (ne .Section "options-dabaihua") }}
+         maoxunxing.com, where these files do not exist yet. The Huang feature
+         also omits it: its canvas script and styles are root-relative, and a
+         production <base> would pull them from the live site during preview. */}}
+    {{ if and .Permalink (ne .Section "options-dabaihua") (ne .Section "features") }}
       <base href="{{ .Permalink }}" />
     {{ end }}
     <title>{{ block "title" . }}{{- .Site.Title -}}{{ end }}</title>
@@ -286,7 +288,7 @@
 
     {{ hugo.Generator }}
     {{/* Skip ads on the home page, projects, the consult landing, and the book preview. */}}
-    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Type "consult") (ne .Section "options-dabaihua") }}
+    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Type "consult") (ne .Section "options-dabaihua") (ne .Section "features") }}
     {{ if $showAds }}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
     {{ end }}
