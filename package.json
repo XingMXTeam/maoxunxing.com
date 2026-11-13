@@ -7,6 +7,7 @@
     "newnotes": "hugo new --kind notes",
     "newbook": "hugo new --kind book-reports",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:huang": "node scripts/test-jensen-huang.mjs",
     "gallery:generate": "node scripts/generate-gallery-images.mjs",
     "build": "npm run gallery:generate && hugo --minify",
     "index": "hugo-algolia",

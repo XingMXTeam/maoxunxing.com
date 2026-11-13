@@ -6,6 +6,9 @@
        they made up >50% of the sitemap and dominate GSC's
        "Discovered/Crawled - currently not indexed" buckets. The pages stay
        live and crawlable via internal links; they just leave the sitemap. */}}
+  {{/* The Huang feature is build.list=never so it stays off the home feed and
+       related-article loops. GetPage still resolves it for the sitemap. */}}
+  {{ $huang := site.GetPage "/features/jensen-huang" }}
   {{ range where .Pages "Kind" "in" (slice "home" "section" "page") }}
     {{ if not .Sitemap.Disable }}
   <url>
@@ -15,6 +18,16 @@
     <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .Translations }}
     <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />{{ end }}
     <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />{{ end }}
+  </url>
+    {{ end }}
+  {{ end }}
+  {{ with $huang }}
+    {{ if and (not .Sitemap.Disable) (eq .Language.Lang site.Language.Lang) }}
+  <url>
+    <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML (.Lastmod.Format "2006-01-02T15:04:05-07:00") }}</lastmod>{{ end }}
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
     {{ end }}
   {{ end }}

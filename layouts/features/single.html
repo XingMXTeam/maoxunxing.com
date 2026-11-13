@@ -1,0 +1,396 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+  <link rel="stylesheet" href="/css/jensen-huang.css?v=20261113-1" />
+  <div
+    id="jh-root"
+    class="jh"
+    lang="zh-CN"
+    data-render-mode="dom"
+    data-api-content="unknown"
+    data-api-draw="unknown"
+    data-share-url="{{ .Permalink }}"
+  >
+    <div id="jh-viewport" class="jh-viewport">
+      <canvas id="jh-canvas" class="jh-canvas" hidden></canvas>
+      <div id="jh-sheet">
+        <header class="jh-plate" data-jh-plate="open">
+          <h1>{{ .Title }}</h1>
+          <p class="jh-lead">
+            2026年11月11日，董事会接受他辞去总裁、首席执行官和董事，即时生效。11月12日公司宣布交接，公告没有写原因，也没有引述他本人。四天前，他在致员工信里说，会留下来赢回信任。
+          </p>
+          <p class="jh-asof">
+            毛毛星的视觉阅读，不是英伟达新闻室。官方文件、媒体报道和分析在下面分开写。资料截至
+            2026年11月13日（Asia/Shanghai），依据当天打开的原文。
+          </p>
+        </header>
+
+        <section
+          class="jh-plate"
+          id="scene-open"
+          data-jh-plate="structure"
+          aria-labelledby="jh-claim"
+        >
+          <h2 id="jh-claim">
+            公司留下了平台，难补的是把产品、客户与资源捏在一起的人
+          </h2>
+          <p class="jh-kind">这是分析，不是公司结论，也没有评分。</p>
+          <p class="jh-row-label">公司仍然留下的</p>
+          <ul class="jh-remain">
+            <li>
+              加速计算和人工智能上的工作。Colette Kress 在 11 月 12
+              日新闻稿里说，会继续推进。
+            </li>
+            <li>
+              运营、客户承诺和产品路线图。Harvey C. Jones 说，预计不受打断。
+            </li>
+            <li>
+              财务班底还在。8-K 写明 Kress 继续兼任财务长。BBC 另写道，Ian Buck
+              仍负责高性能计算。
+            </li>
+          </ul>
+          <p class="jh-person">
+            <span>已离开总裁、首席执行官和董事岗位</span>
+            <strong>把产品、客户和资源捏在一起的人</strong>
+          </p>
+          <p class="jh-row-label">
+            难被完整复制的一层。下面是报道里的论据，不是公司文件
+          </p>
+          <ul class="jh-hard">
+            <li>
+              产品判断。Neil Wilson（Saxo
+              UK）对《卫报》说，他对产品每一处的技术理解基本上独一无二，无法复制。
+            </li>
+            <li>
+              押注时机。Stephen Witt 对 BBC
+              说，他押注人工智能时，还没有客户要买他正在做的东西。
+            </li>
+            <li>
+              组织方式。《卫报》2026年11月12日写道，他大约有 60
+              名直接下属。这是报道中的数字，不是 8-K 或新闻稿里的数字。
+            </li>
+          </ul>
+          <p class="jh-source">
+            上排前两项来自英伟达新闻室 2026-11-12 与美国证监会 8-K。Ian
+            Buck、Witt 见 BBC 2026-11-12。Wilson
+            与直接下属人数见《卫报》2026-11-12。
+          </p>
+        </section>
+
+        <section
+          class="jh-plate"
+          id="scene-time"
+          data-jh-plate="time"
+          aria-labelledby="jh-time"
+        >
+          <h2 id="jh-time">四天里，公开承诺先被写下，董事会随后接受了辞职</h2>
+          <p>
+            节点上的字都在这里，不需要悬停或点击才出现。日期用的是美国公司文件和新闻稿上的日历日。
+          </p>
+          <ol class="jh-timeline">
+            <li>
+              <time class="jh-date" datetime="2026-11-08">2026-11-08</time>
+              <span class="jh-tag">官方文件</span>
+              <h3>致员工信：承认不忠，并说会留下来</h3>
+              <p>
+                英伟达新闻室公布他当天写给员工的信。信中写，他对妻子不忠，没有借口；董事会已启动独立调查，他支持并会配合。他又写，自己将对英伟达全力以赴，努力赢回信任。
+              </p>
+            </li>
+            <li>
+              <time class="jh-date" datetime="2026-11-11">2026-11-11</time>
+              <span class="jh-tag">官方文件</span>
+              <h3>董事会接受辞职，即时生效</h3>
+              <p>
+                8-K 记载最早事件日为 11 月 11 日。当天董事会接受 Jen-Hsun Huang
+                辞去总裁、首席执行官和董事，即时生效。同日任命 Colette M.
+                Kress（59 岁，2013
+                年起任财务长）为临时首席执行官，并继续担任财务长；任命 Harvey C.
+                Jones（73 岁，1993 年起任董事）为董事长。文件没有写原因。
+              </p>
+            </li>
+            <li>
+              <time class="jh-date" datetime="2026-11-12">2026-11-12</time>
+              <span class="jh-tag">官方文件</span>
+              <h3>新闻室发布交接公告</h3>
+              <p>
+                11 月 12 日新闻稿宣布他已辞职，即时生效，感谢他 33
+                年的贡献，并称 Jones 为首位董事会主席。公告引述的是 Jones 和
+                Kress，没有引述黄仁勋，也没有写原因。8-K 把这份新闻稿列为附件
+                99.1，签署日是 11 月 12 日。
+              </p>
+            </li>
+          </ol>
+          <p class="jh-source">
+            来源：<a
+              href="https://nvidianews.nvidia.com/news/a-message-to-our-company"
+              >英伟达新闻室，2026-11-08</a
+            >；<a
+              href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
+              >美国证监会 8-K</a
+            >；<a
+              href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+              >英伟达新闻室，2026-11-12</a
+            >。
+          </p>
+        </section>
+
+        <section
+          class="jh-plate"
+          id="scene-split"
+          data-jh-plate="split"
+          aria-labelledby="jh-split"
+        >
+          <h2 id="jh-split">平台还在。岗位空了，连接那一层没有一起留下</h2>
+          <p class="jh-kind">
+            这是分析。动效只表示「经过这个人连在一起」变成「岗位空缺，平台仍在」。平台一侧不会被画成消失。
+          </p>
+          <div class="jh-split">
+            <div>
+              <h3>公司文件里还在的</h3>
+              <ul class="jh-hard">
+                <li>
+                  Kress 自 2013 年起任财务长，临时首席执行官期间继续兼任。8-K
+                  与新闻稿都这么写。
+                </li>
+                <li>Jones 说，预计运营、客户承诺和产品路线图不受打断。</li>
+                <li>
+                  Kress
+                  说，会继续推进加速计算和人工智能上的工作，并执行眼前的机会。
+                </li>
+                <li>
+                  BBC 称 Ian Buck
+                  仍负责高性能计算，并写他开发了让图形芯片承担其他计算任务的技术。这是媒体报道，不是任命文件，也不把他写成接班人。
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>报道里说难以一并移交的</h3>
+              <ul class="jh-hard">
+                <li>
+                  长期押注：Witt 对 BBC
+                  说，客户还没出现，他就在做后来的人工智能硬件。
+                </li>
+                <li>
+                  产品知识：Wilson
+                  对《卫报》说，这种对产品的理解无法复制。这是分析师的话，不是公司事实。
+                </li>
+                <li>
+                  直接面对组织和客户：《卫报》写他大约有 60
+                  名直接下属。人数来自报道。
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="jh-source">
+            公司一侧：新闻室 2026-11-12，8-K。Buck 与 Witt：<a
+              href="https://www.bbc.com/news/articles/ckgel338xql3o"
+              >BBC，2026-11-12</a
+            >。Wilson 与下属人数：<a
+              href="https://www.theguardian.com/technology/2026/nov/12/nvidia-ceo-jensen-huang-resigns"
+              >《卫报》，2026-11-12</a
+            >。
+          </p>
+        </section>
+
+        <section
+          class="jh-plate"
+          id="scene-voices"
+          data-jh-plate="voices"
+          aria-labelledby="jh-voices"
+        >
+          <h2 id="jh-voices">
+            11月8日是他自己的句子，11月12日换成了公司的句子
+          </h2>
+          <p>
+            对照的是这两份公开文本里谁在说话。新闻稿里没有他的话，不能写成他此后沉默，也不能写成动机已经知道。
+          </p>
+          <div class="jh-split">
+            <blockquote class="jh-quote">
+              <h3>11月8日 · 他的信</h3>
+              <p>
+                我欠家人和你们大家一个道歉。我对妻子不忠，没有借口。我将全心投入英伟达，并努力赢回你们的信心。
+              </p>
+              <p class="jh-en">
+                I am fully committed to NVIDIA and will work to earn back your
+                confidence.
+              </p>
+              <footer>黄仁勋致员工信，英伟达新闻室发布，2026-11-08</footer>
+            </blockquote>
+            <blockquote class="jh-quote">
+              <h3>11月12日 · 新闻稿里的公司</h3>
+              <p>
+                Jones：我们预计，公司的运营、客户承诺和产品路线图将不受打断。
+              </p>
+              <p>
+                Kress：我们将继续推进使英伟达成为加速计算和人工智能领导者的工作，并执行眼前的机会。
+              </p>
+              <footer>
+                Harvey C. Jones、Colette
+                Kress，英伟达新闻室交接公告，2026-11-12。公告没有引述黄仁勋。
+              </footer>
+            </blockquote>
+          </div>
+          <div class="jh-limit">
+            <h3>推断停在公开言行上</h3>
+            <ol class="jh-timeline">
+              <li>
+                他在 11 月 8
+                日信里写下的选择，是承认自己不忠、支持调查，并说会留在岗位上赢回信任。
+              </li>
+              <li>
+                11 月 11 日，董事会接受辞职，即时生效。8-K 和 12
+                日新闻稿都没有写原因。这里不补动机。
+              </li>
+              <li>
+                11 月 12 日新闻稿由 Jones 和 Kress
+                出面。没有引述他，只说明这份公告里没有他的话。
+              </li>
+            </ol>
+            <p>这三条都不描写他当时的心情。</p>
+          </div>
+          <p class="jh-source">
+            来源：<a
+              href="https://nvidianews.nvidia.com/news/a-message-to-our-company"
+              >致员工信原文</a
+            >；<a
+              href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+              >交接公告</a
+            >。
+          </p>
+        </section>
+
+        <section
+          class="jh-plate"
+          id="scene-origin"
+          data-jh-plate="origin"
+          aria-labelledby="jh-origin"
+        >
+          <h2 id="jh-origin">来时路只留四个有出处的节点</h2>
+          <ol class="jh-origin">
+            <li>
+              <strong>1963，台湾，然后是美国西岸的学校。</strong>
+              BBC 写道，他 1963
+              年生于台湾，九岁时随家人迁到美国西岸；俄勒冈州立大学电机工程毕业，斯坦福大学电机工程硕士。他在俄勒冈州立大学的实验室认识后来的妻子
+              Lori Mills。
+            </li>
+            <li>
+              <strong>1993，创办英伟达。</strong>
+              BBC 写道，他与 Chris Malachowsky、Curtis Priem 在 1993
+              年创办公司。
+            </li>
+            <li>
+              <strong>从图形芯片走到人工智能。</strong>
+              BBC
+              写道，公司后来把重心转向人工智能，他也曾不止一次把公司从破产边缘拉回来。Witt
+              对 BBC 说，这笔押注下在还没有客户的时候。本页不写未经这次核对的
+              CUDA 精确发布日。
+            </li>
+            <li>
+              <strong>客户、华盛顿和北京放在同一次行程里。</strong>
+              BBC
+              写道，他在华盛顿和北京之间往返，希望找到美国允许的对华销售路径。这接上开篇的分析：平台可以留下，把这些捏在同一双手里的方式不容易一起移交。
+            </li>
+          </ol>
+          <p class="jh-source">
+            这一节的生平与公司叙述来自
+            <a href="https://www.bbc.com/news/articles/ckgel338xql3o"
+              >BBC，2026-11-12</a
+            >。不是 8-K 里的内容。
+          </p>
+        </section>
+
+        <aside class="jh-plate jh-cta" data-jh-plate="cta">
+          <h2>看完这一篇，还留在毛毛星</h2>
+          <p>
+            上面是英伟达的公开记录。这站上能直接打开的，是一批浏览器里的 AI
+            小工具；Sayo、CrossAgent Lab、Browserly 和 HackHub
+            在垂直产品入口，各自独立更新。
+          </p>
+          <a class="jh-cta-link" href="{{ "tools/" | relLangURL }}"
+            >打开工具目录</a
+          >
+          <a href="{{ "products/" | relLangURL }}">垂直产品</a>
+        </aside>
+
+        <footer class="jh-plate" data-jh-plate="sources">
+          <h2>来源</h2>
+          <ol class="jh-sources">
+            <li>
+              <a
+                href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+                >英伟达新闻室，首席执行官交接公告</a
+              >
+              · 2026-11-12
+            </li>
+            <li>
+              <a
+                href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
+                >美国证监会 Form 8-K</a
+              >
+              · 最早事件日 2026-11-11，签署日 2026-11-12
+            </li>
+            <li>
+              <a
+                href="https://nvidianews.nvidia.com/news/a-message-to-our-company"
+                >英伟达新闻室，致员工信</a
+              >
+              · 2026-11-08
+            </li>
+            <li>
+              <a href="https://www.bbc.com/news/articles/ckgel338xql3o"
+                >BBC，辞职后已知信息</a
+              >
+              · 2026-11-12 · 媒体报道
+            </li>
+            <li>
+              <a
+                href="https://www.theguardian.com/technology/2026/nov/12/nvidia-ceo-jensen-huang-resigns"
+                >《卫报》，辞职报道与分析师引语</a
+              >
+              · 2026-11-12 · 媒体报道
+            </li>
+          </ol>
+          <p class="jh-source">
+            页面不写交易价格、公司估值和接班人猜测，也不转载未经公司文件确认的私人关系细节。调查仍见
+            11 月 8 日信中的说法：董事会已启动，他表示配合。此处不改写调查结论。
+          </p>
+        </footer>
+      </div>
+    </div>
+    <div class="jh-tools">
+      <button type="button" id="jh-share">复制本页链接</button>
+      <button type="button" id="jh-pause" hidden aria-pressed="false">
+        暂停动效
+      </button>
+      <span id="jh-share-note" class="jh-share-note" role="status"></span>
+    </div>
+    <p id="jh-share-url" class="jh-share-url" tabindex="0">{{ .Permalink }}</p>
+    <p id="jh-status" class="jh-status" role="status">
+      兼容阅读：脚本运行前，正文按普通网页排版。支持 HTML-in-Canvas
+      时，这行会改成原生绘制；不支持时保持普通网页，不会把它叫成原生。
+    </p>
+  </div>
+  <script type="application/ld+json">
+    {{ dict
+      "@context" "https://schema.org"
+      "@type" "NewsArticle"
+      "headline" .Title
+      "description" .Description
+      "inLanguage" "zh-CN"
+      "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+      "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+      "url" .Permalink
+      "mainEntityOfPage" .Permalink
+      "image" ("/images/features/jensen-huang-og.png" | absURL)
+      "author" (dict "@type" "Person" "name" "Momo" "alternateName" "毛毛星" "url" ("about/" | absLangURL))
+      "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
+      "citation" (slice
+        "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
+        "https://nvidianews.nvidia.com/news/a-message-to-our-company"
+        "https://www.bbc.com/news/articles/ckgel338xql3o"
+        "https://www.theguardian.com/technology/2026/nov/12/nvidia-ceo-jensen-huang-resigns"
+      )
+    | jsonify | safeJS }}
+  </script>
+  <script src="/js/jensen-huang.js?v=20261113-1" defer></script>
+{{ end }}
