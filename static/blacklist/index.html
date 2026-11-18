@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>垃圾公司黑名单 · 毛毛星</title>
+<meta name="description" content="面试完就再无回应的公司，都钉在这面墙上。个人求职记录，基于本人真实面试经历。">
+<style>
+  :root{
+    --bg:#0d0c0a;
+    --panel:#14120f;
+    --line:#2a271f;
+    --line-soft:#1e1c16;
+    --ink:#ece7db;
+    --muted:#9a927f;
+    --faint:#6b6455;
+    --red:#e5484d;
+    --red-dim:#8c2f33;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    min-height:100vh;
+    background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(229,72,77,.07),transparent);
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 80px}
+  .kicker{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12px;letter-spacing:.35em;color:var(--red);
+    text-transform:uppercase;margin-bottom:18px;
+  }
+  h1{
+    font-family:"Noto Serif SC","Songti SC","STSong",serif;
+    font-weight:900;font-size:clamp(40px,8vw,64px);
+    line-height:1.15;letter-spacing:.02em;
+  }
+  h1 .bin{display:inline-block;transform:translateY(-4px)}
+  .sub{margin-top:16px;color:var(--muted);font-size:15px;line-height:1.8;max-width:34em}
+  .stats{
+    display:flex;gap:48px;margin-top:36px;padding:20px 0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .stat .num{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:34px;font-weight:600;color:var(--ink);line-height:1;
+  }
+  .stat .num.red{color:var(--red)}
+  .stat .lab{margin-top:8px;font-size:12px;letter-spacing:.2em;color:var(--faint)}
+  form{
+    margin-top:36px;background:var(--panel);
+    border:1px solid var(--line);border-radius:6px;padding:20px;
+    display:grid;grid-template-columns:1fr 160px;gap:12px;
+  }
+  form .full{grid-column:1/-1}
+  label{display:block;font-size:12px;letter-spacing:.15em;color:var(--faint);margin-bottom:6px}
+  input{
+    width:100%;background:var(--bg);border:1px solid var(--line);border-radius:4px;
+    color:var(--ink);font-size:15px;padding:10px 12px;outline:none;font-family:inherit;
+  }
+  input:focus{border-color:var(--red-dim)}
+  input[type="date"]{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+  button{
+    grid-column:1/-1;cursor:pointer;border:1px solid var(--red-dim);
+    background:rgba(229,72,77,.1);color:#ff8589;
+    font-size:15px;letter-spacing:.3em;padding:12px;border-radius:4px;font-family:inherit;
+    transition:background .15s ease;
+  }
+  button:hover{background:rgba(229,72,77,.22)}
+  .list{margin-top:44px}
+  .row{
+    display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:start;
+    padding:22px 4px;border-bottom:1px solid var(--line-soft);
+  }
+  .row:first-child{border-top:1px solid var(--line)}
+  .idx{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    color:var(--faint);font-size:14px;padding-top:6px;
+  }
+  .name{
+    font-family:"Noto Serif SC","Songti SC","STSong",serif;
+    font-size:22px;font-weight:700;line-height:1.3;
+  }
+  .meta{
+    margin-top:6px;font-size:13px;color:var(--faint);
+    font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:.05em;
+  }
+  .rant{margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.7}
+  .days{text-align:right;min-width:92px}
+  .days .d{
+    font-family:ui-monospace,Menlo,Consolas,monospace;
+    font-size:36px;font-weight:600;color:var(--red);line-height:1;
+  }
+  .days .t{margin-top:6px;font-size:12px;letter-spacing:.18em;color:var(--faint)}
+  .del{
+    margin-top:10px;font-size:12px;color:var(--faint);background:none;border:none;
+    letter-spacing:.1em;padding:0;text-align:right;width:100%;
+  }
+  .del:hover{color:var(--red);background:none}
+  .del.confirm{color:var(--red)}
+  .empty{
+    padding:56px 0;text-align:center;color:var(--faint);font-size:15px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line-soft);
+    line-height:2;
+  }
+  footer{margin-top:56px;color:var(--faint);font-size:12.5px;line-height:2;letter-spacing:.05em}
+  footer .rule{width:36px;height:2px;background:var(--red);margin-bottom:16px}
+  @media (max-width:560px){
+    .wrap{padding:44px 18px 64px}
+    form{grid-template-columns:1fr}
+    .row{grid-template-columns:36px 1fr auto;gap:10px}
+    .days .d{font-size:28px}
+    .days{min-width:70px}
+    .stats{gap:32px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Blacklist · Wall of Shame</div>
+  <h1>垃圾公司黑名单 <span class="bin">🗑️</span></h1>
+  <p class="sub">面试聊得好好的，回去就再也没有下文——不通过也不拒绝，连一句交代都没有。这样的公司，都钉在这面墙上，按失联天数计耻辱值。</p>
+
+  <div class="stats">
+    <div class="stat"><div class="num" id="statCount">0</div><div class="lab">上榜公司</div></div>
+    <div class="stat"><div class="num red" id="statMax">0</div><div class="lab">最长失联 · 天</div></div>
+  </div>
+
+  <form id="addForm" autocomplete="off">
+    <div>
+      <label for="fCompany">公司名</label>
+      <input id="fCompany" required maxlength="60" placeholder="又一家失联的公司">
+    </div>
+    <div>
+      <label for="fDate">面试日期</label>
+      <input id="fDate" type="date" required>
+    </div>
+    <div class="full">
+      <label for="fRant">一句吐槽</label>
+      <input id="fRant" maxlength="120" placeholder="它是怎么消失的">
+    </div>
+    <button type="submit">钉 上 耻 辱 墙</button>
+  </form>
+
+  <div class="list" id="list"></div>
+
+  <footer>
+    <div class="rule"></div>
+    毛毛星 · 个人求职记录，基于本人真实面试经历<br>
+    通过上方表单新增的条目保存在你本地浏览器里；哪家公司回了话，把它删下来即可。
+  </footer>
+</div>
+
+<script>
+  var SEED = [
+    {company:"Laper / Cromma", interview_date:"2026-10-28", rant:"自己发的面试邀请，自己先失联了"},
+    {company:"滴滴", interview_date:"2026-10-30", rant:"面完如石沉大海，一个字都没回"},
+    {company:"Coupang", interview_date:"2026-11-03", rant:"电话面聊得挺好，然后就没有然后了"},
+    {company:"声网", interview_date:"2026-11-05", rant:"视频面全程在线，下线之后查无此人"}
+  ];
+  var KEY = "blacklist-local-v1";
+  var REMOVED_KEY = "blacklist-removed-v1";
+
+  function loadLocal(){
+    try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; }
+  }
+  function loadRemoved(){
+    try { return JSON.parse(localStorage.getItem(REMOVED_KEY)) || []; } catch(e){ return []; }
+  }
+  function daysSince(dateStr){
+    var parts = dateStr.split("-");
+    var d = new Date(+parts[0], +parts[1]-1, +parts[2]);
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.max(0, Math.round((today - d) / 86400000));
+  }
+  function fmtDate(dateStr){
+    var p = dateStr.split("-");
+    return p[0] + "." + p[1] + "." + p[2];
+  }
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function allEntries(){
+    var removed = loadRemoved();
+    var seed = SEED.filter(function(e){
+      return removed.indexOf(e.company + "|" + e.interview_date) === -1;
+    }).map(function(e){ return {company:e.company, interview_date:e.interview_date, rant:e.rant, seed:true}; });
+    var local = loadLocal().map(function(e, i){
+      return {company:e.company, interview_date:e.interview_date, rant:e.rant, seed:false, localIndex:i};
+    });
+    return seed.concat(local).sort(function(a,b){
+      return a.interview_date < b.interview_date ? -1 : 1;
+    });
+  }
+  var confirmTarget = null;
+  function render(){
+    var entries = allEntries();
+    var list = document.getElementById("list");
+    document.getElementById("statCount").textContent = entries.length;
+    var max = 0;
+    entries.forEach(function(e){ max = Math.max(max, daysSince(e.interview_date)); });
+    document.getElementById("statMax").textContent = max;
+    if (!entries.length){
+      list.innerHTML = '<div class="empty">墙上空空如也。<br>但愿永远如此。</div>';
+      return;
+    }
+    list.innerHTML = entries.map(function(e, i){
+      var key = e.seed ? ("seed:" + e.company + "|" + e.interview_date) : ("local:" + e.localIndex);
+      var confirming = confirmTarget === key;
+      return '<div class="row">' +
+        '<div class="idx">' + String(i+1).padStart(2,"0") + '</div>' +
+        '<div><div class="name">' + esc(e.company) + '</div>' +
+        '<div class="meta">面试 · ' + fmtDate(e.interview_date) + '</div>' +
+        (e.rant ? '<div class="rant">' + esc(e.rant) + '</div>' : '') +
+        '</div>' +
+        '<div class="days"><div class="d">' + daysSince(e.interview_date) + '</div>' +
+        '<div class="t">天 · 无回音</div>' +
+        '<button class="del' + (confirming ? ' confirm' : '') + '" data-key="' + esc(key) + '">' +
+        (confirming ? '确认删除' : '删除') + '</button></div></div>';
+    }).join("");
+    Array.prototype.forEach.call(list.querySelectorAll(".del"), function(btn){
+      btn.addEventListener("click", function(){
+        var key = btn.getAttribute("data-key");
+        if (confirmTarget !== key){ confirmTarget = key; render(); return; }
+        confirmTarget = null;
+        if (key.indexOf("local:") === 0){
+          var idx = +key.slice(6);
+          var local = loadLocal();
+          local.splice(idx, 1);
+          localStorage.setItem(KEY, JSON.stringify(local));
+        } else {
+          var removed = loadRemoved();
+          removed.push(key.slice(5));
+          localStorage.setItem(REMOVED_KEY, JSON.stringify(removed));
+        }
+        render();
+      });
+    });
+  }
+  document.getElementById("addForm").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var company = document.getElementById("fCompany").value.trim();
+    var date = document.getElementById("fDate").value;
+    var rant = document.getElementById("fRant").value.trim();
+    if (!company || !date) return;
+    var local = loadLocal();
+    local.push({company:company, interview_date:date, rant:rant});
+    localStorage.setItem(KEY, JSON.stringify(local));
+    ev.target.reset();
+    render();
+  });
+  render();
+</script>
+</body>
+</html>
