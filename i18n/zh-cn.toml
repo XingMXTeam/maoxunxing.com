@@ -20,7 +20,7 @@ other = "Momo / 毛毛星"
 other = "AI 全栈 · 独立开发者"
 
 [homeHeroDesc]
-other = "做浏览器里点开即用的 AI 小工具和三个垂直产品，也写工程、AI 编程和创作笔记。"
+other = "做浏览器里点开即用的 AI 小工具和四个垂直产品，也写工程、AI 编程和创作笔记。"
 
 [homeToolsCTA]
 other = "工具"
@@ -455,3 +455,82 @@ other = "¥2,980 / 次，含路径说明与协助申请，年费和押金自付�
 
 [consultMore4Detail]
 other = "Stripe、国外虚拟卡、民生香港卡"
+
+# ---------- Homepage v3 (hx-*) ----------
+[hxBadge]
+other = "正在公开构建"
+
+[hxRotatePrefix]
+other = "用 AI 构建"
+
+[hxRotateWords]
+other = "浏览器小工具|垂直产品|Agent harness|公开笔记"
+
+[hxCtaPrimary]
+other = "打开 AI 工具"
+
+[hxCtaSecondary]
+other = "看看垂直产品"
+
+[hxCtaWriting]
+other = "读最新写作"
+
+[hxStatTools]
+other = "个小工具与项目"
+
+[hxStatProducts]
+other = "个独立产品站"
+
+[hxStatWriting]
+other = "篇公开写作"
+
+[hxStatYears]
+other = "年工程经验"
+
+[hxMarquee]
+other = "AI 编程|Agent Harness|MCP|Browser Use|全栈工程|独立产品|一人公司|长期投资|内容创作|前端工程"
+
+[hxBuildingTitle]
+other = "一个人，几条产品线。"
+
+[hxBuildingDesc]
+other = "从点开即用的浏览器小工具，到四个独立运营的垂直站点。每一个都在真实地被使用、被迭代。"
+
+[hxToolsKicker]
+other = "工具箱"
+
+[hxToolsDesc]
+other = "不用注册，不用安装，浏览器里点开就能用。"
+
+[hxExploreKicker]
+other = "逛逛"
+
+[hxWritingKicker]
+other = "写作"
+
+[hxWritingDesc]
+other = "工程、AI 编程、产品与投资。写下来，才算真的想清楚。"
+
+[hxWritingMore]
+other = "全部文章"
+
+[hxConnectKicker]
+other = "联系"
+
+[hxConnectTitle]
+other = "有想法？一起做点东西。"
+
+[hxConnectDesc]
+other = "合作、咨询，或者只是打个招呼，都欢迎。"
+
+[hxConnectEmail]
+other = "写邮件给我"
+
+[hxOpen]
+other = "打开"
+
+[hxVisit]
+other = "访问"
+
+[hxToolsTileFoot]
+other = "全部在浏览器里运行"

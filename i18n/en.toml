@@ -20,7 +20,7 @@ other = "Momo"
 other = "AI full-stack · indie developer"
 
 [homeHeroDesc]
-other = "I build small AI tools you can open in the browser and three vertical products, and I write about engineering, AI coding, and making things."
+other = "I build small AI tools you can open in the browser and four vertical products, and I write about engineering, AI coding, and making things."
 
 [homeToolsCTA]
 other = "Tools"
@@ -327,3 +327,82 @@ other = "AI Startup"
 
 [footerCreator]
 other = "Creator"
+
+# ---------- Homepage v3 (hx-*) ----------
+[hxBadge]
+other = "Building in public"
+
+[hxRotatePrefix]
+other = "Building with AI:"
+
+[hxRotateWords]
+other = "browser tools|vertical products|agent harnesses|public notes"
+
+[hxCtaPrimary]
+other = "Open AI tools"
+
+[hxCtaSecondary]
+other = "See the products"
+
+[hxCtaWriting]
+other = "Read the writing"
+
+[hxStatTools]
+other = "tools & projects"
+
+[hxStatProducts]
+other = "product sites"
+
+[hxStatWriting]
+other = "public write-ups"
+
+[hxStatYears]
+other = "years in engineering"
+
+[hxMarquee]
+other = "AI coding|Agent harness|MCP|Browser use|Full-stack|Indie products|One-person company|Long-term investing|Content creation|Frontend engineering"
+
+[hxBuildingTitle]
+other = "One person. Several product lines."
+
+[hxBuildingDesc]
+other = "From open-and-use browser tools to four independently run vertical sites. Each one is used for real and keeps shipping."
+
+[hxToolsKicker]
+other = "Toolbox"
+
+[hxToolsDesc]
+other = "No sign-up, no install. Open them in the browser."
+
+[hxExploreKicker]
+other = "Explore"
+
+[hxWritingKicker]
+other = "Writing"
+
+[hxWritingDesc]
+other = "Engineering, AI coding, products, and investing. Written down to think clearly."
+
+[hxWritingMore]
+other = "All posts"
+
+[hxConnectKicker]
+other = "Contact"
+
+[hxConnectTitle]
+other = "Have an idea? Let's build something."
+
+[hxConnectDesc]
+other = "Collaboration, consulting, or just saying hi. All welcome."
+
+[hxConnectEmail]
+other = "Email me"
+
+[hxOpen]
+other = "Open"
+
+[hxVisit]
+other = "Visit"
+
+[hxToolsTileFoot]
+other = "Everything runs in your browser"
