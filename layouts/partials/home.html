@@ -34,6 +34,7 @@
   "效率" "fa-calendar-check" "productivity" "fa-calendar-check"
   "ai" "fa-robot"
   "prompt" "fa-terminal" "prompts" "fa-terminal"
+  "skill" "fa-layer-group" "skills" "fa-layer-group" "harness" "fa-layer-group"
   "产品" "fa-cube" "products" "fa-cube"
 -}}
 
@@ -94,16 +95,17 @@
         </div>
 
         <div class="hx-ctas" data-hx-reveal style="--d: 280ms">
-          <a class="hx-btn hx-btn-primary" href="{{ $aiToolsURL }}">
-            <span>{{ i18n "hxCtaPrimary" }}</span>
+          <a class="hx-btn hx-btn-primary" href="{{ "prompts/" | relLangURL }}">
+            <i class="fas fa-terminal" aria-hidden="true"></i>
+            <span>{{ if $isZh }}Prompt 工作台{{ else }}Prompt Studio{{ end }}</span>
             <span class="hx-btn-arrow" aria-hidden="true">→</span>
           </a>
-          <a class="hx-btn hx-btn-ghost" href="{{ $productsURL }}">
-            <span>{{ i18n "hxCtaSecondary" }}</span>
+          <a class="hx-btn hx-btn-ghost" href="{{ "frontend-ai-collaboration-design/" | relLangURL }}">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+            <span>{{ if $isZh }}21 份 Agent Skills{{ else }}21 Agent Skills{{ end }}</span>
           </a>
-          <a class="hx-btn hx-btn-link" href="#hx-brand">
-            <span>{{ i18n "hxCtaMeet" }}</span>
-            <span aria-hidden="true">↓</span>
+          <a class="hx-btn hx-btn-ghost" href="{{ $aiToolsURL }}">
+            <span>{{ i18n "hxCtaPrimary" }}</span>
           </a>
         </div>
 
@@ -220,6 +222,45 @@
         <span class="hx-tile-cta">{{ i18n "hxVisit" }} <span aria-hidden="true">→</span></span>
       </a>
       {{- end }}
+
+      {{/* Flagship Prompt Studio Workbench (6 cols) */}}
+      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="{{ "prompts/" | relLangURL }}"
+         style="--a: #6366f1; --b: #06b6d4; align-items: flex-start" data-hx-reveal data-hx-spot>
+        <span class="hx-pico" style="--a: #6366f1; --b: #06b6d4"><i class="fas fa-terminal" aria-hidden="true"></i></span>
+        <span class="hx-tile-copy">
+          <span class="hx-tile-kicker">{{ if $isZh }}PROMPT STUDIO · 33 条中英双语口令{{ else }}PROMPT STUDIO · 33 BILINGUAL PROMPTS{{ end }}</span>
+          <strong class="hx-tile-title">{{ if $isZh }}高频实战 AI Prompt 工作台{{ else }}Practical AI Prompt Studio{{ end }}</strong>
+          <span class="hx-tile-desc">{{ if $isZh }}收录 Coding Agent、/loop 自动化巡检、第一性原理与 PR 审查等 33 条实战口令，支持中英秒切、变量即时填空与多条串联组合复制。{{ else }}33 battle-tested prompts for Coding Agents, /loop automation, first principles & PR audits—instant switch, live variables, and multi-prompt stacking.{{ end }}</span>
+          <span class="hx-tags" style="margin-top: 1rem">
+            <span>{{ if $isZh }}⚡ Agent 口令 & /loop{{ else }}⚡ Agent & /loop{{ end }}</span>
+            <span>{{ if $isZh }}🧠 第一性原理{{ else }}🧠 First Principles{{ end }}</span>
+            <span>{{ if $isZh }}{{"{{"}}变量即时填空{{"}}"}}{{ else }}{{"{{"}}Live Variables{{"}}"}}{{ end }}</span>
+            <span>{{ if $isZh }}中/EN 秒切{{ else }}ZH/EN Switch{{ end }}</span>
+          </span>
+          <span class="hx-tile-cta">{{ if $isZh }}打开 Prompt 工作台{{ else }}Open Prompt Studio{{ end }} <span aria-hidden="true">→</span></span>
+        </span>
+        <span class="hx-tile-go" aria-hidden="true">→</span>
+      </a>
+
+      {{/* Flagship 21 Agent Skills & Harness (6 cols) */}}
+      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="{{ "frontend-ai-collaboration-design/" | relLangURL }}"
+         style="--a: #a855f7; --b: #ec4899; align-items: flex-start" data-hx-reveal data-hx-spot>
+        <span class="hx-pico" style="--a: #a855f7; --b: #ec4899"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+        <span class="hx-tile-copy">
+          <span class="hx-tile-kicker">{{ if $isZh }}AGENT SKILLS · 21 份产物契约 + 开源 CLI{{ else }}AGENT SKILLS · 21 ARTIFACT SKILLS + CLI{{ end }}</span>
+          <strong class="hx-tile-title">{{ if $isZh }}21 份前端 AI 协作 Skills 与 Harness{{ else }}21 Frontend AI Harness Skills{{ end }}</strong>
+          <span class="hx-tile-desc">{{ if $isZh }}把 AI 研发从“长提示词”升级为“状态机 + 产物契约”：覆盖需求澄清、PRD、开发计划、实现调试、五维确定性评测与交付门禁的 21 份开源 Skill 逐份拆解。{{ else }}From long prompts to deterministic state machines & artifact contracts: 21 open-source skills covering clarification, PRD, debugging, 5D eval, and ship gates.{{ end }}</span>
+          <span class="hx-tags" style="margin-top: 1rem">
+            <span>clarify-requirements</span>
+            <span>write-prd</span>
+            <span>plan-before-code</span>
+            <span>systematic-debugging</span>
+            <span>deterministic-eval</span>
+          </span>
+          <span class="hx-tile-cta">{{ if $isZh }}拆解 21 份 Skills 体系{{ else }}Explore 21 Skills{{ end }} <span aria-hidden="true">→</span></span>
+        </span>
+        <span class="hx-tile-go" aria-hidden="true">→</span>
+      </a>
 
       {{/* Consulting (zh only) */}}
       {{- if $isZh }}
@@ -373,7 +414,7 @@
   {{- end }}
 
   {{/* ============================== EXPLORE ============================== */}}
-  {{- $exploreIcons := slice "fa-pen-nib" "fa-feather-alt" "fa-film" "fa-cubes" "fa-toolbox" "fa-bookmark" "fa-flask" "fa-images" -}}
+  {{- $exploreIcons := slice "fa-pen-nib" "fa-feather-alt" "fa-film" "fa-terminal" "fa-toolbox" "fa-bookmark" "fa-flask" "fa-images" -}}
   <section id="explore" class="hx-section hx-wrap" aria-labelledby="hx-explore-title">
     <header class="hx-head" data-hx-reveal>
       <p class="hx-kicker"><span>04</span>{{ i18n "hxExploreKicker" }}</p>

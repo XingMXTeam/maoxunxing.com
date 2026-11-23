@@ -140,7 +140,7 @@ other = "长期关注指数基金、资产配置、期权、现金流和风险�
 other = "也可以随便逛逛"
 
 [homeBrowseDesc]
-other = "这里不只写技术，也放一些生活和兴趣里的长期收藏：读过的书、用过的工具、做过的小项目，以及看过后还想留下来的内容。"
+other = "这里不只写技术，也放一些长期复用的 AI 资产与生活收藏：高频实战 Prompt 工作台、读过的书、在用的软硬件，以及看过后还想留下来的内容。"
 
 [homeBrowse1Title]
 other = "技术博客"
@@ -170,13 +170,13 @@ other = "读过的书、看过的电影和动漫"
 other = "/zh-cn/media/"
 
 [homeBrowse4Title]
-other = "项目"
+other = "Prompt 工作台"
 
 [homeBrowse4Desc]
-other = "我做过和正在做的小东西"
+other = "33 条中英双语实战口令与组合复制"
 
 [homeBrowse4Href]
-other = "/zh-cn/projects/"
+other = "/zh-cn/prompts/"
 
 [homeBrowse5Title]
 other = "在用"
@@ -376,7 +376,7 @@ other = "AI 英语口语练习"
 other = "全球 AI、Web3 黑客松聚合"
 
 [homeToolsGridTitle]
-other = "小工具与项目"
+other = "小工具与 AI 工作台"
 
 [homeToolsGridMore]
 other = "全部工具"
@@ -464,7 +464,7 @@ other = "正在公开构建"
 other = "用 AI 构建"
 
 [hxRotateWords]
-other = "浏览器小工具|垂直产品|Agent harness|公开笔记"
+other = "AI Prompt 工作台|21 份 Agent Skills|浏览器小工具|垂直产品|Agent harness"
 
 [hxCtaPrimary]
 other = "打开 AI 工具"
@@ -476,7 +476,7 @@ other = "看看垂直产品"
 other = "读最新写作"
 
 [hxStatTools]
-other = "个小工具与项目"
+other = "个在线工具与工作台"
 
 [hxStatProducts]
 other = "个独立产品站"

@@ -3,9 +3,5 @@
 {{ end }}
 
 {{ define "content" }}
-  <section class="container page prompt-library-page">
-    <article>
-      {{ .Content }}
-    </article>
-  </section>
+  {{ partial "prompts-app.html" . }}
 {{ end }}

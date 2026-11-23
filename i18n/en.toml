@@ -77,7 +77,7 @@ other = "Personal introduction"
 other = "Or just wander around"
 
 [homeBrowseDesc]
-other = "I do not only write about technology here. I also keep long-term collections from life and interests: books I read, tools I used, small things I built, and media I still want to remember."
+other = "I do not only write about technology here. I also keep reusable AI assets and long-term collections: the interactive Prompt Studio, books I read, tools I use, and media I want to remember."
 
 [homeBrowse1Title]
 other = "Blog"
@@ -107,13 +107,13 @@ other = "Books, films, anime, and longer notes"
 other = "/en/media/"
 
 [homeBrowse4Title]
-other = "Projects"
+other = "Prompt Studio"
 
 [homeBrowse4Desc]
-other = "Small things I built or am building"
+other = "33 bilingual prompts with live variables & stacking"
 
 [homeBrowse4Href]
-other = "/en/projects/"
+other = "/en/prompts/"
 
 [homeBrowse5Title]
 other = "Uses"
@@ -314,7 +314,7 @@ other = "AI spoken-English practice"
 other = "AI & Web3 hackathons, one index"
 
 [homeToolsGridTitle]
-other = "Tools and projects"
+other = "Tools & AI Workbenches"
 
 [homeToolsGridMore]
 other = "All tools"
@@ -336,7 +336,7 @@ other = "Building in public"
 other = "Building with AI:"
 
 [hxRotateWords]
-other = "browser tools|vertical products|agent harnesses|public notes"
+other = "AI Prompt Studio|21 Agent Skills|browser tools|vertical products|agent harnesses"
 
 [hxCtaPrimary]
 other = "Open AI tools"
@@ -348,7 +348,7 @@ other = "See the products"
 other = "Read the writing"
 
 [hxStatTools]
-other = "tools & projects"
+other = "tools & workbenches"
 
 [hxStatProducts]
 other = "product sites"

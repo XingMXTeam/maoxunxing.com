@@ -1,12 +1,24 @@
 ---
 title: "Tools"
-description: "Small tools you can open now: AI code health check, whistle transcription, Xiaohongshu covers, speaker diarization, and the prompt library. Sayo, CrossAgent Lab, and Browserly are the vertical products."
-intro: "These are the browser tools and small products you can open today. Sayo, CrossAgent Lab, and Browserly share one vertical-products entry."
+description: "Open-and-use AI workbenches and browser tools: Momo Prompt Studio, 21 Frontend AI Harness Skills, AI code health check, whistle transcription, Xiaohongshu covers, and speaker diarization. Sayo, CrossAgent Lab, and Browserly are the vertical products."
+intro: "These are the AI workbenches, engineering skills, and browser tools you can open today. Sayo, CrossAgent Lab, and Browserly share one vertical-products entry."
 entries:
+  - name: "AI Prompt Studio"
+    url: "/en/prompts/"
+    desc: "33 battle-tested prompts for Coding Agents, /loop automation, and first-principles thinking—with bilingual switching, live variables, and prompt stacking."
+    tags: ["Prompts", "Studio", "Bilingual"]
+  - name: "21 Agent Skills System"
+    url: "/en/frontend-ai-collaboration-design/"
+    desc: "21 artifact-contract skills from open-source frontend-harness-cli: requirement clarification, PRD authoring, debugging, 5D deterministic eval, and ship gates."
+    tags: ["Skills", "Harness", "Open Source"]
   - name: "AI Code Health Check"
     url: "/ai/ai-code-health-check/"
     desc: "Paste a public GitHub repo and get a five-dimension health score for AI-written frontend code. Open it and use it now."
     tags: ["Code", "Browser"]
+  - name: "Free LLM Models"
+    url: "/ai/free-llm-models/"
+    desc: "Genuinely free AI models that can call tools, re-checked daily with live probes."
+    tags: ["AI", "Browser"]
   - name: "Whistle transcription"
     url: "/ai/whistle-transcription/"
     desc: "Transcribe a whistle in the browser. Open it and use it now."
@@ -27,18 +39,6 @@ entries:
     url: "/ai/habit-tracker-printable/"
     desc: "Track habits on weekly or monthly grids with streaks, then print a clean sheet."
     tags: ["Productivity", "Browser"]
-  - name: "Free LLM Models"
-    url: "/ai/free-llm-models/"
-    desc: "Genuinely free AI models that can call tools, re-checked daily with live probes."
-    tags: ["AI", "Browser"]
-  - name: "Prompt library"
-    url: "/en/prompts/"
-    desc: "Prompts I still reuse for coding, writing, and research."
-    tags: ["Prompts", "Writing"]
-  - name: "Projects"
-    url: "/en/projects/"
-    desc: "Small products, extensions, and experiments I have built or am still building."
-    tags: ["Products", "Experiments"]
 products:
   - name: "Vertical Products"
     url: "/en/products/"

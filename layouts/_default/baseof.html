@@ -287,8 +287,8 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
 
     {{ hugo.Generator }}
-    {{/* Skip ads on the home page, projects, the consult landing, and the book preview. */}}
-    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Type "consult") (ne .Section "options-dabaihua") (ne .Section "features") }}
+    {{/* Skip ads on the home page, projects, prompts workbench, the consult landing, and the book preview. */}}
+    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Section "prompts") (ne .Type "consult") (ne .Section "options-dabaihua") (ne .Section "features") }}
     {{ if $showAds }}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
     {{ end }}
@@ -309,7 +309,7 @@
     {{ $langClass = "cn" }}
   {{ end }}
 
-  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}{{ if .IsHome }} page-home{{ end }}">
+  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}{{ if .IsHome }} page-home{{ end }}{{ if eq .Section "prompts" }} page-prompts{{ end }}">
     {{ partial "float" . }}
     <main class="wrapper">
       {{ partial "header.html" . }}

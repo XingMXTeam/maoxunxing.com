@@ -1,0 +1,399 @@
+{{- /*
+  Momo Prompt Studio ("ps") — High-density bilingual Prompt Workbench.
+  Zero external JS/CSS frameworks. Driven by data/prompts.yaml.
+  Note: intentionally does NOT wrap <pre> inside <article> so static/js/code-copy.js
+  (.content article pre) does not inject duplicate copy buttons over the inspector.
+*/ -}}
+<link rel="stylesheet" href="/css/prompts-app.css" />
+<script>document.documentElement.classList.add("ps-js");</script>
+
+{{- $isZh := eq (lower .Site.Language.Lang) "zh-cn" -}}
+{{- $defaultLang := cond $isZh "zh" "en" -}}
+{{- $data := site.Data.prompts -}}
+{{- $categories := $data.categories -}}
+{{- $presets := $data.presets -}}
+{{- $items := $data.items -}}
+
+{{- $catMap := dict -}}
+{{- range $categories -}}
+  {{- $catMap = merge $catMap (dict .id .) -}}
+{{- end -}}
+
+{{- $first := index $items 0 -}}
+{{- $firstCat := index $catMap $first.category -}}
+
+<div class="ps" id="ps" data-default-lang="{{ $defaultLang }}">
+
+  {{/* ============================== COMPACT STUDIO HERO ============================== */}}
+  <header class="ps-hero">
+    <div class="ps-hero-bg" aria-hidden="true">
+      <span class="ps-orb ps-orb-1"></span>
+      <span class="ps-orb ps-orb-2"></span>
+      <span class="ps-grid"></span>
+    </div>
+
+    <div class="ps-wrap ps-hero-inner">
+      <div class="ps-hero-main">
+        <a class="ps-brand-pill" href="{{ .Site.BaseURL | relLangURL }}">
+          <img class="ps-brand-avatar" src="/images/avatar-momo.jpg" alt="{{ if $isZh }}毛毛星 Momo{{ else }}Momo{{ end }}" width="36" height="36" decoding="async" />
+          <span class="ps-brand-text">
+            <strong>{{ if $isZh }}毛毛星 Prompt 工作台{{ else }}Momo Prompt Studio{{ end }}</strong>
+            <span>@maoxunxing</span>
+          </span>
+          <span class="ps-live-dot" aria-hidden="true"></span>
+        </a>
+
+        <h1 class="ps-title">
+          {{- if $isZh -}}
+            高频实战 <span class="ps-gradient">AI Prompt 工作台</span>
+          {{- else -}}
+            Practical <span class="ps-gradient">AI Prompt Studio</span>
+          {{- end -}}
+        </h1>
+
+        <p class="ps-lead">
+          {{- if $isZh -}}
+            收录我在 Coding Agent、<code>/loop</code> 巡检、第一性原理决策、PR 审查与内容创作中反复使用的 {{ len $items }} 条口令。支持中英双语秒切、变量即时填空与多条串联组合复制。
+          {{- else -}}
+            {{ len $items }} battle-tested prompts I reuse across Coding Agents, <code>/loop</code> automation, first-principles thinking, PR audits, and writing. Instant copy, live variable filling, and multi-prompt stacking.
+          {{- end -}}
+        </p>
+      </div>
+
+      <aside class="ps-hero-side">
+        <div class="ps-kpis">
+          <div class="ps-kpi">
+            <strong>{{ len $items }}</strong>
+            <span>{{ if $isZh }}实战 Prompt{{ else }}Prompts{{ end }}</span>
+          </div>
+          <div class="ps-kpi">
+            <strong>{{ len $categories }}</strong>
+            <span>{{ if $isZh }}高频场景{{ else }}Categories{{ end }}</span>
+          </div>
+          <div class="ps-kpi">
+            <strong>中 / EN</strong>
+            <span>{{ if $isZh }}双语秒切复制{{ else }}Instant Switch{{ end }}</span>
+          </div>
+        </div>
+
+        <div class="ps-kbd-bar" aria-label="{{ if $isZh }}快捷键提示{{ else }}Keyboard shortcuts{{ end }}">
+          <span><kbd>/</kbd> {{ if $isZh }}搜索{{ else }}Search{{ end }}</span>
+          <span><kbd>↑</kbd><kbd>↓</kbd> {{ if $isZh }}切换{{ else }}Select{{ end }}</span>
+          <span><kbd>↵</kbd> {{ if $isZh }}复制{{ else }}Copy{{ end }}</span>
+          <span><kbd>E</kbd> {{ if $isZh }}中/EN{{ else }}ZH/EN{{ end }}</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  {{/* ============================== STICKY COMMAND BAR ============================== */}}
+  <section class="ps-toolbar-wrap" aria-label="{{ if $isZh }}筛选与搜索{{ else }}Filter and search{{ end }}">
+    <div class="ps-wrap ps-toolbar">
+      <div class="ps-toolbar-top">
+        <div class="ps-search-box">
+          <i class="fas fa-search ps-search-ico" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="ps-search"
+            class="ps-search-input"
+            placeholder="{{ if $isZh }}搜索 Prompt、/loop、Worktree、第一性原理、标签...{{ else }}Search prompts, /loop, worktree, first principles, tags...{{ end }}"
+            autocomplete="off"
+            aria-label="{{ if $isZh }}搜索 Prompt{{ else }}Search prompts{{ end }}"
+          />
+          <button type="button" id="ps-search-clear" class="ps-search-clear" hidden aria-label="{{ if $isZh }}清空搜索{{ else }}Clear search{{ end }}">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+          <kbd class="ps-search-kbd" aria-hidden="true">/</kbd>
+        </div>
+
+        <div class="ps-controls">
+          <span class="ps-count-badge" id="ps-count" aria-live="polite">
+            {{- if $isZh }}共 {{ len $items }} 条{{ else }}{{ len $items }} prompts{{ end -}}
+          </span>
+
+          <div class="ps-seg" role="group" aria-label="{{ if $isZh }}复制语言{{ else }}Prompt language{{ end }}">
+            <button type="button" class="ps-seg-btn{{ if $isZh }} is-on{{ end }}" data-ps-lang="zh">中文</button>
+            <button type="button" class="ps-seg-btn{{ if not $isZh }} is-on{{ end }}" data-ps-lang="en">EN</button>
+          </div>
+
+          <div class="ps-seg" role="group" aria-label="{{ if $isZh }}视图切换{{ else }}View mode{{ end }}">
+            <button type="button" class="ps-seg-btn is-on" data-ps-view="list" title="{{ if $isZh }}高密度清单视图{{ else }}Dense list view{{ end }}" aria-label="{{ if $isZh }}高密度清单视图{{ else }}Dense list view{{ end }}">
+              <i class="fas fa-list" aria-hidden="true"></i>
+              <span>{{ if $isZh }}清单{{ else }}List{{ end }}</span>
+            </button>
+            <button type="button" class="ps-seg-btn" data-ps-view="grid" title="{{ if $isZh }}卡片网格视图{{ else }}Card grid view{{ end }}" aria-label="{{ if $isZh }}卡片网格视图{{ else }}Card grid view{{ end }}">
+              <i class="fas fa-th-large" aria-hidden="true"></i>
+              <span>{{ if $isZh }}网格{{ else }}Grid{{ end }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ps-cats" role="tablist" aria-label="{{ if $isZh }}分类筛选{{ else }}Categories{{ end }}">
+        <button type="button" class="ps-cat is-on" data-ps-cat="all" role="tab" aria-selected="true">
+          <i class="fas fa-layer-group" aria-hidden="true"></i>
+          <span>{{ if $isZh }}全部{{ else }}All{{ end }}</span>
+          <em>{{ len $items }}</em>
+        </button>
+        <button type="button" class="ps-cat" data-ps-cat="fav" role="tab" aria-selected="false">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <span>{{ if $isZh }}收藏{{ else }}Starred{{ end }}</span>
+          <em id="ps-fav-count">0</em>
+        </button>
+        <button type="button" class="ps-cat" data-ps-cat="recent" role="tab" aria-selected="false">
+          <i class="fas fa-history" aria-hidden="true"></i>
+          <span>{{ if $isZh }}最近复制{{ else }}Recent{{ end }}</span>
+          <em id="ps-recent-count">0</em>
+        </button>
+        {{- range $categories }}
+          {{- $cnt := len (where $items "category" .id) -}}
+          <button type="button" class="ps-cat" data-ps-cat="{{ .id }}" style="--c: {{ .color }}" role="tab" aria-selected="false">
+            <i class="fas {{ .icon }}" aria-hidden="true"></i>
+            <span>{{ if $isZh }}{{ .name_zh }}{{ else }}{{ .name_en }}{{ end }}</span>
+            <em>{{ $cnt }}</em>
+          </button>
+        {{- end }}
+      </div>
+
+      <div class="ps-presets">
+        <span class="ps-presets-label">
+          <i class="fas fa-magic" aria-hidden="true"></i>
+          {{ if $isZh }}黄金组合一键装填：{{ else }}Quick workflow stacks:{{ end }}
+        </span>
+        <div class="ps-presets-list">
+          {{- range $presets }}
+          <button type="button" class="ps-preset-btn" data-ps-preset="{{ .id }}" title="{{ if $isZh }}{{ .desc_zh }}{{ else }}{{ .desc_en }}{{ end }}">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+            <span>{{ if $isZh }}{{ .name_zh }}{{ else }}{{ .name_en }}{{ end }}</span>
+          </button>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* ============================== MASTER-DETAIL WORKBENCH ============================== */}}
+  <main class="ps-wrap ps-workspace" id="ps-workspace" data-view="list">
+    <div class="ps-list-pane">
+      <div class="ps-list" id="ps-list" role="listbox" aria-label="{{ if $isZh }}Prompt 列表{{ else }}Prompt list{{ end }}">
+        {{- range $idx, $item := $items }}
+          {{- $cat := index $catMap $item.category -}}
+          {{- $title := cond $isZh $item.title_zh $item.title_en -}}
+          {{- $body := cond $isZh $item.body_zh $item.body_en -}}
+          {{- $tags := cond $isZh $item.tags_zh $item.tags_en -}}
+          <div
+            class="ps-row{{ if eq $idx 0 }} is-active{{ end }}"
+            data-id="{{ $item.id }}"
+            data-cat="{{ $item.category }}"
+            style="--c: {{ $cat.color }}"
+            data-ps-spot
+            role="option"
+            aria-selected="{{ if eq $idx 0 }}true{{ else }}false{{ end }}"
+            tabindex="0"
+          >
+            <div class="ps-row-main">
+              <div class="ps-row-head">
+                <span class="ps-row-ico" title="{{ if $isZh }}{{ $cat.name_zh }}{{ else }}{{ $cat.name_en }}{{ end }}">
+                  <i class="fas {{ $cat.icon }}" aria-hidden="true"></i>
+                </span>
+                <strong class="ps-row-title">{{ $title }}</strong>
+                <span class="ps-row-badges">
+                  {{- if $item.featured }}<span class="ps-b ps-b-hot">{{ if $isZh }}精选{{ else }}Top{{ end }}</span>{{ end -}}
+                  {{- if $item.short }}<span class="ps-b ps-b-short">{{ if $isZh }}短口令{{ else }}Quick{{ end }}</span>{{ end -}}
+                  {{- with $item.vars }}<span class="ps-b ps-b-var">{{ len . }} {{ if $isZh }}变量{{ else }}vars{{ end }}</span>{{ end -}}
+                </span>
+              </div>
+              <p class="ps-row-snippet">{{ $body | plainify | truncate 140 }}</p>
+              <div class="ps-row-meta">
+                <span class="ps-row-cat">{{ if $isZh }}{{ $cat.name_zh }}{{ else }}{{ $cat.name_en }}{{ end }}</span>
+                {{- range first 2 $tags }}<span class="ps-tag">{{ . }}</span>{{ end -}}
+              </div>
+            </div>
+
+            <div class="ps-row-actions">
+              <button
+                type="button"
+                class="ps-icon-btn"
+                data-ps-chain="{{ $item.id }}"
+                title="{{ if $isZh }}加入组合篮{{ else }}Add to stack{{ end }}"
+                aria-label="{{ if $isZh }}加入组合篮{{ else }}Add to stack{{ end }}"
+                aria-pressed="false"
+              >
+                <i class="fas fa-plus" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                class="ps-icon-btn"
+                data-ps-fav="{{ $item.id }}"
+                title="{{ if $isZh }}收藏{{ else }}Star{{ end }}"
+                aria-label="{{ if $isZh }}收藏{{ else }}Star{{ end }}"
+                aria-pressed="false"
+              >
+                <i class="fas fa-star" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                class="ps-copy-btn"
+                data-ps-copy="{{ $item.id }}"
+                title="{{ if $isZh }}立即复制{{ else }}Copy prompt{{ end }}"
+              >
+                <i class="fas fa-copy" aria-hidden="true"></i>
+                <span>{{ if $isZh }}复制{{ else }}Copy{{ end }}</span>
+              </button>
+              <button
+                type="button"
+                class="ps-icon-btn ps-open-btn"
+                data-ps-inspect="{{ $item.id }}"
+                title="{{ if $isZh }}详情与变量填空{{ else }}Inspect & fill vars{{ end }}"
+                aria-label="{{ if $isZh }}详情与变量填空{{ else }}Inspect & fill vars{{ end }}"
+              >
+                <i class="fas fa-sliders-h" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        {{- end }}
+      </div>
+
+      <div class="ps-empty" id="ps-empty" hidden>
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <p>{{ if $isZh }}没有找到匹配的 Prompt，换个关键词或重置筛选试试。{{ else }}No prompts matched your filter. Try another keyword or reset.{{ end }}</p>
+        <button type="button" class="ps-reset-btn" id="ps-reset-filters">
+          {{ if $isZh }}查看全部 {{ len $items }} 条 Prompt{{ else }}Show all {{ len $items }} prompts{{ end }}
+        </button>
+      </div>
+    </div>
+
+    <div class="ps-backdrop" id="ps-backdrop" hidden></div>
+
+    {{/* Sticky Desktop Inspector / Slide-Over Mobile & Grid Drawer */}}
+    <aside class="ps-inspector" id="ps-inspector" aria-label="{{ if $isZh }}Prompt 详情与变量工作区{{ else }}Prompt inspector{{ end }}">
+      <div class="ps-insp-head">
+        <div class="ps-insp-meta">
+          <span class="ps-insp-cat" id="ps-insp-cat" style="--c: {{ $firstCat.color }}">
+            <i class="fas {{ $firstCat.icon }}" aria-hidden="true"></i>
+            <span>{{ if $isZh }}{{ $firstCat.name_zh }}{{ else }}{{ $firstCat.name_en }}{{ end }}</span>
+          </span>
+          <span class="ps-insp-stage" id="ps-insp-stage">{{ if $isZh }}{{ $first.stage }}{{ else }}{{ $first.stage_en | default $first.stage }}{{ end }}</span>
+        </div>
+
+        <div class="ps-insp-tools">
+          <div class="ps-seg ps-seg-sm" role="group" aria-label="{{ if $isZh }}当前条目语言{{ else }}Item language{{ end }}">
+            <button type="button" class="ps-seg-btn{{ if $isZh }} is-on{{ end }}" data-ps-insp-lang="zh">中</button>
+            <button type="button" class="ps-seg-btn{{ if not $isZh }} is-on{{ end }}" data-ps-insp-lang="en">EN</button>
+          </div>
+          <button type="button" class="ps-icon-btn" id="ps-insp-fav" title="{{ if $isZh }}收藏{{ else }}Star{{ end }}" aria-label="{{ if $isZh }}收藏{{ else }}Star{{ end }}">
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="ps-icon-btn" id="ps-insp-share" title="{{ if $isZh }}复制深链{{ else }}Copy link{{ end }}" aria-label="{{ if $isZh }}复制深链{{ else }}Copy link{{ end }}">
+            <i class="fas fa-link" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="ps-icon-btn ps-insp-close" id="ps-insp-close" title="{{ if $isZh }}关闭抽屉{{ else }}Close{{ end }}" aria-label="{{ if $isZh }}关闭抽屉{{ else }}Close{{ end }}">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="ps-insp-title" id="ps-insp-title">{{ if $isZh }}{{ $first.title_zh }}{{ else }}{{ $first.title_en }}{{ end }}</h2>
+      <p class="ps-insp-summary" id="ps-insp-summary">{{ if $isZh }}{{ $first.summary_zh }}{{ else }}{{ $first.summary_en }}{{ end }}</p>
+      <div class="ps-insp-tags" id="ps-insp-tags">
+        {{- range (cond $isZh $first.tags_zh $first.tags_en) }}<span class="ps-tag">{{ . }}</span>{{ end -}}
+      </div>
+
+      <div class="ps-vars" id="ps-vars" hidden>
+        <div class="ps-vars-head">
+          <span><i class="fas fa-sliders-h" aria-hidden="true"></i> {{ if $isZh }}变量即时填空{{ else }}Fill Variables{{ end }}</span>
+          <div class="ps-vars-actions">
+            <button type="button" class="ps-mini-link" id="ps-vars-defaults">{{ if $isZh }}填入示例{{ else }}Fill defaults{{ end }}</button>
+            <button type="button" class="ps-mini-link" id="ps-vars-clear">{{ if $isZh }}重置{{ else }}Reset{{ end }}</button>
+          </div>
+        </div>
+        <div class="ps-vars-fields" id="ps-vars-fields"></div>
+      </div>
+
+      <div class="ps-code-shell">
+        <div class="ps-code-bar">
+          <span class="ps-code-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="ps-code-lang" id="ps-code-lang">{{ if $isZh }}PROMPT · 中文{{ else }}PROMPT · EN{{ end }}</span>
+          <span class="ps-code-chars" id="ps-code-chars"></span>
+        </div>
+        <pre class="ps-code" id="ps-insp-code">{{ if $isZh }}{{ $first.body_zh }}{{ else }}{{ $first.body_en }}{{ end }}</pre>
+      </div>
+
+      <div class="ps-insp-foot">
+        <button type="button" class="ps-btn-primary" id="ps-insp-copy">
+          <i class="fas fa-copy" aria-hidden="true"></i>
+          <span>{{ if $isZh }}一键复制 (↵){{ else }}Copy Prompt (↵){{ end }}</span>
+        </button>
+        <button type="button" class="ps-btn-ghost" id="ps-insp-copy-alt">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          <span>{{ if $isZh }}复制英文版{{ else }}Copy Chinese{{ end }}</span>
+        </button>
+        <button type="button" class="ps-btn-ghost" id="ps-insp-chain">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+          <span>{{ if $isZh }}加入组合{{ else }}Add to stack{{ end }}</span>
+        </button>
+      </div>
+    </aside>
+  </main>
+
+  {{/* ============================== RELATED LINKS ============================== */}}
+  <section class="ps-wrap ps-related" aria-label="{{ if $isZh }}延伸阅读{{ else }}Related{{ end }}">
+    <a class="ps-rel-card" href="{{ .Site.BaseURL | relLangURL }}">
+      <i class="fas fa-home" aria-hidden="true"></i>
+      <div>
+        <strong>{{ if $isZh }}回到首页{{ else }}Back to Home{{ end }}</strong>
+        <span>{{ if $isZh }}毛毛星 · AI 全栈与独立产品枢纽{{ else }}Momo's hub for AI & indie products{{ end }}</span>
+      </div>
+      <span aria-hidden="true">→</span>
+    </a>
+    <a class="ps-rel-card" href="{{ "ai-coding-workflow/" | relLangURL }}">
+      <i class="fas fa-code-branch" aria-hidden="true"></i>
+      <div>
+        <strong>{{ if $isZh }}AI 编程工作流{{ else }}AI Coding Workflow{{ end }}</strong>
+        <span>{{ if $isZh }}我怎么把这些 Prompt 放进真实工程流程{{ else }}How I wire prompts into real engineering{{ end }}</span>
+      </div>
+      <span aria-hidden="true">→</span>
+    </a>
+    <a class="ps-rel-card" href="{{ "tools/" | relLangURL }}">
+      <i class="fas fa-robot" aria-hidden="true"></i>
+      <div>
+        <strong>{{ if $isZh }}浏览器 AI 小工具{{ else }}Browser AI Tools{{ end }}</strong>
+        <span>{{ if $isZh }}点开即用的代码体检、口哨转写等工具{{ else }}Open-and-use browser utilities{{ end }}</span>
+      </div>
+      <span aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  {{/* ============================== FLOATING COMPOSER DOCK ============================== */}}
+  <div class="ps-dock" id="ps-dock" hidden role="region" aria-label="{{ if $isZh }}Prompt 组合篮{{ else }}Prompt stack composer{{ end }}">
+    <div class="ps-dock-preview" id="ps-dock-preview" hidden>
+      <div class="ps-dock-preview-head">
+        <strong>{{ if $isZh }}组合预览（按顺序拼接复制）{{ else }}Combined Stack Preview{{ end }}</strong>
+        <button type="button" class="ps-mini-link" id="ps-dock-preview-close">{{ if $isZh }}收起{{ else }}Collapse{{ end }}</button>
+      </div>
+      <pre class="ps-dock-code" id="ps-dock-code"></pre>
+    </div>
+
+    <div class="ps-dock-bar">
+      <div class="ps-dock-chips" id="ps-dock-chips"></div>
+      <div class="ps-dock-actions">
+        <button type="button" class="ps-dock-btn" id="ps-dock-toggle-preview" title="{{ if $isZh }}预览拼接结果{{ else }}Preview combined{{ end }}">
+          <i class="fas fa-eye" aria-hidden="true"></i>
+          <span>{{ if $isZh }}预览{{ else }}Preview{{ end }}</span>
+        </button>
+        <button type="button" class="ps-dock-btn" id="ps-dock-clear" title="{{ if $isZh }}清空组合{{ else }}Clear stack{{ end }}" aria-label="{{ if $isZh }}清空组合{{ else }}Clear stack{{ end }}">
+          <i class="fas fa-trash-alt" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="ps-dock-copy" id="ps-dock-copy">
+          <i class="fas fa-copy" aria-hidden="true"></i>
+          <span id="ps-dock-copy-label">{{ if $isZh }}复制组合{{ else }}Copy Stack{{ end }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ps-toast" id="ps-toast" role="status" aria-live="polite" hidden></div>
+</div>
+
+<script type="application/json" id="ps-data">{{ $data | jsonify | safeJS }}</script>
+<script src="/js/prompts-app.js" defer></script>

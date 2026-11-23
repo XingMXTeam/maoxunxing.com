@@ -1,0 +1,1131 @@
+categories:
+  - id: agent
+    name_zh: "Agent 口令 & /loop"
+    name_en: "Agent & /loop"
+    icon: "fa-bolt"
+    color: "#6366f1"
+  - id: thinking
+    name_zh: "深度思考"
+    name_en: "Deep Thinking"
+    icon: "fa-brain"
+    color: "#a855f7"
+  - id: engineering
+    name_zh: "工程审计与规划"
+    name_en: "Engineering & Audits"
+    icon: "fa-code-branch"
+    color: "#06b6d4"
+  - id: writing
+    name_zh: "写作与改稿"
+    name_en: "Writing & Editing"
+    icon: "fa-pen-nib"
+    color: "#f59e0b"
+  - id: media
+    name_zh: "图视与设计"
+    name_en: "Visual & Media"
+    icon: "fa-palette"
+    color: "#ec4899"
+  - id: workflow
+    name_zh: "工作流与投资"
+    name_en: "Workflow & Investing"
+    icon: "fa-compass"
+    color: "#10b981"
+
+presets:
+  - id: pre-code-stack
+    name_zh: "需求规划三连击"
+    name_en: "Pre-Code Alignment Stack"
+    desc_zh: "先查文件不动手 → 挑战问题定义 → 对齐后出 3 版方案"
+    desc_en: "Analyze first → Challenge framing → Align & output 3 options"
+    ids:
+      - analyze-first
+      - challenge-problem-def
+      - align-three-options
+  - id: worktree-ship-stack
+    name_zh: "Worktree 全自动交付"
+    name_en: "Autonomous Ship Stack"
+    desc_zh: "Worktree 逐一实施 → HTML 验收证明 → /goal 过夜打磨"
+    desc_en: "Ship in worktree → HTML proof report → Overnight /goal polish"
+    ids:
+      - worktree-ship
+      - prove-with-html
+      - overnight-goal
+  - id: repo-audit-stack
+    name_zh: "代码库深度体检与沉淀"
+    name_en: "Codebase Deep Audit"
+    desc_zh: "Git 历史考古 → 新人认知成本审计 → 错因沉淀为 Skill/规则"
+    desc_en: "Git archaeology → Onboarding cognitive audit → Codify rules"
+    ids:
+      - git-history-archaeology
+      - newcomer-cognitive-load
+      - bug-retro-to-rules
+
+items:
+  # ==================== 1. Agent & /loop (12) ====================
+  - id: analyze-first
+    category: agent
+    stage: "动手前"
+    stage_en: "Pre-Edit"
+    featured: true
+    short: true
+    title_zh: "先分析再动手（禁止直接改代码）"
+    title_en: "Analyze First, No Direct Edits"
+    summary_zh: "防止 Agent 没看清上下文就瞎改，强迫先读相关文件、列出改动点并澄清疑问。"
+    summary_en: "Stops the agent from editing blindly—forces reading relevant files, scoping changes, and asking clarifying questions first."
+    tags_zh: ["规划", "防乱改", "Coding Agent"]
+    tags_en: ["Planning", "Safety", "Coding Agent"]
+    body_zh: |-
+      不要直接实现或修复。必要时先分析相关文件，告诉我需要做哪些修改；有任何不明确的地方先向我提问。
+    body_en: |-
+      Don't implement or fix directly. Analyze related files first if needed, tell me what changes are needed, and ask questions if anything is unclear.
+
+  - id: worktree-ship
+    category: agent
+    stage: "交付"
+    stage_en: "Shipping"
+    featured: true
+    short: true
+    title_zh: "Worktree 逐步实现并提交 PR"
+    title_en: "Worktree Step-by-Step Ship"
+    summary_zh: "在独立 Git Worktree 内按步推进，完成后合并为干净的单个提交并合入/提 PR。"
+    summary_en: "Executes every step sequentially inside an isolated git worktree, commits cleanly, and merges to main or opens a PR."
+    tags_zh: ["Worktree", "Git", "PR"]
+    tags_en: ["Worktree", "Git", "PR"]
+    body_zh: |-
+      在 Git Worktree 中逐一完成所有步骤直到全部实现，整理为一个干净的提交，合并到主分支并推送（或创建 PR）。
+    body_en: |-
+      Implement all steps one by one until everything is completed in a git worktree, then commit in a single clean commit, merge to main and push (or open a PR).
+
+  - id: downloads-mermaid-doc
+    category: agent
+    stage: "沉淀"
+    stage_en: "Archive"
+    featured: false
+    short: true
+    title_zh: "中文 Mermaid 文档归档到 Downloads"
+    title_en: "Save Chinese Mermaid Doc to Downloads"
+    summary_zh: "让 Agent 把分析结论或架构图生成一份独立中文 Markdown 并存到 ~/Downloads/。"
+    summary_en: "Exports a standalone Chinese Markdown summary with Mermaid diagrams directly to ~/Downloads/."
+    tags_zh: ["文档", "Mermaid", "归档"]
+    tags_en: ["Docs", "Mermaid", "Export"]
+    body_zh: |-
+      用中文整理一份独立的 Markdown 文档保存到 ~/Downloads/，必要时附上 Mermaid 图表说明。
+    body_en: |-
+      Save a standalone Markdown summary in Chinese to ~/Downloads/, including Mermaid diagrams where helpful.
+
+  - id: grill-me
+    category: agent
+    stage: "对齐"
+    stage_en: "Align"
+    featured: true
+    short: true
+    title_zh: "深度盘问对齐（Grill Me）"
+    title_en: "Grill Me on This Design"
+    summary_zh: "让 AI 扮演严苛架构师，逐个抛问题把你的设计盲区和隐藏假设问透。"
+    summary_en: "Turns the AI into a ruthless sparring partner that exposes blind spots and interrogates assumptions one question at a time."
+    tags_zh: ["设计对齐", "追问", "架构"]
+    tags_en: ["Alignment", "Critique", "Architecture"]
+    vars:
+      - key_zh: "主题"
+        key_en: "topic"
+        label_zh: "要被盘问的设计或方案"
+        label_en: "Topic or design to interrogate"
+        default_zh: "这个方案"
+        default_en: "this design"
+    body_zh: |-
+      围绕「{{主题}}」深度盘问我：挑战我的假设、暴露盲区，逐个抛出尖锐追问，直到方案真正站得住脚。
+    body_en: |-
+      Grill me on {{topic}}. Challenge my assumptions, expose blind spots, and ask tough follow-up questions one at a time until the design is solid.
+
+  - id: codebase-is-yours
+    category: agent
+    stage: "自治"
+    stage_en: "Autonomous"
+    featured: false
+    short: true
+    title_zh: "代码库主人全权托管模式"
+    title_en: "Codebase Ownership Mode"
+    summary_zh: "把方向盘完全交给强 Agent，由它自主决定定位、架构取舍与持续演进。"
+    summary_en: "Hands full product and architectural ownership to an autonomous agent so it takes initiative and iterates end-to-end."
+    tags_zh: ["全权自治", "架构", "Agent"]
+    tags_en: ["Autonomy", "Architecture", "Agent"]
+    body_zh: |-
+      这个代码库交给你全权负责：它的定位、架构与实现方式由你拍板，并由你持续演进和迭代。
+    body_en: |-
+      This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.
+
+  - id: prove-with-html
+    category: agent
+    stage: "验收"
+    stage_en: "QA & Proof"
+    featured: false
+    short: true
+    title_zh: "实现并生成可运行 HTML 验收证明"
+    title_en: "Prove It Works via Runnable HTML"
+    summary_zh: "拒绝口头汇报“已完成”，要求输出可双击打开的 HTML 演示与测试证明到 ~/Downloads/。"
+    summary_en: "Rejects hand-wavy 'done' claims—requires a runnable verification HTML proof saved under ~/Downloads/."
+    tags_zh: ["验收", "HTML", "E2E"]
+    tags_en: ["Verification", "HTML", "E2E"]
+    body_zh: |-
+      完成实现与测试，并在 ~/Downloads/ 下生成一个可直接打开运行的 HTML 验收报告，向我证明功能真正跑通。
+    body_en: |-
+      Implement, test, and prove to me that it works by generating a runnable verification HTML report under ~/Downloads/.
+
+  - id: promo-motion-video
+    category: agent
+    stage: "展示"
+    stage_en: "Launch"
+    featured: false
+    short: true
+    title_zh: "15–30s 高质感产品动效宣传视频"
+    title_en: "15–30s Fancy Motion Graphics Video"
+    summary_zh: "全力输出一条 15–30 秒配乐动效宣传短片，直观展现产品的惊艳卖点（禁用 Hyperframe）。"
+    summary_en: "Directs a 15–30 second polished motion graphics showcase video with music on, explicitly excluding Hyperframe."
+    tags_zh: ["视频", "动效", "发布宣传"]
+    tags_en: ["Video", "Motion", "Launch"]
+    body_zh: |-
+      制作一段 15 到 30 秒的动态图形宣传视频，充分展现这款产品的惊艳之处。视觉要精致高级、全力以赴，配上背景音乐，不要使用 Hyperframe。
+    body_en: |-
+      Make a dynamic 15 to 30 second motion graphics video that shows how incredible this product is. Make it fancy with great design—go all out. Music on. Don't use Hyperframe.
+
+  - id: worktree-review-prs
+    category: agent
+    stage: "Review"
+    stage_en: "PR Review"
+    featured: true
+    short: true
+    title_zh: "Worktree 逐一严审 PR（含包体积与 UI/UX）"
+    title_en: "Strict Worktree PR Review & Fix"
+    summary_zh: "用独立 Worktree 逐个审查 PR，关注包体积、边界、UI/UX，遇改进建议先改好再合。"
+    summary_en: "Reviews PRs one by one in worktrees for bundle bloat, edge cases, and UI/UX—fixes approved PRs with suggestions before merging."
+    tags_zh: ["Code Review", "Worktree", "包体积"]
+    tags_en: ["Code Review", "Worktree", "Bundle Size"]
+    body_zh: |-
+      使用 Git Worktree 逐一 Review PR。重点关注包体积增长、边界情况、UI 视觉设计、UX 交互体验及关联影响。给出明确结论：批准并合并，或附具体意见退回；若批准但有优化建议，先在 PR 中完成改进再合并。
+    body_en: |-
+      Review PRs one by one using git worktrees. Pay close attention to bundle size increases, edge cases, UI design quality, UX polish, and related impacts. Approve and merge, or reject with clear comments. If approving with suggestions, update the PR to apply those improvements first.
+
+  - id: overnight-goal
+    category: agent
+    stage: "过夜托管"
+    stage_en: "Overnight"
+    featured: true
+    short: true
+    title_zh: "过夜全自动深度打磨（/goal）"
+    title_en: "Overnight Autonomous /goal Polish"
+    summary_zh: "睡觉前丢给 Agent 的终极托管口令：不提问、多轮工作流持续打磨 UI/性能/微动效，最后交 PR。"
+    summary_en: "Fire-and-forget overnight polish command: zero interruptions, multi-turn workflow until UI, performance, and micro-animations shine, delivered via PR."
+    tags_zh: ["/goal", "过夜托管", "Worktree"]
+    tags_en: ["/goal", "Overnight", "Worktree"]
+    body_zh: |-
+      /goal 让这个应用达到专业、美观、高设计水准与高性能，搭配克制精致的微动效。期间不要向我提问（我会去休息，稍后统一验收），在真正达成目标前不要停止。必要时使用多轮工作流持续推进，在 Git Worktree 中开发、提交并创建 PR。
+    body_en: |-
+      /goal Make this app professional, polished, well-designed, fast, and enhanced with subtle micro-animations. Don't ask me questions since I'll be asleep and will review your work later. Don't stop until you achieve the goal. Use workflows if needed across multiple turns, work in a git worktree, commit cleanly, and create a PR.
+
+  - id: loop-github-discord-ops
+    category: agent
+    stage: "/loop 巡检"
+    stage_en: "/loop Patrol"
+    featured: true
+    short: false
+    title_zh: "/loop GitHub Issues / PR 严审与 Discord 全频道巡检"
+    title_en: "/loop GitHub Issues, Strict PR Check & Discord Ops"
+    summary_zh: "全天候巡检 GitHub Issues（过滤中转站广告）、本地跑通验真再合 PR（防 AI 垃圾代码）并全频道回复 Discord 真实 @用户。"
+    summary_en: "Patrols GitHub issues (filtering relay ads), pulls & locally runs every PR to reject untested AI slop, and monitors all Discord channels with real @mentions."
+    tags_zh: ["/loop", "GitHub", "Discord", "防 AI 垃圾 PR"]
+    tags_en: ["/loop", "GitHub", "Discord", "Anti-Slop"]
+    vars:
+      - key_zh: "产品名"
+        key_en: "product"
+        label_zh: "产品或社区名称"
+        label_en: "Product / Discord server name"
+        default_zh: "Magpie"
+        default_en: "Magpie"
+    body_zh: |-
+      /loop 持续巡检 GitHub Issues 与 PR，以及 {{产品名}} Discord Server 的用户反馈：
+
+      1. **GitHub Issues 处理**：
+         - 逐条分析哪些值得修复或实现；完成开发、发版并回复说明，不值得做的也要礼貌回复理由。
+         - 如遇第三方中转站广告 Issue，统一礼貌回复：“感谢关注，日后会出相关合作方案，敬请期待。”严禁盲目把第三方中转站直接接入产品。
+
+      2. **GitHub PR 逐行严审与实跑验证**：
+         - 认真 Review 每个 PR 的每一行代码和每一处逻辑，必须把代码拉到本地实际跑通测试，验证确认没有 Bug。
+         - 严防有人用 Coding Agent 无脑生成、自己都没跑过的低质 PR——必须确认代码健康且实测无误后才允许合并，否则给出具体问题并退回或关闭 PR。
+
+      3. **Discord 全频道用户巡检**：
+         - 巡检 {{产品名}} Discord Server 的**每一个频道**，一个都不能漏掉，实时参与讨论。
+         - 有价值的建议和反馈直接推进修复或开发新功能；需要进一步确认的保持跟进。
+         - 回复用户时必须在 Discord 里真实 `@mention` 对方（而不是只打名字文本），确保对方能收到通知。
+    body_en: |-
+      /loop Continuously monitor GitHub Issues, PRs, and {{product}} Discord feedback:
+
+      1. **GitHub Issues Triage**:
+         - Analyze each issue carefully to decide what is worth fixing or building. After shipping and releasing, reply with the update; politely decline and explain when an issue isn't worth pursuing.
+         - If an issue is advertising a third-party API relay/proxy, reply uniformly: "Thanks for reaching out—we'll share official partnership options in the future, stay tuned." Never blindly integrate third-party relays into the product.
+
+      2. **Strict PR Review & Local Execution**:
+         - Review every PR line by line and logic by logic. Always pull the branch and run it locally to verify there are zero bugs.
+         - Guard against unverified AI-generated PRs submitted without testing. Only merge after complete verification; otherwise comment with concrete findings or close the PR.
+
+      3. **Discord All-Channel Support**:
+         - Check **every single channel** in the {{product}} Discord Server without missing any, and join discussions proactively.
+         - Turn valuable feedback into fixes or new features; continue threads when deeper discussion is needed.
+         - Always use real Discord `@mention` tags rather than plain text usernames so users actually receive notifications.
+
+  - id: loop-twitter-triage
+    category: agent
+    stage: "/loop 巡检"
+    stage_en: "/loop Patrol"
+    featured: true
+    short: false
+    title_zh: "/loop 推特反馈巡检 + 轻量模型前置过滤省 Token"
+    title_en: "/loop Twitter Feedback Triage with Cheap Filter Model"
+    summary_zh: "先用便宜小模型判定推文相关性再送给主 Agent，过滤噪音省 Token；真需求/Bug 修复上线并回复。"
+    summary_en: "Gates Twitter/X feedback through a cheap triage model before forwarding to the main agent to save tokens, then ships & replies on real issues."
+    tags_zh: ["/loop", "Twitter", "省 Token", "分级路由"]
+    tags_en: ["/loop", "Twitter", "Token Saving", "Triage"]
+    vars:
+      - key_zh: "产品名"
+        key_en: "product"
+        label_zh: "产品关键词"
+        label_en: "Product keyword"
+        default_zh: "magpie"
+        default_en: "magpie"
+      - key_zh: "轻量过滤模型"
+        key_en: "triage_model"
+        label_zh: "用于初筛的便宜模型名"
+        label_en: "Cheap model used for gating"
+        default_zh: "jev"
+        default_en: "jev"
+    body_zh: |-
+      /loop 持续巡检 Twitter/X 上关于 {{产品名}} 的用户反馈：
+
+      - **前置降本过滤（核心规则）**：先用便宜的轻量决策模型（如 {{轻量过滤模型}}）判断每条推文是否真的与 {{产品名}} 相关、是否属于产品反馈或可复现 Bug。如果不相关，直接忽略丢弃，**不要把无关内容转发给主模型**，避免浪费 Token。
+      - **闭环交付**：确认为有价值的建议或真实可复现的 Bug 后，推进实现或修复并上线发布；上线完成后记得回到对应推文下回复告知用户。
+    body_en: |-
+      /loop Monitor Twitter/X for feedback about {{product}}:
+
+      - **Cheap-Model Gate (Cost Guardrail)**: First route incoming tweets through a cheap lightweight classifier model (e.g. {{triage_model}}) to judge whether a tweet is genuinely about {{product}} and contains actionable feedback or a reproducible bug. Drop irrelevant noise immediately—**never forward non-relevant tweets to the primary agent**, avoiding wasted tokens.
+      - **Ship & Close the Loop**: For valid feedback or reproducible bugs, implement the fix, deploy to production, and reply to the original tweet once live.
+
+  - id: loop-codebase-hygiene
+    category: agent
+    stage: "/loop 清屎山"
+    stage_en: "/loop Cleanup"
+    featured: true
+    short: false
+    title_zh: "/loop 自动化清屎山、沉淀教训与低质 PR 黑名单"
+    title_en: "/loop Codebase Hygiene, Postmortems & Slop Blacklist"
+    summary_zh: "全自动合并代码库必备防烂化巡检：清理屎山/恶意代码、把踩坑沉淀成持久规则、拉黑低质提交者。"
+    summary_en: "Essential anti-rot loop for autonomous repos: purge tech debt and malicious code, codify merge lessons into agent memory, and blacklist repeat slop authors."
+    tags_zh: ["/loop", "重构", "防烂化", "黑名单"]
+    tags_en: ["/loop", "Hygiene", "Rules", "Blacklist"]
+    vars:
+      - key_zh: "产品名"
+        key_en: "product"
+        label_zh: "项目名称"
+        label_en: "Repository / project name"
+        default_zh: "magpie"
+        default_en: "magpie"
+    body_zh: |-
+      /loop 目前 {{产品名}} 处于高度自动化修改代码与合并社区 PR 的状态，请定时执行以下防烂化巡检：
+
+      1. **清理屎山与恶意代码**：扫描并重构近期合入的冗余代码、脆弱补丁和潜在恶意/越界改动，防止项目可维护性持续恶化甚至不可挽回。
+      2. **沉淀 Agent 经验规则**：复盘近期失误——明确“哪些 PR 本不该合并”“哪些验证流于形式”，把教训写入项目的长期规则/经验文档，防止后续 Agent 重蹈覆辙。
+      3. **低质提交者黑名单**：统计并识别长期提交未测试垃圾代码或低质量 PR 的账号，纳入黑名单/严格拦截清单。
+    body_en: |-
+      /loop {{product}} now runs automated code changes and community PR merges. Periodically run this codebase anti-rot routine:
+
+      1. **Purge Spaghetti & Malicious Code**: Audit recent commits for messy workarounds, architectural drift, and suspicious or unsafe changes so the codebase stays maintainable instead of decaying.
+      2. **Codify Lessons into Persistent Rules**: Review past mistakes—which PRs should never have been merged and where verification was too loose—and save concrete guardrails into agent memory/rules so future agents don't repeat them.
+      3. **Track & Blacklist Repeat Offenders**: Flag contributors who repeatedly submit untested AI slop or low-quality code and add them to a block/strict-review list.
+
+  # ==================== 2. Deep Thinking (6) ====================
+  - id: first-principles-fix
+    category: thinking
+    stage: "根因"
+    stage_en: "Root Cause"
+    featured: true
+    short: true
+    title_zh: "第一性原理根因修复"
+    title_en: "First-Principles Root-Cause Fix"
+    summary_zh: "跳过表面打补丁，逼模型从底层物理/系统本质定位根因再一次性修彻底。"
+    summary_en: "Rejects surface band-aids—forces reasoning from first principles to diagnose and eliminate the true root cause."
+    tags_zh: ["第一性原理", "根因", "Debug"]
+    tags_en: ["First Principles", "Root Cause", "Debug"]
+    body_zh: |-
+      从第一性原理出发，剥离表象找到最本质原因，并彻底修复。
+    body_en: |-
+      Reason from first principles, strip away surface symptoms to find the true root cause, and fix it cleanly at the source.
+
+  - id: align-three-options
+    category: thinking
+    stage: "方案对比"
+    stage_en: "3 Options"
+    featured: true
+    short: true
+    title_zh: "先提问对齐喜好，再出 3 版方案"
+    title_en: "Clarify Preferences, Then 3 Options"
+    summary_zh: "避免模型直接给单一“默认方案”，先澄清模糊偏好，再对比 3 条不同取舍路径。"
+    summary_en: "Asks targeted questions first to calibrate preferences and constraints, then presents 3 distinct options with clear trade-offs."
+    tags_zh: ["多方案", "对齐", "决策"]
+    tags_en: ["Options", "Alignment", "Decision"]
+    body_zh: |-
+      先问一些不清晰的问题，对齐我的喜好和约束条件，然后再出 3 版不同取舍的方案供对比选择。
+    body_en: |-
+      Ask clarifying questions where requirements are ambiguous to align with my preferences and constraints first, then propose 3 distinct options with clear trade-offs.
+
+  - id: challenge-problem-def
+    category: thinking
+    stage: "问题定义"
+    stage_en: "Reframe"
+    featured: true
+    short: false
+    title_zh: "挑战问题定义（别把症状当根因）"
+    title_en: "Challenge the Problem Framing"
+    summary_zh: "在动手解决之前先反问：我是不是把症状当成了原因、把手段当成了目标？"
+    summary_en: "Prevents solving the wrong problem—checks whether symptoms were mistaken for causes or means for ends."
+    tags_zh: ["需求反思", "纠偏", "产品思维"]
+    tags_en: ["Reframing", "Product Thinking", "Diagnosis"]
+    body_zh: |-
+      不要默认我提出的问题定义就是正确的。你先分析我真正想解决的底层需求，判断我有没有把症状误认为原因、把手段误认为目标。如果存在更值得解决的问题，直接指出来。
+    body_en: |-
+      Do not assume my framing of the problem is correct. First uncover the underlying job I'm really trying to solve, check whether I've mistaken a symptom for the root cause or a means for the end, and point out directly if there is a better problem worth solving.
+
+  - id: second-third-order
+    category: thinking
+    stage: "系统推演"
+    stage_en: "2nd-Order"
+    featured: false
+    short: false
+    title_zh: "二阶 / 三阶系统连锁影响推演"
+    title_en: "Second- & Third-Order Effects"
+    summary_zh: "不只看眼前爽不爽，继续推演对其他模块、用户习惯、复杂度和未来维护成本的连锁反应。"
+    summary_en: "Looks beyond first-order wins to trace downstream impacts on adjacent modules, user behavior, complexity, and maintenance burden."
+    tags_zh: ["二阶效应", "系统思维", "长期主义"]
+    tags_en: ["Second-Order", "Systems Thinking", "Maintainability"]
+    body_zh: |-
+      不要只考虑这个改动产生的直接效果。继续推演它的二阶、三阶影响，尤其关注对其他模块、用户行为、系统复杂度和长期维护成本的潜在影响。
+    body_en: |-
+      Don't stop at the immediate first-order effect of this change. Trace its second- and third-order consequences, especially across adjacent modules, user behavior, system complexity, and long-term maintenance cost.
+
+  - id: cross-domain-solution
+    category: thinking
+    stage: "跨界借鉴"
+    stage_en: "Cross-Domain"
+    featured: false
+    short: false
+    title_zh: "跨领域寻找最优解"
+    title_en: "Cross-Domain Optimal Solution"
+    summary_zh: "跳出当前技术栈或行业惯性，看看游戏、金融、编译器、供应链等其他领域如何解决类似问题。"
+    summary_en: "Breaks out of local domain tunnel vision by pulling proven patterns from unrelated industries and disciplines."
+    tags_zh: ["跨领域", "类比推理", "创新"]
+    tags_en: ["Cross-Domain", "Analogy", "Architecture"]
+    body_zh: |-
+      其他领域里有没有类似的成熟方案？请用跨领域的方式全面思考，跳出当前行业/技术栈惯性，找到更本质的最优解。
+    body_en: |-
+      How have unrelated fields solved an analogous problem? Think across disciplines—outside our current stack or industry conventions—to find the cleanest optimal solution.
+
+  - id: red-team-assumptions
+    category: thinking
+    stage: "红队反驳"
+    stage_en: "Red Team"
+    featured: true
+    short: false
+    title_zh: "最强反对者红队审查"
+    title_en: "Steelman Red-Team Critique"
+    summary_zh: "先假设当前最合理的方案其实是错的，站在最强对手视角找反例和死穴。"
+    summary_en: "Assumes your favorite solution is wrong and constructs the strongest possible counter-case, edge cases, and failure modes."
+    tags_zh: ["红队", "反对者", "边界审查"]
+    tags_en: ["Red Team", "Steelman", "Edge Cases"]
+    body_zh: |-
+      先假设你当前认为最合理的方案是错误的。站在最强反对者的角度，寻找能够推翻它的证据、反例和边界情况。然后重新评估方案，看看有没有更好的解法。
+    body_en: |-
+      Assume the solution you currently think is most reasonable is actually wrong. Argue from the strongest opposing perspective—surface counter-evidence, edge cases, and failure modes—then re-evaluate whether a better approach exists.
+
+  # ==================== 3. Engineering & Audits (6) ====================
+  - id: git-history-archaeology
+    category: engineering
+    stage: "考古"
+    stage_en: "Git History"
+    featured: false
+    short: false
+    title_zh: "Git 历史与架构包袱考古"
+    title_en: "Git History & Legacy Baggage Audit"
+    summary_zh: "深挖提交历史与关键 PR，精准识别哪些设计是有意为之，哪些是早该删掉的历史包袱。"
+    summary_en: "Excavates git history and key PRs to separate deliberate architectural choices from obsolete legacy workarounds safe to remove."
+    tags_zh: ["Git 考古", "减负", "架构"]
+    tags_en: ["Git History", "Tech Debt", "Architecture"]
+    body_zh: |-
+      深入分析整个代码库的 Git 历史、关键 PR 和架构演变过程。找出哪些设计是有意为之，哪些是历史遗留，哪些是为了解决已经不存在的问题而引入的。识别可以安全移除的历史包袱。
+    body_en: |-
+      Analyze the repository's git history, key PRs, and architectural evolution. Separate intentional design decisions from legacy artifacts and workarounds built for problems that no longer exist, and list what can be safely removed.
+
+  - id: newcomer-cognitive-load
+    category: engineering
+    stage: "可维护性"
+    stage_en: "Onboarding"
+    featured: false
+    short: false
+    title_zh: "新人接手认知成本审计"
+    title_en: "Newcomer Cognitive Load Audit"
+    summary_zh: "用“明天来接手的高手”视角体检代码库，揪出命名混乱、过度抽象和隐式上下文。"
+    summary_en: "Audits the repo through the eyes of a strong engineer joining tomorrow—exposing unclear naming, over-abstraction, and hidden context."
+    tags_zh: ["认知成本", "重构", "可读性"]
+    tags_en: ["Cognitive Load", "Simplicity", "Readability"]
+    body_zh: |-
+      假设明天有一个完全不了解项目、但是能力很强的工程师来接手。请评估他理解整个项目需要付出的认知成本，找出那些命名混乱、抽象过度、职责不清晰、需要大量隐性上下文才能理解的代码，并提出具体简化方案。
+    body_en: |-
+      Imagine a strong engineer with zero prior context takes over this repo tomorrow. Audit the cognitive load required to understand it—flag confusing names, over-abstraction, blurred responsibilities, and implicit tribal knowledge—and propose concrete simplifications.
+
+  - id: slow-pr-perf-audit
+    category: engineering
+    stage: "性能"
+    stage_en: "Performance"
+    featured: false
+    short: false
+    title_zh: "近 {{天数}} 天 PR 性能与卡顿体检"
+    title_en: "Recent {{days}}-Day PR Performance Audit"
+    summary_zh: "回溯近期 PR 改动，定位拖慢构建、包体积或运行帧率的罪魁祸首与优化点。"
+    summary_en: "Audits PRs over the past {{days}} days to pinpoint the slowest regressions, jank sources, and bundle bottlenecks."
+    tags_zh: ["性能", "PR 审计", "防卡顿"]
+    tags_en: ["Performance", "PR Audit", "Jank"]
+    vars:
+      - key_zh: "天数"
+        key_en: "days"
+        label_zh: "回溯天数"
+        label_en: "Lookback window (days)"
+        default_zh: "30"
+        default_en: "30"
+    body_zh: |-
+      全面分析最近 {{天数}} 天里的所有 PR，找出变更最重、耗时或性能影响最差的那几个，检查是否存在导致卡顿、冗余请求、重复渲染或包体积膨胀的问题，并给出可落地的优化方案。
+    body_en: |-
+      Audit all PRs merged over the past {{days}} days. Identify the heaviest and slowest ones, check whether any introduced UI jank, redundant work, or bundle bloat, and propose concrete optimizations.
+
+  - id: bug-retro-to-rules
+    category: engineering
+    stage: "复盘沉淀"
+    stage_en: "Postmortem"
+    featured: true
+    short: false
+    title_zh: "Bug 与返工复盘沉淀 Skill / 规则"
+    title_en: "Bug & Rework Retro → Persistent Rules"
+    summary_zh: "不只统计踩了什么坑，而是挖出共性根因，固化成项目规则、自动化检查或 Skill。"
+    summary_en: "Goes beyond bug counting to uncover systemic root causes and codify guardrails into project rules, automation, or skills."
+    tags_zh: ["复盘", "Skill", "防再犯"]
+    tags_en: ["Postmortem", "Skill", "Automation"]
+    vars:
+      - key_zh: "时间范围"
+        key_en: "timeframe"
+        label_zh: "复盘时间范围"
+        label_en: "Retrospective period"
+        default_zh: "最近 1 个月"
+        default_en: "past 30 days"
+    body_zh: |-
+      全面复盘 {{时间范围}} 里的 Bug、返工、回滚和重复修改。不要只统计发生了什么，要分析这些问题背后有没有共同的根因。把能够预防的共性问题沉淀成项目规则、自动化检查或者 Skill，避免我们反复支付同样的成本。
+    body_en: |-
+      Conduct a full retrospective on all bugs, rework, rollbacks, and repeated fixes over the {{timeframe}}. Don't just list incidents—diagnose shared root causes and codify preventive guardrails into project rules, automated checks, or reusable skills so we stop paying the same tax twice.
+
+  - id: goal-driven-dev-plan
+    category: engineering
+    stage: "开发计划"
+    stage_en: "Spec Plan"
+    featured: false
+    short: false
+    title_zh: "目标驱动开发计划 Prompt"
+    title_en: "Goal-Driven Development Plan"
+    summary_zh: "适合在 Cursor / Codex / Claude Code 改代码前使用，按 7 段结构先对齐再动手。"
+    summary_en: "Forces Cursor, Codex, or Claude Code to output a structured 7-part plan and checklist before touching files."
+    tags_zh: ["开发计划", "Cursor", "Claude Code"]
+    tags_en: ["Dev Plan", "Cursor", "Claude Code"]
+    vars:
+      - key_zh: "需求背景"
+        key_en: "requirement"
+        label_zh: "需求背景"
+        label_en: "Requirement"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "相关文件"
+        key_en: "related files"
+        label_zh: "相关文件路径"
+        label_en: "Related files"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "技术约束"
+        key_en: "technical constraints"
+        label_zh: "技术约束"
+        label_en: "Technical constraints"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "验收标准"
+        key_en: "acceptance criteria"
+        label_zh: "验收标准"
+        label_en: "Acceptance criteria"
+        default_zh: ""
+        default_en: ""
+    body_zh: |-
+      你是一名资深前端工程师和代码审查者。请在修改代码之前，先基于下面的信息生成一份开发计划。
+
+      需求背景：{{需求背景}}
+      相关文件：{{相关文件}}
+      技术约束：{{技术约束}}
+      验收标准：{{验收标准}}
+
+      请按以下结构输出：
+      1. 你对需求的理解
+      2. 可能涉及的模块和文件
+      3. 推荐的实现方案
+      4. 需要确认的问题
+      5. 潜在风险和边界情况
+      6. 最小改动步骤
+      7. 验收清单
+
+      在我确认计划之前，不要直接修改代码。
+    body_en: |-
+      You are a senior frontend engineer and code reviewer. Before changing any code, generate a development plan based on the following information.
+
+      Requirement: {{requirement}}
+      Related files: {{related files}}
+      Technical constraints: {{technical constraints}}
+      Acceptance criteria: {{acceptance criteria}}
+
+      Please output the plan with this structure:
+      1. Your understanding of the requirement
+      2. Modules and files that may be involved
+      3. Recommended implementation approach
+      4. Questions that need confirmation
+      5. Potential risks and edge cases
+      6. Minimal-change implementation steps
+      7. Acceptance checklist
+
+      Do not edit code until I confirm the plan.
+
+  - id: frontend-micro-polish
+    category: engineering
+    stage: "UI 打磨"
+    stage_en: "UI Polish"
+    featured: false
+    short: false
+    title_zh: "前端 UI 细微调整 Prompt"
+    title_en: "Frontend UI Micro-Adjustment"
+    summary_zh: "约束 AI 只打磨间距、字号、对齐、移动端溢出与深色模式，绝不重构页面。"
+    summary_en: "Constrains the model to polish spacing, hierarchy, alignment, mobile overflow, and dark mode without refactoring."
+    tags_zh: ["UI 细节", "CSS", "深色模式"]
+    tags_en: ["UI Polish", "CSS", "Dark Mode"]
+    vars:
+      - key_zh: "当前问题"
+        key_en: "current issue"
+        label_zh: "当前视觉或交互问题"
+        label_en: "Current issue"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "目标效果"
+        key_en: "target effect"
+        label_zh: "期望达到的效果"
+        label_en: "Target effect"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "参考风格"
+        key_en: "reference style"
+        label_zh: "参考风格"
+        label_en: "Reference style"
+        default_zh: "Linear / Raycast 极简高密度"
+        default_en: "Minimalist Linear / Raycast"
+      - key_zh: "限制条件"
+        key_en: "constraints"
+        label_zh: "限制条件"
+        label_en: "Constraints"
+        default_zh: "不引入新依赖"
+        default_en: "No new dependencies"
+    body_zh: |-
+      你是一名注重细节的前端设计工程师。请只做细微调整，不要重构页面，不要改变业务逻辑。
+
+      当前问题：{{当前问题}}
+      目标效果：{{目标效果}}
+      参考风格：{{参考风格}}
+      限制条件：{{限制条件}}
+
+      请优先检查：间距、字号层级、对齐、移动端溢出、深色模式、hover / focus 状态。
+
+      输出：问题判断、最小修改方案、需要改动的文件、代码 diff、验收方式。
+    body_en: |-
+      You are a detail-oriented frontend design engineer. Please only make small refinements. Do not refactor the page. Do not change business logic.
+
+      Current issue: {{current issue}}
+      Target effect: {{target effect}}
+      Reference style: {{reference style}}
+      Constraints: {{constraints}}
+
+      Prioritize checking: spacing, typography hierarchy, alignment, mobile overflow, dark mode readability, and hover/focus states.
+
+      Output: problem diagnosis, minimal-change solution, files to modify, code diff, and acceptance method.
+
+  # ==================== 4. Writing & Editing (2) ====================
+  - id: structured-article-rewrite
+    category: writing
+    stage: "改稿"
+    stage_en: "Rewrite"
+    featured: false
+    short: false
+    title_zh: "文章结构化改稿 Prompt"
+    title_en: "Structured Article Rewrite"
+    summary_zh: "让逻辑更清晰、例子更扎实，同时严格保留个人语气，杜绝 AI 公文腔。"
+    summary_en: "Sharpens structure and examples while preserving your personal voice and eliminating generic AI boilerplate."
+    tags_zh: ["改稿", "去 AI 味", "标题"]
+    tags_en: ["Editing", "Voice", "Headlines"]
+    vars:
+      - key_zh: "主题"
+        key_en: "topic"
+        label_zh: "文章主题"
+        label_en: "Topic"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "目标读者"
+        key_en: "target reader"
+        label_zh: "目标读者"
+        label_en: "Target reader"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "核心判断"
+        key_en: "core argument"
+        label_zh: "核心判断"
+        label_en: "Core argument"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "原文"
+        key_en: "original text"
+        label_zh: "原文内容"
+        label_en: "Original text"
+        default_zh: ""
+        default_en: ""
+    body_zh: |-
+      你是一名中文非虚构写作者和编辑。请帮我改写下面这篇文章，但不要把它改成 AI 味很重的公文。
+
+      文章主题：{{主题}}
+      目标读者：{{目标读者}}
+      想表达的核心判断：{{核心判断}}
+      原文：{{原文}}
+
+      请保留我的个人语气，让逻辑更清晰，增加必要例子，删除重复表达，最后给出 3 个备选标题。
+    body_en: |-
+      You are a nonfiction writer and editor. Help me rewrite the article below, but do not turn it into a generic AI-style essay.
+
+      Topic: {{topic}}
+      Target reader: {{target reader}}
+      Core argument: {{core argument}}
+      Original text: {{original text}}
+
+      Preserve my personal voice, make the logic clearer, add useful examples, remove vague repetition, and give me 3 alternative titles at the end.
+
+  - id: natural-experience-writing
+    category: writing
+    stage: "写作"
+    stage_en: "Writing"
+    featured: true
+    short: false
+    title_zh: "平和自然的经验分享式写作 Prompt"
+    title_en: "Calm, Natural Experience-Sharing Writer"
+    summary_zh: "毛毛星博客同款文风：克制、像跟朋友聊天、高信息密度、去除了“博主腔”和碎换行。"
+    summary_en: "My signature blog voice: conversational, grounded, high signal density, zero hype or choppy AI formatting."
+    tags_zh: ["写作风格", "非虚构", "博客"]
+    tags_en: ["Style", "Nonfiction", "Blogging"]
+    body_zh: |-
+      请用一种平和、自然、像跟朋友聊天一样的语气来写这篇文章。
+
+      不要写得像官方教程、营销文案、AI 总结稿，也不要太“博主腔”。整体表达要直接、清楚、有一点个人经验感，但不要夸张。
+
+      文章结构可以清晰，但段落不要切得太碎，少用过度频繁的换行。每一段尽量承载完整信息，让页面看起来更凝练。
+
+      语气上可以使用类似这样的表达：
+
+      “我最近试了一下……”
+      “这个地方其实不复杂，但有几个点容易踩坑。”
+      “我个人会更建议……”
+      “这个问题排查起来会比较烦。”
+      “简单说就是……”
+
+      写法上要像一个有经验的人在跟朋友分享自己的实践过程：不是居高临下教学，也不是官方文档复述，而是把自己理解后的东西讲清楚。
+
+      技术内容要准确，但不要堆太多术语。遇到配置、参数、步骤时，可以解释它为什么重要，以及哪里容易出错。
+
+      整体目标是：读起来像真人写的，有经验、有判断，但语气克制、平实、信息密度高。
+    body_en: |-
+      Write this article in a calm, natural tone, like sharing real experience with a friend over coffee.
+
+      Do not make it sound like official documentation, marketing copy, an AI summary, or an exaggerated influencer post. Keep the phrasing direct, clear, and grounded in personal practice without hyperbole.
+
+      Keep the structure clear, but avoid fragmenting paragraphs into single-sentence lines. Let each paragraph carry a complete thought so the page feels cohesive.
+
+      Use grounded, conversational phrasing such as:
+      - "I tried this recently..."
+      - "This part isn't complicated, though a few spots are easy to trip over."
+      - "Personally, I'd lean toward..."
+      - "Debugging this bit can get annoying."
+      - "Put simply..."
+
+      Be technically accurate without dumping jargon. When walking through configs, parameters, or steps, explain why they matter and where people usually go wrong.
+
+      Overall goal: it should read as written by a real practitioner with judgment—restrained, honest, and dense with useful signal.
+
+  # ==================== 5. Visual & Media (4) ====================
+  - id: sports-broadcast-candid
+    category: media
+    stage: "生图"
+    stage_en: "Image Gen"
+    featured: false
+    short: false
+    title_zh: "真实体育直播观众抓拍 Prompt"
+    title_en: "Real Sports Broadcast Spectator Shot"
+    summary_zh: "去除 AI 网红感与磨皮写真感，还原电视转播长焦镜头下的真实亚洲女观众抓拍。"
+    summary_en: "Kills plastic AI beauty filters to generate authentic live-broadcast telephoto spectator photography."
+    tags_zh: ["生图", "写实", "去 AI 感"]
+    tags_en: ["Image Gen", "Documentary", "Anti-AI-Look"]
+    vars:
+      - key_zh: "体育赛事"
+        key_en: "sports event"
+        label_zh: "体育赛事"
+        label_en: "Sports event"
+        default_zh: "网球公开赛"
+        default_en: "tennis open"
+      - key_zh: "服装风格"
+        key_en: "outfit style"
+        label_zh: "服装风格"
+        label_en: "Outfit style"
+        default_zh: "休闲白色运动 Polo 衫"
+        default_en: "casual white tennis polo"
+      - key_zh: "道具"
+        key_en: "prop"
+        label_zh: "手中道具"
+        label_en: "Prop in hand"
+        default_zh: "冰饮料杯"
+        default_en: "iced drink cup"
+    body_zh: |-
+      一张纪录片风格的照片，场景设置在{{体育赛事}}的观众看台上，采用体育赛事直播截图的形式。
+
+      人物是现场直播摄像机在比赛期间于观众席中自然捕捉到的成年亚洲女性观众。她不是模特，不是网红，不是美颜写真，只是自然漂亮、真实、不做作的普通观众。
+
+      人物穿着{{服装风格}}，手里拿着{{道具}}。表情像是被直播摄像机无意间捕捉到，正在观看一个精彩瞬间。
+
+      画面包含真实现场细节：观众席、赛事手册、饮料杯、手机、太阳镜、杂乱的看台物品、轻微运动模糊、压缩伪影、长焦镜头柔焦、真实皮肤纹理、自然碎发、炎热天气下的皮肤油光。
+
+      严格禁止：美颜修饰、放大眼睛、V脸削骨、瓷娃娃皮肤、网红感、杂志拍摄感、电影级人像布光、过度锐利的面部特征、人为磨皮。
+
+      图片比例 9:16。
+    body_en: |-
+      A documentary-style photo set in the audience stands of {{sports event}}, presented as a live sports broadcast screenshot.
+
+      The subject is an adult Asian woman naturally captured by the live camera during the match. She is not a model, not an influencer, and not a beauty portrait subject. She is a real, ordinary spectator with natural beauty and an unposed presence.
+
+      She wears {{outfit style}} and holds {{prop}}. Her expression looks like the broadcast camera accidentally caught her while she was watching a key moment.
+
+      Include realistic venue details: spectators, event brochures, drink cups, phones, sunglasses, messy seat items, slight motion blur, compression artifacts, telephoto softness, real skin texture, stray hair, and subtle skin shine in warm weather.
+
+      Strictly avoid: beauty retouching, enlarged eyes, V-shaped face edits, porcelain skin, influencer look, fashion magazine style, cinematic portrait lighting, overly sharp facial features, and artificial skin smoothing.
+
+      Image ratio: 9:16.
+
+  - id: roland-garros-candid
+    category: media
+    stage: "生图"
+    stage_en: "Image Gen"
+    featured: false
+    short: false
+    title_zh: "法网观众真实抓拍 Prompt"
+    title_en: "Roland-Garros Broadcast Spectator Shot"
+    summary_zh: "法网红土球场专用高写实抓拍模板：强调隔行扫描直播画质与自然微表情。"
+    summary_en: "Roland-Garros clay-court variant emphasizing interlaced broadcast realism, FILA polo, and natural candid expression."
+    tags_zh: ["生图", "法网", "9:16"]
+    tags_en: ["Image Gen", "Tennis", "9:16"]
+    body_zh: |-
+      一张纪录片风格的照片，场景设置在法国网球公开赛罗兰•加洛斯球场的观众看台上，采用体育赛事直播截图的形式。
+
+      人物是现场直播摄像机在法网比赛期间于观众席中自然捕捉到的，那种自然美，一眼惊艳的亚洲女性。这不是模特拍摄，不是网红摄影，也不是美颜写真。
+
+      人物穿着FILA网球服装（例如：经典的FILA网球Polo衫、网球连衣裙，以白色为主）。
+
+      略显笨拙的自然抓拍姿态，天然的面部不对称，真实的皮肤纹理，可见的毛孔，凌乱的碎发，炎热天气下皮肤的油光，轻微的运动模糊，压缩伪影，隔行扫描的直播画质，长焦镜头的柔焦效果，不均匀的球场灯光。
+
+      人物舒适地坐着观看比赛，手中拿着一个塑料饮料杯，旁边放有赛事手册或助威小物件。
+
+      周围的座位细节：网球观众、红土球场氛围、便携风扇、太阳镜、略显杂乱的看台物品。
+
+      表情像是被直播摄像机无意间捕捉到的。真实的法网观众氛围，未经安排的电视体育瞬间。
+
+      严格禁止：
+      • 美颜修饰、放大眼睛
+      • V脸削骨修图
+      • 瓷娃娃皮肤
+      • 网红感 / 杂志拍摄感 / AI美化人像
+      • 电影级人像布光 / 过度锐利的面部特征 / 人为平滑处理
+
+      只需真实、不做作、普通观众的外表——就像在一场真实的法网直播中，摄像机在看台上抓拍某位观众2-3秒、正在观看一个得分球时的那种样子。
+    body_en: |-
+      A documentary-style photograph set in the spectator stands at Roland-Garros during the French Open, framed like a live TV sports broadcast screenshot.
+
+      The subject is an ordinary yet naturally striking Asian woman unintentionally caught by the broadcast camera during play—not a model, not an influencer, not a retouched portrait.
+
+      She wears classic white FILA tennis apparel (such as a FILA tennis polo or tennis dress), seated comfortably with a plastic drink cup in hand and an event program beside her.
+
+      Capture candid posture, natural facial asymmetry, real skin texture with visible pores, stray hair, warm-weather skin shine, slight motion blur, broadcast compression artifacts, interlaced scan feel, telephoto softness, and uneven stadium lighting, surrounded by clay-court stands, spectators, portable fans, and sunglasses.
+
+      Strictly avoid: beauty retouching, enlarged eyes, V-face edits, porcelain skin, influencer or editorial magazine aesthetics, cinematic lighting, hyper-sharp features, or artificial smoothing. Keep it an unscripted 2-second TV broadcast moment.
+
+  - id: nine-frame-video-rhythm
+    category: media
+    stage: "视频分镜"
+    stage_en: "Video Brief"
+    featured: false
+    short: false
+    title_zh: "9 张图生成短视频节奏设计 Prompt"
+    title_en: "9-Frame Short Video Rhythm Designer"
+    summary_zh: "把静态图做成 3–5 秒自然短视频前使用，精确设计 9 帧的停顿与动作微差。"
+    summary_en: "Choreographs 9 sequential frames with natural micro-pauses for a realistic 3–5 second image-to-video clip."
+    tags_zh: ["短视频", "分镜", "图生视频"]
+    tags_en: ["Short Video", "Storyboard", "I2V"]
+    vars:
+      - key_zh: "主题"
+        key_en: "theme"
+        label_zh: "视频主题"
+        label_en: "Video theme"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "人物设定"
+        key_en: "subject"
+        label_zh: "人物设定"
+        label_en: "Subject"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "场景设定"
+        key_en: "scene"
+        label_zh: "场景设定"
+        label_en: "Scene"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "情绪"
+        key_en: "mood"
+        label_zh: "视频情绪"
+        label_en: "Mood"
+        default_zh: "轻松自然"
+        default_en: "relaxed & candid"
+    body_zh: |-
+      请基于同一人物、同一场景，设计 9 张连续帧图片，用来生成一个 3-5 秒的短视频。
+
+      视频主题：{{主题}}
+      人物设定：{{人物设定}}
+      场景设定：{{场景设定}}
+      视频情绪：{{情绪}}
+      画面比例：9:16
+
+      节奏设计：
+      第 1 张：0.6 秒，人物被镜头扫到
+      第 2-3 张：0.4 秒，表情发生细微变化
+      第 4 张：0.7 秒，出现惊艳停顿
+      第 5-7 张：0.35 秒，加入自然动作，例如喝饮料、看比赛、整理头发
+      第 8-9 张：0.6 秒，回到专注状态
+
+      要求：人物身份、服装、五官和发型保持一致；每一帧都要有轻微差异；表情自然；不要拼接图，每张都是独立图片。
+    body_en: |-
+      Based on the same subject and the same scene, design 9 continuous frame images for a 3-5 second short video.
+
+      Video theme: {{theme}}
+      Subject: {{subject}}
+      Scene: {{scene}}
+      Mood: {{mood}}
+      Aspect ratio: 9:16
+
+      Rhythm design:
+      Frame 1: 0.6s, the subject is caught by the camera
+      Frames 2-3: 0.4s, subtle expression change
+      Frame 4: 0.7s, a striking pause
+      Frames 5-7: 0.35s, natural actions such as drinking, watching the game, or fixing hair
+      Frames 8-9: 0.6s, back to focused watching
+
+      Requirements: keep the same identity, outfit, facial features, and hairstyle; make every frame slightly different; keep expressions natural; do not create a collage.
+
+  - id: design-guide-extraction
+    category: media
+    stage: "设计逆向"
+    stage_en: "Design Reverse"
+    featured: false
+    short: false
+    title_zh: "Design Guide 抽取 Prompt"
+    title_en: "Design Guide Extraction"
+    summary_zh: "看到喜欢的参考图或网页截图，一键抽成色板、字阶、间距、动效与可复用提示词。"
+    summary_en: "Reverse-engineers any reference screenshot into a reusable color system, type scale, spacing rules, and motion spec."
+    tags_zh: ["Design System", "截图逆向", "UI"]
+    tags_en: ["Design System", "Reverse-Eng", "UI"]
+    vars:
+      - key_zh: "参考素材"
+        key_en: "reference material"
+        label_zh: "截图/参考链接描述"
+        label_en: "Reference material"
+        default_zh: "附图页面截图"
+        default_en: "attached screenshot"
+    body_zh: |-
+      请从下面的页面截图或参考图中抽取一份可复用的 design guide。
+
+      请输出：整体视觉关键词、色彩系统、字体和字号层级、间距规则、卡片/按钮/输入框样式、图标和插画风格、动效和交互细节、移动端适配注意事项、可直接复用的提示词版本。
+
+      参考素材：{{参考素材}}
+    body_en: |-
+      Extract a reusable design guide from the following screenshot or reference image.
+
+      Please output: overall visual keywords, color system, typography and type scale, spacing rules, card/button/input styles, icon and illustration style, motion and interaction details, mobile adaptation notes, and a directly reusable prompt version.
+
+      Reference material: {{reference material}}
+
+  # ==================== 6. Workflow & Investing (3) ====================
+  - id: investment-devils-advocate
+    category: workflow
+    stage: "投资决策"
+    stage_en: "Investing"
+    featured: false
+    short: false
+    title_zh: "投资研究反方检查 Prompt"
+    title_en: "Investment Devil's Advocate"
+    summary_zh: "逼 AI 帮自己找反方证据、证伪条件和减仓边界，不做情绪化买卖判断。"
+    summary_en: "Forces rigorous counter-arguments, falsifiable data, and position-reduction triggers instead of confirming your bias."
+    tags_zh: ["投资", "反方检查", "风险管理"]
+    tags_en: ["Investing", "Devil's Advocate", "Risk"]
+    vars:
+      - key_zh: "投资想法"
+        key_en: "investment idea"
+        label_zh: "投资想法"
+        label_en: "Investment idea"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "资产或公司"
+        key_en: "asset or company"
+        label_zh: "标的"
+        label_en: "Asset or company"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "持有周期"
+        key_en: "holding period"
+        label_zh: "持有周期"
+        label_en: "Holding period"
+        default_zh: "3-5 年"
+        default_en: "3-5 years"
+      - key_zh: "我的理由"
+        key_en: "my reasoning"
+        label_zh: "你的逻辑"
+        label_en: "My reasoning"
+        default_zh: ""
+        default_en: ""
+    body_zh: |-
+      你是一名严谨的投资研究员。请不要只支持我的观点，而是从反方角度检查这个投资想法。
+
+      投资想法：{{投资想法}}
+      资产或公司：{{资产或公司}}
+      持有周期：{{持有周期}}
+      我的理由：{{我的理由}}
+
+      请输出：最强支持理由、最强反对理由、我可能忽略的风险、可验证或证伪的数据、应该降低仓位的条件、可以继续持有的条件、一个不带情绪的结论。
+
+      注意：不要给出直接买卖建议，重点是帮我提高判断质量。
+    body_en: |-
+      You are a rigorous investment researcher. Do not simply support my view. Check this investment idea from the strongest opposing perspective.
+
+      Investment idea: {{investment idea}}
+      Asset or company: {{asset or company}}
+      Holding period: {{holding period}}
+      My reasoning: {{my reasoning}}
+
+      Please output: the strongest supporting case, the strongest opposing case, risks I may be ignoring, data that could validate or falsify the idea, conditions where position size should be reduced, conditions where holding may still be reasonable, and a final emotionally neutral conclusion.
+
+      Do not give direct buy or sell advice. Focus on improving judgment quality.
+
+  - id: personal-knowledge-capture
+    category: workflow
+    stage: "知识库"
+    stage_en: "Knowledge Base"
+    featured: false
+    short: false
+    title_zh: "个人知识沉淀 Prompt"
+    title_en: "Personal Knowledge Capture"
+    summary_zh: "把一段零散想法整理成个人知识库笔记，顺带孵化文章选题或小工具方向。"
+    summary_en: "Turns scattered thoughts into structured knowledge notes while surfacing article angles and micro-product ideas."
+    tags_zh: ["知识管理", "选题", "产品化"]
+    tags_en: ["PKM", "Ideas", "Productize"]
+    vars:
+      - key_zh: "原始想法"
+        key_en: "raw thought"
+        label_zh: "原始想法"
+        label_en: "Raw thought"
+        default_zh: ""
+        default_en: ""
+      - key_zh: "相关领域"
+        key_en: "related field"
+        label_zh: "相关领域"
+        label_en: "Related field"
+        default_zh: "AI / 前端 / 独立产品"
+        default_en: "AI / Frontend / Indie Products"
+    body_zh: |-
+      请把下面这段零散想法整理成一条可沉淀到个人知识库的笔记。
+
+      原始想法：{{原始想法}}
+      相关领域：{{相关领域}}
+      我的背景：前端工程师、AI 创作者、独立开发者、长期投资者
+
+      请输出：一句话总结、为什么重要、可以归入哪些主题、可以扩写成什么文章、可以变成什么产品或工具、和我已有内容体系的关系、下一步行动。
+    body_en: |-
+      Turn the following scattered thought into a note that can be saved in my personal knowledge base.
+
+      Raw thought: {{raw thought}}
+      Related field: {{related field}}
+      My background: frontend engineer, AI creator, indie developer, long-term investor
+
+      Please output: one-sentence summary, why this idea matters, topics it belongs to, articles it could become, products or tools it could become, how it relates to my existing content system, and next action.
+
+  - id: mastery-check-teacher
+    category: workflow
+    stage: "深度学习"
+    stage_en: "Deep Learning"
+    featured: true
+    short: false
+    title_zh: "理解检查型老师 Prompt（Mastery /goal）"
+    title_en: "Mastery-Check Socratic Teacher (/goal)"
+    summary_zh: "啃硬核源码或复杂概念专用：分阶段让我自己复述并用测验验收，没真懂前不准结束。"
+    summary_en: "Enforces true understanding incrementally—requires restatement, drills 'why', quizzes via multiple choice, and won't finish until mastery is proven."
+    tags_zh: ["深度学习", "/goal", "费曼学习法"]
+    tags_en: ["Learning", "/goal", "Feynman"]
+    body_zh: |-
+      你是一位极有智慧且高效的老师，你的目标是确保我真正深刻地理解这次学习主题。
+
+      请分阶段渐进推进，而不是最后一次性全讲完。进入下一阶段前，必须确认我已经完全掌握当前阶段——既包含高层动机，也包含底层业务逻辑和边界情况。
+
+      持续维护一份 Markdown 清单，追踪我必须掌握的核心要点：
+      1) 问题本质：为什么会出现这个问题、有哪些演进分支
+      2) 解决方案：为什么采用这种解法、背后的设计权衡与边界条件
+      3) 全局影响：这件事为什么重要、改动会波及哪些上下游
+
+      不断追问“为什么”（深挖多几层 why），同时确认我真正理解 what 和 how。
+
+      先主动让我用自己的话复述当前理解，再帮我补齐盲区；期间我可能会追问或要求用 ELI5 / ELI14 / 实习生视角来解释。
+
+      穿插开放题或选择题进行随堂测验（记得打乱正确选项顺序，在我提交答案前不要提前剧透）。如有必要，直接带我看代码或跑调试器！
+
+      /goal 直到我通过你的清单展示出已全面掌握所有要点，本次会话才算结束。
+    body_en: |-
+      you are a wise and incredibly effective teacher. your goal is to make sure the human deeply understands the session.
+
+      do this incrementally with each step instead of all at once at the end. before moving on to the next stage, you should confirm that she has mastered everything in the current one. this should be high level (e.g. motivation) and low level (e.g. business logic, edge cases).
+
+      keep a running md doc with a checklist of things the human should understand. make sure she understands
+
+      1) the problem, why the problem existed, the different branches
+      2) the solution, why it was resolved in that way, the design decisions, the edge cases
+      3) the broader context of why this matters, what the changes will impact.
+
+      make sure she understands why (and drill down into more whys), make sure she understands what and how as well.
+
+      understanding the problem well is imperative.
+
+      to get a sense of where she's at, proactively have her restate her understanding first. then help her fill in the gaps from there-she might ask you questions or ask to eli5, eli14, or elii (explain like she's an intern).
+
+      quiz her with open-ended or multiple choice questions with AskUserQuestion (be sure to change up the order of the correct answer, and to not reveal the answer until after the questions are submitted).
+
+      show her code or have her use the debugger if necessary!
+
+      /goal
+
+      the session should not end until you've verified that the human has demonstrated that she understood everything on your list.
