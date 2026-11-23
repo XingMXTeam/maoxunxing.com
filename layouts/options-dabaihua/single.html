@@ -1,6 +1,5 @@
 {{ define "title" }}
-  {{ .Title }} · 期权大白话 ·
-  {{ .Site.Title }}
+  {{ .Title }} · 期权大白话 · {{ .Site.Title }}
 {{ end }}
 
 {{ define "content" }}
@@ -14,112 +13,369 @@
   {{ if gt $total 0 }}
     {{ $pct = div (mul $n 100) $total }}
   {{ end }}
+  {{ $hubURL := "options-dabaihua/" | relLangURL }}
 
-  {{ if $free }}
-    <div class="options-scroll" aria-hidden="true">
-      <span data-scroll-progress></span>
-    </div>
-  {{ end }}
+  {{/* Top Fixed Scroll Progress Ribbon */}}
+  <div class="ob-scroll-ribbon" aria-hidden="true">
+    <span data-scroll-progress></span>
+  </div>
 
-  <section
-    class="container options-reader"
+  <div
+    class="ob ob-reader-page"
+    id="ob-reader"
     data-options-reader
     data-chapter="{{ $n }}"
     data-total="{{ $total }}"
-    data-base="{{ "options-dabaihua/" | relLangURL }}"
+    data-base="{{ $hubURL }}"
   >
-    <p class="options-bookline">
-      <a href="{{ "options-dabaihua/" | relLangURL }}">{{ $book.titleZh }}</a>
-    </p>
+    {{/* ============================== STICKY READER TOOLBAR ============================== */}}
+    <div class="ob-reader-bar">
+      <div class="ob-wrap ob-reader-bar-inner">
+        <a class="ob-reader-back" href="{{ $hubURL }}">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <img
+            src="/images/options-dabaihua/cover.png"
+            onerror="this.onerror=null;this.src='https://maoxunxing.com/images/options-dabaihua/cover.png';"
+            alt=""
+            width="24"
+            height="36"
+          />
+          <span>
+            <strong>《{{ $book.titleZh }}》</strong>
+            <em>第 {{ $n }} / {{ $total }} 章</em>
+          </span>
+        </a>
 
-    <div class="options-progress-row">
-      <p class="options-position">第 {{ $n }} / {{ $total }} 章</p>
-      {{ if $free }}
-        <span class="options-badge is-free">免费</span>
-      {{ else }}
-        <span class="options-badge is-locked">锁定</span>
-      {{ end }}
-    </div>
+        {{/* Quick Chapter Jump Pills */}}
+        <nav class="ob-ch-pills" aria-label="快速切换章节">
+          {{ range $book.chapters }}
+            {{ $cn := .number }}
+            {{ $clocked := gt $cn $book.freeThrough }}
+            <a
+              class="ob-ch-pill{{ if eq $cn $n }} is-active{{ end }}{{ if $clocked }} is-locked{{ end }}"
+              href="{{ printf "options-dabaihua/%02d/" $cn | relLangURL }}"
+              title="{{ .title }}"
+            >
+              <span>{{ printf "%02d" $cn }}</span>
+              {{ if $clocked }}<i class="fas fa-lock" aria-hidden="true"></i>{{ end }}
+            </a>
+          {{ end }}
+        </nav>
 
-    <div
-      class="options-meter"
-      role="progressbar"
-      aria-valuemin="1"
-      aria-valuemax="{{ $total }}"
-      aria-valuenow="{{ $n }}"
-      aria-label="阅读进度，第 {{ $n }} 章，共 {{ $total }} 章"
-    >
-      <span style="width: {{ $pct }}%"></span>
-    </div>
+        {{/* Reader Typography & Action Controls */}}
+        <div class="ob-reader-tools">
+          {{ if $free }}
+            <div class="ob-typo-group" role="group" aria-label="字号与字体设置">
+              <button type="button" class="ob-typo-btn" data-ob-font="serif" title="衬线书宋">宋</button>
+              <button type="button" class="ob-typo-btn" data-ob-font="sans" title="现代无衬线">黑</button>
+              <span class="ob-typo-sep" aria-hidden="true"></span>
+              <button type="button" class="ob-typo-btn" data-ob-size="sm" title="紧凑字号">A-</button>
+              <button type="button" class="ob-typo-btn is-on" data-ob-size="md" title="标准字号">A</button>
+              <button type="button" class="ob-typo-btn" data-ob-size="lg" title="大字号">A+</button>
+            </div>
+          {{ end }}
 
-    <h1>{{ .Title }}</h1>
-
-    {{ if $free }}
-      <div class="options-prose">
-        {{ .Content }}
+          <a
+            class="ob-bar-buy"
+            href="{{ $book.amazonZh }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-amazon" aria-hidden="true"></i>
+            <span>购买全书</span>
+          </a>
+        </div>
       </div>
-      {{ if eq $n $book.freeThrough }}
-        <aside class="options-boundary">
-          <p>下一章起需要购买后阅读。</p>
-          {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买本书") }}
-        </aside>
-      {{ end }}
-    {{ else }}
-      <ol class="options-lock-sections">
-        {{ range $chapter.sections }}
-          <li>{{ . }}</li>
-        {{ end }}
-      </ol>
-      <aside class="options-lock" aria-labelledby="options-lock-title">
-        <h2 id="options-lock-title">购买后继续阅读</h2>
-        {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买本书") }}
+    </div>
+
+    {{/* ============================== 2-COLUMN READER WORKSPACE ============================== */}}
+    <div class="ob-wrap ob-reader-grid">
+      {{/* Left Sticky Sidebar */}}
+      <aside class="ob-sidebar" aria-label="章节导航与进度">
+        <div class="ob-side-card">
+          <div class="ob-side-book">
+            <a class="ob-side-cover" href="{{ $hubURL }}">
+              <img
+                src="/images/options-dabaihua/cover.png"
+                onerror="this.onerror=null;this.src='https://maoxunxing.com/images/options-dabaihua/cover.png';"
+                alt="{{ $book.titleZh }}"
+                width="60"
+                height="90"
+              />
+            </a>
+            <div class="ob-side-meta">
+              <a class="ob-side-title" href="{{ $hubURL }}">《{{ $book.titleZh }}》</a>
+              <p class="ob-side-sub">{{ $book.subtitleZh }}</p>
+              <div class="ob-side-progress-label">
+                <span>全书进度 · 第 {{ $n }}/{{ $total }} 章</span>
+                <strong>{{ $pct }}%</strong>
+              </div>
+              <div
+                class="ob-meter"
+                role="progressbar"
+                aria-valuemin="1"
+                aria-valuemax="{{ $total }}"
+                aria-valuenow="{{ $n }}"
+              >
+                <span style="width: {{ $pct }}%"></span>
+              </div>
+            </div>
+          </div>
+
+          {{ if $free }}
+            <div class="ob-side-sec">
+              <p class="ob-side-heading">
+                <i class="fas fa-list-ul" aria-hidden="true"></i>
+                <span>本章小节大纲</span>
+              </p>
+              <ol class="ob-side-subtoc" id="ob-side-subtoc">
+                {{ range $chapter.sections }}
+                  <li><span>{{ . }}</span></li>
+                {{ end }}
+              </ol>
+            </div>
+          {{ end }}
+
+          <div class="ob-side-sec">
+            <p class="ob-side-heading">
+              <i class="fas fa-book" aria-hidden="true"></i>
+              <span>全书 7 章目录</span>
+            </p>
+            <ol class="ob-side-chapters">
+              {{ range $book.chapters }}
+                {{ $cn := .number }}
+                {{ $clocked := gt $cn $book.freeThrough }}
+                <li>
+                  <a
+                    class="ob-side-ch-link{{ if eq $cn $n }} is-active{{ end }}"
+                    href="{{ printf "options-dabaihua/%02d/" $cn | relLangURL }}"
+                  >
+                    <span class="ob-side-ch-num">{{ printf "%02d" $cn }}</span>
+                    <span class="ob-side-ch-name">{{ .title }}</span>
+                    {{ if $clocked }}
+                      <i class="fas fa-lock ob-side-lock" aria-hidden="true"></i>
+                    {{ else }}
+                      <span class="ob-side-free-dot" title="免费试读"></span>
+                    {{ end }}
+                  </a>
+                </li>
+              {{ end }}
+            </ol>
+          </div>
+
+          <a class="ob-side-sim-link" href="{{ $hubURL }}#ob-simulator">
+            <i class="fas fa-chart-area" aria-hidden="true"></i>
+            <span>打开互动期权模拟器 →</span>
+          </a>
+        </div>
       </aside>
-    {{ end }}
 
-    <nav class="options-pager" aria-label="章节">
-      {{ if gt $n 1 }}
-        {{ $prev := sub $n 1 }}
-        <a
-          class="options-pager-link"
-          href="{{ printf "options-dabaihua/%02d/" $prev | relLangURL }}"
-        >
-          <span>上一章</span>
-          {{ if gt $prev $book.freeThrough }}
-            <span class="options-badge is-locked">锁定</span>
+      {{/* Right Main Reading Canvas */}}
+      <div class="ob-canvas">
+        <header class="ob-ch-header">
+          <div class="ob-ch-header-top">
+            <span class="ob-ch-num-pill">CHAPTER {{ printf "%02d" $n }} / {{ printf "%02d" $total }}</span>
+            <span class="ob-ch-kicker-text">{{ $chapter.kicker }}</span>
+            {{ with $chapter.readTime }}
+              <span class="ob-ch-readtime"><i class="fas fa-clock" aria-hidden="true"></i> 预计阅读 {{ . }}</span>
+            {{ end }}
+            {{ if $free }}
+              <span class="ob-badge is-free"><i class="fas fa-book-open" aria-hidden="true"></i> 免费全文试读</span>
+            {{ else }}
+              <span class="ob-badge is-locked"><i class="fas fa-lock" aria-hidden="true"></i> 亚马逊完整版章节</span>
+            {{ end }}
+          </div>
+
+          <h1 class="ob-reader-h1">{{ .Title }}</h1>
+
+          {{ with $chapter.summary }}
+            <p class="ob-ch-intro">{{ . }}</p>
           {{ end }}
-        </a>
-      {{ else }}
-        <span class="options-pager-link is-disabled">
-          <span>上一章</span>
-          <span>已是开头</span>
-        </span>
-      {{ end }}
+        </header>
 
-      <a
-        class="options-pager-link options-pager-toc"
-        href="{{ "options-dabaihua/" | relLangURL }}"
-        >目录</a
-      >
+        {{ if $free }}
+          <div class="ob-prose options-prose" id="ob-prose">
+            {{ .Content }}
+          </div>
 
-      {{ if lt $n $total }}
-        {{ $next := add $n 1 }}
-        <a
-          class="options-pager-link"
-          href="{{ printf "options-dabaihua/%02d/" $next | relLangURL }}"
-        >
-          <span>下一章</span>
-          {{ if gt $next $book.freeThrough }}
-            <span class="options-badge is-locked">锁定</span>
+          {{ with $chapter.takeaway }}
+            <aside class="ob-takeaway-box">
+              <div class="ob-takeaway-head">
+                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                <strong>第 {{ $n }} 章核心心法沉淀</strong>
+              </div>
+              <p>{{ . }}</p>
+            </aside>
           {{ end }}
-        </a>
-      {{ else }}
-        <span class="options-pager-link is-disabled">
-          <span>下一章</span>
-          <span>已是末章</span>
-        </span>
-      {{ end }}
-    </nav>
-  </section>
 
-  <script src="/js/options-reader.js?v=20261112-1"></script>
+          {{ if eq $n 1 }}
+            <aside class="ob-next-teaser">
+              <div class="ob-next-teaser-copy">
+                <span class="ob-next-kicker">下一章免费试读预告 · CHAPTER 02</span>
+                <h3>第二章：解码价格的魔法 ⸺ 从水晶球到仪表盘</h3>
+                <p>为什么有时候你看对了股价涨跌，手里的期权却在亏钱？下一章带你拆解 Black‑Scholes 水晶球五种原料，看懂 Delta 车速表、Theta 油耗表与 Vega 天气预报。</p>
+              </div>
+              <a class="ob-btn ob-btn-primary" href="{{ "options-dabaihua/02/" | relLangURL }}">
+                <span>继续免费读第 2 章</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </aside>
+          {{ end }}
+
+          {{ if eq $n $book.freeThrough }}
+            <aside class="ob-unlock-card">
+              <div class="ob-unlock-badge">
+                <i class="fas fa-unlock-alt" aria-hidden="true"></i>
+                <span>免费试读边界 · 解锁第 3–7 章完整交易体系</span>
+              </div>
+              <h2>已经看懂了契约与 Greeks 仪表盘？下一步是建立实战武器库与风控系统</h2>
+              <p>
+                你已经读完了《{{ $book.titleZh }}》前两章的基础认知篇。从<strong>第三章</strong>开始，我们将进入真正的实战系统构建：
+              </p>
+              <ul class="ob-unlock-list">
+                <li><strong>第三章 · 交易者的武器库</strong>：买入看涨火箭票 → 卖出看跌特卖员 → 备兑看涨房东收租 → 垂直价差与跨式组合</li>
+                <li><strong>第四章 · 风险的艺术</strong>：戳破“高胜率”幻觉、算清期望值账本、凯利公式仓位管理与尾部组合保险</li>
+                <li><strong>第五、六章 · 思维跃迁与知识大厦</strong>：从“赌方向”升级到“管理概率”，在波动率飞行模拟器中完成刻意练习</li>
+              </ul>
+              <div class="ob-unlock-actions">
+                <a class="ob-btn ob-btn-primary" href="{{ $book.amazonZh }}" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-amazon" aria-hidden="true"></i>
+                  <span>在 Amazon 购买中文完整版 ({{ $book.asinZh }})</span>
+                  <span aria-hidden="true">↗&#xFE0E;</span>
+                </a>
+                <a class="ob-btn ob-btn-ghost" href="{{ $book.amazonEn }}" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-amazon" aria-hidden="true"></i>
+                  <span>Buy English Edition ({{ $book.asinEn }})</span>
+                  <span aria-hidden="true">↗&#xFE0E;</span>
+                </a>
+                <a class="ob-btn ob-btn-ghost" href="{{ $hubURL }}#ob-simulator">
+                  <i class="fas fa-chart-area" aria-hidden="true"></i>
+                  <span>去互动模拟器实操演练</span>
+                </a>
+              </div>
+            </aside>
+          {{ end }}
+        {{ else }}
+          {{/* Locked Chapter Blueprint & Unlock Card */}}
+          <div class="ob-locked-blueprint">
+            <div class="ob-blueprint-head">
+              <span class="ob-blueprint-title">
+                <i class="fas fa-compass" aria-hidden="true"></i>
+                <span>本章完整小节结构（共 {{ len $chapter.sections }} 节）</span>
+              </span>
+              <span class="ob-blueprint-note">正文收录于 Amazon 完整版</span>
+            </div>
+
+            <ol class="ob-blueprint-sections">
+              {{ range $i, $sec := $chapter.sections }}
+                <li>
+                  <span class="ob-bp-idx">{{ printf "%02d" (add $i 1) }}</span>
+                  <span class="ob-bp-text">{{ $sec }}</span>
+                  <span class="ob-bp-lock"><i class="fas fa-lock" aria-hidden="true"></i> 完整版</span>
+                </li>
+              {{ end }}
+            </ol>
+
+            {{ with $chapter.takeaway }}
+              <blockquote class="ob-ch-quote is-large">
+                <i class="fas fa-quote-left" aria-hidden="true"></i>
+                <div>
+                  <strong>本章核心心法剧透：</strong>
+                  <p>{{ . }}</p>
+                </div>
+              </blockquote>
+            {{ end }}
+          </div>
+
+          <aside class="ob-unlock-card" aria-labelledby="options-lock-title">
+            <div class="ob-unlock-badge">
+              <i class="fas fa-lock" aria-hidden="true"></i>
+              <span>CHAPTER {{ printf "%02d" $n }} · 亚马逊完整版专享章节</span>
+            </div>
+            <h2 id="options-lock-title">购买《{{ $book.titleZh }}》解锁第三至第七章全部实战内容</h2>
+            <p>
+              站内提供第一、二章（共 9 节完整图文）与互动期权飞行模拟器免费体验。购买 Amazon Kindle 中文版或英文版，即可阅读包括本章在内的全书 7 章 31 节完整内容。
+            </p>
+            <div class="ob-unlock-actions">
+              <a class="ob-btn ob-btn-primary" href="{{ $book.amazonZh }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-amazon" aria-hidden="true"></i>
+                <span>在亚马逊购买中文版 (ASIN: {{ $book.asinZh }})</span>
+                <span aria-hidden="true">↗&#xFE0E;</span>
+              </a>
+              <a class="ob-btn ob-btn-ghost" href="{{ $book.amazonEn }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-amazon" aria-hidden="true"></i>
+                <span>Buy English Edition ({{ $book.asinEn }})</span>
+                <span aria-hidden="true">↗&#xFE0E;</span>
+              </a>
+              <a class="ob-btn ob-btn-ghost" href="{{ "options-dabaihua/01/" | relLangURL }}">
+                <i class="fas fa-book-open" aria-hidden="true"></i>
+                <span>返回免费读第 1–2 章</span>
+              </a>
+            </div>
+          </aside>
+        {{ end }}
+
+        {{/* Bottom Rich Pager */}}
+        <nav class="ob-pager" aria-label="章节切换">
+          {{ if gt $n 1 }}
+            {{ $prev := sub $n 1 }}
+            {{ $prevCh := index $book.chapters (sub $prev 1) }}
+            <a class="ob-pager-card" href="{{ printf "options-dabaihua/%02d/" $prev | relLangURL }}">
+              <span class="ob-pager-dir">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> 上一章 (←)
+                {{ if gt $prev $book.freeThrough }}
+                  <em class="ob-mini-badge is-locked">完整版</em>
+                {{ else }}
+                  <em class="ob-mini-badge is-free">免费</em>
+                {{ end }}
+              </span>
+              <strong>{{ $prevCh.title }}</strong>
+            </a>
+          {{ else }}
+            <a class="ob-pager-card" href="{{ $hubURL }}">
+              <span class="ob-pager-dir"><i class="fas fa-th-large" aria-hidden="true"></i> 返回书籍主页</span>
+              <strong>《{{ $book.titleZh }}》总目录与互动模拟器</strong>
+            </a>
+          {{ end }}
+
+          <a class="ob-pager-hub" href="{{ $hubURL }}" title="返回总目录与模拟器">
+            <i class="fas fa-compass" aria-hidden="true"></i>
+            <span>总目录 &amp; 模拟器</span>
+          </a>
+
+          {{ if lt $n $total }}
+            {{ $next := add $n 1 }}
+            {{ $nextCh := index $book.chapters (sub $next 1) }}
+            <a class="ob-pager-card is-next" href="{{ printf "options-dabaihua/%02d/" $next | relLangURL }}">
+              <span class="ob-pager-dir">
+                {{ if gt $next $book.freeThrough }}
+                  <em class="ob-mini-badge is-locked">完整版</em>
+                {{ else }}
+                  <em class="ob-mini-badge is-free">免费</em>
+                {{ end }}
+                下一章 (→) <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </span>
+              <strong>{{ $nextCh.title }}</strong>
+            </a>
+          {{ else }}
+            <a class="ob-pager-card is-next" href="{{ $book.amazonZh }}" target="_blank" rel="noopener noreferrer">
+              <span class="ob-pager-dir">Amazon Kindle <i class="fas fa-external-link-alt" aria-hidden="true"></i></span>
+              <strong>在亚马逊获取《{{ $book.titleZh }}》完整版</strong>
+            </a>
+          {{ end }}
+        </nav>
+      </div>
+    </div>
+
+    {{/* Image Zoom Lightbox Modal */}}
+    <div class="ob-lightbox" id="ob-lightbox" hidden aria-modal="true" role="dialog" aria-label="图表放大预览">
+      <button type="button" class="ob-lightbox-close" id="ob-lightbox-close" aria-label="关闭预览">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img class="ob-lightbox-img" id="ob-lightbox-img" src="" alt="" />
+      <p class="ob-lightbox-cap" id="ob-lightbox-cap"></p>
+    </div>
+  </div>
+
+  <script src="/js/options-app.js" defer></script>
 {{ end }}

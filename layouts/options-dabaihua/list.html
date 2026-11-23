@@ -1,6 +1,5 @@
 {{ define "title" }}
-  {{ .Title }} ·
-  {{ .Site.Title }}
+  {{ .Title }} · {{ .Site.Title }}
 {{ end }}
 
 {{ define "content" }}
@@ -8,122 +7,627 @@
   {{ $book := site.Data.optionsDabaihua }}
   {{ $total := len $book.chapters }}
   {{ $isZh := hasPrefix (lower .Site.Language.Lang) "zh" }}
+  {{ $ch1URL := "/zh-cn/options-dabaihua/01/" }}
+  {{ $ch2URL := "/zh-cn/options-dabaihua/02/" }}
+  {{ $zhBase := "/zh-cn/options-dabaihua/" }}
 
-  {{ if $isZh }}
-    <section
-      class="container options-reader"
-      data-options-reader
-      data-total="{{ $total }}"
-      data-base="{{ "options-dabaihua/" | relLangURL }}"
-    >
-      <div class="options-cover-row">
-        <img
-          class="options-cover-img"
-          src="/images/options-dabaihua/cover.png"
-          alt="{{ $book.titleZh }}：{{ $book.subtitleZh }}"
-          width="795"
-          height="1193"
-        />
-        <div class="options-cover-copy">
-          <p class="options-cover-edition">{{ $book.editionNote }} · {{ $book.version }}</p>
-          <h1>{{ $book.titleZh }}</h1>
-          <p class="options-cover-sub">{{ $book.subtitleZh }}</p>
-          <p class="options-cover-by">{{ $book.author }}</p>
-          <dl class="options-facts">
-            <div>
-              <dt>篇幅</dt>
-              <dd>{{ $book.pageCount }} 页</dd>
+  <div
+    class="ob"
+    id="ob"
+    data-options-reader
+    data-total="{{ $total }}"
+    data-base="{{ $zhBase }}"
+    data-lang="{{ if $isZh }}zh{{ else }}en{{ end }}"
+  >
+    {{/* ============================== 1. HERO SHOWCASE ============================== */}}
+    <section class="ob-hero" aria-labelledby="ob-hero-title">
+      <div class="ob-hero-bg" aria-hidden="true">
+        <span class="ob-orb ob-orb-1"></span>
+        <span class="ob-orb ob-orb-2"></span>
+        <span class="ob-orb ob-orb-3"></span>
+        <span class="ob-grid"></span>
+      </div>
+
+      <div class="ob-wrap ob-hero-inner">
+        {{/* Left: 3D Hardcover Book Stage */}}
+        <div class="ob-stage-col">
+          <div class="ob-book-stage" data-ob-tilt>
+            <div class="ob-book-glow" aria-hidden="true"></div>
+            <a class="ob-book-3d" href="{{ $ch1URL }}" aria-label="{{ if $isZh }}点击翻开试读第一章{{ else }}Open Chapter 1 Preview{{ end }}">
+              <span class="ob-book-spine" aria-hidden="true"></span>
+              <span class="ob-book-cover-wrap">
+                <img
+                  class="ob-cover-img"
+                  src="/images/options-dabaihua/cover.png"
+                  onerror="this.onerror=null;this.src='https://maoxunxing.com/images/options-dabaihua/cover.png';"
+                  alt="{{ $book.titleZh }}：{{ $book.subtitleZh }}"
+                  width="795"
+                  height="1193"
+                />
+                <span class="ob-book-sheen" aria-hidden="true"></span>
+              </span>
+              <span class="ob-book-pages" aria-hidden="true"></span>
+            </a>
+
+            <div class="ob-stage-badges">
+              <span class="ob-float-chip ob-chip-free">
+                <i class="fas fa-book-open" aria-hidden="true"></i>
+                {{ if $isZh }}第 1–2 章免费全文试读{{ else }}Ch 1–2 Free Full Preview{{ end }}
+              </span>
+              <span class="ob-float-chip ob-chip-amz">
+                <i class="fas fa-globe" aria-hidden="true"></i>
+                {{ if $isZh }}Amazon 中英双语全球上架{{ else }}Amazon Bilingual Edition{{ end }}
+              </span>
             </div>
-            <div>
-              <dt>ASIN</dt>
-              <dd>{{ $book.asinZh }}</dd>
+          </div>
+        </div>
+
+        {{/* Right: Editorial Book Metadata & CTAs */}}
+        <div class="ob-copy-col">
+          <div class="ob-top-bar">
+            <a class="ob-author-pill" href="{{ "about/" | relLangURL }}">
+              <img
+                class="ob-author-avatar"
+                src="/images/avatar-momo.jpg"
+                alt="{{ $book.author }}"
+                width="34"
+                height="34"
+                decoding="async"
+              />
+              <span class="ob-author-text">
+                <strong>{{ if $isZh }}{{ $book.author }} Momo 著{{ else }}By Momo ({{ $book.author }}){{ end }}</strong>
+                <span>{{ $book.editionNote }} · {{ $book.version }}</span>
+              </span>
+              <span class="ob-live-dot" aria-hidden="true"></span>
+            </a>
+
+            <div class="ob-lang-switch" role="group" aria-label="Edition language">
+              <a class="ob-lang-btn{{ if $isZh }} is-on{{ end }}" href="/zh-cn/options-dabaihua/">中文</a>
+              <a class="ob-lang-btn{{ if not $isZh }} is-on{{ end }}" href="/en/options-dabaihua/">EN</a>
+            </div>
+          </div>
+
+          <h1 id="ob-hero-title" class="ob-title">
+            {{ if $isZh }}
+              <span class="ob-title-main">《{{ $book.titleZh }}》</span>
+              <span class="ob-title-sub ob-grad">{{ $book.subtitleZh }}</span>
+            {{ else }}
+              <span class="ob-title-main">{{ $book.titleEn }}</span>
+              <span class="ob-title-sub ob-grad">{{ $book.subtitleEn }}</span>
+            {{ end }}
+          </h1>
+
+          <p class="ob-en-subline">
+            {{ if $isZh }}
+              <i class="fas fa-language" aria-hidden="true"></i>
+              <span>English Edition: <em>{{ $book.titleEn }} — {{ $book.subtitleEn }}</em></span>
+            {{ else }}
+              <i class="fas fa-language" aria-hidden="true"></i>
+              <span>Chinese Edition: <em>《{{ $book.titleZh }}：{{ $book.subtitleZh }}》</em> (In-site free preview for Chapters 1–2)</span>
+            {{ end }}
+          </p>
+
+          <p class="ob-lead">
+            {{ if $isZh }}
+              不堆砌华尔街黑话，也不用晦涩的偏微分方程吓人。从<strong>买房定金与车险的底层契约</strong>出发，手把手带你拆解 <strong>Black‑Scholes 定价五原料</strong>、看懂 <strong>Delta / Theta / Vega 行车仪表盘</strong>，用<strong>凯利公式与五步策略武器库</strong>告别赌徒式末日彩票，建立属于你自己的第一套期权交易系统。
+            {{ else }}
+              No Wall Street jargon, no intimidating stochastic calculus. Starting from everyday analogies like <strong>house deposits and car insurance</strong>, this book unpacks the <strong>5 Black‑Scholes pricing ingredients</strong>, turns <strong>Delta / Theta / Vega into a driver's dashboard</strong>, and uses the <strong>Kelly Criterion + a 5-step strategy arsenal</strong> to replace lottery gambling with a repeatable trading system.
+            {{ end }}
+          </p>
+
+          {{/* 4 Metric Cards */}}
+          <dl class="ob-metrics">
+            <div class="ob-metric">
+              <dt>7 {{ if $isZh }}章{{ else }}Ch{{ end }} · 31 {{ if $isZh }}节{{ else }}Secs{{ end }}</dt>
+              <dd>{{ if $isZh }}从底层契约到完整系统{{ else }}Contract to Trading System{{ end }}</dd>
+            </div>
+            <div class="ob-metric">
+              <dt>{{ if $isZh }}第 1–2 章{{ else }}Ch 1 &amp; 2{{ end }}</dt>
+              <dd>{{ if $isZh }}站内免费全本开放试读{{ else }}100% Free Online Preview{{ end }}</dd>
+            </div>
+            <div class="ob-metric">
+              <dt>{{ $book.pageCount }} {{ if $isZh }}页精炼{{ else }}Pages{{ end }}</dt>
+              <dd>{{ if $isZh }}零废话大白话 + 实战金句{{ else }}Zero Fluff · Visual Diagrams{{ end }}</dd>
+            </div>
+            <div class="ob-metric">
+              <dt>{{ if $isZh }}中 / EN 双版{{ else }}ZH + EN{{ end }}</dt>
+              <dd>{{ if $isZh }}Amazon Kindle 全球发行{{ else }}Published on Amazon Kindle{{ end }}</dd>
             </div>
           </dl>
-          <p class="options-lead">
-            第一、二章可以在这里读完。第三至第七章锁定，购买后在亚马逊继续。
-          </p>
-          <div class="options-actions">
-            {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买中文版") }}
-            <a class="options-quiet" href="/en/options-dabaihua/">英文版</a>
+
+          {{/* Resume Banner (shown via JS if user previously read a chapter) */}}
+          <div class="ob-resume-banner" data-options-resume hidden>
+            <span class="ob-resume-ico"><i class="fas fa-bookmark" aria-hidden="true"></i></span>
+            <span class="ob-resume-text" data-options-resume-text>
+              {{ if $isZh }}上次读到第一章{{ else }}Continue where you left off{{ end }}
+            </span>
+            <a class="ob-resume-link" href="{{ $ch1URL }}">
+              {{ if $isZh }}继续阅读 →{{ else }}Resume reading →{{ end }}
+            </a>
+          </div>
+
+          {{/* Primary CTAs */}}
+          <div class="ob-cta-row">
+            <a class="ob-btn ob-btn-primary" href="{{ $ch1URL }}">
+              <i class="fas fa-book-reader" aria-hidden="true"></i>
+              <span>{{ if $isZh }}免费试读第 1 章（选择的权利）{{ else }}Read Ch 1 Free (ZH){{ end }}</span>
+              <span class="ob-btn-arr" aria-hidden="true">→</span>
+            </a>
+
+            <a class="ob-btn ob-btn-ghost" href="{{ $ch2URL }}">
+              <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+              <span>{{ if $isZh }}试读第 2 章（Greeks 仪表盘）{{ else }}Read Ch 2 (Greeks){{ end }}</span>
+            </a>
+
+            <a class="ob-btn ob-btn-ghost" href="#ob-simulator">
+              <i class="fas fa-chart-area" aria-hidden="true"></i>
+              <span>{{ if $isZh }}互动期权模拟器{{ else }}Live Simulator{{ end }}</span>
+            </a>
+          </div>
+
+          {{/* Amazon Quick Bar */}}
+          <div class="ob-amz-strip">
+            <a class="ob-amz-pill" href="{{ $book.amazonZh }}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-amazon" aria-hidden="true"></i>
+              <span>
+                <strong>{{ if $isZh }}亚马逊购买中文版{{ else }}Buy Chinese Edition{{ end }}</strong>
+                <em>ASIN {{ $book.asinZh }}</em>
+              </span>
+              <i class="fas fa-external-link-alt ob-ext" aria-hidden="true"></i>
+            </a>
+
+            <a class="ob-amz-pill" href="{{ $book.amazonEn }}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-amazon" aria-hidden="true"></i>
+              <span>
+                <strong>{{ if $isZh }}Buy English Edition{{ else }}Buy English Edition on Amazon{{ end }}</strong>
+                <em>ASIN {{ $book.asinEn }}</em>
+              </span>
+              <i class="fas fa-external-link-alt ob-ext" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <p class="options-resume" data-options-resume hidden>
-        <a href="{{ "options-dabaihua/01/" | relLangURL }}">继续阅读</a>
-      </p>
+    {{/* ============================== 2. INTERACTIVE FLIGHT SIMULATOR ============================== */}}
+    <section id="ob-simulator" class="ob-section ob-wrap" aria-labelledby="ob-sim-title">
+      <header class="ob-sec-head">
+        <div class="ob-sec-head-copy">
+          <p class="ob-kicker"><span>01</span>{{ if $isZh }}第六章理念落地 · 互动飞行模拟器{{ else }}CHAPTER 1 &amp; 2 LIVE LAB · FLIGHT SIMULATOR{{ end }}</p>
+          <h2 id="ob-sim-title" class="ob-h2">
+            {{ if $isZh }}亲手拨动“水晶球”五原料，看懂盈亏与 Greeks 仪表盘{{ else }}Interactive Options Payoff &amp; Greeks Dashboard{{ end }}
+          </h2>
+          <p class="ob-sec-desc">
+            {{ if $isZh }}
+              书中第一章讲<strong>权利与杠杆盈亏</strong>，第二章讲<strong>Black‑Scholes 五原料（S、K、T、σ）与三大希腊字母（Delta 车速表、Theta 油耗表、Vega 天气预报）</strong>。点击下方书中经典案例或拖动滑块，实时观察到期盈亏曲线与今日理论价值的变化：
+            {{ else }}
+              Chapter 1 covers <strong>rights, leverage, and payoff</strong>; Chapter 2 unpacks the <strong>Black‑Scholes ingredients (S, K, T, σ) and the Greeks dashboard (Delta speedometer, Theta daily fuel burn, Vega weather forecast)</strong>. Click a book scenario or drag the sliders below:
+            {{ end }}
+          </p>
+        </div>
+      </header>
 
-      <h2 class="options-toc-heading">目录</h2>
+      <div class="ob-sim-card">
+        {{/* Top Preset Bar */}}
+        <div class="ob-sim-presets">
+          <span class="ob-sim-presets-label">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            {{ if $isZh }}书中经典场景一键还原：{{ else }}Book Scenarios:{{ end }}
+          </span>
+          <div class="ob-sim-preset-btns" role="group" aria-label="Simulator presets">
+            <button type="button" class="ob-preset-btn is-on" data-ob-preset="tsla-call">
+              {{ if $isZh }}🚀 1.2 特斯拉 $200 看涨杠杆 (Long Call){{ else }}🚀 1.2 TSLA $200 Leverage (Long Call){{ end }}
+            </button>
+            <button type="button" class="ob-preset-btn" data-ob-preset="house-deposit">
+              {{ if $isZh }}🏠 1.1 买房定金锁定实值 (ITM Call){{ else }}🏠 1.1 House Deposit Lock (ITM Call){{ end }}
+            </button>
+            <button type="button" class="ob-preset-btn" data-ob-preset="crash-insurance">
+              {{ if $isZh }}🛡️ 1.4 暴跌保护车险 (Long Put){{ else }}🛡️ 1.4 Crash Insurance (Long Put){{ end }}
+            </button>
+            <button type="button" class="ob-preset-btn" data-ob-preset="landlord-put">
+              {{ if $isZh }}🏦 3.2 卖方收租打折接盘 (Short Put){{ else }}🏦 3.2 Rent Collector (Short Put){{ end }}
+            </button>
+            <button type="button" class="ob-preset-btn" data-ob-preset="zero-dte">
+              {{ if $isZh }}🎰 1.5 末日期权赌场 (T=1天 虚值){{ else }}🎰 1.5 0DTE Casino Alert (T=1d OTM){{ end }}
+            </button>
+          </div>
+        </div>
 
-      <ol class="options-toc">
+        <div class="ob-sim-grid">
+          {{/* Left: Controls (Strategy + 4 Black-Scholes Sliders) */}}
+          <div class="ob-sim-controls">
+            <div class="ob-control-group">
+              <label class="ob-control-label">{{ if $isZh }}交易方向与角色（第 1.4 节）{{ else }}Strategy &amp; Role (Sec 1.4){{ end }}</label>
+              <div class="ob-strat-grid" role="group" aria-label="Option strategy">
+                <button type="button" class="ob-strat-btn is-on" data-ob-strat="long-call">
+                  <strong>{{ if $isZh }}买入看涨{{ else }}Long Call{{ end }}</strong>
+                  <span>{{ if $isZh }}Long Call · 牛市火箭票{{ else }}Bullish · Capped Risk{{ end }}</span>
+                </button>
+                <button type="button" class="ob-strat-btn" data-ob-strat="long-put">
+                  <strong>{{ if $isZh }}买入看跌{{ else }}Long Put{{ end }}</strong>
+                  <span>{{ if $isZh }}Long Put · 资产买保险{{ else }}Bearish / Portfolio Hedge{{ end }}</span>
+                </button>
+                <button type="button" class="ob-strat-btn" data-ob-strat="short-put">
+                  <strong>{{ if $isZh }}卖出看跌{{ else }}Short Put{{ end }}</strong>
+                  <span>{{ if $isZh }}Short Put · 清仓特卖员{{ else }}Collect Premium / Buy Dip{{ end }}</span>
+                </button>
+                <button type="button" class="ob-strat-btn" data-ob-strat="short-call">
+                  <strong>{{ if $isZh }}卖出看涨{{ else }}Short Call{{ end }}</strong>
+                  <span>{{ if $isZh }}Short Call · 收权利金房东{{ else }}Sell Upside for Income{{ end }}</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="ob-sliders">
+              <div class="ob-slider-row">
+                <div class="ob-slider-top">
+                  <label for="ob-s">{{ if $isZh }}1. 标的当前股价 (S){{ else }}1. Underlying Price (S){{ end }}</label>
+                  <output id="ob-s-val" for="ob-s">$200</output>
+                </div>
+                <input type="range" id="ob-s" min="120" max="280" step="1" value="200" />
+                <div class="ob-slider-ticks"><span>$120</span><span>$200</span><span>$280</span></div>
+              </div>
+
+              <div class="ob-slider-row">
+                <div class="ob-slider-top">
+                  <label for="ob-k">{{ if $isZh }}2. 期权行权价格 (K){{ else }}2. Strike Price (K){{ end }}</label>
+                  <output id="ob-k-val" for="ob-k">$200</output>
+                </div>
+                <input type="range" id="ob-k" min="140" max="260" step="5" value="200" />
+                <div class="ob-slider-ticks"><span>$140</span><span>$200</span><span>$260</span></div>
+              </div>
+
+              <div class="ob-slider-row">
+                <div class="ob-slider-top">
+                  <label for="ob-t">{{ if $isZh }}3. 距离到期时间 (T){{ else }}3. Days to Expiration (T){{ end }}</label>
+                  <output id="ob-t-val" for="ob-t">30 {{ if $isZh }}天{{ else }}days{{ end }}</output>
+                </div>
+                <input type="range" id="ob-t" min="1" max="120" step="1" value="30" />
+                <div class="ob-slider-ticks">
+                  <span>1{{ if $isZh }}天 (末日){{ else }}d (0DTE){{ end }}</span>
+                  <span>60{{ if $isZh }}天{{ else }}d{{ end }}</span>
+                  <span>120{{ if $isZh }}天{{ else }}d{{ end }}</span>
+                </div>
+              </div>
+
+              <div class="ob-slider-row">
+                <div class="ob-slider-top">
+                  <label for="ob-iv">{{ if $isZh }}4. 隐含波动率 (σ / IV){{ else }}4. Implied Volatility (σ / IV){{ end }}</label>
+                  <output id="ob-iv-val" for="ob-iv">45%</output>
+                </div>
+                <input type="range" id="ob-iv" min="15" max="120" step="1" value="45" />
+                <div class="ob-slider-ticks">
+                  <span>15% ({{ if $isZh }}死水{{ else }}Calm{{ end }})</span>
+                  <span>50%</span>
+                  <span>120% ({{ if $isZh }}财报前夜{{ else }}Earnings{{ end }})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{/* Right: Live SVG Payoff Curve + Greeks Dashboard */}}
+          <div class="ob-sim-visual">
+            {{/* Top Contract KPI Bar */}}
+            <div class="ob-sim-kpis">
+              <div class="ob-sim-kpi">
+                <span>{{ if $isZh }}理论权利金 (每张×100股){{ else }}Theoretical Premium (×100 sh){{ end }}</span>
+                <strong id="ob-kpi-prem">$10.42 <small>($1,042)</small></strong>
+              </div>
+              <div class="ob-sim-kpi">
+                <span>{{ if $isZh }}到期盈亏平衡点{{ else }}Expiration Break-Even{{ end }}</span>
+                <strong id="ob-kpi-be">$210.42</strong>
+              </div>
+              <div class="ob-sim-kpi">
+                <span>{{ if $isZh }}合约当前状态 (1.4 节){{ else }}Moneyness State (Sec 1.4){{ end }}</span>
+                <strong id="ob-kpi-state" class="ob-state-badge">平值 ATM</strong>
+              </div>
+            </div>
+
+            {{/* SVG Chart Canvas */}}
+            <div class="ob-chart-box">
+              <div class="ob-chart-head">
+                <span class="ob-chart-title">
+                  <i class="fas fa-chart-line" aria-hidden="true"></i>
+                  {{ if $isZh }}到期盈亏曲线 vs 当前 T+0 理论价值曲线（1 张合约 = 100 股）{{ else }}Expiration Payoff vs T+0 Theoretical P&amp;L (1 Contract = 100 Shares){{ end }}
+                </span>
+                <span class="ob-chart-legend">
+                  <i class="ob-leg-exp"></i>{{ if $isZh }}到期盈亏{{ else }}At Expiry{{ end }}
+                  <i class="ob-leg-now"></i>{{ if $isZh }}今日理论曲线{{ else }}Today (T+0){{ end }}
+                </span>
+              </div>
+
+              <svg id="ob-svg" class="ob-svg" viewBox="0 0 620 250" role="img" aria-label="Option Payoff Chart"></svg>
+            </div>
+
+            {{/* 3 Greeks Gauges (Chapter 2 Dashboard) */}}
+            <div class="ob-greeks-grid">
+              <div class="ob-greek-card">
+                <div class="ob-greek-head">
+                  <span class="ob-greek-tag">Delta (Δ) · {{ if $isZh }}车速表{{ else }}Speedometer{{ end }}</span>
+                  <strong id="ob-g-delta">+0.54</strong>
+                </div>
+                <div class="ob-greek-bar"><span id="ob-g-delta-bar" style="width: 54%"></span></div>
+                <p id="ob-g-delta-desc">{{ if $isZh }}股价每涨 $1，期权约赚 $0.54（到期实值概率 ~54%）{{ else }}+$0.54 per $1 stock move (~54% ITM prob){{ end }}</p>
+              </div>
+
+              <div class="ob-greek-card">
+                <div class="ob-greek-head">
+                  <span class="ob-greek-tag">Theta (Θ) · {{ if $isZh }}油耗表{{ else }}Daily Fuel Burn{{ end }}</span>
+                  <strong id="ob-g-theta">-$0.18/{{ if $isZh }}天{{ else }}d{{ end }}</strong>
+                </div>
+                <div class="ob-greek-bar is-warn"><span id="ob-g-theta-bar" style="width: 38%"></span></div>
+                <p id="ob-g-theta-desc">{{ if $isZh }}股价不动，每过 1 天持仓自动变化 -$18 / 张{{ else }}Time decay per day for 1 contract (100 shares){{ end }}</p>
+              </div>
+
+              <div class="ob-greek-card">
+                <div class="ob-greek-head">
+                  <span class="ob-greek-tag">Vega (ν) · {{ if $isZh }}天气预报{{ else }}IV Weather{{ end }}</span>
+                  <strong id="ob-g-vega">+$0.22/1%</strong>
+                </div>
+                <div class="ob-greek-bar is-cyan"><span id="ob-g-vega-bar" style="width: 45%"></span></div>
+                <p id="ob-g-vega-desc">{{ if $isZh }}波动率 IV 每升 1%，单张合约价值变动 +$22{{ else }}Value change per +1% shift in Implied Volatility{{ end }}</p>
+              </div>
+            </div>
+
+            {{/* Plain-Language Live Diagnosis */}}
+            <div class="ob-diagnosis" id="ob-diagnosis">
+              <span class="ob-diag-badge"><i class="fas fa-lightbulb" aria-hidden="true"></i> {{ if $isZh }}大白话实时诊断{{ else }}Plain-Language Diagnosis{{ end }}</span>
+              <p id="ob-diag-text">
+                {{ if $isZh }}
+                  当前为平值看涨买方（Long Call）：你支付了固定“定金”锁定上行收益，最大亏损锁死在权利金，但每天都在支付 Theta 时间油耗——需要股价在到期前涨破盈亏平衡点才能净赚。
+                {{ else }}
+                  At-the-money Long Call: Your max loss is strictly capped at the premium paid, while upside is uncapped—but Theta burns fuel every day until the stock clears the break-even price.
+                {{ end }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{/* ============================== 3. THREE MENTAL LEAPS ============================== */}}
+    <section class="ob-section ob-wrap" aria-labelledby="ob-mindset-title">
+      <header class="ob-sec-head">
+        <div class="ob-sec-head-copy">
+          <p class="ob-kicker"><span>02</span>{{ if $isZh }}为什么写这本书 · 三次认知跃迁{{ else }}WHY THIS BOOK · 3 MENTAL LEAPS{{ end }}</p>
+          <h2 id="ob-mindset-title" class="ob-h2">
+            {{ if $isZh }}把期权从“刺激的赌场”，还原成“可控的系统”{{ else }}From Speculative Casino to Repeatable Trading System{{ end }}
+          </h2>
+        </div>
+      </header>
+
+      <div class="ob-leaps-grid">
+        <article class="ob-leap-card">
+          <div class="ob-leap-top">
+            <span class="ob-leap-num">01</span>
+            <span class="ob-leap-pill is-bad">{{ if $isZh }}新手误区：买虚值末日彩票{{ else }}Trap: Buying OTM Lottery Tickets{{ end }}</span>
+          </div>
+          <h3>{{ if $isZh }}从“赌涨跌方向” → 到“交易权利与赔率契约”{{ else }}From Guessing Direction → Trading Rights &amp; Asymmetry{{ end }}</h3>
+          <p>
+            {{ if $isZh }}
+              散户看到深度虚值期权几块钱一张就冲进去“以小博大”，却不知道时间（Theta）正在按小时加速清零。<strong>第一、三章</strong>带你像签买房定金合同和经营房东收租一样，算清每一笔权利金背后的义务与赔率边界。
+            {{ else }}
+              Beginners buy cheap far-OTM options hoping for a jackpot, unaware that accelerating Theta decay wipes them out. Chapters 1 &amp; 3 reframe options as structured deposit contracts and rent-collecting inventory.
+            {{ end }}
+          </p>
+          <a class="ob-leap-link" href="{{ $ch1URL }}">{{ if $isZh }}读第 1 章：选择的权利 →{{ else }}Read Chapter 1 Free →{{ end }}</a>
+        </article>
+
+        <article class="ob-leap-card">
+          <div class="ob-leap-top">
+            <span class="ob-leap-num">02</span>
+            <span class="ob-leap-pill is-bad">{{ if $isZh }}新手误区：看对股价却亏钱{{ else }}Trap: Right Direction, Still Losing{{ end }}</span>
+          </div>
+          <h3>{{ if $isZh }}从“盲人摸象看 K 线” → 到“看懂 Greeks 行车仪表盘”{{ else }}From Watching Price Alone → Reading the Greeks Dashboard{{ end }}</h3>
+          <p>
+            {{ if $isZh }}
+              为什么财报利好股价涨了，你的看涨期权反而暴跌？因为财报前隐含波动率（IV）高企，落地后 Vega 坍塌（IV Crush）吞掉了 Delta 的涨幅。<strong>第二、五章</strong>教你盯住车速（Delta）、油耗（Theta）与天气（Vega）。
+            {{ else }}
+              Why does your Call lose money even when earnings beat and the stock rises? Because post-earnings IV Crush (Vega) overwhelms Delta gains. Chapters 2 &amp; 5 teach you to read Delta, Theta, and Vega together.
+            {{ end }}
+          </p>
+          <a class="ob-leap-link" href="{{ $ch2URL }}">{{ if $isZh }}读第 2 章：解码价格的魔法 →{{ else }}Read Chapter 2 Free →{{ end }}</a>
+        </article>
+
+        <article class="ob-leap-card">
+          <div class="ob-leap-top">
+            <span class="ob-leap-num">03</span>
+            <span class="ob-leap-pill is-bad">{{ if $isZh }}新手误区：压路机前捡硬币{{ else }}Trap: Pennies in Front of a Steamroller{{ end }}</span>
+          </div>
+          <h3>{{ if $isZh }}从“迷信 90% 高胜率” → 到“凯利公式与尾部保险”{{ else }}From High-Win-Rate Illusion → Kelly Sizing &amp; Tail Insurance{{ end }}</h3>
+          <p>
+            {{ if $isZh }}
+              连赢 19 次各赚 5%，第 20 次遇到黑天鹅裸卖期权一把爆仓归零——这是无数“高胜率”卖方的宿命。<strong>第四、六章</strong>引入期望值账本、凯利公式仓位上限与投资组合保险，让你在极端行情中永远留在牌桌上。
+            {{ else }}
+              Winning 19 small trades means nothing if trade 20 blows up your account. Chapters 4 &amp; 6 introduce expected-value accounting, Kelly position limits, and tail-risk insurance so you never get knocked off the table.
+            {{ end }}
+          </p>
+          <a class="ob-leap-link" href="{{ "/zh-cn/options-dabaihua/04/" }}">{{ if $isZh }}查看第 4 章风控大纲 →{{ else }}View Chapter 4 Syllabus →{{ end }}</a>
+        </article>
+      </div>
+    </section>
+
+    {{/* ============================== 4. 7-CHAPTER INTERACTIVE CURRICULUM ============================== */}}
+    <section id="ob-curriculum" class="ob-section ob-wrap" aria-labelledby="ob-toc-title">
+      <header class="ob-sec-head ob-sec-head-row">
+        <div class="ob-sec-head-copy">
+          <p class="ob-kicker"><span>03</span>{{ if $isZh }}全书 7 章 31 节 · 完整目录与试读入口{{ else }}FULL SYLLABUS · 7 CHAPTERS &amp; 31 SECTIONS{{ end }}</p>
+          <h2 id="ob-toc-title" class="ob-h2">
+            {{ if $isZh }}循序渐进的期权知识大厦{{ else }}Complete Book Curriculum &amp; Preview{{ end }}
+          </h2>
+          <p class="ob-sec-desc">
+            {{ if $isZh }}
+              第一、二章（共 9 节完整图文）在站内开放免费精读；第三至第七章展示完整小节脉络与核心心法，购买 Amazon Kindle 版即可解锁全书。
+            {{ else }}
+              Chapters 1 and 2 (9 full illustrated sections, Chinese edition) are completely free to read online. Chapters 3–7 display the complete section roadmap and key takeaways.
+            {{ end }}
+          </p>
+        </div>
+
+        <div class="ob-toc-filters" role="tablist" aria-label="Chapter filter">
+          <button type="button" class="ob-filter-btn is-on" data-ob-filter="all">
+            {{ if $isZh }}全部章节 (7){{ else }}All Chapters (7){{ end }}
+          </button>
+          <button type="button" class="ob-filter-btn" data-ob-filter="free">
+            <span class="ob-dot-free"></span>{{ if $isZh }}免费全文试读 (2){{ else }}Free Full Preview (2){{ end }}
+          </button>
+          <button type="button" class="ob-filter-btn" data-ob-filter="locked">
+            <i class="fas fa-lock" aria-hidden="true"></i> {{ if $isZh }}进阶与系统篇 (5){{ else }}Full Book Chapters (5){{ end }}
+          </button>
+        </div>
+      </header>
+
+      <ol class="ob-chapters-grid" id="ob-chapters-grid">
         {{ range $book.chapters }}
           {{ $n := .number }}
           {{ $locked := gt $n $book.freeThrough }}
-          {{ if eq $n (add $book.freeThrough 1) }}
-            <li class="options-boundary">第三至第七章 · 购买后阅读</li>
-          {{ end }}
-          <li class="options-toc-item">
-            <a href="{{ printf "options-dabaihua/%02d/" $n | relLangURL }}">
-              <span class="options-toc-num">{{ printf "%02d" $n }}</span>
-              <span class="options-toc-title">{{ .title }}</span>
-              {{ if $locked }}
-                <span class="options-badge is-locked">锁定</span>
-              {{ else }}
-                <span class="options-badge is-free">免费</span>
-              {{ end }}
-            </a>
-            <ol class="options-toc-sections">
+          {{ $chHref := printf "/zh-cn/options-dabaihua/%02d/" $n }}
+          <li
+            class="ob-ch-card{{ if $locked }} is-locked{{ else }} is-free{{ end }}"
+            data-ob-ch="{{ $n }}"
+            data-ob-access="{{ if $locked }}locked{{ else }}free{{ end }}"
+          >
+            <div class="ob-ch-top">
+              <div class="ob-ch-meta">
+                <span class="ob-ch-num">CH {{ printf "%02d" $n }}</span>
+                <span class="ob-ch-kicker">{{ if $isZh }}{{ .kicker }}{{ else }}{{ .kickerEn }}{{ end }}</span>
+              </div>
+
+              <div class="ob-ch-badges">
+                <span class="ob-ch-time"><i class="fas fa-clock" aria-hidden="true"></i> {{ if $isZh }}{{ .readTime }}{{ else }}{{ .readTimeEn }}{{ end }}</span>
+                {{ if $locked }}
+                  <span class="ob-badge is-locked"><i class="fas fa-lock" aria-hidden="true"></i> {{ if $isZh }}完整版章节{{ else }}Full Book{{ end }}</span>
+                {{ else }}
+                  <span class="ob-badge is-free"><i class="fas fa-book-open" aria-hidden="true"></i> {{ if $isZh }}免费全文{{ else }}Free Read{{ end }}</span>
+                {{ end }}
+              </div>
+            </div>
+
+            <h3 class="ob-ch-title">
+              <a href="{{ $chHref }}">
+                {{ if $isZh }}{{ .title }}{{ else }}{{ .titleEn }} <small class="ob-ch-zh-sub">({{ .title }})</small>{{ end }}
+              </a>
+            </h3>
+
+            <p class="ob-ch-summary">{{ if $isZh }}{{ .summary }}{{ else }}{{ .summaryEn }}{{ end }}</p>
+
+            <ol class="ob-ch-sections">
               {{ range .sections }}
-                <li>{{ . }}</li>
+                <li>
+                  <i class="fas {{ if $locked }}fa-circle{{ else }}fa-check-circle{{ end }}" aria-hidden="true"></i>
+                  <span>{{ . }}</span>
+                </li>
               {{ end }}
             </ol>
+
+            {{ with .takeaway }}
+              <blockquote class="ob-ch-quote">
+                <i class="fas fa-quote-left" aria-hidden="true"></i>
+                <span>{{ . }}</span>
+              </blockquote>
+            {{ end }}
+
+            <div class="ob-ch-foot">
+              <a class="ob-ch-cta{{ if not $locked }} is-primary{{ end }}" href="{{ $chHref }}">
+                {{ if $locked }}
+                  <span>{{ if $isZh }}查看本章大纲与解锁方式{{ else }}View Chapter Outline{{ end }}</span>
+                  <span aria-hidden="true">→</span>
+                {{ else }}
+                  <i class="fas fa-book-reader" aria-hidden="true"></i>
+                  <span>{{ if $isZh }}立即免费阅读第 {{ $n }} 章全文{{ else }}Read Chapter {{ $n }} Free (ZH){{ end }}</span>
+                  <span aria-hidden="true">→</span>
+                {{ end }}
+              </a>
+            </div>
           </li>
         {{ end }}
       </ol>
     </section>
-  {{ else }}
-    <section class="container options-reader" data-options-reader>
-      <div class="options-cover">
-        <p class="options-cover-edition">English edition · entry only</p>
-        <h1>{{ $book.titleEn }}</h1>
-        <p class="options-cover-by">Momo</p>
-      </div>
 
-      <dl class="options-facts">
-        <div>
-          <dt>ASIN</dt>
-          <dd>{{ $book.asinEn }}</dd>
+    {{/* ============================== 5. DUAL-EDITION AMAZON PURCHASE CARD ============================== */}}
+    <section class="ob-section ob-wrap ob-editions-wrap" aria-labelledby="ob-editions-title">
+      <div class="ob-editions-box">
+        <div class="ob-editions-head">
+          <p class="ob-kicker"><span>04</span>{{ if $isZh }}获取完整全书 · 亚马逊全球发行{{ else }}GET THE FULL BOOK · AMAZON KINDLE{{ end }}</p>
+          <h2 id="ob-editions-title" class="ob-h2">
+            {{ if $isZh }}读完前两章觉得有收获？在 Amazon 解锁完整交易系统{{ else }}Ready for Chapters 3–7? Get the Full Edition on Amazon{{ end }}
+          </h2>
+          <p class="ob-sec-desc">
+            {{ if $isZh }}
+              第三至第七章涵盖<strong>五大进阶期权策略（买 Call、卖 Put、备兑收租、垂直价差、跨式组合）</strong>、<strong>凯利公式与风险账本</strong>、<strong>从赌方向到管概率的交易系统</strong>以及<strong>波动率刻意练习指南</strong>。提供中文版与英文版两个独立版本：
+            {{ else }}
+              Unlock the 5-step options strategy progression (Long Call, Short Put, Covered Call, Vertical Spreads, Straddles), Kelly Criterion risk sizing, probability management, and deliberate practice in your preferred language:
+            {{ end }}
+          </p>
         </div>
-        <div>
-          <dt>Chinese reading</dt>
-          <dd>Chapters 1–2 open</dd>
+
+        <div class="ob-editions-grid">
+          {{/* Chinese Edition Card */}}
+          <article class="ob-ed-card is-featured">
+            <div class="ob-ed-top">
+              <span class="ob-ed-lang">中文版 · Traditional Chinese Edition</span>
+              <span class="ob-ed-ver">{{ $book.version }} · {{ $book.pageCount }} {{ if $isZh }}页{{ else }}Pages{{ end }}</span>
+            </div>
+            <h3>《{{ $book.titleZh }}：{{ $book.subtitleZh }}》</h3>
+            <p>
+              {{ if $isZh }}
+                全书 7 章 31 节完整原稿 + 高清概念与 Greeks 图解。适合希望告别散户凭感觉炒期权、建立系统化期望值思维的中文投资者。
+              {{ else }}
+                Complete 7-chapter Chinese edition with full diagrams, strategy progressions, Kelly sizing examples, and system-building checklists.
+              {{ end }}
+            </p>
+            <div class="ob-ed-asin">
+              <span>ASIN: <code>{{ $book.asinZh }}</code></span>
+              <button type="button" class="ob-copy-asin" data-ob-copy="{{ $book.asinZh }}">
+                <i class="fas fa-copy" aria-hidden="true"></i>
+                <span>{{ if $isZh }}复制 ASIN{{ else }}Copy ASIN{{ end }}</span>
+              </button>
+            </div>
+            <div class="ob-ed-actions">
+              <a class="ob-btn ob-btn-primary" href="{{ $book.amazonZh }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-amazon" aria-hidden="true"></i>
+                <span>{{ if $isZh }}在 Amazon 购买中文版{{ else }}Buy Chinese Edition on Amazon{{ end }}</span>
+                <span aria-hidden="true">↗&#xFE0E;</span>
+              </a>
+              <a class="ob-btn ob-btn-ghost" href="{{ $ch1URL }}">
+                <span>{{ if $isZh }}先试读前两章 →{{ else }}Preview Ch 1–2 (ZH) →{{ end }}</span>
+              </a>
+            </div>
+          </article>
+
+          {{/* English Edition Card */}}
+          <article class="ob-ed-card">
+            <div class="ob-ed-top">
+              <span class="ob-ed-lang">English Edition · Kindle</span>
+              <span class="ob-ed-ver">By Momo ({{ $book.author }})</span>
+            </div>
+            <h3>{{ $book.titleEn }}: {{ $book.subtitleEn }}</h3>
+            <p>
+              {{ if $isZh }}
+                英文独立发行版，适合习惯英文阅读、关注美股期权（TSLA / NVDA / SPY 等）交易术语与国际期权策略表达的读者。
+              {{ else }}
+                Written in clear, plain English for investors trading US equity options who want a structured mental model for pricing, Greeks, spreads, and risk management.
+              {{ end }}
+            </p>
+            <div class="ob-ed-asin">
+              <span>ASIN: <code>{{ $book.asinEn }}</code></span>
+              <button type="button" class="ob-copy-asin" data-ob-copy="{{ $book.asinEn }}">
+                <i class="fas fa-copy" aria-hidden="true"></i>
+                <span>{{ if $isZh }}复制 ASIN{{ else }}Copy ASIN{{ end }}</span>
+              </button>
+            </div>
+            <div class="ob-ed-actions">
+              <a class="ob-btn ob-btn-primary" href="{{ $book.amazonEn }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-amazon" aria-hidden="true"></i>
+                <span>{{ if $isZh }}Buy English Edition on Amazon{{ else }}Buy English Edition on Amazon{{ end }}</span>
+                <span aria-hidden="true">↗&#xFE0E;</span>
+              </a>
+            </div>
+          </article>
         </div>
-      </dl>
-
-      <p class="options-lead">
-        In-site reading is the Chinese edition, 《{{ $book.titleZh }}：{{ $book.subtitleZh }}》.
-        Chapters 1 and 2 are open. Chapters 3–7 are locked. This page does not
-        contain the English book.
-      </p>
-
-      <div class="options-actions">
-        {{ partial "options-reader/amazon.html" (dict "edition" "en" "label" "Buy the English edition on Amazon") }}
-        <a class="options-quiet" href="/zh-cn/options-dabaihua/"
-          >Open the Chinese reading preview</a
-        >
       </div>
-
-      <aside class="options-en-card">
-        <p class="options-kicker">中文版购买</p>
-        <h2>{{ $book.titleZh }}：{{ $book.subtitleZh }}</h2>
-        <p>
-          {{ $book.editionNote }} · {{ $book.author }} · ASIN
-          {{ $book.asinZh }} · {{ $book.version }}
-        </p>
-        {{ partial "options-reader/amazon.html" (dict "edition" "zh" "label" "在亚马逊购买中文版") }}
-      </aside>
     </section>
-  {{ end }}
+  </div>
 
-  <script src="/js/options-reader.js?v=20261112-1"></script>
+  <script src="/js/options-app.js" defer></script>
 {{ end }}
