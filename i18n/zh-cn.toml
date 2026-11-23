@@ -488,7 +488,7 @@ other = "篇公开写作"
 other = "年工程经验"
 
 [hxMarquee]
-other = "AI 编程|Agent Harness|MCP|Browser Use|全栈工程|独立产品|一人公司|长期投资|内容创作|前端工程"
+other = "毛毛星 Momo|前网易 · 阿里前端|AI 编程与 Harness|一人公司|期权大白话|中英双语写作|Browser Use|MCP 协议|独立产品|长期投资复利"
 
 [hxBuildingTitle]
 other = "一个人，几条产品线。"
@@ -518,10 +518,10 @@ other = "全部文章"
 other = "联系"
 
 [hxConnectTitle]
-other = "有想法？一起做点东西。"
+other = "跟毛毛星交个朋友，一起用 AI 做点东西。"
 
 [hxConnectDesc]
-other = "合作、咨询，或者只是打个招呼，都欢迎。"
+other = "每周分享 AI 编程、一人公司与长期投资的真实复盘；合作、咨询或交流，随时来信。"
 
 [hxConnectEmail]
 other = "写邮件给我"
@@ -534,3 +534,103 @@ other = "访问"
 
 [hxToolsTileFoot]
 other = "全部在浏览器里运行"
+
+# ---------- Homepage v4 Personal Brand (hx*) ----------
+[hxIdentityName]
+other = "毛毛星 Momo"
+
+[hxIdentityRole]
+other = "前网易 · 阿里资深前端 · AI 独立开发者"
+
+[hxBrandHeroL1]
+other = "我是毛毛星，"
+
+[hxBrandHeroL2]
+other = "用 AI 活成一支产品团队。"
+
+[hxBrandHeroDesc]
+other = "十年大厂前端底子，现在把 AI 编程、独立产品和长期投资里的真实问题，做成点开即用的小工具、四个垂直独立站，和公开可复用的双语笔记。"
+
+[hxProof1]
+other = "前网易 · 阿里前端"
+
+[hxProof2]
+other = "《期权大白话》作者"
+
+[hxProof3]
+other = "中英双语公开写作"
+
+[hxCtaMeet]
+other = "认识毛毛星"
+
+[hxBrandKicker]
+other = "关于毛毛星"
+
+[hxBrandTitle]
+other = "不追风口，把真实问题做成产品与公开方法论。"
+
+[hxBrandLead]
+other = "十多年工程背景加上持续的独立开发与双语写作，构成了我的四个长期坐标。"
+
+[hxBrandMotto]
+other = "Learn, Build and Grow with AGI."
+
+[hxBrandStory]
+other = "曾在网易、阿里写过十年前端代码。不想把人生上限绑死在单一工资上，于是开始把代码、AI 工作流、内容创作与长期投资，拆成一套普通工程师也能跑通的复利系统。"
+
+[hxMilestone1Title]
+other = "网易 · 阿里"
+
+[hxMilestone1Sub]
+other = "10年+ 前端工程底子"
+
+[hxMilestone2Title]
+other = "《期权大白话》"
+
+[hxMilestone2Sub]
+other = "亚马逊上架金融电子书"
+
+[hxMilestone3Title]
+other = "200+ 双语笔记"
+
+[hxMilestone3Sub]
+other = "连接中文与全球开发者"
+
+[hxMilestone4Title]
+other = "AI 一人公司"
+
+[hxMilestone4Sub]
+other = "小工具与垂直站持续迭代"
+
+[hxBrandAboutCta]
+other = "完整自我介绍"
+
+[hxBrandSubstackCta]
+other = "订阅 Newsletter"
+
+[hxPillarCta]
+other = "进入专题"
+
+[hxPillar1Title]
+other = "AI 编程与工程"
+
+[hxPillar1Desc]
+other = "不追热点工具，把 Cursor、Claude Code、Codex 与 Harness 放进真实工程闭环：Context、Plan、实现与 E2E 验收。"
+
+[hxPillar2Title]
+other = "AI 一人公司"
+
+[hxPillar2Desc]
+other = "记录一个普通工程师如何从电子书、浏览器小工具到垂直独立站，一步步把技术能力产品化。"
+
+[hxPillar3Title]
+other = "创作者工作流"
+
+[hxPillar3Desc]
+other = "打通个人官网、公众号、小红书、YouTube 与 Substack，把灵感沉淀为可持续的复利内容系统。"
+
+[hxPillar4Title]
+other = "长期投资与系统思维"
+
+[hxPillar4Desc]
+other = "不预测短期涨跌，聚焦指数基金、科技 ETF、BTC、期权与家庭现金流，用系统思维管理风险与时间。"

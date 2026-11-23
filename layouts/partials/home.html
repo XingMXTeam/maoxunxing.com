@@ -1,23 +1,30 @@
 {{- /*
-  Homepage v3 ("hx"). Self-contained: all classes are prefixed hx- so the
+  Homepage v4 ("hx"). Self-contained: all classes are prefixed hx- so the
   older home.css / hub-c.css rules (still loaded site-wide) cannot collide.
-  New file names (home-x.css / home-x.js) instead of ?v= bumps, because the
-  Cloudflare cache key for this zone ignores query strings (see hub-c.css).
+  New file name (home-v4.css) instead of ?v= bump, because the Cloudflare
+  cache key for this zone ignores query strings (see hub-c.css).
 */ -}}
-<link rel="stylesheet" href="/css/home-x.css" />
+<link rel="stylesheet" href="/css/home-v4.css" />
 <script>document.documentElement.classList.add("hx-js");</script>
 
 {{- $isZh := eq (lower .Site.Language.Lang) "zh-cn" -}}
 {{- $aiToolsURL := "https://maoxunxing.com/ai/" -}}
 {{- $productsURL := "products/" | relLangURL -}}
 {{- $postsURL := "posts/" | relLangURL -}}
+{{- $aboutURL := "about/" | relLangURL -}}
+{{- $substackURL := "https://maodi.substack.com/" -}}
+
+{{- $authorPhoto := "" -}}
+{{- with site.GetPage "/about" -}}
+  {{- with .Resources.GetMatch "author-photo.jpg" -}}
+    {{- $authorPhoto = (.Fill "760x540 Center webp q82").RelPermalink -}}
+  {{- end -}}
+{{- end -}}
 
 {{- $toolsPage := site.GetPage "/tools" -}}
 {{- $tools := slice -}}
 {{- with $toolsPage }}{{ $tools = .Params.entries }}{{ end -}}
 {{- $writingCount := len (where site.RegularPages "Section" "in" (slice "posts" "notes" "book-reports")) -}}
-
-{{- $titleParts := split (i18n "homeHeroTitle") " · " -}}
 
 {{- $toolIcons := dict
   "代码" "fa-code" "code" "fa-code"
@@ -51,18 +58,25 @@
 
     <div class="hx-wrap hx-hero-inner">
       <div class="hx-hero-copy">
-        <a class="hx-badge" href="#hx-building" data-hx-reveal>
-          <span class="hx-badge-dot" aria-hidden="true"></span>
-          <span>{{ i18n "hxBadge" }}</span>
-          <span class="hx-badge-sep" aria-hidden="true"></span>
-          <span class="hx-badge-name">{{ i18n "homeEyebrow" }}</span>
+        <a class="hx-identity" href="#hx-brand" data-hx-reveal>
+          <span class="hx-avatar-wrap">
+            <img class="hx-avatar-img" src="/images/avatar-momo.jpg" alt="{{ i18n "hxIdentityName" }}" width="58" height="58" decoding="async" />
+            <span class="hx-avatar-dot" aria-hidden="true"></span>
+          </span>
+          <span class="hx-identity-meta">
+            <span class="hx-identity-top">
+              <strong>{{ i18n "hxIdentityName" }}</strong>
+              <span class="hx-identity-handle">@maoxunxing</span>
+              <span class="hx-status-pill">{{ i18n "hxBadge" }}</span>
+            </span>
+            <span class="hx-identity-role">{{ i18n "hxIdentityRole" }}</span>
+          </span>
           <span class="hx-badge-arrow" aria-hidden="true">→</span>
         </a>
 
         <h1 id="hx-title" class="hx-title" data-hx-reveal style="--d: 80ms">
-          {{- range $i, $p := $titleParts -}}
-            <span class="hx-title-line{{ if eq $i 1 }} hx-gradient-text{{ end }}">{{ $p }}</span>
-          {{- end -}}
+          <span class="hx-title-line">{{ i18n "hxBrandHeroL1" }}</span>
+          <span class="hx-title-line hx-gradient-text">{{ i18n "hxBrandHeroL2" }}</span>
         </h1>
 
         <p class="hx-rotator" data-hx-reveal style="--d: 160ms">
@@ -71,7 +85,13 @@
           <span class="hx-rotator-word" data-words="{{ i18n "hxRotateWords" }}">{{ index $words 0 }}</span><span class="hx-caret" aria-hidden="true"></span>
         </p>
 
-        <p class="hx-desc" data-hx-reveal style="--d: 220ms">{{ i18n "homeHeroDesc" }}</p>
+        <p class="hx-desc" data-hx-reveal style="--d: 220ms">{{ i18n "hxBrandHeroDesc" }}</p>
+
+        <div class="hx-proof" data-hx-reveal style="--d: 250ms">
+          <span class="hx-proof-item"><i class="fas fa-briefcase" aria-hidden="true"></i> {{ i18n "hxProof1" }}</span>
+          <span class="hx-proof-item"><i class="fas fa-book-open" aria-hidden="true"></i> {{ i18n "hxProof2" }}</span>
+          <span class="hx-proof-item"><i class="fas fa-language" aria-hidden="true"></i> {{ i18n "hxProof3" }}</span>
+        </div>
 
         <div class="hx-ctas" data-hx-reveal style="--d: 280ms">
           <a class="hx-btn hx-btn-primary" href="{{ $aiToolsURL }}">
@@ -81,8 +101,8 @@
           <a class="hx-btn hx-btn-ghost" href="{{ $productsURL }}">
             <span>{{ i18n "hxCtaSecondary" }}</span>
           </a>
-          <a class="hx-btn hx-btn-link" href="#hx-writing">
-            <span>{{ i18n "hxCtaWriting" }}</span>
+          <a class="hx-btn hx-btn-link" href="#hx-brand">
+            <span>{{ i18n "hxCtaMeet" }}</span>
             <span aria-hidden="true">↓</span>
           </a>
         </div>
@@ -237,12 +257,93 @@
     </div>
   </section>
 
+  {{/* ============================== BRAND / ABOUT & PILLARS ============================== */}}
+  {{- $pillars := slice
+    (dict "num" "01" "url" ("ai-coding-workflow/" | relLangURL) "icon" "fa-code" "color" "#6366f1" "title" (i18n "hxPillar1Title") "desc" (i18n "hxPillar1Desc"))
+    (dict "num" "02" "url" ("ai-indie-hacking/" | relLangURL) "icon" "fa-rocket" "color" "#06b6d4" "title" (i18n "hxPillar2Title") "desc" (i18n "hxPillar2Desc"))
+    (dict "num" "03" "url" ("creator-workflow/" | relLangURL) "icon" "fa-layer-group" "color" "#a855f7" "title" (i18n "hxPillar3Title") "desc" (i18n "hxPillar3Desc"))
+    (dict "num" "04" "url" ("long-term-investing/" | relLangURL) "icon" "fa-chart-line" "color" "#10b981" "title" (i18n "hxPillar4Title") "desc" (i18n "hxPillar4Desc"))
+  -}}
+  <section id="hx-brand" class="hx-section hx-wrap" aria-labelledby="hx-brand-title">
+    <header class="hx-head" data-hx-reveal>
+      <p class="hx-kicker"><span>02</span>{{ i18n "hxBrandKicker" }}</p>
+      <h2 id="hx-brand-title" class="hx-h2">{{ i18n "hxBrandTitle" }}</h2>
+      <p class="hx-lead">{{ i18n "hxBrandLead" }}</p>
+    </header>
+
+    <div class="hx-brand-grid">
+      <article class="hx-dossier" data-hx-reveal data-hx-spot>
+        {{- if $authorPhoto }}
+        <div class="hx-dossier-media">
+          <img src="{{ $authorPhoto }}" alt="{{ i18n "hxIdentityName" }}" width="760" height="540" loading="lazy" decoding="async" />
+          <div class="hx-dossier-media-overlay" aria-hidden="true"></div>
+          <span class="hx-dossier-monogram" aria-hidden="true">
+            <svg viewBox="0 0 100 100" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 22 80 C 22 50, 22 28, 22 20 C 22 14, 28 14, 33 22 C 38 30, 42 42, 50 52 C 58 42, 62 30, 67 22 C 72 14, 78 14, 78 20 C 78 28, 78 50, 78 80" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="hx-dossier-caption">Momo · 毛毛星 · maoxunxing.com</span>
+        </div>
+        {{- end }}
+
+        <div class="hx-dossier-body">
+          <blockquote class="hx-motto">“{{ i18n "hxBrandMotto" }}”</blockquote>
+          <p class="hx-story">{{ i18n "hxBrandStory" }}</p>
+
+          <div class="hx-milestones">
+            <div class="hx-milestone">
+              <strong>{{ i18n "hxMilestone1Title" }}</strong>
+              <span>{{ i18n "hxMilestone1Sub" }}</span>
+            </div>
+            <div class="hx-milestone">
+              <strong>{{ i18n "hxMilestone2Title" }}</strong>
+              <span>{{ i18n "hxMilestone2Sub" }}</span>
+            </div>
+            <div class="hx-milestone">
+              <strong>{{ i18n "hxMilestone3Title" }}</strong>
+              <span>{{ i18n "hxMilestone3Sub" }}</span>
+            </div>
+            <div class="hx-milestone">
+              <strong>{{ i18n "hxMilestone4Title" }}</strong>
+              <span>{{ i18n "hxMilestone4Sub" }}</span>
+            </div>
+          </div>
+
+          <div class="hx-dossier-actions">
+            <a class="hx-dossier-btn hx-dossier-btn-primary" href="{{ $aboutURL }}">
+              <span>{{ i18n "hxBrandAboutCta" }}</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="hx-dossier-btn" href="{{ $substackURL }}" target="_blank" rel="noopener noreferrer">
+              <span>{{ i18n "hxBrandSubstackCta" }}</span>
+              <span aria-hidden="true">↗&#xFE0E;</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <div class="hx-pillars">
+        {{- range $i, $pl := $pillars }}
+        <a class="hx-pillar" href="{{ $pl.url }}" style="--p: {{ $pl.color }}; --d: {{ mul $i 60 }}ms" data-hx-reveal data-hx-spot>
+          <span class="hx-pillar-top">
+            <span class="hx-pillar-icon"><i class="fas {{ $pl.icon }}" aria-hidden="true"></i></span>
+            <span class="hx-pillar-num">{{ $pl.num }}</span>
+          </span>
+          <strong class="hx-pillar-title">{{ $pl.title }}</strong>
+          <span class="hx-pillar-desc">{{ $pl.desc }}</span>
+          <span class="hx-pillar-cta">{{ i18n "hxPillarCta" }} <span aria-hidden="true">→</span></span>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
   {{/* ============================== TOOLS ============================== */}}
   {{- with $toolsPage }}
   <section class="hx-section hx-wrap" aria-labelledby="hx-tools-title">
     <header class="hx-head hx-head-row" data-hx-reveal>
       <div>
-        <p class="hx-kicker"><span>02</span>{{ i18n "hxToolsKicker" }}</p>
+        <p class="hx-kicker"><span>03</span>{{ i18n "hxToolsKicker" }}</p>
         <h2 id="hx-tools-title" class="hx-h2">{{ i18n "homeToolsGridTitle" }}</h2>
         <p class="hx-lead">{{ i18n "hxToolsDesc" }}</p>
       </div>
@@ -275,7 +376,7 @@
   {{- $exploreIcons := slice "fa-pen-nib" "fa-feather-alt" "fa-film" "fa-cubes" "fa-toolbox" "fa-bookmark" "fa-flask" "fa-images" -}}
   <section id="explore" class="hx-section hx-wrap" aria-labelledby="hx-explore-title">
     <header class="hx-head" data-hx-reveal>
-      <p class="hx-kicker"><span>03</span>{{ i18n "hxExploreKicker" }}</p>
+      <p class="hx-kicker"><span>04</span>{{ i18n "hxExploreKicker" }}</p>
       <h2 id="hx-explore-title" class="hx-h2">{{ i18n "homeBrowseTitle" }}</h2>
       <p class="hx-lead">{{ i18n "homeBrowseDesc" }}</p>
     </header>
@@ -298,7 +399,7 @@
   <section id="hx-writing" class="hx-section hx-wrap" aria-labelledby="hx-writing-title">
     <header class="hx-head hx-head-row" data-hx-reveal>
       <div>
-        <p class="hx-kicker"><span>04</span>{{ i18n "hxWritingKicker" }}</p>
+        <p class="hx-kicker"><span>05</span>{{ i18n "hxWritingKicker" }}</p>
         <h2 id="hx-writing-title" class="hx-h2">{{ i18n "homeCat0" }}</h2>
         <p class="hx-lead">{{ i18n "hxWritingDesc" }}</p>
       </div>
@@ -341,11 +442,18 @@
   <section class="hx-section hx-wrap hx-connect-wrap" aria-labelledby="hx-connect-title">
     <div class="hx-connect" data-hx-reveal data-hx-spot>
       <span class="hx-connect-bg" aria-hidden="true"></span>
-      <p class="hx-kicker"><span>05</span>{{ i18n "hxConnectKicker" }}</p>
+      <div class="hx-connect-avatar">
+        <img src="/images/avatar-momo.jpg" alt="{{ i18n "hxIdentityName" }}" width="76" height="76" loading="lazy" decoding="async" />
+      </div>
+      <p class="hx-kicker"><span>06</span>{{ i18n "hxConnectKicker" }}</p>
       <h2 id="hx-connect-title" class="hx-connect-title">{{ i18n "hxConnectTitle" }}</h2>
       <p class="hx-lead">{{ i18n "hxConnectDesc" }}</p>
       <div class="hx-ctas hx-ctas-center">
-        <a class="hx-btn hx-btn-primary" href="mailto:me@maoxunxing.com">
+        <a class="hx-btn hx-btn-primary" href="{{ $substackURL }}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-newspaper" aria-hidden="true"></i>
+          <span>{{ i18n "hxBrandSubstackCta" }}</span>
+        </a>
+        <a class="hx-btn hx-btn-dark-ghost" href="mailto:me@maoxunxing.com">
           <i class="fas fa-envelope" aria-hidden="true"></i>
           <span>{{ i18n "hxConnectEmail" }}</span>
         </a>

@@ -360,7 +360,7 @@ other = "public write-ups"
 other = "years in engineering"
 
 [hxMarquee]
-other = "AI coding|Agent harness|MCP|Browser use|Full-stack|Indie products|One-person company|Long-term investing|Content creation|Frontend engineering"
+other = "Momo · maoxunxing|Ex-NetEase & Alibaba|AI Coding & Harness|One-Person Company|Options Made Simple|Bilingual Writing|Browser Use|MCP|Indie Products|Long-Term Investing"
 
 [hxBuildingTitle]
 other = "One person. Several product lines."
@@ -390,10 +390,10 @@ other = "All posts"
 other = "Contact"
 
 [hxConnectTitle]
-other = "Have an idea? Let's build something."
+other = "Stay in touch — let's build something with AI."
 
 [hxConnectDesc]
-other = "Collaboration, consulting, or just saying hi. All welcome."
+other = "Honest notes on AI coding, solo products, and long-term investing. Subscribe to the newsletter, or email me anytime."
 
 [hxConnectEmail]
 other = "Email me"
@@ -406,3 +406,103 @@ other = "Visit"
 
 [hxToolsTileFoot]
 other = "Everything runs in your browser"
+
+# ---------- Homepage v4 Personal Brand (hx*) ----------
+[hxIdentityName]
+other = "Momo"
+
+[hxIdentityRole]
+other = "Ex-NetEase & Alibaba Frontend · AI Indie Builder"
+
+[hxBrandHeroL1]
+other = "I'm Momo —"
+
+[hxBrandHeroL2]
+other = "shipping like a team with AI."
+
+[hxBrandHeroDesc]
+other = "10+ years of frontend engineering at NetEase and Alibaba. I turn real problems across AI coding, indie products, and investing into browser tools, four vertical sites, and honest bilingual notes."
+
+[hxProof1]
+other = "Ex-NetEase & Alibaba"
+
+[hxProof2]
+other = "Author · Options Made Simple"
+
+[hxProof3]
+other = "Bilingual Builder & Writer"
+
+[hxCtaMeet]
+other = "Meet Momo"
+
+[hxBrandKicker]
+other = "About Momo"
+
+[hxBrandTitle]
+other = "Not chasing hype — turning real problems into products and public playbooks."
+
+[hxBrandLead]
+other = "A decade of engineering plus indie shipping and bilingual writing, organized into four long-term pillars."
+
+[hxBrandMotto]
+other = "Learn, Build and Grow with AGI."
+
+[hxBrandStory]
+other = "After 10+ years writing frontend code at NetEase and Alibaba, I stopped tying my ceiling to a single paycheck—turning code, AI workflows, bilingual writing, and long-term investing into a compounding solo system."
+
+[hxMilestone1Title]
+other = "NetEase & Alibaba"
+
+[hxMilestone1Sub]
+other = "10+ yrs frontend engineering"
+
+[hxMilestone2Title]
+other = "Options Made Simple"
+
+[hxMilestone2Sub]
+other = "Published Amazon ebook"
+
+[hxMilestone3Title]
+other = "200+ Bilingual Notes"
+
+[hxMilestone3Sub]
+other = "Bridging CN & global devs"
+
+[hxMilestone4Title]
+other = "Solo AI Studio"
+
+[hxMilestone4Sub]
+other = "Tools & vertical sites shipping"
+
+[hxBrandAboutCta]
+other = "Full story"
+
+[hxBrandSubstackCta]
+other = "Subscribe Newsletter"
+
+[hxPillarCta]
+other = "Explore pillar"
+
+[hxPillar1Title]
+other = "AI Coding & Engineering"
+
+[hxPillar1Desc]
+other = "Not chasing hype—wiring Cursor, Claude Code, Codex, and harnesses into real engineering: context, plans, code, and E2E verification."
+
+[hxPillar2Title]
+other = "AI One-Person Company"
+
+[hxPillar2Desc]
+other = "How one engineer productizes code and ideas—from ebooks and browser utilities to standalone vertical products."
+
+[hxPillar3Title]
+other = "Creator Workflow"
+
+[hxPillar3Desc]
+other = "Turning raw ideas into articles, covers, and bilingual distribution across this site, YouTube, WeChat, and Substack."
+
+[hxPillar4Title]
+other = "Long-Term Investing"
+
+[hxPillar4Desc]
+other = "Skipping market noise for index funds, tech ETFs, BTC, options, and household cash flow—systems thinking for compounding."
