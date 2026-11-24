@@ -5,7 +5,7 @@ intro: "这些是现在就能点开的 AI 工作台、工程 Skills 和浏览器
 entries:
   - name: "AI Prompt 工作台"
     url: "/zh-cn/prompts/"
-    desc: "33 条 Coding Agent、/loop 自动化巡检与第一性原理实战口令，支持中英双语秒切、变量即时填空与多条组合复制。"
+    desc: "55 条 Coding Agent、/loop 自动化巡检、写作 SOP 与第一性原理实战口令，支持中英双语秒切、变量即时填空与多条组合复制。"
     tags: ["Prompt", "工作台", "双语"]
   - name: "21 份 Agent Skills 体系"
     url: "/zh-cn/frontend-ai-collaboration-design/"

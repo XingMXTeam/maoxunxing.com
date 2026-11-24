@@ -223,13 +223,14 @@
       {{- end }}
 
       {{/* Flagship Prompt Studio Workbench (6 cols) */}}
+      {{- $promptCount := len site.Data.prompts.items -}}
       <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="{{ "prompts/" | relLangURL }}"
          style="--a: #6366f1; --b: #06b6d4; align-items: flex-start" data-hx-reveal data-hx-spot>
         <span class="hx-pico" style="--a: #6366f1; --b: #06b6d4"><i class="fas fa-terminal" aria-hidden="true"></i></span>
         <span class="hx-tile-copy">
-          <span class="hx-tile-kicker">{{ if $isZh }}PROMPT STUDIO · 33 条中英双语口令{{ else }}PROMPT STUDIO · 33 BILINGUAL PROMPTS{{ end }}</span>
+          <span class="hx-tile-kicker">{{ if $isZh }}PROMPT STUDIO · {{ $promptCount }} 条中英双语口令{{ else }}PROMPT STUDIO · {{ $promptCount }} BILINGUAL PROMPTS{{ end }}</span>
           <strong class="hx-tile-title">{{ if $isZh }}高频实战 AI Prompt 工作台{{ else }}Practical AI Prompt Studio{{ end }}</strong>
-          <span class="hx-tile-desc">{{ if $isZh }}收录 Coding Agent、/loop 自动化巡检、第一性原理与 PR 审查等 33 条实战口令，支持中英秒切、变量即时填空与多条串联组合复制。{{ else }}33 battle-tested prompts for Coding Agents, /loop automation, first principles & PR audits—instant switch, live variables, and multi-prompt stacking.{{ end }}</span>
+          <span class="hx-tile-desc">{{ if $isZh }}收录 Coding Agent、/loop 自动化巡检、第一性原理、写作 SOP 与 PR 审查等 {{ $promptCount }} 条实战口令，支持中英秒切、变量即时填空与多条串联组合复制。{{ else }}{{ $promptCount }} battle-tested prompts for Coding Agents, /loop automation, first principles, writing SOPs & PR audits—instant switch, live variables, and multi-prompt stacking.{{ end }}</span>
           <span class="hx-tags" style="margin-top: 1rem">
             <span>{{ if $isZh }}⚡ Agent 口令 & /loop{{ else }}⚡ Agent & /loop{{ end }}</span>
             <span>{{ if $isZh }}🧠 第一性原理{{ else }}🧠 First Principles{{ end }}</span>

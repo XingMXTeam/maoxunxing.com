@@ -5,7 +5,7 @@ intro: "These are the AI workbenches, engineering skills, and browser tools you 
 entries:
   - name: "AI Prompt Studio"
     url: "/en/prompts/"
-    desc: "33 battle-tested prompts for Coding Agents, /loop automation, and first-principles thinking—with bilingual switching, live variables, and prompt stacking."
+    desc: "55 battle-tested prompts for Coding Agents, /loop automation, writing SOPs, and first-principles thinking—with bilingual switching, live variables, and prompt stacking."
     tags: ["Prompts", "Studio", "Bilingual"]
   - name: "21 Agent Skills System"
     url: "/en/frontend-ai-collaboration-design/"

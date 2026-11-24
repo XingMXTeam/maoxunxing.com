@@ -110,7 +110,7 @@ other = "/en/media/"
 other = "Prompt Studio"
 
 [homeBrowse4Desc]
-other = "33 bilingual prompts with live variables & stacking"
+other = "55 bilingual prompts with live variables & stacking"
 
 [homeBrowse4Href]
 other = "/en/prompts/"

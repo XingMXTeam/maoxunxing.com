@@ -58,6 +58,15 @@ presets:
       - git-history-archaeology
       - newcomer-cognitive-load
       - bug-retro-to-rules
+  - id: creator-ship-stack
+    name_zh: "深度创作去 AI 味三连"
+    name_en: "Creator Anti-Slop Stack"
+    desc_zh: "八步写作 SOP → 禁主持人腔终审 → 爆款四行开头"
+    desc_en: "8-step writing SOP → Strip host announcements → 4-line viral hook"
+    ids:
+      - eight-step-writing-sop
+      - no-host-announcements
+      - x-viral-hook-template
 
 items:
   # ==================== 1. Agent & /loop (12) ====================
@@ -1129,3 +1138,1060 @@ items:
       /goal
 
       the session should not end until you've verified that the human has demonstrated that she understood everything on your list.
+
+
+  # ==================== Notion Curated Additions (22) ====================
+  - id: codex-agents-md-rules
+    category: agent
+    stage: "AGENTS.md"
+    stage_en: "AGENTS.md"
+    featured: true
+    short: false
+    title_zh: "Codex / Agent 6+1 条反偷懒指令"
+    title_en: "6+1 Anti-Laziness Rules for AGENTS.md"
+    summary_zh: "封死 Coding Agent 最常见的偷懒路径：不套模板先定标、踩坑写进 HANDOFF.md、UI 让布局说话、修 Bug 必治根因。"
+    summary_en: "Closes the 7 most common coding-agent shortcuts: first-principles scoping, HANDOFF.md memory, perf gates, anti-slop UI, and root-cause bug fixes."
+    tags_zh: ["AGENTS.md", "反偷懒", "Codex"]
+    tags_en: ["AGENTS.md", "Discipline", "Codex"]
+    body_zh: |-
+      以下是一组写进全局或项目 `AGENTS.md` 的核心「反偷懒」约束：
+
+      1. **第一性原理，先定标再动手**：使用第一性原理思考，先确认真实目标、约束和成功标准，不要直接套用惯例或模板解法。
+      2. **按复杂度选回答形态**：简单问题直接回复；复杂结构、方案对比或验证结果，用独立 HTML 页面直观呈现。
+      3. **踩坑写进 `HANDOFF.md`，先查再做**：把项目级踩坑写进 `HANDOFF.md`，执行新任务前先读取 `HANDOFF.md`，避免同一个坑踩两次。
+      4. **浏览器权限分级**：仅在默认允许的沙箱浏览器内操作；涉及用户日常主浏览器前先征得确认。
+      5. **生产任务把性能开销纳入验收**：涉及上线、部署或生产环境的任务，将性能与包体积开销纳入设计与验收标准，不后补。
+      6. **涉及 UI，让布局自己说话**：Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
+      7. **修 Bug 修根因（第一性原理）**：Fix a bug at its cause, reasoning from first principles and established best practice. Do not patch over the symptom.
+    body_en: |-
+      Core anti-laziness constraints for your global or project `AGENTS.md`:
+
+      1. **First-principles scoping**: Reason from first principles—confirm the real goal, constraints, and success criteria before falling back to boilerplate patterns.
+      2. **Match output format to complexity**: Answer simple questions concisely; use a standalone visual HTML report for complex comparisons or verification proofs.
+      3. **Persistent pitfall memory (`HANDOFF.md`)**: Document solved traps in `HANDOFF.md` and read it first before starting new tasks so mistakes never repeat.
+      4. **Browser permission tiers**: Default to the isolated/sandboxed browser; always ask before controlling the user's primary daily browser.
+      5. **Performance as acceptance criteria**: For any production or deployment task, include runtime performance and bundle impact in the definition of done.
+      6. **UI clarity without text crutches**: Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
+      7. **Root-cause fixes only**: Fix a bug at its cause, reasoning from first principles and established best practice. Do not patch over the symptom.
+
+  - id: ai-collab-six-principles
+    category: agent
+    stage: "协作纪律"
+    stage_en: "Collab Rules"
+    featured: false
+    short: false
+    title_zh: "AI 结对开发六条协作原则"
+    title_en: "6 Principles for Human-AI Pair Engineering"
+    summary_zh: "来自实战复盘的高效协作口径：只说效果不说实现、先对齐方案再写码、一 PR 一问题、决策归人、用调试面板加速视觉迭代。"
+    summary_en: "Battle-tested collaboration rules: specify outcomes not code, ask for a plan first, provide visual references, one issue per PR, and keep design ownership."
+    tags_zh: ["协作", "前端", "工作流"]
+    tags_en: ["Collaboration", "Frontend", "Workflow"]
+    body_zh: |-
+      与我协作开发时，请严格遵循以下 6 条工程配合原则：
+
+      1. **只围绕目标效果协作**：我会描述想要的交互与视觉效果，而不是替你指定底层实现细节；把你当成资深前端工程师。
+      2. **先给方案再动手**：改动涉及架构或 UI 调整时，先给出简明方案与权衡，对齐后再写代码。
+      3. **参考图优先于纯文字调优**：涉及视觉细节时，优先对照我提供的截图/参考图对齐，不要盲猜像素。
+      4. **一次只修一个问题（One PR, One Issue）**：不要把多个不相关改动混在一起，确保每次变更可独立回滚与验证。
+      5. **产品与设计拍板归我，实现归你**：遇到产品取舍或设计风格分歧时向我确认，不要擅自替我做产品决策。
+      6. **资产代码化 + 调试面板**：视觉参数与资产尽量用代码/Token 表达方便微调；复杂交互配可截图验证的调试状态，改完截图确认后再交付。
+    body_en: |-
+      Follow these 6 human-AI pair engineering principles on this project:
+
+      1. **Outcome over micromanagement**: I specify the desired behavior and UX; treat yourself as a senior engineer choosing the cleanest implementation.
+      2. **Plan before coding**: Propose the approach and trade-offs first before making structural or UI changes.
+      3. **Visual reference over text guessing**: When tuning UI, align against reference screenshots rather than guessing pixel tweaks in prose.
+      4. **One issue per change**: Fix one problem at a time—never bundle unrelated edits into one patch.
+      5. **Human owns product & design calls**: Escalate product or visual trade-offs to me; do not silently make product decisions.
+      6. **Code-driven assets & visual verification**: Express styling via clean tokens/code and verify UI changes with real screenshots before calling work done.
+
+  - id: brainstorming-partner
+    category: thinking
+    stage: "发散构思"
+    stage_en: "Brainstorm"
+    featured: true
+    short: false
+    title_zh: "五步结构化头脑风暴助手"
+    title_en: "5-Step Structured Brainstorming Partner"
+    summary_zh: "拒绝浅层清单！强制按「改述 → 追加盲点 → 情境化 → 示例类比 → 4 个深挖追问」输出至少 10 条高深度观点。"
+    summary_en: "Rejects shallow lists—forces Rephrase, Append blind spots, Contextualize, Examples/Analogies, and 4 Follow-up questions across 10+ deep ideas."
+    tags_zh: ["头脑风暴", "发散", "选题"]
+    tags_en: ["Brainstorming", "Ideation", "Divergent"]
+    vars:
+      - key_zh: "话题"
+        key_en: "topic"
+        label_zh: "要头脑风暴的话题或资料"
+        label_en: "Topic & optional context"
+        default_zh: "如何打造一款让开发者每天愿意打开的开源工具"
+        default_en: "How to design an open-source developer tool people use daily"
+    body_zh: |-
+      你现在是一个专业的头脑风暴助手，请根据我提供的话题与背景资料，输出尽可能多独特、有价值的观点和建议。如果信息不足，先向我追问补充。
+
+      话题与资料：{{话题}}
+
+      请严格按以下 5 个维度展开思考：
+      1. **改述（Rephrase）**：对话题重新表述，从尽可能多的角度切入理解其本质；
+      2. **追加（Append）**：提出与话题相关的延伸领域、关联命题或常见盲点；
+      3. **情境化（Contextualize）**：结合真实使用场景或业务约束，给出具体可落地的探讨角度；
+      4. **示例（Examples）**：为每个核心观点提供具体例子或跨界类比，激发灵感；
+      5. **追问（Follow-Up）**：提出至少 4 个可供继续深挖的尖锐问题。
+
+      输出要求：
+      - 最少生成 10 条观点，每条都要具体且有深度；
+      - 避免同义反复，尽量从不同视角切入；
+      - 用清晰的编号与小标题结构呈现；始终使用中文回答。
+    body_en: |-
+      You are an expert brainstorming partner. Based on the topic and optional context below, generate diverse, high-depth ideas and angles. Ask clarifying questions if the input is too vague.
+
+      Topic & context: {{topic}}
+
+      Follow this 5-step thinking loop:
+      1. **Rephrase**: Reframe the topic from multiple non-obvious angles.
+      2. **Append**: Surface adjacent domains, second-order connections, and common blind spots.
+      3. **Contextualize**: Ground ideas in concrete real-world scenarios and constraints.
+      4. **Examples**: Attach a sharp real example or analogy to every key idea.
+      5. **Follow-Up**: End with at least 4 probing follow-up questions worth exploring next.
+
+      Output rules:
+      - Generate at least 10 distinct, concrete, non-repetitive ideas;
+      - Use clean numbered headings and bullet structure.
+
+  - id: eli5-svg-explainer
+    category: thinking
+    stage: "费曼图解"
+    stage_en: "Visual ELI5"
+    featured: true
+    short: false
+    title_zh: "概念通俗讲解 + 16:10 SVG 图示专家"
+    title_en: "Plain-Language Explainer + 16:10 SVG Diagram"
+    summary_zh: "用「生活化例子 → 概念讲解 → 记忆口诀 → 彩色 16:10 SVG 图解」四段式彻底讲透一个硬核概念。"
+    summary_en: "Breaks down complex concepts in 4 crisp blocks: Everyday Analogy, Plain Explanation, Memory Hook, and a clean 16:10 color SVG diagram."
+    tags_zh: ["费曼技巧", "SVG 图解", "科普"]
+    tags_en: ["ELI5", "SVG Diagram", "Learning"]
+    vars:
+      - key_zh: "概念"
+        key_en: "concept"
+        label_zh: "需要讲透的技术或金融概念"
+        label_en: "Concept to explain"
+        default_zh: "期权的 Gamma 与时间价值损耗（Theta）"
+        default_en: "Options Gamma vs. Theta decay"
+    body_zh: |-
+      你是一位概念通俗讲解专家，擅长用深入浅出、前后一致的生活化语言把复杂概念讲透。
+
+      请帮我讲解：{{概念}}
+
+      严格按以下四部分输出：
+
+      ========== 生活化例子 ==========
+      提供贴近日常生活的类比（如多个子概念，尽量使用同一套连贯例子，保持前后一致）。
+
+      ========== 概念讲解 ==========
+      用平实通俗的语言拆解底层机制，重点内容适当加粗。
+
+      ========== 简单记法 ==========
+      给出能 10 秒记住的口诀、心智模型或对比记忆法。
+
+      ========== 图示 ==========
+      绘制一张专业美观、彩色风格的 **16:10 SVG 图解**（如空间不够可适当扩展 viewBox）：
+      - 精确计算坐标与边距，严禁文字重叠或元素溢出画框；
+      - 合理安排图层顺序（背景 → 连线 → 节点 → 标签），避免遮挡；
+      - 保持响应式 viewBox，配色清晰克制。
+    body_en: |-
+      You are an expert plain-language educator skilled at turning complex technical or financial ideas into crystal-clear explanations.
+
+      Explain: {{concept}}
+
+      Structure your response into these exact 4 sections:
+
+      ========== Everyday Analogy ==========
+      Use a relatable, consistent real-world analogy (reuse the same scenario across sub-concepts).
+
+      ========== Plain Explanation ==========
+      Break down the underlying mechanism in clear, jargon-free prose with key terms bolded.
+
+      ========== Memory Hook ==========
+      Provide a concise mnemonic, rule of thumb, or mental shortcut so it sticks immediately.
+
+      ========== Visual Diagram ==========
+      Generate a clean, well-balanced **16:10 color SVG diagram**:
+      - Compute coordinates and padding carefully so no labels overlap or clip outside the viewBox;
+      - Order layers cleanly (backgrounds → connectors → nodes → text labels) with high-contrast typography.
+
+  - id: anti-slop-ui-rule
+    category: engineering
+    stage: "UI 去 Slop"
+    stage_en: "Anti-Slop UI"
+    featured: true
+    short: true
+    title_zh: "AI 生成 UI 去 Slop 规则（含无障碍边界）"
+    title_en: "Anti-Slop UI Rule for AGENTS.md (with A11y Boundary)"
+    summary_zh: "堵死 AI 用“副标题和说明书式小字”掩盖粗糙布局的偷懒习惯，同时保留读屏器所需的可访问名称。"
+    summary_en: "Stops AI from hiding weak layout behind redundant microcopy and slogans while preserving aria-labels and form accessibility."
+    tags_zh: ["UI/UX", "AGENTS.md", "无障碍"]
+    tags_en: ["UI/UX", "AGENTS.md", "Accessibility"]
+    body_zh: |-
+      涉及 UI 与前端界面生成时，严格执行以下去 Slop 规则：
+
+      Avoid unnecessary secondary labels, descriptions, supporting text, and redundant microcopy. Let the layout do the explaining. Preserve accessible names and necessary form labels in code, even when a visual label is redundant.
+
+      自查标准：
+      - 页面上每出现一段二级说明或模块“小口号”，先问：删掉它，单靠分组、间距、层级和视觉对比能不能讲清？能，就删。
+      - 只删“给人看的视觉重复文案”，绝不删代码里的 `aria-label`、表单 `label` 关联、错误提示与不可逆操作确认说明。
+    body_en: |-
+      Apply this anti-slop UI rule across all frontend design and code generation:
+
+      Avoid unnecessary secondary labels, descriptions, supporting text, and redundant microcopy. Let the layout do the explaining. Preserve accessible names and necessary form labels in code, even when a visual label is redundant.
+
+      Self-check before shipping:
+      - For every sub-caption, helper blurb, or decorative slogan, ask: if deleted, can grouping, spacing, hierarchy, and contrast still convey the meaning? If yes, delete it.
+      - Strip redundant visual text only—keep `aria-label`, programmatic form labels, validation errors, and destructive-action confirmations intact.
+
+  - id: json-schema-extractor
+    category: engineering
+    stage: "结构化抽取"
+    stage_en: "JSON Extract"
+    featured: false
+    short: true
+    title_zh: "结构化信息提取（JSON Schema 强约束版）"
+    title_en: "Strict JSON Schema Information Extractor"
+    summary_zh: "把非结构化文本严格按给定的 JSON Schema 枚举和类型抽取，零废话直接输出可解析 JSON。"
+    summary_en: "Extracts structured entities from messy text strictly conforming to your target JSON Schema, enums, and primitive types."
+    tags_zh: ["JSON", "信息抽取", "工程"]
+    tags_en: ["JSON", "Extraction", "Engineering"]
+    vars:
+      - key_zh: "JSON Schema"
+        key_en: "json schema"
+        label_zh: "目标 JSON Schema 定义"
+        label_en: "Target JSON Schema"
+        default_zh: '{"company": {"type": "string"}, "stage": {"type": "string", "enum": ["seed", "series_a", "public"]}, "arr_usd": {"type": "number"}}'
+        default_en: '{"company": {"type": "string"}, "stage": {"type": "string", "enum": ["seed", "series_a", "public"]}, "arr_usd": {"type": "number"}}'
+      - key_zh: "输入文本"
+        key_en: "source text"
+        label_zh: "待抽取的非结构化文本"
+        label_en: "Unstructured source text"
+        default_zh: "Acme AI 刚刚完成 A 轮融资，目前年化经常性收入（ARR）达到 240 万美元。"
+        default_en: "Acme AI just closed its Series A round and currently sits at $2.4M ARR."
+    body_zh: |-
+      请从以下文本中提取结构化信息，并严格按照指定的 JSON Schema 返回合法 JSON（不要输出多余解释或 Markdown 废话；文本中未提及的字段填 `null`，禁止编造）：
+
+      输入文本：
+      {{输入文本}}
+
+      目标 JSON Schema：
+      {{JSON Schema}}
+    body_en: |-
+      Extract structured information from the text below and return valid JSON strictly conforming to the given JSON Schema. Output JSON only—no extra commentary; use `null` for missing fields and never invent values:
+
+      Source text:
+      {{source text}}
+
+      JSON Schema:
+      {{json schema}}
+
+  - id: eight-step-writing-sop
+    category: writing
+    stage: "八步写作"
+    stage_en: "8-Step SOP"
+    featured: true
+    short: false
+    title_zh: "毛毛星八步深度写作 SOP（先想清楚再讲清楚）"
+    title_en: "8-Step Deep Writing SOP (Think First, Write Clear)"
+    summary_zh: "完整实战写作体系：4 条不编造底线 → 锚定核心冲突 → 一手信源核查 → 三层递进主线 → 去主持人腔与 11 项终审。"
+    summary_en: "Full non-fiction writing SOP: 4 truthfulness rules, single-sentence conflict anchor, primary-source audit, 3-layer progression, and 11-point final review."
+    tags_zh: ["写作 SOP", "深度长文", "事实核查"]
+    tags_en: ["Writing SOP", "Longform", "Fact-Check"]
+    vars:
+      - key_zh: "选题与一手材料"
+        key_en: "topic and sources"
+        label_zh: "写作选题、目标读者与参考材料"
+        label_en: "Topic, target reader, and primary sources"
+        default_zh: "为什么很多 AI 编程项目上线即变屎山？"
+        default_en: "Why many AI-coded projects turn into unmaintainable spaghetti right after launch"
+    body_zh: |-
+      你负责按「毛毛星写作法」把以下选题写成值得读、经得起查的深度中文稿件。先想清楚（1–5 步），再讲清楚（6–7 步），最后查清楚（第 8 步终审）。
+
+      选题与材料：{{选题与一手材料}}
+
+      ## 零号底线（任何时候不许破）
+      1. **不编造**：事实、数字、原话、第一人称经历一律不编；查不到写「未核到」，禁用「大概」「据说」。
+      2. **证据成色如实标**：区分一手事实、单源转述、机构估算、情景预估，直接写给读者看。
+      3. **算术自洽**：引用增速、占比、单价先核分母与勾稽关系。
+
+      ## 执行八步
+      - **第 1 步 锚定**：用一句话说清核心问题（必须同时满足：读者关心、存在冲突、能引发讨论）。
+      - **第 2 步 一手输入**：先交「素材清单表」（信源｜一手/二手｜已读/未读｜核查状态），关键信源未读一手不开写。
+      - **第 3–4 步 归类与主线**：跳出原材结构重建分类，提炼一句能串起全文的主线。
+      - **第 5 步 三层重组**：摆事实 → 拆机制 → 落到读者身上，相邻段落必须有因果或转折。
+      - **第 6 步 真实注入**：个人经历与判断只取我提供的真实表述，不替我编经历。
+      - **第 7 步 表达硬规则**：
+        - 禁主持人腔/报幕句（删掉「先看原文 / 划重点 / 接下来我们看」）；
+        - 禁三连排比同构；「不是 X，而是 Y」全篇最多 1 次；
+        - 小标题写信息，不写「第一层：背景介绍」式脚手架；
+        - 先摆细节/数字再给判断；新术语首次出现用人话翻译；
+        - 收尾停在具体事实与专属判断，禁用「让我们拭目以待」式万能升华。
+      - **第 8 步 终审**：逐字核对核心问题、脚手架清零、算术自洽、信源口径与去 AI 味后再交付。
+    body_en: |-
+      Write a deeply researched, fact-checked article following this 8-step non-fiction SOP: Think First (Steps 1–5), Write Clear (Steps 6–7), and Audit Before Shipping (Step 8).
+
+      Topic & sources: {{topic and sources}}
+
+      ## Non-Negotiable Ground Rules
+      1. **Zero fabrication**: Never invent facts, numbers, quotes, or first-person anecdotes. Mark unverified items explicitly.
+      2. **Label evidence quality**: Distinguish primary facts, single-source claims, estimates, and projections openly for the reader.
+      3. **Verify math**: Check denominators and unit consistency before citing any growth rate or ratio.
+
+      ## 8-Step Workflow
+      - **1. Anchor**: Define the core tension in one sentence (relevant, conflicting, debatable).
+      - **2. Primary Sources**: Build a source table (Source | Primary/Secondary | Read/Unread | Verification status) before drafting.
+      - **3–4. Structure & Spine**: Regroup around the core tension and extract one unifying thesis sentence.
+      - **5. 3-Layer Progression**: Facts → Mechanism → Impact on the reader, with explicit causal links between paragraphs.
+      - **6. Authentic Voice**: Only include real personal experiences I provide—never invent anecdotes.
+      - **7. Craft Rules**: Strip host-style announcements ("let's look at next", "here are the key points"), avoid repetitive parallel triplets, keep headings informative (no scaffolding labels), translate jargon on first mention, and end on a concrete takeaway rather than generic clichés.
+      - **8. Line-by-Line Audit**: Read every sentence to verify sources, math, transitions, and zero AI slop before delivery.
+
+  - id: no-host-announcements
+    category: writing
+    stage: "去 AI 味"
+    stage_en: "No Host Tone"
+    featured: true
+    short: true
+    title_zh: "去 AI 味补丁：禁主持人腔（报幕句）"
+    title_en: "Anti-AI-Slop Patch: Ban Host Announcements"
+    summary_zh: "专门清理文章、卡片和脚本里最显 AI 味的“报幕句”（先看原文、划重点、接下来我们看），用事实本身过渡。"
+    summary_en: "Strips out zero-information announcer transitions ('let's look at', 'here's the key takeaway') and replaces them with concrete facts."
+    tags_zh: ["去 AI 味", "改稿", "报幕句"]
+    tags_en: ["Anti-Slop", "Editing", "Transitions"]
+    vars:
+      - key_zh: "待审草稿"
+        key_en: "draft"
+        label_zh: "需要清理报幕句的文稿"
+        label_en: "Draft to de-slop"
+        default_zh: "请粘贴你的文章或小红书图文草稿"
+        default_en: "Paste your article or post draft here"
+    body_zh: |-
+      逐句审查下面的文稿，清理所有「主持人腔 / 报幕句」：
+
+      规则：标题、小标题、卡片标题和过渡句只写信息本身，严禁用替读者「预告」内容的报幕句（这类句子不增加任何信息，是最典型的 AI 味）。
+
+      重点排查并删改这些病句模式：
+      - 「数据和政策都摆出来」「先看原文」「接下来我们看」「话不多说」
+      - 「划重点」「敲黑板」「重点来了」「换个算法看看」「排名一摆就冷静了」
+
+      改法示例：
+      - ❌「先看原文：政策和数据，都摆出来」→ ✅「国办 29 号文件原文」
+      - ❌「排名一摆就冷静了」→ ✅「需供比排名（智联三季度）：」
+      - ❌「换个算法，不看增速，看抢人程度」→ ✅「缺不缺人，看需供比。」
+
+      输出：先列出修改对照表（原句 → 改后），再给出清理干净的全文。
+
+      待审草稿：
+      {{待审草稿}}
+    body_en: |-
+      Audit the draft below line by line and eliminate all "host-style announcer transitions":
+
+      Rule: Headings, subheadings, card titles, and transitions must state the information itself—never announce to the reader what you are about to show next.
+
+      Strip patterns such as:
+      - "Let's look at the data", "Next, let's dive into", "Here is the key point", "Without further ado", "Let's break this down"
+
+      Example fixes:
+      - ❌ "First, let's look at the official numbers" → ✅ "Q3 Hiring Supply-Demand Ratio (Zhilian):"
+      - ❌ "Now let's switch perspectives" → ✅ "What actually drives retention is onboarding speed:"
+
+      Output a before/after diff table first, then the clean revised draft.
+
+      Draft:
+      {{draft}}
+
+  - id: writing-value-domino-check
+    category: writing
+    stage: "深度终审"
+    stage_en: "Value Gate"
+    featured: false
+    short: false
+    title_zh: "判断价值门槛 + 多米诺递进终审"
+    title_en: "Value Gate & Domino Progression Audit"
+    summary_zh: "消灭脱离主题也能成立的“正确的废话”，检查相邻段落是否如多米诺骨牌般因果推动，结尾是否真正回收开头。"
+    summary_en: "Kills generic truisms ('stay patient', 'think independently') and enforces causal domino flow plus a concrete, non-cliché ending."
+    tags_zh: ["终审", "逻辑链", "信息密度"]
+    tags_en: ["Editing", "Logic Flow", "Signal"]
+    vars:
+      - key_zh: "文章正文"
+        key_en: "article body"
+        label_zh: "待终审的文章正文"
+        label_en: "Article body to audit"
+        default_zh: "请粘贴需要做深度逻辑与废话审查的正文"
+        default_en: "Paste article body for value & flow audit"
+    body_zh: |-
+      请用「判断价值门槛 + 多米诺骨牌递进」标准审校以下文章：
+
+      1. **判断价值门槛（删“正确的废话”）**：文中每一个判断，必须至少提供以下一种增量价值：解释机制或因果链 / 区分易混淆情况 / 改变决策条件 / 给出可执行检查或关键验证变量。如果一句话脱离本文主题放到任何商业或成长文章里都成立（如“保持耐心、独立思考、坚持长期主义”），一律标出并删除或改写为「对象 + 比较关系 + 触发条件 + 可执行动作」。
+      2. **多米诺骨牌式推进**：检查删掉所有小标题后，正文是否仍能顺畅连读？相邻段落是否构成因果、转折或追问，而不是把观点并列成资料卡？
+      3. **具体细节托底**：检查每个重要论断的同一屏内是否有可见细节（谁做了什么、钱从哪流向哪、分母与时间范围）。
+      4. **结尾验收**：是否回收了开头的问题/画面？是否压缩出一句只属于本文、可被记住的判断 + 一个具体可回答的思考题或行动顺序？
+
+      待审正文：
+      {{文章正文}}
+    body_en: |-
+      Audit the article below against the **Value Gate & Domino Progression** standard:
+
+      1. **Value Gate (Kill generic truisms)**: Every claim must add at least one of: causal mechanism, sharp distinction, decision threshold change, or actionable verification check. Flag and delete/rewrite any sentence that would fit any random business/self-help essay ("stay patient", "think long-term", "keep learning"). Rewrite judgments as: `Subject + Comparison + Trigger Condition + Concrete Action`.
+      2. **Domino Flow**: If you remove all subheadings, do adjacent paragraphs still push each other forward via cause, contrast, or follow-up questions rather than reading like disconnected bullet cards?
+      3. **Detail Grounding**: Ensure every major claim has visible evidence nearby (who acted, money/data flow, denominator, and timeframe).
+      4. **Closing Check**: Does the ending resolve the opening tension with a specific, article-unique takeaway and a concrete next check?
+
+      Article:
+      {{article body}}
+
+  - id: blackstone-article-style
+    category: writing
+    stage: "体式模板"
+    stage_en: "Style Spec"
+    featured: false
+    short: true
+    title_zh: "黑石体：高信息密度硬核长文体式"
+    title_en: "Blackstone Style: Ultra-Dense Fact-First Format"
+    summary_zh: "极简高密度的研究/行业解析排版口令：开篇要点 + 编号硬数据 + 原话独立成行，议论只留头尾两处。"
+    summary_en: "Ultra-dense research format: key takeaways upfront, numbered hard data and verbatim quotes in the body, commentary restricted to conclusions."
+    tags_zh: ["黑石体", "公众号", "高信息密度"]
+    tags_en: ["Format", "Research", "High Density"]
+    vars:
+      - key_zh: "素材或主题"
+        key_en: "material"
+        label_zh: "要写成黑石体的素材或主题"
+        label_en: "Topic or raw research material"
+        default_zh: "请粘贴研报、访谈实录或行业新闻素材"
+        default_en: "Paste research notes, transcript, or news material"
+    body_zh: |-
+      请按「黑石体」写下面这篇内容：
+      - 信息密度拉满，标题必须有真实冲突感；
+      - 开篇用「📍 核心要点」3 句话直击全篇最硬结论，接 `━━━` 分隔线；
+      - 正文用 ① ② ③ 编号 + 硬数据 + 关键人物/文件原话独立成行推进，默认不加作者个人主观议论；
+      - 议论与判断只留在「⭐ 核心结论」和「📝 写在最后」两处，末尾附「📌 来源说明」与「⚠️ 合规提示」。
+
+      素材或主题：
+      {{素材或主题}}
+    body_en: |-
+      Write the piece below in the high-density **Blackstone Research Format**:
+      - Maximize signal density with a tension-driven headline;
+      - Open with 3 crisp upfront takeaways (`📍 Key Takeaways`), followed by a divider;
+      - Advance the body strictly via numbered blocks (`① ② ③`), hard numbers, and standalone verbatim quotes—keep subjective commentary out of the body;
+      - Reserve analysis strictly for `⭐ Core Conclusions` and `📝 Final Note`, ending with source citations.
+
+      Material:
+      {{material}}
+
+  - id: x-viral-hook-template
+    category: writing
+    stage: "爆款开头"
+    stage_en: "Viral Hook"
+    featured: true
+    short: true
+    title_zh: "X / 社交爆款四行开头公式（中英模板）"
+    title_en: "4-Line Viral Hook Formula (X / Thread / Short Video)"
+    summary_zh: "「站队表态 → 转折出痛点 → 好消息+我亲自发现+奇数清单 → 量化倍数承诺」四行高互动开篇模板。"
+    summary_en: "High-engagement 4-line opener: Strong stance → Shared pain point → 'I figured out N ways' → Concrete multiplier promise."
+    tags_zh: ["X/Twitter", "爆款开头", "Hook"]
+    tags_en: ["X/Twitter", "Hook", "Copywriting"]
+    vars:
+      - key_zh: "产品或工具"
+        key_en: "product"
+        label_zh: "主角产品或工具名"
+        label_en: "Product or tool name"
+        default_zh: "Claude Code"
+        default_en: "Claude Code"
+      - key_zh: "痛点资源"
+        key_en: "pain resource"
+        label_zh: "大家觉得不够用的稀缺资源"
+        label_en: "Scarce resource people want more of"
+        default_zh: "上下文和额度"
+        default_en: "usage quota"
+      - key_zh: "招数数量"
+        key_en: "count"
+        label_zh: "奇数清单数量（如 7）"
+        label_en: "Odd number of tricks (e.g. 7)"
+        default_zh: "7"
+        default_en: "7"
+      - key_zh: "量化结果"
+        key_en: "multiplier"
+        label_zh: "真实可兑现的倍数或结果"
+        label_en: "Verified multiplier or outcome"
+        default_zh: "3 倍"
+        default_en: "3x"
+    body_zh: |-
+      请用这套 4 行高互动开头公式，为「{{产品或工具}}」生成 3 组中文版（适合小红书/视频号）和 3 组英文版（适合 X Thread）开头：
+
+      【结构模板】
+      第 1 行（站队）：{{产品或工具}} 是现在最强的 [品类]，没有之一。
+      第 2 行（痛点）：问题是：大家总觉得 {{痛点资源}} 不够用。
+      第 3 行（一手发现）：好消息：我摸出了 {{招数数量}} 个办法，让同样的成本多干好几倍活。
+      第 4 行（量化交付）：这条把 {{招数数量}} 招全讲完，看完你能把产出翻 {{量化结果}}：
+
+      注意约束：
+      - 一行一句，手机首屏一眼读完；
+      - 第 1 行必须是真心话；第 4 行倍数只用实测过的数据，没实测写「大幅提升」；
+      - 同时输出一个 ≤20 字的小红书短标题。
+    body_en: |-
+      Generate 3 English X/Thread openers and 3 Chinese openers for "{{product}}" using this 4-line viral hook formula:
+
+      Line 1 (Bold stance): {{product}} is easily the best [category] on planet Earth right now
+      Line 2 (Shared pain): The issue is, people want MORE {{pain resource}}
+      Line 3 (First-hand discovery): Good news: I figured out {{count}} ways to get WAY more out of {{product}}
+      Line 4 (Concrete promise): In this thread/video I cover all {{count}} tricks so you can get {{multiplier}} more out of {{product}}:
+
+      Constraints:
+      - One sentence per line, scannable on mobile;
+      - Only capitalize 1–2 desire words (MORE, WAY);
+      - Back up any multiplier with real experience—never fake metrics.
+
+  - id: cover-art-7-styles
+    category: media
+    stage: "封面生图"
+    stage_en: "Cover Styles"
+    featured: true
+    short: false
+    title_zh: "博客与文章封面 7 种生图关键词库"
+    title_en: "7 Editorial Cover Art Style Prompts + Topic Matcher"
+    summary_zh: "按文章题材精准匹配 7 种高级感视觉风格（黑白地下 / 复古版画 / 美联社纪实 / 水墨 / 波普 / 赛博朋克 / 浮世绘），附直接可用的英文生图关键词。"
+    summary_en: "Curated prompt library for 7 distinct cover aesthetics (Underground Zine, Woodcut, AP Press, Shuimo Ink, Pop Art, Cyberpunk, Ukiyo-e) matched by topic."
+    tags_zh: ["生图", "封面设计", "视觉风格"]
+    tags_en: ["Image Gen", "Cover Art", "Styles"]
+    vars:
+      - key_zh: "文章主题"
+        key_en: "article topic"
+        label_zh: "要画封面的文章标题或画面主体"
+        label_en: "Article topic or visual subject"
+        default_zh: "AI Agent 在真实代码库里持续巡检与修复 Bug"
+        default_en: "An AI agent patrolling a live codebase and fixing bugs overnight"
+    body_zh: |-
+      请为文章「{{文章主题}}」匹配最贴合的封面风格，并生成可直接粘贴到生图模型（Nano Banana / Midjourney / GPT Image）的完整英文提示词（Prompt）：
+
+      ## 7 种可选风格与对应英文关键词
+      1. **黑白地下风**（批判 / 祛魅 / 行业真相）：`black and white underground zine, photocopied punk fanzine, high-contrast grain, raw cut-and-paste collage`
+      2. **复古版画风**（历史复盘 / 经典理论 / 深度长文）：`vintage woodcut engraving, linocut print, cross-hatching, antique book illustration`
+      3. **美联社纪实风**（新闻 / 访谈 / 现场报道）：`Associated Press photojournalism, documentary news photography, realistic press photo, on-the-scene`
+      4. **中国水墨画风**（文化 / 哲学 / 随笔 / 东方视角）：`Chinese ink wash painting, shuimo, minimalist brush strokes, lots of negative space`
+      5. **波普艺术风**（消费 / 流行文化 / 轻松选题）：`pop art, Roy Lichtenstein halftone dots, Andy Warhol screen print, bold primary colors, comic style`
+      6. **赛博朋克风**（AI / 未来科技 / 机器人）：`cyberpunk, neon lights, rainy futuristic city, blade runner mood, cyan and magenta`
+      7. **浮世绘风**（趋势浪潮 / 时代变迁比喻）：`Japanese ukiyo-e woodblock print, Hokusai and Hiroshige style, flat colors, bold outlines`
+
+      要求：不要只写风格名，必须把选中风格的英文关键词与具体主体画面、构图、光线和留白（避免文字乱码，不生成画面文字）融合成 2 条可直接使用的高质量生图 Prompt。
+    body_en: |-
+      Match the best cover aesthetic below to the article "{{article topic}}" and write 2 ready-to-use image generation prompts (combining the exact style keywords with a concrete visual metaphor, lighting, and clean negative space with NO text in image):
+
+      1. **Underground Zine** (Critique / Industry Truth): `black and white underground zine, photocopied punk fanzine, high-contrast grain, raw cut-and-paste collage`
+      2. **Vintage Woodcut** (History / Deep Essay / Theory): `vintage woodcut engraving, linocut print, cross-hatching, antique book illustration`
+      3. **AP Photojournalism** (News / Interviews / Field Reports): `Associated Press photojournalism, documentary news photography, realistic press photo, on-the-scene`
+      4. **Chinese Shuimo Ink** (Culture / Philosophy / Personal Essays): `Chinese ink wash painting, shuimo, minimalist brush strokes, lots of negative space`
+      5. **Pop Art** (Consumer Tech / Pop Culture): `pop art, Roy Lichtenstein halftone dots, Andy Warhol screen print, bold primary colors, comic style`
+      6. **Cyberpunk** (AI / Robotics / Frontier Tech): `cyberpunk, neon lights, rainy futuristic city, blade runner mood, cyan and magenta`
+      7. **Ukiyo-e Woodblock** (Macro Waves / Era Shifts): `Japanese ukiyo-e woodblock print, Hokusai and Hiroshige style, flat colors, bold outlines`
+
+  - id: html-knowledge-cards
+    category: media
+    stage: "HTML 卡片"
+    stage_en: "HTML Cards"
+    featured: false
+    short: true
+    title_zh: "高颜值 HTML 知识卡片网页生成器"
+    title_en: "Visual HTML Knowledge Cards Generator"
+    summary_zh: "将任意长文或笔记一键转化为配色克制、排版美观的独立 HTML 知识卡片集，含「核心观点 + 解释 + 行动建议」。"
+    summary_en: "Converts any notes or essay into a clean, single-file responsive HTML grid of knowledge cards with Core Idea, Explanation, and Action."
+    tags_zh: ["HTML", "知识卡片", "排版"]
+    tags_en: ["HTML", "Knowledge Cards", "Design"]
+    vars:
+      - key_zh: "卡片内容"
+        key_en: "content"
+        label_zh: "要做成知识卡片的原始内容"
+        label_en: "Source notes or points"
+        default_zh: "请粘贴需要制作成知识卡片的读书笔记或文章要点"
+        default_en: "Paste reading notes or key takeaways here"
+    body_zh: |-
+      请将以下内容用单个完整 HTML 文件（内联漂亮 CSS，配色高级克制、响应式网格排版）绘制成一组知识卡片展示网页：
+
+      1. 网页顶部包含简洁的总标题与副标题；
+      2. 每张卡片包含四个清晰区块：
+         - **卡片标题**（提炼该观点核心）
+         - **核心观点**（一句话精炼点破重点）
+         - **解释说明**（一段简明机制解释）
+         - **建议行动**（给出可落地的工作或学习下一步动作）
+      3. 直接输出完整的单文件 HTML 代码。
+
+      内容：
+      {{卡片内容}}
+    body_en: |-
+      Transform the content below into a single, self-contained HTML page with refined, responsive CSS grid styling displaying a set of visual knowledge cards:
+
+      1. Include a crisp document title and subtitle at the top;
+      2. Each card must contain 4 distinct blocks:
+         - **Title** (core summary of the point)
+         - **Core Idea** (one sharp takeaway sentence)
+         - **Explanation** (concise reasoning or mechanism)
+         - **Actionable Step** (concrete next step for work or study)
+      3. Output the complete, runnable HTML code.
+
+      Content:
+      {{content}}
+
+  - id: talking-head-video-script
+    category: media
+    stage: "口播脚本"
+    stage_en: "Video Script"
+    featured: true
+    short: false
+    title_zh: "自然口播短视频脚本 & 分镜生成（45–90s）"
+    title_en: "Natural Talking-Head Video Script & Shot List (45–90s)"
+    summary_zh: "拒绝把文章念出来！按「3 秒冲突 Hook → 证据画面 → 大白话解释 → 核心数据 → 个人判断」生成可直接上提词器的分镜脚本。"
+    summary_en: "Turns any topic into a conversational 45–90s vertical video script + shot list: 3s conflict hook, screen evidence, plain explanation, and personal call."
+    tags_zh: ["口播脚本", "分镜", "短视频"]
+    tags_en: ["Video Script", "Storyboard", "Short Video"]
+    vars:
+      - key_zh: "视频选题"
+        key_en: "video topic"
+        label_zh: "短视频选题与核心素材"
+        label_en: "Video topic and source facts"
+        default_zh: "为什么很多 AI Coding Agent 跑完测试还是会把项目改坏？"
+        default_en: "Why AI coding agents still break production even when unit tests pass"
+      - key_zh: "目标时长"
+        key_en: "duration"
+        label_zh: "目标时长（如 60 秒）"
+        label_en: "Target duration (e.g. 60s)"
+        default_zh: "60 秒"
+        default_en: "60 seconds"
+    body_zh: |-
+      请围绕「{{视频选题}}」为我创作一条约 {{目标时长}} 的竖屏口播分镜脚本。
+
+      核心原则（口播稿不是文字稿）：
+      - **像跟朋友聊天**：每句 5–18 个字，一句话只说一个意思，保留自然停顿（用 `/` 标出）和重音（加粗），禁止「今天跟大家聊聊」「综上所述」等书面腔。
+      - **前 3–5 秒必须给冲突**：直接抛反常识、数字对比或痛点，不做自我介绍。
+      - **真人与证据比例 6:4**：真人负责 Hook 与判断，录屏/截图负责证据。
+
+      按以下 6 段结构输出，并同时交付「分镜表（时间｜画面类型｜可直接念的口播｜屏幕大字｜剪辑提示）」+「拍摄前素材清单」：
+      1. **0–5s Hook**：真人出镜，一句话抛出最大反差或问题。
+      2. **5–15s 证据**：切录屏/截图/原始数据，证明不是空口判断。
+      3. **15–25s 大白话解释**：切回真人，一句人话破除常见误解。
+      4. **25–40s 核心机制/对比**：最多 2–3 组关键数据或过程，不塞满屏幕。
+      5. **40–55s 与观众关系**：成本、风险或具体场景落点。
+      6. **55s+ 个人判断**：给出明确观点与条件边界，留一个自然讨论问题收尾。
+    body_en: |-
+      Write a conversational {{duration}} vertical talking-head video script & shot list for: "{{video topic}}".
+
+      Core principles (spoken script ≠ written essay):
+      - **Talk like explaining to a friend**: 5–18 words per sentence, one idea per breath, mark natural pauses (`/`) and emphasis (**bold**). Zero stiff greetings ("Hey guys today we'll talk about...").
+      - **3-second conflict hook**: Open with a counter-intuitive contrast, hard number, or urgent problem—no self-intro.
+      - **60% Talking Head / 40% Visual Proof**: Use face-cam for hooks and judgment; cut to screen recordings/screenshots for evidence.
+
+      Deliver a shot-by-shot table (`Time | Shot Type | Spoken Line | On-Screen Text | Edit Cue`) + a pre-shoot asset checklist across these 6 beats:
+      1. **0–5s Hook** (Face-cam conflict)
+      2. **5–15s Evidence** (Screen/proof cut)
+      3. **15–25s Plain Explanation** (Kill the #1 misconception)
+      4. **25–40s Core Mechanism** (Max 2–3 numbers or steps)
+      5. **40–55s So What / Risk** (Why it matters to the viewer)
+      6. **55s+ Your Call** (Clear judgment + one natural question)
+
+  - id: chatcut-talking-head-edit
+    category: media
+    stage: "AI 剪辑"
+    stage_en: "AI Video Edit"
+    featured: false
+    short: true
+    title_zh: "ChatCut / AI 口播粗剪通用提示词模板"
+    title_en: "ChatCut / AI Talking-Head Rough-Cut Prompt"
+    summary_zh: "上传真人口播与录屏素材后直接粘贴的剪辑指令：精准卡点切 B-roll、放大关键数字、保留呼吸感、拒绝新闻主播腔。"
+    summary_en: "Ready-to-paste editing instruction for AI video editors: locks the 3–5s hook, syncs B-roll cues, enlarges key metrics, and preserves natural pacing."
+    tags_zh: ["ChatCut", "剪辑", "口播"]
+    tags_en: ["ChatCut", "Video Editing", "Prompt"]
+    vars:
+      - key_zh: "时长"
+        key_en: "duration"
+        label_zh: "成片目标时长"
+        label_en: "Target length"
+        default_zh: "60 秒"
+        default_en: "60 seconds"
+      - key_zh: "Hook"
+        key_en: "hook"
+        label_zh: "前 3–5 秒必须保留的真人开头"
+        label_en: "Exact 3–5s opening hook"
+        default_zh: "同样的 AI 模型，为什么别人一次写对，你改了五轮还在报错？"
+        default_en: "Same AI model—why does it ship cleanly on the first pass for some teams and break five times for others?"
+      - key_zh: "素材切入点"
+        key_en: "cut cues"
+        label_zh: "说到什么词切什么录屏或数字页"
+        label_en: "Spoken trigger → visual asset mapping"
+        default_zh: "说到「五维扫描」时切到体检页面录屏；说到「95% 保留率」时放大显示数字对比卡片"
+        default_en: "Cut to the dashboard recording on 'five-dimension scan'; show the metric card on '95% retention'"
+    body_zh: |-
+      把我上传的真人口播、截图、录屏和 B-roll 剪成一条约 {{时长}}、9:16 竖屏的口播视频：
+
+      1. 前 3–5 秒保留真人 Hook：{{Hook}}
+      2. 画面切入规则：{{素材切入点}}
+      3. 核心判断段落尽量保留真人出镜，不要频繁切 B-roll 盖住人像。
+      4. 删除说错、口误重复和无效长停顿，但**保留自然说话的呼吸节奏**。
+      5. 中文字幕简洁克制，每屏不超过 1–2 行，关键数字单独放大高亮。
+      6. 不要做成新闻主播风格，禁用夸张花字转场和搞笑音效。整体干净、可信、信息密度高，像一个人刚发现一件有意思的事正在跟朋友解释。
+    body_en: |-
+      Edit my uploaded talking-head footage, screenshots, screen recordings, and B-roll into a ~{{duration}} 9:16 vertical video:
+
+      1. Keep this exact talking-head hook in the first 3–5 seconds: {{hook}}
+      2. Visual cut cues: {{cut cues}}
+      3. Keep the speaker on-camera during core judgment lines—do not over-cut to B-roll.
+      4. Remove stumbles, retakes, and dead air while **preserving natural breathing pauses and cadence**.
+      5. Keep captions clean (1–2 short lines per screen) and emphasize key numbers larger.
+      6. Avoid news-anchor stiffness, flashy transitions, or comedic sound effects. Aim for clean, high-signal clarity—like explaining an exciting discovery to a smart friend.
+
+  - id: article-deep-reader
+    category: workflow
+    stage: "文章精读"
+    stage_en: "Article Read"
+    featured: false
+    short: true
+    title_zh: "文章深度解读专家（结构 + 启示 + 5 问）"
+    title_en: "Deep Article Analyst (Structure, Insights & 5 Q&As)"
+    summary_zh: "把任意长文章链接或正文拆解成「一句话总结 → 文章结构 → 解决的问题与结论 → 启示 → 5 个延伸问答」。"
+    summary_en: "Distills any long article URL or text into a 1-line TL;DR, structural outline, core problem & takeaways, and 5 Q&As."
+    tags_zh: ["文章阅读", "精读", "学习"]
+    tags_en: ["Reading", "Summary", "Learning"]
+    vars:
+      - key_zh: "文章链接或正文"
+        key_en: "article"
+        label_zh: "文章 URL 或全文"
+        label_en: "Article URL or text"
+        default_zh: "请粘贴文章 URL 或全文"
+        default_en: "Paste article URL or full text"
+    body_zh: |-
+      你是一位文章深度解读专家。请先完整阅读下面的文章内容（如果是链接，请先抓取完整正文），然后严格按以下结构用中文详细输出：
+
+      文章链接 / 来源：
+      文章标题：
+
+      ## 1. 一句话总结
+      ## 2. 文章结构（按核心章节梳理 2.1 / 2.2 / ...）
+      ## 3. 文章详情
+      ### 3.1 这篇文章试图解决什么核心问题？
+      ### 3.2 主要观点、论据与结论是什么？（分条目详尽列出）
+      ## 4. 给我们的实战启示
+      ## 5. 5 个延伸思考问题与解答（Q1–Q5）
+
+      待解读文章：
+      {{文章链接或正文}}
+    body_en: |-
+      You are an expert article analyst. Read the full article below (fetch the URL first if given a link) and output a structured breakdown:
+
+      Source / URL:
+      Title:
+
+      ## 1. One-Sentence Summary
+      ## 2. Article Structure (2.1 / 2.2 / ...)
+      ## 3. Deep Breakdown
+      ### 3.1 What core problem does it address?
+      ### 3.2 Key arguments, evidence, and conclusions (bulleted in full detail)
+      ## 4. Practical Takeaways
+      ## 5. 5 Thought-Provoking Questions & Answers (Q1–Q5)
+
+      Article:
+      {{article}}
+
+  - id: paper-deep-reader
+    category: workflow
+    stage: "论文精读"
+    stage_en: "Paper Read"
+    featured: false
+    short: true
+    title_zh: "论文精读专家（问题 / 方法 / 创新点 / 5 问）"
+    title_en: "Research Paper Analyst (Problem, Method, Novelty & Q&As)"
+    summary_zh: "高效啃论文专用：直奔「解决什么问题 → 用了什么方法 → 核心创新点 → 结论与启示 → 5 个深挖问题」。"
+    summary_en: "Fast paper comprehension template: Problem, Methodology, Key Innovations, Conclusions, Takeaways, and 5 Q&As."
+    tags_zh: ["论文阅读", "学术", "研究"]
+    tags_en: ["Papers", "Research", "Study"]
+    vars:
+      - key_zh: "论文链接或PDF"
+        key_en: "paper"
+        label_zh: "论文链接、标题或 PDF 正文"
+        label_en: "Paper URL, title, or PDF text"
+        default_zh: "请粘贴论文链接或 PDF 文本"
+        default_en: "Paste paper URL or PDF text"
+    body_zh: |-
+      你是一个论文解读专家，请帮我精读这篇论文并严格按以下框架输出中文分析（观点与方法分条目详尽列出）：
+
+      论文链接 / 标题：
+
+      ## 1. 论文概括
+      ## 2. 论文详情
+      ### 2.1 论文解决什么痛点问题？
+      ### 2.2 论文采用了什么方法 / 架构？
+      ### 2.3 论文最核心的创新点是什么？
+      ### 2.4 实验结论与边界局限是什么？
+      ## 3. 工程 / 研究启发
+      ## 4. 5 个关键追问与解答（5.1–5.5）
+
+      论文内容：
+      {{论文链接或PDF}}
+    body_en: |-
+      You are a research paper reading assistant. Digest the paper below into this structured breakdown:
+
+      Paper Link / Title:
+
+      ## 1. High-Level Overview
+      ## 2. Technical Breakdown
+      ### 2.1 Problem Statement
+      ### 2.2 Methodology & Architecture
+      ### 2.3 Key Innovations
+      ### 2.4 Main Results & Limitations
+      ## 3. Practical & Engineering Implications
+      ## 4. 5 Deep-Dive Questions & Answers (Q1–Q5)
+
+      Paper:
+      {{paper}}
+
+  - id: newsletter-analysis-report
+    category: workflow
+    stage: "Newsletter"
+    stage_en: "Newsletter"
+    featured: false
+    short: true
+    title_zh: "Newsletter 深度分析报告（Markdown）"
+    title_en: "Newsletter Deep Analysis Report (Markdown)"
+    summary_zh: "把长 Newsletter 自动压缩为核心主题摘要 + 3 个深度思考问答，输出干净的 Markdown 研报。"
+    summary_en: "Summarizes any newsletter into key themes plus 3 thought-provoking Q&As, formatted as a clean Markdown report."
+    tags_zh: ["Newsletter", "信息总结", "Markdown"]
+    tags_en: ["Newsletter", "Analysis", "Markdown"]
+    vars:
+      - key_zh: "Newsletter 原文"
+        key_en: "newsletter"
+        label_zh: "Newsletter 正文内容"
+        label_en: "Newsletter content"
+        default_zh: "请粘贴这一期 Newsletter 的原文"
+        default_en: "Paste the newsletter issue here"
+    body_zh: |-
+      你是一位资深的行业评论员。请对下面这期 Newsletter 撰写一份结构化的 Markdown 分析报告：
+
+      1. **核心摘要（Summarize）**：用清晰精炼的语言提炼本期核心观点与主线主题。
+      2. **3 个深度思考问答（Interesting Questions）**：针对内容提出 3 个有洞察力、值得追问的问题。每题格式如下：
+         - `Q:` 描述核心问题
+         - `A:` 结合上下文给出详尽拆解，并将最终核心答案用 `<>` 括起来。
+      3. **综合分析报告**：将摘要与问答整合为一篇结构完整的 Markdown 中文报告。
+
+      Newsletter 原文：
+      {{Newsletter 原文}}
+    body_en: |-
+      You are a commentator. Your task is to write a structured Markdown analysis report on the newsletter below:
+
+      # Newsletter:
+      {{newsletter}}
+
+      # Instructions:
+      ## Summarize:
+      In clear and concise language, summarize the key points and themes presented in the newsletter.
+
+      ## Interesting Questions:
+      Generate three distinct and thought-provoking questions about the newsletter. For each question:
+      - After "Q: ", describe the problem
+      - After "A: ", provide a detailed explanation of the problem addressed in the question
+      - Enclose the ultimate answer in <>.
+
+      ## Write an analysis report
+      Combine the summary and the answers into one cohesive Markdown report.
+
+  - id: purpose-driven-summary
+    category: workflow
+    stage: "定向总结"
+    stage_en: "Action Summary"
+    featured: true
+    short: true
+    title_zh: "指定读者与用途的信息总结进阶版"
+    title_en: "Audience & Action-Driven Summary"
+    summary_zh: "拒绝空泛通用摘要！先锁定「读者是谁 + 读完要做什么事」，严格按背景→结论→证据→风险→下一步输出。"
+    summary_en: "Bans generic summaries—tailors output to a specific reader and decision, separating facts, synthesis, and next actions."
+    tags_zh: ["信息总结", "汇报", "决策"]
+    tags_en: ["Summary", "Briefing", "Decision"]
+    vars:
+      - key_zh: "读者"
+        key_en: "reader"
+        label_zh: "这份总结给谁看？"
+        label_en: "Who is the target reader?"
+        default_zh: "前端架构负责人"
+        default_en: "Engineering Lead"
+      - key_zh: "读完要做的事"
+        key_en: "action"
+        label_zh: "读者看完后要做什么决策或动作？"
+        label_en: "What decision or action follows?"
+        default_zh: "决定下周是否立项接入该方案"
+        default_en: "Decide whether to greenlight adoption next week"
+      - key_zh: "长度上限"
+        key_en: "max length"
+        label_zh: "字数限制"
+        label_en: "Word/length cap"
+        default_zh: "500 字以内"
+        default_en: "Under 400 words"
+      - key_zh: "材料"
+        key_en: "material"
+        label_zh: "待总结的原始材料"
+        label_en: "Source material"
+        default_zh: "请粘贴会议记录、长报告或调研文档"
+        default_en: "Paste meeting notes, report, or research doc"
+    body_zh: |-
+      请总结下面这份材料。总结前先严格锚定目标读者与后续行动，不要给通用摘要：
+      - 读者是：{{读者}}
+      - 读完要做的事：{{读完要做的事}}
+      - 长度上限：{{长度上限}}
+
+      要求：
+      1. 严格按「背景 → 结论 → 证据 → 风险 → 下一步」组织。
+      2. **事实、资料归纳、推导建议**三类内容分开标注，绝不混写。
+      3. 总结不是越短越好，唯一标准是让目标读者读完能立刻继续行动。
+
+      材料：
+      {{材料}}
+    body_en: |-
+      Summarize the material below strictly for the specified reader and decision—do not output a generic summary:
+      - Target reader: {{reader}}
+      - Action / decision after reading: {{action}}
+      - Length limit: {{max length}}
+
+      Rules:
+      1. Organize as: `Context → Conclusions → Evidence → Risks → Next Steps`.
+      2. Label **Facts**, **Synthesis**, and **Recommendations** separately—never blur them together.
+      3. Optimize for decision readiness, not arbitrary brevity.
+
+      Material:
+      {{material}}
+
+  - id: schema-first-extractor
+    category: workflow
+    stage: "先定字段"
+    stage_en: "Schema Extract"
+    featured: false
+    short: true
+    title_zh: "先定字段的信息提取进阶版"
+    title_en: "Schema-First Fact Extractor (Zero Guessing)"
+    summary_zh: "提前规定抽取字段，禁止 AI 自由发挥“重点”，找不到写未提及，冲突点显式标出。"
+    summary_en: "Forces extraction into pre-defined fields: marks missing items 'Not mentioned', separates facts from inference, and flags contradictions."
+    tags_zh: ["信息提取", "字段化", "防幻觉"]
+    tags_en: ["Extraction", "No Hallucination", "Facts"]
+    vars:
+      - key_zh: "字段列表"
+        key_en: "fields"
+        label_zh: "需要提取的字段"
+        label_en: "Fields to extract"
+        default_zh: "人物、时间、事件、核心数字、结论、证据、待确认项"
+        default_en: "People, Date, Event, Key Metrics, Conclusions, Evidence, Open Questions"
+      - key_zh: "文本"
+        key_en: "text"
+        label_zh: "待提取的原始长文本"
+        label_en: "Source text"
+        default_zh: "请粘贴访谈、财报或新闻原文"
+        default_en: "Paste transcript, filing, or article text"
+    body_zh: |-
+      从下面这份长文本里提取信息。严格按我定义的字段提取，不要自由发挥「重点」：
+      字段：{{字段列表}}
+
+      规则：
+      - 找不到的字段明确写「未提及」，不许猜测或脑补；
+      - 事实和推测必须分开列；
+      - 原文中互相冲突的内容同时保留，并显式标明冲突点。
+
+      文本：
+      {{文本}}
+    body_en: |-
+      Extract information from the text below strictly into the defined fields—do not improvise custom highlights:
+      Fields: {{fields}}
+
+      Rules:
+      - Write `Not mentioned` for any missing field—never guess;
+      - Separate verified facts from inferences;
+      - Keep contradictory claims side by side and explicitly flag the conflict.
+
+      Text:
+      {{text}}
+
+  - id: unsorted-allowed-classifier
+    category: workflow
+    stage: "严谨分类"
+    stage_en: "Safe Classify"
+    featured: false
+    short: true
+    title_zh: "允许「待归类」与多标签的信息分类器"
+    title_en: "Taxonomy Classifier (with Unsorted & Multi-Label Exits)"
+    summary_zh: "不合适的内容绝不硬塞！强制保留「待归类」和「多标签」出口，并输出理由与置信度，反向诊断分类体系缺陷。"
+    summary_en: "Never force-fits edge cases—allows 'Unsorted' and 'Multi-label' exits with confidence scores to diagnose taxonomy flaws."
+    tags_zh: ["信息分类", "数据清洗", "置信度"]
+    tags_en: ["Classification", "Taxonomy", "Data"]
+    vars:
+      - key_zh: "类别定义"
+        key_en: "categories"
+        label_zh: "类别定义（含正例与反例）"
+        label_en: "Category definitions (with examples)"
+        default_zh: "A类：产品Bug反馈；B类：新功能建议；C类：商业合作咨询"
+        default_en: "A: Bug Report; B: Feature Request; C: Partnership Inquiry"
+      - key_zh: "待分类内容"
+        key_en: "items"
+        label_zh: "待分类的条目列表"
+        label_en: "Items to classify"
+        default_zh: "请粘贴需要分类的条目或用户反馈"
+        default_en: "Paste items or user feedback here"
+    body_zh: |-
+      把下面内容按我给的类别定义分类，先读完所有正例与边界再判断：
+      {{类别定义}}
+
+      规则：
+      - 允许两个安全出口：「待归类」和「多标签」，不合适的内容绝不硬塞进固定类别；
+      - 每条必须给出分类理由和置信度（高 / 中 / 低）；
+      - 如果一批内容有大量落进「待归类」，说明当前分类规则本身有缺陷，请在最后单独指出规则哪里需要修改。
+
+      待分类内容：
+      {{待分类内容}}
+    body_en: |-
+      Classify the items below according to these category definitions:
+      {{categories}}
+
+      Rules:
+      - Allow two explicit escape hatches: `Unsorted` and `Multi-label`—never force-fit ambiguous items;
+      - Output a short rationale and confidence level (High / Medium / Low) for every item;
+      - If a large share falls into `Unsorted`, diagnose the flaws in the taxonomy itself at the end.
+
+      Items:
+      {{items}}
+
+  - id: product-validation-gate
+    category: workflow
+    stage: "选品审查"
+    stage_en: "Idea Vetting"
+    featured: true
+    short: true
+    title_zh: "独立开发选品验证审查（一票否决门槛）"
+    title_en: "Indie Product Demand Validation Gate (Veto Checklist)"
+    summary_zh: "只做已被验证的需求！用「真实付费续费证据 + 主动搜索量 + 明确冷启动渠道 + 能力圈」4 道一票否决门拷问每一个新点子。"
+    summary_en: "Build only proven demand: vets product ideas against 4 strict veto gates—existing paying users, search intent, distribution channel, and builder fit."
+    tags_zh: ["独立开发", "选品", "PMF"]
+    tags_en: ["Indie Hacking", "Validation", "PMF"]
+    vars:
+      - key_zh: "候选产品或需求"
+        key_en: "product idea"
+        label_zh: "要审查的候选产品或需求方向"
+        label_en: "Candidate product or demand to vet"
+        default_zh: "面向跨境电商卖家的 AI 评论痛点挖掘工具"
+        default_en: "An AI review-mining tool for cross-border e-commerce sellers"
+    body_zh: |-
+      你是一个严苛的独立产品选品审查员。按下面 4 道一票否决门槛审查我给的候选产品/需求，任何一条不通过就判出局，绝不和稀泥：
+
+      候选产品/需求：{{候选产品或需求}}
+
+      ## 入选门槛（一票否决）
+      1. **已有真实付费证据**：市面上是否已有产品在为这个需求收费、且有人持续续费？（只有“痛点很真实、访谈说愿意付”一律不算数）
+      2. **需求可被搜索验证**：目标用户遇到问题时是否会主动搜索它？（有稳定搜索意图即“已发生的投票”）
+      3. **有明确的第一批分发渠道**：前 100 个用户从哪来？路径要能说清到具体社区/搜索词/平台，说不清就淘汰。
+      4. **我能做且能长期维护**：技术栈、数据源稳定性和持续获客都在个人能力圈内。
+
+      请输出：竞品与收费证据（具体产品名 + 定价/续费模式）、搜索意图分析、冷启动分发路径、4 项逐条判定（过/不过），以及最终的「建议推进 / 立刻淘汰」结论。
+    body_en: |-
+      You are a ruthless indie product validation reviewer. Evaluate the candidate product/demand below against 4 strict veto gates—if any gate fails, reject it without sugarcoating:
+
+      Candidate idea: {{product idea}}
+
+      ## 4 Veto Gates
+      1. **Existing Paid Proof**: Are customers already paying—and renewing—for an existing product solving this exact problem? ("People said they'd pay in interviews" does NOT count.)
+      2. **Searchable Demand**: Do target users actively search for this solution? (Search volume = verified intent.)
+      3. **Clear First-100 Distribution**: Can you name the exact communities, keywords, or channels for the first 100 users? If vague, reject.
+      4. **Builder & Maintenance Fit**: Can a solo builder ship and sustainably maintain the tech and data pipeline?
+
+      Output: Paid competitor proof (names + pricing), search intent check, concrete distribution path, pass/fail per gate, and a clear **Greenlight / Kill** verdict.
