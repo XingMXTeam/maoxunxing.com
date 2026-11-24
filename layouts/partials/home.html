@@ -88,12 +88,6 @@
 
         <p class="hx-desc" data-hx-reveal style="--d: 220ms">{{ i18n "hxBrandHeroDesc" }}</p>
 
-        <div class="hx-proof" data-hx-reveal style="--d: 250ms">
-          <span class="hx-proof-item"><i class="fas fa-briefcase" aria-hidden="true"></i> {{ i18n "hxProof1" }}</span>
-          <span class="hx-proof-item"><i class="fas fa-book-open" aria-hidden="true"></i> {{ i18n "hxProof2" }}</span>
-          <span class="hx-proof-item"><i class="fas fa-language" aria-hidden="true"></i> {{ i18n "hxProof3" }}</span>
-        </div>
-
         <div class="hx-ctas" data-hx-reveal style="--d: 280ms">
           <a class="hx-btn hx-btn-primary" href="{{ $aiToolsURL }}">
             <span>{{ i18n "hxCtaPrimary" }}</span>
@@ -194,8 +188,14 @@
           <strong class="hx-tile-title">{{ i18n "homeProductToolsTitle" }}</strong>
           <span class="hx-tile-desc">{{ i18n "homeProductToolsDesc" }}</span>
         </span>
+        {{- $aiOnlyTools := slice -}}
+        {{- range $tools -}}
+          {{- if hasPrefix .url "/ai/" -}}
+            {{- $aiOnlyTools = $aiOnlyTools | append . -}}
+          {{- end -}}
+        {{- end -}}
         <span class="hx-apps" aria-hidden="true">
-          {{- range $i, $t := first 6 $tools }}
+          {{- range $i, $t := first 6 $aiOnlyTools }}
             {{- $icon := (index $toolIcons (lower (index $t.tags 0))) | default "fa-bolt" }}
             <span class="hx-app" style="--h: {{ mod (add 250 (mul $i 41)) 360 }}; --i: {{ $i }}">
               <span class="hx-app-icon"><i class="fas {{ $icon }}"></i></span>
@@ -380,7 +380,14 @@
   </section>
 
   {{/* ============================== EXPLORE ============================== */}}
-  {{- $exploreIcons := slice "fa-pen-nib" "fa-feather-alt" "fa-film" "fa-terminal" "fa-toolbox" "fa-bookmark" "fa-flask" "fa-images" -}}
+  {{- $exploreItems := slice
+    (dict "n" 1 "icon" "fa-pen-nib")
+    (dict "n" 2 "icon" "fa-feather-alt")
+    (dict "n" 3 "icon" "fa-film")
+    (dict "n" 5 "icon" "fa-toolbox")
+    (dict "n" 6 "icon" "fa-bookmark")
+    (dict "n" 8 "icon" "fa-images")
+  -}}
   <section id="explore" class="hx-section hx-wrap" aria-labelledby="hx-explore-title">
     <header class="hx-head" data-hx-reveal>
       <p class="hx-kicker"><span>03</span>{{ i18n "hxExploreKicker" }}</p>
@@ -388,10 +395,10 @@
       <p class="hx-lead">{{ i18n "homeBrowseDesc" }}</p>
     </header>
     <div class="hx-explore">
-      {{- range $i, $icon := $exploreIcons }}
-        {{- $n := add $i 1 }}
-        <a class="hx-x" href="{{ i18n (printf "homeBrowse%dHref" $n) }}" style="--d: {{ mul (mod $i 4) 50 }}ms" data-hx-reveal data-hx-spot>
-          <span class="hx-x-icon"><i class="fas {{ $icon }}" aria-hidden="true"></i></span>
+      {{- range $i, $it := $exploreItems }}
+        {{- $n := $it.n }}
+        <a class="hx-x" href="{{ i18n (printf "homeBrowse%dHref" $n) }}" style="--d: {{ mul (mod $i 3) 50 }}ms" data-hx-reveal data-hx-spot>
+          <span class="hx-x-icon"><i class="fas {{ $it.icon }}" aria-hidden="true"></i></span>
           <span class="hx-x-copy">
             <strong>{{ i18n (printf "homeBrowse%dTitle" $n) }}</strong>
             <span>{{ i18n (printf "homeBrowse%dDesc" $n) }}</span>

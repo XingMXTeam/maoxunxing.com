@@ -2098,11 +2098,11 @@ html[data-initial-color-scheme="dark"] body.colorscheme-auto .hx-tool-icon {
   color: #ffffff;
 }
 
-/* ---------- 10. Explore 4x2 Grid ---------- */
+/* ---------- 10. Explore 3x2 Grid ---------- */
 .hx-explore {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
 }
 
 .hx-x {
