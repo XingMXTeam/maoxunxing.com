@@ -1,21 +1,39 @@
-# Consulting & Productized Services Catalog
+# Consulting & Productized Services Catalog (3-Tier Pricing Ladder)
 # To enable instant Stripe Checkout for any item, paste your Stripe Payment Link into `stripe_url` (e.g. "https://buy.stripe.com/...").
 # When `stripe_url` is empty, the CTA smoothly opens the direct booking / WeChat contact flow.
 
 services:
+  - id: quick-diagnosis
+    badge: "破冰首选 · 可抵扣"
+    featured: false
+    icon: "fa-stethoscope"
+    color: "#10b981"
+    title: "30 分钟 1v1 破冰快诊"
+    price: "¥299"
+    unit: "/ 30 分钟"
+    turnaround: "24 小时内约时间 · 满意可全额抵扣后续服务"
+    summary: "专为“不确定适不适合合作”或只卡在 1 个具体问题的你准备：现场连线排查代码/Agent 报错、选品方向或技术方案，低成本跑通第一单。"
+    deliverables:
+      - "30 分钟线上语音 / 屏幕共享 1v1 诊断"
+      - "直接定位根因并给出可执行下一步清单"
+      - "赠送 55 条高频 Prompt 工作台使用指引"
+      - "后续升级陪跑或建站，¥299 全额抵扣"
+    exclude: "限单个聚焦问题，不含动手代写大段业务代码。"
+    stripe_url: ""
+
   - id: ai-coaching
-    badge: "入门首选 · 1v1"
+    badge: "主力热销 · 1v1"
     featured: false
     icon: "fa-bolt"
     color: "#6366f1"
-    title: "AI 工具与 Coding Agent 实战陪跑"
-    price: "¥1,980"
+    title: "AI 编程与 Agent 实战陪跑"
+    price: "¥799"
     unit: "/ 90 分钟"
-    turnaround: "预约即约 · 线上屏幕共享"
+    turnaround: "预约即约 · 线上屏幕共享实操"
     summary: "针对 Claude Code、Cursor、Codex、Gemini 与 MiniMax / Grok，结合你的真实代码库或业务工作流，90 分钟打通上下文、Rules、Skills 与自动化闭环。"
     deliverables:
-      - "90 分钟 1v1 深度诊断与屏幕实操"
-      - "针对你当前项目的 AGENTS.md / Skills 落地建议"
+      - "90 分钟 1v1 深度实操与工作流调优"
+      - "针对你当前项目的 AGENTS.md / Skills 落地配置"
       - "55 条高频 Prompt 工作台与工程避坑手册"
       - "7 天内微信异步答疑跟进"
     exclude: "不含海外账号代开与代充值。"
@@ -27,9 +45,9 @@ services:
     icon: "fa-globe"
     color: "#06b6d4"
     title: "海外 AI 账号申请与原生接入"
-    price: "¥3,980"
+    price: "¥1,280"
     unit: "/ 次"
-    turnaround: "含全流程代操 · 约 5 个工作日交付"
+    turnaround: "含全流程代操 · 约 3–5 个工作日交付"
     summary: "解决美区 ChatGPT、Claude 账号申请与风控稳定使用难题，以及 Gemini API / 订阅购买与项目接入。账号资产完全归你本人所有。"
     deliverables:
       - "美区 ChatGPT / Claude 独立账号注册与环境路径配置"
@@ -39,38 +57,20 @@ services:
     exclude: "不卖共享号、不含按月代充；平台官方订阅与购买费用客户自付。"
     stripe_url: ""
 
-  - id: indie-build
-    badge: "全栈交付 · 独立站"
-    featured: false
-    icon: "fa-code"
-    color: "#a855f7"
-    title: "前端架构与聚合 / 独立站定制"
-    price: "¥8,000"
-    unit: "起"
-    turnaround: "先对齐范围与验收标准 · 按周里程碑交付"
-    summary: "前网易 · 阿里资深前端工程师亲手交付，擅长聚合站、工具站、AI 产品落地页与内容/SEO/GEO 增长系统（如 Browserly / HackHub 同款架构）。"
-    deliverables:
-      - "完整 Next.js / React / Hugo 源码与响应式双端 UI"
-      - "GEO / SEO 结构化元数据与 AI 生图资产接入"
-      - "Cloudflare / Vercel / Firebase 自动化部署流水线"
-      - "上线前 Playwright 端到端走查验收"
-    exclude: "开工前先对齐功能边界与时间表，不接无边界需求。"
-    stripe_url: ""
-
   - id: overseas-pay
     badge: "出海基建"
     featured: false
     icon: "fa-credit-card"
-    color: "#10b981"
+    color: "#0ea5e9"
     title: "出海支付（Stripe）与海外卡协助"
-    price: "¥2,980"
+    price: "¥699"
     unit: "/ 次"
     turnaround: "约 5–10 个工作日（视银行审核进度）"
     summary: "打通一人公司海外收款闭环：覆盖 Stripe 收款路径说明、国外虚拟卡合规使用以及民生香港卡开户资料准备与申请协助。"
     deliverables:
-      - "Stripe 开通路径与独立站收款接入方案说明"
+      - "Stripe 开通路径与独立站 Payment Link 接入方案"
       - "海外虚拟卡 / 民生香港卡申请材料核对与陪跑"
-      - "常见问题避坑清单与税务/合规基础提醒"
+      - "常见问题避坑清单与合规基础提醒"
     exclude: "银行卡年费、押金与开户审核结果以银行官方为准，费用自付。"
     stripe_url: ""
 
@@ -80,7 +80,7 @@ services:
     icon: "fa-book"
     color: "#f59e0b"
     title: "亚马逊 Kindle 电子书制作与发布"
-    price: "¥3,980"
+    price: "¥1,580"
     unit: "起"
     turnaround: "含排版制作与 Amazon KDP 上架辅导"
     summary: "基于《期权大白话》（中英双版已上架 Amazon）真实出版流水线，帮你把专栏文章或书稿变成规范电子书并顺利上架全球商店。"
@@ -91,10 +91,28 @@ services:
     exclude: "Amazon 站内广告投放预算另计。"
     stripe_url: ""
 
+  - id: indie-build
+    badge: "全栈交付 · 独立站"
+    featured: false
+    icon: "fa-code"
+    color: "#a855f7"
+    title: "前端架构与独立站定制开发"
+    price: "¥6,000"
+    unit: "起（可先付 ¥399 评估定金）"
+    turnaround: "先对齐范围与验收标准 · 按周里程碑交付"
+    summary: "前网易 · 阿里资深前端工程师亲手交付，擅长聚合站、工具站、AI 产品落地页与内容/SEO/GEO 增长系统（Browserly / HackHub 同款架构）。"
+    deliverables:
+      - "完整 Next.js / React / Hugo 源码与响应式双端 UI"
+      - "GEO / SEO 结构化元数据与 AI 生图资产接入"
+      - "Cloudflare / Vercel / Firebase 自动化部署流水线"
+      - "上线前 Playwright 端到端走查验收（¥399 评估定金全额抵扣）"
+    exclude: "开工前先对齐功能边界与时间表，不接无边界需求。"
+    stripe_url: ""
+
 faqs:
+  - q: "第一次合作不确定是否合适，推荐先选哪个？"
+    a: "推荐先选 ¥299 的「30 分钟 1v1 破冰快诊」，直接拿你的真实代码或问题连线验证；如果后续决定升级为 90 分钟陪跑或独立站开发，¥299 可全额抵扣。"
   - q: "可以用 Stripe 信用卡 / 微信 / 支付宝付款吗？"
-    a: "支持。接入 Stripe Checkout 后可直接使用信用卡或支持的本地支付方式；如需先对齐需求再付款，也可直接加微信（maoxunxing）或发邮件沟通后通过微信/对公/Stripe 结算。"
+    a: "支持。接入 Stripe Checkout 后可直接使用信用卡或支持的本地支付方式；如需先对齐需求再付款，也可直接加微信（maoxunxing）或发邮件沟通后结算。"
   - q: "如何确保我的需求和边界清晰，不踩坑？"
     a: "所有服务均遵循「先对齐范围与交付清单，再确认下单」。如果评估后你的需求不在我能力圈或当前方案不划算，我会直接劝退或给出免费替代路径，不硬接单。"
-  - q: "AI 工具 1v1 陪跑需要提前准备什么？"
-    a: "提前把你想解决的 1–3 个具体问题、正在使用的工具（如 Claude Code / Cursor / Codex）和代码库场景发我，90 分钟全程直奔实战，不讲空洞概念。"
