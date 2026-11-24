@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>毛训星 · AI 全栈工程师 — 简历 | maoxunxing.com</title>
-<meta name="description" content="毛训星（毛毛星）的简历：11 年工程经验、阿里 7 年跨境电商复杂平台，近两年主攻 AI 研发工程化（AI Coding Harness / MCP / Agent 编排），以及 frontend-harness-cli、HackHub、CrossAgent、Browserly、Sayo 等最近项目。">
+<meta name="description" content="毛训星（毛毛星）的简历：11 年工程经验、阿里 7 年跨境电商复杂平台，近两年主攻 AI 研发工程化（AI Coding Harness / MCP / Agent 编排），以及 Atoms Studio、frontend-harness-cli、HackHub、CrossAgent、Browserly、Sayo 等最近项目。">
 <style>
 :root{
   --bg:#0B0C0E; --bg2:#101114; --panel:rgba(255,255,255,.045);
@@ -156,6 +156,13 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
     <div class="sec-head"><span class="no">01</span><h2>作品</h2><span class="rule"></span><span class="en">SELECTED WORKS</span></div>
 
     <article class="work">
+      <a class="shot" href="https://atoms.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/atoms.jpg" alt="Atoms Studio 首页：可验证的 AI 应用生成" loading="lazy"></a>
+      <div class="w-meta"><div class="w-head"><h3>Atoms Studio</h3><span class="st">LIVE</span></div>
+        <p>AI 应用生成产品：输入一句话需求，生成能直接打开使用的 Web 应用。需求先变成验收标准，规划 / 架构 / 工程 / 质检四个 Agent 依次执行，质检按验收标准打分、不达标触发自修复，交付在线预览、ZIP 下载与只读分享链接。一人独立完成产品、前后端与部署（Next.js + OpenNext，运行于 Cloudflare）。<span class="metric">免费开放中 · 后续按生成额度订阅收费</span></p>
+        <a class="rlink" href="https://atoms.maoxunxing.com" target="_blank" rel="noopener">atoms.maoxunxing.com →</a></div>
+    </article>
+
+    <article class="work">
       <a class="shot" href="https://hackhub.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/hackhub.jpg" alt="HackHub 首页：发现下一个黑客松" loading="lazy"></a>
       <div class="w-meta"><div class="w-head"><h3>HackHub</h3><span class="st">LIVE</span></div>
         <p>全球 AI &amp; Web3 黑客松聚合站。多源爬虫每日更新，按城市、主题、受众、奖金筛选，配每周精选周刊；订阅走自家链路（Supabase），不依赖第三方邮件平台。<span class="metric">收录活动 398 场（2026-11 线上实时）</span></p>
@@ -165,7 +172,7 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
     <article class="work">
       <a class="shot" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener"><img src="./works/crossagent.jpg" alt="CrossAgent Lab 用例库首页" loading="lazy"></a>
       <div class="w-meta"><div class="w-head"><h3>CrossAgent Lab</h3><span class="st">LIVE</span></div>
-        <p>跨境电商 Agent 用例库与卖家 MCP 情报站，整理别人正在用的跨境 Agent 做法。其 Skills 按第一方自研：评论挖掘 → Listing 改写用 415 条真实评论实跑出样例，技能目录仍标草稿试价。<span class="metric">用例 81 条 · 实跑分诊抽查一致率 94.4%</span></p>
+        <p>跨境电商 Agent 用例库与卖家 MCP 情报站，整理别人正在用的跨境 Agent 做法。其 Skills 按第一方自研、Stripe 收款付款后自动交付：首个 Skill「评论挖掘 → Listing 改写」用 415 条真实评论实跑验证，定价 $49，在售。<span class="metric">用例 81 条 · 实跑分诊抽查一致率 94.4%</span></p>
         <a class="rlink" href="https://crossagent.maoxunxing.com" target="_blank" rel="noopener">crossagent.maoxunxing.com →</a></div>
     </article>
 
@@ -173,16 +180,18 @@ footer.cta .row{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
       <div class="term" aria-label="frontend-harness-cli 终端示意">
         <div class="tbar"><i></i><i></i><i></i></div>
         <pre><b>$ harness --version</b>
-frontend-harness-cli <span class="g">0.9.0</span>
+frontend-harness-cli <span class="g">0.12.0</span>
 <b>$ harness new --prd ./PRD.md</b>
 原文导入 · 内核只验 REQ 编号契约，缺号报告、永不重编
 <b>$ harness scan ./repo</b>
 structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
+<b>$ harness eval</b>
+三态裁决 pass / fail / incomplete · 未验证不记 0 分，分数只来自已验证项
 <b>$ npm test</b>
-<span class="g">93 passed</span> · planner / developer / evaluator 三角色 Agent 层</pre>
+<span class="g">162 passed</span> · planner / developer / evaluator / reviewer 四角色 Agent 层</pre>
       </div>
       <div class="w-meta"><div class="w-head"><h3>frontend-harness-cli</h3><span class="st">OPEN SOURCE</span></div>
-        <p>把在复杂中后台场景验证过的 AI 研发工程化方法（分层约束 / 确定性评测 / 多阶段 Agent 编排）独立实现为开源 CLI：文件状态机 + per-feature rubric（含 essential / pitfall 一票否决与覆盖门禁）+ 逐任务 SHA 校验，<i>harness new --prd</i> 可原文导入现成 PRD。<span class="metric">v0.9.0 · 测试 93 / 93 · 21 个产物命名 Skill</span></p>
+        <p>把在复杂中后台场景验证过的 AI 研发工程化方法（分层约束 / 确定性评测 / 多阶段 Agent 编排）独立实现为开源 CLI：文件状态机 + per-feature rubric（含 essential / pitfall 一票否决与覆盖门禁）+ 逐任务 SHA 校验；三层验证——静态探针 / Agent 交互复核 / 人工确认，静态判不了的项进 review 阶段由 reviewer Agent 真操作复核、内核验真合并，<i>harness new --prd</i> 可原文导入现成 PRD。<span class="metric">v0.12.0 · 测试 162 / 162 · 22 个产物命名 Skill</span></p>
         <a class="rlink" href="https://github.com/XingMXTeam/frontend-harness-cli" target="_blank" rel="noopener">GitHub →</a></div>
     </article>
 
@@ -196,14 +205,14 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
     <article class="work">
       <a class="shot" href="https://gosayo.cc" target="_blank" rel="noopener"><img src="./works/sayo.jpg" alt="Sayo 首页：您的免费私人 AI 口语教练" loading="lazy"></a>
       <div class="w-meta"><div class="w-head"><h3>Sayo</h3><span class="st">LIVE</span></div>
-        <p>AI 英语口语练习产品：先自己开口说，卡住再看提示，然后换一个场景重新练。围绕核心动词与真实场景组织练习，而不是背单词表。<span class="metric">gosayo.cc · AI 口语教练</span></p>
+        <p>AI 英语口语练习产品：先自己开口说，卡住再看提示，然后换一个场景重新练。围绕核心动词与真实场景组织练习，而不是背单词表。<span class="metric">gosayo.cc · 订阅制 AI 口语教练</span></p>
         <a class="rlink" href="https://gosayo.cc" target="_blank" rel="noopener">gosayo.cc →</a></div>
     </article>
 
     <article class="work">
       <a class="shot" href="https://maoxunxing.com/ai/geo-health-check/" target="_blank" rel="noopener"><img src="./works/geo.jpg" alt="GEO Health Check 工具页" loading="lazy"></a>
       <div class="w-meta"><div class="w-head"><h3>GEO 体检</h3><span class="st">LIVE</span></div>
-        <p>放在主站的对外工具：输入网址，自动分析 AI 搜索可见度并出报告（八维卫生分 + 按可挽回分排序的修复清单），评分引擎与内部 fx-geo 闭环面板同源。<span class="metric">maoxunxing.com/ai/geo-health-check/</span></p>
+        <p>放在主站的对外工具：输入网址，自动分析品牌在 AI 搜索回答里的提及率 / 引用率并出报告（八维卫生分 + 按可挽回分排序的修复清单），评分引擎与内部 fx-geo 闭环面板同源。<span class="metric">maoxunxing.com/ai/geo-health-check/</span></p>
         <a class="rlink" href="https://maoxunxing.com/ai/geo-health-check/" target="_blank" rel="noopener">打开工具 →</a></div>
     </article>
 
@@ -247,7 +256,7 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
       <span class="en">MAO XUNXING · MOMO</span>
     </div>
     <div class="role">AI 全栈工程师</div>
-    <p>11 年工程经验，阿里 7 年跨境电商复杂平台。近两年主攻 AI 研发工程化——把 AI 生成代码的不确定性，收进可执行的工程门禁里。</p>
+    <p>11 年工程经验，阿里 7 年跨境电商复杂平台。近两年主攻 AI 研发工程化与 Agent 应用——把 AI 生成代码的不确定性，收进可执行的工程门禁里；具备通用全栈能力（API 设计、数据建模、缓存、异步任务、部署运维），独立项目与开源产品均在线可验证。</p>
     <div class="metrics">
       <div class="m"><div class="v">85<em>%</em></div><div class="l">本人 AI 编码占比（插件采集）<br>团队约 60%</div></div>
       <div class="m"><div class="v">20<em>×</em></div><div class="l">楼层批量发布提速<br>约 200 分钟 → 10 分钟</div></div>
@@ -264,14 +273,15 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
     <div class="role-line">AI 研发提效 / 全球首页运营平台主 Owner / 导购搭建平台核心模块 Owner / 商家中后台</div>
 
     <div class="proj">
-      <h4>AI Coding Harness — 商业化广告业务 AI 研发提效体系<span class="who">核心建设者</span></h4>
-      <p>针对 AI 生成代码在复杂中后台场景「生成快、交付不稳定」的问题，依托 Claude Code 云端 Agent + MCP + Skill，构建从需求澄清到发布复盘的 AI 协作工作流，把质量约束从人工 Review 的主观判断，转为编译、Lint 与评测门禁可执行的工程规则。</p>
+      <h4>AI Coding Harness — 商业化广告业务 AI 研发提效体系<span class="who">Owner</span></h4>
+      <p>一套让 AI 可靠交付代码的工程系统，相当于给 AI 编程加的「流水线 + 质检线」：AI 写代码快，但产出不稳定、还容易自称完成，靠人工 Review 主观把关问题常漏到后期。需求先协商成可测试的功能点清单，AI 分阶段生成，每步留下可检查的中间产物，用编译、Lint、测试等确定性检查验收，不过关打回重做、通过才放行发布。</p>
       <ul>
         <li><b>5 层约束体系：</b>按类型、样式、状态、工程、美学五层收敛 AI 解空间；Lint 报错同时作为修复指令注入 Agent 上下文，错误在生成阶段即被拦截并定向修复。</li>
         <li><b>8 阶段 Pipeline 与 Sprint Contract：</b>init → clarify → generate → docs → evaluation → verify → publish → evolve；写代码前先把需求协商为可测试的功能点（FP）清单。</li>
         <li><b>确定性评测与 4-Gate 门禁：</b>structure / data / logic / ui / e2e 五维评测全部用 tsc、AST、规则扫描与真实测试（不用 LLM 自评），每条检查带 file:line 证据；canRun → dataReady → usageRight → featureWorks 四道 Gate 短路放行。</li>
         <li><b>上下文治理：</b>每阶段独立 subagent + 独立上下文，state.json 为唯一状态源；内部实测第 5 阶段关键信息保留率由约 40% 提升至约 95%。</li>
         <li><b>落地效果：</b>AI 编码占比团队约 60%、本人约 85%（编码插件采集），交付由人工编码与人工 Review 转为 AI 生成与门禁自动验收。</li>
+        <li><b>端到端交付物：</b>需求 FP 清单 → 代码生成 → 五维评测报告 → 4-Gate 放行 → 发布与复盘，全程有可检查的中间产物。</li>
       </ul>
     </div>
 
@@ -280,7 +290,7 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
       <p>速卖通 C 端首页运营平台：覆盖 Native 首页、MyAE 页与端外 PC / M 站首页，按「场景 → 方案 → 页面 → 楼层 → 模块」协议驱动生产页面，支撑多国家配置、排期与投放。</p>
       <ul>
         <li><b>大促巡检（平台侧，已落地）：</b>巡检任务创建、审批 / 截图 / 虚机调度、状态聚合与报告、失败重试、自动建缺陷与复测闭环，支撑大促前约 668 个页面线上验收，大促漏配率由约 8% 降至 2% 以下。</li>
-        <li><b>投放 Agent（MCP Server）：</b>把样式包创建与发布、活动创建、楼层发布、提报与排期同步等平台能力封装为 MCP 工具，Route → Plan → Execute → Review 四阶段编排（离职前完成开发，未上线）。</li>
+        <li><b>投放 Agent（业务 Harness / MCP Server）：</b>把 Harness 的「约束—编排—校验—卡口」迁移到业务场景，核心原则是「模型做决策、代码做批量执行」：Catalog 域路由先判定业务域，Plan（JSON Schema 契约校验并容错自修复）→ Execute（代码并发调用平台 MCP 工具批量执行）→ Review（只读 Agent 审查），工具白名单限定可调动作、审批通过才同步排期，trace 落盘可审计；双执行引擎（命令式会话 / YAML 流水线），独立实现沉淀为 domain-agent-harness（私有仓，离职前完成开发，未上线）。</li>
         <li><b>平台能力 Agent 化：</b>排期查询、发布 Diff、历史变更 Diff、楼层查询、SLS 日志查询共 10 个 MCP 工具，工具白名单 + 错误用法反例 + 查空逐级降级重查。</li>
         <li><b>楼层批量发布：</b>多楼层跨页面一次走完流程，发布耗时由约 200 分钟降至约 10 分钟（约 20 倍）。</li>
         <li><b>稳定性与性能：</b>100+ 运营页面收敛至 20+，配置实时校验、发布卡口与 diff 识别，核心楼层丢失事故降为 0；Service Worker 快照 + SSR 瘦身，PC / M 站首页 LCP 2722ms → 2070ms（−24%）。</li>
@@ -322,7 +332,7 @@ structure / data / logic / ui / e2e 五维确定性评测 · rubric 一票否决
     <div class="sec-head"><span class="no">03</span><h2>技能与教育</h2><span class="rule"></span><span class="en">SKILLS &amp; EDUCATION</span></div>
     <div class="skills">
       <div class="skill"><h3>AI 工程</h3><p>Claude Code · Cursor / Qoder · MCP Server 开发 · Skill 体系设计 · Agent 编排（多阶段 Pipeline / 工具白名单 / 上下文治理）· AI Coding Harness（分层约束 / 架构 Lint / 确定性评测 / Code Review）</p></div>
-      <div class="skill"><h3>全栈开发</h3><p>TypeScript · React 18 · Node.js（Middleware / BFF）· RPC / REST · Serverless / FaaS · SSR / Hydration</p></div>
+      <div class="skill"><h3>全栈开发</h3><p>TypeScript · React 18 · Node.js 服务端（API 设计 / 数据建模 / 缓存 / 异步与定时任务 / 第三方与大模型 API 集成 / 鉴权与会话）· PostgreSQL / Supabase · Cloudflare Workers / Serverless · RPC / REST · SSR / Hydration · 日志监控与部署运维</p></div>
       <div class="skill"><h3>平台工程</h3><p>中后台框架（qiankun 微前端 / 飞冰插件）· 前端研发平台 · 低代码平台（Schema / 双引擎 / 多语言）· 运营搭建平台（协议驱动 / 模块生产 / 模型与主题中心 / 发布回滚）</p></div>
       <div class="skill"><h3>性能治理</h3><p>C 端首页（SSR 瘦身 / Service Worker / LCP）· 商家端复杂页面（渲染优化 / Long Task）</p></div>
     </div>
