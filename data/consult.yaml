@@ -1,133 +1,65 @@
-# Consulting & Productized Services Catalog (3-Tier Pricing Ladder)
-# To enable instant Stripe Checkout for any item, paste your Stripe Payment Link into `stripe_url` (e.g. "https://buy.stripe.com/...").
-# When `stripe_url` is empty, the CTA smoothly opens the direct booking / WeChat contact flow.
-
-digital_products:
-  - id: knowledge-base
-    badge: "零等待 · 购买即得 · 永久更新"
-    icon: "fa-layer-group"
-    title: "毛毛星 AI 工程与创作者实战知识库"
-    price: "¥199"
-    unit: "/ 一次性买断"
-    desc: "把过去两年在前端工程化、AI Coding Harness、独立产品与内容创作里沉淀下来的全部核心资产打包带走，一次购买永久获取后续新增内容。"
-    includes:
-      - "55+ 条中英双语高频 Prompt 完整源文件与变量模板"
-      - "21 份前端 AI 协作 Skills 规范 & AGENTS.md 反偷懒工程模板"
-      - "八步深度写作 SOP、去 AI 味终审清单与口播分镜脚本模板"
-      - "独立开发选品审查框架 & 出海支付/建站避坑知识库（持续更新）"
-    stripe_url: ""
+# Consulting & Productized Services Catalog — 3-Tier Pricing (Low / Mid / High)
+# Paste your Stripe Payment Link into `stripe_url` (e.g. "https://buy.stripe.com/...") to enable instant Stripe Checkout.
 
 services:
-  - id: quick-diagnosis
-    badge: "破冰首选 · 可抵扣"
+  - id: knowledge-base
+    badge: "低档 · 自助买断"
     featured: false
-    icon: "fa-stethoscope"
+    icon: "fa-layer-group"
     color: "#10b981"
-    title: "30 分钟 1v1 破冰快诊"
-    price: "¥299"
-    unit: "/ 30 分钟"
-    turnaround: "24 小时内约时间 · 满意可全额抵扣后续服务"
-    summary: "专为“不确定适不适合合作”或只卡在 1 个具体问题的你准备：现场连线排查代码/Agent 报错、选品方向或技术方案，低成本跑通第一单。"
+    title: "AI 工程与创作者实战知识库"
+    price: "¥199"
+    unit: "/ 一次性买断"
+    turnaround: "零等待 · 下单即得 · 永久免费更新"
+    summary: "把我在 AI Coding Harness、独立产品与内容创作里沉淀的全部高频模板打包带走，适合喜欢自己动手、快速复用的开发者与创作者。"
     deliverables:
-      - "30 分钟线上语音 / 屏幕共享 1v1 诊断"
-      - "直接定位根因并给出可执行下一步清单"
-      - "赠送 55 条高频 Prompt 工作台使用指引"
-      - "后续升级陪跑或建站，¥299 全额抵扣"
-    exclude: "限单个聚焦问题，不含动手代写大段业务代码。"
+      - "55+ 条中英双语高频 Prompt 完整源文件与变量模板"
+      - "21 份前端 AI 协作 Skills 规范 & AGENTS.md 反偷懒模板"
+      - "八步深度写作 SOP、去 AI 味清单与口播分镜模板"
+      - "独立开发选品审查框架 & 出海支付/建站避坑知识库"
+    exclude: "纯数字资料与模板，不含 1v1 实时连线辅导。"
     stripe_url: ""
 
   - id: ai-coaching
-    badge: "主力热销 · 1v1"
-    featured: false
+    badge: "中档 · 最受欢迎"
+    featured: true
     icon: "fa-bolt"
     color: "#6366f1"
-    title: "AI 编程与 Agent 实战陪跑"
+    title: "1v1 实战陪跑与海外 AI / 出海接入"
     price: "¥799"
     unit: "/ 90 分钟"
-    turnaround: "预约即约 · 线上屏幕共享实操"
-    summary: "针对 Claude Code、Cursor、Codex、Gemini 与 MiniMax / Grok，结合你的真实代码库或业务工作流，90 分钟打通上下文、Rules、Skills 与自动化闭环。"
+    turnaround: "预约即约 · 屏幕共享实操 · 含 7 天微信跟进"
+    summary: "结合你的真实代码库或出海需求，90 分钟现场打通 Claude Code / Cursor / Codex 工程闭环，或 1v1 解决海外 AI 账号、Gemini API 与 Stripe 收款路径。"
     deliverables:
-      - "90 分钟 1v1 深度实操与工作流调优"
-      - "针对你当前项目的 AGENTS.md / Skills 落地配置"
-      - "55 条高频 Prompt 工作台与工程避坑手册"
-      - "7 天内微信异步答疑跟进"
-    exclude: "不含海外账号代开与代充值。"
-    stripe_url: ""
-
-  - id: overseas-ai
-    badge: "最受欢迎 · 省心交付"
-    featured: true
-    icon: "fa-globe"
-    color: "#06b6d4"
-    title: "海外 AI 账号申请与原生接入"
-    price: "¥1,280"
-    unit: "/ 次"
-    turnaround: "含全流程代操 · 约 3–5 个工作日交付"
-    summary: "解决美区 ChatGPT、Claude 账号申请与风控稳定使用难题，以及 Gemini API / 订阅购买与项目接入。账号资产完全归你本人所有。"
-    deliverables:
-      - "美区 ChatGPT / Claude 独立账号注册与环境路径配置"
-      - "Gemini 购买与 API / 客户端原生接入调试"
-      - "完整交付账号凭证、防风控使用守则与交接文档"
-      - "交付后 14 天稳定运行护航"
-    exclude: "不卖共享号、不含按月代充；平台官方订阅与购买费用客户自付。"
-    stripe_url: ""
-
-  - id: overseas-pay
-    badge: "出海基建"
-    featured: false
-    icon: "fa-credit-card"
-    color: "#0ea5e9"
-    title: "出海支付（Stripe）与海外卡协助"
-    price: "¥699"
-    unit: "/ 次"
-    turnaround: "约 5–10 个工作日（视银行审核进度）"
-    summary: "打通一人公司海外收款闭环：覆盖 Stripe 收款路径说明、国外虚拟卡合规使用以及民生香港卡开户资料准备与申请协助。"
-    deliverables:
-      - "Stripe 开通路径与独立站 Payment Link 接入方案"
-      - "海外虚拟卡 / 民生香港卡申请材料核对与陪跑"
-      - "常见问题避坑清单与合规基础提醒"
-    exclude: "银行卡年费、押金与开户审核结果以银行官方为准，费用自付。"
-    stripe_url: ""
-
-  - id: ebook-publish
-    badge: "个人出版"
-    featured: false
-    icon: "fa-book"
-    color: "#f59e0b"
-    title: "亚马逊 Kindle 电子书制作与发布"
-    price: "¥1,580"
-    unit: "起"
-    turnaround: "含排版制作与 Amazon KDP 上架辅导"
-    summary: "基于《期权大白话》（中英双版已上架 Amazon）真实出版流水线，帮你把专栏文章或书稿变成规范电子书并顺利上架全球商店。"
-    deliverables:
-      - "Markdown / 文稿到规范 KDP 电子书格式转换与排版"
-      - "中英双语书封规范建议与元数据（ASIN/关键词）配置"
-      - "Amazon KDP 后台上架提交与审核问题排查"
-    exclude: "Amazon 站内广告投放预算另计。"
+      - "90 分钟 1v1 深度诊断与屏幕共享实操"
+      - "项目级 AGENTS.md / Skills 配置或海外 AI / Stripe 路径落地"
+      - "免费赠送 ¥199《毛毛星 AI 工程与创作者实战知识库》"
+      - "交付后 7 天内微信异步答疑跟进"
+    exclude: "平台官方订阅费或银行卡年费由客户自付；不卖共享号。"
     stripe_url: ""
 
   - id: indie-build
-    badge: "全栈交付 · 独立站"
+    badge: "高档 · 全案交付"
     featured: false
     icon: "fa-code"
     color: "#a855f7"
-    title: "前端架构与独立站定制开发"
+    title: "独立站 / AI 产品全案定制交付"
     price: "¥6,000"
     unit: "起（可先付 ¥399 评估定金）"
-    turnaround: "先对齐范围与验收标准 · 按周里程碑交付"
-    summary: "前网易 · 阿里资深前端工程师亲手交付，擅长聚合站、工具站、AI 产品落地页与内容/SEO/GEO 增长系统（Browserly / HackHub 同款架构）。"
+    turnaround: "先对齐需求边界 · 按周里程碑交付源码"
+    summary: "前网易 · 阿里 11 年前端亲手交付，擅长聚合站、AI 工具站、高转化落地页与 SEO/GEO 增长系统（Browserly / HackHub 同款架构）。"
     deliverables:
-      - "完整 Next.js / React / Hugo 源码与响应式双端 UI"
-      - "GEO / SEO 结构化元数据与 AI 生图资产接入"
-      - "Cloudflare / Vercel / Firebase 自动化部署流水线"
-      - "上线前 Playwright 端到端走查验收（¥399 评估定金全额抵扣）"
+      - "Next.js / React / Hugo 完整源码与 Light/Dark 双端 UI"
+      - "SEO / GEO 结构化元数据、Stripe 收款与自动化部署"
+      - "上线前 Playwright 端到端走查验收"
+      - "¥399 架构评估定金开工后全额抵扣开发款"
     exclude: "开工前先对齐功能边界与时间表，不接无边界需求。"
     stripe_url: ""
 
 faqs:
-  - q: "第一次合作不确定是否合适，推荐先选哪个？"
-    a: "推荐先选 ¥299 的「30 分钟 1v1 破冰快诊」，直接拿你的真实代码或问题连线验证；如果后续决定升级为 90 分钟陪跑或独立站开发，¥299 可全额抵扣。"
-  - q: "可以用 Stripe 信用卡 / 微信 / 支付宝付款吗？"
-    a: "支持。接入 Stripe Checkout 后可直接使用信用卡或支持的本地支付方式；如需先对齐需求再付款，也可直接加微信（maoxunxing）或发邮件沟通后结算。"
-  - q: "如何确保我的需求和边界清晰，不踩坑？"
-    a: "所有服务均遵循「先对齐范围与交付清单，再确认下单」。如果评估后你的需求不在我能力圈或当前方案不划算，我会直接劝退或给出免费替代路径，不硬接单。"
+  - q: "高中低三档怎么选最划算？"
+    a: "想低成本抄作业选 ¥199 知识库；卡在具体代码/Agent/出海接入选 ¥799 1v1 陪跑（直接送 ¥199 知识库）；需要整站开发上线选 ¥6,000 起全案（先付 ¥399 评估定金，开工全额抵扣）。"
+  - q: "支持 Stripe 信用卡、微信或支付宝吗？"
+    a: "支持。接入 Stripe Payment Link 后可直接在线支付；如需先确认细节，也可加微信（maoxunxing）或发邮件沟通后结算。"
+  - q: "还有其他定制需求（如 Kindle 出书、账号全代操）可以聊吗？"
+    a: "可以，直接加微信（maoxunxing）备注你的具体需求与预算，评估后适合再接单，不合适会直接给免费替代建议。"

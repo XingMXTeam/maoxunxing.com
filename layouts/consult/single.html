@@ -25,20 +25,17 @@
           </h1>
 
           <p class="cs-lead">
-            不画大饼、不卖空洞教程。每一项服务都明码标价、先对齐交付清单与边界，再排期交付——可直接使用 Stripe 在线支付，或先加微信详细评估。
+            不画大饼、不做复杂套餐。高中低三档明码标价：从 ¥199 买断即用的实战知识库，到 ¥799 1v1 实战陪跑，再到整站全案交付——支持 Stripe 在线支付或微信先对齐。
           </p>
 
           <div class="cs-hero-ctas">
-            <a class="cs-btn cs-btn-primary" href="#cs-digital">
-              <i class="fas fa-layer-group" aria-hidden="true"></i>
-              <span>¥199 获取完整实战知识库 ↓</span>
-            </a>
-            <a class="cs-btn cs-btn-ghost" href="#cs-services">
-              <span>查看 1v1 陪跑与定制服务</span>
+            <a class="cs-btn cs-btn-primary" href="#cs-services">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+              <span>查看高中低三档方案 ↓</span>
             </a>
             <a class="cs-btn cs-btn-ghost" href="#cs-contact">
               <i class="fab fa-weixin" aria-hidden="true"></i>
-              <span>微信咨询（maoxunxing）</span>
+              <span>加微信先聊需求（maoxunxing）</span>
             </a>
           </div>
         </div>
@@ -55,61 +52,12 @@
       </div>
     </section>
 
-    {{/* ============================== DIGITAL KNOWLEDGE BASE (¥199) ============================== */}}
-    {{ with $data.digital_products }}
-      <section id="cs-digital" class="cs-section cs-wrap" aria-labelledby="cs-digital-title">
-        <header class="cs-sec-head">
-          <p class="cs-kicker">01 · DIGITAL KNOWLEDGE BASE</p>
-          <h2 id="cs-digital-title" class="cs-h2">零等待数字资产 · 买完即得</h2>
-          <p class="cs-sec-desc">无需预约时间，一次买断即可获得全部实战知识库、工程模板与后续新增内容更新。</p>
-        </header>
-
-        {{ range . }}
-          {{ $hasStripe := ne (.stripe_url | default "") "" }}
-          <article id="{{ .id }}" class="cs-digital-card">
-            <div>
-              <div class="cs-digital-top">
-                <span class="cs-digital-badge"><i class="fas {{ .icon }}" aria-hidden="true"></i> {{ .badge }}</span>
-              </div>
-              <h3 class="cs-digital-title">{{ .title }}</h3>
-              <p class="cs-digital-desc">{{ .desc }}</p>
-              <ul class="cs-digital-list">
-                {{ range .includes }}
-                  <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>{{ . }}</span></li>
-                {{ end }}
-              </ul>
-            </div>
-
-            <div class="cs-digital-buy">
-              <div class="cs-price-row">
-                <strong class="cs-price">{{ .price }}</strong>
-                <span class="cs-unit">{{ .unit }}</span>
-              </div>
-              <p class="cs-digital-note">下单后立即获取完整访问权限；支持后续新增 Prompt、Skills 与模板免费同步更新。</p>
-              {{ if $hasStripe }}
-                <a class="cs-card-btn is-stripe" href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer">
-                  <i class="fab fa-stripe-s" aria-hidden="true"></i>
-                  <span>Stripe 立即购买 ({{ .price }})</span>
-                  <span aria-hidden="true">↗&#xFE0E;</span>
-                </a>
-              {{ else }}
-                <a class="cs-card-btn is-stripe" href="#cs-contact" data-cs-select="{{ .title }} ({{ .price }})">
-                  <span>立即获取知识库 ({{ .price }})</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              {{ end }}
-            </div>
-          </article>
-        {{ end }}
-      </section>
-    {{ end }}
-
-    {{/* ============================== SERVICES ============================== */}}
+    {{/* ============================== 3-TIER PRICING ============================== */}}
     <section id="cs-services" class="cs-section cs-wrap" aria-labelledby="cs-services-title">
       <header class="cs-sec-head">
-        <p class="cs-kicker">02 · SERVICES &amp; PRICING</p>
-        <h2 id="cs-services-title" class="cs-h2">1v1 陪跑与定制服务清单</h2>
-        <p class="cs-sec-desc">所有项目均可先加微信对齐边界后结算；已接入 Stripe 的项目支持直接下单锁定档期。</p>
+        <p class="cs-kicker">01 · THREE CLEAR TIERS</p>
+        <h2 id="cs-services-title" class="cs-h2">高中低三档 · 按需选择</h2>
+        <p class="cs-sec-desc">无需反复比价：自助买断知识库、1v1 陪跑直通、或整站全案定制，一目了然。</p>
       </header>
 
       <div class="cs-grid">
@@ -147,7 +95,7 @@
               </a>
             {{ else }}
               <a class="cs-card-btn" href="#cs-contact" data-cs-select="{{ .title }} ({{ .price }})">
-                <span>预约此服务 / 锁定档期</span>
+                <span>立即获取 / 预约此档位</span>
                 <span aria-hidden="true">→</span>
               </a>
             {{ end }}
@@ -160,10 +108,10 @@
     <section id="cs-contact" class="cs-section cs-wrap" aria-labelledby="cs-contact-title">
       <div class="cs-contact-box">
         <div>
-          <p class="cs-kicker">03 · DIRECT CONTACT</p>
+          <p class="cs-kicker">02 · DIRECT CONTACT</p>
           <h2 id="cs-contact-title">先花 5 分钟对齐边界，确认能解决再合作</h2>
           <p id="cs-contact-note">
-            加微信请备注你的需求方向（如「AI 工具陪跑」「海外账号」「独立建站」），通常当天回复。习惯邮件沟通可直接来信说明背景与预算。
+            加微信请备注档位或需求方向（如「¥199 知识库」「¥799 1v1 陪跑」「独立建站」），通常当天回复。习惯邮件沟通可直接来信说明背景与预算。
           </p>
           <div class="cs-hero-ctas">
             <a class="cs-btn cs-btn-primary" id="cs-mailto" href="mailto:me@maoxunxing.com?subject=%E5%92%A8%E8%AF%A2%E5%90%88%E4%BD%9C%EF%BC%9A">
@@ -187,7 +135,7 @@
     {{/* ============================== FAQ ============================== */}}
     <section class="cs-section cs-wrap" aria-labelledby="cs-faq-title">
       <header class="cs-sec-head">
-        <p class="cs-kicker">04 · FAQ</p>
+        <p class="cs-kicker">03 · FAQ</p>
         <h2 id="cs-faq-title" class="cs-h2">常见问题</h2>
       </header>
 
@@ -213,7 +161,7 @@
             mailto.href = "mailto:me@maoxunxing.com?subject=" + encodeURIComponent("咨询预约：" + svc);
           }
           if (note) {
-            note.innerHTML = "已选中：<strong>" + svc + "</strong> — 扫码或复制微信号 <code>maoxunxing</code> 备注此项目即可，也可直接点击下方发邮件。";
+            note.innerHTML = "已选中：<strong>" + svc + "</strong> — 扫码或复制微信号 <code>maoxunxing</code> 备注此档位即可，也可直接点击下方发邮件。";
           }
         });
       });
