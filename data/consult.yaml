@@ -18,7 +18,8 @@ services:
       - "八步深度写作 SOP、去 AI 味清单与口播分镜模板"
       - "独立开发选品审查框架 & 出海支付/建站避坑知识库"
     exclude: "纯数字资料与模板，不含 1v1 实时连线辅导。"
-    stripe_url: ""
+    stripe_url: "https://buy.stripe.com/9B6eVddH72dF66K61i6AM06"
+    stripe_cta: "Stripe 立即买断 (¥199)"
 
   - id: ai-coaching
     badge: "中档 · 最受欢迎"
@@ -36,7 +37,8 @@ services:
       - "免费赠送 ¥199《毛毛星 AI 工程与创作者实战知识库》"
       - "交付后 7 天内微信异步答疑跟进"
     exclude: "平台官方订阅费或银行卡年费由客户自付；不卖共享号。"
-    stripe_url: ""
+    stripe_url: "https://buy.stripe.com/cNi9ATgTjdWn52GexO6AM07"
+    stripe_cta: "Stripe 立即预约 (¥799)"
 
   - id: indie-build
     badge: "高档 · 全案交付"
@@ -54,12 +56,13 @@ services:
       - "上线前 Playwright 端到端走查验收"
       - "¥399 架构评估定金开工后全额抵扣开发款"
     exclude: "开工前先对齐功能边界与时间表，不接无边界需求。"
-    stripe_url: ""
+    stripe_url: "https://buy.stripe.com/28E14ncD3bOf66K0GY6AM08"
+    stripe_cta: "Stripe 支付评估定金 (¥399)"
 
 faqs:
   - q: "高中低三档怎么选最划算？"
     a: "想低成本抄作业选 ¥199 知识库；卡在具体代码/Agent/出海接入选 ¥799 1v1 陪跑（直接送 ¥199 知识库）；需要整站开发上线选 ¥6,000 起全案（先付 ¥399 评估定金，开工全额抵扣）。"
   - q: "支持 Stripe 信用卡、微信或支付宝吗？"
-    a: "支持。接入 Stripe Payment Link 后可直接在线支付；如需先确认细节，也可加微信（maoxunxing）或发邮件沟通后结算。"
+    a: "支持。点击上方卡片即可直接通过 Stripe 在线支付；如需先确认细节，也可加微信（maoxunxing）或发邮件沟通后结算。"
   - q: "还有其他定制需求（如 Kindle 出书、账号全代操）可以聊吗？"
     a: "可以，直接加微信（maoxunxing）备注你的具体需求与预算，评估后适合再接单，不合适会直接给免费替代建议。"

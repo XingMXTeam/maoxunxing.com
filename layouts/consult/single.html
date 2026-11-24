@@ -90,7 +90,7 @@
             {{ if $hasStripe }}
               <a class="cs-card-btn is-stripe" href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-stripe-s" aria-hidden="true"></i>
-                <span>Stripe 立即下单 ({{ .price }})</span>
+                <span>{{ .stripe_cta | default (printf "Stripe 立即下单 (%s)" .price) }}</span>
                 <span aria-hidden="true">↗&#xFE0E;</span>
               </a>
             {{ else }}
