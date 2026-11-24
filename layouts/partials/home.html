@@ -178,35 +178,35 @@
 
     <div class="hx-bento">
       {{/* Big AI tools tile */}}
-      <a class="hx-tile hx-tile-tools" href="{{ $aiToolsURL }}" data-hx-reveal data-hx-spot>
+      <div class="hx-tile hx-tile-tools" data-hx-reveal data-hx-spot>
         <span class="hx-tile-border" aria-hidden="true"></span>
-        <span class="hx-tile-top">
+        <div class="hx-tile-top">
           <span class="hx-live"><span></span>Live</span>
-          <span class="hx-tile-go" aria-hidden="true">→</span>
-        </span>
-        <span class="hx-tile-copy">
+          <a class="hx-tile-go" href="{{ $aiToolsURL }}" aria-label="{{ i18n "homeProductToolsTitle" }}">{{ "→" }}</a>
+        </div>
+        <a class="hx-tile-copy hx-tile-copy-link" href="{{ $aiToolsURL }}">
           <strong class="hx-tile-title">{{ i18n "homeProductToolsTitle" }}</strong>
           <span class="hx-tile-desc">{{ i18n "homeProductToolsDesc" }}</span>
-        </span>
+        </a>
         {{- $aiOnlyTools := slice -}}
         {{- range $tools -}}
           {{- if hasPrefix .url "/ai/" -}}
             {{- $aiOnlyTools = $aiOnlyTools | append . -}}
           {{- end -}}
         {{- end -}}
-        <span class="hx-apps" aria-hidden="true">
+        <div class="hx-apps">
           {{- range $i, $t := first 6 $aiOnlyTools }}
             {{- $icon := (index $toolIcons (lower (index $t.tags 0))) | default "fa-bolt" }}
-            <span class="hx-app" style="--h: {{ mod (add 250 (mul $i 41)) 360 }}; --i: {{ $i }}">
-              <span class="hx-app-icon"><i class="fas {{ $icon }}"></i></span>
+            <a class="hx-app" href="{{ $t.url }}" style="--h: {{ mod (add 250 (mul $i 41)) 360 }}; --i: {{ $i }}">
+              <span class="hx-app-icon"><i class="fas {{ $icon }}" aria-hidden="true"></i></span>
               <span class="hx-app-name">{{ $t.name }}</span>
-            </span>
+            </a>
           {{- end }}
-        </span>
-        <span class="hx-tile-foot">
-          <span class="hx-tile-foot-dot" aria-hidden="true"></span>{{ i18n "hxToolsTileFoot" }}
-        </span>
-      </a>
+        </div>
+        <a class="hx-tile-foot" href="{{ $aiToolsURL }}">
+          <span class="hx-tile-foot-dot" aria-hidden="true"></span>{{ i18n "hxToolsTileFoot" }} →
+        </a>
+      </div>
 
       {{/* Vertical products */}}
       {{- range $i, $p := $products }}

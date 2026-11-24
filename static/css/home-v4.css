@@ -1465,14 +1465,44 @@ html[data-initial-color-scheme="dark"] body.colorscheme-auto .hx-btn-primary {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.09);
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, border-color 0.25s ease;
-  transition-delay: calc(var(--i, 0) * 20ms);
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  transition-delay: calc(var(--i, 0) * 15ms);
 }
 
-.hx-tile-tools:hover .hx-app {
+.hx-app:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.085);
-  border-color: hsla(var(--h, 250), 85%, 70%, 0.4);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: hsla(var(--h, 250), 88%, 72%, 0.58);
+  box-shadow: 0 10px 24px -10px hsla(var(--h, 250), 85%, 60%, 0.42);
+}
+
+.hx-app:hover .hx-app-icon {
+  transform: scale(1.06);
+}
+
+.hx-tile-copy-link {
+  display: block;
+  text-decoration: none !important;
+}
+
+.hx-tile-foot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 1.22rem;
+  color: rgba(228, 228, 231, 0.72) !important;
+  text-decoration: none !important;
+}
+
+.hx-tile-foot:hover {
+  color: #ffffff !important;
 }
 
 .hx-app-icon {

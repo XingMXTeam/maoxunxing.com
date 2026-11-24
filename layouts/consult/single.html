@@ -1,63 +1,184 @@
 {{ define "title" }}
-  {{ i18n "consultFlagshipTitle" }} ·
-  {{ .Site.Title }}
+  {{ i18n "consultFlagshipTitle" }} · {{ .Site.Title }}
 {{ end }}
+
 {{ define "content" }}
-  <link rel="stylesheet" href="/css/consult.css?v=20261111-consult-price" />
-  <section class="container consult-page">
-    <header class="consult-flagship">
-      <p class="home-eyebrow">{{ i18n "consultEyebrow" }}</p>
-      <h1 class="home-hero-title">{{ i18n "consultFlagshipTitle" }}</h1>
-      <p class="consult-price">{{ i18n "consultPrice" }}</p>
-      <p class="consult-terms">{{ i18n "consultTerms" }}</p>
-      <p class="consult-ready">{{ i18n "consultFactReady" }}</p>
-      <div class="consult-contact">
-        <a
-          class="home-action-primary consult-primary"
-          href="mailto:me@maoxunxing.com"
-          >{{ i18n "consultCta" }}</a
-        >
-        <div class="consult-wechat">
-          <p>
-            {{ i18n "consultWechatLabel" }}<span class="footer-contact-id"
-              >maoxunxing</span
-            >
+  <link rel="stylesheet" href="/css/consult-app.css" />
+  {{ $data := site.Data.consult }}
+
+  <div class="cs" id="cs">
+    {{/* ============================== HERO ============================== */}}
+    <section class="cs-hero" aria-labelledby="cs-h1">
+      <div class="cs-wrap cs-hero-inner">
+        <div>
+          <a class="cs-author-pill" href="{{ "about/" | relLangURL }}">
+            <img src="/images/avatar-momo.jpg" alt="毛毛星 Momo" width="34" height="34" />
+            <span>
+              <strong>毛毛星 Momo · AI 全栈工程师</strong>
+              <span> · 前网易 / 阿里 11 年前端</span>
+            </span>
+          </a>
+
+          <h1 id="cs-h1" class="cs-h1">
+            把你卡住的 AI 工程、独立建站与出海链路，<br />
+            <span class="cs-grad">一次交付到可上线。</span>
+          </h1>
+
+          <p class="cs-lead">
+            不画大饼、不卖空洞教程。每一项服务都明码标价、先对齐交付清单与边界，再排期交付——可直接使用 Stripe 在线支付，或先加微信详细评估。
           </p>
-          <img
-            src="{{ "images/wechat-qr.jpg" | relURL }}"
-            alt="{{ i18n "footerContactQrAlt" }}"
-            width="72"
-            height="72"
-          />
+
+          <div class="cs-hero-ctas">
+            <a class="cs-btn cs-btn-primary" href="#cs-services">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+              <span>查看 5 项明码标价服务 ↓</span>
+            </a>
+            <a class="cs-btn cs-btn-ghost" href="#cs-contact">
+              <i class="fab fa-weixin" aria-hidden="true"></i>
+              <span>加微信先聊需求（maoxunxing）</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="cs-trust-card" aria-label="交付背景与承诺">
+          <span class="cs-trust-kicker">WHY WORK WITH MOMO</span>
+          <ul class="cs-trust-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><strong>11 年真实工程底子</strong>：网易杭研院 / 阿里国际化中台 7 年复杂平台经验。</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><strong>开源与产品实证</strong>：开源 <code>frontend-harness-cli</code>（21 份 Skills）、独立运营 Browserly / Sayo / HackHub / CrossAgent Lab。</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><strong>先对齐再收款</strong>：评估后如不合适直接劝退或给免费替代方案，绝不硬接单。</span></li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i><span><strong>个人全流程交付</strong>：不外包转手，全程本人沟通、代码与验收。</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    {{/* ============================== SERVICES ============================== */}}
+    <section id="cs-services" class="cs-section cs-wrap" aria-labelledby="cs-services-title">
+      <header class="cs-sec-head">
+        <p class="cs-kicker">01 · SERVICES &amp; PRICING</p>
+        <h2 id="cs-services-title" class="cs-h2">明码标价服务清单</h2>
+        <p class="cs-sec-desc">所有项目均可先加微信对齐边界后结算；已接入 Stripe 的项目支持直接下单锁定档期。</p>
+      </header>
+
+      <div class="cs-grid">
+        {{ range $data.services }}
+          {{ $hasStripe := ne (.stripe_url | default "") "" }}
+          <article id="{{ .id }}" class="cs-card{{ if .featured }} is-featured{{ end }}" style="--c: {{ .color }}">
+            <div class="cs-card-top">
+              <span class="cs-ico"><i class="fas {{ .icon }}" aria-hidden="true"></i></span>
+              <span class="cs-badge">{{ .badge }}</span>
+            </div>
+
+            <h3>{{ .title }}</h3>
+
+            <div class="cs-price-row">
+              <strong class="cs-price">{{ .price }}</strong>
+              <span class="cs-unit">{{ .unit }}</span>
+            </div>
+
+            <p class="cs-turn">{{ .turnaround }}</p>
+            <p class="cs-summary">{{ .summary }}</p>
+
+            <ul class="cs-deliv">
+              {{ range .deliverables }}
+                <li><i class="fas fa-check" aria-hidden="true"></i><span>{{ . }}</span></li>
+              {{ end }}
+            </ul>
+
+            <p class="cs-exclude">边界：{{ .exclude }}</p>
+
+            {{ if $hasStripe }}
+              <a class="cs-card-btn is-stripe" href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-stripe-s" aria-hidden="true"></i>
+                <span>Stripe 立即下单 ({{ .price }})</span>
+                <span aria-hidden="true">↗&#xFE0E;</span>
+              </a>
+            {{ else }}
+              <a class="cs-card-btn" href="#cs-contact" data-cs-select="{{ .title }} ({{ .price }})">
+                <span>预约此服务 / 锁定档期</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>
+    </section>
+
+    {{/* ============================== DIRECT CONTACT ============================== */}}
+    <section id="cs-contact" class="cs-section cs-wrap" aria-labelledby="cs-contact-title">
+      <div class="cs-contact-box">
+        <div>
+          <p class="cs-kicker">02 · DIRECT CONTACT</p>
+          <h2 id="cs-contact-title">先花 5 分钟对齐边界，确认能解决再合作</h2>
+          <p id="cs-contact-note">
+            加微信请备注你的需求方向（如「AI 工具陪跑」「海外账号」「独立建站」），通常当天回复。习惯邮件沟通可直接来信说明背景与预算。
+          </p>
+          <div class="cs-hero-ctas">
+            <a class="cs-btn cs-btn-primary" id="cs-mailto" href="mailto:me@maoxunxing.com?subject=%E5%92%A8%E8%AF%A2%E5%90%88%E4%BD%9C%EF%BC%9A">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>发邮件说明需求 (me@maoxunxing.com)</span>
+            </a>
+            <button type="button" class="cs-btn cs-btn-ghost" data-cs-copy="maoxunxing">
+              <i class="fas fa-copy" aria-hidden="true"></i>
+              <span>复制微信号：maoxunxing</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="cs-qr">
+          <img src="{{ "images/wechat-qr.jpg" | relURL }}" alt="{{ i18n "footerContactQrAlt" }}" width="120" height="120" />
+          <span>微信 · maoxunxing</span>
         </div>
       </div>
-    </header>
-
-    <section class="consult-more" aria-labelledby="consult-more-title">
-      <h2 id="consult-more-title" class="home-kicker">
-        {{ i18n "consultMoreLabel" }}
-      </h2>
-      <ul class="consult-rows">
-        <li>
-          <strong>{{ i18n "consultMore1" }}</strong>
-          <span class="consult-terms">{{ i18n "consultMore1Terms" }}</span>
-        </li>
-        <li>
-          <strong>{{ i18n "consultMore2Title" }}</strong>
-          <span class="consult-terms">{{ i18n "consultMore2Terms" }}</span>
-          <span>{{ i18n "consultMore2Detail" }}</span>
-        </li>
-        <li>
-          <strong>{{ i18n "consultMore3Title" }}</strong>
-          <span class="consult-terms">{{ i18n "consultMore3Terms" }}</span>
-          <span>{{ i18n "consultMore3Detail" }}</span>
-        </li>
-        <li>
-          <strong>{{ i18n "consultMore4Title" }}</strong>
-          <span class="consult-terms">{{ i18n "consultMore4Terms" }}</span>
-          <span>{{ i18n "consultMore4Detail" }}</span>
-        </li>
-      </ul>
     </section>
-  </section>
+
+    {{/* ============================== FAQ ============================== */}}
+    <section class="cs-section cs-wrap" aria-labelledby="cs-faq-title">
+      <header class="cs-sec-head">
+        <p class="cs-kicker">03 · FAQ</p>
+        <h2 id="cs-faq-title" class="cs-h2">常见问题</h2>
+      </header>
+
+      <div class="cs-faqs">
+        {{ range $data.faqs }}
+          <article class="cs-faq">
+            <h3>{{ .q }}</h3>
+            <p>{{ .a }}</p>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      var mailto = document.getElementById("cs-mailto");
+      var note = document.getElementById("cs-contact-note");
+      Array.prototype.forEach.call(document.querySelectorAll("[data-cs-select]"), function (btn) {
+        btn.addEventListener("click", function () {
+          var svc = btn.getAttribute("data-cs-select");
+          if (mailto) {
+            mailto.href = "mailto:me@maoxunxing.com?subject=" + encodeURIComponent("咨询预约：" + svc);
+          }
+          if (note) {
+            note.innerHTML = "已选中：<strong>" + svc + "</strong> — 扫码或复制微信号 <code>maoxunxing</code> 备注此项目即可，也可直接点击下方发邮件。";
+          }
+        });
+      });
+      Array.prototype.forEach.call(document.querySelectorAll("[data-cs-copy]"), function (btn) {
+        btn.addEventListener("click", function () {
+          var v = btn.getAttribute("data-cs-copy");
+          var span = btn.querySelector("span");
+          var orig = span ? span.textContent : "";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(v).catch(function () {});
+          }
+          if (span) {
+            span.textContent = "已复制微信号 maoxunxing ✓";
+            setTimeout(function () { span.textContent = orig; }, 1600);
+          }
+        });
+      });
+    })();
+  </script>
 {{ end }}

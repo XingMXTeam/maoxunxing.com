@@ -1,0 +1,64 @@
+{{- $isZh := hasPrefix (lower .Site.Language.Lang) "zh" -}}
+{{- $sec := .Section -}}
+{{- $kicker := "NEXT STEP" -}}
+{{- $title := "" -}}
+{{- $desc := "" -}}
+{{- $primaryLabel := "" -}}
+{{- $primaryHref := "" -}}
+{{- $secondaryLabel := "" -}}
+{{- $secondaryHref := "" -}}
+
+{{- if eq $sec "ai-coding-workflow" -}}
+  {{- $kicker = "AI CODING & HARNESS" -}}
+  {{- $title = cond $isZh "想把这套 AI 工程闭环跑进你的项目？" "Want this AI engineering workflow in your repo?" -}}
+  {{- $desc = cond $isZh "直接带走 55 条实战 Prompt 工作台，或预约 90 分钟 1v1 陪跑，现场帮你配齐 AGENTS.md、Skills 与验收门禁。" "Grab the 55-prompt workbench or book a 90-min 1:1 pairing session to set up AGENTS.md, Skills, and eval gates." -}}
+  {{- $primaryLabel = cond $isZh "1v1 陪跑与咨询 →" "Book 1:1 Pairing →" -}}
+  {{- $primaryHref = "/zh-cn/consult/#ai-coaching" -}}
+  {{- $secondaryLabel = cond $isZh "打开 Prompt 工作台" "Open Prompt Studio" -}}
+  {{- $secondaryHref = "prompts/" | relLangURL -}}
+{{- else if eq $sec "ai-indie-hacking" -}}
+  {{- $kicker = "INDIE BUILDER · SHIP FAST" -}}
+  {{- $title = cond $isZh "需要同款独立站开发、海外账号或 Stripe 出海接入？" "Need an indie site, overseas AI setup, or Stripe integration?" -}}
+  {{- $desc = cond $isZh "查看我亲手交付的 4 个垂直产品，或直接通过明码标价的建站与出海服务，省掉几周踩坑时间。" "Explore my 4 live vertical products or book transparent productized engineering & Stripe setup." -}}
+  {{- $primaryLabel = cond $isZh "查看建站与出海服务 →" "View Services & Pricing →" -}}
+  {{- $primaryHref = "/zh-cn/consult/#indie-build" -}}
+  {{- $secondaryLabel = cond $isZh "看看垂直产品" "See Vertical Products" -}}
+  {{- $secondaryHref = "products/" | relLangURL -}}
+{{- else if eq $sec "creator-workflow" -}}
+  {{- $kicker = "CREATOR SYSTEM" -}}
+  {{- $title = cond $isZh "复制同款写作 SOP、口播脚本与封面生图口令" "Copy my exact writing SOPs, video scripts & cover prompts" -}}
+  {{- $desc = cond $isZh "文章里的八步写作法、禁主持人腔补丁与 7 种封面关键词已全部收录进工作台，点开即用。" "All writing SOPs, anti-slop checks, and 7 cover prompt styles are live inside the Prompt Studio." -}}
+  {{- $primaryLabel = cond $isZh "打开 55 条 Prompt 工作台 →" "Open 55-Prompt Studio →" -}}
+  {{- $primaryHref = "prompts/" | relLangURL -}}
+  {{- $secondaryLabel = cond $isZh "预约工作流咨询" "Book Workflow Consulting" -}}
+  {{- $secondaryHref = "/zh-cn/consult/#ai-coaching" -}}
+{{- else if eq $sec "long-term-investing" -}}
+  {{- $kicker = "OPTIONS TRADING MADE SIMPLE" -}}
+  {{- $title = cond $isZh "想建立系统化的期权与风险期望思维？" "Build a systematic options & risk-expectation framework" -}}
+  {{- $desc = cond $isZh "《期权大白话》互动版已上线：前两章免费全文试读 + Black‑Scholes 与 Greeks 实时飞行模拟器。" "Try the interactive edition of Options Trading Made Simple: free Chapters 1–2 plus a live Black-Scholes & Greeks simulator." -}}
+  {{- $primaryLabel = cond $isZh "打开《期权大白话》互动版 →" "Open Interactive Book →" -}}
+  {{- $primaryHref = "options-dabaihua/" | relLangURL -}}
+  {{- $secondaryLabel = cond $isZh "Amazon 购买完整版" "Buy on Amazon" -}}
+  {{- $secondaryHref = cond $isZh "https://www.amazon.com/dp/B0F6NSTGPQ" "https://www.amazon.com/dp/B0FQ32FWGM" -}}
+{{- else -}}
+  {{- $kicker = "MOMO · PRODUCT & SERVICES" -}}
+  {{- $title = cond $isZh "把阅读变成产出：实战 Prompt 工具箱 & 1v1 工程交付" "Turn reading into execution: Prompt Studio & 1:1 Engineering" -}}
+  {{- $desc = cond $isZh "如果这篇文章对你有启发，可以打开 55 条中英双语 Prompt 工作台直接复用，或了解我的 AI 陪跑与独立建站服务。" "Reuse my 55 bilingual prompts in the Studio, try the interactive Options book, or check out 1:1 consulting." -}}
+  {{- $primaryLabel = cond $isZh "预约服务 / 查看报价 →" "Consulting & Services →" -}}
+  {{- $primaryHref = "/zh-cn/consult/" -}}
+  {{- $secondaryLabel = cond $isZh "55 条 Prompt 工作台" "55-Prompt Studio" -}}
+  {{- $secondaryHref = "prompts/" | relLangURL -}}
+{{- end -}}
+
+<link rel="stylesheet" href="/css/consult-app.css" />
+<aside class="conv" aria-label="Next step conversion">
+  <div class="conv-copy">
+    <span class="conv-kicker">{{ $kicker }}</span>
+    <h3 class="conv-title">{{ $title }}</h3>
+    <p class="conv-desc">{{ $desc }}</p>
+  </div>
+  <div class="conv-actions">
+    <a class="conv-btn conv-btn-primary" href="{{ $primaryHref }}">{{ $primaryLabel }}</a>
+    <a class="conv-btn conv-btn-ghost" href="{{ $secondaryHref }}">{{ $secondaryLabel }}</a>
+  </div>
+</aside>

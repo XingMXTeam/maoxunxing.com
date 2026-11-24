@@ -1,0 +1,100 @@
+# Consulting & Productized Services Catalog
+# To enable instant Stripe Checkout for any item, paste your Stripe Payment Link into `stripe_url` (e.g. "https://buy.stripe.com/...").
+# When `stripe_url` is empty, the CTA smoothly opens the direct booking / WeChat contact flow.
+
+services:
+  - id: ai-coaching
+    badge: "入门首选 · 1v1"
+    featured: false
+    icon: "fa-bolt"
+    color: "#6366f1"
+    title: "AI 工具与 Coding Agent 实战陪跑"
+    price: "¥1,980"
+    unit: "/ 90 分钟"
+    turnaround: "预约即约 · 线上屏幕共享"
+    summary: "针对 Claude Code、Cursor、Codex、Gemini 与 MiniMax / Grok，结合你的真实代码库或业务工作流，90 分钟打通上下文、Rules、Skills 与自动化闭环。"
+    deliverables:
+      - "90 分钟 1v1 深度诊断与屏幕实操"
+      - "针对你当前项目的 AGENTS.md / Skills 落地建议"
+      - "55 条高频 Prompt 工作台与工程避坑手册"
+      - "7 天内微信异步答疑跟进"
+    exclude: "不含海外账号代开与代充值。"
+    stripe_url: ""
+
+  - id: overseas-ai
+    badge: "最受欢迎 · 省心交付"
+    featured: true
+    icon: "fa-globe"
+    color: "#06b6d4"
+    title: "海外 AI 账号申请与原生接入"
+    price: "¥3,980"
+    unit: "/ 次"
+    turnaround: "含全流程代操 · 约 5 个工作日交付"
+    summary: "解决美区 ChatGPT、Claude 账号申请与风控稳定使用难题，以及 Gemini API / 订阅购买与项目接入。账号资产完全归你本人所有。"
+    deliverables:
+      - "美区 ChatGPT / Claude 独立账号注册与环境路径配置"
+      - "Gemini 购买与 API / 客户端原生接入调试"
+      - "完整交付账号凭证、防风控使用守则与交接文档"
+      - "交付后 14 天稳定运行护航"
+    exclude: "不卖共享号、不含按月代充；平台官方订阅与购买费用客户自付。"
+    stripe_url: ""
+
+  - id: indie-build
+    badge: "全栈交付 · 独立站"
+    featured: false
+    icon: "fa-code"
+    color: "#a855f7"
+    title: "前端架构与聚合 / 独立站定制"
+    price: "¥8,000"
+    unit: "起"
+    turnaround: "先对齐范围与验收标准 · 按周里程碑交付"
+    summary: "前网易 · 阿里资深前端工程师亲手交付，擅长聚合站、工具站、AI 产品落地页与内容/SEO/GEO 增长系统（如 Browserly / HackHub 同款架构）。"
+    deliverables:
+      - "完整 Next.js / React / Hugo 源码与响应式双端 UI"
+      - "GEO / SEO 结构化元数据与 AI 生图资产接入"
+      - "Cloudflare / Vercel / Firebase 自动化部署流水线"
+      - "上线前 Playwright 端到端走查验收"
+    exclude: "开工前先对齐功能边界与时间表，不接无边界需求。"
+    stripe_url: ""
+
+  - id: overseas-pay
+    badge: "出海基建"
+    featured: false
+    icon: "fa-credit-card"
+    color: "#10b981"
+    title: "出海支付（Stripe）与海外卡协助"
+    price: "¥2,980"
+    unit: "/ 次"
+    turnaround: "约 5–10 个工作日（视银行审核进度）"
+    summary: "打通一人公司海外收款闭环：覆盖 Stripe 收款路径说明、国外虚拟卡合规使用以及民生香港卡开户资料准备与申请协助。"
+    deliverables:
+      - "Stripe 开通路径与独立站收款接入方案说明"
+      - "海外虚拟卡 / 民生香港卡申请材料核对与陪跑"
+      - "常见问题避坑清单与税务/合规基础提醒"
+    exclude: "银行卡年费、押金与开户审核结果以银行官方为准，费用自付。"
+    stripe_url: ""
+
+  - id: ebook-publish
+    badge: "个人出版"
+    featured: false
+    icon: "fa-book"
+    color: "#f59e0b"
+    title: "亚马逊 Kindle 电子书制作与发布"
+    price: "¥3,980"
+    unit: "起"
+    turnaround: "含排版制作与 Amazon KDP 上架辅导"
+    summary: "基于《期权大白话》（中英双版已上架 Amazon）真实出版流水线，帮你把专栏文章或书稿变成规范电子书并顺利上架全球商店。"
+    deliverables:
+      - "Markdown / 文稿到规范 KDP 电子书格式转换与排版"
+      - "中英双语书封规范建议与元数据（ASIN/关键词）配置"
+      - "Amazon KDP 后台上架提交与审核问题排查"
+    exclude: "Amazon 站内广告投放预算另计。"
+    stripe_url: ""
+
+faqs:
+  - q: "可以用 Stripe 信用卡 / 微信 / 支付宝付款吗？"
+    a: "支持。接入 Stripe Checkout 后可直接使用信用卡或支持的本地支付方式；如需先对齐需求再付款，也可直接加微信（maoxunxing）或发邮件沟通后通过微信/对公/Stripe 结算。"
+  - q: "如何确保我的需求和边界清晰，不踩坑？"
+    a: "所有服务均遵循「先对齐范围与交付清单，再确认下单」。如果评估后你的需求不在我能力圈或当前方案不划算，我会直接劝退或给出免费替代路径，不硬接单。"
+  - q: "AI 工具 1v1 陪跑需要提前准备什么？"
+    a: "提前把你想解决的 1–3 个具体问题、正在使用的工具（如 Claude Code / Cursor / Codex）和代码库场景发我，90 分钟全程直奔实战，不讲空洞概念。"

@@ -287,8 +287,8 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> -->
 
     {{ hugo.Generator }}
-    {{/* Skip ads on the home page, projects, prompts workbench, the consult landing, and the book preview. */}}
-    {{ $showAds := and (not .IsHome) (ne .Section "projects") (ne .Section "prompts") (ne .Type "consult") (ne .Section "options-dabaihua") (ne .Section "features") }}
+    {{/* AdSense disabled sitewide in favor of direct product & consulting conversion */}}
+    {{ $showAds := false }}
     {{ if $showAds }}
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892599483138014" crossorigin="anonymous"></script>
     {{ end }}
@@ -309,7 +309,7 @@
     {{ $langClass = "cn" }}
   {{ end }}
 
-  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}{{ if .IsHome }} page-home{{ end }}{{ if eq .Section "prompts" }} page-prompts{{ end }}{{ if eq .Section "options-dabaihua" }} page-options{{ end }}">
+  <body class="{{ $langClass }} {{ $csClass }}{{ if .Site.Params.rtl }}rtl{{ end }}{{ if .IsHome }} page-home{{ end }}{{ if eq .Section "prompts" }} page-prompts{{ end }}{{ if eq .Section "options-dabaihua" }} page-options{{ end }}{{ if eq .Type "consult" }} page-consult{{ end }}">
     {{ partial "float" . }}
     <main class="wrapper">
       {{ partial "header.html" . }}
