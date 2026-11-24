@@ -2,6 +2,21 @@
 # To enable instant Stripe Checkout for any item, paste your Stripe Payment Link into `stripe_url` (e.g. "https://buy.stripe.com/...").
 # When `stripe_url` is empty, the CTA smoothly opens the direct booking / WeChat contact flow.
 
+digital_products:
+  - id: knowledge-base
+    badge: "零等待 · 购买即得 · 永久更新"
+    icon: "fa-layer-group"
+    title: "毛毛星 AI 工程与创作者实战知识库"
+    price: "¥199"
+    unit: "/ 一次性买断"
+    desc: "把过去两年在前端工程化、AI Coding Harness、独立产品与内容创作里沉淀下来的全部核心资产打包带走，一次购买永久获取后续新增内容。"
+    includes:
+      - "55+ 条中英双语高频 Prompt 完整源文件与变量模板"
+      - "21 份前端 AI 协作 Skills 规范 & AGENTS.md 反偷懒工程模板"
+      - "八步深度写作 SOP、去 AI 味终审清单与口播分镜脚本模板"
+      - "独立开发选品审查框架 & 出海支付/建站避坑知识库（持续更新）"
+    stripe_url: ""
+
 services:
   - id: quick-diagnosis
     badge: "破冰首选 · 可抵扣"

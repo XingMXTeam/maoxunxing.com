@@ -293,6 +293,99 @@ html[data-initial-color-scheme="dark"] body.colorscheme-auto .cs {
   max-width: 66ch;
 }
 
+/* Digital Product Flagship Banner */
+.cs-digital-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(28rem, 0.65fr);
+  gap: 2.8rem;
+  align-items: center;
+  padding: 2.8rem 3rem;
+  border-radius: 24px;
+  border: 1px solid color-mix(in srgb, #6366f1 42%, var(--cs-border));
+  background:
+    radial-gradient(circle at 92% 12%, rgba(99, 102, 241, 0.14), transparent 52%),
+    radial-gradient(circle at 8% 88%, rgba(16, 185, 129, 0.10), transparent 48%),
+    var(--cs-surface);
+  box-shadow: var(--cs-shadow-lg);
+}
+
+.cs-digital-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cs-digital-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.34);
+  color: #10b981;
+  font-size: 1.18rem;
+  font-weight: 750;
+}
+
+.cs-digital-title {
+  font-size: clamp(2.1rem, 2.8vw, 2.7rem);
+  font-weight: 850;
+  color: var(--cs-ink);
+  margin-bottom: 0.8rem;
+}
+
+.cs-digital-desc {
+  font-size: 1.44rem;
+  line-height: 1.65;
+  color: var(--cs-ink-2);
+  margin-bottom: 1.4rem;
+}
+
+.cs-digital-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.4rem;
+}
+
+.cs-digital-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-size: 1.3rem;
+  color: var(--cs-ink-2);
+}
+
+.cs-digital-list i {
+  color: #10b981;
+  font-size: 1.1rem;
+}
+
+.cs-digital-buy {
+  padding: 2.2rem;
+  border-radius: 18px;
+  border: 1px solid var(--cs-border);
+  background: var(--cs-surface-2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cs-digital-note {
+  font-size: 1.22rem;
+  color: var(--cs-ink-3);
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 1024px) {
+  .cs-digital-card,
+  .cs-digital-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* Services Grid */
 .cs-grid {
   display: grid;
