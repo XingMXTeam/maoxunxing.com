@@ -100,7 +100,7 @@
     {{ with .Site.Params.keywords }}
       <meta name="keywords" content="{{ . }}" />
     {{ end }}
-    {{ if eq .Section "options-dabaihua" }}
+    {{ if or (eq .Section "options-dabaihua") .Params.noindex }}
       <meta name="robots" content="noindex, nofollow" />
     {{ end }}
 

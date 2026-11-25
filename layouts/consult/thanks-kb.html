@@ -1,0 +1,226 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+
+{{ define "content" }}
+  <link rel="stylesheet" href="/css/consult-app.css" />
+  {{ $deliveryUrl := .Params.delivery_url | default "https://burnt-lens-3a4.notion.site/AI-422665a317ef81dc90b3d08aabd7c245" }}
+
+  <style>
+    .cs-tk {
+      padding: clamp(4rem, 7vh, 7rem) 0 4rem;
+    }
+    .cs-tk-wrap {
+      max-width: 82rem;
+      margin: 0 auto;
+      padding: 0 2.4rem;
+    }
+    .cs-tk-card {
+      background: var(--cs-surface);
+      border: 1px solid var(--cs-border);
+      border-radius: 2rem;
+      padding: clamp(2.8rem, 4vw, 4.4rem);
+      box-shadow: var(--cs-shadow-lg);
+    }
+    .cs-tk-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.55rem 1.3rem;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+    }
+    body.colorscheme-dark .cs-tk-status,
+    html[data-initial-color-scheme="dark"] body.colorscheme-auto .cs-tk-status {
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.16);
+    }
+    .cs-tk-title {
+      font-size: clamp(2.4rem, 3.6vw, 3.4rem);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--cs-ink);
+      margin-bottom: 1.2rem;
+    }
+    .cs-tk-lead {
+      font-size: 1.55rem;
+      color: var(--cs-ink-2);
+      margin-bottom: 2.6rem;
+    }
+    .cs-tk-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-bottom: 2.2rem;
+    }
+    .cs-tk-tip {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.4rem 1.6rem;
+      border-radius: 1.2rem;
+      background: var(--cs-surface-2);
+      border: 1px solid var(--cs-border);
+      font-size: 1.4rem;
+      color: var(--cs-ink-2);
+      margin-bottom: 2.8rem;
+    }
+    .cs-tk-tip i {
+      color: var(--cs-accent);
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+    .cs-tk-list-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--cs-ink);
+      margin-bottom: 1.2rem;
+    }
+    .cs-tk-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .cs-tk-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 1.42rem;
+      color: var(--cs-ink-2);
+    }
+    .cs-tk-list li i {
+      color: #10b981;
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+    }
+    .cs-tk-help {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-top: 2.4rem;
+      border-top: 1px solid var(--cs-border);
+    }
+    .cs-tk-help-text h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--cs-ink);
+      margin-bottom: 0.6rem;
+    }
+    .cs-tk-help-text p {
+      font-size: 1.4rem;
+      color: var(--cs-ink-3);
+      margin-bottom: 1.4rem;
+    }
+    .cs-tk-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: var(--cs-ink-3);
+    }
+    .cs-tk-back:hover {
+      color: var(--cs-ink);
+    }
+    @media (max-width: 680px) {
+      .cs-tk-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="cs cs-tk" id="cs-thanks">
+    <div class="cs-tk-wrap">
+      <section class="cs-tk-card" aria-labelledby="cs-tk-h1">
+        <div class="cs-tk-status">
+          <i class="fas fa-check-circle" aria-hidden="true"></i>
+          <span>付款成功 · 知识库已解锁</span>
+        </div>
+
+        <h1 id="cs-tk-h1" class="cs-tk-title">感谢支持！立即领取你的实战知识库</h1>
+        <p class="cs-tk-lead">
+          《AI 工程与创作者实战知识库》已为你开放访问。点击下方按钮即可直达 Notion 知识库主页，所有后续新增模板与迭代都会直接同步在原链接中。
+        </p>
+
+        <div class="cs-tk-actions">
+          <a class="cs-btn cs-btn-primary" href="{{ $deliveryUrl }}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+            <span>立即打开 Notion 知识库 ↗&#xFE0E;</span>
+          </a>
+          <button type="button" class="cs-btn cs-btn-ghost" data-tk-copy="{{ $deliveryUrl }}">
+            <i class="fas fa-link" aria-hidden="true"></i>
+            <span>复制知识库链接</span>
+          </button>
+        </div>
+
+        <div class="cs-tk-tip">
+          <i class="fas fa-bookmark" aria-hidden="true"></i>
+          <span>
+            <strong>防丢建议：</strong>请立即把 Notion 页面加入浏览器收藏夹，或点击页面右上角 <strong>Duplicate</strong> 复制一份到自己的 Notion 空间。本交付页不对外公开索引，关闭前建议先保存链接。
+          </span>
+        </div>
+
+        <p class="cs-tk-list-title">知识库包含内容</p>
+        <ul class="cs-tk-list">
+          <li><i class="fas fa-check" aria-hidden="true"></i><span>55+ 条中英双语高频 Prompt 源文件与变量模板</span></li>
+          <li><i class="fas fa-check" aria-hidden="true"></i><span>21 份前端 AI 协作 Skills 规范 &amp; AGENTS.md 反偷懒模板</span></li>
+          <li><i class="fas fa-check" aria-hidden="true"></i><span>八步深度写作 SOP、去 AI 味清单与口播分镜模板</span></li>
+          <li><i class="fas fa-check" aria-hidden="true"></i><span>独立开发选品审查框架 &amp; 出海支付 / 建站避坑清单</span></li>
+        </ul>
+
+        <div class="cs-tk-help">
+          <div class="cs-tk-help-text">
+            <h2>遇到访问问题或需要收据 / 进一步交流？</h2>
+            <p>
+              如打不开 Notion、需要补发链接，或后续想升级 1v1 实战陪跑，加微信备注你的 Stripe 付款邮箱即可（通常当天回复）。
+            </p>
+            <div class="cs-tk-actions" style="margin-bottom:0;">
+              <button type="button" class="cs-btn cs-btn-ghost" data-tk-copy="maoxunxing">
+                <i class="fab fa-weixin" aria-hidden="true"></i>
+                <span>复制微信号：maoxunxing</span>
+              </button>
+              <a class="cs-btn cs-btn-ghost" href="mailto:me@maoxunxing.com?subject=%E7%9F%A5%E8%AF%86%E5%BA%93%E5%94%AE%E5%90%8E%E6%94%AF%E6%8C%81">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>发邮件：me@maoxunxing.com</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="cs-qr">
+            <img src="{{ "images/wechat-qr.jpg" | relURL }}" alt="{{ i18n "footerContactQrAlt" }}" width="112" height="112" />
+            <span>微信 · maoxunxing</span>
+          </div>
+        </div>
+      </section>
+
+      <a class="cs-tk-back" href="{{ "consult/" | relLangURL }}">← 返回咨询与服务页</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      Array.prototype.forEach.call(document.querySelectorAll("[data-tk-copy]"), function (btn) {
+        btn.addEventListener("click", function () {
+          var v = btn.getAttribute("data-tk-copy");
+          var span = btn.querySelector("span");
+          var orig = span ? span.textContent : "";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(v).catch(function () {});
+          }
+          if (span) {
+            span.textContent = "已复制到剪贴板 ✓";
+            setTimeout(function () { span.textContent = orig; }, 1800);
+          }
+        });
+      });
+    })();
+  </script>
+{{ end }}
