@@ -3,8 +3,11 @@ title: 垂直产品
 type: projects
 layout: projects
 kicker: 独立产品
-intro: "Sayo、CrossAgent Lab、Browserly 和 HackHub 是四个独立站。这里把它们合成一个入口，进来以后再按你要看的主题选。"
+intro: "Atoms Studio、Sayo、CrossAgent Lab、Browserly 和 HackHub 是五个独立站。这里把它们合成一个入口，进来以后再按你要看的主题选。"
 project_links:
+  - label: Atoms Studio
+    url: https://atoms.maoxunxing.com/
+    icon: fas fa-atom
   - label: CrossAgent Lab
     url: /go/crossagent
     icon: fas fa-project-diagram
@@ -18,11 +21,19 @@ project_links:
     url: /go/hackhub
     icon: fas fa-trophy
 project_sections:
-  - title: 四个独立站
+  - title: 五个独立站
     id: vertical-products
     featured: true
-    lead: "一个看跨境电商 Agent 如何落地，一个逐项核查浏览器智能体，一个练 AI 英语口语，一个聚合全球黑客松。四个站各自独立更新。"
+    lead: "一个做可验证的 AI 应用生成，一个看跨境电商 Agent 如何落地，一个逐项核查浏览器智能体，一个练 AI 英语口语，一个聚合全球黑客松。五个站各自独立更新。"
     items:
+      - name: Atoms Studio
+        link: https://atoms.maoxunxing.com/
+        desc: "可验证的 AI 应用生成平台：输入需求，Agent 团队完成规划、验收标准、代码生成、QA 评分与自修复。"
+        icon: fas fa-atom
+        status: Live
+        visual: 需求 → 验收标准 → QA 自修复
+        tags: [Atoms Studio, AI 应用生成, Agent]
+        featured: true
       - name: CrossAgent Lab
         link: /go/crossagent
         desc: "跨境电商 Agent 用例库与卖家 MCP 情报，整理别人正在用的跨境 Agent 做法。"

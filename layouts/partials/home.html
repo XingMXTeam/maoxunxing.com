@@ -5,6 +5,23 @@
   cache key for this zone ignores query strings (see hub-c.css).
 */ -}}
 <link rel="stylesheet" href="/css/home-v4.css" />
+<style>
+  .hx-tile-third {
+    grid-column: span 4;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+  .hx-tile-third .hx-tile-top {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  @media (max-width: 960px) {
+    .hx-tile-third {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
 <script>document.documentElement.classList.add("hx-js");</script>
 
 {{- $isZh := eq (lower .Site.Language.Lang) "zh-cn" -}}
@@ -89,12 +106,9 @@
         <p class="hx-desc" data-hx-reveal style="--d: 220ms">{{ i18n "hxBrandHeroDesc" }}</p>
 
         <div class="hx-ctas" data-hx-reveal style="--d: 280ms">
-          <a class="hx-btn hx-btn-primary" href="{{ $aiToolsURL }}">
+          <a class="hx-btn hx-btn-primary" href="#hx-building">
             <span>{{ i18n "hxCtaPrimary" }}</span>
-            <span class="hx-btn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="hx-btn hx-btn-ghost" href="{{ $productsURL }}">
-            <span>{{ i18n "hxCtaSecondary" }}</span>
+            <span class="hx-btn-arrow" aria-hidden="true">↓</span>
           </a>
           <a class="hx-btn hx-btn-link" href="#hx-brand">
             <span>{{ i18n "hxCtaMeet" }}</span>
@@ -108,7 +122,8 @@
             <dd>{{ i18n "hxStatTools" }}</dd>
           </div>
           <div class="hx-stat">
-            <dt><span data-hx-count="{{ len $products }}">{{ len $products }}</span></dt>
+            {{- $productCount := add (len $products) 1 -}}
+            <dt><span data-hx-count="{{ $productCount }}">{{ $productCount }}</span></dt>
             <dd>{{ i18n "hxStatProducts" }}</dd>
           </div>
           <div class="hx-stat">
@@ -222,44 +237,63 @@
       </a>
       {{- end }}
 
-      {{/* Flagship Prompt Studio Workbench (6 cols) */}}
-      {{- $promptCount := len site.Data.prompts.items -}}
-      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="https://prompts.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
-         style="--a: #6366f1; --b: #06b6d4; align-items: flex-start" data-hx-reveal data-hx-spot>
-        <span class="hx-pico" style="--a: #6366f1; --b: #06b6d4"><i class="fas fa-terminal" aria-hidden="true"></i></span>
-        <span class="hx-tile-copy">
-          <span class="hx-tile-kicker">{{ if $isZh }}PROMPT STUDIO · {{ $promptCount }} 条中英双语口令{{ else }}PROMPT STUDIO · {{ $promptCount }} BILINGUAL PROMPTS{{ end }}</span>
-          <strong class="hx-tile-title">{{ if $isZh }}高频实战 AI Prompt 工作台{{ else }}Practical AI Prompt Studio{{ end }}</strong>
-          <span class="hx-tile-desc">{{ if $isZh }}收录 Coding Agent、/loop 自动化巡检、第一性原理、写作 SOP 与 PR 审查等 {{ $promptCount }} 条实战口令，支持中英秒切、变量即时填空与多条串联组合复制。{{ else }}{{ $promptCount }} battle-tested prompts for Coding Agents, /loop automation, first principles, writing SOPs & PR audits—instant switch, live variables, and multi-prompt stacking.{{ end }}</span>
-          <span class="hx-tags" style="margin-top: 1rem">
-            <span>{{ if $isZh }}⚡ Agent 口令 & /loop{{ else }}⚡ Agent & /loop{{ end }}</span>
-            <span>{{ if $isZh }}🧠 第一性原理{{ else }}🧠 First Principles{{ end }}</span>
-            <span>{{ if $isZh }}{{"{{"}}变量即时填空{{"}}"}}{{ else }}{{"{{"}}Live Variables{{"}}"}}{{ end }}</span>
-            <span>{{ if $isZh }}中/EN 秒切{{ else }}ZH/EN Switch{{ end }}</span>
-          </span>
-          <span class="hx-tile-cta">{{ if $isZh }}打开 Prompt 工作台{{ else }}Open Prompt Studio{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
+      {{/* Flagship 3-Column Row: Atoms Studio + Prompt Studio + 21 Agent Skills (4 cols each) */}}
+      <a class="hx-tile hx-tile-third hx-tile-product" href="https://atoms.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
+         style="--a: #6366f1; --b: #14b8a6" data-hx-reveal data-hx-spot>
+        <span class="hx-tile-top">
+          <span class="hx-pico" style="--a: #6366f1; --b: #14b8a6"><i class="fas fa-atom" aria-hidden="true"></i></span>
+          <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
         </span>
-        <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
+        <span class="hx-tile-copy">
+          <span class="hx-tile-kicker">{{ if $isZh }}ATOMS STUDIO · AI 应用生成{{ else }}ATOMS STUDIO · AI APP BUILDER{{ end }}</span>
+          <strong class="hx-tile-title">{{ if $isZh }}Atoms Studio{{ else }}Atoms Studio{{ end }}</strong>
+          <span class="hx-tile-desc">{{ if $isZh }}可验证的 AI 应用生成平台：输入需求，Agent 团队自动完成规划、验收标准、代码生成、QA 评分与自修复。{{ else }}Verifiable AI app generation: requirements → acceptance criteria → agent-built preview with QA scoring & self-healing.{{ end }}</span>
+          <span class="hx-tags" style="margin-top: 1rem">
+            <span>{{ if $isZh }}需求 → 验收{{ else }}Spec → Eval{{ end }}</span>
+            <span>{{ if $isZh }}QA 自动评分{{ else }}QA Scoring{{ end }}</span>
+            <span>{{ if $isZh }}在线预览{{ else }}Live Preview{{ end }}</span>
+          </span>
+        </span>
+        <span class="hx-tile-cta">{{ if $isZh }}打开 Atoms Studio{{ else }}Open Atoms Studio{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
       </a>
 
-      {{/* Flagship 21 Agent Skills & Harness (6 cols) */}}
-      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="https://skills.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
-         style="--a: #a855f7; --b: #ec4899; align-items: flex-start" data-hx-reveal data-hx-spot>
-        <span class="hx-pico" style="--a: #a855f7; --b: #ec4899"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+      {{- $promptCount := len site.Data.prompts.items -}}
+      <a class="hx-tile hx-tile-third hx-tile-product" href="https://prompts.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
+         style="--a: #6366f1; --b: #06b6d4" data-hx-reveal data-hx-spot>
+        <span class="hx-tile-top">
+          <span class="hx-pico" style="--a: #6366f1; --b: #06b6d4"><i class="fas fa-terminal" aria-hidden="true"></i></span>
+          <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
+        </span>
         <span class="hx-tile-copy">
-          <span class="hx-tile-kicker">{{ if $isZh }}AGENT SKILLS · 21 份可执行产物契约{{ else }}AGENT SKILLS · 21 EXECUTABLE SKILLS{{ end }}</span>
-          <strong class="hx-tile-title">{{ if $isZh }}21 份前端 AI 协作 Skills 与 Harness{{ else }}21 Frontend AI Harness Skills{{ end }}</strong>
-          <span class="hx-tile-desc">{{ if $isZh }}别再靠长提示词赌运气：覆盖需求澄清、PRD、开发计划、实现调试、五维确定性评测与交付门禁的 21 份可执行 Skill，直接装进 Cursor / Claude Code / Codex。{{ else }}From long prompts to deterministic state machines & artifact contracts: 21 executable skills covering clarification, PRD, debugging, 5D eval, and ship gates.{{ end }}</span>
+          <span class="hx-tile-kicker">{{ if $isZh }}PROMPT STUDIO · {{ $promptCount }} 条双语口令{{ else }}PROMPT STUDIO · {{ $promptCount }} PROMPTS{{ end }}</span>
+          <strong class="hx-tile-title">{{ if $isZh }}高频实战 AI Prompt 工作台{{ else }}Practical AI Prompt Studio{{ end }}</strong>
+          <span class="hx-tile-desc">{{ if $isZh }}35 条社区公开口令免费即用（变量填空、中英秒切、串联复制），20 条毛毛星原创写作与工程 SOP 收录在知识库。{{ else }}35 free community prompts with live variables & stacking, plus 20 Momo original PRO engineering & creator SOPs.{{ end }}</span>
+          <span class="hx-tags" style="margin-top: 1rem">
+            <span>{{ if $isZh }}⚡ Agent & /loop{{ else }}⚡ Agent & /loop{{ end }}</span>
+            <span>{{ if $isZh }}{{"{{"}}变量填空{{"}}"}}{{ else }}{{"{{"}}Variables{{"}}"}}{{ end }}</span>
+            <span>{{ if $isZh }}中/EN 秒切{{ else }}ZH/EN{{ end }}</span>
+          </span>
+        </span>
+        <span class="hx-tile-cta">{{ if $isZh }}打开 Prompt 工作台{{ else }}Open Prompt Studio{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
+      </a>
+
+      <a class="hx-tile hx-tile-third hx-tile-product" href="https://skills.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
+         style="--a: #a855f7; --b: #ec4899" data-hx-reveal data-hx-spot>
+        <span class="hx-tile-top">
+          <span class="hx-pico" style="--a: #a855f7; --b: #ec4899"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+          <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
+        </span>
+        <span class="hx-tile-copy">
+          <span class="hx-tile-kicker">{{ if $isZh }}AGENT SKILLS · 21 份产物契约{{ else }}AGENT SKILLS · 21 SKILLS{{ end }}</span>
+          <strong class="hx-tile-title">{{ if $isZh }}21 份前端 AI 协作 Skills{{ else }}21 Frontend AI Harness Skills{{ end }}</strong>
+          <span class="hx-tile-desc">{{ if $isZh }}直接装进 Cursor / Claude Code / Codex：覆盖澄清、PRD、开发实现、五维确定性评测与交付门禁的可执行 Skill 体系。{{ else }}Drop straight into Cursor / Claude Code / Codex: 21 executable skills for specs, implementation, 5D eval & ship gates.{{ end }}</span>
           <span class="hx-tags" style="margin-top: 1rem">
             <span>clarify-requirements</span>
-            <span>write-prd</span>
             <span>implement-task</span>
             <span>deterministic-eval</span>
-            <span>ship-checklist</span>
           </span>
-          <span class="hx-tile-cta">{{ if $isZh }}打开 21 份 Skills 站{{ else }}Explore 21 Skills{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
         </span>
-        <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
+        <span class="hx-tile-cta">{{ if $isZh }}打开 21 份 Skills 站{{ else }}Explore 21 Skills{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
       </a>
 
       {{/* Consulting (zh only) */}}

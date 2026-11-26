@@ -3,8 +3,11 @@ title: Vertical Products
 type: projects
 layout: projects
 kicker: Indie products
-intro: "Sayo, CrossAgent Lab, Browserly, and HackHub are four standalone sites. This page gives them one entry point; choose the topic you want once you are here."
+intro: "Atoms Studio, Sayo, CrossAgent Lab, Browserly, and HackHub are five standalone sites. This page gives them one entry point; choose the topic you want once you are here."
 project_links:
+  - label: Atoms Studio
+    url: https://atoms.maoxunxing.com/
+    icon: fas fa-atom
   - label: CrossAgent Lab
     url: /go/crossagent
     icon: fas fa-project-diagram
@@ -18,11 +21,19 @@ project_links:
     url: /go/hackhub
     icon: fas fa-trophy
 project_sections:
-  - title: Four standalone sites
+  - title: Five standalone sites
     id: vertical-products
     featured: true
-    lead: "One tracks how cross-border commerce agents are used in practice, one checks browser agents entry by entry, one is AI spoken-English practice, and one aggregates AI & Web3 hackathons worldwide. Each site is updated independently."
+    lead: "One builds verifiable AI apps with QA scoring, one tracks cross-border commerce agents, one checks browser agents entry by entry, one is AI spoken-English practice, and one aggregates AI & Web3 hackathons worldwide."
     items:
+      - name: Atoms Studio
+        link: https://atoms.maoxunxing.com/
+        desc: "Verifiable AI app generation: turn a prompt into acceptance criteria, an agent-built preview, QA scoring, and self-healing."
+        icon: fas fa-atom
+        status: Live
+        visual: spec → acceptance criteria → QA self-healing
+        tags: [Atoms Studio, AI App Builder, Agents]
+        featured: true
       - name: CrossAgent Lab
         link: /go/crossagent
         desc: "A cross-border commerce agent use-case library and seller MCP intelligence, collecting agent workflows people are already using."
