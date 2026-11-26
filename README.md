@@ -1,153 +1,153 @@
-# maoxunxing.com
+<div align="center">
 
-## Overview
+<a href="https://maoxunxing.com/">
+  <img src="docs/social-preview.png" alt="maoxunxing.com — AI-Native Bilingual Digital Garden" width="100%" />
+</a>
 
-This is the source for https://maoxunxing.com/. Inspired by **mtlynch.io**.
+<br />
 
-## Local development
+<p>
+  <a href="https://maoxunxing.com/">
+    <img src="https://img.shields.io/badge/🌐_Visit_Live_Site-maoxunxing.com-f59e0b?style=for-the-badge" alt="Visit maoxunxing.com" />
+  </a>
+  <a href="https://skills.maoxunxing.com/">
+    <img src="https://img.shields.io/badge/⚡_27_Agent_Skills-skills.maoxunxing.com-6366f1?style=for-the-badge" alt="Agent Skills" />
+  </a>
+  <a href="https://atoms.maoxunxing.com/">
+    <img src="https://img.shields.io/badge/⚛️_Atoms_Studio-atoms.maoxunxing.com-14b8a6?style=for-the-badge" alt="Atoms Studio" />
+  </a>
+  <a href="https://prompts.maoxunxing.com/">
+    <img src="https://img.shields.io/badge/🧠_Prompt_Studio-prompts.maoxunxing.com-8b5cf6?style=for-the-badge" alt="Prompt Studio" />
+  </a>
+</p>
 
-**Prerequisites:** [Hugo](https://gohugo.io/installation/) (extended, 0.111+ recommended) and Node.js.
+<p>
+  <img src="https://img.shields.io/badge/Hugo-Extended_0.111%2B-FF4088?style=flat-square&logo=hugo&logoColor=white" alt="Hugo" />
+  <img src="https://img.shields.io/badge/Search-Algolia_Instant-5468FF?style=flat-square&logo=algolia&logoColor=white" alt="Algolia" />
+  <img src="https://img.shields.io/badge/Deploy-Firebase_Hosting-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
+  <img src="https://img.shields.io/badge/Content-200%2B_EN%2FZH_Pages-10b981?style=flat-square" alt="200+ Bilingual Pages" />
+  <img src="https://img.shields.io/badge/AI_Discovery-llms.txt_%2B_JSON--LD-ec4899?style=flat-square" alt="llms.txt + JSON-LD" />
+</p>
 
-Always run commands from the **repository root** (where `config.toml` lives).
+<p>
+  <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a> · <a href="https://maoxunxing.com/llms.txt"><code>/llms.txt</code></a>
+</p>
 
-1. **Install:** `git submodule update --init` (pulls `themes/hugo-coder`), then `npm install`
-2. **Build:** `npm run build` or `hugo --minify`
-3. **Preview:** `npm run start` or `hugo server` — open http://localhost:1313/
-4. **Optional helper:** `bash scripts/ensure-dev.sh` checks that `hugo` is on your `PATH` and the theme exists, then starts `hugo server`
+> **Not just a Hugo blog — an AI-native bilingual digital garden, 3-layer knowledge compiler, and solo-founder HQ.**
+> Powered by **200+ bilingual essays, evergreen notes & book reports (EN / 中文)**, repo-native AI authoring skills (`/kb` · `/bilingual` · `/article-check`), full **JSON-LD + `llms.txt`** discovery, and direct launchpads to Momo's live AI product studio.
 
-**Note:** On some macOS setups the shell may print “Unable to locate a Java Runtime.” That message is unrelated to Hugo; if `hugo version` works, you can ignore it.
+</div>
 
-### Algolia indexing (deploy / CI only)
+---
 
-- The **Admin API key is not stored in the repo.** Set `ALGOLIA_ADMIN_KEY` in your environment when running `npm run index-and-send` (implemented by [scripts/index-and-send.sh](scripts/index-and-send.sh), which writes a temporary config file).
-- **GitHub Actions:** add a repository secret named `ALGOLIA_ADMIN_KEY` with your Algolia Admin API key so merge/PR deploy workflows can push the search index.
-- Public App ID and index name are documented under `[params.algolia]` in [config.toml](config.toml) for reference.
+## ✨ What Makes This Publishing Engine Different
 
-### Architecture (short)
+<div align="center">
+  <img src="docs/ecosystem-preview.png" alt="maoxunxing.com — 3-Stage AI Pipeline, Machine-Readable SEO & Solo-Founder Studio" width="100%" />
+</div>
 
-| Area | Notes |
-|------|--------|
-| **Generator** | [Hugo](https://gohugo.io/) with theme [hugo-coder](https://github.com/luizdepra/hugo-coder) as a **git submodule** under `themes/hugo-coder`. |
-| **Layouts** | This site **overrides** the theme heavily: see root [layouts/](layouts/) (e.g. [layouts/_default/baseof.html](layouts/_default/baseof.html), partials). Theme upgrades require **manual diff** against your copies. |
-| **Styles** | Main theme pipeline: [assets/scss/coder.scss](assets/scss/coder.scss) (project copy / fork of theme SCSS). Additional overrides: [static/css/main.css](static/css/main.css) via `custom_css` in [config.toml](config.toml). Prefer changing variables in `assets/scss/_variables.scss` before piling rules into `main.css`. |
-| **Content** | Markdown under [content/](content/) with per-locale files such as `index.en.md` / `index.zh-cn.md`. |
-| **Config** | Primary [config.toml](config.toml). Algolia admin key is **not** in config files. |
-| **Search (browser)** | [layouts/partials/search.html](layouts/partials/search.html) uses the public search-only key + App ID (safe for frontend). |
+### 1. Repo-Native 3-Layer AI Knowledge Compiler (`.qoder/skills/`)
 
-### Machine-readable / SEO extras
+Instead of dumping raw drafts directly into a blog, content flows through a structured **three-layer knowledge pipeline** (`content/raw/` → `content/notes/` → `content/posts/`) automated by three custom skills living right inside this repository:
 
-- [static/llms.txt](static/llms.txt) — brief site summary for tools that look for it.
-- Article pages emit **JSON-LD** `BlogPosting` (with `description`, `image`, `mainEntityOfPage`, `publisher.logo`, `keywords`) via [layouts/partials/schema-article.html](layouts/partials/schema-article.html).
-- Homepage emits **JSON-LD** `WebSite` with `SearchAction` (sitelinks search box) via [layouts/partials/schema-website.html](layouts/partials/schema-website.html).
-- Article pages emit **JSON-LD** `BreadcrumbList` via [layouts/partials/schema-breadcrumb.html](layouts/partials/schema-breadcrumb.html).
-- **hreflang** `<link rel="alternate">` tags are injected in the HTML `<head>` for all translated pages (plus `x-default`), in addition to the sitemap-level hreflang that Hugo generates automatically.
-- **canonical** `<link rel="canonical">` is set on every page (supports per-page `canonical_url` front matter override).
-- **Bilingual sitemap**: Hugo auto-generates `sitemap.xml` index with per-language sitemaps (`en/sitemap.xml`, `zh-cn/sitemap.xml`) including `xhtml:link` hreflang alternates.
-- **Security headers** (`X-Frame-Options`, `X-Content-Type-Options`, `Strict-Transport-Security`, `Referrer-Policy`, `Permissions-Policy`) are configured in [firebase.json](firebase.json).
-- Posts, notes, and book reports show **Copy / View raw / Edit on GitHub** when `github_repo` / `github_branch` are set under `[params]` in [config.toml](config.toml).
+| Skill | Command Examples | What It Automates |
+| :--- | :--- | :--- |
+| **`/kb`**<br/>*Knowledge Base Manager* | `/kb collect https://...`<br/>`/kb compile AI`<br/>`/kb check` · `/kb preview` · `/kb list` | Fetches URLs or raw thoughts into `content/raw/`, compiles themed fragments into structured evergreen `content/notes/`, and audits duplicates & missing tags |
+| **`/bilingual`**<br/>*Natural EN ↔ 中文 Engine* | Auto-triggers on single-locale posts/notes | Translates naturally (never word-for-word), preserves code blocks, URLs & domain jargon, and maps tags across languages (`知识管理` ↔ `Knowledge Management`) |
+| **`/article-check`**<br/>*5-Gate SEO & Quality Audit* | `/article-check`<br/>`/article-check --fix content/posts/...` | Scores every post on **5 gates**: ≥3 English external sources, EN/ZH structural parity, frontmatter (`description` 50–160 chars, 2–5 tags), heading/code/table structure, and zero broken/non-HTTPS links |
 
-## Code style guides
+### 2. Built for Both Humans & AI Crawlers (SEO + GEO)
 
-New code should adhere to the appropriate Google Style guide for the given language:
+- **Native [`static/llms.txt`](static/llms.txt)** — machine-readable site index tailored for LLM agents and AI search crawlers.
+- **Complete JSON-LD Schema** — `WebSite` + `SearchAction` sitelinks search box ([`schema-website.html`](layouts/partials/schema-website.html)), `BlogPosting` with publisher & keywords ([`schema-article.html`](layouts/partials/schema-article.html)), and `BreadcrumbList` ([`schema-breadcrumb.html`](layouts/partials/schema-breadcrumb.html)).
+- **True Bilingual Architecture (EN / ZH-CN)** — automatic `<link rel="alternate" hreflang>` + `x-default`, canonical URLs (with frontmatter override), and dual-locale XML sitemaps (`en/sitemap.xml`, `zh-cn/sitemap.xml`).
+- **Developer-First Reading Experience** — instant **Algolia** browser search, one-click **Copy Markdown / View Raw / Edit on GitHub** on posts, notes & book reports, plus a unified `1200×300` cover generator (`npm run cover <slug>`).
+- **Hardened Production Headers** — `HSTS`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, and `Permissions-Policy` configured in [`firebase.json`](firebase.json).
 
-- [HTML/CSS](https://google.github.io/styleguide/htmlcssguide.html)
-- [JavaScript](https://google.github.io/styleguide/jsguide.html)
+---
 
-## Pull requests
+## 🚀 Flagship Hub & Content Pillars
 
-### Merge conflicts
+`maoxunxing.com` is the central HQ connecting Momo's writing and live AI indie products:
 
-If a PR has merge conflicts with the main repo's `master` branch, rebase the PR onto `master`. Do not include merge commits in a PR.
+| Destination | Focus | Live Link |
+| :--- | :--- | :--- |
+| **⚡ 27 Agent Skills** | Battle-tested frontend AI harness & 3-layer verification for Antigravity, Claude Code, Codex & Cursor | **[skills.maoxunxing.com](https://skills.maoxunxing.com/)** |
+| **⚛️ Atoms Studio** | Verifiable AI App Generation — 1 sentence → real browser DOM probe + ≤3x self-repair → live preview | **[atoms.maoxunxing.com](https://atoms.maoxunxing.com/)** |
+| **🧠 Prompt Studio** | 55 bilingual AI battle prompts with live `{{variable}}` filling & multi-prompt stacking | **[prompts.maoxunxing.com](https://prompts.maoxunxing.com/)** |
+| **✍️ AI Coding & Indie Hacking** | 88+ bilingual deep essays, 93+ evergreen notes & 20+ structured book reports | **[maoxunxing.com](https://maoxunxing.com/)** |
+| **📈 Options & Long-Term Investing** | Interactive options guide (*Options Dabaihua*) and compounding frameworks | **[maoxunxing.com/zh-cn/options-dabaihua/](https://maoxunxing.com/zh-cn/options-dabaihua/)** |
 
-### Pull request style
+---
 
-PRs should have a descriptive one-line summary to explain the change. The PR description should add any additional required context or explanation for the change. For simple or obvious PRs, a PR description is not required.
+## 🛠️ Local Development & Architecture
 
-If the PR fixes an issue, include the text "Fixes #XX" in the PR description, where `XX` is the [issue number in this repository](https://github.com/XingMXTeam/maoxunxing.com/issues). This allows GitHub to cross-reference between PRs and issues.
+**Prerequisites:** [Hugo Extended](https://gohugo.io/installation/) (`v0.111.3` recommended) and Node.js. Always run commands from the repository root (where `config.toml` lives).
 
-## Build Failures
+```bash
+# 1. Initialize theme submodule & install dependencies
+git submodule update --init --recursive
+npm install
 
-### HTMLProofer
+# 2. Start local dev server → http://localhost:1313/
+npm run start
+# or: hugo server --bind 0.0.0.0 --port 1313 --baseURL http://localhost:1313 --disableFastRender
+# or helper: bash scripts/ensure-dev.sh
 
-If HTMLProofer fails on a broken link, we have three options: suppress the error, fix the link, or remove the link.
+# 3. Production minified build
+rm -rf public && hugo --minify
 
-You should suppress the error if the link works fine in a browser, but fails in CI occasionally. To do this, open [tests/lint-html](tests/lint-html), update the `--ignore-urls` / related flags for the `htmlproofer` command. Add a comment above the command to explain why we're adding this suppression.
+# 4. Generate a unified 1200×300 article cover
+npm run cover my-topic
+```
 
-If the link is just permanently broken and does not load, even in a browser, either replace the link with another that achieves the same effect or remove the link entirely.
+> **macOS note:** If the shell prints `"Unable to locate a Java Runtime"`, ignore it — it is unrelated to Hugo as long as `hugo version` succeeds.
 
-## Compatibility targets
+### Architecture Summary
 
-The site should render properly on all of the following operating systems (latest stable releases):
+| Area | Location & Notes |
+| :--- | :--- |
+| **Generator & Theme** | [Hugo](https://gohugo.io/) with [hugo-coder](https://github.com/luizdepra/hugo-coder) mounted as a git submodule under `themes/hugo-coder` (inspired by **mtlynch.io**). |
+| **Custom Layouts** | Heavily overridden under [`layouts/`](layouts/) (e.g., [`layouts/_default/baseof.html`](layouts/_default/baseof.html) and custom partials). Theme upgrades require manual diffing. |
+| **Styling Pipeline** | Theme SCSS fork in [`assets/scss/coder.scss`](assets/scss/coder.scss) + overrides in [`static/css/main.css`](static/css/main.css). Prefer updating variables in `assets/scss/_variables.scss` first. |
+| **Bilingual Content** | Markdown bundles under [`content/`](content/) using per-locale files (`index.en.md` / `index.zh-cn.md`). |
+| **Algolia Search** | Frontend uses the public search-only key in [`layouts/partials/search.html`](layouts/partials/search.html). CI indexing runs `npm run index-and-send` via [`scripts/index-and-send.sh`](scripts/index-and-send.sh) using the `ALGOLIA_ADMIN_KEY` secret (never committed to git). |
 
-- Android
-- iOS
-- Windows
-- OS X
-- Linux (any flavor)
+---
 
-The site should render properly on all the following browsers:
+<details>
+<summary><strong>📖 Contributing, Style Guides, HTMLProofer, Browser Matrix &amp; FFmpeg Reference</strong></summary>
 
-- Chrome
-- Firefox
-- Safari
+### Code Style Guides
 
-### Compatibility testing
+New code adheres to Google Style Guides:
+- [HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+- [JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
+- Formatting: `npm run check-format` / `npm run format` (Prettier)
 
-Developers need not verify every change on every possible OS/browser combination. Developers should test CSS or layout changes on at least one desktop OS and one mobile OS (preferably not the same browser for both). For more complex changes to CSS or layout, developers should test more than two OS+browser combinations, but it's at the developer's discretion how exhaustively to test.
+### Pull Requests
 
-## Prose style guide
+- Rebase onto `master` if conflicts arise (avoid merge commits in PRs).
+- Use a crisp one-line PR summary; reference issues with `Fixes #XX`.
 
-### Headings
+### HTMLProofer & Broken Links
 
-- Content headings start at `##` (`<h2>` in HTML).
-- Headings use sentence-style capitalization (only first word is capitalized).
-- Headings do not have trailing punctuation.
+If CI fails on a flaky external link that works in a browser, suppress it in [`tests/lint-html`](tests/lint-html) (`--ignore-urls`) with an explanatory comment. If permanently broken, replace or remove it.
 
-### Point of view
+### Compatibility Targets
 
-- Author is first-person singular (I).
-- Reader is second-person singular (you).
+- **OS (latest stable):** Android, iOS, Windows, macOS, Linux
+- **Browsers:** Chrome, Firefox, Safari
+- Test CSS/layout updates on at least one desktop OS + one mobile OS (ideally different browser engines).
 
-### Readers
+### Prose Style Guide
 
-- Readers of the blog are collectively referred to as "readers" or "visitors."
-    - Readers are not referred to as "users" and should never be described as "traffic."
+- **Headings:** Start body headings at `##` (`<h2>`), sentence-style capitalization, no trailing punctuation.
+- **POV & Readers:** First-person author (`I`), second-person reader (`you`). Call readers *"readers"* or *"visitors"* (never *"users"* or *"traffic"*).
+- **Numbers & Time:** Spell out 1–9 (except multipliers like `2x`, `9x`); numerals for 10+, comma thousands (`1,000`), hyphen ranges (`200-300`), space before AM/PM (`4:30 PM`).
+- **Grammar & Spelling:** Singular *"they"*, lowercase `reddit`, parenthetical `(e.g., ...)`, Oxford comma, `ebook` (no hyphen).
 
-### Numbers
-
-- For 1-9, spell out the number.
-    - _Except_: When the number is a multiplier (2x, 9x).
-- For all other numbers, use numerals.
-- For numbers 1,000 or over, write commas to separate thousands.
-- For number ranges, use a regular hyphen and no space (200-300).
-
-### Time of day
-
-- Use AM/PM, separated by a space (2 AM, 4:30 PM).
-
-### Pronouns
-
-- When referring to non-specific people (e.g. "the user", "the client"), use "they."
-
-### Names
-
-- reddit is written all lowercase.
-
-### e.g. / i.e.
-
-- Put e.g. or i.e. within parentheses (e.g., like this).
-
-### Oxford comma
-
-- Always use an Oxford comma.
-
-### Spelling conventions
-
-- ebook (not e-book)
-
-## Encoding video for posts
-
-Use ffmpeg with these settings:
+### Encoding Video for Posts
 
 ```bash
 ffmpeg \
@@ -159,51 +159,16 @@ ffmpeg \
   output.mp4
 ```
 
-## 生成默认封面
+</details>
 
-`npm run cover vue` 封面默认大小`1200*300` 封面采用统一风格
+---
 
-## Qoder Skills
+<div align="center">
 
-This repo includes three [Qoder](https://qoder.com) skills under `.qoder/skills/` to streamline content workflows. Use them in any Qoder session while working in this repository.
+### Built by [Momo / 毛毛星](https://github.com/XingMXTeam)
 
-### `/kb` — Knowledge Base Manager
+**[🌐 maoxunxing.com](https://maoxunxing.com/)** · **[⚡ 27 Agent Skills](https://skills.maoxunxing.com/)** · **[⚛️ Atoms Studio](https://atoms.maoxunxing.com/)** · **[🧠 Prompt Studio](https://prompts.maoxunxing.com/)** · **[🔥 Playbook & 1v1](https://maoxunxing.com/zh-cn/consult/)**
 
-Manage the three-layer knowledge pipeline: `content/raw/` -> `content/notes/` -> `content/posts/`.
+<sub>Inspired by <a href="https://mtlynch.io">mtlynch.io</a> · Drop a ⭐ if this bilingual AI publishing workflow inspires your own digital garden!</sub>
 
-| Command | What it does |
-|---------|-------------|
-| `/kb collect https://...` | Fetch a URL, summarize it, and create a `content/raw/` entry (draft) |
-| `/kb collect Some quick thought...` | Save freeform text as a raw entry |
-| `/kb compile AI` | Merge raw entries matching a topic/tag into a structured `content/notes/` entry |
-| `/kb preview` | Start `hugo server -D` to preview all content including drafts |
-| `/kb check` | Audit raw/ and notes/ for duplicates, missing tags, and compilation candidates |
-| `/kb list` | List all raw entries in a table |
-
-### `/bilingual` — Bilingual Article Generator
-
-Auto-detect and generate the missing language version for any article.
-
-- Triggers automatically when a post/note has only `index.zh-cn.md` or only `index.en.md`
-- Translates naturally (not word-by-word), preserves code blocks/URLs/technical terms
-- Tags are translated to their counterparts (e.g. "知识管理" <-> "Knowledge Management")
-- `content/raw/` bilingual is opt-in only
-
-### `/article-check` — Article Quality Checker
-
-Validate articles against five quality checks for SEO and completeness.
-
-| Command | What it does |
-|---------|-------------|
-| `/article-check` | Check ALL posts, output a summary table sorted by score |
-| `/article-check content/posts/my-post/` | Check a specific article |
-| `/article-check --fix content/posts/my-post/` | Check and auto-fix (add references, generate missing language, etc.) |
-
-**Checks performed:**
-
-1. **References** — At least 3 English-language external sources (prefers YouTube, official docs, major publications)
-2. **Bilingual** — Both `index.zh-cn.md` and `index.en.md` exist with matching structure
-3. **Frontmatter** — title, description (50-160 chars), date, tags (2-5)
-4. **Structure** — Heading hierarchy, code block annotations, well-formed tables
-5. **Links** — No broken internal links, all HTTPS, no placeholder URLs
-
+</div>
