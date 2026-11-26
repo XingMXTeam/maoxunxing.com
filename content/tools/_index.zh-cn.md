@@ -7,10 +7,10 @@ entries:
     url: "https://prompts.maoxunxing.com/"
     desc: "55 条 Coding Agent、/loop 自动化巡检、写作 SOP 与第一性原理实战口令，支持中英双语秒切、变量即时填空与多条组合复制。"
     tags: ["Prompt", "工作台", "双语"]
-  - name: "21 份 Agent Skills 体系"
+  - name: "27 份 Agent Skills 体系"
     url: "https://skills.maoxunxing.com/"
-    desc: "21 份可直接装进 Cursor / Claude Code / Codex 的产物契约 Skill：覆盖需求澄清、PRD、实现调试、五维确定性评测与交付门禁。"
-    tags: ["Skills", "Harness", "实战"]
+    desc: "27 份四端自适应前端 SaaS 交付 Skills：实时采风 UI 试衣间、老仓库变更红线守卫与三层智能自动验收。"
+    tags: ["Skills", "SaaS", "实战"]
   - name: "AI 代码体检"
     url: "/ai/ai-code-health-check/"
     desc: "粘贴一个公开 GitHub 仓库链接，给 AI 写的前端代码打五维健康分。打开就能用。"

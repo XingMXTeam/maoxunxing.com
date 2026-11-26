@@ -7,10 +7,10 @@ entries:
     url: "https://prompts.maoxunxing.com/"
     desc: "55 battle-tested prompts for Coding Agents, /loop automation, writing SOPs, and first-principles thinking—with bilingual switching, live variables, and prompt stacking."
     tags: ["Prompts", "Studio", "Bilingual"]
-  - name: "21 Agent Skills System"
+  - name: "27 Agent Skills System"
     url: "https://skills.maoxunxing.com/"
-    desc: "21 executable artifact-contract skills for Cursor / Claude Code / Codex: requirement clarification, PRD authoring, debugging, 5D deterministic eval, and ship gates."
-    tags: ["Skills", "Harness", "Playbook"]
+    desc: "27 cross-host Frontend SaaS delivery skills: live trend-scouted UI variants, brownfield contract guards, and 3-layer automated verification."
+    tags: ["Skills", "SaaS", "Playbook"]
   - name: "AI Code Health Check"
     url: "/ai/ai-code-health-check/"
     desc: "Paste a public GitHub repo and get a five-dimension health score for AI-written frontend code. Open it and use it now."
