@@ -2271,6 +2271,10 @@ html[data-initial-color-scheme="dark"] body.colorscheme-auto .hx-tag-book-report
   .hx-scroll-hint {
     display: none;
   }
+
+  .hx-chip {
+    display: none;
+  }
 }
 
 /* ---------- 14. Reduced Motion ---------- */
