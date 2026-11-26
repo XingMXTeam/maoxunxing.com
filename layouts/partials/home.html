@@ -224,7 +224,7 @@
 
       {{/* Flagship Prompt Studio Workbench (6 cols) */}}
       {{- $promptCount := len site.Data.prompts.items -}}
-      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="{{ "prompts/" | relLangURL }}"
+      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="https://prompts.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
          style="--a: #6366f1; --b: #06b6d4; align-items: flex-start" data-hx-reveal data-hx-spot>
         <span class="hx-pico" style="--a: #6366f1; --b: #06b6d4"><i class="fas fa-terminal" aria-hidden="true"></i></span>
         <span class="hx-tile-copy">
@@ -237,29 +237,29 @@
             <span>{{ if $isZh }}{{"{{"}}变量即时填空{{"}}"}}{{ else }}{{"{{"}}Live Variables{{"}}"}}{{ end }}</span>
             <span>{{ if $isZh }}中/EN 秒切{{ else }}ZH/EN Switch{{ end }}</span>
           </span>
-          <span class="hx-tile-cta">{{ if $isZh }}打开 Prompt 工作台{{ else }}Open Prompt Studio{{ end }} <span aria-hidden="true">→</span></span>
+          <span class="hx-tile-cta">{{ if $isZh }}打开 Prompt 工作台{{ else }}Open Prompt Studio{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
         </span>
-        <span class="hx-tile-go" aria-hidden="true">→</span>
+        <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
       </a>
 
       {{/* Flagship 21 Agent Skills & Harness (6 cols) */}}
-      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="{{ "frontend-ai-collaboration-design/" | relLangURL }}"
+      <a class="hx-tile hx-tile-wide hx-tile-product hx-tile-consult" href="https://skills.maoxunxing.com/" target="_blank" rel="noopener noreferrer"
          style="--a: #a855f7; --b: #ec4899; align-items: flex-start" data-hx-reveal data-hx-spot>
         <span class="hx-pico" style="--a: #a855f7; --b: #ec4899"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
         <span class="hx-tile-copy">
-          <span class="hx-tile-kicker">{{ if $isZh }}AGENT SKILLS · 21 份产物契约 + 开源 CLI{{ else }}AGENT SKILLS · 21 ARTIFACT SKILLS + CLI{{ end }}</span>
+          <span class="hx-tile-kicker">{{ if $isZh }}AGENT SKILLS · 21 份可执行产物契约{{ else }}AGENT SKILLS · 21 EXECUTABLE SKILLS{{ end }}</span>
           <strong class="hx-tile-title">{{ if $isZh }}21 份前端 AI 协作 Skills 与 Harness{{ else }}21 Frontend AI Harness Skills{{ end }}</strong>
-          <span class="hx-tile-desc">{{ if $isZh }}把 AI 研发从“长提示词”升级为“状态机 + 产物契约”：覆盖需求澄清、PRD、开发计划、实现调试、五维确定性评测与交付门禁的 21 份开源 Skill 逐份拆解。{{ else }}From long prompts to deterministic state machines & artifact contracts: 21 open-source skills covering clarification, PRD, debugging, 5D eval, and ship gates.{{ end }}</span>
+          <span class="hx-tile-desc">{{ if $isZh }}别再靠长提示词赌运气：覆盖需求澄清、PRD、开发计划、实现调试、五维确定性评测与交付门禁的 21 份可执行 Skill，直接装进 Cursor / Claude Code / Codex。{{ else }}From long prompts to deterministic state machines & artifact contracts: 21 executable skills covering clarification, PRD, debugging, 5D eval, and ship gates.{{ end }}</span>
           <span class="hx-tags" style="margin-top: 1rem">
             <span>clarify-requirements</span>
             <span>write-prd</span>
-            <span>plan-before-code</span>
-            <span>systematic-debugging</span>
+            <span>implement-task</span>
             <span>deterministic-eval</span>
+            <span>ship-checklist</span>
           </span>
-          <span class="hx-tile-cta">{{ if $isZh }}拆解 21 份 Skills 体系{{ else }}Explore 21 Skills{{ end }} <span aria-hidden="true">→</span></span>
+          <span class="hx-tile-cta">{{ if $isZh }}打开 21 份 Skills 站{{ else }}Explore 21 Skills{{ end }} <span aria-hidden="true">↗&#xFE0E;</span></span>
         </span>
-        <span class="hx-tile-go" aria-hidden="true">→</span>
+        <span class="hx-tile-go" aria-hidden="true">↗&#xFE0E;</span>
       </a>
 
       {{/* Consulting (zh only) */}}

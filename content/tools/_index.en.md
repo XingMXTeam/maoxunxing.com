@@ -4,13 +4,13 @@ description: "Open-and-use AI workbenches and browser tools: Momo Prompt Studio,
 intro: "These are the AI workbenches, engineering skills, and browser tools you can open today. Sayo, CrossAgent Lab, and Browserly share one vertical-products entry."
 entries:
   - name: "AI Prompt Studio"
-    url: "/en/prompts/"
+    url: "https://prompts.maoxunxing.com/"
     desc: "55 battle-tested prompts for Coding Agents, /loop automation, writing SOPs, and first-principles thinking—with bilingual switching, live variables, and prompt stacking."
     tags: ["Prompts", "Studio", "Bilingual"]
   - name: "21 Agent Skills System"
-    url: "/en/frontend-ai-collaboration-design/"
-    desc: "21 artifact-contract skills from open-source frontend-harness-cli: requirement clarification, PRD authoring, debugging, 5D deterministic eval, and ship gates."
-    tags: ["Skills", "Harness", "Open Source"]
+    url: "https://skills.maoxunxing.com/"
+    desc: "21 executable artifact-contract skills for Cursor / Claude Code / Codex: requirement clarification, PRD authoring, debugging, 5D deterministic eval, and ship gates."
+    tags: ["Skills", "Harness", "Playbook"]
   - name: "AI Code Health Check"
     url: "/ai/ai-code-health-check/"
     desc: "Paste a public GitHub repo and get a five-dimension health score for AI-written frontend code. Open it and use it now."

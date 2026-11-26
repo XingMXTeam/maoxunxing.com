@@ -4,13 +4,13 @@ description: "能点开就用的小工具与 AI 资产：高频实战 AI Prompt 
 intro: "这些是现在就能点开的 AI 工作台、工程 Skills 和浏览器小工具。Sayo、CrossAgent Lab 和 Browserly 共用一个垂直产品入口。"
 entries:
   - name: "AI Prompt 工作台"
-    url: "/zh-cn/prompts/"
+    url: "https://prompts.maoxunxing.com/"
     desc: "55 条 Coding Agent、/loop 自动化巡检、写作 SOP 与第一性原理实战口令，支持中英双语秒切、变量即时填空与多条组合复制。"
     tags: ["Prompt", "工作台", "双语"]
   - name: "21 份 Agent Skills 体系"
-    url: "/zh-cn/frontend-ai-collaboration-design/"
-    desc: "开源 frontend-harness-cli 的 21 份产物级 Skill 逐份拆解：覆盖需求澄清、PRD、实现调试、五维确定性评测与交付门禁。"
-    tags: ["Skills", "Harness", "开源"]
+    url: "https://skills.maoxunxing.com/"
+    desc: "21 份可直接装进 Cursor / Claude Code / Codex 的产物契约 Skill：覆盖需求澄清、PRD、实现调试、五维确定性评测与交付门禁。"
+    tags: ["Skills", "Harness", "实战"]
   - name: "AI 代码体检"
     url: "/ai/ai-code-health-check/"
     desc: "粘贴一个公开 GitHub 仓库链接，给 AI 写的前端代码打五维健康分。打开就能用。"

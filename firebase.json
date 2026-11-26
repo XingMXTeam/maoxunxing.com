@@ -14,12 +14,32 @@
       },
       {
         "source": "/prompts/",
-        "destination": "/zh-cn/prompts/",
+        "destination": "https://prompts.maoxunxing.com/",
         "type": 301
       },
       {
         "source": "/prompts",
-        "destination": "/zh-cn/prompts/",
+        "destination": "https://prompts.maoxunxing.com/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/prompts/",
+        "destination": "https://prompts.maoxunxing.com/",
+        "type": 301
+      },
+      {
+        "source": "/zh-cn/prompts",
+        "destination": "https://prompts.maoxunxing.com/",
+        "type": 301
+      },
+      {
+        "source": "/en/prompts/",
+        "destination": "https://prompts.maoxunxing.com/",
+        "type": 301
+      },
+      {
+        "source": "/en/prompts",
+        "destination": "https://prompts.maoxunxing.com/",
         "type": 301
       },
       {
