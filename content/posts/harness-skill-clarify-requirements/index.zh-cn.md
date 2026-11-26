@@ -16,6 +16,12 @@ custom_toc:
   - title: "设计二：草稿区和正式文件，为什么必须分家"
   - title: "设计三：自带 PRD 时，它只补缺口"
   - title: "它为什么停在这里"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 skill 深挖系列的第一篇。前面两个系列——五层约束、[五个阶段](/zh-cn/harness-phase-clarify/)——讲的是系统结构；这个系列逐个拆构成系统的 21 份 skill，每篇只讲一份：它为什么存在，具体怎么干。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

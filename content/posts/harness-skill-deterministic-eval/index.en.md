@@ -16,6 +16,12 @@ custom_toc:
   - title: "Report only — no fixing on the side"
   - title: "Why reproducibility is the whole point"
   - title: "Its limits"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a skill deep-dive in the Harness series; the skill under the knife is `deterministic-eval`. It serves as the evaluator's working discipline in the [evaluation phase](/en/harness-phase-evaluate/): wherever a check's answer can be computed, it may not be reached by "looking." The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), covered the whole system's shape; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

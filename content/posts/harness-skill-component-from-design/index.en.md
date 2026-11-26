@@ -15,6 +15,12 @@ custom_toc:
   - title: "Decision 2: tokens are the bridge between the mockup and the code"
   - title: "Decision 3: the mockup shows one state; the component must survive all of them"
   - title: "What this skill cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one of the skill deep-dives, from the general-purpose group — the skills not bound to a single phase, the ones you reach for in everyday work. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/). This article drills into one skill only: `component-from-design`, which governs the everyday act of building a component from a design spec, a mockup, or a screenshot. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); the skill lives in the repo at `templates/skills/component-from-design/`, and every rule quoted below is from its text.

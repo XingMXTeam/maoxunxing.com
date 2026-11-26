@@ -16,6 +16,12 @@ custom_toc:
   - title: "设计三：计划写在代码前面，而且写完要回来对"
   - title: "设计四：和 write-dev-plan 是同一件事，两个尺度"
   - title: "这一份管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 Skill 逐篇系列前面讲的都是绑在某个阶段上的 skill——澄清链在澄清阶段用，`implement-task` 在实现阶段用。从这篇起是通用组：七份不绑阶段的 skill，任何任务、任何时候都能单独拿出来用。第一份是 `plan-before-code`，管的是一件听起来最不像"技术"的事：**动手之前先规划。**母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》，我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，这份 skill 在仓库的 `templates/skills/plan-before-code/` 里。

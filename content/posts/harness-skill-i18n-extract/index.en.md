@@ -16,6 +16,12 @@ custom_toc:
   - title: "Decision 3: what must NOT be extracted"
   - title: "The machine backstop"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a skill deep-dive in the Harness series; the skill under the knife is `i18n-extract`. It is not part of the clarify chain and not bound to any single phase — it belongs to the general-purpose group: used when adding internationalization, when auditing copy before a release, and before copy is handed to translators. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), describes the shape of the whole system; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

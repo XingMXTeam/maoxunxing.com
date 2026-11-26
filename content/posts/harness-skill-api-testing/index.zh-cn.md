@@ -16,6 +16,12 @@ custom_toc:
   - title: "设计二：错误长什么样，也是契约的一部分"
   - title: "设计三：探针必须现打，旧录像不算证据"
   - title: "它的边界"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 Harness 系列的 skill 拆解篇，拆的这一份叫 `api-testing`。它在评测侧干活，是[评测阶段](/zh-cn/harness-phase-evaluate/)里评判者手边的一件工具：当某个任务或需求在技术方案里定下了接口契约，评判者就用它去验那个接口。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲整套系统的形状，这个系列逐份拆 skill：为什么有它，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

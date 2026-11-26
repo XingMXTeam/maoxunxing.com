@@ -17,6 +17,12 @@ custom_toc:
   - title: "Decision 2: even one little store gets a table"
   - title: "Decision 3: the finished table is there to be reconciled against"
   - title: "What this skill cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a post in the skill deep-dive series, covering `state-schema-first` from the general-purpose group. It has a ready-made companion: [The State Layer: The Same Fact Must Live in Exactly One Place](/en/harness-layer-state/) — that post covers the layer's rules: one home per fact, server data and client state living apart, namespaced keys for anything persisted. This post does not repeat the rules; it covers the order in which the rules get executed — what the person (or AI) doing the work writes first, what comes after, and what "finished" looks like. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/). The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

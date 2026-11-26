@@ -16,6 +16,12 @@ custom_toc:
   - title: "Decision 2: the shape of an error is part of the contract"
   - title: "Decision 3: probes run fresh — old captures are not evidence"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a skill deep-dive in the Harness series; the skill under the knife is `api-testing`. It works on the evaluation side — it is one of the tools in the evaluator's hand during the [Evaluate phase](/en/harness-phase-evaluate/): when a task or requirement has an API contract in the tech design, the evaluator uses this skill to check that API. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), covered the whole system's shape; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

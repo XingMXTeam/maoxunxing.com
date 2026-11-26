@@ -15,6 +15,12 @@ custom_toc:
   - title: "Decision 2: the plan is a file, not a conversation"
   - title: "Decision 3: granularity decides whether evaluation can reconcile"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one of the skill deep-dives. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), covered the system's shape; earlier parts of the series took the five layers and the five phases one at a time, and this block takes the skills one at a time — why each exists, and concretely how it works. `write-dev-plan` is step five of the clarify chain, right after `write-tech-design`: the requirements and the technical design are settled, and this step turns the design into an executable task list. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below can be found verbatim in the repository's skill files.

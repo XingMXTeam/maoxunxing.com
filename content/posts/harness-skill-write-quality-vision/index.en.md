@@ -15,6 +15,12 @@ custom_toc:
   - title: "Why it is written before code, by the planner"
   - title: "Requirements with no quality surface: the waiver must be written too"
   - title: "What this file cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one part of the Harness skill deep-dive series: 21 skills taken one at a time — why each exists, and concretely how it works. This one is the third link of the clarify chain, after the [Clarify phase](/en/harness-phase-clarify/) interview and the requirements list written by `write-prd`, before technical design. The series overview is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/). The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

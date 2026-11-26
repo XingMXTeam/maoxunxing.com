@@ -15,6 +15,12 @@ custom_toc:
   - title: "设计二：token 是设计稿和代码之间的桥"
   - title: "设计三：设计稿只画了一个状态，组件要扛住全部状态"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 skill 深挖系列的一篇，属于通用组——不绑定某个阶段、在日常活里随手能用的那一组。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》。这一篇只钻一份 skill：`component-from-design`，管的是「照着一份设计规格、设计稿或截图做组件」这件天天发生的事。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，这份 skill 在仓库的 `templates/skills/component-from-design/` 里，下面引的都是它的原文规则。

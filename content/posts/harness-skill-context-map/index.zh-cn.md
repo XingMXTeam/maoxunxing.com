@@ -16,6 +16,12 @@ custom_toc:
   - title: "设计一：地图是文件，不是记忆"
   - title: "设计二：记的是「这里怎么做事」，不是文件清单"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是逐份拆 skill 系列的一篇，拆的是 `context-map`——通用组的一份，不挂在五个阶段的任何一个上，管的是进仓库的第一件事。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》；这个系列逐份拆开，每篇只讲一份：它为什么存在，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的 `templates/skills/context-map/SKILL.md` 里找到原文。

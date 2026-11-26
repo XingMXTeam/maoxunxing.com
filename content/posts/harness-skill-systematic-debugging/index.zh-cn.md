@@ -15,6 +15,12 @@ custom_toc:
   - title: "设计二：让报警器闭嘴的动作，一律不算修复"
   - title: "设计三：三个假设都错了，就往上报告"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是逐份拆 skill 系列的一篇，拆的是 `systematic-debugging`——实现阶段里管调试的一份，由开发者角色在任务中途遇到失败时使用。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲了整套系统的形状；这个系列逐份拆开，每篇只讲一份：它为什么存在，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的 `templates/skills/systematic-debugging/SKILL.md` 里找到原文。

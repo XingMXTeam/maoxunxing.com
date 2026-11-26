@@ -16,6 +16,12 @@ custom_toc:
   - title: "E2E: six categories of journey, each with a floor"
   - title: "Three design details: wording, pitfalls, tightening only"
   - title: "Its limits"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a skill deep-dive in the Harness series, and the skill under the knife is `write-acceptance-criteria`. The clarify phase's authoring chain has five steps; the first four produce the PRD, the quality vision, the tech design, and the dev plan. This one is step five, the last: what it produces is the scoring sheet that the [Evaluate phase](/en/harness-phase-evaluate/) grades against directly. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), gives the shape of the whole system; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

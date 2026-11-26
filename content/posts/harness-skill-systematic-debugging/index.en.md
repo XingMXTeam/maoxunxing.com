@@ -15,6 +15,12 @@ custom_toc:
   - title: "Decision 2: silencing the alarm never counts as a fix"
   - title: "Decision 3: three failed hypotheses — escalate, don't improvise"
   - title: "What this skill cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one entry in the skill-by-skill series, covering `systematic-debugging` — the skill that governs debugging inside the Implement phase, used by the developer role when a task runs into a failure mid-flight. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), describes the shape of the whole system; this series takes the skills one at a time — why each exists, and concretely how it works. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below can be found verbatim in `templates/skills/systematic-debugging/SKILL.md` in the repository.

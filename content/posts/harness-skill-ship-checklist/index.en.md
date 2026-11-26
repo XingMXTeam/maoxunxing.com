@@ -14,6 +14,12 @@ custom_toc:
   - title: "Decision 1: why a checklist, not more intelligence"
   - title: "Decision 2: evidence expires, and verdicts may not be vague"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is part thirteen of the skill deep-dive series. The two series before it — the five-layer constraints and the five phases — described the system's structure; this series takes apart the 21 skills the system is built from, one per post: why each exists, and concretely how it works. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/). The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

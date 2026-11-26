@@ -16,6 +16,12 @@ custom_toc:
   - title: "Decision 3: merge, don't append; summarize, don't transcribe"
   - title: "Two small rules: 'no change' still leaves a line; undecided never becomes fact"
   - title: "Its limits"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a skill deep-dive in the Harness series, and the skill under the knife is `sync-overview`. It is the last of the implementation/evaluation/delivery group: the [Deliver phase](/en/harness-phase-deliver/) mentioned it in one sentence — after a feature reaches done, its changes settle into the overview — and this article expands that sentence. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), gives the shape of the whole system; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

@@ -16,6 +16,12 @@ custom_toc:
   - title: "Decision 2: why “while I'm here” is banned"
   - title: "Decision 3: if it can't be done, stop and report — no improvising"
   - title: "What this skill cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a post in the skill deep-dive series. The six skills of the clarify chain — the group that turns a one-line request into a contract — were covered earlier; this post starts the implementation group: the phase where code actually gets written after the contract is signed. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), and the Implement phase as a whole is covered in [The Implement Phase](/en/harness-phase-implement/). This post drills into a single skill: `implement-task`, the developer role's core skill. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

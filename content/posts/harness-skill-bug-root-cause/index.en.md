@@ -15,6 +15,12 @@ custom_toc:
   - title: "Decision 2: symptom patches compound"
   - title: "Decision 3: a tourniquet is allowed — it is not the fix"
   - title: "What this skill cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one entry in the skill-by-skill series, covering `bug-root-cause` — the general-purpose group's bug-fixing skill. It is bound to no phase; it applies to any bug in any context. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), covered the whole system's shape; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below appears in the repository at `templates/skills/bug-root-cause/SKILL.md`.

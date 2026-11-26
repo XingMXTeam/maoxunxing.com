@@ -16,6 +16,12 @@ custom_toc:
   - title: "Design 2: disputes go through appeal, never through editing the report"
   - title: "Design 3: fixing this way is what makes the loop converge"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one entry in the skill-by-skill series, covering `fix-from-report` — the developer-side remediation skill, the one in use when evaluation sends a feature back. The previous article, [the Evaluate phase](/en/harness-phase-evaluate/), covered how the report is produced and why only the open items come back; this one covers what happens once the list arrives. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/). The system is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below can be found verbatim in the repository at `templates/skills/fix-from-report/SKILL.md`.

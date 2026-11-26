@@ -16,6 +16,12 @@ custom_toc:
   - title: "Decision 3: the plan goes before the code — and gets compared against it afterwards"
   - title: "Decision 4: the same discipline as write-dev-plan, at a different scale"
   - title: "What this skill cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 The earlier articles in this skill-by-skill series covered skills bound to a phase — the authoring chain runs during Clarify, `implement-task` runs during Implement. This one opens the final group: seven general-purpose skills bound to no phase, each usable standalone on any task at any time. The first is `plan-before-code`, and it governs the thing that sounds least like engineering: **planning before you start.** The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/); the system is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli), and this skill lives in the repo at `templates/skills/plan-before-code/`.

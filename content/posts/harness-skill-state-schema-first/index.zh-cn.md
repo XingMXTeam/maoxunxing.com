@@ -17,6 +17,12 @@ custom_toc:
   - title: "设计二：哪怕只加一个小 store，也要写这张表"
   - title: "设计三：写完的表，是拿来对账的"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 skill 深挖系列的一篇，讲通用组里的 `state-schema-first`。它有一个现成的搭档：《[状态层：同一份数据，只能有一个家](/zh-cn/harness-layer-state/)》——那一篇讲这一层的规矩：一个事实一个家、服务端数据和客户端状态分开住、落盘的键带命名空间。这一篇不重复规矩，讲执行规矩的顺序：干活的人（或 AI）具体先写什么、后写什么、写成什么样才算写完。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

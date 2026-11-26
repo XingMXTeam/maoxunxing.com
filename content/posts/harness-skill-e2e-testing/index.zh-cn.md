@@ -15,6 +15,12 @@ custom_toc:
   - title: "细节二：弱化一条失败的用例，和给编译器消音是同一件事"
   - title: "细节三：每条用例都带着 REQ 编号，失败要能找到家"
   - title: "它的边界"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 Harness 系列的 skill 拆解篇，拆的这一份叫 `e2e-testing`。上一篇 [write-acceptance-criteria](/zh-cn/harness-skill-write-acceptance-criteria/) 讲的是考卷怎么在代码出现之前出出来——`rubric.json` 和 `e2e-cases.json`；这一篇讲考卷到了评测阶段由谁执行、怎么执行：`e2e-testing` 是评测者的浏览器手册，它拿着那份用例集，在真实浏览器里把每条用户旅程逐条走一遍，再把看到的东西变成分数、发现和对考卷本身的改进建议。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲整套系统的形状，这个系列逐份拆 skill：为什么有它，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

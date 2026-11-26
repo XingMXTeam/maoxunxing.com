@@ -17,6 +17,12 @@ custom_toc:
   - title: "Decision 2: reference, don't restate"
   - title: "Decision 3: no TODOs in the document"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one article in the one-skill-at-a-time series. The five layers and five phases describe how the system runs; this series takes the 21 skills one by one — what problem each solves, concretely how. The overview is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/); the phase as a whole is covered in [the Clarify phase](/en/harness-phase-clarify/). `write-tech-design` is step four of the clarify authoring chain, after write-quality-vision: the requirements are numbered, the "good" is written down as anchors, and this step decides how the feature gets built inside this repository. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below can be found verbatim in the skill files in that repository.

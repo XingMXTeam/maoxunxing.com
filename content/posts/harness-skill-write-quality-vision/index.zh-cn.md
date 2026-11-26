@@ -15,6 +15,12 @@ custom_toc:
   - title: "为什么写在代码之前、由规划者写"
   - title: "没有品质面的需求：豁免也要写明理由"
   - title: "这一份文件管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 Harness 技能深挖系列的一篇：21 个技能逐个拆，每篇只讲一个——为什么要有它，具体怎么干。这一篇在澄清链上排第三，前面是 [澄清阶段](/zh-cn/harness-phase-clarify/)的访谈和 `write-prd` 写下的需求清单，后面是技术设计。系列母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》，我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

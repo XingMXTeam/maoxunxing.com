@@ -16,6 +16,12 @@ custom_toc:
   - title: "设计二：为什么禁止“顺手”"
   - title: "设计三：做不了就停下报告，不许即兴发挥"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 skill 深挖系列的一篇。前面拆过澄清链的六份 skill（把一句话需求变成契约的那一组），这一篇开始拆实现组——契约签完之后，真正写代码的环节。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》，实现阶段的全貌在《[实现阶段：一次只做一个任务，每个任务留一个真提交](/zh-cn/harness-phase-implement/)》里讲过；这一篇只钻一份 skill：`implement-task`，开发者角色的核心技能。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

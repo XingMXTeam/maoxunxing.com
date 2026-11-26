@@ -16,6 +16,12 @@ custom_toc:
   - title: "Design 1: the map is a file, not a memory"
   - title: "Design 2: it records how things are done here, not a file list"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one entry in the skill-by-skill series, covering `context-map` — one of the general-purpose skills, attached to none of the five phases; it governs the first thing you do inside a repo. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/); this series takes the skills one at a time — why each exists, and concretely how it works. The system is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below can be found verbatim in the repository at `templates/skills/context-map/SKILL.md`.

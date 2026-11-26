@@ -15,6 +15,12 @@ custom_toc:
   - title: "设计二：症状补丁会复利"
   - title: "设计三：止血可以，但止血不算修好"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是逐份拆 skill 系列的一篇，拆的是 `bug-root-cause`——通用技能组里管修 bug 的一份，不绑任何阶段，任何上下文里遇到 bug 都能用。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲了整套系统的形状；这个系列逐份拆开，每篇只讲一份：它为什么存在，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的 `templates/skills/bug-root-cause/SKILL.md` 里找到原文。

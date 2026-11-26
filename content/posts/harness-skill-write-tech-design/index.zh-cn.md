@@ -17,6 +17,12 @@ custom_toc:
   - title: "设计二：引用，不重述"
   - title: "设计三：文档里不许留 TODO"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是技能逐个讲系列的一篇。五层约束和五个阶段讲的是系统怎么运转，这个系列把 21 份技能逐份拆开：每份解决什么问题，具体怎么干。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》，阶段全貌见[澄清阶段](/zh-cn/harness-phase-clarify/)。`write-tech-design` 是澄清著述链的第四步，排在 write-quality-vision 之后：需求已经编号，"好样子"已经写成锚点，这一步决定这个功能在仓库里怎么搭。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的技能文件里找到原文。

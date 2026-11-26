@@ -15,6 +15,12 @@ custom_toc:
   - title: "设计二：计划是文件，不是聊天"
   - title: "设计三：粒度决定评测能不能对上账"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是技能深挖系列的一篇。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲了整套系统的形状，前面两个系列拆了五层约束和五个阶段，这个系列逐份拆技能——每份技能为什么存在、具体怎么干。`write-dev-plan` 是澄清链上的第五步，排在 `write-tech-design` 之后：需求和技术方案都已经定了，这一步把方案拆成一份能执行的任务清单。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的技能文件里找到原文。

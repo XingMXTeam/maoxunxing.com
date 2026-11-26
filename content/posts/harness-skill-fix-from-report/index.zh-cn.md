@@ -16,6 +16,12 @@ custom_toc:
   - title: "设计二：对报告有意见，走申诉，不走改单"
   - title: "设计三：这样修，回路才会收敛"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是逐份拆 skill 系列的一篇，拆的是 `fix-from-report`——开发者侧的返修 skill：评测没过、功能被打回来时，开发者用的就是它。上一篇[评测阶段](/zh-cn/harness-phase-evaluate/)讲了报告是怎么产生的、为什么打回来的只有开放项清单；这一篇讲拿到清单之后怎么修。母篇是《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的 `templates/skills/fix-from-report/SKILL.md` 里找到原文。

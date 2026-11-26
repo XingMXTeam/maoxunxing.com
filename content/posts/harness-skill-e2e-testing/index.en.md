@@ -15,6 +15,12 @@ custom_toc:
   - title: "Detail 2: weakening a failing case is the same act as silencing the compiler"
   - title: "Detail 3: every case carries its REQ id, so a failure has an address"
   - title: "Its limits"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is a skill deep-dive in the Harness series; the skill under the knife is `e2e-testing`. The previous part, [write-acceptance-criteria](/en/harness-skill-write-acceptance-criteria/), covered how the exam is written before any code exists — `rubric.json` and `e2e-cases.json`. This part covers who executes that exam at evaluation time, and how: `e2e-testing` is the evaluator's browser manual. It takes the case set, walks every user journey in a real browser, one by one, and turns what it sees into scores, findings, and improvement suggestions for the exam itself. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), gives the shape of the whole system; this series takes the skills one at a time — why each exists, and concretely how it is done. The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

@@ -16,6 +16,12 @@ custom_toc:
   - title: "E2E：六类旅程，各有下限"
   - title: "三个设计细节：措辞、陷阱、只许收紧"
   - title: "它的边界"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 Harness 系列的 skill 拆解篇，拆的这一份叫 `write-acceptance-criteria`。澄清阶段的著述链一共五步，前四步产出 PRD、质量愿景、技术方案、开发计划，它是第五步、最后一步，产出的东西下游就是[评测阶段](/zh-cn/harness-phase-evaluate/)直接拿去打分的评分表。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲整套系统的形状，这个系列逐份拆 skill：为什么有它，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

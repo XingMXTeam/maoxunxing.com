@@ -16,6 +16,12 @@ custom_toc:
   - title: "导入的 PRD：只补缺号，不动一个字"
   - title: "为什么禁止顺手补一条需求"
   - title: "它管不了什么"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是逐份拆 skill 系列的一篇，拆的是 `write-prd`——澄清著述链的第二份，排在 `clarify-requirements` 之后。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》第三节拿这份 skill 当标本解剖过整体设计；这个系列逐份拆开，每篇只讲一份：它为什么存在，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中规则都能在仓库的 `templates/skills/write-prd/SKILL.md` 里找到原文。

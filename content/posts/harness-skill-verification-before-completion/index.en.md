@@ -15,6 +15,12 @@ custom_toc:
   - title: "Design 2: the cost of checking falls on the claimant"
   - title: "What this skill cannot do"
   - title: "Closing: thirty-one parts, one move"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is part twenty-one of the skill deep-dives, and the last one. The two earlier series — five constraint layers, five phases — covered the system's structure; this series takes apart the 21 skills that make it up, one per part: why each exists, and concretely how it is done. The overview post is [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/). The system I use is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below has a corresponding implementation in the repository.

@@ -16,6 +16,12 @@ custom_toc:
   - title: "只报告，不许顺手改"
   - title: "为什么“能重跑”才算数"
   - title: "它的边界"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 这是 Harness 系列的 skill 拆解篇，拆的这一份叫 `deterministic-eval`。它在[评测阶段](/zh-cn/harness-phase-evaluate/)里当评判者的工作纪律：凡是能算出答案的检查，就不许靠"看"得出结论。母篇《[从能跑到可交付：一套前端 AI 协作系统的设计笔记](/zh-cn/frontend-ai-collaboration-design/)》讲整套系统的形状，这个系列逐份拆 skill：为什么有它，具体怎么干。我用的系统是开源的 [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli)，文中所有规则都能在仓库里找到对应实现。

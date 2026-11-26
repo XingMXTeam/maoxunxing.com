@@ -16,6 +16,12 @@ custom_toc:
   - title: "Imported PRDs: fill the number gaps, touch nothing else"
   - title: "Why inventing a requirement is forbidden"
   - title: "What it cannot do"
+noindex: true
+sitemap:
+  disable: true
+build:
+  list: never
+  render: always
 ---
 
 This is one entry in the skill-by-skill series, covering `write-prd` — second in the clarify authoring chain, right after `clarify-requirements`. The overview post, [From "It Runs" to Deliverable: Design Notes on a Frontend AI Collaboration System](/en/frontend-ai-collaboration-design/), dissected this very skill in its third section as the specimen for the overall design; this series takes the 21 skills one at a time — why each exists, and concretely how it works. The system is the open-source [frontend-harness-cli](https://github.com/XingMXTeam/frontend-harness-cli); every rule below can be found verbatim in the repository at `templates/skills/write-prd/SKILL.md`.
